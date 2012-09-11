@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>验证手机号以完成注册-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/phone_test.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript">
+//文本框触发焦点效果
+    $(function() {
+        $(".input-text").focus(function() {
+            $(this).addClass("input-focus");
+        }).blur(function() {
+            $(this).removeClass("input-focus");
+        })
+    })
+</script>
+</head>
+
+<body>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+<div class="container_960">
+  <div class="box_4 phone_test" style="width:445px; height:245px; margin:0 auto;">
+    <h5 class="red">尊敬的用户，你需要验证手机号以完成注册！</h5>
+    <hr width="90%" />
+    <div class="big_phone_ico">
+      <form class="box_form" action="/index.html">
+        <dl>
+        <dd>
+          <h6 style="width:175px;"><input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray red" style="width:170px;" value="点击获取验证码" /></h6>&nbsp;<font color="#bbbbbb">通过短信获取验证码</font>
+        </dd>
+        <dd><h6 style="width:175px;">输入验证码：</h6><input id="Verification_code" type=text value="" class="input-text" style="width:90px;" />
+        </dd>
+        </dl>
+        <div class="center" style="width:98px;">
+        <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" style="width:98px;" value="确认提交" />
+        </div>
+        <div class="hr_10"> &nbsp; </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+</body>
+</html>

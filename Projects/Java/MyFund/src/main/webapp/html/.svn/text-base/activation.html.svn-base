@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>激活邮件-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<style>
+@charset "utf-8";
+/* ----------------------------- reset.css
+--------------------------------------------------------------------------------*/
+html, body, div ,p{ margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+body { margin : 0; padding : 0 0 12px 0; font-size : 12px; line-height : 22px; font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif; background : #fff; }
+.box { border:1px solid #CCC; width:650px; margin:0 auto; padding:20px 40px;}
+.box p{ line-height:30px; height:30px; text-indent:2em;}
+.box b{ font-size:14px;}
+</style>
+</head>
+
+<body>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+
+<div class="box" style=""> <img src="/images/logo.gif" /><br /><br />
+Eric，您好！
+  <p>感谢您注册中国资金网( www.zj198.com )。</p>
+  <p>你的资金网账户验证码为：<b>290204</b></p>
+  <p>(请在30分钟内完成验证，30分钟后验证码失效，你需要重新进行验证。)</p>
+  <p>您也可以直接点击或复制以下链接，完成帐户激活：</p>
+  <p><a href="/">http://www.zj198.com/reg/reg.jsp?1232341325423413254234132542341325423413254315433245144</a></p>
+</div>
+</body>
+</html>

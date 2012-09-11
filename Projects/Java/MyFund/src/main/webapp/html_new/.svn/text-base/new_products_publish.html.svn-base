@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>用户中心-融资管理(其他金融机构)-发布新产品页</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" ></script>
+<script language="javascript">
+//通用选项卡
+$(document).ready(function() {
+    $('.xxkbox:gt(0)').hide(); //让从大于0开始的div都隐藏 
+    $('.first').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
+    var sb = $('.tab_menu ul li');
+    sb.hover(function() {
+        $(this).addClass('hover').siblings().removeClass();
+        var nb = sb.index(this);
+        $('.xxkbox').eq(nb).show().siblings().hide();
+    });
+    //} 
+});
+
+$(function() {
+    $(".input-text1,textarea").focus(function() {
+        $(this).addClass("input-focus");
+    }).blur(function() {
+        $(this).removeClass("input-focus");
+    })
+})
+</script>
+</head>
+
+<body>
+<!--头部-->
+<div class="header user_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h6 style="width:250px;"><a href="http://www.zj198.com">中国资金网</a></h6>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu">您好，jakey zhang | <a href="/logout.jsp">退出</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" alt="" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+  <div class="container_960">
+    <div class="tab_menu user_nav">
+      <ul>
+        <li><a href="/">我的资金网</a></li>
+        <li><a href="/">账户管理</a></li>
+        <li class="hover"><a href="/">融资管理</a></li>
+        <li><a href="/">理财管理</a></li>
+        <li><a href="/">服务管理</a></li>
+        <li><a href="/">更多功能</a></li>
+      </ul>
+    </div>
+    <div class="clear"> &nbsp; </div>
+    <div class="user_subnav">
+      <div class="xxkbox"> <font class="fl" style="line-height:36px; font-weight:bold;">重要通知：</font>
+        <ul class="fl" id="IssueList" style="height:24px;line-height:24px;overflow:hidden; margin-top:6px;width:800px;">
+          <li><a href='' title="2011年上海市国民经济和社会发展统计公报">中国资金网将于2012年6月10日晚21：00点至20126月12日早晨8：00进行系统维护，在此期间将无法登陆用户中心，敬请谅解</a></li>
+          <li><a href='' title="上海市事业单位2012年公开招聘笔试成绩查询及最低合格分数线公告">上海市事业单位2012上海市国民经济和社上海市国民经济和社年公开招聘笔试成绩查</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会关于接受朱建业、邱鲁军辞去有关职务的请求的决定">上海市人上海市国民经济和社上海市国民经济和社民代表大会常务委员会关于接受</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会公告(第7号)">上海市人民代表大会常务委上海市国民经济和社上海市国民经济和社员会公告(第</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会公告(第8号)">上海市人民代表大会常务委上海市国民经济和社上海市国民经济和社员会公告(第</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会公告(第9号)">上海市人民代表大会常务委上海市国民经济和社上海市国民经济和社员会公告(第</a></li>
+        </ul>
+        <script language="JavaScript" type="text/javascript">Scroll('IssueList', 2000, 32, 24);//停留时间，相对速度（越小越快）,每次滚动多少，最好和Li的Line-height一致。</script> 
+      </div>
+      <div class="xxkbox"><a href="">企业融资贷款</a> | <a href="">个人消费贷款</a> | <a href="">个人经营贷款</a></div>
+      <div class="xxkbox"><a href="">基金</a> | <a href="">股票</a> | <a href="">期货</a> | <a href="">银行产品</a></div>
+      <div class="xxkbox"><a href="">B2C交易平台</a> | <a href="">资金管理</a> | <a href="">其他服务</a></div>
+      <div class="xxkbox"><a href="">政府动态</a> | <a href="">金融资讯</a> | <a href="">中国资金网动态</a></div>
+      <div class="xxkbox"><a href="">融资指南</a> | <a href="">法律政策</a> | <a href="">会员条款</a> | <a href="">申请流程</a></div>
+    </div>
+  </div>
+  <div class="clear"> &nbsp; </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="M_menu">
+<a href="#">用户中心</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">融资管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">发布新产品</a>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="container_950 box_4">
+	<div class="P_title" style="border-bottom:5px solid #003961;">发布新产品</div>
+</div>
+<div class="hr_10"> &nbsp;</div>
+<!--主体部分开始-->
+<!--2-->
+<div class="apply_form">
+	<form action="" class="box_form">
+		<div class="hr_10"> &nbsp; </div>
+		<div class="hr_10"> &nbsp; </div>
+		<table class="apply_form_tb01">
+		  <tr>
+			<td class="r_td">产品名称</td>
+			<td class="p_td"><input name="" type="text" class="input-text1" style="width:237px;"/></td>
+		    <td class="r_td">类型</td>
+		    <td class="p_td">
+                <select name="select" class="S_width01">
+                  <option value="企业经营贷款" selected="selected">企业经营贷款</option>
+                  <option value="个人经营性贷款">个人经营性贷款</option>
+                  <option value="个人综合消费贷款">个人综合消费贷款</option>
+                  <option value="个人购房贷款">个人购房贷款</option>
+                </select>		    
+		    </td>									
+		  </tr>
+		  <tr>
+		    <td class="r_td">期限</td>
+		    <td class="p_td"><input name="" type="text" class="input-text1"/><span style="float:left;">~</span><input name="" type="text" class="input-text1"/></td>
+		    <td class="r_td">金额</td>
+		    <td class="p_td"><input name="" type="text" class="input-text1"/><span style="float:left;">~</span><input name="" type="text" class="input-text1"/></td>
+		  </tr>
+		  <tr>
+		    <td class="r_td" style="vertical-align:top;">年利率</td>
+		    <td class="p_td" colspan="3">
+				<table style="width:400px;">
+				  <tr>
+				    <td>期限</td>
+				    <td>基准利率</td>
+				  </tr>
+				  <tr>
+				    <td>六月以内（含六月)</td>
+				    <td><span style="float:left;">5.85%</span><span style="float:left;">×</span><input name="" type="text" class="input-text1" style="width:50px;"/>%</td>
+				  </tr>
+				  <tr>
+				    <td>六月至一年（含一年）</td>
+				    <td><span style="float:left;">6.31%</span><span style="float:left;">×</span><input name="" type="text" class="input-text1" style="width:50px;"/>%</td>
+				  </tr>
+				  <tr>
+				    <td>一至三年（含三年）</td>
+				    <td><span style="float:left;">6.40%</span><span style="float:left;">×</span><input name="" type="text" class="input-text1" style="width:50px;"/>%</td>
+				  </tr>
+				</table>		    
+		    </td>
+		  </tr>
+		  <tr>
+		    <td class="r_td">服务费率</td>
+		    <td class="p_td" colspan="3"><input name="" type="text" class="input-text1" style="width:50px;"/>%</td>
+		  </tr>
+		  <tr>
+		    <td class="r_td">支持还款方式</td>
+		    <td class="p_td" colspan="3"><input name="" type="checkbox" value="分期还款" style="margin-bottom:7px;"/><span style="margin-right:5px;">分期还款</span><input name="" type="checkbox" value="到期还款" style="margin-bottom:7px;"/><span style="margin-right:5px;">到期还款</span><input name="" type="checkbox" value="循环授信，随借随还" style="margin-bottom:7px;"/>循环授信，随借随还</td>
+		  </tr>
+		  <tr>
+		    <td class="r_td">抵押类型</td>
+			<td class="p_td" colspan="3"><input name="" type="checkbox" value="抵押" style="margin-bottom:7px;"/><span style="margin-right:5px;">抵押</span><input name="" type="checkbox" value="信用" style="margin-bottom:7px;"/><span style="margin-right:5px;">信用</span><input name="" type="checkbox" value="担保" style="margin-bottom:7px;"/>担保</td>
+		  </tr>
+		  <tr>
+		    <td class="r_td">支持用途</td>
+			<td class="p_td" colspan="3"><input name="" type="checkbox" value="不限" style="margin-bottom:7px;"/><span style="margin-right:5px;">不限</span><input name="" type="checkbox" value="购买原材料" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买原材料</span><input name="" type="checkbox" value="购买设备" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买设备</span><input name="" type="checkbox" value="购买土地" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买土地</span><br /><input name="" type="checkbox" value="不限" style="margin-bottom:7px;"/><span style="margin-right:5px;">不限</span><input name="" type="checkbox" value="购买原材料" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买原材料</span><input name="" type="checkbox" value="购买设备" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买设备</span><input name="" type="checkbox" value="购买土地" style="margin-bottom:7px;"/><span style="margin-right:5px;">购买土地</span></td>
+		  </tr>	
+		  <tr>
+		    <td class="r_td">面向区域</td>
+		    <td class="p_td" colspan="3">hh</td>
+		  </tr>	
+		  <tr>
+		    <td class="r_td">审批时间</td>
+		    <td class="p_td" colspan="3"><input name="" type="text" class="input-text1" />天内</td>
+		  </tr>
+		  <tr>
+		    <td class="r_td" style="vertical-align:top;">申请条件</td>
+		    <td class="p_td" colspan="3">
+				<table class="in_table">
+				  <tr>
+				    <td class="in_td">企业所属行业</td>
+				    <td style="vertical-align: middle;">
+		                <select name="select" class="S_width01">
+		                  <option value="不限" selected="selected">不限</option>
+		                  <option value="农、林、牧、渔业">农、林、牧、渔业</option>
+		                  <option value="采矿业">采矿业</option>
+		                  <option value="制造业">制造业</option>
+		                </select>
+		                <select name="select" class="S_width01">
+		                  <option value="请选择" selected="selected">请选择</option>
+		                  <option value="个人经营性贷款">电信、广播电视和卫星传输服务</option>
+		                  <option value="个人综合消费贷款">个人综合消费贷款</option>
+		                  <option value="个人购房贷款">个人购房贷款</option>
+		                </select>			                				    
+				    </td>			    
+				  </tr>
+				  <tr>
+				    <td class="in_td">上年度销售额</td>
+				    <td style="vertical-align: middle;">
+		                <select name="select" class="S_width01">
+		                  <option value="不限" selected="selected">不限</option>
+		                  <option value="10万元以上">10万元以上</option>
+		                  <option value="30万元以上">30万元以上</option>
+		                  <option value="50万元以上">50万元以上</option>
+		                </select>				    
+				    </td>
+				  </tr>
+				  <tr>
+				    <td class="in_td">经营年限</td>
+				    <td style="vertical-align: middle;">
+		                <select name="select" class="S_width01">
+		                  <option value="不限" selected="selected">不限</option>
+		                  <option value="1年以上">1年以上</option>
+		                  <option value="2年以上">2年以上</option>
+		                  <option value="3年以上">3年以上</option>
+		                  <option value="5年以上">5年以上</option>
+		                </select>				    
+				    </td>
+				  </tr>
+				  <tr>
+				    <td class="in_td">所属行业</td>
+				    <td style="vertical-align: middle;">
+		                <select name="select" class="S_width01">
+		                  <option value="不限" selected="selected">不限</option>
+		                  <option value="农、林、牧、渔业">农、林、牧、渔业</option>
+		                  <option value="采矿业">采矿业</option>
+		                  <option value="制造业">制造业</option>
+		                </select>
+		                <select name="select" class="S_width01">
+		                  <option value="请选择" selected="selected">请选择</option>
+		                  <option value="农业">农业</option>
+		                  <option value="林业">林业</option>
+		                  <option value="畜牧业">畜牧业</option>
+		                </select>			                				    
+				    </td>			    
+				  </tr>
+				  <tr>
+				    <td class="in_td">其他申请条件</td>
+				    <td style="vertical-align: middle;"><input name="" type="text" class="input-text1" /></td>
+				  </tr>
+				  <tr>
+				    <td></td>
+				    <td style="vertical-align: middle;"><input name="" type="text" class="input-text1" /></td>
+				  </tr>
+				  <tr>
+				    <td></td>
+				    <td style="vertical-align: middle;"><input name="" type="text" class="input-text1" /></td>
+				  </tr>				  
+				  <tr>
+				    <td>&nbsp;</td>
+				    <td><input type="button" class="but_gray" value="添加更多" /></td>
+				    <td>&nbsp;</td>
+				  </tr>
+				  </tr>
+				</table>		    
+		    </td>
+		  </tr>		  
+		<tr>
+		    <td class="r_td" style="vertical-align:top;">产品介绍</td>
+		    <td class="p_td" colspan="3"><textarea name="" cols="60" rows="6"></textarea></td>
+		</tr>
+		 <tr>
+		   <td class="r_td">产品特色</td>
+		   <td class="p_td" colspan="3"><input name="" type="checkbox" value="放款快" style="margin-bottom:7px;"/><span style="margin-right:5px;">放款快</span><input name="" type="checkbox" value="利息低" style="margin-bottom:7px;"/><span style="margin-right:5px;">利息低</span><input name="" type="checkbox" value="要求低" style="margin-bottom:7px;"/><span style="margin-right:5px;">要求低</span><input name="" type="checkbox" value="手续少" style="margin-bottom:7px;"/><span style="margin-right:5px;">手续少</span><input name="" type="checkbox" value="还款灵活" style="margin-bottom:7px;"/>还款灵活</td>
+		 </tr>
+		<tr>
+			<td class="r_td">需要资料清单</td>
+			<td class="p_td" colspan="3"><input name="" type="text" class="input-text1" style="width:237px;"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="p_td" colspan="3"><input name="" type="text" class="input-text1" style="width:237px;"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="p_td" colspan="3"><input name="" type="text" class="input-text1" style="width:237px;"/></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td class="p_td" colspan="3"><input type="button" class="but_gray" value="新增条目" /></td>
+		</tr>
+		 <tr>
+		   <td class="r_td">补充资料递交方式</td>
+		   <td class="p_td" colspan="3"><input name="" type="checkbox" value="线上扫描件加CA数字签名" style="margin-bottom:7px;"/><span style="margin-right:5px;">线上扫描件加CA数字签名</span><input name="" type="checkbox" value="线下加盖公章书面文件" style="margin-bottom:7px;"/>线下加盖公章书面文件</td>
+		 </tr>
+		 <tr>
+		   <td class="r_td"></td>
+		   <td class="p_td" colspan="3"><textarea name="" cols="60" rows="6"></textarea></td>
+		 </tr>
+		<tr>
+			<td></td>
+			<td class="p_td" colspan="3"><input type="button" class="but_gray" value="同意并确认发布" /></td>
+		</tr>		 		 										 				  	  		      	  
+		</table>
+		<div class="hr_10"> &nbsp; </div>
+		<div class="hr_10"> &nbsp; </div>
+	</form>	
+</div>	
+<!--主体部分结束-->
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<div class="clear"> &nbsp; </div>
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+</body>
+</html>

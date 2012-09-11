@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>关于我们_中国资金网</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript" src="/script/public.js" > </script>
+<script language="javascript">
+    //通用选项卡
+    $(document).ready(function() {
+        $('.xxkbox:gt(0)').hide(); //让从大于0开始的div都隐藏 
+        $('.first').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
+        var sb = $('.tab_menu ul li');
+        sb.hover(function() {
+            $(this).addClass('hover').siblings().removeClass();
+            var nb = sb.index(this);
+            $('.xxkbox').eq(nb).show().siblings().hide();
+        });
+        //} 
+    });
+</script>
+
+</head>
+
+<body>
+<!--头部-->
+<div class="header index_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h1><a  href="http://www.zj198.com">中国资金网</a></h1>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu"><a href="user_login.html">登录</a> <a href="reg.html">注册</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+  <div class="container_960">
+    <div class="tab_menu index_nav">
+      <ul>
+        <li><a href="/">首 页</a></li>
+        <li><a href="/">融资服务</a></li>
+        <li><a href="/">理财产品</a></li>
+        <li class="hover"><a href="/">信息中心</a></li>
+      </ul>
+    </div>
+    <div class="clear"> &nbsp; </div>
+    <div class="index_subnav">
+      <div class="xxkbox"> <font class="fl" style="line-height:36px; font-weight:bold;">网站公告：</font>
+        <ul class="fl" id="IssueList" style="height:24px;line-height:24px;overflow:hidden; margin-top:6px;width:800px;">
+          <li><a href='' title="2011年上海市国民经济和社会发展统计公报">2011年上海市国民经济和社会上海市国民经济和社上海市国民经济和社展统计公海市国民经济和社展统计公海市国民经国民经济和社展统计公报</a></li>
+          <li><a href='' title="上海市事业单位2012年公开招聘笔试成绩查询及最低合格分数线公告">上海市事业单位2012上海市国民经济和社上海市国民经济和社年公开招聘笔试成绩查</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会关于接受朱建业、邱鲁军辞去有关职务的请求的决定">上海市人上海市国民经济和社上海市国民经济和社民代表大会常务委员会关于接受</a></li>
+          <li><a href='' title="上海市人民代表大会常务委员会公告(第7号)">上海市人民代表大会常务委上海市国民经济和社上海市国民经济和社员会公告(第</a></li>
+        </ul>
+      <script language="JavaScript" type="text/javascript">Scroll('IssueList', 2000, 32, 24);//停留时间，相对速度（越小越快）,每次滚动多少，最好和Li的Line-height一致。</script> 
+      </div>
+      <div class="xxkbox"><a href="">企业融资贷款</a> | <a href="">个人消费贷款</a> | <a href="">个人经营贷款</a></div>
+      <div class="xxkbox"><a href="">基金</a> | <a href="">股票</a> | <a href="">期货</a> | <a href="">银行产品</a></div>
+      <div class="xxkbox"><a href="">B2C交易平台</a> | <a href="">资金管理</a> | <a href="">其他服务</a></div>
+      <div class="xxkbox"><a href="">政府动态</a> | <a href="">金融资讯</a> | <a href="">中国资金网动态</a></div>
+      <div class="xxkbox"><a href="">融资指南</a> | <a href="">法律政策</a> | <a href="">会员条款</a> | <a href="">申请流程</a></div>
+    </div>
+  </div>
+  <div class="clear"> &nbsp; </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<!--头部结束-->
+  <!--关于我们页面-->
+  <div class="M_menu">
+  	<a href="#">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">信息中心</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">关于我们</a>
+  </div>
+  <div class="hr_10"> &nbsp; </div> 
+  <div class="M_out">
+    <div class="M_out_right_text fl">
+    	<h1 style="padding-left: 5px;">中国资金网</h1>
+        <div class="box_4">
+          <p><a href="#">关于我们</a></p>
+          <hr width="90%"/>
+          <p><a href="#">版权声明</a></p>
+          <hr width="90%"/>
+          <p><a href="#">免责声明</a></p>
+          <hr width="90%"/>
+          <p><a href="#">友情链接</a></p>
+          <hr width="90%"/>
+          <p><a href="#">网站地图</a></p>
+          <hr width="90%"/>
+          <p><a href="#">用户帮助</a></p>
+        </div>
+    </div>
+	<!--右边-->
+  	<div class="fr">
+        <div style="width:708px; height:auto; border:1px solid #d3d3d3;">
+			<div style="width:660px; margin: 0 auto; margin-top: 25px; margin-bottom: 25px;">
+				<h2 style="border-bottom:1px solid #d3d3d3; padding-bottom: 20px;">关于我们</h2>
+				<div style="padding:10px; line-height:30px;">
+					<p style="text-indent:24px;">退市制度和理性投资有怎样的关系？退市将会给市场带来怎样的影响？强制退市，是否会造成投资者的投资打水漂？</p>　
+		            <p style="text-indent:24px;">答：退市制度的研究出台有助于价值投资、理性投资、长期投资等正确投资理念的形成。长期以来，有部分投资者热衷于炒作业绩差公司和所谓的"壳资源"，究其根源，除了投资者"一夜暴富"的念头以及盲目跟风的投资行为之外，主要原因是我国证券市场上一些业绩差的公司不断演绎着"不死鸟"的传奇，大量ST板块的上市公司在四季度通过资产处置、债务重组和政府补贴等多种方式进行利润操作，规避了现有退市制度。这种状况助长了投资者非理性的投资行为，认为尽管公司连年巨亏也不会退市，从而豪赌借壳重组获取暴利。有投资者在座谈会上明确表示，没有退市，投机气氛很难改变。因此，落实严格的退市制度，有助于引导投资者理性、价值投资，形成健康的投资文化和氛围。退市制度作为资本市场的"净化器"，能够促进市场发挥优胜劣汰的功能，在竞争中优化上市公司结构，从源头上保护中小投资者利益。没有经营的压力就没有前进的动力，上市不是进了保险箱，需要严格的淘汰制度督促管理层认真经营公司，不断开拓进取，在市场中立于不败之地。投资者的信心也需要优秀的管理团队、有潜力的上市公司来提振。从长期看，退市制度有助于形成市场吐故纳新的动态平衡，有助于上市公司整体质量的不断提高，从而从源头上保护中小投资者利益。</p>
+		            <p style="text-indent:24px;">退市制度的制定过程中将会充分考虑保护投资者尤其是中小投资者的合法权益，但不能理解成为投资者的非理性投资行为"买单"。在退市制度的研究制定过程中，证监会在制度设计层面将考虑保护投资者的机制。目前上交所和深交所分别制定了《关于完善上海证券交易所上市公司退市制度的方案（征求意见稿）》和《关于改进和完善主板、中小企业板上市公司退市制度的方案（征求意见稿）》，正在向社会公开征求意见。</p>
+		            <p style="text-indent:24px;">同时，投资者在投资绩差股时要有清醒的认识，要树立起"买者自负"的意识，培养控制资产整体风险的止损意识。当一家上市公司因为宏观经济因素、行业因素、经营因素等导致退市，在上市公司依法履行了应尽披露义务的前提下，投资者要自行承担投资判断的结果，期盼不理性的投资行为由国家买单是不切实际的。</p>　　
+	            	<p style="text-indent:24px;">我国股市一直存在炒新、炒小、炒差风气和波段操作方式，这些问题的成因是什么，有什么危害？如何理解"打新"现象，正确看待"打新"的投资风险？</p>
+				</div>
+			</div>
+        </div>
+      <div class="hr_10"> &nbsp; </div>
+    </div>
+	<!--右边-->
+  </div>    
+  <!--关于我们页面--> 
+<div class="clear"> &nbsp; </div>
+<div class="hr_20"> &nbsp; </div>
+<!--foot-->
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+<!--foot-->
+</body>
+</html>

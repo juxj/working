@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>注册页面-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/ca.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/reg.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<!--注册页头部-->
+<div class="header user_header reg_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h1><a  href="http://www.zj198.com">中国资金网</a></h1>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu"><a href="user_login.html">登录</a> <a href="reg.html">注册</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+<div class="container_960">
+  <div class="box_948"> <span class="yourposition">激活帐户</span>
+    <div class="hr_10"> &nbsp; </div>
+    <h6 class="red margin_lr_40">尊敬的xxx先生，感谢您注册中国资金网！</h6>
+    <div class="hr_10"> &nbsp; </div>
+    <p class="margin_lr_40">您的帐户还没有激活，请检查您的注册邮箱激活您的帐户。</p>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="ca_ico box_4 margin_lr_40">
+      <p>为了您的帐号安全,也为了让中国资金网能够更好地为您提供各项服务，您需要对您的帐户进行验证激活 中国资金网已经向您的注册邮箱 发送了一封验证激活邮件 请点击邮件中的链接激活帐号。</p>
+      <p>&nbsp;</p>
+      <p>您也可在此输入邮件中的验证码来完成帐号激活</p>
+      <dd>
+<h6 style="width:600px;">输入激活码：<input id="Verification_code" name="activeCode" type=text value="" class="input-text" style="width:90px;"/>
+            <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" style="width:98px; margin-left:30px" value="确认提交" /></h6>
+      </dd>
+    </div>
+    <div class="hr_10"> &nbsp; </div>
+    <p class="notice margin_lr_40" style="font-size:14px;"><strong>收不到邮件？</strong><br />
+    您可以通过以下几步来获取激活邮件 检查邮箱的垃圾邮件目录，并将中国资金网www.zj198.com加入白名单 点击 <a class="red"; href="#"><strong>重新发送 </strong></a>激活邮件 您也可以点此 <a class="red" href="#"><strong>更改邮箱 </strong></a>，中国资金网将会将激活邮件发送到该邮箱中 如您还有问题无法解决请拨打客服热线400-8890-198，我们的工作人员会帮您解决相关问题。</p>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<div class="clear"> &nbsp; </div>
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+</body>
+</html>

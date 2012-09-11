@@ -1,0 +1,143 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+	<package name="admin" namespace="/admin" extends="base">
+		<default-interceptor-ref name="adminInterceptor"/>
+		<global-results>
+			<result name="login">/WEB-INF/web/admin/login.jsp</result>
+		</global-results>
+		<action name="Account" class="com.zj198.action.admin.AccountAction">
+			<interceptor-ref name="defaultStack"/>
+			<result name="success" type="redirect">/admin/Admin.act</result>
+		</action>
+		<action name="Admin" class="com.zj198.action.admin.system.AdminAction">
+			<result name="success">/WEB-INF/web/admin/index.jsp</result>
+			<result name="listAdmUser">/WEB-INF/web/admin/system/listAdmUser.jsp</result>
+			<result name="addAdmUser">/WEB-INF/web/admin/system/addAdmUser.jsp</result>
+			<result name="editAdmUser">/WEB-INF/web/admin/system/editAdmUser.jsp</result>
+			<result name="editAdmAuth">/WEB-INF/web/admin/system/editAdmAuth.jsp</result>
+		</action>
+		
+		<action name="SysParam" class="com.zj198.action.admin.system.SysParameterAction">
+			<result name="success">/WEB-INF/web/admin/system/sysParameter.jsp</result>
+		</action>
+		
+		<action name="serviceInfoAuthorize" class="com.zj198.action.admin.authorize.ServiceInfoAuthorizeAction">
+			<result name="unauthorizedServiceInfo">/WEB-INF/web/admin/authorize/serviceItemHome4Admin.jsp</result>
+			<result name="siDetail">/WEB-INF/web/admin/authorize/siDetail.jsp</result>
+			<result name="unauthorizedServiceOrder">/WEB-INF/web/admin/authorize/serviceOrderHome4Admin.jsp</result>
+			<result name="sinOrder">/WEB-INF/web/admin/authorize/sinOrder.jsp</result>
+		</action>
+		
+		<action name="knwType" class="com.zj198.action.admin.news.KnwTypeAction">
+			<result name="success">/WEB-INF/web/admin/news/knwTypeHome.jsp</result>
+    		<result name="edit">/WEB-INF/web/admin/news/editKnwType.jsp</result>
+		</action>
+		
+		<action name="knwTitle" class="com.zj198.action.admin.news.KnwTitleAction">
+			<result name="success">/WEB-INF/web/admin/news/knwTitleHome.jsp</result>
+    		<result name="edit">/WEB-INF/web/admin/news/editKnwTitle.jsp</result>
+    		<result name="detail">/WEB-INF/web/admin/news/knwTitleDetail.jsp</result>
+		</action>
+		
+		<action name="userContract" class="com.zj198.action.admin.user.UserContractAction">
+			<result name="contractHome">/WEB-INF/web/admin/user/contract_home.jsp</result>
+            <result name="editContract">/WEB-INF/web/admin/user/edit_contract.jsp</result>
+		</action>
+		
+		<action name="bankProductAction" class="com.zj198.action.admin.authorize.BankProductAction">
+			<result name="success">/WEB-INF/web/admin/authorize/bank_product.jsp </result>
+			<result name="recommedation">/WEB-INF/web/admin/authorize/recommend_bank_product.jsp </result>
+		</action>
+		
+		<action name="requestInfo" class="com.zj198.action.admin.authorize.RequestInfoAction">
+            <result name="requestInfoHome">/WEB-INF/web/admin/club/request_info_home.jsp</result>
+            <result name="requestInfoDetail">/public/club/request_info_detail.jsp</result>
+		</action>
+		
+		<action name="supplyInfo" class="com.zj198.action.admin.authorize.SupplyInfoAction">
+            <result name="supplyInfoHome">/WEB-INF/web/admin/club/supply_info_home.jsp</result>
+            <result name="supplyInfoDetail">/public/club/supply_info_detail.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="loan_admin" namespace="/admin/loan" extends="base">
+		<default-interceptor-ref name="adminInterceptor"/>
+		<global-results>
+			<result name="login">/WEB-INF/web/admin/login.jsp</result>
+		</global-results>
+		<action name="financePro" class="com.zj198.action.admin.loan.FinanceProductAdminAction">
+			<result name="finance_product_admin">/WEB-INF/web/admin/loan/finance_product_admin.jsp</result>
+			<result name="view_finance">/WEB-INF/web/admin/loan/finance_product_view.jsp</result>
+			<result name="update_success">/WEB-INF/web/admin/loan/update_finance_back.jsp</result>
+			<result name="view_finance">/WEB-INF/web/admin/loan/finance_product_view.jsp</result>
+			<result name="update_finance_page">/WEB-INF/web/admin/loan/finance_product_update.jsp</result>
+			<result name="previewExtendsProperty">/WEB-INF/web/admin/loan/previewExtendsProperty.jsp</result>
+		</action>
+		
+		<action name="financeApply" class="com.zj198.action.admin.loan.FinanceApplyAdminAction">
+			<result name="view_busi_apply">/WEB-INF/web/admin/loan/busifinance_apply_view.jsp</result>
+			<result name="finance_apply_admin">/WEB-INF/web/admin/loan/finance_apply_admin.jsp</result>
+			<result name="view_person_apply">/WEB-INF/web/admin/loan/perrunfinance_apply_view.jsp</result>
+		</action>
+		<action name="financeAttach" class="com.zj198.action.admin.loan.FinanceAttachAdminAction">
+			<result name="apply_upload_attach_admin">/WEB-INF/web/admin/loan/apply_upload_attach.jsp</result>
+			<result name="downloan_attach">/WEB-INF/web/admin/loan/download_attach.jsp</result>
+		</action>
+		
+		<action name="loanRequest" class="com.zj198.action.admin.loan.LoanRequestAdminAction">
+			<result name="adminRequests">/WEB-INF/web/admin/loan/loan_request_list.jsp</result>
+			<result name="adminRequest">/WEB-INF/web/admin/loan/loan_request_detail.jsp</result>
+			<result name="recommendProduct">/public/common/recommendProList.jsp</result>
+			<result name="busi_request_view">/WEB-INF/web/admin/loan/busiloan_request_view.jsp</result>
+		</action>
+		<action name="downloadAttach" class="com.zj198.action.admin.loan.FileDownloadAdminAction">
+			 <result name="success" type="stream">
+			 	<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			 	<param name="contentType">application/octet-stream</param>
+			 	<param name="inputName">attachStream</param>
+			 </result>
+			 <result name="downAgree" type="stream">
+			 	<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			 	<param name="contentType">application/octet-stream</param>
+			 	<param name="inputName">downAgreeStream</param>
+			 </result>
+			 <result name="template" type="stream">
+			 	<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			 	<param name="contentType">application/octet-stream</param>
+			 	<param name="inputName">agreeTemplateStream</param>
+			 </result>
+		</action>
+	</package>
+	
+	<!-- 用户管理 -->
+	<package name="user_admin" namespace="/admin/user" extends="base">
+		<default-interceptor-ref name="adminInterceptor"/>
+		<global-results>
+			<result name="login">/WEB-INF/web/admin/login.jsp</result>
+			<result name="ajax">/WEB-INF/web/admin/ajax.jsp</result>
+		</global-results>
+		<action name="User" class="com.zj198.action.admin.user.UserAction">
+			<result name="success">/WEB-INF/web/admin/user/user.jsp</result>
+			<result name="_userInfo">/WEB-INF/web/admin/user/_userInfo.jsp</result>
+		</action>
+		<action name="Profile" class="com.zj198.action.admin.user.ProfileAction">
+			<result name="bankProfile">/WEB-INF/web/admin/user/userTypeProfile/bankProfile.jsp</result>
+		    <result name="companyProfile">/WEB-INF/web/admin/user/userTypeProfile/companyProfile.jsp</result>
+		    <result name="financeorgProfile">/WEB-INF/web/admin/user/userTypeProfile/financeOrgProfile.jsp</result>
+		    <result name="personProfile">/WEB-INF/web/admin/user/userTypeProfile/personProfile.jsp</result>
+		    <result name="serviceorgProfile">/WEB-INF/web/admin/user/userTypeProfile/serviceOrgProfile.jsp</result>
+			<result name="success" type="redirect">/admin/user/User.act</result>
+		</action>
+		<action name="orgAttach" class="com.zj198.action.admin.user.AdminDownloadImgAction">
+		 <result name="success" type="stream">
+		 	<param name="contentDisposition">attachment;filename="${imgName}"</param>
+		 	<param name="contentType">application/octet-stream;charset=UTF-8</param>
+		 	<param name="inputName">attachStream</param>
+		 	<param name="bufferSize">4096</param>  
+		 </result>
+		</action>
+	</package>
+	
+</struts>
