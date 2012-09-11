@@ -1,0 +1,8 @@
+ENDORSED_DIRS="/home/tju/Public/apache/tomcat/common/endorsed"
+JDK_HOME=/home/tju/Public/MyEclipse/Common/binary/com.sun.java.jdk.linux.x86_64_1.6.0.013
+LIBRARY_PATH="/home/tju/Public/MyEclipse/Common/binary/com.sun.java.jdk.linux.x86_64_1.6.0.013/bin\:/home/tju/Public/apache/tomcat/bin"
+SERVER_ENABLEMENT=true
+TOMCAT_BASE=/home/tju/Public/apache/tomcat
+TOMCAT_HOME=/home/tju/Public/apache/tomcat
+TOMCAT_TEMP=/home/tju/Public/apache/tomcat/temp
+eclipse.preferences.version=1

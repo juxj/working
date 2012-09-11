@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="common" uri="/Common"%>
+<table class="gold-table" border="0" cellspacing="0" cellpadding="0">
+  <caption>
+  <span class="fr view_all"><a href="/service/club.act?mparamid=17">查看全部»</a></span>
+  <h6>项目信息</h6>
+  <span class="leftdetail"><a href="/service/requestInfoAction4User!edit.act" target="_blank">立即发布</a></span>
+  </caption>
+  <tr>
+  	 <th>项目标题</th>
+     <th>发布时间</th>
+     <th>项目分类</th>
+     <th>所需资金</th>
+     <th>融资方式</th>
+     <th>状态</th>
+     <th>操作</th>
+  </tr>
+  <s:if test="requestInfoList == null || requestInfoList.size<=0">
+  	<tr>
+  		<td colspan="7" align="center">暂无项目信息</td>
+  	</tr>
+  </s:if>
+  <s:iterator value="requestInfoList" id="item">
+	  <tr>
+	    <td>${title}</td>
+		<td><s:date name="createDate" format="yyyy-MM-dd"/></td>
+		<td>
+			<s:iterator id="projectTypeItem" value="projectTypeList">
+	    		<s:if test="#projectTypeItem.code==#item.projectType">
+	    			${projectTypeItem.name }
+	    		</s:if>	
+	    	</s:iterator>
+		</td>
+		<td><s:number name="needMoney" />万元</td>
+		<td>
+			${financeType}
+			<s:if test="#item.financeType==null or #item.financeType==''">
+	    		不限
+	    	</s:if>
+		</td>
+   		<td>
+   			<s:if test="#item.rank==0">
+				未审核
+			</s:if>
+			<s:if test="#item.rank==1">
+				已通过
+			</s:if>
+			<s:if test="#item.rank==-1">
+				已阻止
+			</s:if>
+   		</td>
+   		<td class="view_detail">
+   		<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${id }">查看</a>
+   		</td>
+	  </tr>
+  </s:iterator>
+</table>

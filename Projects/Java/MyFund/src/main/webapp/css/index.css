@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*首页专用*/
+.Fast-reg li { height : 30px; line-height : 30px; margin : 5px 0; }
+.Fast-reg li select { width : 140px; height : 22px; }
+.Fast-reg li label { width : 42px; float : left; }
+.qyrz, .jrlc { width : 348px; height : 300px; overflow : hidden; }
+.qyrz-top { width : 308px; margin : 0 20px; }
+.qyrz-top .qyrz-top-l { width : 200px; }
+.qyrz-top .qyrz-top-l li { width : 100px; height : 25px; line-height : 25px; display : inline; float : left; font-size : 13px; font-weight : bold; }
+.qyrz-bot { width : 308px; margin : 0 20px 20px 20px;}
+.qyrz-bot .qyrz-bot-l { width : 200px;}
+.qyrz-bot .qyrz-bot-l h6 { margin : 10px 0; }
+.qyrz-bot .qyrz-bot-l p { margin : 10px 0; }
+.jrlc-top { width : 180px; background : url(/images/jrlc.jpg) top right no-repeat; padding : 0 100px 0 0; }
+.jrlc-top li { width : 90px; display : inline; float : left; margin : 3px 5px; }
+.jrlc-bot { background : url(/images/jrlc2.jpg) top right no-repeat; padding : 0 100px 0 0; }
+.news-list, .gold-pank { width : 348px; }
+.gold-table { width : 96%; margin : 10px auto; table-layout : fixed; text-align : right; }
+.gold-table th { color : #97181d; border-bottom : 1px solid #d6d6d6; font-weight : normal; }
+.gold-table td { word-break:keep-all;/* 不换行 ie等 */ white-space:nowrap;/* 不换行 火狐浏览器 */ overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */ text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/ }
+.gold-table tr td .txt-left { text-align:left }
+.gold-table-altrow { background:#eee }
+.news_menu { height:30px; background : #f9f9f7; }
+.news_menu ul { margin-left:-1px; height:30px; border-bottom : 1px solid #d6d6d6; }
+.news_menu li { display:inline; float:left; font-size:14px; font-weight:bolder;height:31px; line-height:30px; width:100px; text-align:center; }
+.news_menu .hover { background:#FFF; border:solid #d6d6d6; border-width:0 1px 0 1px; }
+/*友情链接部分*/
+.links {width : 950px; }
+.link-1 { padding : 10px 10px 0 10px; }
+.links .bank_logo { width:946px;}
+.links .bank_logo li { display:block; float:left; margin:5px 0 5px 7px; }
+
+.h_images{border: 1px solid #d6d6d6;}
+.qyrz-top_tablez{width:265px; height:auto; margin:0 auto;}
+.remen{font-size:14px; font-weight:bolder; color: #97181d; padding-bottom:10px;}
+.hot_connect{padding-left:15px; line-height:30px;}

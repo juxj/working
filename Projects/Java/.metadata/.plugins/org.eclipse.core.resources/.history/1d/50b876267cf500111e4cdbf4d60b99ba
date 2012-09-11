@@ -1,0 +1,83 @@
+package org.tju.utils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+public class WebUtil {
+
+	private GetMethod method;
+	private HttpClient client = new HttpClient();
+	
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	private String IP_QUERY_URL="http://www.ip.cn/getip.php?action=queryip&ip_url=";
+	
+	public List<String> getCityByIP(String ip){
+		this.IP_URL = this.IP_URL + ip;
+		return this.getValues(this.IP_URL);
+	}
+	
+	public List<String> getCityByIP1(String ip) {
+		this.IP_QUERY_URL = this.IP_QUERY_URL + ip;
+		return null;
+	}
+	
+	private List<String> getValues(String url) {
+		List<String> list = new ArrayList<String>();
+		InputStream stream;
+		try {
+			stream = this.getResponseStream(url);
+			list = this.getValueListByStream(stream);
+		} catch (Exception e) {
+			
+		} finally {
+			method.releaseConnection();
+		}
+		return list;
+	}
+	
+	//通过字节流得出String List.
+	private List<String> getValueListByStream(InputStream stream) throws DocumentException {
+		List<String> list = new ArrayList<String>();
+		SAXReader reader = new SAXReader();  
+		Document doc = reader.read(stream);
+		Element root = doc.getRootElement(); 
+		Iterator<?> it = root.elementIterator("string");
+		while (it.hasNext()) {
+			Element node = (Element) it.next();
+			list.add(node.getText());
+		}
+		return list;
+	}
+	
+	private InputStream getResponseStream(String url) throws HttpException, IOException{
+		this.getMethod(url);
+		InputStream stream = method.getResponseBodyAsStream();
+		return stream;
+	}
+	
+	private void getMethod(String url) throws HttpException, IOException {
+		method = new GetMethod(this.IP_URL);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler());
+		client.executeMethod(method);
+	}
+	
+	private String getValue(String ip) {
+		this.getMethod()
+	}
+	
+}

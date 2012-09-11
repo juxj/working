@@ -1,0 +1,71 @@
+package org.tju.utils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+public class WebUtil {
+
+	private GetMethod method;
+	
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	
+	
+	public List<String> getCityByIP(String ip) throws Exception {
+		this.IP_URL = this.IP_URL + ip;
+		return this.getValues(this.IP_URL);
+	}
+	
+	private List<String> getValues(String url) throws Exception {
+		List<String> list = new ArrayList<String>();
+		InputStream stream = this.getResponseStream(url);
+		list = this.getValueListByStream(stream);
+		return list;
+	}
+	
+	private List<String> getValueListByStream(InputStream stream) throws DocumentException {
+		List<String> list = new ArrayList<String>();
+		SAXReader reader = new SAXReader();  
+		Document doc = reader.read(stream);
+		Element root = doc.getRootElement(); 
+		Iterator<?> it = root.elementIterator("string");
+		while (it.hasNext()) {
+			Element node = (Element) it.next();
+			list.add(node.getText());
+		}
+		return list;
+	}
+	
+	private InputStream getResponseStream(String url) throws HttpException, IOException{
+		GetMethod method = this.getMethod(url);
+		InputStream stream = method.getResponseBodyAsStream();
+		return stream;
+	}
+	
+	private GetMethod getMethod(String url) throws HttpException, IOException {
+		HttpClient client = new HttpClient();
+		method = new GetMethod(this.IP_URL);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler());
+		int status = client.executeMethod(method);
+		if (status != HttpStatus.SC_OK) {
+			return null;
+		}
+		return method;
+	}
+	
+}

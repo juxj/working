@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>个人经营快速申请第一步-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script language="javascript">
+//文本框触发焦点效果s
+$(function() {
+    $(".input-text,textarea").focus(function() {
+        $(this).addClass("input-focus");
+    }).blur(function() {
+        $(this).removeClass("input-focus");
+    })
+})
+</script>
+</head>
+<body>
+<!--头部2-->
+<div class="header user_header reg_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h1><a  href="http://www.zj198.com">中国资金网</a></h1>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu"><a href="user_login.html">登录</a> <a href="reg.html">注册</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分开始-->
+<div class="apply_title">
+	<p>个人经营快速申请</p>
+	<div class="apply_menu">
+        <div class="apply_menu_text01">1、填写申请信息</div>
+        <div class="apply_menu_text02">2、完善需求</div>
+        <div class="apply_menu_text03">3、申请成功</div>	
+	</div>
+</div>
+<div class="hr_10">&nbsp; </div>
+<div class="apply_form">
+	<div class="apply_form_title">第一步&nbsp;&nbsp;填写申请信息</div>
+	<div class="C_title">贷款需求信息</div>
+	<div class="C_form">
+          <form class="box_form" action="/member.html" style="width:950px;">
+            <dl>
+              <dd>
+                <h6><span class="txt-impt">*</span>贷款用途：</h6>
+                <select name="select" class="S_width">
+                  <option value="" selected="selected">请选择</option>
+                  <option value="外资企业">外资企业</option>
+                  <option value="国有企业">国有企业</option>
+                  <option value="外资企业">外资企业</option>
+                </select>
+                <h6>贷款金额：</h6>
+                <input type=text value="" class="input-text" /><span style="line-height:40px;">万元</span>
+              </dd>
+              <dd>
+                <h6>贷款期限：</h6>
+                <input type=text value="" class="input-text"/>
+                <h6>是否有抵押物：</h6>
+				  <input id="radio1" type="radio" name="group1" value="1"/><label for="radio1">能提供</label>
+				  <input id="radio2" type="radio" name="group1" value="2"/><label for="radio2">无法提供</label>
+				</dd>
+			 </dl>
+		</form>
+	</div>
+	<div class="C_title">个人及经营信息</div>
+	<div class="C_form">
+		<form class="box_form" action="/member.html">
+		<dl>
+			<dd>
+				<h6>行业：</h6>
+                <select name="select" class="S_width">
+                  <option value="" selected="selected">请选择</option>
+                  <option value="农、林、牧、渔业">农、林、牧、渔业</option>
+                  <option value="采矿业">采矿业</option>
+                  <option value="制造业">制造业</option>
+                </select>
+			</dd>
+			<dd>
+				<h6>行业经验：</h6>
+				<input type=text value="" class="input-text" /><span style="line-height:40px;">年</span>
+			</dd>
+			<dd>
+				<h6>年营业额：</h6>
+                <select name="select" class="S_width">
+                  <option value="" selected="selected">请选择</option>
+                  <option value="50万元以下">50万元以下</option>
+                  <option value="50~100万">50~100万</option>
+                  <option value="100~200万">100~200万</option>
+                </select>
+			</dd>
+			<dd>
+				<h6>经营场所：</h6>
+                <input id="radio1" type="radio" name="group1" value="1" />
+                <label for="radio1">有</label>
+                &nbsp;&nbsp;
+                <input id="radio2" type="radio" name="group1" value="2" />
+                <label for="radio2">无</label>
+			</dd>
+			<dd>
+				<h6>银行借款经历：</h6>
+                <input id="radio1" type="radio" name="group1" value="1" />
+                <label for="radio1">有</label>
+                &nbsp;&nbsp;
+                <input id="radio2" type="radio" name="group1" value="2" />
+                <label for="radio2">无</label>
+			</dd>
+			<dd>
+				<h6>使用信用卡经历：</h6>
+                <input id="radio1" type="radio" name="group1" value="1" />
+                <label for="radio1">有</label>
+                &nbsp;&nbsp;
+                <input id="radio2" type="radio" name="group1" value="2" />
+                <label for="radio2">无</label>
+			</dd>
+			<dd>
+				<h6>银行流水：</h6>
+                <input id="radio1" type="radio" name="group1" value="1" />
+                <label for="radio1">能提供</label>
+                &nbsp;&nbsp;
+                <input id="radio2" type="radio" name="group1" value="2" />
+                <label for="radio2">无法提供</label>
+			</dd>
+		</dl>
+		<div class="hr_10"> &nbsp; </div>
+		<div class="center" style="width:200px;">
+		  <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" style="width:200px;" value="下一步" />
+		</div>
+		</form>
+		<div class="hr_10"> &nbsp; </div>
+		<div class="hr_10"> &nbsp; </div>
+	</div>
+</div>
+<!--主体部分结束-->
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<div class="clear"> &nbsp; </div>
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+</body>
+</html>

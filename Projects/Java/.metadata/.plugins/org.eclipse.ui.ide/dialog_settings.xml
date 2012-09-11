@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="false" key="ShowDerived"/>
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/dao/KnwTitleDAO.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/dao/hibernate/KnwTitleDAOImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/dao/hibernate/PrdBankfinanceDAOImpl.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/model/ClbRequestInfo.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/user/club/edit_request_info.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/admin/club/request_info_home.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/user/club/edit_supply_info_first_step.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/public/club/supply_info_home.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/action/club/SupplyInfoAction.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/java/com/zj198/action/club/RequestInfoAction.java&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/WEB-INF/web/admin/club/supply_info_home.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/public/club/request_info_detail.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;infoNode path=&quot;/MyFund/src/main/webapp/public/news/knwTitleDetail.jsp&quot; type=&quot;1&quot;/&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="119" key="DIALOG_Y_ORIGIN"/>
+			<item value="1366" key="DIALOG_X_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+</section>

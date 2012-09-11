@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*用户中心专用*/
+
+.user_info{ display:inline; width:260px; margin:20px 0 20px 20px; padding:0 20px 0 0; border-right:1px solid #d6d6d6;}
+.user_info .user_logo{ width:68px; height:68px; margin-right:10px;}
+.user_info .user_vip{ padding:0 0 0 50px; background:url(/images/member_vip.png) 0 5px no-repeat; margin-top:3px;}
+.user_real{width:607px; margin:20px;}
+.user_real .notice{ line-height:30px; height:30px; background:url(/images/notice.png) 0 7px no-repeat; padding:0 0 0 25px; }
+.user_real .mail{ line-height:30px; height:30px; background:url(/images/mail_ico.png) 0 0 no-repeat; padding:0 20px 0 25px; }
+.user_real .msg{ line-height:30px; height:30px; background:url(/images/msg_ico.png) 0 0 no-repeat; padding:0 0 0 25px; }
+
+.gold-table { width : 100%; margin :0 auto; border:1px solid #d3d3d3; text-align:left;}
+.gold-table th { color : #484848; border-bottom : 1px solid #d6d6d6; font-weight:bold; height:30px; line-height:30px; padding-left:20px;}
+.gold-table th .view_all{margin-right:30px;font-weight:normal;}
+.gold-table td { padding:5px 0 5px 20px;vertical-align:middle; border-bottom:1px solid #d3d3d3;}
+.gold-table-altrow { background:#f9f9f7 }
+.table_title{ background:#d3d3d3}
+
+.view_detail a{ display:inline-block; width:78px; height:21px; background:url(/images/btn_grap.png) 0 0 no-repeat; text-align:center; line-height:21px;color : #97181d;margin-right:20px; float:right;}
+.view_detail a:hover{background:url(/images/btn_grap.png) 0 -21px no-repeat; text-decoration:none;color : #424240;}
+
+/*完善信息页面*/
+
+
+/*完善信息（个人）*/

@@ -1,0 +1,60 @@
+package org.tju.utils;
+
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+public class WebUtil {
+
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	public List<String> getCityByIP(String ip) throws Exception {
+		// set return value
+		List<String> list = new ArrayList<String>();
+		HttpClient client = new HttpClient();
+		GetMethod method = new GetMethod(this.IP_URL+ip);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler());
+		int status = client.executeMethod(method);
+		
+		if (status != HttpStatus.SC_OK) {
+			return null;
+		}
+		
+		InputStream stream = method.getResponseBodyAsStream();
+		
+		if (stream == null) {
+			System.out.println("input steam is null.");
+			return null;
+		}
+		//byte[] bytes = method.getResponseBody();
+		//System.out.print(new String(bytes));
+		SAXReader reader = new SAXReader();  
+		Document doc = reader.read(stream);
+		Element root = doc.getRootElement(); 
+		
+		Iterator<?> it = root.elementIterator("string");
+		
+		Element node; 
+		int i = 0;
+		while (it.hasNext()) {
+			node = (Element) it.next();
+			System.out.println(node.getName());
+			list.add(node.getText());
+			i++;
+		}
+		System.out.println(i);
+		return list;
+	}
+	
+}

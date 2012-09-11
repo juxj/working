@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*用户中心专用*/
+
+.user_box { width:948px; margin:0 5px; border:1px solid #d6d6d6; background:#eee; overflow:hidden }
+.user_info { display:inline; width:260px; margin:20px 0 20px 20px; padding:0 20px 0 0; border-right:1px solid #d6d6d6; }
+.user_info .user_logo { width:72px; height:72px; margin-right:10px; }
+.user_info span{ float:left; margin:5px 3px 0 0;}
+.ca_on, .ca_off, .mobile_on, .mobile_off, .mail_on, .mail_off, .vip_on, .vip_off { display:block; width:26px; height:23px; }
+.ca_on { background:url(/images/ca_on.gif) 0 0 no-repeat; }
+.ca_off { background:url(/images/ca_off.gif) 0 0 no-repeat; }
+.mobile_on { background:url(/images/mobile_on.gif) 0 0 no-repeat; }
+.mobile_off { background:url(/images/mobile_off.gif) 0 0 no-repeat; }
+.mail_on { background:url(/images/mail_on.gif) 0 0 no-repeat; }
+.mail_off { background:url(/images/mail_off.gif) 0 0 no-repeat; }
+.vip_on { background:url(/images/vip_on.gif) 0 0 no-repeat; }
+.vip_off { background:url(/images/vip_off.gif) 0 0 no-repeat; }
+.vip_com_on { background:url(/images/user_ico_common_on.gif) 0 0 no-repeat; }
+
+.user_real { width:607px; margin:20px; }
+.user_real .notice { line-height:30px; height:30px; background:url(/images/notice.png) 0 7px no-repeat; padding:0 0 0 25px; }
+.user_real .mail { line-height:30px; height:30px; background:url(/images/mail_ico.png) 0 0 no-repeat; padding:0 20px 0 25px; }
+.user_real .msg { line-height:30px; height:30px; background:url(/images/msg_ico.png) 0 0 no-repeat; padding:0 0 0 25px; }
+.gold-table { width : 100%; margin :0 auto; text-align:left; border-collapse:collapse; border:solid #d3d3d3; border-width:0 1px 1px; }
+.gold-table th { color : #484848; font-weight:bold; height:30px; line-height:30px; padding-left:20px; border-bottom:1px solid #d3d3d3; }
+.gold-table td { padding:5px 0 5px 20px; vertical-align:middle; border-bottom:1px solid #d3d3d3; }
+.gold-table-altrow { background:#f9f9f7 }
+.gold-table caption { border-bottom:5px solid #003961; color:#FFF; font-weight:bold; height:30px; line-height:30px; }
+.gold-table caption h6 { background:#003961; width:120px; text-align:center; float:left }
+.gold-table caption .view_all { margin-right:30px; font-weight:normal; }
+.view_detail a { display:inline-block; width:78px; height:21px; background:url(/images/btn_grap.png) 0 0 no-repeat; text-align:center; line-height:21px; color : #97181d; margin-right:20px; float:right; }
+.view_detail a:hover { background:url(/images/btn_grap.png) 0 -21px no-repeat; text-decoration:none; color : #424240; }
+
+/******profile完成度进度条*********/
+.graph_red {position: relative; width: 200px; border: 1px solid #ff0000; padding: 1px;}
+.graph_red span {display: block;position: relative;background: #ff0000;height: 10px;line-height: 10px;}
+.graph_orange {position: relative; width: 200px;border: 1px solid #ffcc33;padding: 1px; float:left;}
+.graph_orange span {display: block;position: relative;background: #ffcc33;height: 10px;line-height: 10px;}
+.graph_green {position: relative; width: 200px;border: 1px solid #00cc33;padding: 1px;}
+.graph_green span {display: block;position: relative;background: #00cc33;height: 10px;line-height: 10px;}
+
+/*完善信息页面*/
+
+.restrict_item_150 {
+	width:120px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+/*完善信息（个人）*/

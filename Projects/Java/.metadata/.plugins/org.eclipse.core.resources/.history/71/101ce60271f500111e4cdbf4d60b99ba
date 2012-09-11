@@ -1,0 +1,46 @@
+package org.tju.utils;
+
+import java.io.InputStream;
+import java.util.Iterator;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.cyberneko.html.parsers.DOMParser;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
+
+public class WebUtil {
+
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	public Document getCityByIP(String ip) throws Exception {
+		HttpClient client = new HttpClient();
+		GetMethod method = new GetMethod(this.IP_URL+ip);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER,
+				new DefaultHttpMethodRetryHandler());
+		int status = client.executeMethod(method);
+		if (status != HttpStatus.SC_OK) {
+			System.err.println("ddd");
+		}
+		InputStream stream = method.getResponseBodyAsStream();
+		DOMParser parser = new DOMParser();
+		parser.parse(new InputSource(stream));
+		Document doc  = parser.getDocument();
+		SAXReader reader = new SAXReader();  
+		Element root = doc.getRootElement(); 
+		Element foo; 
+		for (Iterator i = root.elementIterator("VALUE"); i.hasNext()) { 
+			foo = (Element) i.next(); 
+			System.out.print("车牌号码:" + foo.elementText("NO")); 
+			System.out.println("车主地址:" + foo.elementText("ADDR")); 
+		}  
+		return doc;
+	}
+	
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>注册页面-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/reg.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript">
+//文本框触发焦点效果
+$(function() {
+    $(".input-text").focus(function() {
+        $(this).addClass("input-focus");
+    }).blur(function() {
+        $(this).removeClass("input-focus");
+    })
+})
+
+//----------------------------------------------------------表单检查器
+    //保存一个密码用于校验
+    var _pass;
+    /**
+    *检查用户名
+    */
+    String.prototype.Trim = function() {
+        return this.replace(/(^\s*)|(\s*$)/g, "");
+    }
+    //---------------------------------------------------------------------------
+    function check_username() {
+        var username, username_error;
+        username = document.getElementById('username').value;
+        username = username.Trim();
+        username_error = document.getElementById('username_error');
+        if (username == "") {
+
+            username_error.className = "txt-err";
+            username_error.innerHTML = "请输入用户名";
+        } else {
+            if (/^\w{6,16}$/.test(username)) {
+                username_error.className = "txt-succ";
+                username_error.innerHTML = "&nbsp;";
+            } else {
+                username_error.className = "txt-err";
+                username_error.innerHTML = "请输入6-18个字符，可使用字母、数字、下划线。";
+            }
+        }
+    }
+    /**
+    *检查Email
+    */
+    //---------------------------------------------------------------------------
+    function check_email() {
+        var email, email_error;
+        email = document.getElementById('email').value;
+        email = email.Trim();
+        email_error = document.getElementById('email_error');
+        if (email == "") {
+            email_error.className = "txt-err";
+            email_error.innerHTML = "请输入Email";
+        } else {
+            if (/^[\w-]+[\.]*[\w-]+[@][\w\-]{1,}([.]([\w\-]{1,})){1,3}$/.test(email)) {
+                email_error.className = "txt-succ";
+                email_error.innerHTML = "&nbsp;";
+            } else {
+                email_error.className = "txt-err";
+                email_error.innerHTML = "请输入有效的Email地址";
+            }
+        }
+    }
+    /**
+    *检查密码
+    */
+    //---------------------------------------------------------------------------
+    function check_pass() {
+        var pass, pass_error;
+        pass = document.getElementById('pass').value;
+        pass = pass.Trim();
+        _pass = pass;
+        pass_error = document.getElementById('pass_error');
+        if (pass == "") {
+            pass_error.className = "txt-err";
+            pass_error.innerHTML = "请输入密码";
+        } else {
+            if (/^\w{6,18}$/.test(pass)) {
+                pass_error.className = "txt-succ";
+                pass_error.innerHTML = "&nbsp;";
+            } else {
+                pass_error.className = "txt-err";
+                pass_error.innerHTML = "请输入6~16个字符，区分大小写";
+            }
+        }
+    }
+    /**
+    *检查rpass
+    */
+    //---------------------------------------------------------------------------
+    function check_rpass() {
+        var rpass, rpass_error;
+        rpass = document.getElementById('rpass').value;
+        rpass = rpass.Trim();
+        rpass_error = document.getElementById('rpass_error');
+        if (rpass == "") {
+            rpass_error.className = "txt-err";
+            rpass_error.innerHTML = "请输入确认密码";
+        } else if (rpass != _pass) {
+            rpass_error.className = "txt-err";
+            rpass_error.innerHTML = "密码不一致";
+        } else {
+            rpass_error.className = "txt-succ";
+            rpass_error.innerHTML = "&nbsp;"
+        }
+    }
+    /**
+    *检查手机号码
+    */
+    //---------------------------------------------------------------------------
+    function check_mobile() {
+        var mobile, mobile_error;
+        mobile = document.getElementById('mobile').value;
+        mobile = mobile.Trim();
+        mobile_error = document.getElementById('mobile_error');
+        if (mobile == "") {
+            mobile_error.className = "txt-err";
+            mobile_error.innerHTML = "请输入手机号码！";
+        } else {
+            if (/^((\(\d{3}\))|(\d{3}\-))?13\d{9}|14\d{9}|15\d{9}|18\d{9}$/.test(mobile)) {
+                mobile_error.className = "txt-succ";
+                mobile_error.innerHTML = "&nbsp;";
+            } else {
+                mobile_error.className = "txt-err";
+                mobile_error.innerHTML = "请输入有效的手机号码！";
+            }
+        }
+    }
+	/**
+    *检查真实姓名
+    */
+    //---------------------------------------------------------------------------
+    function check_fullname() {
+        var fullname, fullname_error;
+        fullname = document.getElementById('fullname').value;
+        fullname = fullname.Trim();
+        fullname_error = document.getElementById('fullname_error');
+        if (fullname == "") {
+            fullname_error.className = "txt-err";
+            fullname_error.innerHTML = "请输入真实姓名";
+        } else {
+            if (/^[\u4e00-\u9fa5]{2,4}$/.test(fullname)) {
+                fullname_error.className = "txt-succ";
+                fullname_error.innerHTML = "&nbsp;";
+            } else {
+                fullname_error.className = "txt-err";
+                fullname_error.innerHTML = "请输入正确的真实姓名";
+            }
+        }
+    }
+    //-------未使用--------------------------------------------------------------------
+    function regist() {
+        var username_error = document.getElementById('username_error').innerHTML;
+        var pass_error = pass_error.innerHTML;
+        var rpass_error = rpass_error.innerHTML;
+        var email_error = document.getElementById('email_error').innerHTML;
+        var username = document.getElementById('username').value;
+        var pass = document.getElementById('pass').value;
+        var rpass = document.getElementById('rpass').value;
+        var email = document.getElementById('email').value;
+        //判断错误信息全部为空并且文本框全部不为空
+        if ((username_error == "" && pass_error == "" && rpass_error == "" && email_error == "") && (username != "" && pass != "" && rpass != "" && email != "")) {
+            alert("恭喜，注册成功!");
+        } else {
+            alert("注册信息填写错误，请仔细检查更正后再提交");
+
+        }
+
+    }
+</script>
+</head>
+
+<body>
+<!--头部2-->
+<div class="header user_header reg_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h1><a  href="http://www.zj198.com">中国资金网</a></h1>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu"><a href="user_login.html">登录</a> <a href="reg.html">注册</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+<div class="container_960">
+  <div class="box_948"> <span class="yourposition">新用户注册</span>
+    <div class="hr_10"> &nbsp; </div>
+    <p class="notice fr" style="font-size:14px;">已有资金网账号？可以<a class="red" href="/">直接登录</a></p>
+    <div class="clear"> &nbsp; </div>
+    <form class="box_form" action="user_types.html">
+      <dl>
+        <dd>
+          <h6><span class="txt-impt">*</span>用户名：</h6>
+          <input id="username" onblur="check_username()" type=text value="" class="input-text" />
+          <span id="username_error" class="txt-info">6-18个字符，可使用字母、数字、下划线。</span></dd>
+        <dd>
+          <h6><span class="txt-impt">*</span>密码：</h6>
+          <input id="pass" onblur="check_pass()" type=password value="" class="input-text" />
+          <span id="pass_error" class="txt-info">6~16个字符，区分大小写</span></dd>
+        <dd>
+          <h6><span class="txt-impt">*</span>确认密码：</h6>
+          <input id="rpass" onblur="check_rpass()" type=password value="" class="input-text" />
+          <span id="rpass_error" class="txt-info">请再次输入密码</span></dd>
+        <dd>
+          <h6><span class="txt-impt">*</span>姓名：</h6>
+          <input id="fullname" onblur="check_fullname()" type=text value="" class="input-text" />
+          &nbsp;&nbsp;
+          <input id="radio1" type="radio" name="group1" value="1" />
+          <label for="radio1">先生</label>
+          &nbsp;&nbsp;
+          <input id="radio2" type="radio" name="group1" value="2" />
+          <label for="radio2">女士</label>
+          <span id="fullname_error" class="txt-info">请输入真实姓名</span></dd>
+        <dd>
+          <h6><span class="txt-impt">*</span>邮箱：</h6>
+          <input id="email" onblur="check_email()" type=text value="" class="input-text" />
+          <span id="email_error" class="txt-info">该邮箱用于激活用户、找回密码等</span></dd>
+        <dd>
+          <h6><span class="txt-impt">*</span>手机号：</h6>
+          <input id="mobile" onblur="check_mobile()" type=text value="" class="input-text" />
+          <span id="mobile_error" class="txt-info">请输入常用的手机号码，用于接受通知和验证等</span></dd>
+        <dd>
+          <h6>&nbsp; </h6>
+          <input id=u4 type="button" onfocus=this.blur() onclick="this.form.submit()" class="but_gray" style="width:200px;" value="同意以下协议并提交" />
+        </dd>
+      </dl>
+      <textarea class="txt_tiaokuan" readonly="readonly">中国资金网用户服务协议
+本协议是您与中国资金网（简称"本站"，网址：www.zj198.com）所有者（鼎辉信息技术有限公司）之间就中国资金网服务等相关事宜所订立的契约，请您仔细阅读本注册协议，您点击"同意以下协议，提交"按钮后，本协议即构成对双方有约束力的法律文件。一． 服务条款的确认和接纳
+本服务协议双方为上海易迅电子商务发展有限公司（下称"易迅"）与易迅网用户，本服务协议具有合同效力。
+本服务协议内容包括协议正文及所有易迅已经发布的或将来可能发布的各类服务条款。所有条款为协议不可分割的一部分，与协议正文具有同等法律效力。
+易迅网的各项服务的所有权和运作权归易迅。易迅提供的服务将完全按照其发布的服务条款和操作规则严格执行。
+用户在使用易迅提供的各项服务的同时，承诺接受并遵守各项相关条款的规定。易迅有权根据需要不时地制定、修改本协议或各项条款，如本协议有任何变更，易迅将在网站上刊载公告，通知予用户。如用户不同意相关变更，必须停止使用易迅所提供的服务。经修订的协议一经在易迅网公布后，立即自动生效。各项条款会在发布后生效，亦成为本协议的一部分。登录或继续使用易迅所提供的服务将表示用户接受经修订的协议。除另行明确声明外，任何使易迅所提供的服务的范围扩大或功能增强的新内容均受本协议约束。
+用户确认本服务协议后，本服务协议即在用户和易迅之间产生法律效力。请用户务必在注册之前认真阅读全部服务协议内容，如有任何疑问，可向易迅咨询。
+无论用户事实上是否在注册之前认真阅读了本服务协议，只要用户点击协议正本下方的"确认"按钮并按照易迅注册程序成功注册为用户，用户的行为仍然表示其同意并签署了本服务协议。
+用户确认：本协议条款是处理双方权利义务的当然约定依据，除非违反国家强制性法律，否则始终有效。在下订单的同时，用户也同时承认了用户拥有购买这些产品的权利能力和行为能力，并且对用户在订单中提供的所有信息的真实性负责。
+二． 服务简介
+易迅运用自己的操作系统通过国际互联网络为用户提供网络服务。同时，用户必须：
+(1)自行配备上网的所需设备，包括个人电脑、调制解调器或其它必备上网装置。
+(2)自行负担个人上网所支付的与此服务有关的电话费用、网络费用。
+基于易迅所提供的网络服务的重要性，用户应同意：
+(1)提供详尽、准确的个人资料。
+(2)不断更新注册资料，符合及时、详尽、准确的要求。
+易迅不公开用户的姓名、地址、电子邮箱和笔名， 除以下情况外：
+(1)用户授权易迅透露这些信息。
+(2)相应的法律及程序要求易迅提供用户的个人资料。
+如果用户提供的资料包含有不正确的信息，易迅保留结束用户使用网络服务资格的权利。
+</textarea>
+    </form>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<div class="clear"> &nbsp; </div>
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+</body>
+</html>

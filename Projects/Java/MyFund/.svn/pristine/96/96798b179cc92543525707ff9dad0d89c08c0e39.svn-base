@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>资金信息详细页_中国资金网</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript" src="/script/load-loan.js" > </script>
+</head>
+
+<body>
+<!--头部-->
+<jsp:incluce page="/public/head1.jsp"/>
+<!--头部-->
+  <!--资金信息详细页面开始-->
+  <style>
+  .info_table{width:710px; border-top:1px solid #CCC; border-right:1px solid #CCC;}
+  .info_table td{border-bottom:1px solid #CCC; border-left:1px solid #CCC; height:40px; line-height:40px; padding-left:20px; padding-right:20px;}
+  .info_table td p{padding-bottom:10px;}
+  .info_table td .title_tb{font-weight:bolder;}
+  </style>
+  <div class="M_out">
+  	<div class="M_out_L" style="margin-top:20px;">
+        <h3 style="text-align:center; line-height:30px;">解决企业融资难促进资金项目对接</h3>
+        <hr style="width:90%;"/>
+        <h6 style="text-align:center; line-height:30px;">许xx先生（${用户姓名}）&nbsp;&nbsp;&nbsp;&nbsp; 2012-06-13(${发布时间})</h6>
+        <div class="hr_20"> &nbsp;</div>
+		<table class="info_table">
+		  <tr>
+		    <td colspan="3">资金类型：金融机构资金--财务公司<br />投资额：（人民币）<br />投资区域：不限</td>
+		  </tr>
+		  <tr>
+		    <td><span class="title_tb">联系人姓名</span><br />徐经理</td>
+		    <td><span class="title_tb">联系人手机</span><br />13691300725</td>
+		    <td><span class="title_tb">公司电话</span><br />010-88888888</td>
+		  </tr>
+		  <tr>
+		    <td><span class="title_tb">传真</span></td>
+		    <td><span class="title_tb">Email</span><br />xushan@sina.com</td>
+		    <td><span class="title_tb">公司名称</span><br />xx信息技术有限公司</td>
+		  </tr>
+		  <tr>
+		    <td colspan="3"><span class="title_tb">公司地址</span><br />北京市朝阳区建国路88号</td>
+		  </tr>
+		  <tr>
+		    <td colspan="3"><span class="title_tb">公司介绍</span><br />
+       <p>中国资金网(www.zj198.com)成立于2003年，是由鼎辉投资全力打造的一个以资金信息为核心的多元化金融服务平台。成立伊始，中国资金网就立足上海，不断整合资金信息和项目信息，通过互联网将业务辐射至全国乃至全世界，成为连接全球投资者和融资者的纽带。截止至今，中国资金网的资金信息和项目信息服务量已位居同行业榜首，成为金融服务领域的佼佼者。
+
+　　
+
+       中国资金网在过去的6年里始终本着"勇于创新，追求卓越"的服务理念，突破了单一的信息服务模式，相继开创了战略合作服务、VIP会员服务、广告服务和金融服务中心四大运营模块，业务范围包括资金与项目信息、融资租赁、个人与企业融资、股权融资、股权收购、房地产项目、过桥资金、无抵押、委托融资、票据贴现等多元化的金融服务，服务对象涵盖了国有企业、民营企业、国内外中小投资者和创业者以及各类金融机构，充分实现了资本的合理流通和资源的优化配置。近年来，中国资金网又相继涉足房地产、酒店开发和生态产业链开发领域，开创了信息服务和实体投资相结合的经营模式。
+
+　　
+
+       中国资金网一直传承"以人为本、民主管理、公平竞争、共建和谐"的企业文化，通过多元化经营为员工搭建实现梦想的舞台，打造了一支精干的业务团队和管理团队。中国资金网将继续坚持"诚实守信、高效创新"的原则，以专业的素质和丰富的经验为广大客户提供优质、快捷的服务，在资源整合中实现共赢！</p>
+		<span class="title_tb">资金描述</span><br />
+       <p>中国资金网(www.zj198.com)成立于2003年，是由鼎辉投资全力打造的一个以资金信息为核心的多元化金融服务平台。成立伊始，中国资金网就立足上海，不断整合资金信息和项目信息，通过互联网将业务辐射至全国乃至全世界，成为连接全球投资者和融资者的纽带。截止至今，中国资金网的资金信息和项目信息服务量已位居同行业榜首，成为金融服务领域的佼佼者！</p>       
+			</td>
+		  </tr>
+		</table>        
+		<div style="font-size:14px; padding:20px; line-height:30px;">
+            <!--分页-->
+            <div style="margin-top:10px;">
+                <div class="pages01">
+                    <label title="共0条">
+                    第
+                    <span>1</span>
+                    页/共
+                    <strong>0</strong>
+                    页
+                    </label>
+                    &nbsp;
+                    <a href="#">&nbsp;首页&nbsp;</a>
+                    <a href="#">&nbsp;上一页&nbsp;</a>
+                    <a href="#">&nbsp;下一页&nbsp;</a>
+                    <a href="#">&nbsp;末页&nbsp;</a>
+                    <input class="pages01_inp" type="text">
+                    <input class="pages01_btn" type="button" value="GO">
+                </div>
+            </div>
+            <!--分页-->            　        
+        </div>
+      	<div class="hr_10"> &nbsp; </div>
+        <div><img src="/images/img_lc.jpg" /></div>
+    </div>
+  	<div class="M_out_right fr">
+    	<img src="/images/nsbank.png" style="margin-bottom:10px;"/>
+    </div>
+    <div class="M_out_right_text fr">
+    	<h1>热门融资产品</h1>
+        <div class="box_3">
+          <ul class="new_li">
+            <li><a href="">标题栏全部使用字体，不使用图标；</a></li>
+            <li><a href="">网站边框和图片使用直角边框（圆角边框）；</a></li>
+            <li><a href="">样式边框使用灰色；</a></li>
+            <li><a href="">顶栏设计需考虑到不同分辨率的通栏效果，预留样式；</a></li>
+            <li><a href="">插图设计：主题插图或者抠像插图设计风格，符合主题，无版权问题。（或对图片是用二次加工设计）；</a></li>
+            <li><a href="">网站边框和图片使用直角边框（圆角边框）；</a></li>
+          </ul>
+        </div>
+    </div>
+  	<div class="M_out_right fr">
+    	<img src="/images/nsbank.png" style="margin-bottom:10px; margin-top:10px;"/>
+    </div>
+    <div class="M_out_right_text fr">
+    	<h1>热门融资产品</h1>
+        <div class="box_3">
+          <ul class="new_li">
+            <li><a href="">标题栏全部使用字体，不使用图标；</a></li>
+            <li><a href="">网站边框和图片使用直角边框（圆角边框）；</a></li>
+            <li><a href="">样式边框使用灰色；</a></li>
+            <li><a href="">顶栏设计需考虑到不同分辨率的通栏效果，预留样式；</a></li>
+            <li><a href="">插图设计：主题插图或者抠像插图设计风格，符合主题，无版权问题。（或对图片是用二次加工设计）；</a></li>
+            <li><a href="">网站边框和图片使用直角边框（圆角边框）；</a></li>
+          </ul>
+        </div>
+    </div>
+  	<div class="M_out_right fr">
+    	<img src="/images/nsbank.png" style="margin-top:10px;"/>
+    </div>
+  </div>
+  <!--资金信息详细页面结束--> 
+<div class="clear"> &nbsp; </div>
+<div class="hr_20"> &nbsp; </div>
+<!--foot-->
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+<!--foot-->
+</body>
+</html>

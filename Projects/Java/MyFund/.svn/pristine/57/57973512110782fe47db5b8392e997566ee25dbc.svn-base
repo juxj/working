@@ -1,0 +1,811 @@
+package com.zj198.action.user;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.zj198.action.BaseAction;
+import com.zj198.model.DicBank;
+import com.zj198.model.DicCity;
+import com.zj198.model.DicCommon;
+import com.zj198.model.DicDistrict;
+import com.zj198.model.DicIndustry;
+import com.zj198.model.DicProvince;
+import com.zj198.model.UsrBank;
+import com.zj198.model.UsrCompany;
+import com.zj198.model.UsrFinanceorg;
+import com.zj198.model.UsrPerson;
+import com.zj198.model.UsrServiceorg;
+import com.zj198.model.UsrUser;
+import com.zj198.service.common.DictoryDataService;
+import com.zj198.service.user.AccountService;
+import com.zj198.service.user.ProfileService;
+import com.zj198.util.Constants;
+import com.zj198.util.SecurityUtil;
+import com.zj198.util.StringUtil;
+
+/**
+ * profile类
+ * @author Patrick
+ *
+ */
+public class ProfileAction extends BaseAction  {
+	private UsrPerson usrPerson;
+	private UsrBank usrBank;
+	private UsrFinanceorg usrFinanceorg;
+	private UsrServiceorg usrServiceorg;
+	private UsrCompany usrCompany;
+	private UsrUser usrUser;
+	
+    private AccountService accountService;
+	private DictoryDataService  dictoryDataService;
+	private ProfileService profileService;
+    private List<DicProvince> listProvince;
+	private Map<String,List<DicCommon>> dataMap;
+	private List<DicIndustry> industryList;
+	private List<DicIndustry> industry;
+    private Map<String,String> profileMap;
+	private Map<String,List<DicCity>> cityMap;
+	private Map<String,List<DicDistrict>> districtMap;
+	private List<DicBank> bankList;
+	
+	// private
+	private String password;
+	private String oldPwd;
+	private String verifycode;
+	private String companyMark;//company提交哪个from表单的标志
+	/**
+	 * 如果用户没有填写过profile信息 则强制填写  但可以跳过
+	 * @return
+	 */
+	@Override
+	public String execute(){
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		if(profileService.getProfiles(user.getId())==null){
+			return edit();
+		}else{
+			return getUserInfo(user);
+		}
+		
+	}
+	public String viewUserInfo(){
+		if(usrUser.getId() != null){
+			UsrUser user = accountService.getUserById(usrUser.getId());
+			if(user.getType() < 6){//只能查看企业与个人详情
+				return this.getUserInfo(user);
+			}
+		}
+		return ERROR;
+	}
+	private String getUserInfo(UsrUser user){
+		int groupid = profileService.getGroupidByUserType(user.getType());
+		switch (groupid){
+			case Constants.USERTYPE_GROUP_BANK:
+				usrBank = (UsrBank)profileService.getProfiles(user.getId());
+				if(user.getAuditstatus()==Constants.USER_AUDITSTATUS_NONE){
+					profileMap=new HashMap<String,String>();
+					String bankName="";
+					if(usrBank.getBankid()!=null && usrBank.getBankid()!=0){
+						bankName=dictoryDataService.getDicBankById(usrBank.getBankid()).getName();
+					}
+					profileMap.put("bankName",bankName);
+				}
+				return "bankProfile";
+			case Constants.USERTYPE_GROUP_COMPANY:
+				profileMap=new HashMap<String,String>();
+				usrCompany = (UsrCompany)profileService.getProfiles(user.getId());
+				String industry="";
+				if(usrCompany.getIndustryid()!=null && usrCompany.getIndustryid()!=0){
+					industry=dictoryDataService.getIndustryById(usrCompany.getIndustryid()).getName();
+				}
+				profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
+				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
+				profileMap.put("lpliveaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLpliveprovinceid(), usrCompany.getLplivecityid(), usrCompany.getLplivedistrictid()));
+				profileMap.put("lphkaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLphkprovinceid(), usrCompany.getLphkcityid(), usrCompany.getLphkdistrictid()));
+				profileMap.put("companyType", dictoryDataService.getValueNameById(usrCompany.getEnterprisetypeid()));
+				profileMap.put("companyTmployee", dictoryDataService.getValueNameById(usrCompany.getEmployeesid()));
+				profileMap.put("eduAtion", dictoryDataService.getValueNameById(usrCompany.getLpeducation()));
+				profileMap.put("marry", dictoryDataService.getValueNameById(usrCompany.getLpmarry()));
+				profileMap.put("workYears", dictoryDataService.getValueNameById(usrCompany.getLpindustryyears()));
+				profileMap.put("industry", industry);
+				return "companyProfile";
+			case Constants.USERTYPE_GROUP_FINANCEORG:
+				profileMap=new HashMap<String,String>();
+				usrFinanceorg = (UsrFinanceorg)profileService.getProfiles(user.getId());
+				profileMap.put("regaddress", dictoryDataService.getPCDNameByIds(usrFinanceorg.getRegprovinceid(), usrFinanceorg.getRegcityid(), usrFinanceorg.getRegdistrictid()));
+				profileMap.put("bizaddress", dictoryDataService.getPCDNameByIds(usrFinanceorg.getBizprovinceid(), usrFinanceorg.getBizcityid(), usrFinanceorg.getBizdistrictid()));
+				profileMap.put("companyType",dictoryDataService.getValueNameById(usrFinanceorg.getOrgtypeid()));
+				return "financeorgProfile";
+			case Constants.USERTYPE_GROUP_PERSONAL:
+				profileMap=new HashMap<String,String>();
+				usrPerson = (UsrPerson)profileService.getProfiles(user.getId());
+				profileMap.put("address", dictoryDataService.getPCDNameByIds(usrPerson.getProvinceid(), usrPerson.getCityid(), usrPerson.getDistrictid()));
+				profileMap.put("psersoncareer",dictoryDataService.getValueNameById(usrPerson.getCareerid()) );
+				profileMap.put("imtype1", dictoryDataService.getValueNameById(usrPerson.getIm1type()));
+				profileMap.put("imtype2",dictoryDataService.getValueNameById(usrPerson.getIm2type()) );
+				profileMap.put("imtype3", dictoryDataService.getValueNameById(usrPerson.getIm3type()));
+				return "personProfile";
+			case Constants.USERTYPE_GROUP_SERVICEORG:
+				usrServiceorg = (UsrServiceorg)profileService.getProfiles(user.getId());
+				profileMap=new HashMap<String,String>();
+				profileMap.put("regaddress", dictoryDataService.getPCDNameByIds(usrServiceorg.getRegprovinceid(), usrServiceorg.getRegcityid(), usrServiceorg.getRegdistrictid()));
+				profileMap.put("bizaddress", dictoryDataService.getPCDNameByIds(usrServiceorg.getBizprovinceid(), usrServiceorg.getBizcityid(), usrServiceorg.getBizdistrictid()));
+				profileMap.put("companyType", dictoryDataService.getValueNameById(usrServiceorg.getOrgtypeid()));
+				profileMap.put("serviceproduct", dictoryDataService.getValueNamesByIds(usrServiceorg.getServiceproduct()));
+				return "serviceorgProfile";
+		}
+		return ERROR;
+	}
+	
+	/**
+	 * 编辑信息页
+	 * @return
+	 */
+	public String edit(){
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		int groupid = profileService.getGroupidByUserType(user.getType());
+		switch (groupid){
+			case Constants.USERTYPE_GROUP_BANK:
+				bankList=dictoryDataService.findDicBankList();
+				usrBank = (UsrBank)profileService.getProfiles(user.getId());
+				return "editBankProfile";
+			case Constants.USERTYPE_GROUP_COMPANY:
+				listProvince=dictoryDataService.findAllProvince();
+				dataMap = new HashMap<String,List<DicCommon>>();
+				cityMap = new HashMap<String,List<DicCity>>();
+				districtMap = new HashMap<String,List<DicDistrict>>();
+				usrCompany = (UsrCompany)profileService.getProfiles(user.getId());
+				if(usrCompany!=null){
+					cityMap.put("regCity", dictoryDataService.findCityByProvinceid(usrCompany.getRegprovinceid()));
+					districtMap.put("regDistrict", dictoryDataService.findDistrictByCityid(usrCompany.getRegcityid()));
+					cityMap.put("bizCity", dictoryDataService.findCityByProvinceid(usrCompany.getBizprovinceid()));
+					districtMap.put("bizDistrict", dictoryDataService.findDistrictByCityid(usrCompany.getBizcityid()));
+					cityMap.put("lpliveCity", dictoryDataService.findCityByProvinceid(usrCompany.getLpliveprovinceid()));
+					districtMap.put("lpliveDistrict", dictoryDataService.findDistrictByCityid(usrCompany.getLplivecityid()));
+					cityMap.put("lphkCity", dictoryDataService.findCityByProvinceid(usrCompany.getLphkprovinceid()));
+					districtMap.put("lphkDistrict", dictoryDataService.findDistrictByCityid(usrCompany.getLphkcityid()));
+					industry=dictoryDataService.findIndustryByParentid(usrCompany.getIndustryparentid());
+				}
+				dataMap.put("companyType", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_COMPANYTYPE));
+				dataMap.put("companyTmployee", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_COMPANYEMPLOYEE));
+				dataMap.put("eduAtion", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_EDUCATION));
+				dataMap.put("marry", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_MARRY));
+				dataMap.put("workYears", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_WORKYEARS));
+				industryList = dictoryDataService.findIndustryByParentid(0);
+				return "editCompanyProfile";
+			case Constants.USERTYPE_GROUP_FINANCEORG:
+				listProvince=dictoryDataService.findAllProvince();
+				dataMap = new HashMap<String,List<DicCommon>>();
+				cityMap = new HashMap<String,List<DicCity>>();
+				districtMap = new HashMap<String,List<DicDistrict>>();
+				usrFinanceorg = (UsrFinanceorg)profileService.getProfiles(user.getId());
+				dataMap.put("companyType", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_COMPANYTYPE));
+				if(usrFinanceorg!=null){
+					cityMap.put("bizCity", dictoryDataService.findCityByProvinceid(usrFinanceorg.getBizprovinceid()));
+					districtMap.put("bizDistrict", dictoryDataService.findDistrictByCityid(usrFinanceorg.getBizcityid()));
+					cityMap.put("regCity", dictoryDataService.findCityByProvinceid(usrFinanceorg.getRegprovinceid()));
+					districtMap.put("regDistrict", dictoryDataService.findDistrictByCityid(usrFinanceorg.getRegcityid()));
+				}
+				return "editFinanceorgProfile";
+			case Constants.USERTYPE_GROUP_PERSONAL:
+				listProvince=dictoryDataService.findAllProvince();
+				dataMap = new HashMap<String,List<DicCommon>>();
+				cityMap = new HashMap<String,List<DicCity>>();
+				districtMap = new HashMap<String,List<DicDistrict>>();
+				usrPerson = (UsrPerson)profileService.getProfiles(user.getId());
+				if(usrPerson!=null){
+					cityMap.put("city", dictoryDataService.findCityByProvinceid(usrPerson.getProvinceid()));
+					districtMap.put("district", dictoryDataService.findDistrictByCityid(usrPerson.getCityid()));
+				}
+				dataMap.put("psersoncareer", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_PERSONCAREER));
+				dataMap.put("mtool", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_IMTOOL));
+				return "editPersonProfile";
+			case Constants.USERTYPE_GROUP_SERVICEORG:
+				listProvince=dictoryDataService.findAllProvince();
+				dataMap = new HashMap<String,List<DicCommon>>();
+				cityMap = new HashMap<String,List<DicCity>>();
+				districtMap = new HashMap<String,List<DicDistrict>>();
+				usrServiceorg = (UsrServiceorg)profileService.getProfiles(user.getId());
+				if(usrServiceorg!=null){
+					cityMap.put("regCity", dictoryDataService.findCityByProvinceid(usrServiceorg.getRegprovinceid()));
+					districtMap.put("regDistrict", dictoryDataService.findDistrictByCityid(usrServiceorg.getRegcityid()));
+					cityMap.put("bizCity", dictoryDataService.findCityByProvinceid(usrServiceorg.getBizprovinceid()));
+					districtMap.put("bizDistrict", dictoryDataService.findDistrictByCityid(usrServiceorg.getBizcityid()));
+				}
+				dataMap.put("companyType", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_COMPANYTYPE));
+				dataMap.put("serviceproduct", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_SERVICEPRODUCT));
+				return "editServiceorgProfile";
+		}
+		return ERROR;
+	}
+	
+	/**
+	 * 保存profile信息,同时根据结果更新session中的status
+	 * @return
+	 */
+	public String update(){
+		if(usrBank==null && usrCompany==null && usrFinanceorg==null && usrPerson==null && usrServiceorg==null){
+			msg="不可重复提交";
+			return execute();
+		}
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		UsrUser usrUser =accountService.getUserById(user.getId());
+		int groupid = profileService.getGroupidByUserType(user.getType());
+		switch (groupid){
+			case Constants.USERTYPE_GROUP_BANK:
+				if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_WAIT && usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_DONE){//判断user auditstatus - Patrick
+					if(!StringUtil.validlength(usrBank.getBankid().toString(), 10)){
+						msg="银行名称填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validString(usrBank.getDetailname()) || !StringUtil.validlength(usrBank.getDetailname(), 30)){
+						msg="分行或支行名称填写错误。";
+						return edit();
+					}
+				}
+				if(!StringUtil.validRname(usrBank.getLinkname()) || !StringUtil.validlength(usrBank.getLinkname(), 8)){
+					msg="联系人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(usrBank.getLinkgenderr()!=null && usrBank.getLinkgenderr()!=Constants.USER_GENDER_FEMALE && usrBank.getLinkgenderr()!=Constants.USER_GENDER_MALE){
+					msg="请正确选择联系人性别。";
+					return edit();
+				}
+				if(!StringUtil.validEmail(usrBank.getLinkemail()) || !StringUtil.validlength(usrBank.getLinkemail(), 32)){
+					msg="联系人邮箱填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validMobile(usrBank.getLinktelephone())){
+					msg="联系人电话填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrBank.getDepartment()) || !StringUtil.validlength(usrBank.getDepartment(), 12)){
+					msg="所属部门填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrBank.getPosition()) || !StringUtil.validlength(usrBank.getPosition(), 8)){
+					msg="职位填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrBank.getRemarks(), 250)){
+					msg="服务介绍填写大于200个字符。";
+					return edit();
+				}
+				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
+				if(user.getAuditstatus()==Constants.USER_AUDITSTATUS_WAIT || user.getAuditstatus()==Constants.USER_AUDITSTATUS_DONE){
+					UsrBank old_UsrBank = (UsrBank)profileService.getProfiles(user.getId());
+					usrBank.setBankid(old_UsrBank.getBankid());
+					usrBank.setDetailname(old_UsrBank.getDetailname());
+				}else if(user.getAuditstatus()==Constants.USER_AUDITSTATUS_NONE){
+					if(usrBank.getBankid()!=null && usrBank.getBankid()!=0){
+						bankList=dictoryDataService.findDicBankList();
+						if(bankList.get(usrBank.getBankid()-1)!=null){
+							usrUser.setLogo(bankList.get(usrBank.getBankid()-1).getLogo());
+							if(accountService.updateUser(usrUser)<0){
+								msg="银行选择错误。";
+								return ERROR;
+							}
+						}
+					}
+				}
+				profileService.saveorupdate(usrBank);
+				break;
+				 
+			case Constants.USERTYPE_GROUP_COMPANY:
+				//TODO:需要对保护的字段不验证
+				if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_WAIT && usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_DONE){//判断user auditstatus - Patrick
+					if(!StringUtil.validString(usrCompany.getCompanyname()) || !StringUtil.validlength(usrCompany.getCompanyname(), 30)){
+						msg="企业名称填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrCompany.getLicensecode()) || !StringUtil.validlength(usrCompany.getLicensecode(), 15)){
+						msg="营业执照号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrCompany.getOrganizationcode()) || !StringUtil.validlength(usrCompany.getOrganizationcode(), 10)){
+						msg="组织机构代码号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrCompany.getFaxcode()) || !StringUtil.validlength(usrCompany.getFaxcode(), 15)){
+						msg="税务登记证号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrCompany.getLoancard()) || !StringUtil.validlength(usrCompany.getLoancard(), 30)){
+						msg="贷款卡号填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validAddress(usrCompany.getRegaddress()) || !StringUtil.validlength(usrCompany.getRegaddress(), 32)){
+						msg="注册详细地址填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validCode(usrCompany.getRegpostcode())){
+						msg="注册地址邮编填写错误。";
+						return edit();
+					}
+					
+				}
+				if(!StringUtil.validLicCode(usrCompany.getBankpermitcode()) || !StringUtil.validlength(usrCompany.getBankpermitcode(), 30)){
+					msg="开户许可证号码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validRname(usrCompany.getLegalperson())){
+					msg="法人填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validDouble(usrCompany.getRegisteredcapital()) || !StringUtil.validlengthD(usrCompany.getRegisteredcapital(), 12)){
+					msg="注册资本填写错误,只能为数字或小数点后面为0且不大于12个字符。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrCompany.getBizscope(), 250)){
+					msg="经营范围填写字符过长，200个字符以内。";
+					return edit();
+				}
+				if(!StringUtil.validAddress(usrCompany.getBizaddress()) || !StringUtil.validlength(usrCompany.getBizaddress(), 32)){
+					msg="经营详细地址填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrCompany.getBizpostcode())){
+					msg="经营地址邮编填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validRname(usrCompany.getLinkname())){
+					msg="联系人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(usrCompany.getLinkgender()!=null && usrCompany.getLinkgender()!=Constants.USER_GENDER_FEMALE && usrCompany.getLinkgender()!=Constants.USER_GENDER_MALE){
+					msg="请正确选择联系人性别。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrCompany.getDepartment()) || !StringUtil.validlength(usrCompany.getDepartment(), 8)){
+					msg="联系人所属部门填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrCompany.getPosition()) || !StringUtil.validlength(usrCompany.getPosition(), 8)){
+					msg="联系人职位填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCID(usrCompany.getLpcid())){
+					msg="法人身份证号填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validMobile(usrCompany.getLpmobile())){
+					msg="法人手机号码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validPhone(usrCompany.getLphometel())){
+					msg="法人家庭电话填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validAddress(usrCompany.getLpliveaddress()) || !StringUtil.validlength(usrCompany.getLpliveaddress(), 32)){
+					msg="法人常住详细地址写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrCompany.getLplivepostcode())){
+					msg="法人常住地址邮政编码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validAddress(usrCompany.getLphkaddress()) || !StringUtil.validlength(usrCompany.getLphkaddress(), 32)){
+					msg="法人户口地址填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrCompany.getLphkpostcode())){
+					msg="法人户口邮政编码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validEmail(usrCompany.getLinkemail())){
+					msg="联系人邮箱填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validMobile(usrCompany.getLinktelephone())){
+					msg="联系人电话填写错误。";
+					return edit();
+				}
+				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
+				if(user.getAuditstatus()==1||user.getAuditstatus()==2){
+					UsrCompany usrCompany_old = (UsrCompany)profileService.getProfiles(user.getId());
+					if(companyMark=="0"){
+						usrCompany_old.setAuditFields(usrCompany);
+					}else{
+						usrCompany_old.setLoanFields(usrCompany);
+					}
+					profileService.saveorupdate(usrCompany_old);
+//					usrCompany.setCompanyname(userCompany_old.getCompanyname());
+//					usrCompany.setLicensecode(userCompany_old.getLicensecode());
+//					usrCompany.setOrganizationcode(userCompany_old.getOrganizationcode());
+//					usrCompany.setFaxcode(userCompany_old.getFaxcode());
+//					usrCompany.setLoancard(userCompany_old.getLoancard());
+//					usrCompany.setRegprovinceid(userCompany_old.getRegprovinceid());
+//					usrCompany.setRegcityid(userCompany_old.getRegcityid());
+//					usrCompany.setRegdistrictid(userCompany_old.getRegdistrictid());
+//					usrCompany.setRegaddress(userCompany_old.getRegaddress());
+//					usrCompany.setRegpostcode(userCompany_old.getRegpostcode());
+//					usrCompany.setRegisterdate(userCompany_old.getRegisterdate());
+				}else if(user.getAuditstatus()==0){
+					profileService.saveorupdate(usrCompany);
+				}
+				break;
+			case Constants.USERTYPE_GROUP_FINANCEORG:
+				//TODO:需要对保护的字段不验证
+				if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_WAIT && usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_DONE){//判断user auditstatus - Patrick
+					if(!StringUtil.validString(usrFinanceorg.getOrgname()) || !StringUtil.validlength(usrFinanceorg.getOrgname(), 30)){
+						msg="机构名称填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrFinanceorg.getLicensecode()) || !StringUtil.validlength(usrFinanceorg.getLicensecode(), 15)){
+						msg="营业执照号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrFinanceorg.getOrganizationcode()) || !StringUtil.validlength(usrFinanceorg.getOrganizationcode(), 10)){
+						msg="组织机构代码证号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrFinanceorg.getFaxcode()) || !StringUtil.validlength(usrFinanceorg.getFaxcode(), 15)){
+						msg="税务登记证号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validAddress(usrFinanceorg.getRegaddress()) || !StringUtil.validlength(usrFinanceorg.getRegaddress(), 32)){
+						msg="注册详细地址填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validCode(usrFinanceorg.getRegpostcode())){
+						msg="注册地址邮政编码填写错误。";
+						return edit();
+					}
+					
+				}
+				if(!StringUtil.validRname(usrFinanceorg.getLegalperson())){
+					msg="法人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(!StringUtil.validDouble(usrFinanceorg.getRegisteredcapital()) || !StringUtil.validlengthD(usrFinanceorg.getRegisteredcapital(), 12)){
+					msg="注册资本填写错误,只能为整数字且不大于12个字符。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrFinanceorg.getBizscope(), 250)){
+					msg="经营范围填写字符过长，200个字符以内。。";
+					return edit();
+				}
+				if(!StringUtil.validAddress(usrFinanceorg.getBizaddress()) || !StringUtil.validlength(usrFinanceorg.getBizaddress(), 32)){
+					msg="经营详细地址填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrFinanceorg.getBizpostcode())){
+					msg="经营地址邮政编码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validRname(usrFinanceorg.getLinkname())){
+					msg="联系人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(usrFinanceorg.getLinkgender()!=null && usrFinanceorg.getLinkgender()!=Constants.USER_GENDER_FEMALE && usrFinanceorg.getLinkgender()!=Constants.USER_GENDER_MALE){
+					msg="请选择联系人性别。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrFinanceorg.getDepartment()) || !StringUtil.validlength(usrFinanceorg.getDepartment(), 8)){
+					msg="联系人所属部门填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrFinanceorg.getPosition()) || !StringUtil.validlength(usrFinanceorg.getPosition(), 8)){
+					msg="联系人职业填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrFinanceorg.getRemarks(), 250)){
+					msg="机构介绍填写字符过长，200个字符以内。";
+					return edit();
+				}
+				if(!StringUtil.validEmail(usrFinanceorg.getLinkemail())){
+					msg="联系人邮箱填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validMobile(usrFinanceorg.getLinktelephone())){
+					msg="联系人电话填写错误。";
+					return edit();
+				}
+				if(user.getAuditstatus()==1||user.getAuditstatus()==2){
+					UsrFinanceorg old_UsrFinanceorg = (UsrFinanceorg)profileService.getProfiles(user.getId());
+					usrFinanceorg.setOrgname(old_UsrFinanceorg.getOrgname());
+					usrFinanceorg.setLicensecode(old_UsrFinanceorg.getLicensecode());
+					usrFinanceorg.setOrganizationcode(old_UsrFinanceorg.getOrganizationcode());
+					usrFinanceorg.setFaxcode(old_UsrFinanceorg.getFaxcode());
+					usrFinanceorg.setRegprovinceid(old_UsrFinanceorg.getRegprovinceid());
+					usrFinanceorg.setRegcityid(old_UsrFinanceorg.getRegcityid());
+					usrFinanceorg.setRegdistrictid(old_UsrFinanceorg.getRegdistrictid());
+					usrFinanceorg.setRegaddress(old_UsrFinanceorg.getRegaddress());
+					usrFinanceorg.setRegpostcode(old_UsrFinanceorg.getRegpostcode());
+					usrFinanceorg.setRegisterdate(old_UsrFinanceorg.getRegisterdate());
+				}
+				profileService.saveorupdate(usrFinanceorg);
+				break;
+			case Constants.USERTYPE_GROUP_PERSONAL:
+				//TODO:需要对保护的字段不验证
+				if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_WAIT && usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_DONE){//判断user auditstatus - Patrick
+					if(!StringUtil.validCID(usrPerson.getCid())){
+						msg="身份证号码填写错误。";
+						return edit();
+					}
+				}
+				if(!StringUtil.validAddress(usrPerson.getAddress()) || !StringUtil.validlength(usrPerson.getAddress(), 32)){
+					msg="详细地址填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrPerson.getPostcode())){
+					msg="邮政编码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validPhone(usrPerson.getTelephone())){
+					msg="固定电话填写错误。";
+					return edit();
+				}
+				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
+				if(user.getAuditstatus()==1||user.getAuditstatus()==2){
+					UsrPerson old_UsrPerson = (UsrPerson)profileService.getProfiles(user.getId());
+					usrPerson.setCid(old_UsrPerson.getCid());
+				}
+				profileService.saveorupdate(usrPerson);
+				break;
+			case Constants.USERTYPE_GROUP_SERVICEORG:
+				//TODO:需要对保护的字段不验证
+				if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_WAIT && usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_DONE){//判断user auditstatus - Patrick
+					if(!StringUtil.validString(usrServiceorg.getOrgname()) || !StringUtil.validlength(usrServiceorg.getOrgname(), 32)){
+						msg="服务机构名称填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrServiceorg.getLicensecode()) || !StringUtil.validlength(usrServiceorg.getLicensecode(), 15)){
+						msg="营业执照号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrServiceorg.getOrganizationcode()) || !StringUtil.validlength(usrServiceorg.getOrganizationcode(), 10)){
+						msg="组织机构代码证号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validLicCode(usrServiceorg.getFaxcode()) || !StringUtil.validlength(usrServiceorg.getFaxcode(), 15)){
+						msg="税务登记证号码填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validAddress(usrServiceorg.getRegaddress()) || !StringUtil.validlength(usrServiceorg.getRegaddress(), 32)){
+						msg="注册详细地址填写错误。";
+						return edit();
+					}
+					if(!StringUtil.validCode(usrServiceorg.getRegpostcode())){
+						msg="注册地址邮政编码填写错误。";
+						return edit();
+					}
+					
+				}
+				if(!StringUtil.validRname(usrServiceorg.getLegalperson())){
+					msg="法人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(!StringUtil.validDouble(usrServiceorg.getRegisteredcapital()) || !StringUtil.validlengthD(usrServiceorg.getRegisteredcapital(), 12)){
+					msg="注册资本填写错误,只能为整数字且不大于12个字符。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrServiceorg.getBizaddress()) || !StringUtil.validlength(usrServiceorg.getBizaddress(), 32)){
+					msg="经营详细地址填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validCode(usrServiceorg.getBizpostcode())){
+					msg="注册地址邮政编码填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validRname(usrServiceorg.getLinkname())){
+					msg="联系人姓名填写错误，只能为中文。";
+					return edit();
+				}
+				if(usrServiceorg.getLinkgender()!=null && usrServiceorg.getLinkgender()!=Constants.USER_GENDER_FEMALE && usrServiceorg.getLinkgender()!=Constants.USER_GENDER_MALE){
+					msg="请选择联系人性别。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrServiceorg.getDepartment()) || !StringUtil.validlength(usrServiceorg.getDepartment(), 8)){
+					msg="联系人所属部门填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validString(usrServiceorg.getPosition()) || !StringUtil.validlength(usrServiceorg.getPosition(), 8)){
+					msg="联系人职位填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrServiceorg.getRemarks(), 250)){
+					msg="服务机构介绍填写字符过长，200个字符以内。";
+					return edit();
+				}
+				if(!StringUtil.validEmail(usrServiceorg.getLinkemail())){
+					msg="联系人邮箱填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validMobile(usrServiceorg.getLinktelephone())){
+					msg="联系人电话填写错误。";
+					return edit();
+				}
+				if(!StringUtil.validlength(usrServiceorg.getServiceproduct(), 50)){
+					msg="服务产品填写错误。";
+					return edit();
+				}
+				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
+				if(user.getAuditstatus()==1||user.getAuditstatus()==2){
+					UsrServiceorg old_UsrServiceorg = (UsrServiceorg)profileService.getProfiles(user.getId());
+					usrServiceorg.setOrgname(old_UsrServiceorg.getOrgname());
+					usrServiceorg.setLicensecode(old_UsrServiceorg.getLicensecode());
+					usrServiceorg.setOrganizationcode(old_UsrServiceorg.getOrganizationcode());
+					usrServiceorg.setFaxcode(old_UsrServiceorg.getFaxcode());
+					usrServiceorg.setRegprovinceid(old_UsrServiceorg.getRegprovinceid());
+					usrServiceorg.setRegcityid(old_UsrServiceorg.getRegcityid());
+					usrServiceorg.setRegdistrictid(old_UsrServiceorg.getRegdistrictid());
+					usrServiceorg.setRegaddress(old_UsrServiceorg.getRegaddress());
+					usrServiceorg.setRegpostcode(old_UsrServiceorg.getRegpostcode());
+					usrServiceorg.setRegisterdate(old_UsrServiceorg.getRegisterdate());
+				}
+				profileService.saveorupdate(usrServiceorg);
+				break;
+			default:
+				return ERROR;
+		}
+		if(usrUser!=null){
+			if(usrUser.getAuditstatus()!=Constants.USER_AUDITSTATUS_NONE){
+				usrUser.setAuditstatus(Constants.USER_AUDITSTATUS_WAIT);
+				user.setAuditstatus(Constants.USER_AUDITSTATUS_WAIT);
+				if(accountService.updateUser(usrUser)>0){
+					ctx.getSession().put("_user", user);
+					msg="保存成功。";
+					return execute();
+				}
+				msg="注册信息未更新成功。";
+				return execute();
+			}
+			msg="保存成功。";
+			return execute();
+		}
+		msg="注册信息未更新成功。";
+		return execute();
+	}
+	
+	/**显示注册信息----*/
+	public String regInfo(){
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		usrUser = accountService.getUserById(user.getId());
+		return "regInfo";
+	}
+
+	/**更改登录密码----*/
+	public String editPwd(){
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		usrUser = accountService.getUserById(user.getId());
+		if(usrUser.getPassword().equals(SecurityUtil.getMD5(oldPwd))){
+			if(StringUtil.validPwd(password)){
+				usrUser.setPassword(SecurityUtil.getMD5(password));
+				if(accountService.updateUser(usrUser)>0){
+					msg=SUCCESS;
+					return "ajax";
+				}
+				msg="新密码设置失败。";
+				return "ajax";
+			}
+			msg="请重新输入正确的新密码。";
+			return "ajax";
+		}
+		msg="原密码输入错误";
+		return "ajax";
+	}
+	/**
+	 * 验证手机
+	 * @return
+	 */
+	public String validMoblie(){
+		//TODO:regInfo手机验证
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		usrUser = accountService.getUserById(user.getId());
+		if(usrUser.getActivetype()==Constants.USER_ACTIVE_ALL){
+			
+		}
+		ctx.getSession().put("_user", user);
+		msg=SUCCESS;
+		return "ajax";
+	}
+	/**
+	 * 验证邮箱
+	 * @return
+	 */
+	public String validEmail(){
+		//TODO:regInfo邮箱验证
+		msg=SUCCESS;
+		return "ajax";
+	}
+	
+	//setter and getter
+	public Map<String, List<DicCity>> getCityMap() {
+		return cityMap;
+	}
+	public Map<String, String> getProfileMap() {
+		return profileMap;
+	}
+	public Map<String, List<DicDistrict>> getDistrictMap() {
+		return districtMap;
+	}
+	public UsrPerson getUsrPerson() {
+		return usrPerson;
+	}
+	public List<DicProvince> getListProvince() {
+		return listProvince;
+	}
+	public void setUsrPerson(UsrPerson usrPerson) {
+		this.usrPerson = usrPerson;
+	}
+	public UsrBank getUsrBank() {
+		return usrBank;
+	}
+	public void setUsrBank(UsrBank usrBank) {
+		this.usrBank = usrBank;
+	}
+	public UsrFinanceorg getUsrFinanceorg() {
+		return usrFinanceorg;
+	}
+	public void setUsrFinanceorg(UsrFinanceorg usrFinanceorg) {
+		this.usrFinanceorg = usrFinanceorg;
+	}
+	public UsrServiceorg getUsrServiceorg() {
+		return usrServiceorg;
+	}
+	public void setUsrServiceorg(UsrServiceorg usrServiceorg) {
+		this.usrServiceorg = usrServiceorg;
+	}
+	public UsrCompany getUsrCompany() {
+		return usrCompany;
+	}
+	public void setUsrCompany(UsrCompany usrCompany) {
+		this.usrCompany = usrCompany;
+	}
+	public void setProfileService(ProfileService profileService) {
+		this.profileService = profileService;
+	}
+	public void setDictoryDataService(DictoryDataService dictoryDataService) {
+		this.dictoryDataService = dictoryDataService;
+	}
+	public Map<String, List<DicCommon>> getDataMap() {
+		return dataMap;
+	}
+	public List<DicIndustry> getIndustryList() {
+		return industryList;
+	}
+	public List<DicIndustry> getIndustry() {
+		return industry;
+	}
+
+	public UsrUser getUsrUser() {
+		return usrUser;
+	}
+
+	public void setUsrUser(UsrUser usrUser) {
+		this.usrUser = usrUser;
+	}
+
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public void setOldPwd(String oldPwd) {
+		this.oldPwd = oldPwd;
+	}
+
+	public void setVerifycode(String verifycode) {
+		this.verifycode = verifycode;
+	}
+
+	public List<DicBank> getBankList() {
+		return bankList;
+	}
+
+
+}

@@ -1,0 +1,239 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>完善信息（服务方）用户中心_中国资金网</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/public2.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.metadata.js" > </script>
+<script type="text/javascript" src="/script/proofRule.js" > </script>
+<script type="text/javascript" src="/script/profile.js" > </script>
+<script type="text/javascript" src="/script/jquery.ui.min.js"></script>
+<script type="text/javascript" src="/script/jquery.ui.datepicker.min.js"></script>
+<script type="text/javascript" src="/script/xheditor-1.1.14-zh-cn.min.js" > </script>
+<script language="javascript">
+$(document).ready(function(){
+	changeProvince();
+	$("#regCity").val('${usrServiceorg.regcityid}');
+	$("#regDistrict").val('${usrServiceorg.regdistrictid}');
+	$("#bizCity").val('${usrServiceorg.bizcityid}');
+	$("#bizDistrict").val('${usrServiceorg.bizdistrictid}');
+	//$(".date_picker").datepicker({changeMonth: true,changeYear: true});
+	$( "#regDate" ).datepicker({changeMonth: true,changeYear: true,maxDate: "0d"});
+	$("#regAudit").html($("#regProvince option:selected").text()+" "+$("#regCity option:selected").text()+" "+$("#regDistrict option:selected").text());
+	$("#serForm").validate({
+		meta:"validate"
+	});
+	<s:if test="usrServiceorg==null">
+		$("#status").show();
+	</s:if>
+});
+</script>
+</head>
+<body>
+<!--头部-->
+<div class="header user_header">
+	<jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+<div class="container_950 box_4">
+	<div class="P_title">详细信息</div>
+	<div class="line">
+		<img src="/images/icon01.jpg" alt="" class="P_connect_img"/>当前账户状态:
+		<s:if test="#session._user.auditstatus==0"><span class="no_ok">未审核</span></s:if>
+		<s:elseif test="#session._user.auditstatus==1"><span class="no_ok">待审核</span></s:elseif>
+		<s:elseif test="#session._user.auditstatus==2"><span class="no_ok">已审核</span></s:elseif>
+	</div>
+	<div id="status" class="P_connect" style="display: none;">
+		&nbsp;&nbsp;&nbsp;&nbsp;尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;您也可以暂时跳过稍后在进行信息完善。<span style="margin-right:15px;" class="view_detail">
+		<a href="/user/UserAction!next.act" style="float:none;">以后再说</a></span>
+		<br />
+		&nbsp;
+	
+</div>
+<div class="hr_10"> &nbsp; </div>
+<!--tab-->
+<div class="box_4 center" style="width:950px;">
+	<div class="news_menu" style="height: 50px;">
+        <dl style="margin-left: 30px;">
+          <dd><h6>企业详细信息</h6></dd>
+          <dd>
+          	<s:if test="usrServiceorg==null">
+				<div class="graph_red"><span style="width:0%;"></span></div>
+			</s:if>
+          <s:elseif test="usrServiceorg.completerate<60">
+				<div class="graph_red"><span style="width:${usrServiceorg.completerate}%;"></span></div>
+			</s:elseif><s:elseif test="60<=usrServiceorg.completerate && usrServiceorg.completerate<100">
+				<div class="graph_orange"><span  style="width:${usrServiceorg.completerate}%;"></span></div>
+			</s:elseif><s:else>
+				<div class="graph_green"><span  style="width:${usrServiceorg.completerate}%;"></span></div>
+			</s:else>
+          </dd>
+        </dl>
+      </div>
+    <form id="serForm" class="box_form" action="/user/Profile!update.act" method="post">
+      <dl>
+        <s:if test="msg!=null">
+	    <dd>
+		  <div class="notification attention png_bg">
+	        <div>${msg }</div>
+	      </div>
+	    </dd>
+	    </s:if>
+        <dd>
+          <h6>企业名称：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${ usrServiceorg.orgname}</s:if><s:else>
+         	 <input id="orgname" type=text value="${ usrServiceorg.orgname}" class="input-text chne {validate:{maxlength:32}}" name="usrServiceorg.orgname" />
+         	 <label for="orgname" class="error" generated="true" style="display:none;float:left;"></label>
+          </s:else></div>
+          <h6>营业执照号码：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${ usrServiceorg.licensecode}</s:if><s:else>
+          	<input type=text value="${ usrServiceorg.licensecode}" class="input-text alnum {validate:{maxlength:15}}" name="usrServiceorg.licensecode"/>
+          </s:else></div>
+        </dd>
+        <dd>
+          <h6>组织机构代码证号码：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${ usrServiceorg.organizationcode}</s:if><s:else>
+          	<input id="organization" type=text value="${ usrServiceorg.organizationcode}" class="input-text Organization {validate:{maxlength:10}}" name="usrServiceorg.organizationcode"/>
+          	<label for="organization" class="error" generated="true" style="display:none;float:left;"></label>
+          </s:else></div>
+          <h6>税务登记证号码：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${ usrServiceorg.faxcode}</s:if><s:else>
+          	<input type=text value="${ usrServiceorg.faxcode}" class="input-text alnum {validate:{maxlength:15}}" name="usrServiceorg.faxcode"/>
+          </s:else></div>
+        </dd>
+        <dd>
+          <h6>法定代表人：</h6>
+          <input type=text value="${ usrServiceorg.legalperson}" class="input-text chne {validate:{maxlength:6}}" name="usrServiceorg.legalperson"/>
+        </dd>
+        <dd>
+          <h6>注册地址：</h6>
+          <div <s:if test="#session._user.auditstatus==0">style="display:none;"</s:if>><label id="regAudit"></label> </div>
+             <div <s:if test="#session._user.auditstatus!=0">style="display:none;"</s:if>>
+          <s:select id="regProvince" name="usrServiceorg.regprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');"/>
+          <select id="regCity" name="usrServiceorg.regcityid" onchange="changeCity('regCity','regDistrict');" <s:if test="#session._user.auditstatus!=0">onfocus="this.blur();"</s:if>>
+          	 <option value="0">--请选择--</option>
+          	 <s:iterator value="cityMap['regCity']">
+				<option value="${id}">${name}</option>
+			 </s:iterator>
+          </select>
+          <select id="regDistrict" name="usrServiceorg.regdistrictid" <s:if test="#session._user.auditstatus!=0">onfocus="this.blur();"</s:if>>
+          	<option value="0">--请选择--</option>
+          	<s:iterator value="districtMap['regDistrict']">
+				<option value="${id}">${name}</option>
+			</s:iterator>
+          </select>
+          </div>
+        </dd>
+        <dd>
+          <h6>注册详细地址：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${usrServiceorg.regaddress}</s:if><s:else>
+          	<input type="text" value="${usrServiceorg.regaddress}" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrServiceorg.regaddress"/>
+          </s:else></div>
+        </dd>
+        <dd>
+          <h6>邮编：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0">${ usrServiceorg.regpostcode}</s:if><s:else>
+          	<input type=text value="${ usrServiceorg.regpostcode}" class="input-text zipCode" style="width:534px;" name="usrServiceorg.regpostcode"/>
+          </s:else></div>
+        </dd>
+        <dd>
+          <h6>注册日期：</h6>
+          <div class="text"><s:if test="#session._user.auditstatus!=0"><s:date name="usrServiceorg.registerdate" /></s:if><s:else>
+          	<input id="regDate" type=text value="<s:date name="usrServiceorg.registerdate" />" class="input-text dateISO" name="usrServiceorg.registerdate"/>
+          </s:else></div>
+          <h6>注册资本：</h6>
+          <input type=text value="<s:if test="usrServiceorg.registeredcapital!=null"><s:text name="format.float"><s:param value="usrServiceorg.registeredcapital"></s:param></s:text></s:if>" class="input-text number {validate:{maxlength:12}}" name="usrServiceorg.registeredcapital"/>
+          &nbsp;万元 </dd>
+        <dd>
+          <h6>机构类型：</h6>
+          <s:select name="usrServiceorg.orgtypeid" list="dataMap['companyType']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select>
+        </dd>
+        <dd>
+          <h6>企业联系地址：</h6>
+          <s:select id="bizProvince" name="usrServiceorg.bizprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
+          <select id="bizCity" name="usrServiceorg.bizcityid" onchange="changeCity('bizCity','bizDistrict');">
+          	<option value="0">--请选择--</option>
+          	<s:iterator value="cityMap['bizCity']">
+				<option value="${id}">${name}</option>
+			</s:iterator>
+          </select>
+          <select id="bizDistrict" name="usrServiceorg.bizdistrictid">
+          	<option value="0">--请选择--</option>
+          	<s:iterator value="districtMap['bizDistrict']">
+				<option value="${id}">${name}</option>
+			</s:iterator>
+		  </select>
+        </dd>
+        <dd>
+          <h6>详细地址：</h6>
+          <input type=text value="${ usrServiceorg.bizaddress}" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrServiceorg.bizaddress"/>
+        </dd>
+        <dd>
+          <h6>邮编：</h6>
+          <input type=text value="${ usrServiceorg.bizpostcode}" class="input-text zipCode" name="usrServiceorg.bizpostcode"/>
+        </dd>
+        <dd>
+          <h6>联系人姓名：</h6>
+          <input type=text value="${ usrServiceorg.linkname}" class="input-text {validate:{maxlength:6}} chne" name="usrServiceorg.linkname"/>
+          &nbsp;&nbsp;<s:radio id="gender" name="usrServiceorg.linkgender" list="#{1:'先生',0:'女士'}" value="usrServiceorg.linkgender" listKey="key" listValue="value"/>
+        </dd>
+        <dd>
+          <h6>联系人邮箱：</h6> 
+          <input id="linkemail" type=text value="${ usrServiceorg.linkemail}" class="input-text iemail {validate:{maxlength:32}}" name="usrServiceorg.linkemail"/>
+          <label for="linkemail" class="error" generated="true" style="display:none;float:left;"></label>
+          <h6>联系人电话：</h6>
+          <input type=text value="${ usrServiceorg.linktelephone}" class="input-text mobilephone {validate:{maxlength:13}}" name="usrServiceorg.linktelephone"/>
+        </dd>
+        <dd>
+          <h6>所属部门：</h6>
+          <input id="department" type=text value="${ usrServiceorg.department}" class="input-text {validate:{maxlength:15}} chne" name="usrServiceorg.department"/>
+          <label for="department" class="error" generated="true" style="display:none;float:left;"></label>
+          <h6>职位：</h6>
+          <input type=text value="${ usrServiceorg.position}" class="input-text {validate:{maxlength:15}} chne" name="usrServiceorg.position"/>
+        </dd>
+        <dd>
+          <h6>服务产品：</h6>
+          <s:iterator value="dataMap['serviceproduct']" id="sproduct">
+          		<input type="checkbox" value="${sproduct.id}" name="usrServiceorg.serviceproduct" 
+          		<s:iterator value="usrServiceorg.serviceproductList" id="selected">
+          			<s:if test="#sproduct.id==#selected">checked="checked"</s:if>
+          		</s:iterator>/>${sproduct.name}
+          </s:iterator>
+        </dd>
+        <dd>
+          <h6>服务介绍：</h6>
+          <textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrServiceorg.remarks" style="width: 550px;height: 150px;">${ usrServiceorg.remarks}</textarea>
+        </dd>
+      </dl>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="hr_10"> &nbsp; </div>
+      <hr width="90%" />
+      <div class="hr_10"> &nbsp; </div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="center" style="width:205px;">
+        <input type="submit" class="but_gray" style="width:200px;" value="保存" />
+      </div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="hr_10"> &nbsp; </div>
+    </form>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<jsp:include page="/public/bottom.jsp"></jsp:include>
+</body>
+</html>

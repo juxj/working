@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/*首页头部通用*/
+.header2 { height : 171px; }
+	/*.user_header { background : url(/images/user_header_bg.png) repeat-x; }用户中心头部灰色背景*/
+	.user_header2 { background : url(/images/user_header_bg_blue.png) repeat-x; }/*用户中心头部蓝色背景*/
+.header2 .top { height : 95px; overflow : hidden; }
+.header2 .top .logo { width:346px; height : 95px; }
+.header2 .top .logo h1 a { display:block; font-size:0; height : 95px; overflow:hidden; width:346px; line-height: 280px; }
+	.user_header2 .top .logo { background: url(/images/logo.jpg) no-repeat; }
+.header2 .top .logo_r { width:614px; text-align:right }
+.header2 .top .logo_r .user_menu { width:614px;height:18px; line-height:18px; }
+.header2 .top .logo_r .user_menu a { margin:0 5px; }
+.header2 .top .logo_r .user_menu .login_btn { display:inline-block; text-align:center; width:41px; height:18px; background:url(/images/login_btn_bg.png) 0 0 no-repeat; }
+.header2 .top .logo_r .user_menu .home_page { padding:0 0 0 18px; background:url(/images/home.png) 0 1px no-repeat; }
+.header2 .top .logo_r .pic_logo_r {  height : 59px; }

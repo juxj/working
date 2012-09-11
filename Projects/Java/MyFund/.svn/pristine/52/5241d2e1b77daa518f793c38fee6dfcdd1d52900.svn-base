@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="common" uri="/Common"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>融资产品查看</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.ui.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.ui.tabs.min.js" > </script>
+<script type="text/javascript" src="/script/load-loan.js" > </script>
+<script language="javascript">
+//文本框触发焦点效果s
+$(function() {
+	$("#view_tabs").tabs();
+	finance_type_chenge('${product.financeType}');
+});
+function finance_type_chenge(financeType){
+	if(financeType == '151'){
+		$('.finance_type_152').hide();
+		$('.finance_type_153').hide();
+		$('.finance_type_154').hide();
+		$('.finance_type_151').show();
+	}else if(financeType == '152'){
+		$('.finance_type_151').hide();
+		$('.finance_type_153').hide();
+		$('.finance_type_154').hide();
+		$('.finance_type_152').show();
+	}else if(financeType == '153'){
+		$('.finance_type_151').hide();
+		$('.finance_type_152').hide();
+		$('.finance_type_154').hide();
+		$('.finance_type_153').show();
+	}else if(financeType == '154'){
+		$('.finance_type_151').hide();
+		$('.finance_type_152').hide();
+		$('.finance_type_153').hide();
+		$('.finance_type_154').show();
+	}
+}
+
+</script>
+
+  </head>
+  
+  <body>
+<!--头部2-->
+<div class="header index_header">
+<jsp:include page="/public/head1.jsp"/>
+  <div class="clear"> &nbsp; </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分开始-->
+<div class="M_menu">
+  	<a href="#">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资服务&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;搜索结果&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;产品详情
+</div>
+<div class="hr_10"> &nbsp; </div>
+<s:form action="/loanadmin/financeManager!updateFinance.act" id="loanForm"  cssClass="box_form" style="margin:0px;" >
+<s:hidden name="product.id"></s:hidden>
+<s:hidden name="product.proStatus" id="product_prostatus"></s:hidden>
+<div class="M_out">
+  	<div class="M_out_L">
+        <!--表格部分开始-->
+        <div class="box_4">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			      <tr>
+			        <td class="Search_t_title_bank">
+			        	<s:if test="product.logo == null">
+					        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
+				        </s:if>
+				        <s:else>
+				        	<img src="/images/banklogo/b/${product.logo }"/>
+				        </s:else>
+			        </td>
+			        <td class="Search_t_title red">${product.financeName }</td>
+			      </tr>
+			    </table>
+		</div>
+        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+          <tr>
+            <td class="Search_t_connect">类型</td>
+            <td class="Search_t_connect01"><common:print valueId="product.financeType" /></td>
+            <td class="Search_t_connect">金额</td>
+            <td class="Search_t_connect01"><s:number name="product.financeLittleamount" /> ~ <s:number name="product.financeBigamount" />万元</td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect">期限</td>
+            <td class="Search_t_connect01">${product.financeLittledt } ~ ${product.financeMostdt }个月</td>
+            <td class="Search_t_connect">服务费率</td>
+            <td class="Search_t_connect01">${product.serviceCost }</td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect" >利率说明</td>
+            <td colspan="3" style="padding:10px;">
+            	<s:if test="product.interests.size > 0">
+	             <div>
+					<table class="Search_table1">
+						<tr>
+							<td width="33%" align="center" bgcolor="#CBDE9D">贷款期限</td>
+							<td width="33%" align="center" bgcolor="#91CEF4">基准利率</td>
+							<td width="33%" align="center" bgcolor="#F2DADB">浮动范围</td>
+						</tr>
+						<s:iterator value="product.interests" id="item">
+						<tr>
+							<td width="33%" align="center">
+								${item.interestMemo }
+							</td>
+							<td width="33%" align="center">
+								<common:print valueId="#item.financeEnddt" type="rate"/>%
+							</td>
+							<td width="33%" align="center">
+		                    	<s:if test="product.interestType == 155">
+													+${item.rateUp }%
+		                    	</s:if>
+		                    	<s:else>
+		                    		视具体情况而定
+		                    	</s:else>
+							</td>
+						</tr>
+						</s:iterator>
+					</table>
+				</div>
+				</s:if>
+            </td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect">还款方式</td>
+            <td class="Search_t_connect01"><common:print valueId="product.repaymentType" /></td>
+            <td class="Search_t_connect">担保方式</td>
+            <td class="Search_t_connect01"><common:print valueId="product.mortgageType" /></td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect">放款时间</td>
+            <td class="Search_t_connect01">${product.checkTime }个工作日</td>
+            <td class="Search_t_connect">面向区域</td>
+            <td class="Search_t_connect01">
+                    	<s:if test="productAreaList.size()==0">
+	                	全国
+	                	</s:if>
+	                	<s:else>
+		                		<s:iterator value="productAreaList" id="item">
+		                			${item.name }
+		                		</s:iterator>
+	                	</s:else>            
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" class="Search_t_title" align="center" ><input type="button" value="立即申请"  class="but_gray" onclick="window.location='/loanadmin/financeApply!financeApply.act?product.id=${product.id}'" ></input></td>
+          </tr>
+        </table>
+        <!--表格部分结束-->
+	<div class="hr_10"> &nbsp; </div>
+	<div id="view_tabs">
+		<ul>
+			<li><a href="#view_tabs-1">产品介绍</a></li>
+			<li><a href="#view_tabs-2">申请条件</a></li>
+			<li><a href="#view_tabs-3">申贷资料</a></li>
+		</ul>
+		<div id="view_tabs-1">
+			<div style="font-size : 12px; ">
+	               <li style="color:#97181d; font-weight:bolder; ">产品简介</li>
+	               <div style="color:#424240;padding-left:15px;font-weight:normal;">${product.proIntroduce }</div>
+	               <li style="color:#97181d; font-weight:bolder; ">产品特色</li>
+	               <div style="background:none; color:#424240;padding-left:15px;font-weight:normal;"><common:print valueId="product.proSpecial" /></div>
+			</div>
+		</div>
+		<div id="view_tabs-2">
+			<div style="font-size:12px; ">
+				  <p>
+	                <tr  style="font-weight:bolder; ">申请企业所属行业：</tr>
+	                	<s:if test="productIndustryList.size()==0">
+	                		不限
+	                	</s:if>
+	                	<s:else>
+	                	<s:iterator value="productIndustryList" id="item" status="st">
+	                	${item.name }
+	                	<s:if test="#st.last != true">
+						<tr>&nbsp;</tr>
+						</s:if>
+	                	</s:iterator>
+	                	</s:else>
+	              </p>
+	              <p>
+	                <tr style="color:#97181d; font-weight:bolder; ">企业的总资产：</tr>
+	                <common:print valueId="product.companyAllAsset" valueSetMap="ZJ112"/>
+	              </p>
+	              <p>
+	                <tr  style="color:#97181d; font-weight:bolder; ">企业的年营业收入：</tr>
+	                <common:print valueId="product.operatIncome" valueSetMap="ZJ104"/>
+	              </p>
+	              <p>
+	                <tr  style="color:#97181d; font-weight:bolder; ">企业成立年数：</tr>
+	                <common:print valueId="product.settingYear" valueSetMap="ZJ105"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">保证金：</tr>
+	                <common:print valueId="product.needEnsure" valueSetMap="ZJ101"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">申请人行业经验：</tr>
+	                <common:print valueId="product.experience" valueSetMap="ZJ106"/>
+	              </p>
+	              <p>
+	                <tr  style="color:#97181d; font-weight:bolder; ">经营场所：</tr>
+	                <common:print valueId="product.runningArea" valueSetMap="ZJ103"/>
+	              </p>
+	              
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">申请人月工资收入：</tr>
+	                <common:print valueId="product.salaryIncome" valueSetMap="ZJ107"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">工资发放形式：</tr>
+	                <common:print valueId="product.salaryPutWay" valueSetMap="ZJ108"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">现单位工作时长：</tr>
+	                <common:print valueId="product.workTime" valueSetMap="ZJ109"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">所在地自有房产：</tr>
+	                <common:print valueId="product.house" valueSetMap="ZJ103"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">信用记录：</tr>
+	                <common:print valueId="product.creditAcount" valueSetMap="ZJ103"/>
+	              </p>
+	              <p style="display:none;" >
+	                <tr  style="color:#97181d; font-weight:bolder; ">银行流水：</tr>
+	                <common:print valueId="product.bankSalaryList" valueSetMap="ZJ103"/>
+	              </p>
+	              
+	              <p >
+	                <tr style="color:#97181d; font-weight:bolder; ">其他申请条件：</tr>${product.otherRequire }
+	              </p>
+			</div>
+		</div>
+		<div id="view_tabs-3">
+			<div style="font-size : 12px; ">
+				<s:if test="product.dataFiles.size() > 0">
+					<%int i =1; %>
+					<s:iterator value="product.dataFiles" id="item">
+						<li style="background:none; ">${item.dataName }
+						<s:if test="item.dataSupply != null">(${item.dataSupply })</s:if>
+						</li>
+						<s:if test="haveMemo == 1">
+							<div style="background:none; padding-left:40px;">${item.otherMemo }</div>
+						</s:if>
+					</s:iterator>
+	            </s:if>
+			</div>
+		</div>
+    </div>
+  </div>
+  <!--融资服务搜索结果页产品详情页面结束--> 
+
+  	<div class="M_out_right fr">
+    	<div class="M_out_right_text fr " >
+	    	<!--客服图片-->
+			<div><a href="#"><img src="/images/loan_service_tel.jpg" /></a></div>
+	    	<!--客服图片-->
+	    	<div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:15px; border-top: 1px solid #d8d8d8; border-right:1px solid #d8d8d8;  border-left:1px solid #d8d8d8;">在线客服 &nbsp;  &nbsp;(工作时间：9:00~17:00)</div>
+	        <div class="box_5" >
+	        	<table>
+	        		<tr>
+	        			<td><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1433010529&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1433010529:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+	        			<td style="line-height:25px; vertical-align: middle;">&nbsp;&nbsp;客户经理  王先生</td>
+	        		</tr>
+	        		<tr>
+	        			<td ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2458068476&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2458068476:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
+	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  韩先生</td>
+	        		</tr>
+	        		<tr>
+	        			<td>
+	        			<a href="msnim:chat?contact=zijin198@hotmail.com" ><img src="http://www.andasen.com/images/msn.gif" alt="MSN:zijin198@hotmail.com" border="0" /></a>
+	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  刘先生</td>
+	        		</tr>       			        		
+	        		<tr>
+	        			<td>
+	        			<a target="_blank" href="http://amos1.taobao.com/msg.aw?site=cntaobao&charset=utf-8&v=2&uid=zhongguozijinwang&s=1" ><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=zhongguozijinwang&s=1" alt="Taobao.com ID:victorbsds" /></a> 
+	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  董小姐</td>
+	        		</tr>       			        		
+	        	</table>
+	        </div>
+    	</div>
+       <div class="hr_10"> &nbsp; </div>
+       <div class="M_out_right_text fr" style="width:230px;">
+       <span class="fr white" style="line-height:30px; margin-right:10px;"><a href="/loan/LoanRequest!financingService.act">更多»</a></span>
+    	<h1>热门融资产品</h1>
+      <div class="box_3 " style="padding-left:5px; padding-top:15px; padding-bottom:15px;line-height:30px;"  >
+    	<div style="width : 230px; " >
+		    <table >
+			  <s:iterator value="recommendProducts">
+			   <tr>
+			     <td style="vertical-align: middle;">
+			      <s:if test="logo == null">
+					 <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap;"/>
+					</s:if>
+					<s:else>
+						<img src="/images/banklogo/${logo }"  class="td_img" style="white-space: nowrap;"/>
+					</s:else>
+			     </td>
+			     <td >
+			     	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}">
+			     		<s:if test="recommendName != null && recommendName.length()>15">
+							<s:property value="recommendName.substring(0,15)"></s:property>...
+						</s:if><s:else>
+							${recommendName}
+						</s:else>
+			     	</a>
+			     </td>
+			   </tr>
+			  </s:iterator>
+			</table>
+	    </div>
+    	
+        </div>
+    </div> 
+	</s:form>
+  </div>
+</div>
+<!--主体部分结束-->
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<jsp:include page="/public/bottom.jsp" />
+  </body>
+</html>

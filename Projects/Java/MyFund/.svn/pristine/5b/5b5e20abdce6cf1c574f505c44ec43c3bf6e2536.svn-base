@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="news" namespace="/news" extends="base">
+		<action name="helpCenter" class="com.zj198.action.news.HelpCenterAction">
+    	   <result name="center">/public/information_centre.jsp</result>
+    	</action>
+    	<action name="information" class="com.zj198.action.news.NewsAction">
+    	   <result name="government">/public/news/government.jsp</result>
+    	   <result name="financeInformation">/public/news/financeInformation.jsp</result>
+    	   <result name="zjTrends">/public/news/zjTrends.jsp</result>
+    	</action>
+    	<action name="knwTitle" class="com.zj198.action.news.KnwTitleAction">
+    		<result name="success">/public/news/knwTitleHome.jsp</result>
+    		 <result name="center">/public/information_centre.jsp</result>
+    		 <result name="detail">/public/news/knwTitleDetail.jsp</result>
+    		 <result name="common">/public/news/knwTitleCommon.jsp</result>
+    		 <result name="knowledge">/public/news/knwTitleKnowledge.jsp</result>
+    	</action>
+        <action name="yellowPage" class="com.zj198.action.news.DicYellowpageAction">
+            <result name="yellopage">/public/common/yelloPage.jsp</result>
+            <result name="appendAllList">/public/news/yellow_page/financial_page.jsp</result>
+        </action>
+        <action name="ntyMessage" class="com.zj198.action.message.NtyMessageAction">
+            <result name="success" type="redirect">/loanadmin/loanAfter!loanAfterList.act</result>
+            <result name="viewMsg" >/WEB-INF/web/user/message/msg_list.jsp</result>
+            <result name="delAll" type="redirect">/news/ntyMessage!viewMsg.act</result>
+        </action>
+	</package>
+</struts>

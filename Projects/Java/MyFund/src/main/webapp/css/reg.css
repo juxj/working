@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*注册页面专用*/
+
+/*选择用户类型页面*/
+.select_user_type { margin:40px; }
+.select_user_type .dl-all { width:800px; padding:0 30px; overflow:hidden }
+.select_user_type dl { display:inline; width:200px; float:left; }
+.select_user_type dl dt { height:40px; border-bottom:1px solid #d3d3d3; font-size:14px; font-weight:bold; line-height:40px; }
+.select_user_type dl .user-qy, .select_user_type dl .user-jr, .select_user_type dl .user-fw, .select_user_type dl .user-gr { background:url(/images/user_type.png) no-repeat; padding:0 0 0 32px; }
+.select_user_type dl .user-qy { background-position:0 8px; }
+.select_user_type dl .user-jr { background-position:-200px 8px; }
+.select_user_type dl .user-fw { background-position:-400px 8px; }
+.select_user_type dl .user-gr { background-position:-600px 8px; }
+.select_user_type dl dd { height:22px; padding:5px 10px 5px 5px; margin:10px 10px 0 0; cursor:pointer }
+.select_user_type dl dd input { margin:-2px 6px 0 0; vertical-align:middle; }
+.select_user_type .next-btn { width:300px; margin:0 auto; text-align:center}
+

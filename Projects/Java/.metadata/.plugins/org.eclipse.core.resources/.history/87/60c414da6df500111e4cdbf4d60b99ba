@@ -1,0 +1,30 @@
+package org.tju.utils;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+
+public class WebUtil {
+
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	public String getCityByIP(String ip) throws Exception {
+		
+		
+		HttpClient client = new HttpClient();
+		GetMethod method = new GetMethod(this.IP_URL+ip);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER,
+				new DefaultHttpMethodRetryHandler());
+		int status = client.executeMethod(method);
+		if (status != HttpStatus.SC_OK) {
+			System.err.println("ddd");
+		}
+		byte[] response = method.getResponseBody();
+		String result = new String (response);
+		System.out.println(result);
+		return result;
+	}
+}

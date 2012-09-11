@@ -1,0 +1,103 @@
+package com.zj198.action.user;
+
+import java.io.File;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.zj198.model.UsrUser;
+import com.zj198.service.user.AccountService;
+import com.zj198.util.Constants;
+import com.zj198.util.UploadUtil;
+
+public class UploadImgAction extends ActionSupport{
+	private File upload;
+	private String uploadFileName;
+	private String uploadContentType;
+	private String msg;
+	
+	private UsrUser usrUser;
+	private AccountService accountService;
+	
+	/**
+	 * 上传图片
+	 * @return
+	 */
+	public String uploadImg(){
+		//TODO:img上传图片
+		if(upload == null){
+			msg = "上传图片不可为空。";
+			return "input";
+		}
+		/**
+		 * 类型检查
+		 */
+		String[] extendStr = {"png","jpg","jpeg","gif"}; 
+		String extendName = uploadFileName.substring(uploadFileName.lastIndexOf(".")+1,uploadFileName.length());
+		int bool = 0;
+		for(String s : extendStr){
+			if(extendName.equalsIgnoreCase(s)){
+				bool = 1;
+				break;
+			}
+		}
+		if(bool == 0){
+			msg = "上传图片格式不正确";
+			return "input";
+		}else{			
+			ActionContext ctx = ActionContext.getContext();
+			UsrUser user = (UsrUser)ctx.getSession().get("_user");
+			usrUser = accountService.getUserById(user.getId());
+			String value=UploadUtil.upload(upload, uploadFileName, "avatar",Constants.UPLOAD_PRIVACY_PUBLIC);
+			if(usrUser!=null ){
+				usrUser.setAvatar(value);
+				if(accountService.updateUser(usrUser)>0){
+					user.setAvatar(value);
+					ctx.getSession().put("_user", user);
+					msg="上传成功。";
+					return SUCCESS;
+				}
+			}
+		}
+		msg="上传失败";
+		return SUCCESS;
+	}
+	
+	/**
+	 * 上传图片
+	 * @return
+	 */
+	public String inputError(){
+		ActionContext ctx = ActionContext.getContext();
+		UsrUser user = (UsrUser)ctx.getSession().get("_user");
+		usrUser = accountService.getUserById(user.getId());
+		msg = "上传图片格式不正确";
+		return "msgError";
+	}
+	
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
+	}
+	public void setUsrUser(UsrUser usrUser) {
+		this.usrUser = usrUser;
+	}
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
+
+	public UsrUser getUsrUser() {
+		return usrUser;
+	}
+	
+}

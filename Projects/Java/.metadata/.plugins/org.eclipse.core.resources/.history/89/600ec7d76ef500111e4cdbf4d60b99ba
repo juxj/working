@@ -1,0 +1,55 @@
+package org.tju.utils;
+
+import java.io.InputStream;
+import java.io.StringReader;
+
+import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.httpclient.params.HttpMethodParams;
+import org.cyberneko.html.parsers.DOMParser;
+import org.dom4j.Document;
+import org.xml.sax.InputSource;
+
+public class WebUtil {
+
+	private String IP_URL="http://www.webxml.com.cn/WebServices/" +
+			"IpAddressSearchWebService.asmx/getCountryCityByIp?theIpAddress=";
+	
+	public Document getCityByIP(String ip) throws Exception {
+		
+		
+		HttpClient client = new HttpClient();
+		GetMethod method = new GetMethod(this.IP_URL+ip);
+		method.getParams().setParameter(HttpMethodParams.RETRY_HANDLER,
+				new DefaultHttpMethodRetryHandler());
+		int status = client.executeMethod(method);
+		if (status != HttpStatus.SC_OK) {
+			System.err.println("ddd");
+		}
+		InputStream stream = method.getResponseBodyAsStream();
+		DOMParser parser = new DOMParser();
+		parser.parse(new InputSource(stream));
+		
+		
+		return null;
+	}
+	
+	 public static org.w3c.dom.Document parse(Document doc) throws Exception
+
+	   {    
+
+	       if (doc == null	) return null;
+
+	       //返回这个节点的文本XML表示
+	       StringReader reader = new StringReader(doc.asXML());    
+	       InputSource source = new InputSource(reader);    
+	       DocumentBuilderFactory documentBuilderFactory =    
+	       DocumentBuilderFactory.newInstance();    
+	       DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();    
+
+	       return  documentBuilder.parse(source);    
+
+	   }
+}

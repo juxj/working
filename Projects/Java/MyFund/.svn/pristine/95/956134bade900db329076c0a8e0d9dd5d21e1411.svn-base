@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>注册页面-中国资金网</title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="/favicon.ico" rel="bookmark" type="image/x-icon" />
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/ca.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+<!--注册页头部-->
+<div class="header user_header reg_header">
+  <div class="container_960 top">
+    <div class="fl logo">
+      <h1><a  href="http://www.zj198.com">中国资金网</a></h1>
+    </div>
+    <div class="fr logo_r">
+      <div class="hr_10"> &nbsp; </div>
+      <div class="user_menu"><a href="user_login.html">登录</a> <a href="reg.html">注册</a> <a class="home_page" href="reg.html">网站首页</a></div>
+      <div class="hr_10"> &nbsp; </div>
+      <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" /></div>
+    </div>
+    <div class="clear"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--主体部分-->
+<div class="container_960">
+  <div class="box_948"> <span class="yourposition">请设置您的CA安全证书</span>
+    <div class="hr_10"> &nbsp; </div>
+    <h6 class="red margin_lr_40">尊敬的xxx，感谢您注册中国资金网！</h6>
+    <div class="hr_10"> &nbsp; </div>
+    <p class="margin_lr_40">为了您的资金以及企业信息的安全，中国资金网与上海数字证书认证中心（上海CA）合作，支持该机构发行的数字证书<br />
+      您可用以上海CA颁发的数字证书登录中国资金网，升级为中国资金网证书会员，享受更多安全、便捷服务。</p>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="ca_ico red box_4 margin_lr_40"><a href="/">下载驱动程序及软件</a><br />
+      <a  href="/">数字证书使用说明</a></div>
+    <div class="hr_10"> &nbsp; </div>
+    <p class="notice margin_lr_40" style="font-size:14px;">请下载并安装相应驱动，然后将证书连接电脑后点击 <a class="red" href="/">立即关联</a></p>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="center" style="width:305px;">
+      <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" style="width:200px;" value="立即关联" />
+      <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" style="width:90px;" value="跳过" />
+    </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+    <div class="hr_10"> &nbsp; </div>
+  </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--尾部-->
+<div class="clear"> &nbsp; </div>
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+</body>
+</html>

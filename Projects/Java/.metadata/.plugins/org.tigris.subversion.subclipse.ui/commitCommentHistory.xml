@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>1.修改了找资金，找项目的Ｍeta Scripts.
+2.取消新闻录入的“作者”与“来源“的约束(ＪＳＰ)
+3.修改了新闻前台内容显示中包含“来源”字样。</CommitComment>
+	<CommitComment>在各用户中心首页中加入“资金信息“或”项目信息“</CommitComment>
+</CommitComments>
