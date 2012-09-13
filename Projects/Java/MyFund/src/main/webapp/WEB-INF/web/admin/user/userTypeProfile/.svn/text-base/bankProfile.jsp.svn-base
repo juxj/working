@@ -18,9 +18,11 @@ function audit(id,audit,type){
 	$.post("/admin/user/Profile!audit.act",{userId:id,audit:audit,type:type},function(a){
 		if(a=='1'){
 			$("#umsg").html("已修改为待审核状态。").show();
+			<s:if test="audit=1"></s:if>
 			$("#auditMsg").html("待审核");
 		}else if(a=='2'){
 			$("#umsg").html("已审核。").show();
+			<s:if test="audit=2"></s:if>
 			$("#auditMsg").html("已审核");
 		}else{
 			$("#umsg").html(a).show();
@@ -61,15 +63,15 @@ function audit(id,audit,type){
 						</s:else>
 					</td></tr>
 				<s:if test="usrBank!=null">
-					<tr><td>银行名称</td><td>${profileMap['bankName'] } ${usrBank.detailname }</td></tr>
-					<tr><td>联系人姓名</td><td><s:if test="usrBank.linkgenderr==1">${usrBank.linkname} 先生</s:if><s:elseif test="usrBank.linkgenderr==0">${usrBank.linkname} 女士</s:elseif></td></tr>
-					<tr><td>联系人地址 </td><td>${profileMap['address'] }</td></tr>
-					<tr><td>联系人详细地址 </td><td>${usrBank.address }</td></tr>
-					<tr><td>联系人邮政编码</td><td>${usrBank.postcode }</td></tr>
-					<tr><td>联系人邮箱 </td><td>${usrBank.linkemail }</td></tr>
-					<tr><td>联系人电话</td><td>${usrBank.linktelephone }</td></tr>
-					<tr><td>所属部门 ${usrBank.department }</td><td>职位 ${usrBank.position }</td></tr>
-					<tr><td>服务介绍</td><td>${usrBank.remarks }</td></tr>
+					<tr><td>银行名称</td><td>${profileMap['bankName'] } ${usrBank.detailname }&nbsp;</td></tr>
+					<tr><td>联系人姓名</td><td>&nbsp;<s:if test="usrBank.linkgenderr==1">${usrBank.linkname} 先生</s:if><s:elseif test="usrBank.linkgenderr==0">${usrBank.linkname} 女士</s:elseif></td></tr>
+					<tr><td>联系人地址 </td><td>${profileMap['address'] }&nbsp;</td></tr>
+					<tr><td>联系人详细地址 </td><td>${usrBank.address }&nbsp;</td></tr>
+					<tr><td>联系人邮政编码</td><td>${usrBank.postcode }&nbsp;</td></tr>
+					<tr><td>联系人邮箱 </td><td>${usrBank.linkemail }&nbsp;</td></tr>
+					<tr><td>联系人电话</td><td>${usrBank.linktelephone }&nbsp;</td></tr>
+					<tr><td>所属部门 ${usrBank.department }&nbsp;</td><td>职位 ${usrBank.position }&nbsp;</td></tr>
+					<tr><td>服务介绍</td><td>${usrBank.remarks }&nbsp;</td></tr>
 					<tr><td>&nbsp;</td><td align="center">
 						<label>当前状态：<span id="auditMsg"><s:if test="audit == 0">未审核</s:if><s:elseif test="audit == 1">待审核</s:elseif><s:if test="audit == 2">已审核</s:if></span></label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -78,7 +80,7 @@ function audit(id,audit,type){
 					</td></tr>
 				</s:if>
 				<s:else><tr><td colspan="2">用户未填充信息</td></tr>
-					<tr><td></td><td align="center">
+					<tr><td>&nbsp;</td><td align="center">
 						<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 					</td></tr>
 				</s:else>

@@ -57,7 +57,7 @@
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
 <div class="M_menu">
-<a href="#">用户中心</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="#">服务管理</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="#">服务产品管理</a>
+服务管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务产品管理
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950 box_4" style="height:90px;">
@@ -145,18 +145,23 @@
 	  				</td>
 	  			</tr>
 	  			</s:iterator>
-	  		</s:if><s:else>
-	  			<tr  class="gold_connect">
-	  				<td colspan="7" align="center">您还没有发布过服务产品<br/>
-	  				您可以<a href="/service/userServiceItem!addInfo.act">点此发布服务产品</a></td>
-	  			</tr>
-	  		</s:else>
+	  			</s:if>
 		</table>
 	  </div>
 	  <div class="hr_10"> &nbsp; </div>
 	  <div style="width:960px; margin:0 auto; text-align:right;">
 	 	<jsp:include page="/public/pagination.jsp" />
      </div>
+		<s:else>
+      	<div class="container_950 box_4">
+			<div class="l_out">
+				<h1 class="l_title">您还没有发布过服务产品</h1>
+				<p>
+				您可以<a href="/service/userServiceItem!addInfo.act">点此发布服务产品</a>
+				</p>
+			</div>
+		</div>
+		</s:else>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

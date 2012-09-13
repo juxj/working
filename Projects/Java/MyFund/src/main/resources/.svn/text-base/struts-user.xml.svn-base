@@ -32,7 +32,9 @@
 		<action name="regInfo" class="com.zj198.action.user.ProfileAction" method="regInfo">
 		    <result name="regInfo">/WEB-INF/web/user/regInfo.jsp</result>
 		</action>
-		
+		<action name="capital" class="com.zj198.action.user.UserAction" method="capitalLetter">
+			<result name="capital">/WEB-INF/web/user/capitalLetter.jsp</result>
+		</action>
 		<action name="uploadImg" class="com.zj198.action.user.UploadImgAction" method="uploadImg">
 			<interceptor-ref name ="defaultStack" />
 			<interceptor-ref name ="fileUpload" > 

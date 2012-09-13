@@ -176,8 +176,8 @@ public class LoanRequestServiceImpl implements LoanRequestService {
 		return ordLoanRequestDAO.getTopThree(userId);
 	}
 
-	public List<OrdLoanRequest> getTopThree() {
-		return ordLoanRequestDAO.getTopThree();
+	public List<OrdLoanRequest> getTopThrees(int userType) {
+		return ordLoanRequestDAO.getTopThrees(userType);
 	}
 	
 	

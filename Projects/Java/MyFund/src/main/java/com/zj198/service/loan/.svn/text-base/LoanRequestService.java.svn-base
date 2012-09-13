@@ -127,5 +127,5 @@ public interface LoanRequestService {
 	 * @author zeroleavebaoyang@gmail.com
 	 * @time 2012-8-20| 上午9:54:37
 	 */
-	public List<OrdLoanRequest> getTopThree(); 
+	public List<OrdLoanRequest> getTopThrees(int userType); 
 }

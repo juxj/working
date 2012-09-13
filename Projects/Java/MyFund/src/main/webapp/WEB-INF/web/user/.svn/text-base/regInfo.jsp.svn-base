@@ -171,7 +171,7 @@ function uploadImg(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;注册信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;注册信息
 </div>
 <div class="hr_10"> &nbsp; </div> 
 <!--改动的部分-->

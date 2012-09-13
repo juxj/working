@@ -61,24 +61,24 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrServiceorg!=null">
-					<tr><td>企业名称 </td><td> ${ usrServiceorg.orgname}</td></tr>
+					<tr><td>企业名称 </td><td> ${ usrServiceorg.orgname}&nbsp;</td></tr>
 					<tr><td>营业执照号码  ${ usrServiceorg.licensecode}</td><td><s:if test="profileMap['business'] != ''">${profileMap['business']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['businessId'] }">下载</a></s:if>&nbsp;</td></tr>
 					<tr><td>组织机构代码证号码  ${ usrServiceorg.organizationcode}</td><td><s:if test="profileMap['orgAnization'] != ''">${profileMap['orgAnization'] }&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['orgAnizationId'] }">下载</a></s:if>&nbsp;</td></tr>
 					<tr><td>税务登记证号码  ${ usrServiceorg.faxcode}</td><td><s:if test="profileMap['taxregistration'] != ''">${profileMap['taxregistration']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['taxregistrationId'] }">下载</a></s:if>&nbsp;</td></tr>
-					<tr><td>法定代表人 </td><td>${ usrServiceorg.legalperson}</td></tr>
-					<tr><td>注册地址</td><td>${profileMap['regaddress']}</td></tr>
-					<tr><td>详细地址 </td><td>${ usrServiceorg.regaddress}</td></tr>
-					<tr><td>邮编</td><td>${ usrServiceorg.regpostcode}</td></tr>
+					<tr><td>法定代表人 </td><td>${ usrServiceorg.legalperson}&nbsp;</td></tr>
+					<tr><td>注册地址</td><td>${profileMap['regaddress']}&nbsp;</td></tr>
+					<tr><td>详细地址 </td><td>${ usrServiceorg.regaddress}&nbsp;</td></tr>
+					<tr><td>邮编</td><td>${ usrServiceorg.regpostcode}&nbsp;</td></tr>
 					<tr><td>注册日期  <s:date name="usrServiceorg.registerdate"/></td><td>注册资本  <s:if test="usrServiceorg.registeredcapital!=null">${ usrServiceorg.registeredcapital} 万元 </s:if></td></tr>
-					<tr><td>机构类型</td><td>${profileMap['companyType'] }</td></tr>
-					<tr><td>企业联系地址</td><td>${profileMap['bizaddress']}</td></tr>
-					<tr><td>详细地址 </td><td>${ usrServiceorg.bizaddress}</td></tr>
-					<tr><td>邮编</td><td>${ usrServiceorg.bizpostcode}</td></tr>
-					<tr><td>联系人姓名 </td><td><s:if test="usrServiceorg.linkgender==1">${ usrServiceorg.linkname} 先生</s:if><s:elseif test="usrServiceorg.linkgender==0">${ usrServiceorg.linkname} 女士</s:elseif></td></tr>
+					<tr><td>机构类型</td><td>${profileMap['companyType'] }&nbsp;</td></tr>
+					<tr><td>企业联系地址</td><td>${profileMap['bizaddress']}&nbsp;</td></tr>
+					<tr><td>详细地址 </td><td>${ usrServiceorg.bizaddress}&nbsp;</td></tr>
+					<tr><td>邮编</td><td>${ usrServiceorg.bizpostcode}&nbsp;</td></tr>
+					<tr><td>联系人姓名 </td><td>&nbsp;<s:if test="usrServiceorg.linkgender==1">${ usrServiceorg.linkname} 先生</s:if><s:elseif test="usrServiceorg.linkgender==0">${ usrServiceorg.linkname} 女士</s:elseif></td></tr>
 					<tr><td>联系人邮箱 ${ usrServiceorg.linkemail}</td><td>联系人电话  ${ usrServiceorg.linktelephone}</td></tr>
 					<tr><td>所属部门  ${ usrServiceorg.department}</td><td>职位  ${ usrServiceorg.position}</td></tr>
-					<tr><td>服务产品</td><td>${profileMap['serviceproduct']}</td></tr>
-					<tr><td>服务介绍</td><td>${ usrServiceorg.remarks}</td></tr>
+					<tr><td>服务产品</td><td>${profileMap['serviceproduct']}&nbsp;</td></tr>
+					<tr><td>服务介绍</td><td>${ usrServiceorg.remarks}&nbsp;</td></tr>
 					<tr><td>&nbsp;</td><td align="center">
 						<label>当前状态：<span id="auditMsg"><s:if test="audit == 0">未审核</s:if><s:elseif test="audit == 1">待审核</s:elseif><s:if test="audit == 2">已审核</s:if></span></label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -86,7 +86,7 @@ function audit(id,audit){
 						<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 					</td></tr>
 					</s:if><s:else><tr><td colspan="2">用户未填充信息</td></tr>
-						<tr><td></td><td align="center">
+						<tr><td>&nbsp;</td><td align="center">
 							<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 						</td></tr>
 					</s:else>

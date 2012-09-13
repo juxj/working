@@ -14,7 +14,7 @@
 	<div class="header index_header"><jsp:include page="/public/head1.jsp" /></div>
 	<div class="clear"> &nbsp; </div><div class="hr_10"> &nbsp; </div> 
 	<div class="M_menu"><a href="/news/InfoCenter.act">信息中心</a>&nbsp;&nbsp;>&nbsp;&nbsp;
-		<a href="#">${knwTitle.typeName }</a></div>
+		${knwTitle.typeName }</div>
 	<div class="hr_10"> &nbsp; </div> 
 	
 	<div class="M_out">	

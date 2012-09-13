@@ -93,8 +93,10 @@
 <div class="header user_header">
 <jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
 <div class="hr_10"> &nbsp; </div>
+</div>
+<div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-<a href="#">用户中心</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">账户管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">消息与提醒</a>
+账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;消息与提醒
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">

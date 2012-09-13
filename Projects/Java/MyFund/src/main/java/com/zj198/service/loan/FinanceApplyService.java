@@ -3,6 +3,7 @@ package com.zj198.service.loan;
 import java.io.File;
 import java.util.List;
 
+import com.zj198.action.fund.model.FundIntention;
 import com.zj198.action.loan.model.FinanceApplySpModel;
 import com.zj198.model.OrdFaAttachList;
 import com.zj198.model.OrdFinanceApply;
@@ -42,4 +43,5 @@ public interface FinanceApplyService {
 	public List<OrdFinanceApply> findFinanceApply(FindFinanceApplySpModel spModel);
 	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId);
 	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId);
+	public void saveFundIntention(FundIntention fi);
 }

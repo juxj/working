@@ -61,32 +61,32 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrFinanceorg!=null">
-					<tr><td>机构名称 </td><td> ${usrFinanceorg.orgname }</td></tr>
-					<tr><td>营业执照号码  ${usrFinanceorg.licensecode }</td><td><s:if test="profileMap['business'] != ''">${profileMap['business']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['businessId'] }">下载</a></s:if>&nbsp;</td></tr>
-					<tr><td>组织机构代码证号码  ${usrFinanceorg.organizationcode }</td><td><s:if test="profileMap['orgAnization'] != ''">${profileMap['orgAnization'] }&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['orgAnizationId'] }">下载</a></s:if>&nbsp;</td></tr>
-					<tr><td>税务登记证号码   ${usrFinanceorg.faxcode }</td><td><s:if test="profileMap['taxregistration'] != ''">${profileMap['taxregistration']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['taxregistrationId'] }">下载</a></s:if>&nbsp;</td></tr>
-					<tr><td>法定代表人 </td><td>${usrFinanceorg.legalperson }</td></tr>
-					<tr><td>注册地址</td><td>${profileMap['regaddress'] }</td></tr>
-					<tr><td>详细地址 </td><td>${usrFinanceorg.regaddress }</td></tr>
-					<tr><td>邮编</td><td>${usrFinanceorg.regpostcode }</td></tr>
+					<tr><td>机构名称 </td><td> ${usrFinanceorg.orgname }&nbsp;</td></tr>
+					<tr><td>营业执照号码  ${usrFinanceorg.licensecode }</td><td>&nbsp;<s:if test="profileMap['business'] != ''">${profileMap['business']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['businessId'] }">下载</a></s:if>&nbsp;</td></tr>
+					<tr><td>组织机构代码证号码  ${usrFinanceorg.organizationcode }&nbsp;</td><td><s:if test="profileMap['orgAnization'] != ''">${profileMap['orgAnization'] }&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['orgAnizationId'] }">下载</a></s:if>&nbsp;</td></tr>
+					<tr><td>税务登记证号码   ${usrFinanceorg.faxcode }</td><td>&nbsp;<s:if test="profileMap['taxregistration'] != ''">${profileMap['taxregistration']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['taxregistrationId'] }">下载</a></s:if>&nbsp;</td></tr>
+					<tr><td>法定代表人 </td><td>${usrFinanceorg.legalperson }&nbsp;</td></tr>
+					<tr><td>注册地址</td><td>${profileMap['regaddress'] }&nbsp;</td></tr>
+					<tr><td>详细地址 </td><td>${usrFinanceorg.regaddress }&nbsp;</td></tr>
+					<tr><td>邮编</td><td>${usrFinanceorg.regpostcode }&nbsp;</td></tr>
 					<tr><td>注册日期  <s:date name="usrFinanceorg.registerdate" /></td><td>注册资本  <s:if test="usrFinanceorg.registeredcapital!=null"><s:text name="format.float"><s:param value="usrFinanceorg.registeredcapital"></s:param></s:text>&nbsp;万元</s:if></td></tr>
-					<tr><td>机构类型</td><td>${profileMap['companyType'] }</td></tr>
-					<tr><td>机构联系地址</td><td>${profileMap['bizaddress'] }</td></tr>
-					<tr><td>详细地址 </td><td>${usrFinanceorg.bizaddress }</td></tr>
-					<tr><td>邮编</td><td>${usrFinanceorg.bizpostcode }</td></tr>
-					<tr><td>经营范围</td><td>${usrFinanceorg.bizscope }</td></tr>
-					<tr><td>联系人姓名 </td><td><s:if test="usrFinanceorg.linkgender==1">${usrFinanceorg.linkname} 先生</s:if><s:elseif test="usrFinanceorg.linkgender==0">${usrFinanceorg.linkname} 女士</s:elseif></td></tr>
+					<tr><td>机构类型</td><td>${profileMap['companyType'] }&nbsp;</td></tr>
+					<tr><td>机构联系地址</td><td>${profileMap['bizaddress'] }&nbsp;</td></tr>
+					<tr><td>详细地址 </td><td>${usrFinanceorg.bizaddress }&nbsp;</td></tr>
+					<tr><td>邮编</td><td>${usrFinanceorg.bizpostcode }&nbsp;</td></tr>
+					<tr><td>经营范围</td><td>${usrFinanceorg.bizscope }&nbsp;</td></tr>
+					<tr><td>联系人姓名 </td><td>&nbsp;<s:if test="usrFinanceorg.linkgender==1">${usrFinanceorg.linkname} 先生</s:if><s:elseif test="usrFinanceorg.linkgender==0">${usrFinanceorg.linkname} 女士</s:elseif></td></tr>
 					<tr><td>联系人邮箱  ${usrFinanceorg.linkemail }</td><td>联系人电话  ${usrFinanceorg.linktelephone }</td></tr>
 					<tr><td>所属部门  ${usrFinanceorg.department }</td><td>职位  ${usrFinanceorg.position }</td></tr>
-					<tr><td>产品介绍</td><td>${usrFinanceorg.remarks }</td></tr>
-					<tr><td>&nbsp;</td><td align="center">
+					<tr><td>产品介绍</td><td>${usrFinanceorg.remarks }&nbsp;</td></tr>
+					<tr><td>&nbsp;</td><td align="center">&nbsp;
 						<label>当前状态：<span id="auditMsg"><s:if test="audit == 0">未审核</s:if><s:elseif test="audit == 1">待审核</s:elseif><s:if test="audit == 2">已审核</s:if></span></label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input id="auditDisplay" type="button" value="<s:if test="audit != 2">审核通过</s:if><s:else>待审核</s:else>" onclick="audit(${usrFinanceorg.userid},${audit });"/>
 						<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 					</td></tr>
 					</s:if><s:else><tr><td colspan="2">用户未填充信息</td></tr>
-						<tr><td></td><td align="center">
+						<tr><td>&nbsp;</td><td align="center">
 							<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 						</td></tr>
 					</s:else>

@@ -66,6 +66,37 @@ function updatestatus(value){
 <div class="apply_title" style="height:60px;">
 	<p>产品查看</p>
 </div>
+
+	<div class="hr_10"> &nbsp; </div>
+<div class="apply_form">
+		<div class="apply_form_title">状态详情</div>
+		<div class="C_form" style="margin-top:20px;">
+			<table style="width:800px; font-size:13px;">
+				<tr>
+					<td width="20%" align="right">状态：</td>
+					<td style="padding:15px;"><common:print valueId="product.proStatus" /> </td>
+					<td width="15%" align="right">操作：</td>
+					<td width="30%" style="padding:15px; " class="option_href" >
+	   					<s:if test="product.proStatus == 196">
+				   			<a href="/user/loan/financeProduct!updateFinancePage.act?product.id=${item.id }" >修改</a>&nbsp;&nbsp;
+				   			<a href="javascript:updatestatus(197);" >提交审核</a>&nbsp;&nbsp;
+				   			<a href="javascript:updatestatus(199);" >撤销发布</a>
+						</s:if>
+						<s:elseif test="product.proStatus == 197">
+							<a href="javascript:updatestatus(199);" >撤销发布</a>
+						</s:elseif>
+						<s:elseif test="product.proStatus == 198">
+							<a href="javascript:updatestatus(199);" >撤销发布</a>
+						</s:elseif>
+		   				<s:elseif test="product.proStatus == 199">
+		   					<a href="/user/loan/financeProduct!updateFinancePage.act?repeatStatus=1&product.id=${item.id }" >重新发布</a>
+		   				</s:elseif>
+					</td>
+				</tr>
+			</table>
+		</div>
+</div>
+
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
 <form action="/user/loan/financeProduct!updateStatus.act" id="loanForm"  class="box_form" style="margin:0px;" method="post">
@@ -324,19 +355,7 @@ function updatestatus(value){
 		</table>
 	</div>	
 		<div class="hr_10"> &nbsp; </div>
-			<div class="center" style="width:500px;">
-			<s:if test="product.proStatus == 196">
-				<input type="button" value="提交审核"  class="but_gray" onclick="updatestatus(197);" ></input>
-				<input type="button" value="撤销"  class="but_gray" onclick="updatestatus(199);" ></input>
-			</s:if>
-			<s:elseif test="product.proStatus == 197">
-				<input type="button" value="撤销"  class="but_gray" onclick="updatestatus(199);" ></input>
-			</s:elseif>
-			<s:elseif test="product.proStatus == 198">
-				<input type="button" value="撤销"  class="but_gray" onclick="updatestatus(199);" ></input>
-			</s:elseif>
-			</div>
-			<div class="hr_10"> &nbsp; </div>
+
 </form>
 </div>
 <!--主体部分结束-->

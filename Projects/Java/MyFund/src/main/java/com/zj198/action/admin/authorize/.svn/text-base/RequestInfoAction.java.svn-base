@@ -1,5 +1,6 @@
 package com.zj198.action.admin.authorize;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.zj198.model.ClbRequestInfo;
@@ -51,6 +52,8 @@ public class RequestInfoAction {
 	public String changeRequestInfoStatus() {
 		requestInfo = this.supplyRequestService.getClbRequestInofById(id);
 		requestInfo.setRank(rank);
+		Timestamp st = new Timestamp(System.currentTimeMillis());
+		requestInfo.setLastPostDate(st);
 		this.supplyRequestService.saveClbRequestInfo(requestInfo);
 		return null;
 	}

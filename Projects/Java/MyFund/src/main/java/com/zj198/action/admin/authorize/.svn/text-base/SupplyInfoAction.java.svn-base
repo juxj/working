@@ -1,5 +1,6 @@
 package com.zj198.action.admin.authorize;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +43,8 @@ public class SupplyInfoAction extends BaseAction {
 	public String changeSupplyInfoStatus() {
 		supplyInfo = this.supplyRequestService.getClbSupplyInfoById(id);
 		supplyInfo.setRank(Integer.valueOf(rank).toString());
+		Timestamp st = new Timestamp(System.currentTimeMillis());
+		supplyInfo.setLastPostDate(st);
 		this.supplyRequestService.saveClbSupplyInfo(supplyInfo);
 		return null;
 	}

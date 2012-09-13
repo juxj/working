@@ -62,7 +62,7 @@ public class OrdFinanceApplyDAOImpl extends HibernateDAO<OrdFinanceApply, Intege
 			params.put("loanMonthEnd", spModel.getEndMonth());
 		}
 		if(spModel.getStartMonth()!= null){
-			hql.append(" and t1.loanMonth <= :loanMonthstart");
+			hql.append(" and t1.loanMonth >= :loanMonthstart");
 			params.put("loanMonthstart", spModel.getStartMonth());
 		}
 		if(spModel.getProductName() != null && !spModel.getProductName().trim().equals("")){

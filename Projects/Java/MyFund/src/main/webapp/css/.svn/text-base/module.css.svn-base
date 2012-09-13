@@ -48,8 +48,15 @@ div.indiv{display:block;}
 .box_form1 select {float: left; margin:5px 5px 0 0;; height: 22px; width:110px; line-height: 14px }
 .box_form1 input {float: left; margin:0px 0px 0 0;; height: 20px; width:110px; line-height: 14px }
 
-.find_table{width: 590px; height: auto; margin: 0 auto;}
-.find_table_r{text-align:right; width:80px;}
+/*修改部分*/
+.blue_bg{background:url("/images/blue_line.jpg") repeat-x; height:auto;}
+.find_table{width: 590px; height: auto; margin: 0 auto; margin-top: 15px; margin-bottom: 25px;}
+.find_table_r{text-align:right; width:80px; height:40px; line-height: 40px; padding-right:5px;}
+.find_table_t{font-weight:bolder; margin-left:5px;}
+.find_table_t span{display:block; margin-top:4px;}
+.v-align{vertical-align: middle;}
+.b_div{margin-bottom: 10px;}
+.b_img{width:150px; height:73px; float:left; margin-right:10px;}
 /*融资服务页*/
 
 /*理财服务列表页*/
@@ -320,11 +327,21 @@ div.indiv{display:block;}
 .anniu_box{width:710px; text-align:center; margin-top:40px; margin-bottom:25px;}
 
 .gold-table tr td .txt-left { text-align:left;}
-.news_menu {height:30px; font-weight:bolder;}
+/*tab蓝色背景*/
+.mews_ul{background:url(/images/lh_img.jpg) 350px 3px no-repeat;}
+.news_menu {height:30px; font-weight:bolder; background:#fff;}
 .news_menu ul { margin-left:-1px; height:30px; border-bottom : 1px solid #d6d6d6;}
 .news_menu li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;}
-.news_menu .hover {background:url(/images/lh_bg.jpg) repeat-x; border:solid #d6d6d6; border-width:0 1px 0 1px;}
-.r_bg{width:266px; height:24px; margin-top:3px; margin-left:150px;}
+.news_menu .hover {background:url(/images/lh_bg.jpg) repeat-x 0 1px; border:solid #d6d6d6; border-width:0 1px 0 1px;}
+/*tab蓝色背景*/
+
+/*tab灰色背景*/
+.news_menu01 {height:30px; font-weight:bolder; background : #f9f9f7;}
+.news_menu01 ul { margin-left:-1px; height:30px; border-bottom : 1px solid #d6d6d6;}
+.news_menu01 li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;}
+.news_menu01 .hover {background:#FFF; border:solid #d6d6d6; border-width:0 1px 0 1px;}
+/*tab灰色背景*/
+.r_bg{width:266px; height:24px; margin-top:3px; float:right; margin-right: 10px;}
 .grid_230_top{border:1px solid #d8d8d8; height:320px;}
 
 .rz_main{width:710px;height:500px; overflow:hidden;}

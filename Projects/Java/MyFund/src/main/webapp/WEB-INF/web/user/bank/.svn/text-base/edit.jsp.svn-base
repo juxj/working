@@ -21,10 +21,9 @@ $(document).ready(function(){
 	$("#bankForm").validate({
 		meta:"validate"
 	});
-	<s:if test="usrBank==null">
+	if('${session._user.auditstatus}' != '2'){
 		$("#status").show();
-	</s:if>
-	
+	}
 });
 </script>
 </head>
@@ -35,9 +34,8 @@ $(document).ready(function(){
   <div class="clear"> &nbsp; </div>
 </div>
 <div class="hr_10"> &nbsp; </div>
-<div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;编辑信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->

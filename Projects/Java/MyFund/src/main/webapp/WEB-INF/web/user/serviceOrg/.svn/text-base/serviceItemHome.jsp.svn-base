@@ -22,8 +22,7 @@
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="M_menu">
-		<a href="/">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;
-		<a href="/service/serviceItem!showHome.act?typeId=0">服务列表</a>
+		<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务列表
 	</div>
 	<div class="hr_10"> &nbsp; </div> 	 
 	<!--主体部分-->

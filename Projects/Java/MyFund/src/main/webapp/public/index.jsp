@@ -364,8 +364,8 @@
       <li><img src="/images/linkimg/boc.png" /></li>
       <li><img src="/images/linkimg/abc.png" /></li>
       <li><img src="/images/linkimg/bankcomm.png" /></li>
-      <li><img src="/images/linkimg/bos.png" /></li>
       <li><img src="/images/linkimg/sdb.png" /></li>
+      <li><a href="http://www.jinyida.cn/" target="_blank"/><img src="/images/linkimg/jyd.png" /></a></li>
       <li><img src="/images/linkimg/cmb.png" /></li>
       <li><img src="/images/linkimg/hxb.png" /></li>
       <li><img src="/images/linkimg/cib.png" /></li>

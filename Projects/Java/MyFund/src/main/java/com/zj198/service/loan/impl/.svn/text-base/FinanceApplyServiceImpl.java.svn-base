@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.zj198.action.fund.model.FundIntention;
 import com.zj198.action.loan.model.FinanceApplySpModel;
 import com.zj198.dao.DicCommonDAO;
 import com.zj198.dao.OrdFaAttachListDAO;
@@ -330,6 +331,43 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	}
 	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId){
 		return prdExtendsValueDAO.getFinanceApplyExtendsValue(applyId);
+	}
+	
+	public void saveFundIntention(FundIntention fi){
+		try {
+			Map<String, Object> m = new HashMap<String, Object>();
+			m.put("userName", fi.getUserName());
+			if(fi.getGender() != null){
+				if(fi.getGender() == 0){					
+					m.put("gender", "先生");
+				}else{
+					m.put("gender", "女士");
+				}
+			}
+			m.put("mobile", fi.getMobile());
+			m.put("email", fi.getEmail());
+			if(fi.getServiceTime() != null){
+				if(fi.getServiceTime() == 1){					
+					m.put("serviceTime", "双休日白天");
+				}else if(fi.getServiceTime() == 2){					
+					m.put("serviceTime", "工作日上午");
+				}else if(fi.getServiceTime() == 3){					
+					m.put("serviceTime", "工作日中午");
+				}else if(fi.getServiceTime() == 4){					
+					m.put("serviceTime", "工作日晚间");
+				}
+			}
+			m.put("serviceContent", fi.getServiceContent());
+			String body = FreemarkerUtil.getContent("fundIntentionTemplate.htm", m, false, null, null);
+			NtyMessageQueue j = new NtyMessageQueue();
+			j.setTitle("基金预约 - 中国资金网");
+			j.setContent(body);
+			j.setReceiver(Constants.LOAN_EMAIL);
+			j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
+			notifyQueueService.addNewMessage(j);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// setter and getter

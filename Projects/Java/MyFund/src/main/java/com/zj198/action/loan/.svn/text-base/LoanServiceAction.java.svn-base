@@ -6,6 +6,8 @@ import com.zj198.action.BaseAction;
 import com.zj198.model.ClbRequestInfo;
 import com.zj198.model.ClbSupplyInfo;
 import com.zj198.model.DicIndustry;
+import com.zj198.model.DicInvestRange;
+import com.zj198.model.DicProvince;
 import com.zj198.model.KnwTitle;
 import com.zj198.model.PrdFinance;
 import com.zj198.model.PrdServiceItem;
@@ -31,6 +33,12 @@ public class LoanServiceAction extends BaseAction {
 	private List<DicIndustry> industryList;// 行业
 	private List<PrdServiceItem> serviceItemList;
 	
+	private List<DicProvince> provinceList;
+	private List<DicInvestRange> investStyleList;
+	private List<DicInvestRange> amountRangeList;
+	private List<DicInvestRange> timeIntervalList;
+	private List<DicInvestRange> financingTypeList;
+	
 	public String execute() {
 		this.financingGuideList =  this.newsService.findLastestByType(Constants.FINANCING_GUIDE, 5);
 		this.finacialNewsList =  this.newsService.findLastestByType(Constants.FINANCING_NEWS, 5);
@@ -40,6 +48,14 @@ public class LoanServiceAction extends BaseAction {
 		
 		requestInfoList = supplyRequestService.findLastRequestInfo(10);
 		supplyInfoList = supplyRequestService.findLastSupplyInfo(10);
+		
+		this.provinceList = this.dictoryDataService.findAllProvince();
+		this.amountRangeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_AMOUNT_RANGE);
+		//this.industryList = this.dictoryDataService.findDicIndustryList();
+		this.timeIntervalList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_TIME_INTERVAL);
+		this.investStyleList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_INVEST_STYLE);
+		
+		this.financingTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_FINANCE_TYPE);
 		
 		return "financing";
 	}
@@ -118,5 +134,26 @@ public class LoanServiceAction extends BaseAction {
 
 	public void setNewsService(NewsService newsService) {
 		this.newsService = newsService;
+	}
+
+
+	public List<DicInvestRange> getInvestStyleList() {
+		return investStyleList;
+	}
+
+	public List<DicInvestRange> getAmountRangeList() {
+		return amountRangeList;
+	}
+
+	public List<DicInvestRange> getTimeIntervalList() {
+		return timeIntervalList;
+	}
+
+	public List<DicProvince> getProvinceList() {
+		return provinceList;
+	}
+
+	public List<DicInvestRange> getFinancingTypeList() {
+		return financingTypeList;
 	}
 }

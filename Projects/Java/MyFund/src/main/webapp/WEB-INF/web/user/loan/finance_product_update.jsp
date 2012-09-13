@@ -107,7 +107,7 @@ function datalistcount(){
     	var dv = $(this).val();
 		if($(this).attr("checked") == 'checked'){		
     		//datalist = datalist + dv + "/" + $('#dataName' + dv).val() + "/"+ $('#dataNum' + dv).val() + "/"+ $('#dataMemo' + dv).val() + "#";
-    		if(!(/^[0-9]$/.test($('#dataNum' + dv).val()))){
+    		if(!(/^\d+(\.\d+)?$/.test($('#dataNum' + dv).val()))){
     			bool = 1;
     			return ;
     		}

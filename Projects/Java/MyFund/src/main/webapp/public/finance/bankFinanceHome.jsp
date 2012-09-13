@@ -35,7 +35,7 @@
 	<div class="hr_10"> &nbsp; </div> 
   <!--理财服务产品列表页面开始-->
   <div class="M_menu">
-  	<a href="/finance/financeProduct.act">理财服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">银行理财产品</a>
+  	<a href="/finance/financeProduct.act">理财服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;银行理财产品
   </div>
   <div class="hr_10"> &nbsp; </div> 
 	<!--main1-->

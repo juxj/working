@@ -82,6 +82,8 @@ function showBankProductHome() {
     </div>
     <!--列表1开始-->
        <div class="hr_10"> &nbsp; </div>
+       <div ><a href="/finance/fund.act"><img src="/images/ad_c2_1.jpg" width="230" height="90" /></a></div>
+       <div class="hr_10"> &nbsp; </div>
        <div class="menu_red white">
       <h6>理财工具</h6>
     </div>
@@ -92,7 +94,7 @@ function showBankProductHome() {
     </div>
    <!--列表1结束-->
     <div class="hr_10"> &nbsp; </div>
-    <div class="box_3"><img src="/images/img_jb.jpg" width="228" height="323" /></div>
+    <div><img src="/images/ad_c2_2.jpg" width="230" height="280" /></div>
     <div class="hr_10"> &nbsp; </div>
    </div>
     <div class="grid_710">

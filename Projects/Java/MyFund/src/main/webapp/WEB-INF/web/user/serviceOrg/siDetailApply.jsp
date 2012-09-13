@@ -19,8 +19,7 @@
 <!--头部结束-->
   <!--理财服务详情页面开始-->
   <div class="M_menu">
-  	<a href="/">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/service/serviceInfo!showServiceItemHome.act">服务产品</a>&nbsp;&nbsp;
-  		<b>></b>&nbsp;&nbsp;产品详情
+  	<a href="/service/serviceInfo!showServiceItemHome.act">服务产品</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;产品详情
   </div>
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_out">

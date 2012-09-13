@@ -35,7 +35,13 @@
   </s:if>
   <s:iterator value="supplyInfoList" id="item">
 	  <tr>
-	    <td>${title}</td>
+	    <td title="${title}">
+	    <s:if test="title != null && title.length()>15">
+			<s:property value="title.substring(0,15)"></s:property>...
+		</s:if><s:else>
+			${title}
+		</s:else>
+	    </td>
 		<td><s:date name="lastPostDate" format="yyyy-MM-dd"/></td>
 		<td>
 			<s:iterator id="investTypeItem" value="investStyleList">
@@ -57,11 +63,15 @@
    			</s:if>    
 			
 		</td>
-		<td>
-				${item.workTrade }
-		    	<s:if test="#item.workTrade==null or #item.workTrade==''">
-		    		不限
-		    	</s:if>
+		<td title="${item.workTrade }">
+			<s:if test="#item.workTrade != null && #item.workTrade.length()>15">
+				<s:property value="#item.workTrade.substring(0,15)"></s:property>...
+			</s:if><s:else>
+				${item.workTrade}
+			</s:else>
+	    	<s:if test="#item.workTrade==null or #item.workTrade==''">
+	    		不限
+	    	</s:if>
 		</td>
 		
 		

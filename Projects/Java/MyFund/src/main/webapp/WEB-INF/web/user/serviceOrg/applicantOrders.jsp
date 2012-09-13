@@ -27,7 +27,7 @@
 <div class="container_960">
 	<div class="clear"> &nbsp; </div>
 	<div class="M_menu">
-  		<a href="/">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/UserAction.act">服务管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">服务申请管理</a>
+  		服务管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务申请管理
     </div>
     <div class="hr_10"> &nbsp; </div>
 	<div class="container_950 box_4">
@@ -87,29 +87,33 @@
 			          </td>
 		  			</tr>
 		  			</s:iterator>
-		  		</s:if><s:else>
-		  			<tr  class="gold_connect">
-		  				<td colspan="8" align="center">
-		  				<s:if test="#session._user.userTypeGroup==5">
-		  				您还没有提交过服务申请<br/>您可以去<a href="/loan/financeProduct.act?financeType=152&financeDate=12">融资服务频道</a>搜索适合您的融资产品
-		  				</s:if><s:elseif test="#session._user.userTypeGroup==1">
-		  				您还没有提交过服务申请<br/>您可以去<a href="/loan/financeProduct.act?financeType=151&financeDate=12">融资服务频道</a>搜索适合您的融资产品
-		  				</s:elseif><s:elseif test="#session._user.userTypeGroup==4">
-		  				您还没有收到过服务申请<br/>
-		  				您可以<a href="/service/userServiceItem!addInfo.act">点此发布服务产品</a>
-		  				</s:elseif>
-		  				</td>
-		  			</tr>
-	  			</s:else>
+		  		</s:if>
 			</table>
-		  </div>
 		  <div class="hr_10"> &nbsp; </div>
 		  <div style="width:960px; margin:0 auto; text-align:right;">
 	        <div class="pages01">
 	        	<jsp:include page="/public/pagination.jsp" />
 		    </div>
 	     </div>
-     
+<s:else>
+		 <div class="hr_10">&nbsp;</div>
+      <div class="container_950 box_4">
+		<div class="l_out">
+			<s:if test="#session._user.userTypeGroup==5 || #session._user.userTypeGroup==1">
+			<h1 class="l_title">您还没有提交过服务申请</h1>
+			<p>
+			您可以去<a href="/service/serviceItem!showHome.act">融资服务频道</a>搜索适合您的服务产品
+			</p>
+			</s:if><s:elseif test="#session._user.userTypeGroup==4">
+			<h1 class="l_title">您还没有收到过服务申请</h1>
+			<p>
+			您可以<a href="/service/userServiceItem!addInfo.act">点此发布服务产品</a>
+			</p>
+			</s:elseif>
+		</div>
+	 </div> 
+</s:else>
+</div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

@@ -54,7 +54,7 @@ return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
 
 // 手机号码验证
 jQuery.validator.addMethod("mobile", function(value, element) {
-var tel = /^((13[0-9])|(15[^4,\d])|(18[0,5-9]))\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}$|^[0]{1}[0-9]{2,3}[0-9]{7,8}$/;
+var tel = /^((13[0-9])|(15[0-9])|(18[0-9]))\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}$|^[0]{1}[0-9]{2,3}[0-9]{7,8}$/;
 return this.optional(element) || (tel.test(value));
 }, "联系电话格式错误.");
 // 电话号码验证

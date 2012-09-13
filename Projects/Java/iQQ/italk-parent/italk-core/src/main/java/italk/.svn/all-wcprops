@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/16/trunk/italk-parent/italk-core/src/main/java/italk
+END
+LoggerBootstrap.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/LoggerBootstrap.java
+END
+Bootstrap.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/Bootstrap.java
+END
+AppBootstrap.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/AppBootstrap.java
+END
+Logger.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/Logger.java
+END
+App.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/App.java
+END
+ThreadsBootstrap.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/ThreadsBootstrap.java
+END

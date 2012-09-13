@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<item value="500" key="CommitDialog.weights.0"/>
 	<item value="1805" key="RevertDialog.location.x"/>
+	<item value="1415" key="DifferencesDialog.location.x"/>
 	<item value="500" key="CommitDialog.weights.1"/>
 	<item value="582" key="passwordStores.size.y"/>
 	<item value="603" key="passwordStores.size.x"/>
@@ -14,14 +15,20 @@
 	<item value="613" key="RevertDialog.size.x"/>
 	<item value="445" key="RevertDialog.size.y"/>
 	<item value="312" key="HistoryTableProvider.SVNHistoryPage.Date"/>
-	<item value="669" key="CommitDialog.size.x"/>
+	<item value="437" key="DifferencesDialog.size.y"/>
 	<item value="623" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
+	<item value="669" key="CommitDialog.size.x"/>
 	<item value="493" key="CommitDialog.size.y"/>
+	<item value="758" key="DifferencesDialog.size.x"/>
 	<item value="125" key="HistoryTableProvider.SVNHistoryPage.Revision"/>
+	<item value="119" key="DifferencesDialog.location.y"/>
 	<section name="CommitWizard">
 		<item value="false" key="ShowCompare"/>
 		<item value="500" key="VWeight2"/>
 		<item value="500" key="VWeight1"/>
+	</section>
+	<section name="IgnoreResourcesDialog">
+		<item value="0" key="Action"/>
 	</section>
 	<section name="NewLocationWizard">
 		<list key="ConfigurationWizardMainPage.STORE_URL_ID">

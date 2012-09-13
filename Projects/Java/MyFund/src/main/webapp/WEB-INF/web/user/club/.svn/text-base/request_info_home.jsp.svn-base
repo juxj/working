@@ -29,13 +29,11 @@
 <jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
   <div class="clear"> &nbsp; </div>
 </div>
-<div class="hr_10"> &nbsp; </div>
 <div class="container_950">
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
 	<div class="M_menu">
-		<a href="/">用户中心</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/UserAction.act">服务管理</a>&nbsp;&nbsp;<b>&gt;
-		</b>&nbsp;&nbsp;融资俱乐部-项目信息
+		融资管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;融资俱乐部
 	</div>
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
@@ -53,67 +51,80 @@
 	<th>融资方式</th>
 	<th>状态</th>
 	<th width="12%">操作</th>
-		<s:if test="pager.data == null || pager.data.size<=0">
-		  	<tr>
-		  		<td colspan="6" align="center">
-		  		<s:if test="#session._user.userTypeGroup==5 || #session._user.userTypeGroup==1">
-		  		您还未发布任何项目信息<br/>
-				您可以<a href="/service/requestInfoAction4User!edit.act">点此免费发布项目信息</a>让资金方来找您<br/>
-				你也可以去<a href="/service/club.act">融资俱乐部</a>寻找适合您的资金信息
-  				</s:if>
-		  		</td>
-		  	</tr>
-		  </s:if><s:else>
-			<s:iterator id="item" value="pager.data" status="st">
-				<tr style="padding-left:8px;">
-				<td>${item.title}</td>
-				<td><s:date name="#item.lastPostDate" /></td>
+	<s:if test="pager.data != null || pager.data.size>0">
+		<s:iterator id="item" value="pager.data" status="st">
+			<tr style="padding-left:8px;">
+			<td title="${item.title}">
+				<s:if test="#item.title.length()>10">
+					<s:property value="#item.title.substring(0,10)"></s:property>...
+				</s:if><s:else>
+					${item.title}
+				</s:else>
+			</td>
+			<td><s:date name="#item.lastPostDate" /></td>
+			
+			<td>
+				<s:iterator id="projectTypeItem" value="projectTypeList">
+		    		<s:if test="#projectTypeItem.code==#item.projectType">
+		    			${projectTypeItem.name }
+		    		</s:if>	
+		    	</s:iterator>
+			</td>
+			<td>
+				${item.needMoney }
+			</td>
+			<td title="${item.financeType }">
+				<s:if test="#item.financeType.length()>15">
+					<s:property value="#item.financeType.substring(0,15)"></s:property>...
+				</s:if><s:else>
+					${item.financeType}
+				</s:else>
+		    	<s:if test="#item.financeType==null or #item.financeType==''">
+		    		不限
+		    	</s:if>
+			</td>
+			<td>
+				<s:if test="#item.rank==0 || #item.rank==9">
+					未审核
+				</s:if>
 				
-				<td>
-					<s:iterator id="projectTypeItem" value="projectTypeList">
-			    		<s:if test="#projectTypeItem.code==#item.projectType">
-			    			${projectTypeItem.name }
-			    		</s:if>	
-			    	</s:iterator>
-				</td>
-				<td>
-					${item.needMoney }
-				</td>
-				<td>
-					${item.financeType }
-			    	<s:if test="#item.financeType==null or #item.financeType==''">
-			    		不限
-			    	</s:if>
-				</td>
-				<td>
-					<s:if test="#item.rank==0 || #item.rank==9">
-						未审核
-					</s:if>
-					
-					<s:if test="#item.rank==1">
-						已通过
-					</s:if>
-					
-					<s:if test="#item.rank==-1">
-						已阻止
-					</s:if>
-				</td>
-				<td class="view_detail01"> 
-					<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">查看</a>
-					<s:if test="#item.rank==0 || #item.rank==9">
-						<a href="/service/requestInfoAction4User!edit.act?clbRequestInfoId=${item.id }">编辑</a>
-					</s:if>
-					<s:if test="#item.rank==-1">
-						<a href="/service/requestInfoAction!delete.act?clbRequestInfoId=${item.id }">删除</a>
-					</s:if>
-				</td>
-				</tr>
-			</s:iterator>
-		</s:else>
+				<s:if test="#item.rank==1">
+					已通过
+				</s:if>
+				
+				<s:if test="#item.rank==-1">
+					已阻止
+				</s:if>
+			</td>
+			<td class="view_detail01"> 
+				<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">查看</a>
+				<s:if test="#item.rank==0 || #item.rank==9">
+					<a href="/service/requestInfoAction4User!edit.act?clbRequestInfoId=${item.id }">编辑</a>
+				</s:if>
+				<s:if test="#item.rank==-1">
+					<a href="/service/requestInfoAction!delete.act?clbRequestInfoId=${item.id }">删除</a>
+				</s:if>
+			</td>
+			</tr>
+		</s:iterator>
+	</s:if>
 	</table>
 	<div class="hr_10"> &nbsp; </div>
 	<jsp:include page="/public/pagination.jsp"></jsp:include>
 </div>
+<s:if test="pager.data == null || pager.data.size<=0">
+       <div class="container_950 box_4">
+			<div class="l_out">
+			<s:if test="#session._user.userTypeGroup==5 || #session._user.userTypeGroup==1">
+				<h1 class="l_title">您还未发布任何项目信息</h1>
+				<p> 
+				您可以<a href="javascript:edit();">点此免费发布项目信息</a>让资金方来找您<br/>
+				您也可以去<a href="/service/supplyInfoAction!home.act">融资俱乐部</a>寻找适合您的资金信息
+				</p>
+			</s:if>
+			</div>
+       </div> 
+</s:if> 
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp"></jsp:include>

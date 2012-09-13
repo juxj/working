@@ -13,8 +13,8 @@
   <body>
 	<div class="header index_header"><jsp:include page="/public/head1.jsp" /></div>
 	<div class="clear"> &nbsp; </div><div class="hr_10"> &nbsp; </div> 
-	<div class="M_menu"><a href="/">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/news/InfoCenter.act">信息中心</a>&nbsp;&nbsp;>&nbsp;&nbsp;
-		<a href="#">${knwTitle.typeName }</a></div>
+	<div class="M_menu"><a href="/news/InfoCenter.act">信息中心</a>&nbsp;&nbsp;>&nbsp;&nbsp;
+		${knwTitle.typeName }</div>
 	<div class="hr_10"> &nbsp; </div> 	
 	<div class="M_out">	
   	<div class="M_out_L">

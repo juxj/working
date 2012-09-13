@@ -39,7 +39,7 @@
 <!--头部结束-->
   <!--理财服务详情页面开始-->
   <div class="M_menu">
-  	<a href="/user/UserAction.act">用户中心</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">服务管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">我的服务订单</a>&nbsp;&nbsp;
+  	服务管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;我的服务订单
   </div>
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_out">

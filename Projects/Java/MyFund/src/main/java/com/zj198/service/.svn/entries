@@ -1,15 +1,15 @@
 10
 
 dir
-3339
+3411
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/service
 svn://192.168.1.8
 
 
 
-2012-09-07T08:49:45.397926Z
-3305
-linm
+2012-09-13T02:41:57.384706Z
+3400
+yangb
 
 
 
@@ -25,6 +25,18 @@ linm
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
+
+finservice
+dir
+
+user
+dir
+
+message
+dir
+
+club
+dir
 
 mch
 dir
@@ -47,7 +59,7 @@ file
 
 
 
-2012-09-11T03:06:57.292608Z
+2012-09-11T03:06:57.000000Z
 3b621b31af02571ead14dd2cd301f0fc
 2012-06-20T01:27:43.918381Z
 384
@@ -76,17 +88,5 @@ Patrick
 72
 
 news
-dir
-
-finservice
-dir
-
-user
-dir
-
-message
-dir
-
-club
 dir
 

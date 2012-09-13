@@ -46,7 +46,7 @@ function toPage(pageNo){
 	<div class="hr_10"> &nbsp; </div> 
 	<!-- 当取得的结果值大于０,才显示下面的表格 -->
 	<div class="M_menu">
-  		<a href="/">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/UserAction.act">服务管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">服务申请管理</a>
+  		服务管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务申请管理
     </div>
     <div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 

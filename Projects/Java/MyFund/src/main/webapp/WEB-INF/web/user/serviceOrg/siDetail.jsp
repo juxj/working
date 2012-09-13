@@ -163,7 +163,7 @@ function quickRegist(){
 <!--头部结束-->
   <!--融资服务详情页面-->
   <div class="M_menu">
-  	<a href="#">首页</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">融资服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">服务详情</a>
+  	融资服务&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务详情
   </div>
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_menu" id="divMessage" style="display:none"></div>

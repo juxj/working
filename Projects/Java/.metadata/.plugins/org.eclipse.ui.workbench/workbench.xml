@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="74" version="2.0">
+<workbench progressCount="68" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1016" x="172" y="24">
+<window height="768" maximized="true" width="1012" x="30" y="24">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -21,12 +21,13 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="156" y="30"/>
 <coolItem id="org.eclipse.jdt.ui.JavaElementCreationActionSet" itemType="typeToolBarContribution" x="76" y="30"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="104" y="30"/>
-<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="159" y="30"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="40" y="30"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.compare.CompareEditor" itemType="typePlaceholder" x="96" y="30"/>
 <coolItem id="org.eclipse.wst.css.core.csssource.source" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -35,6 +36,8 @@
 <coolItem id="com.genuitec.eclipse.webdesigner3.editors.jsp" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="UserSeparator" itemType="typeSeparator"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="184" y="30"/>
 </coolbarLayout>
 <page aggregateWorkingSetId="Aggregate for window 1347001062394" focus="true" label="java - MyEclipse Java Enterprise">
 <editors>
@@ -45,18 +48,26 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="loanManage.jsp" partName="loanManage.jsp" path="/home/tju/Workspaces/projects/java/MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp" title="loanManage.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp"/>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="balance_sheet_assets.jsp" partName="balance_sheet_assets.jsp" path="/home/tju/Workspaces/Projects/Java/MyFund/src/main/webapp/CFR/balance_sheet_assets.jsp" title="balance_sheet_assets.jsp" tooltip="MyFund/src/main/webapp/CFR/balance_sheet_assets.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/CFR/balance_sheet_assets.jsp"/>
 </editor>
-<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="home.jsp" partName="home.jsp" path="/home/tju/Workspaces/projects/java/MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp" title="home.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp"/>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="balance_sheet_loans.jsp" partName="balance_sheet_loans.jsp" path="/home/tju/Workspaces/Projects/Java/MyFund/src/main/webapp/CFR/balance_sheet_loans.jsp" title="balance_sheet_loans.jsp" tooltip="MyFund/src/main/webapp/CFR/balance_sheet_loans.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/CFR/balance_sheet_loans.jsp"/>
 </editor>
-<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="supply_info_home.jsp" partName="supply_info_home.jsp" path="/home/tju/Workspaces/projects/java/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp" title="supply_info_home.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp"/>
+<editor activePart="true" focus="true" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="balance_sheet.jsp" partName="balance_sheet.jsp" path="/home/tju/Workspaces/Projects/Java/MyFund/src/main/webapp/CFR/balance_sheet.jsp" title="balance_sheet.jsp" tooltip="MyFund/src/main/webapp/CFR/balance_sheet.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/CFR/balance_sheet.jsp"/>
+</editor>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="edit.jsp" partName="edit.jsp" path="/home/tju/Workspaces/Projects/Java/MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp" title="edit.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp"/>
+</editor>
+<editor id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="balance_sheet_equities.jsp" partName="balance_sheet_equities.jsp" path="/home/tju/Workspaces/Projects/Java/MyFund/src/main/webapp/CFR/balance_sheet_equities.jsp" title="balance_sheet_equities.jsp" tooltip="MyFund/src/main/webapp/CFR/balance_sheet_equities.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MyFund/src/main/webapp/CFR/balance_sheet_equities.jsp"/>
 </editor>
 </editors>
 <views>
@@ -78,13 +89,13 @@
 <view id="org.eclipse.debug.ui.ExpressionView" partName="Expressions">
 <viewState/>
 </view>
-<view id="com.genuitec.javascript.debug.ui.scriptView" partName="JavaScript Scripts Inspector"/>
 <view id="com.genuitec.eclipse.ast.deploy.core.serverview" partName="Servers"/>
-<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
-<viewState/>
-</view>
+<view id="com.genuitec.javascript.debug.ui.scriptView" partName="JavaScript Scripts Inspector"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (100 of 503 items)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="266" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -125,9 +136,6 @@
 </xmlDefinedFilters>
 </customFilters>
 </viewState>
-</view>
-<view id="org.tigris.subversion.subclipse.ui.repository.RepositoriesView" partName="SVN Repositories">
-<viewState/>
 </view>
 </views>
 <perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
@@ -224,9 +232,6 @@
 <perspective_action id="com.genuitec.eclipse.web20.perspective"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
-<view id="org.eclipse.ui.views.ContentOutline"/>
-<view id="org.eclipse.ui.views.PropertySheet"/>
-<view id="org.tigris.subversion.subclipse.ui.repository.RepositoriesView"/>
 <view id="org.eclipse.ui.views.ProblemView"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="com.genuitec.eclipse.ui.HTMLView"/>
@@ -249,26 +254,22 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.28188404" ratioLeft="389" ratioRight="991" relationship="2" relative="cvslocation"/>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@bf2e791" ratio="0.75" ratioLeft="609" ratioRight="203" relationship="2" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-</presentation>
+<info part="org.eclipse.ui.editorss" ratio="0.33333334" ratioLeft="460" ratioRight="920" relationship="2" relative="cvslocation"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@bf2e791" ratio="0.7347174" ratioLeft="637" ratioRight="230" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@7840e6b7" ratio="0.54969877" ratioLeft="365" ratioRight="299" relationship="4" relative="org.eclipse.ui.internal.ViewStack@bf2e791">
-<folder activePageID="org.tigris.subversion.subclipse.ui.repository.RepositoriesView" appearance="2" expanded="2">
-<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
-<page content="org.tigris.subversion.subclipse.ui.repository.RepositoriesView" label="SVN Repositories"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-</presentation>
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.PropertySheet" label="LabelNotFound"/>
+<page content="org.tigris.subversion.subclipse.ui.repository.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="bottom" ratio="0.5012531" ratioLeft="400" ratioRight="398" relationship="4" relative="org.eclipse.ui.editorss">
+<info folder="true" part="bottom" ratio="0.6257862" ratioLeft="398" ratioRight="238" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
@@ -451,70 +452,70 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/public/club/request_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/balance_sheet_assets.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/balance_sheet_loans.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/balance_sheet_equitis.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/balance_sheet.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/_header.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" path="/MyFund/src/main/webapp/script/jquery.ui.tabs.min.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/WEB-INF/web/user/CFR/balance_sheet_equities.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/MyFund/src/main/webapp/CFR/balance_sheet_loans.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/MyFund/src/main/webapp/CFR/balance_sheet_equities.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/CFR/_header.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/CFR/balance_sheet_loans.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" path="/MyFund/src/main/webapp/CFR/balance_sheet.jsp"/>
 </editors>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="request_info_home.jsp" index="1"/>
-<item historyLabel="home.jsp" index="2"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="request_info_home.jsp" index="1"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="request_info_home.jsp" index="1"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="request_info_home.jsp" index="1"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="request_info_home.jsp" index="1"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="supply_info_home.jsp" index="4">
-<position info="not_deleted" x="3802" y="0"/>
-</item>
-<item historyLabel="request_info_home.jsp" index="5">
-<position/>
-</item>
-<item historyLabel="supply_info_home.jsp" index="6">
-<position info="not_deleted" x="3802" y="0"/>
-</item>
-<item historyLabel="request_info_home.jsp" index="7">
+<item historyLabel="balance_sheet_assets.jsp" index="0"/>
+<item historyLabel="balance_sheet_loans.jsp" index="1"/>
+<item historyLabel="balance_sheet_equitis.jsp" index="2"/>
+<item historyLabel="balance_sheet_assets.jsp" index="0"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="balance_sheet_assets.jsp" index="0"/>
+<item historyLabel="balance_sheet_equitis.jsp" index="2"/>
+<item historyLabel="balance_sheet_loans.jsp" index="1"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="edit.jsp" index="5"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="edit.jsp" index="5"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="edit.jsp" index="5"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="edit.jsp" index="5"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="edit.jsp" index="5"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="jquery.ui.tabs.min.js" index="6">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="loanManage.jsp" index="0"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item historyLabel="request_info_home.jsp" index="3"/>
-<item historyLabel="supply_info_home.jsp" index="4"/>
-<item active="true" historyLabel="loanManage.jsp" index="8"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="balance_sheet_assets.jsp" index="0"/>
+<item historyLabel="_header.jsp" index="4"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="balance_sheet_equitis.jsp" index="2"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="balance_sheet_assets.jsp" index="0"/>
+<item historyLabel="balance_sheet_equities.jsp" index="7"/>
+<item historyLabel="balance_sheet.jsp" index="3"/>
+<item historyLabel="balance_sheet_loans.jsp" index="1"/>
+<item historyLabel="balance_sheet_loans.jsp" index="8">
+<position/>
+</item>
+<item historyLabel="balance_sheet_equities.jsp" index="9">
+<position/>
+</item>
+<item historyLabel="_header.jsp" index="10"/>
+<item historyLabel="balance_sheet_loans.jsp" index="11"/>
+<item active="true" historyLabel="balance_sheet.jsp" index="12"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/MyFund/src/main/java" type="2"/>
 </page>
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topleft"/>
-</trimArea>
-<trimArea IMemento.internal.id="131072">
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@bf2e791"/>
-<trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7840e6b7"/>
-</trimArea>
 <trimArea IMemento.internal.id="128">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
 </trimArea>
@@ -522,55 +523,36 @@
 <trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
 <trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
-<trimItem IMemento.internal.id="bottom"/>
 </trimArea>
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="request_info_home.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/request_info_home.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.jsdt.ui.CompilationUnitEditor" name="jquery.ui.tabs.min.js" tooltip="MyFund/src/main/webapp/script/jquery.ui.tabs.min.js">
+<persistable path="/MyFund/src/main/webapp/script/jquery.ui.tabs.min.js"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="supply_info_home.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/supply_info_home.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="edit.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp">
+<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/bank/edit.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="home.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/home.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="_work_area.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/_work_area.jsp">
+<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/_work_area.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="request_info_home.jsp" tooltip="MyFund/src/main/webapp/public/club/request_info_home.jsp">
-<persistable path="/MyFund/src/main/webapp/public/club/request_info_home.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="edit_project_invest.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/edit_project_invest.jsp">
+<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/edit_project_invest.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="loanManage.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/loan/loanManage.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="edit_pawn_info.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/club/edit_pawn_info.jsp">
+<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/club/edit_pawn_info.jsp"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="index.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/serviceOrg/index.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/serviceOrg/index.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SupplyInfoAction.java" tooltip="MyFund/src/main/java/com/zj198/action/club/SupplyInfoAction.java">
+<persistable path="/MyFund/src/main/java/com/zj198/action/club/SupplyInfoAction.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="_request_info.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/common/_request_info.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/common/_request_info.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="SupplyInfoAction.java" tooltip="MyFund/src/main/java/com/zj198/action/admin/authorize/SupplyInfoAction.java">
+<persistable path="/MyFund/src/main/java/com/zj198/action/admin/authorize/SupplyInfoAction.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="style.css" tooltip="MyFund/src/main/webapp/css/admin/style.css">
-<persistable path="/MyFund/src/main/webapp/css/admin/style.css"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClbRequestInfo.java" tooltip="MyFund/src/main/java/com/zj198/model/ClbRequestInfo.java">
+<persistable path="/MyFund/src/main/java/com/zj198/model/ClbRequestInfo.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="member1.css" tooltip="MyFund/src/main/webapp/css/member1.css">
-<persistable path="/MyFund/src/main/webapp/css/member1.css"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.css.core.csssource.source" name="member.css" tooltip="MyFund/src/main/webapp/css/member.css">
-<persistable path="/MyFund/src/main/webapp/css/member.css"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="_supply_info.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/common/_supply_info.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/common/_supply_info.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="bankFinanceHome.jsp" tooltip="MyFund/src/main/webapp/public/finance/bankFinanceHome.jsp">
-<persistable path="/MyFund/src/main/webapp/public/finance/bankFinanceHome.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="serviceItemHome.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/serviceOrg/serviceItemHome.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/serviceOrg/serviceItemHome.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="index.jsp" tooltip="MyFund/src/main/webapp/WEB-INF/web/user/bank/index.jsp">
-<persistable path="/MyFund/src/main/webapp/WEB-INF/web/user/bank/index.jsp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.webdesigner3.editors.jsp" name="supply_info_home.jsp" tooltip="MyFund/src/main/webapp/public/club/supply_info_home.jsp">
-<persistable path="/MyFund/src/main/webapp/public/club/supply_info_home.jsp"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ClbRequestInfoDAOImpl.java" tooltip="MyFund/src/main/java/com/zj198/dao/hibernate/ClbRequestInfoDAOImpl.java">
+<persistable path="/MyFund/src/main/java/com/zj198/dao/hibernate/ClbRequestInfoDAOImpl.java"/>
 </file>
 </mruList>
 </workbench>

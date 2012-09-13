@@ -72,35 +72,33 @@ function showApply(){
     <div id="finance_apply_list">
     
     </div>
+    <div class="hr_10"> &nbsp; </div>
     <div id="div_request_info">
     	<s:include value="../common/_request_info.jsp"></s:include>
     </div>
-    <div class="hr_10"> &nbsp; </div>
-    <div class="clear"> &nbsp; </div>
     <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
       <caption>
-      <span class="fr view_all"><a href="">查看全部»</a></span>
+      <span class="fr view_all"><a href="/service/serviceOrder!showSinOrdersByApplicant.act">查看全部»</a></span>
       <h6>我的服务申请</h6>
+      <span class="leftdetail"><a href="/service/serviceItem!showHome.act" target="_blank">立即申请</a></span>
       </caption>
        <tr>
       	<th width="26%">服务标题</th>
         <th width="26%">服务方</th>
         <th width="12%">服务类型</th>
-        <th >申请日期</th>
-        <th >状态</th>
-        <th >操作</th>
+        <th>申请日期</th>
+        <th>状态</th>
+        <th>操作</th>
       </tr>
       <s:if test="sinOrderList.data.size()>0">
 	      <s:iterator value="sinOrderList.data" id="item">
 	       <tr>
-	       	  <td>
-	       	  	<label title="${item.itemTitle}">
+	       	  <td  title="${item.itemTitle}">
 					<s:if test="#item.itemTitle.length()>10">
    						<a href="/service/serviceOrder!showSinOrderDetail.act?orderId=${item.id}"><s:property value="#item.itemTitle.substring(0,10)"></s:property>...</a>
    					</s:if><s:else>
    						<a href="/service/serviceOrder!showSinOrderDetail.act?orderId=${item.id}">${item.itemTitle}</a>
    					</s:else>
-  				</label>
 	       	  </td>
 	          <td>${item.vendorName }</td>
 	          <td>${item.itemTypeName }</td>
@@ -183,7 +181,7 @@ function showApply(){
 			    </div>
 	        </div>
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="">更多»</a></span>
+    <div class="menu_blue white">
       <h6>实用工具</h6>
     </div>
     <div class="box_3">

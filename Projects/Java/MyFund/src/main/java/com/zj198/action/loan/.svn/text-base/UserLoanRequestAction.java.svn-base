@@ -39,7 +39,7 @@ public class UserLoanRequestAction extends BaseAction {
 		ActionContext context = ActionContext.getContext();
 		UsrUser user = (UsrUser) context.getSession().get("_user");
 		if (user.getUserTypeGroup().intValue() == 2 || user.getUserTypeGroup().intValue() == 3) {// 银行或其它贷款机构
-			topThree = loanRequestService.getTopThree();
+			topThree = loanRequestService.getTopThrees(user.getType().intValue());
 		}else{
 			topThree = loanRequestService.getTopThree(user.getId());
 		}

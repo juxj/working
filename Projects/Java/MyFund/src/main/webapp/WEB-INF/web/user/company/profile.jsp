@@ -21,6 +21,10 @@ $(document).ready(function(){
 	<jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
 </div>
 <div class="hr_10"> &nbsp; </div>
+<div class="M_menu">
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;详细信息
+</div>
+<div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
 <div class="container_950 box_4">
 	<div class="P_title">详细信息</div>

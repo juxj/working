@@ -106,7 +106,13 @@
        <s:if test="sinItemList.data.size>0">
 		<s:iterator id="item" value="sinItemList.data">
 		<tr  class="gold_connect">
-			<td>${item.title }</td>
+			<td title="${item.title }">
+				<s:if test="#item.title.length()>10">
+					<s:property value="#item.title.substring(0,10)"></s:property>...
+				</s:if><s:else>
+					${item.title}
+				</s:else>
+			</td>
 			<td>${item.typeName }</td>
 			<td>${item.chargeRange }</td>
 			<td>${item.regionName }</td>
@@ -144,7 +150,7 @@
   </div>
   <div class="grid_230">
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="">更多»</a></span>
+    <div class="menu_blue white"><span class="fr white"><a href="/finance/bankProduct!search.act">更多»</a></span>
       <h6>推荐理财产品</h6>
     </div>
     <div class="box_3">
@@ -155,7 +161,7 @@
       </ul>
     </div>
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="">更多»</a></span>
+    <div class="menu_blue white">
       <h6>实用工具</h6>
     </div>
     <div class="box_3">

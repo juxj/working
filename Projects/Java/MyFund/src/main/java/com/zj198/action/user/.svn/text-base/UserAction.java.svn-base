@@ -185,7 +185,11 @@ public class UserAction extends BaseAction {
 		}
 		return ERROR;
 	}
-	
+	public String capitalLetter(){
+		ActionContext context = ActionContext.getContext();	
+		UsrUser user = (UsrUser)context.getSession().get("_user");
+		return "capital";
+	}
 	/**取得用户所申请的服务订单*/
 	private void findSinOrderListByApplicant(UsrUser user) {
 		this.serviceLevelList = this.dictoryDataService.findCommonDataByGroupId(40);

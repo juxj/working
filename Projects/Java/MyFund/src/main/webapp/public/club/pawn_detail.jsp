@@ -14,7 +14,7 @@
   <!--资金信息详细页面开始-->
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_menu" >
-  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/service/supplyInfoAction!home.act">找资金</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;资金信息
+  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/service/supplyInfoAction!home.act">找资金</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;资金信息
   </div>
    <!--表格部分开始-->
   <div class="M_out">
@@ -53,7 +53,7 @@
             <td style="padding-left:10px;">${clbSupplyInfo.productCycle }</td>
          
             <td class="Search_t_connect">典当范围</td>
-            <td colspan="3" style="padding-left:10px;">${clbSupplyInfo.workRange }</td>
+            <td style="padding-left:10px;">${clbSupplyInfo.workRange }</td>
           </tr>
           <jsp:include page="_common_info.jsp" />     
         </table>

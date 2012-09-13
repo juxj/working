@@ -14,86 +14,92 @@
 <body>
 <!--头部开始-->
 <div class="header index_header">
-<jsp:include page="/public/head1.jsp" />
+<jsp:include page="/public/head1.jsp"/>
   <div class="clear"> &nbsp; </div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--头部结束-->
   <!--理财服务详情页面开始-->
   <div class="M_menu">
-  	<a href="/finance/financeProduct.act">理财产品</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;基金产品详情
+  	<a href="/finance/financeProduct.act">理财服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;基金产品详情
   </div>
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
+        <table border="0" cellspacing="0" cellpadding="0"  width="710px"  class="box_5 ">
+          <tr>
+            <td class="Search_t_title red ">圣迈鑫源投资基金低风险高收益计划</td>
+            <td style=" width: 110px; "><input type="button" class="but_gray " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></td>
+          </tr>
+        </table>
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
-            <td colspan="4" class="Search_t_title">${prdBankfinance.name}</td>
-          </tr>
-          <tr>
             <td class="Search_t_connect">产品名称</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.name}</td>
+            <td colspan="3" style="padding-left:10px;">圣迈鑫源股权投资基金</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">发行银行</td>
-            <td class="Search_t_connect01">${prdBankfinance.bank}</td>
-            <td class="Search_t_connect">币种</td>
-            <td class="Search_t_connect01">${prdBankfinance.currency}</td>
+            <td class="Search_t_connect" style="width: 300px;">发行银行</td>
+            <td class="Search_t_connect01">鑫鑫源投资基金管理有限公司</td>
+            <td class="Search_t_connect">发行地</td>
+            <td class="Search_t_connect01">北京</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">委托管理期</td>
-            <td class="Search_t_connect01">${prdBankfinance.manageperiod}</td>
-            <td class="Search_t_connect">收益起计日</td>
-            <td class="Search_t_connect01"><s:date name="prdBankfinance.benefitstart"/></td>
+            <td class="Search_t_connect">发行规模</td>
+            <td class="Search_t_connect01">1亿元</td>
+            <td class="Search_t_connect">资金门槛</td>
+            <td class="Search_t_connect01">100万</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">销售起始日期</td>
-            <td class="Search_t_connect01"><s:date name="prdBankfinance.sellstart"/></td>
-            <td class="Search_t_connect">销售终止日期</td>
-            <td class="Search_t_connect01"><s:date name="prdBankfinance.sellend"/></td>
-          </tr>
-          <tr>
-            <td class="Search_t_connect02">休息周期</td>
-            <td class="Search_t_connect01">${prdBankfinance.benefitperiod}</td>
-            <td class="Search_t_connect02">预期最高年化收益率(%)</td>
-            <td class="Search_t_connect01">${prdBankfinance.benefitrate}</td>
-          </tr>
-          <tr>
-            <td class="Search_t_connect">产品类型</td>
-            <td class="Search_t_connect01">${prdBankfinance.type}</td>
-            <td class="Search_t_connect">委托起始金额</td>
-            <td class="Search_t_connect01">${prdBankfinance.minamount}</td>
-          </tr>
-          <tr>
+            <td class="Search_t_connect">预期年化收益率</td>
+            <td class="Search_t_connect01">
+					14%~26%(投资额<300万)<br/>
+					15%~26%(投资额>=300万)
+			</td>
             <td class="Search_t_connect">收益类型</td>
-            <td class="Search_t_connect01">${prdBankfinance.benefittype}</td>
-            <td class="Search_t_connect">发售地区</td>
-            <td class="Search_t_connect01">${prdBankfinance.sellarea}</td>
+            <td class="Search_t_connect01">固定型</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">递增单位（单位：元）</td>
-            <td class="Search_t_connect01">${prdBankfinance.addunit}</td>
-            <td class="Search_t_connect">产品管理费</td>
-            <td class="Search_t_connect01">${prdBankfinance.managefee}</td>
+            <td class="Search_t_connect02">投资期限</td>
+            <td class="Search_t_connect01">18个月</td>
+            <td class="Search_t_connect02">期限类型</td>
+            <td class="Search_t_connect01">单一期限</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">是否保本</td>
-            <td class="Search_t_connect01">${prdBankfinance.guarantee}</td>
-            <td class="Search_t_connect">在售状态</td>
-            <td>${prdBankfinance.sellstatus}</td>
+            <td class="Search_t_connect">投资方式</td>
+            <td class="Search_t_connect01">股权投资</td>
+            <td class="Search_t_connect">资金流向</td>
+            <td class="Search_t_connect01">小额贷公司</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">提前终止条件</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.endcondition}</td>
+            <td class="Search_t_connect">分红情况</td>
+            <td class="Search_t_connect01">每6个月</td>
+            <td class="Search_t_connect">退出情况</td>
+            <td class="Search_t_connect01">中途不可退出</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">产品说明</td>
-            <td colspan="3" style="padding-left:10px; padding-bottom:5px;">${prdBankfinance.description}</td>
+            <td class="Search_t_connect02">认购费</td>
+            <td class="Search_t_connect01">1%（一次性收取）</td>
+            <td class="Search_t_connect">管理费</td>
+            <td class="Search_t_connect01">每年1%</td>
           </tr>
           <tr>
-            <td class="Search_t_connect">收益率说明</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.benefitratedesc}</td>
+            <td class="Search_t_connect">基金托管费</td>
+            <td class="Search_t_connect01">0.10%</td>
+            <td class="Search_t_connect"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect02">成立日期</td>
+            <td class="Search_t_connect01">2012年12月7日</td>
+            <td class="Search_t_connect">到期日期</td>
+            <td class="Search_t_connect01">2014年6月7日</td>
+          </tr>
+          <tr>
+            <td class="Search_t_connect02">资金运用情况</td>
+            <td colspan="3" style="padding-left:10px; padding-bottom:5px;">
+			本基金是由鑫鑫源投资基金管理有限公司接受投资者的委托，将募集共计人民币1亿元的资金，以股权投资方式投资于相关的小额贷款公司，在严格控制投资风险情况下，分享小额贷款公司的稳定，较高的投资回报。
+			</td>
           </tr>
         </table>
         <!--表格部分结束-->

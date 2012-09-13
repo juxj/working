@@ -99,7 +99,7 @@ function datalistcount(){
 	$("input[name=datafilesel]").each(function(){ 
     	var dv = $(this).val();
 		if($(this).attr("checked") == 'checked'){	
-			if(!(/^[0-9]$/.test($('#dataNum' + dv).val()))){
+			if(!(/^\d+(\.\d+)?$/.test($('#dataNum' + dv).val()))){
     			bool = 1;
     			return ;
     		}

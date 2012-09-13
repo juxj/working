@@ -59,12 +59,12 @@
      		<td width="12%" style="padding-left:25px;">产品编号</td>
             <td width="15%">产品名称</td>
             <td width="10%">类别</td>
-            <td width="8%">年利率</td>
+            <td width="10%">年利率</td>
             <td width="10%">发布时间</td>
-            <td width="8%">额度范围</td>
-            <td width="8%">期限</td>
+            <td width="12%">额度范围</td>
+            <td width="10%">期限</td>
             <td width="8%">状态</td>
-            <td width="21%">操作</td>
+            <td width="13%">操作</td>
           </tr>
           <s:if test="productList.size()>0">
           <tbody>
@@ -80,14 +80,9 @@
 	   			<td><s:number name="financeLittleamount" />-<s:number name="financeBigamount" />万元</td>
 	   			<td>${item.financeLittledt}-${item.financeMostdt}个月</td>
 	   			<td><common:print valueId="#item.proStatus"/></td>
-	   			<td class="view_detail01">
+	   			<td class="view_detail01" >
 	   				<a href="/user/loan/financeProduct!viewFinance.act?productId=${item.id }" >查看</a>
-	   				<s:if test="proStatus == 196">
-			   			<a href="/user/loan/financeProduct!updateFinancePage.act?product.id=${item.id }" >修改</a>
-	   				</s:if>
-	   				<s:elseif test="proStatus == 199">
-	   					<a href="/user/loan/financeProduct!updateFinancePage.act?repeatStatus=1&product.id=${item.id }" >重新发布</a>
-	   				</s:elseif>
+	   				
 	   			</td>
 			</tr>
 			</s:iterator>

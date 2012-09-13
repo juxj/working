@@ -34,7 +34,13 @@
   </s:if>
   <s:iterator value="requestInfoList" id="item">
 	  <tr>
-	    <td>${title}</td>
+	    <td title="${title}">
+	    <s:if test="title != null && title.length()>15">
+			<s:property value="title.substring(0,15)"></s:property>...
+		</s:if><s:else>
+			${title}
+		</s:else>
+	    </td>
 		<td><s:date name="createDate" format="yyyy-MM-dd"/></td>
 		<td>
 			<s:iterator id="projectTypeItem" value="projectTypeList">
@@ -44,8 +50,12 @@
 	    	</s:iterator>
 		</td>
 		<td><s:number name="needMoney" />万元</td>
-		<td width="200px">
-			${financeType}
+		<td width="200px" title="${financeType}">
+			<s:if test="financeType != null && financeType.length()>20">
+				<s:property value="financeType.substring(0,20)"></s:property>...
+			</s:if><s:else>
+				${financeType}
+			</s:else>
 			<s:if test="#item.financeType==null or #item.financeType==''">
 	    		不限
 	    	</s:if>

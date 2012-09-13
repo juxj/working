@@ -61,18 +61,18 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrPerson!=null">
-					<tr><td>姓名 </td><td> ${profileMap['realname']}</td></tr>
-					<tr><td>出生年月  </td><td> <s:date name="usrPerson.birthday" /></td></tr>
-					<tr><td>教育程度 </td><td> ${profileMap['eduAtion'] }</td></tr>
-					<tr><td>身份证号码 </td><td> ${usrPerson.cid}</td></tr>
-					<tr><td>所在地 </td><td> ${profileMap['address'] }</td></tr>
-					<tr><td>详细地址 </td><td> ${usrPerson.address }</td></tr>
-					<tr><td>邮政编码 </td><td> ${usrPerson.postcode }</td></tr>
-					<tr><td>职业 </td><td> ${profileMap['psersoncareer'] }</td></tr>
-					<tr><td>固定电话 </td><td> ${usrPerson.telephone }</td></tr>
+					<tr><td>姓名 </td><td> ${profileMap['realname']}&nbsp;</td></tr>
+					<tr><td>出生年月  </td><td> <s:date name="usrPerson.birthday" />&nbsp;</td></tr>
+					<tr><td>教育程度 </td><td> ${profileMap['eduAtion'] }&nbsp;</td></tr>
+					<tr><td>身份证号码 </td><td> ${usrPerson.cid}&nbsp;</td></tr>
+					<tr><td>所在地 </td><td> ${profileMap['address'] }&nbsp;</td></tr>
+					<tr><td>详细地址 </td><td> ${usrPerson.address }&nbsp;</td></tr>
+					<tr><td>邮政编码 </td><td> ${usrPerson.postcode }&nbsp;</td></tr>
+					<tr><td>职业 </td><td> ${profileMap['psersoncareer'] }&nbsp;</td></tr>
+					<tr><td>固定电话 </td><td> ${usrPerson.telephone }&nbsp;</td></tr>
 					<tr><td>联系方式 </td><td> ${profileMap['imtype1'] }&nbsp;&nbsp;${usrPerson.im1 }</td></tr>
-					<tr><td></td><td>${profileMap['imtype2'] }&nbsp;&nbsp;${usrPerson.im2 }</td></tr>
-					<tr><td></td><td>${profileMap['imtype3'] }&nbsp;&nbsp;${usrPerson.im3 }</td></tr>
+					<tr><td>&nbsp;</td><td>${profileMap['imtype2'] }&nbsp;&nbsp;${usrPerson.im2 }</td></tr>
+					<tr><td>&nbsp;</td><td>${profileMap['imtype3'] }&nbsp;&nbsp;${usrPerson.im3 }</td></tr>
 					<tr><td>&nbsp;</td><td align="center">
 						<label>当前状态：<span id="auditMsg"><s:if test="audit == 0">未审核</s:if><s:elseif test="audit == 1">待审核</s:elseif><s:if test="audit == 2">已审核</s:if></span></label>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -80,7 +80,7 @@ function audit(id,audit){
 						<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 					</td></tr>
 					</s:if><s:else><tr><td colspan="2">用户未填充信息</td></tr>
-						<tr><td></td><td align="center">
+						<tr><td>&nbsp;</td><td align="center">
 							<input type="button" value="返 回" onclick="javascript:window.history.back();" />
 						</td></tr>
 					</s:else>

@@ -40,7 +40,7 @@ $(function(){
 
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-<a href="#">用户中心</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">信息管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="#">发布新资金信息</a>
+信息管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;发布新资金信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">

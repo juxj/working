@@ -522,8 +522,8 @@ public class AccountAction extends BaseAction {
 						message.setContent(String.format(PropertiesUtil.getByKey("sms.template.veriry"),usrUser.getRealname(),userGender,activeCode));
 						message.setReceiver(usrUser.getMobile());
 						notifyQueueService.addNewMessage(message);
-						user.setActivetype(Constants.USER_ACTIVE_ALL);
-						ctx.getSession().put("_user", user);
+//						user.setActivetype(Constants.USER_ACTIVE_ALL);
+//						ctx.getSession().put("_user", user);
 						msg=SUCCESS;
 						return "ajax";
 					}

@@ -64,6 +64,11 @@ public class FinanceProductAction extends BaseAction {
 	private String operatIncome;
 	private Integer settingYear;
 	// 所属行业 (父行业&&子行业)
+	
+	// 筛选菜单 收缩状态
+	private String shrink;
+
+	
 
 	// (个人经营性贷款152)条件筛选的隐藏域
 	private String needEnsure;
@@ -417,6 +422,12 @@ public class FinanceProductAction extends BaseAction {
 	public void setDictoryDataService(DictoryDataService dictoryDataService) {
 		this.dictoryDataService = dictoryDataService;
 	}
-	
+	public String getShrink() {
+		return shrink;
+	}
+
+	public void setShrink(String shrink) {
+		this.shrink = shrink;
+	}
 
 }

@@ -23,7 +23,7 @@ $(document).ready(function(){
 	$("#bizCity").val('${usrCompany.bizcityid}');
 	$("#bizDistrict").val('${usrCompany.bizdistrictid}');
 	$("#industry").val('${usrCompany.industryid}');
-	if('${usrCompany}'==''){
+	if('${session._user.auditstatus}' != '2'){
 		$("#status").show();
 	}
 });
@@ -33,6 +33,10 @@ $(document).ready(function(){
 <!--头部-->
 <div class="header user_header">
 <jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
+</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="M_menu">
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑企业基本信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event
+END
+AppEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/AppEvent.java
+END
+AppListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/AppListener.java
+END
+BuddyEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/BuddyEvent.java
+END
+LoginEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/LoginEvent.java
+END
+EventManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/EventManager.java
+END
+BuddyListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/BuddyListener.java
+END
+LoginListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/13/trunk/italk-parent/italk-core/src/main/java/italk/event/LoginListener.java
+END

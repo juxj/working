@@ -1,15 +1,15 @@
 10
 
 dir
-3339
+3411
 svn://192.168.1.8/MyFund/src/main/java/com/zj198
 svn://192.168.1.8
 
 
 
-2012-09-11T03:09:02.695897Z
-3339
-yuel
+2012-09-13T03:22:34.953607Z
+3404
+linm
 
 
 
@@ -25,15 +25,6 @@ yuel
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-task
-dir
-
-dao
-dir
-
-filter
-dir
 
 action
 dir
@@ -51,5 +42,14 @@ model
 dir
 
 service
+dir
+
+task
+dir
+
+dao
+dir
+
+filter
 dir
 

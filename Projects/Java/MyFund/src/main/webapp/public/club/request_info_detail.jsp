@@ -22,7 +22,7 @@
   </style>
   <div class="hr_10"> &nbsp; </div> 
   <div class="M_menu" >
-  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/service/requestInfoAction!home.act">找项目</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;项目信息
+  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/service/requestInfoAction!home.act">找项目</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;项目信息
   </div>
    <!--表格部分开始-->
   <div class="M_out">

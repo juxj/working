@@ -19,10 +19,6 @@
           <td>是否停用</td>
           <td>生效日期</td>
           <td>失效日期</td>
-          <td>创建人</td>
-          <td>创建日期</td>
-          <td>修改人</td>
-          <td>修改日期</td>
           <td colspan="2">操作</td>
        </tr>
     	<s:iterator value="typeList" id="tl">
@@ -31,12 +27,8 @@
           <td>${tl.term }</td>
           <td>${tl.charge }</td>
           <td><s:if test="#tl.isCancelled==1">使用</s:if><s:else>停用</s:else></td>
-          <td><s:date name="#tl.effectiveDate" format="yyyy-MM-dd HH:mm:ss" /></td>
-          <td><s:date name="#tl.expiredDate" format="yyyy-MM-dd HH:mm:ss" /></td>
-          <td>${tl.createdBy }</td>
-          <td><s:date name="#tl.createdDate" format="yyyy-MM-dd HH:mm:ss" /></td>
-          <td>${tl.lastModifiedBy }</td>
-          <td><s:date name="#tl.lastModifiedDate" format="yyyy-MM-dd HH:mm:ss" /></td>
+          <td><s:date name="#tl.effectiveDate"/></td>
+          <td><s:date name="#tl.expiredDate"/></td>
           <td><a href="${tl.id }">修改</a></td>
           <td><a href="/member/type!deleteType.act?mchType.id=${tl.id }">删除</a></td>
        </tr>

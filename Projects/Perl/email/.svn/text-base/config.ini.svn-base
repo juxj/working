@@ -1,0 +1,15 @@
+[mysql]
+host=localhost
+user=dba
+password=dba
+database=dev
+[sql]
+query=select * from NTY_MESSAGE_QUEUE 
+update=update NTY_MESSAGE_QUEUE set status = %d where id=%d
+[smtp]
+from=noreply@zj198.com
+host=mail.zj198.com
+port=25
+timeout=30
+user=noreply@zj198.com
+password=67h3fst7jGG

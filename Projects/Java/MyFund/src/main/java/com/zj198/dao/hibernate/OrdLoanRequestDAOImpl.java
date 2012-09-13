@@ -105,15 +105,15 @@ public class OrdLoanRequestDAOImpl extends HibernateDAO<OrdLoanRequest, Integer>
 		return pagedQuery(hql.toString(), spModel.getPager().getCurrentPage(), spModel.getPager().getPageCount(), params);
 	}
 
-	@Override
 	public List<OrdLoanRequest> getTopThree(int userId) {
 		Hashtable<String, Object> params = new Hashtable<String, Object>();
 		params.put("userId", userId);
 		return findTopRows("from OrdLoanRequest t where t.isdeleted=0 and t.userId = :userId", 3, params);
 	}
 
-	@Override
-	public List<OrdLoanRequest> getTopThree() {
-		return findTopRows("from OrdLoanRequest t where t.isdeleted=0 and t.applyStatus = 145", 3);
+	public List<OrdLoanRequest> getTopThrees(int userType) {
+		Hashtable<String, Object> params = new Hashtable<String, Object>();
+		params.put("userType", userType);
+		return findTopRows("from OrdLoanRequest t where t.isdeleted=0 and t.applyStatus = 145 and t.loanOrganization like :userType", 3, params);
 	}
 }

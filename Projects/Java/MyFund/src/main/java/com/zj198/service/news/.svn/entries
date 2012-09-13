@@ -1,7 +1,7 @@
 10
 
 dir
-3339
+3411
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/news
 svn://192.168.1.8
 
@@ -26,47 +26,13 @@ yuel
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-DicYellowpageService.java
-file
-
-
-
-
-2012-09-11T03:06:57.288608Z
-91752b1eddbcbd22a05d948f633a8c15
-2012-08-03T03:35:01.200183Z
-1942
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-271
-
 NewsService.java
 file
 
 
 
 
-2012-09-11T03:06:57.288608Z
+2012-09-11T03:06:57.000000Z
 0c1997e443e7f74550506a156b83c08c
 2012-08-14T08:15:02.784830Z
 2352
@@ -96,4 +62,38 @@ yuel
 
 impl
 dir
+
+DicYellowpageService.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+91752b1eddbcbd22a05d948f633a8c15
+2012-08-03T03:35:01.200183Z
+1942
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+271
 

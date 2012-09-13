@@ -24,6 +24,6 @@ public interface OrdLoanRequestDAO extends BaseDAO<OrdLoanRequest, Integer>{
 	
 	public List<OrdLoanRequest> getTopThree(int userid);
 	
-	public List<OrdLoanRequest> getTopThree();
+	public List<OrdLoanRequest> getTopThrees(int userType);
 
 }

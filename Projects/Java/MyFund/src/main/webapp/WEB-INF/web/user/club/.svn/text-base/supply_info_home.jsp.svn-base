@@ -33,7 +33,7 @@
 <div class="container_950">
 	<div class="clear"> &nbsp;</div>
 	<div class="M_menu">
-		<a href="/">首页</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/UserAction.act">融资管理</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="#">投资俱乐部</a>
+		融资管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;融资俱乐部
 	</div>
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
@@ -51,20 +51,16 @@
 		<th>投资方式</th>
 		<th>状态</th>
 		<th width="12%">操作</th>
-		<s:if test="pager.data == null || pager.data.size<=0">
-		  	<tr>
-		  		<td colspan="6" align="center">
-		  		<s:if test="#session._user.userTypeGroup==2 || #session._user.userTypeGroup==3">
-				您还未发布任何资金信息<br/>
-				您可以<a href="/service/supplyInfoAction4User!editFirstStep.act">点此免费发布资金信息</a>让好项目来找您<br/>
-				你也可以去<a href="/service/club.act">融资俱乐部</a>寻找适合您的项目信息
-  				</s:if>
-		  		</td>
-		  	</tr>
-		  </s:if><s:else>
+		<s:if test="pager.data != null || pager.data.size>0">
 			<s:iterator id="item" value="pager.data" status="st">
 				<tr style="padding-left:8px;">
-				<td>${item.title}</td>
+				<td title="${item.title}">
+					<s:if test="#item.title.length()>10">
+   						<s:property value="#item.title.substring(0,10)"></s:property>...
+   					</s:if><s:else>
+   						${item.title}
+   					</s:else>
+				</td>
 				<td><s:date name="#item.lastPostDate" /></td>
 				<td>
 					<s:iterator id="investTypeItem" value="investStyleList">
@@ -85,8 +81,12 @@
 	    				${item.workTranche }
 	    			</s:if>    
 				</td>
-				<td>
-					${item.workTrade }
+				<td title="${item.workTrade}">
+					<s:if test="#item.workTrade.length()>15">
+   						<s:property value="#item.workTrade.substring(0,15)"></s:property>...
+   					</s:if><s:else>
+   						${item.workTrade}
+   					</s:else>
 			    	<s:if test="#item.workTrade==null or #item.workTrade==''">
 			    		不限
 			    	</s:if>
@@ -117,11 +117,24 @@
 				</td>
 				</tr>
 			</s:iterator>
-		</s:else>
+		  </s:if>
 	</table>
 	<div class="hr_10"> &nbsp; </div>
 	<jsp:include page="/public/pagination.jsp"></jsp:include>
 </div>
+<s:if test="pager.data == null || pager.data.size<=0">
+      <div class="container_950 box_4">
+		<div class="l_out">
+		<s:if test="#session._user.userTypeGroup==2 || #session._user.userTypeGroup==3">
+			<h1 class="l_title">您还未发布任何资金信息</h1>
+			<p> 
+			您可以<a href="javascript:edit();">点此免费发布资金信息</a>让好项目来找您<br/>
+			你也可以去<a href="/service/requestInfoAction!home.act">融资俱乐部</a>寻找适合您的项目信息
+			</p>
+		</s:if>
+		</div>
+      </div>  
+ </s:if>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp"></jsp:include>

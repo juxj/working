@@ -125,7 +125,7 @@ function showApply(){
 			    </div>
 	        </div>
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="">更多»</a></span>
+    <div class="menu_blue white">
       <h6>实用工具</h6>
     </div>
     <div class="box_3">
