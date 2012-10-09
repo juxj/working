@@ -1,15 +1,15 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/test
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/test
 svn://192.168.1.8
 
 
 
-2012-07-23T03:44:34.547193Z
-1471
-juxj
+2012-09-28T01:08:36.316859Z
+3698
+yangb
 
 
 
@@ -26,9 +26,9 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-resources
+java
 dir
 
-java
+resources
 dir
 

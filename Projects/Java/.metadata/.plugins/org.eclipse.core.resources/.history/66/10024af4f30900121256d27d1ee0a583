@@ -1,0 +1,34 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="club" namespace="/club" extends="base">
+		<action name="clubAction" class="com.zj198.action.club.ClubAction">
+    	   <result name="home">/public/club/home.jsp</result>
+    	   <result name="supplyInfoByAllType">/public/club/supply_info_by_all_type.jsp</result>
+    	   <result name="requestInfoByAllType">/public/club/request_info_by_all_type.jsp</result>
+    	</action>
+    	
+    	
+    	<action name="supplyInfoHome" class="com.zj198.action.club.SupplyInfoAction" method="showUserHome">
+    		<interceptor-ref name="checkInterceptor"/>
+		    <result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+    	</action>
+    	<action name="editSupplyInfo" class="com.zj198.action.club.SupplyInfoAction" method="edit">
+			<interceptor-ref name="checkInterceptor"/>
+		    <result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		    <result name="edit">/WEB-INF/web/user/club/edit_supply_info.jsp</result>
+		    <result name="editFirstStep">/WEB-INF/web/user/club/edit_supply_info_first_step.jsp</result>
+		    <result name="editPawnInfo">/WEB-INF/web/user/club/edit_pawn_info.jsp</result>
+		    <result name="editGuaranteeInfo">/WEB-INF/web/user/club/edit_guarantee_info.jsp</result>
+		    <result name="editLoanInfo">/WEB-INF/web/user/club/edit_loan_info.jsp</result>
+		    <result name="editProjectInvest">/WEB-INF/web/user/club/edit_project_invest.jsp</result>
+		    <result name="editInstitutionBank">/WEB-INF/web/user/club/edit_institution_bank.jsp</result>
+		    <result name="editInstitutionInsurance">/WEB-INF/web/user/club/edit_institution_insurance.jsp</result>
+		    <result name="editInstitutionTrust">/WEB-INF/web/user/club/edit_institution_trust.jsp</result>
+		    <result name="editInstitutionStock">/WEB-INF/web/user/club/edit_institution_stock.jsp</result>
+		    <result name="editInstitutionRent">/WEB-INF/web/user/club/edit_institution_rent.jsp</result>
+		    <result name="editInstitutionFund">/WEB-INF/web/user/club/edit_institution_fund.jsp</result>
+		    <result name="editInstitutionFinance">/WEB-INF/web/user/club/edit_institution_finance.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -68,8 +68,6 @@ public class FinanceProductAction extends BaseAction {
 	// 筛选菜单 收缩状态
 	private String shrink;
 
-	
-
 	// (个人经营性贷款152)条件筛选的隐藏域
 	private String needEnsure;
 	private String experience;
@@ -152,7 +150,7 @@ public class FinanceProductAction extends BaseAction {
 	 * @Description 行业异步级联显示
 	 * @return
 	 */
-	public String Industry() {
+	public String industry() {
 		industryList = dictoryDataService.findIndustryByParentid(industryId);
 		return "industryList";
 	}

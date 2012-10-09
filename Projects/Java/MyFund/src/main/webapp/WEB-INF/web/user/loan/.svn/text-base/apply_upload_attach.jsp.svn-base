@@ -15,6 +15,20 @@
 <script type="text/javascript" src="/script/jquery.form.js" > </script>
 
 <script language="javascript">
+	function watchIt(id){
+		$('#img_app').html("<img src='/user/loan/downloadAttach.act?type=0&falistId="+id+"'/>");
+		$('#img_app').dialog({
+			width : 700,
+    		modal:true
+		});
+	}
+	
+	function openIt(id){
+		$.post("/user/loan/downloadAttach.act",{type:0,falistId:id},function(data){
+			
+		})
+	}
+
     function uploadFile(attachid,attachType){
     	$('#attach_id').val(attachid);
     	$('#attachType').val(attachType);
@@ -91,7 +105,9 @@
 		$('#uploadForm').ajaxSubmit({
 			datatype : "html",
 			success : function(data) {
+				$('#uload').hide();
 				$('#message').html(data);
+				
 			}
 		});
 	}
@@ -191,13 +207,6 @@
 	   			<s:if test="#item.uploadStatus != 212">	   			
 	   				<input type="button" class="but_gray" value="下载" onclick="downloadAttach('${item.id}');"/>
 	   			</s:if>
-	   			<%
-	   			/*
-	   			<s:if test="viewAttachType ==0 && #item.uploadStatus ==213">
-	   				<input type="button" class="but_gray" value="确认" onclick="updateAttachStatus('${item.id}','214');"/>
-	   				<input type="button" class="but_gray" value="退回" onclick="updateAttachStatus('${item.id}','215');"/>
-	   			</s:if>*/
-	   			 %>
 	   			</td>
 			</tr>
 			<s:if test="haveMemo == 1">
@@ -224,13 +233,13 @@
 		<tr>
 			<td><h6>选择资料 &nbsp;&nbsp; <span id="message" style="color: red"></span></h6></td>
 		</tr>
-		<tr>	
+		<tr id="uload">	
 			<td>
 			<s:file name="upload" theme="simple" id="ufile"></s:file>
 			<input type="button" value="上传"  onclick="uploadsubmit();"/></td> 
 		</tr>
 		<tr>	
-			<td>说明：支持png、jpg、jpeg、bmp、word、excel、pdf格式 文件小于3M</td>
+			<td>说明：支持png、jpg、jpeg、bmp、doc、xls、pdf格式 文件小于3M</td>
 		</tr>
 	</table>
 	</s:form>
@@ -238,7 +247,10 @@
 <div id="download_attach" style="display:none;" title="文件下载">
 
 </div>   
-   
+  
+<div id="img_app" style="display:none;" title="图片预览">
+
+</div>  
 <!-- 
 未递交
 递交待确认

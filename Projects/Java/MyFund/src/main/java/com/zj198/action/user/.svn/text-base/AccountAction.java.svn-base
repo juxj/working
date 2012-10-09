@@ -54,9 +54,9 @@ public class AccountAction extends BaseAction {
 	 */
 	public String login() {
 		ActionContext context = ActionContext.getContext();
-		if(context.getSession().get("_user")!=null){
-			return "userCenter";
-		}else{
+//		if(context.getSession().get("_user")!=null){
+//			return "userCenter";
+//		}else{
 			if (loginType != null && StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password) && StringUtils.isNotBlank(verifycode)) {
 				if (loginType == 1) {// 普通登录
 					if(context.getSession().get("_vcode")!=""){
@@ -97,7 +97,7 @@ public class AccountAction extends BaseAction {
 					return LOGIN;
 				}
 			}
-		}
+//		}
 		msg = "出现错误，请再次尝试。";
 		return LOGIN;
 	}
@@ -154,7 +154,7 @@ public class AccountAction extends BaseAction {
 					if(o!=null){
 						UsrUser user = (UsrUser)o;
 						uid = accountService.activeUser_tx(user.getUsername(),activeCode);
-						user.setActivetype(Short.parseShort(PropertiesUtil.getByKey("activeType")));
+						user.setActivetype((short) (Short.parseShort(PropertiesUtil.getByKey("activeType")) + user.getActivetype()));
 						context.getSession().put("_user",user);
 						msg="用户您好，您的账户已经激活。";
 					}else{
@@ -169,7 +169,7 @@ public class AccountAction extends BaseAction {
 				UsrUser user = (UsrUser)o;
 				uid = accountService.activeUser_tx(user.getUsername(),activeCode);
 				if(uid>0){
-					user.setActivetype(Short.parseShort(PropertiesUtil.getByKey("activeType")));
+					user.setActivetype((short) (Short.parseShort(PropertiesUtil.getByKey("activeType")) + user.getActivetype()));
 					context.getSession().put("_user",user);
 					msg="用户您好，您的账户已经激活。";
 				}else if(uid==0){
@@ -234,7 +234,7 @@ public class AccountAction extends BaseAction {
 		if(activeType==1){//邮件验证
 			if(!StringUtils.isBlank(verifycode) && !StringUtils.isBlank(email)){
 				if(context.getSession().get("_vcode").toString().equalsIgnoreCase(verifycode)){
-					context.getSession().remove("_vcode");
+					//context.getSession().remove("_vcode");
 				}else{
 					msg="验证码错误。";
 					return "ajax";
@@ -305,35 +305,35 @@ public class AccountAction extends BaseAction {
 			    msg="邮箱填写错误";
 			    return "ajax";
 			}else{
-//				email=user.getEmail();
-//				Map<String,Object> map = new HashMap<String,Object>();
-//				String body;
-//				map.put("url", PropertiesUtil.getByKey("url"));
-//				map.put("realname", user.getRealname());
-//				if(user.getGender()==1){
-//					map.put("gender", "先生");
-//				}else{
-//					map.put("gender", "女士");
-//				}
-//				String v = new SecurityUtil().des_encrypt(user.getId()+"|"+user.getActivecode());
-//				map.put("actionUrl", "Account!activate.act?v="+v);
-//				map.put("activeCode", user.getActivecode().split("\\|")[1]);
-//				try {
-//					body = FreemarkerUtil.getContent("registerActive.htm", map, false, null, null);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//					return ERROR;
-//				}
-//				NtyMessageQueue message = new NtyMessageQueue();
-//				message.setTitle("注册验证邮件 - 中国资金网");
-//				message.setContent(body);
-//				message.setReceiver(email);
-//				message.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
-//				notifyQueueService.addNewMessage(message);
-//				msg=SUCCESS;
-//				return "ajax";
-				msg="请填写email和 验证码 。";
+				email=user.getEmail();
+				Map<String,Object> map = new HashMap<String,Object>();
+				String body;
+				map.put("url", PropertiesUtil.getByKey("url"));
+				map.put("realname", user.getRealname());
+				if(user.getGender()==1){
+					map.put("gender", "先生");
+				}else{
+					map.put("gender", "女士");
+				}
+				String v = new SecurityUtil().des_encrypt(user.getId()+"|"+user.getActivecode());
+				map.put("actionUrl", "Account!activate.act?v="+v);
+				map.put("activeCode", user.getActivecode().split("\\|")[1]);
+				try {
+					body = FreemarkerUtil.getContent("registerActive.htm", map, false, null, null);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return ERROR;
+				}
+				NtyMessageQueue message = new NtyMessageQueue();
+				message.setTitle("注册验证邮件 - 中国资金网");
+				message.setContent(body);
+				message.setReceiver(email);
+				message.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
+				notifyQueueService.addNewMessage(message);
+				msg=SUCCESS;
 				return "ajax";
+//				msg="请填写email和 验证码 。";
+//				return "ajax";
 			}
 		}else if(activeType==2){//TODO:手机验证
 			
@@ -370,7 +370,7 @@ public class AccountAction extends BaseAction {
 						user.setActivetype(usrUser.getActivetype());
 					}
 					usrUser.setMobile(mobile);
-					oldInfo(usrUser);
+					//oldInfo(usrUser);
 					if(accountService.updateUser(usrUser)>0){
 						ctx.getSession().put("_user", user);
 						//TODO: 增加发送手机激活码
@@ -380,17 +380,17 @@ public class AccountAction extends BaseAction {
 					msg="更新失败。";
 					return "ajax";
 				}
-				if(usrUser.getOldid()!=null){
-					oldInfo(usrUser);
-					if(accountService.updateUser(usrUser)>0){
-						ctx.getSession().put("_user", user);
-						//TODO: 增加发送手机激活码
-						msg=SUCCESS;
-						return "ajax";
-					}
-					msg="更新失败。";
-					return "ajax";
-				}
+//				if(usrUser.getOldid()!=null){
+//					oldInfo(usrUser);
+//					if(accountService.updateUser(usrUser)>0){
+//						ctx.getSession().put("_user", user);
+//						//TODO: 增加发送手机激活码
+//						msg=SUCCESS;
+//						return "ajax";
+//					}
+//					msg="更新失败。";
+//					return "ajax";
+//				}
 				if(accountService.updateUser(usrUser)>0){
 					ctx.getSession().put("_user", user);
 					msg=SUCCESS;
@@ -506,32 +506,34 @@ public class AccountAction extends BaseAction {
 		usrUser = accountService.getUserById(user.getId());
 		if(usrUser.getActivetype() != Constants.USER_ACTIVE_NONE){
 			if(usrUser.getActivetype() != Constants.USER_ACTIVE_ALL){
+				String activeCode;
 				if(usrUser.getActivecode() == null){
-					String activeCode=StringUtil.createActiveCode();
+					activeCode=StringUtil.createActiveCode();
 					usrUser.setActivecode(Constants.USER_ACTIVE_MOBILE+"|"+activeCode);
-					if(accountService.updateUser(usrUser)>0){
-						String userGender="";
-						if(usrUser.getGender()==1){
-							userGender="先生";
-						}else{
-							userGender="女士";
-						}
-						NtyMessageQueue message = new NtyMessageQueue();
-						message.setType(Constants.NTYMESSAGEQUEUE_TYPE_SMS);
-						message.setTitle("");
-						message.setContent(String.format(PropertiesUtil.getByKey("sms.template.veriry"),usrUser.getRealname(),userGender,activeCode));
-						message.setReceiver(usrUser.getMobile());
-						notifyQueueService.addNewMessage(message);
-//						user.setActivetype(Constants.USER_ACTIVE_ALL);
-//						ctx.getSession().put("_user", user);
-						msg=SUCCESS;
+					if(accountService.updateUser(usrUser)<0){
+						msg="系统错误请联系管理员。";
 						return "ajax";
 					}
-					msg="系统错误请联系管理员。";
-					return "ajax";
+				}else{
+					activeCode=usrUser.getActivecode().split("\\|")[1];
 				}
-				msg="验证码已发送，请注意查收。";
+				String userGender="";
+				if(usrUser.getGender()==1){
+					userGender="先生";
+				}else{
+					userGender="女士";
+				}
+				NtyMessageQueue message = new NtyMessageQueue();
+				message.setType(Constants.NTYMESSAGEQUEUE_TYPE_SMS);
+				message.setTitle("");
+				message.setContent(String.format(PropertiesUtil.getByKey("sms.template.veriry"),usrUser.getRealname(),userGender,activeCode));
+				message.setReceiver(usrUser.getMobile());
+				notifyQueueService.addNewMessage(message);
+//						user.setActivetype(Constants.USER_ACTIVE_ALL);
+//						ctx.getSession().put("_user", user);
+				msg=SUCCESS;
 				return "ajax";
+				
 			}
 			msg="您的手机已通过验证。";
 			return "ajax";

@@ -1,6 +1,5 @@
 package com.zj198.action.loan;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -49,15 +48,7 @@ public class FileDownloadAction extends BaseAction{
 			downloadFileName = u.getFileName();
 		}
 		InputStream is = UploadUtil.getFileStream(downloadFileName);
-		if(is == null){
-			is = new InputStream() {
-				
-				@Override
-				public int read() throws IOException {
-					return 0;
-				}
-			};
-		}
+		
 		return is;
 //		File file = new File(fa.getUploadPath()  + fa.getFileName());
 //		FileInputStream instream = null;
@@ -99,15 +90,7 @@ public class FileDownloadAction extends BaseAction{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(is == null){
-			is = new InputStream() {
-				
-				@Override
-				public int read() throws IOException {
-					return 0;
-				}
-			};
-		}
+
 		return is;
 //		return UploadUtil.getFileStream(downloadFileName);
 	}

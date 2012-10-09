@@ -113,7 +113,7 @@ public class OrdLoanRequestDAOImpl extends HibernateDAO<OrdLoanRequest, Integer>
 
 	public List<OrdLoanRequest> getTopThrees(int userType) {
 		Hashtable<String, Object> params = new Hashtable<String, Object>();
-		params.put("userType", userType);
+		params.put("userType", "%," + userType + ",%");
 		return findTopRows("from OrdLoanRequest t where t.isdeleted=0 and t.applyStatus = 145 and t.loanOrganization like :userType", 3, params);
 	}
 }

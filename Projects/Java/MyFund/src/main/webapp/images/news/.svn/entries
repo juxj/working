@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/images/news
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/images/news
 svn://192.168.1.8
 
 
@@ -26,14 +26,14 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-serprod1.jpg
+ac1.jpg
 file
 
 
 
 
 2012-09-11T03:06:55.000000Z
-934267dd7f33f9f6dab77ec3724424a0
+6b3c067cb8790c6e07a6840661f278a7
 2012-08-18T08:05:17.838245Z
 2691
 Patrick
@@ -58,16 +58,16 @@ has-props
 
 
 
-7887
+75715
 
-serprod2.jpg
+ac2.jpg
 file
 
 
 
 
 2012-09-11T03:06:55.000000Z
-13c36489f552d028827e4a4dc3ae32d6
+b9c9af5b06d89245dcc6aa040fb5092d
 2012-08-18T08:05:17.838245Z
 2691
 Patrick
@@ -92,143 +92,7 @@ has-props
 
 
 
-24899
-
-serprod3.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-2258939d101578c7c2a0f9a8d6e1d937
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8017
-
-quickreq1.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-659cc5e11f9cf209925bc896420f8032
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11589
-
-quickreq2.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-2cffd10df007294fbfcb559da9cc626d
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26092
-
-managequick1.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-8e25be022876211f8f24c777ce5308cb
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14591
+31949
 
 apply1.jpg
 file
@@ -264,40 +128,6 @@ has-props
 
 26043
 
-managequick2.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-cbbac5dc535646104db3fcb39e86808e
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14086
-
 apply2.jpg
 file
 
@@ -331,74 +161,6 @@ has-props
 
 
 44118
-
-quickreq3.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-e101537198d6058ac523894ec0e8924b
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19151
-
-managequick3.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-a23a7ecac5d54f08da3a8d1bc0e801e5
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20292
 
 apply3.jpg
 file
@@ -434,108 +196,6 @@ has-props
 
 42053
 
-forget2.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-42dcb425846dbaeadeabd0813add7cca
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9673
-
-quickreq4.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-8d694f1211a8c5311f16b0c1b03ad4ca
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6043
-
-managequick4.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-0c9c6bb0cceae837b4bbbef021a5e796
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6669
-
 apply4.jpg
 file
 
@@ -569,108 +229,6 @@ has-props
 
 
 21191
-
-forget3.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-9188086ec15a0a8f96c59e4cd17d8f3a
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-88275
-
-quickreq5.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-12f74eb032a97c440c5b52d7c762ed1d
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6605
-
-managequick5.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-4c5a1c8dd19bed4b41c79e7fb6172d8b
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-28166
 
 apply5.jpg
 file
@@ -706,40 +264,6 @@ has-props
 
 30471
 
-forget4.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-084e84d504a8b827805cae7ad2d40977
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15112
-
 apply6.jpg
 file
 
@@ -773,40 +297,6 @@ has-props
 
 
 18401
-
-serapp1.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-9a93a6386e03c638db71512e7e76b0e1
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25397
 
 apply7.jpg
 file
@@ -842,6 +332,142 @@ has-props
 
 22549
 
+foget1.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+3dafe4734acbbefb4f557af315657e6e
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22697
+
+forget2.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+42dcb425846dbaeadeabd0813add7cca
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9673
+
+forget3.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+9188086ec15a0a8f96c59e4cd17d8f3a
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+88275
+
+forget4.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+084e84d504a8b827805cae7ad2d40977
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15112
+
 info1.jpg
 file
 
@@ -876,40 +502,6 @@ has-props
 
 14591
 
-serapp2.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-6c666fb319a274cc57eba7a1b13397dd
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-25824
-
 info2.jpg
 file
 
@@ -943,40 +535,6 @@ has-props
 
 
 14035
-
-serapp3.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-8177688b45f0ea95a0880a0a49fdaf76
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19148
 
 info3.jpg
 file
@@ -1080,14 +638,14 @@ has-props
 
 7331
 
-foget1.jpg
+managequick1.jpg
 file
 
 
 
 
 2012-09-11T03:06:55.000000Z
-3dafe4734acbbefb4f557af315657e6e
+8e25be022876211f8f24c777ce5308cb
 2012-08-18T08:05:17.838245Z
 2691
 Patrick
@@ -1112,7 +670,143 @@ has-props
 
 
 
-22697
+14591
+
+managequick2.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+cbbac5dc535646104db3fcb39e86808e
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14086
+
+managequick3.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+a23a7ecac5d54f08da3a8d1bc0e801e5
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+20292
+
+managequick4.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+0c9c6bb0cceae837b4bbbef021a5e796
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6669
+
+managequick5.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+4c5a1c8dd19bed4b41c79e7fb6172d8b
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+28166
 
 product1.jpg
 file
@@ -1250,40 +944,6 @@ has-props
 
 7802
 
-ac1.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-6b3c067cb8790c6e07a6840661f278a7
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-75715
-
 product5.jpg
 file
 
@@ -1317,40 +977,6 @@ has-props
 
 
 4896
-
-ac2.jpg
-file
-
-
-
-
-2012-09-11T03:06:55.000000Z
-b9c9af5b06d89245dcc6aa040fb5092d
-2012-08-18T08:05:17.838245Z
-2691
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-31949
 
 product6.jpg
 file
@@ -1386,14 +1012,14 @@ has-props
 
 43517
 
-type.jpg
+quickreq1.jpg
 file
 
 
 
 
 2012-09-11T03:06:55.000000Z
-246a5e6a90b3b8a7b89c0651fc985874
+659cc5e11f9cf209925bc896420f8032
 2012-08-18T08:05:17.838245Z
 2691
 Patrick
@@ -1418,7 +1044,143 @@ has-props
 
 
 
-34654
+11589
+
+quickreq2.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+2cffd10df007294fbfcb559da9cc626d
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26092
+
+quickreq3.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+e101537198d6058ac523894ec0e8924b
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19151
+
+quickreq4.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+8d694f1211a8c5311f16b0c1b03ad4ca
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6043
+
+quickreq5.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+12f74eb032a97c440c5b52d7c762ed1d
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6605
 
 re1.jpg
 file
@@ -1521,4 +1283,242 @@ has-props
 
 
 38244
+
+serapp1.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+9a93a6386e03c638db71512e7e76b0e1
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25397
+
+serapp2.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+6c666fb319a274cc57eba7a1b13397dd
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25824
+
+serapp3.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+8177688b45f0ea95a0880a0a49fdaf76
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19148
+
+serprod1.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+934267dd7f33f9f6dab77ec3724424a0
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7887
+
+serprod2.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+13c36489f552d028827e4a4dc3ae32d6
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24899
+
+serprod3.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+2258939d101578c7c2a0f9a8d6e1d937
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8017
+
+type.jpg
+file
+
+
+
+
+2012-09-11T03:06:55.000000Z
+246a5e6a90b3b8a7b89c0651fc985874
+2012-08-18T08:05:17.838245Z
+2691
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+34654
 

@@ -16,12 +16,12 @@ showApply();
 });
 
 function showApply(){
-   	var url = "/user/loan/financeApply!findApplyHome.act";
+   	var url = "/user/loan/uncheck/financeApply!findApplyHome.act";
    	$.post(url,{}, function(data){
    		var da = $('#finance_apply_list');
-   		da.append(data);
+   		da.html(data);
    	}, 'html');
-   	$.post("/user/loan/LoanRequest!loanRequestHome.act",{}, function(data){
+   	$.post("/user/loan/uncheck/unCheckRequest!loanRequestHome.act",{}, function(data){
    		$('#loan_request_list').html(data);
    	});
 }

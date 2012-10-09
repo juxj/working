@@ -12,4 +12,5 @@ import com.zj198.model.OrdFinanceApplyCheck;
  */
 public interface OrdFinanceApplyCheckDAO extends BaseDAO<OrdFinanceApplyCheck, Integer>{
 	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId);
+	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId,Integer num);
 }

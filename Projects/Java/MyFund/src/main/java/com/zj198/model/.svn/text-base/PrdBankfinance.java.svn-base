@@ -14,7 +14,7 @@ public class PrdBankfinance implements java.io.Serializable {
 	private String code;
 	private String name;
 	private String bank;
-	private Short currency;
+	private String currency;
 	private Integer manageperiod;
 	private Date benefitstart;
 	private Date sellstart;
@@ -72,11 +72,11 @@ public class PrdBankfinance implements java.io.Serializable {
 		this.bank = bank;
 	}
 
-	public Short getCurrency() {
+	public String getCurrency() {
 		return this.currency;
 	}
 
-	public void setCurrency(Short currency) {
+	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
 

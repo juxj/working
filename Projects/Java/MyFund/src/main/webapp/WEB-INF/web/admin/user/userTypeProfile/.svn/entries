@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/admin/user/userTypeProfile
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/user/userTypeProfile
 svn://192.168.1.8
 
 
 
-2012-09-12T09:24:55.562536Z
-3394
+2012-09-28T03:34:14.094562Z
+3710
 linm
 
 
@@ -26,16 +26,50 @@ linm
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
+bankProfile.jsp
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+3ff40789a731e7bbc7dbb7b379133afc
+2012-09-28T03:34:14.094562Z
+3710
+linm
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4596
+
 companyProfile.jsp
 file
 
 
 
 
-2012-09-13T05:27:51.000000Z
-08030745a8dace7dd790b02f049ceba2
-2012-09-12T09:24:55.562536Z
-3394
+2012-09-20T06:02:32.000000Z
+652d595d6cf9331112884c9dddf86e41
+2012-09-19T03:52:19.952763Z
+3522
 linm
 
 
@@ -58,7 +92,41 @@ linm
 
 
 
-6598
+6742
+
+financeOrgProfile.jsp
+file
+
+
+
+
+2012-09-20T06:02:32.000000Z
+f64e3ea504518383f6ec55f9203f0b45
+2012-09-19T03:52:19.952763Z
+3522
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6262
 
 personProfile.jsp
 file
@@ -100,10 +168,10 @@ file
 
 
 
-2012-09-13T05:27:51.000000Z
-c597c3639cb4c1c317d7e26846bfaf83
-2012-09-12T09:24:55.562536Z
-3394
+2012-09-20T06:02:32.000000Z
+5ab08c6a6b4d5c377d29b40c6d4613c4
+2012-09-19T03:52:19.952763Z
+3522
 linm
 
 
@@ -126,73 +194,5 @@ linm
 
 
 
-6037
-
-bankProfile.jsp
-file
-
-
-
-
-2012-09-13T05:27:51.000000Z
-b6e9990b8c63dc9020367cbb138550b2
-2012-09-12T09:24:55.562536Z
-3394
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4556
-
-financeOrgProfile.jsp
-file
-
-
-
-
-2012-09-13T05:27:51.000000Z
-91794d45a5e647f87b728caeb2dd3ab4
-2012-09-12T09:24:55.562536Z
-3394
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6117
+6182
 

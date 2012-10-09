@@ -131,10 +131,10 @@ function datalistcount(){
 }
 
 function preview(){
-	$('#loanForm').attr('action','financeProduct!previewfin.act');
+	$('#loanForm').attr('action','/user/loan/financeProduct!previewfin.act');
 	$('#loanForm').attr('target','_blank');
 	$('#loanForm').submit();
-	$('#loanForm').attr('action','financeProduct!savefin.act');
+	$('#loanForm').attr('action','/user/loan/financeProduct!savefin.act');
 	$('#loanForm').attr('target','');
 }
 
@@ -161,7 +161,7 @@ function interest(){
 	if(littledt == '' || mostdt == ''){
 		return ;
 	}
-	if(littledt >= mostdt){
+	if(mostdt-littledt <= 0){
 		alert('贷款期限中的上限值必须大于下限！');
 		return ;
 	}
@@ -215,7 +215,7 @@ function interest(){
 		var interTrObj = $('#interTr' + i);
 		if(interTrObj.length <=0){
 			var intetr = "<tr id='interTr" + i + "'><td>" + inteTextArr[i-1] + "</td><td>" + inteArr[i-1] + "%</td><td> + <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='7'/>%</td>";
-			intetr = intetr + "<td width='100px'><div id='slider-range" + i + "'></div></td></tr>";
+			intetr = intetr + "<td width='200px'><div id='slider-range" + i + "'></div></td></tr>";
 			$('#interest_table').append($(intetr));
 			sliderAdd(('slider-range' + i),('rateUp' + i));
 		}
@@ -229,7 +229,7 @@ $(sliderId).slider({
 			range: "min",
 			value: 0,
 			min: 0,
-			max: 100,
+			max: 500,
 			slide: function( event, ui ) {
 				$( rateId ).val(ui.value );
 			}
@@ -290,7 +290,7 @@ function updateCheck(noid,boxName){
     		}
     	}
     }
-    function validateExtendsPro(){
+    function validateExtendsSubmit(){
     	var st = 1;
     	$("input[name='financeProductSpModel.extendsName']").each(function(){
 			if($(this).val().length == 0){
@@ -305,13 +305,11 @@ function updateCheck(noid,boxName){
 			}
 		});
 		if(st == 1){
-			$('#extendsError').hide();
-		}else{
-			return false;
+			$('#loanForm').submit();
 		}
     }
 function previewExtends(){
-	$('#loanForm').attr('action','financeProduct!extendsPro.act');
+	$('#loanForm').attr('action','/user/loan/financeProduct!extendsPro.act');
 	$('#loanForm').ajaxSubmit({
 			datatype : "html",
 			success : function(data) {
@@ -320,7 +318,7 @@ function previewExtends(){
 			}
 		});
 	
-	$('#loanForm').attr('action','financeProduct!savefin.act');
+	$('#loanForm').attr('action','/user/loan/financeProduct!savefin.act');
 	$('#loanForm').attr('target','');
 }
     
@@ -348,7 +346,7 @@ function previewExtends(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
-<s:form action="financeProduct!savefin.act" id="loanForm" namespace="/user/loan" cssClass="box_form" style="margin:0px;" onsubmit="return validateExtendsPro();">
+<form action="/user/loan/financeProduct!savefin.act" id="loanForm" class="box_form" method="post" style="margin:0px;">
 <s:hidden name="financeProductSpModel.rateStId" id="rateStId"></s:hidden>
 <s:hidden name="financeProductSpModel.rateEnId" id="rateEnId"></s:hidden>
 	<div class="C_title">产品参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span></div>
@@ -390,7 +388,7 @@ function previewExtends(){
 				<dd id="finance_interest_type" style="display:none;">
 					<h6>&nbsp;</h6>
 					<div><!--利率浮动范围 -->
-						<table width="500" id="interest_table">
+						<table width="600" id="interest_table">
 							<tr>
 								<th align='left'>贷款期限</th>
 								<th align='left'>基准利率</th>
@@ -652,11 +650,11 @@ function previewExtends(){
 		<div class="hr_10"> &nbsp; </div>
 			<div class="center" style="width:500px;">
 			<input type="button" value="预览" onclick="preview()" class="but_gray"/>
-			<s:submit value="同意以下协议并发布贷款产品"  cssClass="but_gray" ></s:submit>
+			<input type="button" value="保存"  class="but_gray"  onclick="validateExtendsSubmit();"/>
 			</div>
 <div class="hr_10"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>
-</s:form>
+</form>
 <div id="previewExtendsProperty" title="自定义申请表单预览">
 	
 </div>

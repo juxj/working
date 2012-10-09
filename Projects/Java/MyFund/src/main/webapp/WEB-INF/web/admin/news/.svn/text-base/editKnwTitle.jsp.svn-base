@@ -65,8 +65,7 @@
 						<p>A warning message goes here</p>
 						<span class="close" title="Dismiss"></span>
 					</div>
-					<s:form id="frmKnwTitle" action="/admin/knwTitle!save.act"
-						method="post">
+					<form id="frmKnwTitle" action="/admin/knwTitle!save.act" method="post">
 						<s:hidden id="titleId" name="knwTitle.id"></s:hidden>
 						<s:hidden id="typeName" name="knwTitle.typeName"></s:hidden>
 						<s:hidden id="issuedDate" name="knwTitle.issuedDate"></s:hidden>
@@ -121,9 +120,10 @@
 							<input type="submit" class="submit small" value="提交" /> <input
 								type="reset" class="submit small" value="重置" />
 						</p>
-					</s:form>
+					</form>
 				</div>
 			</div>
+		</div>
 		</div>
 </body>
 </html>

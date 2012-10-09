@@ -1,3 +1,2 @@
-rm -rf /var/tmp/sohu/html/*
-rm -rf /var/tmp/sohu/sql/*
+rm -rf sql/*
 python main.py

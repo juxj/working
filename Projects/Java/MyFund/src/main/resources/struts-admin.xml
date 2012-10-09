@@ -130,6 +130,9 @@
 		    <result name="serviceorgProfile">/WEB-INF/web/admin/user/userTypeProfile/serviceOrgProfile.jsp</result>
 			<result name="success" type="redirect">/admin/user/User.act</result>
 		</action>
+		<action name="aLoginU" class="com.zj198.action.admin.user.ProfileAction">
+			<result name="adminLoginUser" type="redirect">/user/UserAction.act</result>
+		</action>
 		<action name="orgAttach" class="com.zj198.action.admin.user.AdminDownloadImgAction">
 		 <result name="success" type="stream">
 		 	<param name="contentDisposition">attachment;filename="${imgName}"</param>

@@ -56,6 +56,9 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 		String companyName = "";
 		UsrUser user = usrUserDAO.get(userId);
 		DicUsertype userType = dicUsertypeDAO.get(Integer.valueOf(user.getType()));
+		if(userType == null){
+			return "";
+		}
 		if(userType.getGroup().intValue() == 2){
 			UsrBank bank = usrBankDAO.get(userId);
 			if(bank != null){

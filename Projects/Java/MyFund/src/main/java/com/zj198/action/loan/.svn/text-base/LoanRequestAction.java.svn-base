@@ -93,7 +93,33 @@ public class LoanRequestAction extends BaseAction {
 	}
 
 	public String execute() {
-		return null;
+		ActionContext context = ActionContext.getContext();
+		UsrUser user = (UsrUser) context.getSession().get("_user");
+		if (user != null) {
+			int appType = loan.getApplyType().intValue();
+			if (user.getUserTypeGroup().intValue() != 1 && user.getUserTypeGroup().intValue() != 5) {
+				msg = "2";// 只有个人用户与企业用户可以申请融资！
+			}
+			if (appType == 136 && user.getUserTypeGroup() == 5) {
+				msg = "3";// 个人用户不允许申请企业融资！
+			}
+			if (appType > 136 && user.getUserTypeGroup() == 1) {
+				msg = "4";// 企业用户不允许申请个人融资！
+			}
+			if (msg != null && msg.length() > 0) {
+				return loanThird();
+			}
+		}
+		if (loan.getApplyType().intValue() == 136) {
+			return busiFirst();
+		} else if (loan.getApplyType().intValue() == 137) {
+			return percostFirst();
+		} else if (loan.getApplyType().intValue() == 138) {
+			return perrunFirst();
+		} else if (loan.getApplyType().intValue() == 139) {
+			return perhouseFirst();
+		}
+		return busiFirst();
 	}
 
 	// public void validateLoanSecond() {
@@ -103,36 +129,36 @@ public class LoanRequestAction extends BaseAction {
 	// }
 	// }
 	// }
-	/**
-	 * 
-	 * @Author zeroleavebaoyang@gmail.com
-	 * @Description 行业异步级联显示
-	 * @return
-	 */
-	public String Industry() {
-		HttpServletResponse response = ServletActionContext.getResponse();
-		response.setContentType("text/xml; charset=UTF-8");
-		response.setHeader("Cache-Control", "no-cache"); // 取消浏览器缓存
+//	/**
+//	 * 
+//	 * @Author zeroleavebaoyang@gmail.com
+//	 * @Description 行业异步级联显示
+//	 * @return
+//	 */
+//	public String Industry() {//TODO:方法名要小写，此类公用方法不应在此类中；execute()方法要利用起来
+//		HttpServletResponse response = ServletActionContext.getResponse();
+//		response.setContentType("text/xml; charset=UTF-8");
+//		response.setHeader("Cache-Control", "no-cache"); // 取消浏览器缓存
+//
+//		PrintWriter out;
+//		try {
+//			industryList = dictoryDataService.findIndustryByParentid(industryId);
+//			out = response.getWriter();
+//			out.println("<response>");
+//			for (DicIndustry ind : industryList) {
+//				out.println("<inds>" + ind.getId() + "</inds><inds>" + ind.getName() + "</inds>");
+//			}
+//			out.println("</response>");
+//			out.flush();
+//			out.close();
+//			return null;
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 
-		PrintWriter out;
-		try {
-			industryList = dictoryDataService.findIndustryByParentid(industryId);
-			out = response.getWriter();
-			out.println("<response>");
-			for (DicIndustry ind : industryList) {
-				out.println("<inds>" + ind.getId() + "</inds><inds>" + ind.getName() + "</inds>");
-			}
-			out.println("</response>");
-			out.flush();
-			out.close();
-			return null;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	public String loanRequest() {
+	public String loanRequest_bak() {
 		ActionContext context = ActionContext.getContext();
 		UsrUser user = (UsrUser) context.getSession().get("_user");
 		if (user != null) {

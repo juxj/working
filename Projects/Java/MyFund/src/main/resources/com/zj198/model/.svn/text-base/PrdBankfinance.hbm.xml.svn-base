@@ -25,7 +25,7 @@
                 <comment>发行银行</comment>
             </column>
         </property>
-        <property name="currency" type="java.lang.Short">
+        <property name="currency" type="java.lang.String">
             <column name="currency" not-null="true">
                 <comment>币种</comment>
             </column>

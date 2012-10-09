@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/news
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/news
 svn://192.168.1.8
 
 
@@ -25,40 +25,6 @@ Patrick
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-YellowPageAction.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-5833aeaf29c3668bab52ec2a66781240
-2012-09-06T08:56:36.685899Z
-3261
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1713
 
 InfoAction.java
 file
@@ -127,4 +93,38 @@ Patrick
 
 
 3670
+
+YellowPageAction.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+5833aeaf29c3668bab52ec2a66781240
+2012-09-06T08:56:36.685899Z
+3261
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1713
 

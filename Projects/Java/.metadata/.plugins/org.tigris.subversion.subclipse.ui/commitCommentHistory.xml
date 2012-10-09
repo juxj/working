@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CommitComments>	<CommitComment>审核后，更新发布时间</CommitComment>
+<CommitComments>	<CommitComment>找资金，找项目新频道.</CommitComment>
+	<CommitComment>增加融资俱乐部的新频道.　目前完成首页面，后续页面建议重新设计再作处理..</CommitComment>
+	<CommitComment>调整表格中数据显示格式(Ellipsis)</CommitComment>
+	<CommitComment>审核后，更新发布时间</CommitComment>
 	<CommitComment>审核后更新发布时间</CommitComment>
 	<CommitComment>1.修改了找资金，找项目的Ｍeta Scripts.
 2.取消新闻录入的“作者”与“来源“的约束(ＪＳＰ)

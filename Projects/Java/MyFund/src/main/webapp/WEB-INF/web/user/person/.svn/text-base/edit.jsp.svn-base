@@ -156,7 +156,10 @@ $(document).ready(function(){
           <input type=text value="${usrPerson.im3 }" class="input-text {validate:{maxlength:32}} ContacInfo" name="usrPerson.im3"/><span class="ask_text"></span></td>
          </tr>
          <tr>
-           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存" /></td>
+           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
+           <input type="submit" class="but_gray" style="width:200px;" value="保存" />&nbsp;&nbsp;
+           <input type="button" class="but_gray" onclick="javascript:window.location.href='/user/Profile.act'" style="width:200px;" value="取消" />
+           </td>
          </tr>
        </table>        	
    </form>

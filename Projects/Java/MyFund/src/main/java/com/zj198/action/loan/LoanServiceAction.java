@@ -19,6 +19,7 @@ import com.zj198.service.sin.ServiceInfoService;
 import com.zj198.util.Constants;
 
 public class LoanServiceAction extends BaseAction {
+	
 	private ServiceInfoService serviceInfoService;
 	private FinanceProductService financeProductService;
 	private DictoryDataService dictoryDataService;

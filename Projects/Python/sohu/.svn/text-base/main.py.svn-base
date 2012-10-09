@@ -1,169 +1,129 @@
 #!/usr/bin/env python
-import struct
-import os
-import os.path
-import sys
-import string
-import time
-from HTMLParser import HTMLParser
-import json
-import shutil
-import datetime
-from datetime import timedelta
-from utils import *
-import threading
-import MySQLdb
-import ConfigParser
+# -*- coding: utf-8 -*-
+from environment import config
+from environment import engine
+from environment import fetcher
+from utils.web_fetcher import *
+from utils.html_parser import *
+from utils.app_util import *
 
-global server_addr
-global summary_url
-global detail_url
-global file_path
-global thread_count
-global bank_status
-global config
-global interval
+import os, sys, string, threading
 
+class Main:
+	# get the financial products from database.
+	def __get_exist_items(self):
+		sql = config.get('sql', 'query')
+		records = engine.do_query(sql)
+		return records;
 
-class Sohu:
-	def get_url_list(self):
-		fetcher = WebFetcher(server_addr)
-		i = 1;
-		prod_status = 2;
+	# get financial product codes from web site.
+	def __get_product_codes(self):
+		# set the return values
 		result = []
-		while (i<=prod_status):
-			url = summary_url + '&pageNO=1&bkstatus='+str(i)
-			html_file = file_path + 'html/A'+str(i)+'.html'
-			html_data = fetcher.run(url, html_file)
-			#print html_data;
-			parser = MyHTMLParser()
-			data = parser.read(html_data)
-			url_list = data[1]
+		urls = []
+		# url list
+		summary_url = config.get('web_server', 'summary_url')
+		# get product types from config file
+		p_types = config.get('web_server', 'prod_type').split(',')
+		parser = TotalPageParser()
+
+		for p_type in p_types:
+			url = summary_url + '&pageNo=1&bkstatus='+p_type
+			data = fetcher.run(url)
+			data = parser.read(data)
+			urls = urls + data[1]
 			pages = int(data[0][0])
-			m = 2
-			while m<=pages:
-				url = summary_url + '&pageNO='+str(m)+'&bkstatus='+str(i)
-				try:
-					html_data = fetcher.run(url, '')
-					data = parser.read(html_data)
-					url_list = url_list + data[1]
-				except:
-					print 'error' 
-				m = m + 1
-			result = result + url_list
-			i = i + 1
+			
+			# until now, 
+			# we have fetched out the url list of first page of each product type
+			# the next step is going to get the reminder.
+			
+			m = 2; # start from 2
+			while m <= pages:
+				url = summary_url + '&pageNo='+str(m)+'&bkstatus='+p_type
+				data = fetcher.run(url)
+				data = parser.read(data)
+				urls = urls + data[1]
+				m = m+1
+		for url in urls:
+			result.append(url[15:23])
+		return result;
+
+	def __get_detail_page(self, page_fetcher,  code):
+
+		result = []
+		url = config.get('web_server','detail_url')	
+		url = url + code[5:8]+'/'+code+'.html'
+		data = page_fetcher.run(url)
+		parser = SohuHTMLParser()
+		data = parser.unescape(unicode(data, 'gbk')) 
+		data = parser.read(data);
+
+		if len(data)>=40:
+			del data[41]	
+			del data[39]
+		i = 1
+		for item in data:
+			if i%2 == 0:
+				result.append(item)
+			i = i+1 		
 		return result
 
-	def get_details(self, url_list, adapter, sql_file):
-		fetcher = WebFetcher(server_addr)
-		i = 0
-		for url in url_list:
-			if i != 0 and i%interval == 0:
-				fetcher.close()
-				time.sleep(5)
-				fetcher = WebFetcher(server_addr)
-			prod_code = url[15:23]
+	# get product codes not in db.
+	def __get_new_products(self):
+		result = []
+		records = self.__get_exist_items();
+		codes = self.__get_product_codes();
+		for code in codes:
+			code_in_db = False
+			for record in records:
+				if code == record[0]:
+					code_in_db = True
+			if not code_in_db:
+				result.append(code)
+		return result
 
-			html_file = file_path + 'html/'+prod_code+'.html'
-			html_data = fetcher.run(url, html_file)
+	def __work(self, thread_id,  codes):
+		#create web fetcher for each thread.
+		page_fetcher = WebFetcher(config)
+		#sql file name which stores sql script temporary.
+		file_name = 'sql/sohu_'+str(thread_id)+'.sql'
+		sql_file = open( file_name, 'a')
+		sql_file.write('/*!40101 SET NAMES utf8 */;')
+		# buidl sql scripts
+		for code in codes:
+			data = self.__get_detail_page(page_fetcher, code)
+			sql = self.__build_sql(code, data)
+			sql_file.write(sql)
+		sql_file.close()
+		# run sql scripts
+		engine.run(sql_file)
 
-			#html_data = fetcher.run(url, ''); 
-			try:
-				parser = FundHTMLParser()
-				data = parser.read(html_data)
-			except:
-				print 'error', prod_code, '\n' 
-		
-			result = []
-			m = 0
-			for item in data:
-				item = item.replace('\'','')
-				if item.strip() != '':
-					result.append(item)
-				else:
-					if m<20:
-						result.append(item)
-				if m == 32:
-					result.append('null')
-				m = m + 1
-
-			adapter.save(prod_code, result, sql_file)
-			i = i + 1
+	def __build_sql(self, code, data):
+		sql = 'insert into PRD_BANKFINANCE values (null, \''+ code + '\''
+		for item in data:
+			sql = sql + ', \''+item.encode('utf8')+'\'';
+		return sql + ',0, null,\''+str(AppUtil.getNow())+'\');\n'
 
 	def run(self):
-		url_list =  self.get_url_list()
-		products = self.getProductsInDB()
-		url_not_in_db = []
-		for url in url_list:
-			prod_code = url[15:23]
-			i = 0
-			for product in products:
-				if prod_code == product:
-					i = 1
-					break
-			if i==0:
-				url_not_in_db.append(url)
-		print 'total items:'+ str(len(url_not_in_db))
+		#data = self.__get_detail_page('00045426')
+		#sql = self.__build_sql('00045426', data)
+		#print sql
 
-		count = len(url_not_in_db)
-		threads = 0
-		if count<thread_count:
-			threads = count
-		else:
-			threads = thread_count
-
-
-		url_list_items = MyUtils.divide_array(url_not_in_db, threads)
+		threads = int(config.get('run', 'threads'))
+		products = self.__get_new_products()
+		print 'total:', len(products)
+		divided_products = AppUtil.divide_array(products, threads)
 		i = 0 
 		thread_pool = []
 		while i<threads:
-			th = threading.Thread(target=self.work, args=(url_list_items[i], i,))	
+			th = threading.Thread(target=self.__work, args=(i, divided_products[i],))
 			thread_pool.append(th)
-			i = i + 1
+			i = i+1
 		
 		for t in thread_pool:
 			t.start()
-	def getProductsInDB(self):
-		sql = 'select distinct code from PRD_BANKFINANCE'
-		adapter = MySQLAdapter(config)
-		records = adapter.getRecords(sql)
-		products = []
-		for record in records:
-			products.append(record[0])
-		return products
-
-	def work(self, url_list, index):
-		adapter = MySQLAdapter(config)	
-		sql_file_name = file_path+'sql/sohu'+str(index).zfill(2)+'.sql'
-		sql_file = open(sql_file_name, 'a')
-		sql_file.write('/*!40101 SET NAMES utf8 */;')
-		self.get_details(url_list, adapter, sql_file)
-		sql_file.close()
-		adapter.run(sql_file_name)
-
-	def getItemsInDB(self):
-		sql = 'select distinct code from PRD_BANKFINANCE'
-		adapter = MySQLAdapter()
-		records = adapter.getRecords(sql)
-		
-		products = []
-		for record in records:
-			products.append(record[0])
 
 if __name__ == '__main__':
-	# load config
-	config = AppConfig()
-	config = config.load_config()
-	# get the parameters values and set them to global paramters.
-	# the paramters related to sohu.com
-	server_addr = config.get('sohu', 'server_addr')
-	summary_url = config.get('sohu', 'summary_url')
-	detail_url = config.get('sohu', 'detail_url')
-	#bank_status = config.get('sohu', 'bank_status')
-	# the parameters related to runing 
-	thread_count = int(config.get('run', 'thread_count'))
-	file_path = config.get('run', 'file_path')
-	interval = int(config.get('run', 'interval'))
-	# enter the main app.
-	sohu = Sohu()
-	sohu.run()
+	main = Main()
+	main.run()

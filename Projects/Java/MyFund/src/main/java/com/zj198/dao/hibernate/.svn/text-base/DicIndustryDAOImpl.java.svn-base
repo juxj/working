@@ -9,7 +9,7 @@ public class DicIndustryDAOImpl extends HibernateDAO<DicIndustry, Integer> imple
 
 	@Override
 	public List<DicIndustry> findByParentid(Integer parentId) {
-		String hql="from DicIndustry as model where model.parentid=:parentId";
+		String hql="from DicIndustry as model where model.parentid=:parentId order by seq";
 		return list(hql,"parentId", parentId);
 	}
 

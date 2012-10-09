@@ -39,7 +39,7 @@
     function changeIndustry(pid,childId){
     	if(pid != "" && pid != null ){
     		$('#child').show();
-    		$.post("/loan/financeProduct!Industry.act",{industryId:pid,childId:childId},function(data){
+    		$.post("/loan/financeProduct!industry.act",{industryId:pid,childId:childId},function(data){
     			$('#childsel').html(data);
     		})
     		
@@ -59,6 +59,9 @@
 	white-space: nowrap;
 	padding: 2px;
 }
+
+.qy_jians{width:810px; height:104px;}
+.qy_left{width:105px; height:84px; float:left; background:#97181d; font-size:30px; color:#fff; line-height:30px; text-align:center; padding-top:20px;}
 </style>
 </head>
 
@@ -78,50 +81,56 @@
 </div>
 <div class="hr_10"> &nbsp; </div> 
 <!--main1-->
-<div class="center box_6_gray" style="height:auto; width:908px; padding-left:20px; padding-bottom:10px;">
+<div class="center box_6_gray" style="width:942px; height:auto; padding:0px; border: #d6d6d6 solid 4px;">
 	<form id="searchForm" action="/loan/financeProduct.act"  method="post">
 	<input type="hidden" value="<s:property value="childId"/>" id="sel"/>
 	<!-- 收缩状态 -->
 	<input id="shrink" type="hidden" name="shrink" value="<s:if test="shrink=='' || shrink == null">filter</s:if><s:else><s:property value="shrink"/></s:else>"/>
+	<s:if test="financeType==151">
+		<div class="qy_left">企业<br />贷款</div>
+	</s:if>
+	<s:else>
+		<div class="qy_left">个人<br />贷款</div>
+	</s:else>
+	
 	
 	<!-- 企业检索 -->
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<table border="0" cellspacing="0" cellpadding="0" class="qy_jians">
 	  <tr>
-	    <td width="60" height="40" valign="middle">类别：</td>
-	    <td width="23%" height="40" valign="middle">
-				<select name="financeType" style="width:155px;">
-				  <s:if test="financeType==151">
-                  <option value="151">企业经营贷款</option>
-                  </s:if>
-                  <s:if test="financeType==152">
-                  <option value="152">个人经营性贷款</option>
-                  </s:if>
-                </select>	    
+	    <td width="60" align="right" class="v-align">类别：</td>
+	    <td align="center" class="v-align">
+			<select name="financeType" style="width:155px;">
+			  <s:if test="financeType==151">
+	                <option value="151">企业经营贷款</option>
+	                </s:if>
+	                <s:if test="financeType==152">
+	                <option value="152">个人经营性贷款</option>
+	                </s:if>
+	              </select>	    
 	    </td>
-	    <td width="60" height="40" valign="middle">用途：</td>
-	    <td width="21%" height="40" valign="middle">
+	    <td width="60" align="right" class="v-align">用途：</td>
+	    <td align="center" class="v-align">
 				<s:if test="financeType==151">
 				<common:select headerKey="" headerValue="--不限--" value="purposeType" style="width:155px;" name="purposeType" valueSetId="14"/>
 				</s:if>
 				<s:if test="financeType==152">
 				<common:select headerKey="" headerValue="--不限--" value="purposeType" style="width:155px;" name="purposeType" valueSetId="23"/>
-				</s:if>
-				&nbsp;&nbsp;&nbsp;&nbsp;	    
+				</s:if>					    
 	    </td>
-	    <td width="60" height="40" valign="middle">期限：</td>
-	    <td width="22%" height="40" valign="middle"><s:textfield name="financeDate" id="date" cssClass="input-text required digits" style="width:120px;"/>&nbsp;个月&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+	    <td width="60" align="right" class="v-align">期限：</td>
+	    <td align="center" class="v-align"><s:textfield name="financeDate" id="date" cssClass="input-text required digits" style="width:120px;"/>&nbsp;个月&nbsp;&nbsp;&nbsp;&nbsp;<br/>
 			<label for="date" class="error" generated="true" style="display:none;"></label></td>
-	    <td width="15%" height="40" align="right" valign="middle"><input type="button" onclick="$('#searchForm').submit()" class="but_gray" value="搜索"/></td>
+	    <td width="15%" align="right"  class="v-align"><a href="javascript:$('#searchForm').submit();" class="btn bred">重新搜索</a></td>
 	  </tr>
 	  <tr>
-	    <td width="60" height="40" valign="middle">金额：</td>
-	    <td height="40" valign="middle"><s:textfield name="financeAmount" id="amount" cssClass="input-text number" style="width:120px;"/>&nbsp;万元<br/>
+	    <td width="60" align="right" class="v-align">金额：</td>
+	    <td align="center" class="v-align"><s:textfield name="financeAmount" id="amount" cssClass="input-text number" style="width:120px;"/>&nbsp;万元<br/>
 			<label for="amount" class="error" generated="true" style="display:none;"></label></td>
-	    <td width="60" height="40" valign="middle">行业：</td>
-	    <td height="40" colspan="4" valign="middle">
-		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	    <td width="60" align="right" class="v-align">行业：</td>
+	    <td colspan="4" class="v-align">
+		    <table width="80%" border="0" cellspacing="0" cellpadding="0">
 		      <tr>
-		        <td width="190px" ><common:select id="psel" value="industryId" name="industryId" headerKey="" headerValue="--不限--" valueSetMap="ZJ113" onchange="changeIndustry(this.options[this.options.selectedIndex].value,-1)"  style="width:155px;"/></td>
+		        <td width="180px" ><common:select id="psel" value="industryId" name="industryId" headerKey="" headerValue="--不限--" valueSetMap="ZJ113" onchange="changeIndustry(this.options[this.options.selectedIndex].value,-1)"  style="width:155px;"/></td>
 		        <td><span id="child"><select id="childsel" name="childId" style="width:155px;"><option value="-1">--不限--</option></select></span>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 		      </tr>
 		    </table>
@@ -167,8 +176,8 @@
 		</tr>
 	</table>
 	 -->
+	</form>
 </div>
-<div class="hr_10"> &nbsp; </div>
 <!--main1-->
 <!--main2-->
 	<script type="text/javascript">
@@ -293,7 +302,7 @@
 
 	<table class="container_950 center box_4">
 	      <tr class="top_color">
-	        <td style="padding-left:22px; font-size:14px;">推荐产品筛选条件</td>
+	        <td style="padding-left:22px; ">筛选条件</td>
 	      </tr>
 	</table>
 <!-- start------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->	
@@ -459,43 +468,48 @@
 <div class="hr_10"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main3-->
-<table class="container_950 center box_4"> 
-      <tr class="top_color">
-        <td class="capital_table_a1" style="padding-left:20px;">融资渠道/项目</td>
-        <td class="capital_table_a3">金额</td>
-        <td class="capital_table_a2" >期限</td>
-        <td class="capital_table_a3" >基准年利率</td>
-        <td class="capital_table_a3">浮动范围</td>
-        <td class="capital_table_a3" >还款方式</td>
-        <td class="capital_table_a3" >产品特点</td>
-        <td class="capital_table_a3" >审批时间</td>
-        <td ></td>
+<table class="container_950 center"> 
+      <tr class="top_color box_4">
+        <td class="capital_table_a1" style="padding-left:20px; border-bottom:3px solid #97181d;">融资渠道/项目</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">金额</td>
+        <td class="capital_table_a2" style="border-bottom:3px solid #97181d;">期限</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">基准年利率</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">浮动范围</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">还款方式</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">产品特点</td>
+        <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">审批时间</td>
+        <td style="border-bottom:3px solid #97181d;"></td>
       </tr>
       <s:if test="pager.data.size() > 0">
-      <s:iterator value="pager.data">
-      <tr class="capital_table" >
-        <td class="capital_table_a1" style="padding-left:10px;word-wrap:break-word;word-break:break-all;">
+      <s:iterator value="pager.data" status="st">
+      <s:if test="#st.Even">
+      	<tr style="background:#f9f9f7;" >
+      </s:if>
+      <s:else>
+	    <tr class="capital_table" >
+      </s:else>
+        <td class="capital_table_a1" style="padding-left:10px; word-wrap:break-word;word-break:break-all; border:0px;">
         <s:if test="logo == null">
 	        <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap; padding-top:2px;"/>
         </s:if>
         <s:else>
         	<img src="/images/banklogo/${logo }"  class="td_img" style="white-space: nowrap; padding-top:2px;"/>
         </s:else>
-        <div style="padding-left:45px;">        
+        <div style="font-size:14px;padding-left:45px;">        
         	<common:print valueId="userId" type="user"/><br/>
-        	${financeName }
+        	<div class="red" style="font-size:12px;font-weight: bolder;" >${financeName }</div>
         </div>
         </td>
-        <td class="capital_table_a3" ><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元
+        <td class="capital_table_a3" style="border:0px;"><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元
         </td>       
-        <td class="capital_table_a2"><s:property value="financeDate"/>个月</td>
-        <td class="capital_table_a3" title="<common:print valueId="interestType" />">
+        <td class="capital_table_a2" style="border:0px;"><s:property value="financeDate"/>个月</td>
+        <td class="capital_table_a3" title="<common:print valueId="interestType" />" style="border:0px;">
         	<common:print valueId="financeDate" type="rate"/>%
         	<s:if test="serviceCost != null && serviceCost > 0">
         		<br/>另收${serviceCost }%服务费
         	</s:if>
         </td>   
-        <td class="capital_table_a3" title="<common:print valueId="interestType" />">
+        <td class="capital_table_a3" title="<common:print valueId="interestType" />" style="border:0px;">
         	<s:if test="interestType == 155">
         		<s:iterator value="interests">
         			<s:if test="financeDate > financeStartdt && financeDate <= financeEnddt">
@@ -507,15 +521,16 @@
         		视具体情况而定
         	</s:else>
         </td>
-        <td class="capital_table_a3" title="<common:print valueId="repaymentType" />"><common:print valueId="repaymentType" /></td>
-       	<td class="capital_table_a3" title="<common:print valueId="proSpecial" />"><common:print valueId="proSpecial" /></td>
-        <td class="capital_table_a3">${checkTime}个工作日</td>
-        <td class="view_detail capital_table_a3 " style="padding-right:20px;">
-        	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}" target="_blank">查看</a>
+        <td class="capital_table_a3" title="<common:print valueId="repaymentType" />" style="border:0px;"><common:print valueId="repaymentType" /></td>
+       	<td class="capital_table_a3" title="<common:print valueId="proSpecial" />" style="border:0px;"><common:print valueId="proSpecial" /></td>
+        <td class="capital_table_a3" style="border:0px;">${checkTime}个工作日</td>
+        <td class="capital_table_a3 " style="border:0px;">
+        	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}" class="btn_s blue2" target="_blank">查看</a>
         </td>
       </tr>
+      
       </s:iterator>
-      <tr class="top_color">
+      <tr>
 	        <td style="padding-left:22px; font-size:14px;" colspan="9">
 	        <div class="pagination right">
 			<s:include value="/public/pagination.jsp"/>

@@ -104,14 +104,8 @@ public class ProfileAction extends BaseAction  {
 				}
 				profileMap.put("industry", industry);
 				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
-				if(companyMark == null){
-					if(user.getAuditstatus() == Constants.USER_AUDITSTATUS_NONE){
-						return "auditCompanyProfile";
-					}
-				}else{
-					if(companyMark==1){
-						return "auditCompanyProfile";
-					}
+				if(companyMark == null || companyMark == 1){
+					return "auditCompanyProfile";
 				}
 				profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
 				profileMap.put("lpliveaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLpliveprovinceid(), usrCompany.getLplivecityid(), usrCompany.getLplivedistrictid()));
@@ -585,8 +579,15 @@ public class ProfileAction extends BaseAction  {
 //			}
 //			return execute();
 //		}
-		msg="保存成功。";
-		return execute();
+		ActionContext ectx = ActionContext.getContext();
+		UsrUser euser = (UsrUser)ectx.getSession().get("_user");
+		if(euser.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE && (euser.getUserTypeGroup() == Constants.USERTYPE_GROUP_PERSONAL || euser.getUserTypeGroup() == Constants.USERTYPE_GROUP_COMPANY)){
+			msg="保存成功,您当前账户信息未填写完整请继续填写。";
+			return edit();
+		}else{
+			msg="保存成功。";
+			return execute();
+		}
 	}
 	
 	/**显示注册信息----*/

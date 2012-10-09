@@ -21,6 +21,12 @@
 			window.location.href = url;
 		}
 	}
+	
+	function toPage(pageNo, useless) {
+		document.getElementById("pageNo").value= pageNo;
+		var frmQuery = document.getElementById("frmQuerySupplyInfo");
+		frmQuery.submit();
+	}
 </script>
 </head>
 <body>
@@ -29,6 +35,7 @@
 <jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
   <div class="clear"> &nbsp; </div>
 </div>
+<form id="frmQuerySupplyInfo" action="/club/showSupplyInfoHome.act"><input id="pageNo" type="hidden" name="pageNo"/> </form>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">
 	<div class="clear"> &nbsp;</div>
@@ -82,12 +89,8 @@
 	    			</s:if>    
 				</td>
 				<td title="${item.workTrade}">
-					<s:if test="#item.workTrade.length()>15">
-   						<s:property value="#item.workTrade.substring(0,15)"></s:property>...
-   					</s:if><s:else>
-   						${item.workTrade}
-   					</s:else>
-			    	<s:if test="#item.workTrade==null or #item.workTrade==''">
+					<div class="ellipsis_text_80" title="${item.workRange}">${item.workRange}</div>
+			    	<s:if test="#item.workRange==null or #item.workRange==''">
 			    		不限
 			    	</s:if>
 				</td>

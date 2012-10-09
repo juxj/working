@@ -1,0 +1,77 @@
+<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>融资俱乐部_首页</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
+<script type="text/javascript" src="/script/public.js" > </script>
+<script language="javascript">
+	function doQueryRequestInfo(industry) {
+		$("#mainIndustry2").attr("value",industry);
+		$("#frmQueryRequestInfo").submit();
+	}
+	
+	function doQuerySupplyInfo(investType){
+		$("#sltInvestStyle").attr("value",investType);
+		$("#frmQuerySupplyInfo").submit();
+	}
+</script>
+</head>
+<body>
+<!--头部-->
+<div class="header index_header">
+<jsp:include page="/public/head1.jsp"/>
+</div>
+  <!--main-->
+  <div class="M_menu">
+  	<a href="#">首页</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="#">融资俱乐部</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="#">资金信息库</a>
+  </div>
+  <div class="hr_10"> &nbsp; </div>
+  <div style="width:950px; margin:0 auto;">
+  	
+	<div style="width:310px; float:right;"><a href=""><img src="/images/fbxx.jpg" /></a></div>
+	<div class="hr_10">&nbsp;</div>
+	<!-- 资金信息开始 -->
+	<div class="box_4" style="width:950px; overflow:hidden; margin-right:10px;">
+	  <div class="menu_gray" style="border-bottom:4px solid #97181d;">
+	 	<span class="fr"><a href="/news/Info!infoGroup.act?typeId=3">更多»</a></span>
+	    <h6 style="font-weight:bolder">资金信息</h6>
+	  </div>	  
+	</div>
+	<div class="hr_10">&nbsp;</div>
+	<!-- 1 -->
+	
+	<s:iterator id="item" value="investStyleList">
+		<div class="zjxx_box">	  
+		    <div class="sky_blue"><span class="fr"><a href="">更多»</a></span>
+		      <h6>${item.name } </h6>
+		    </div>
+		    <div class="box_3">
+		      <ul class="sky_new_li">
+		      	<s:iterator id="supplyInfo" value="supplyInfoList">
+		    	    <s:if test="#item.code==#supplyInfo.investType">
+		    	   	 <li><a href="">${supplyInfo.title } </a></li>
+		    		</s:if>
+		        </s:iterator>
+		      </ul>
+		    </div>
+	    </div>
+    </s:iterator>
+</div>          
+  <!--main--> 
+<div class="clear"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div>
+<!--foot-->
+<div class="footer">
+  <div class="footer-nav"><a href="/">安全说明</a>|<a href="/">关于我们</a>|<a href="/">联系我们</a>|<a href="/">法律声明</a>|<a href="/">友情链接</a>|<a href="/">意见反馈</a>|<a href="/">隐私保密条款</a></div>
+  <p class="copyright">客服热线：400123456  融资服务热线：021-60007888  理财服务热线：40084008<br />
+    2012 <font style="font-family:'Arial';">&copy;</font> 版权所有 鼎辉信息技术（上海）有限公司</p>
+</div>
+<!--foot-->
+</body>
+</html>

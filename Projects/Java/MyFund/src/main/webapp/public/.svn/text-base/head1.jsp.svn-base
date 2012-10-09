@@ -47,7 +47,7 @@ $(function(){
       </s:if>
       <s:else>
         <a href="/Account.act"> 登录</a><a href="/Register.act">注册</a>
-      </s:else> | <font color="#555"><a href="/user/UserAction.act">用户中心</a></font>
+      </s:else> | <font color="#555"><a href="/user/UserAction.act">用户中心</a><s:if test="#session._admin != null"> | <a href="/admin/user/User.act">管理员 » 账户管理</a></s:if></font>
       </div>
       <div class="hr_10"> &nbsp; </div>
       <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" alt="" /></div>
@@ -60,6 +60,7 @@ $(function(){
         <li id="page_index_sel"><a href="/Index.act">首 页</a></li>
         <li id="page_loan_sel"><a href="/loan/LoanService.act">融资服务</a></li>
         <li id="page_finance_sel"><a href="/finance/financeProduct.act">理财产品</a></li>
+        <li id="page_club_sel"><a href="/club/clubAction.act">融资俱乐部</a></li>
         <li id="page_news_sel"><a href="/news/InfoCenter.act">信息中心</a></li>
       </ul>
     </div>

@@ -38,7 +38,7 @@
 	}
 	
 	function edit(){
-		var url = "/service/userServiceItem!addInfo.act";
+		var url = "/service/editServiceItem.act";
 		var user_status = "${session._user.auditstatus}";
 		if (user_status != "2") {
 			alert("您的注册资料尚未通过审核，暂不能发布此信息!");

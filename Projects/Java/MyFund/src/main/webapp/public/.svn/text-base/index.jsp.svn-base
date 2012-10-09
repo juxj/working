@@ -67,7 +67,7 @@
       <h6>融资意向快速申请</h6>
     </div>
     <div class="box_3" style="background:#f9f9f7;">
-      <form action="/loan/LoanRequest!loanRequest.act" method="post" style="padding:15px;">
+      <form action="/loan/LoanRequest.act" method="post" style="padding:15px;">
         <ul class="Fast-reg">
           <li>
             <label>类别</label>
@@ -96,15 +96,15 @@
     </div>
 	<div class="box_3 rzsq_bg">
 		<div class="rzsq_but">
-			<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=136"><img src="/images/bule_button.jpg" /></a>
-			<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=138"><img src="/images/orange_button.jpg" /></a>
+			<a href="/loan/LoanRequest.act?loan.applyType=136"><img src="/images/bule_button.jpg" /></a>
+			<a href="/loan/LoanRequest.act?loan.applyType=138"><img src="/images/orange_button.jpg" /></a>
 		</div>		
 	</div>         
     <div class="hr_10"> &nbsp; </div>
     <div class="fl"><a href="/user/UserAction.act"><img src="/images/cwfx.jpg" /></a></div>
     <div class="fr"><a href="/user/UserAction.act"><img src="/images/cwyc_index.jpg" /></a></div>
     <div class="hr_10"> &nbsp; </div>
-    <div ><a href="/service/requestInfoAction!home.act?pageNo=1" target="_blank"><img src="/images/img_index_loan_Club.jpg" width="230" height="225"/></a></div>  
+    <div ><a href="/club/clubAction.act"><img src="/images/img_index_loan_Club.jpg" width="230" height="225"/></a></div>  
     <div class="hr_10"> &nbsp; </div>   
     <div class="menu_red white">
       <h6>融资案例</h6>
@@ -364,8 +364,8 @@
       <li><img src="/images/linkimg/boc.png" /></li>
       <li><img src="/images/linkimg/abc.png" /></li>
       <li><img src="/images/linkimg/bankcomm.png" /></li>
-      <li><img src="/images/linkimg/sdb.png" /></li>
       <li><a href="http://www.jinyida.cn/" target="_blank"/><img src="/images/linkimg/jyd.png" /></a></li>
+      <li><a href="http://www.tacleasing.cn/" target="_blank"/><img src="/images/linkimg/yrzl.png" /></a></li>
       <li><img src="/images/linkimg/cmb.png" /></li>
       <li><img src="/images/linkimg/hxb.png" /></li>
       <li><img src="/images/linkimg/cib.png" /></li>

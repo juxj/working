@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/service
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service
 svn://192.168.1.8
 
 
 
-2012-09-13T02:41:57.384706Z
-3400
+2012-09-29T01:22:58.186739Z
+3726
 yangb
 
 
@@ -25,33 +25,6 @@ yangb
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-finservice
-dir
-
-user
-dir
-
-message
-dir
-
-club
-dir
-
-mch
-dir
-
-admin
-dir
-
-common
-dir
-
-loan
-dir
-
-sin
-dir
 
 BaseService.java
 file
@@ -87,6 +60,33 @@ Patrick
 
 72
 
+admin
+dir
+
+club
+dir
+
+common
+dir
+
+finservice
+dir
+
+loan
+dir
+
+mch
+dir
+
+message
+dir
+
 news
+dir
+
+sin
+dir
+
+user
 dir
 

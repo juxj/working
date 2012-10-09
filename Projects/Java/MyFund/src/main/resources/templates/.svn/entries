@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/resources/templates
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/resources/templates
 svn://192.168.1.8
 
 
 
-2012-09-11T08:19:58.771371Z
-3352
+2012-09-25T02:45:35.535927Z
+3564
 yuel
 
 
@@ -94,17 +94,17 @@ yangb
 
 1025
 
-recoveryPwd.htm
+financeApplyCheck.htm
 file
 
 
 
 
-2012-09-11T03:06:51.000000Z
-f33971b3874798ef962d87f8795ee07c
-2012-07-31T08:25:05.170607Z
-1828
-Patrick
+2012-09-25T09:10:53.000000Z
+200c11e68e151747b0a039dde0bfd6a7
+2012-09-25T02:45:35.535927Z
+3564
+yuel
 
 
 
@@ -126,7 +126,41 @@ Patrick
 
 
 
-1538
+1433
+
+fundIntentionTemplate.htm
+file
+
+
+
+
+2012-09-11T09:29:21.000000Z
+4366038de368a3899a041ed0bea75a20
+2012-09-11T08:19:58.771371Z
+3352
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1343
 
 loanRequestTemplate.htm
 file
@@ -162,17 +196,17 @@ yangb
 
 1032
 
-fundIntentionTemplate.htm
+recoveryPwd.htm
 file
 
 
 
 
-2012-09-11T09:29:21.000000Z
-4366038de368a3899a041ed0bea75a20
-2012-09-11T08:19:58.771371Z
-3352
-yuel
+2012-09-11T03:06:51.000000Z
+f33971b3874798ef962d87f8795ee07c
+2012-07-31T08:25:05.170607Z
+1828
+Patrick
 
 
 
@@ -194,7 +228,7 @@ yuel
 
 
 
-1343
+1538
 
 registerActive.htm
 file

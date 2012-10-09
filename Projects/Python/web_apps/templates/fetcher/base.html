@@ -1,0 +1,30 @@
+{% load admin_static %}
+{% load url from future %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" 
+		href="{% block stylesheet %}{% static "grappelli/stylesheets/screen.css" %}{% endblock %}" />
+	<script type="text/javascript" 
+		src="{% static "fetcher/js/jquery-1.8.2.js" %}"></script>
+	{% block extrastyle %}{% endblock %}
+	{% block extrahead %}{% endblock %}
+</head>
+{% load i18n %}
+<body>
+	<!-- Container -->
+	<div id="container">
+		<!-- header -->
+		<div id="header"> {% block header%} here are contents. {% endblock%}
+		</div>
+		<!-- end header -->
+		<!-- content -->
+		<div id="content">{% block content%}{% endblock%}
+		</div>
+		<!-- end content -->
+		<div id="footer">{% include "fetcher/include/footer.html" %}</div>
+	</div>
+	<!-- END Container -->
+</body>
+</html>

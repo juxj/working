@@ -5,12 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.zj198.util.Pager;
-import com.zj198.util.Pagination;
 
 public class FinanceApplySpModel {
 	private Integer pageSize = 20;
 	private Integer pageNo = 1;
-	private Pagination pagination;
+//	private Pagination pagination;
 	private Integer userId;
 	
 	private String applyNum;
@@ -29,12 +28,12 @@ public class FinanceApplySpModel {
 	private List<String> extendsProValues;
 	private Map paramap;
 	
-	public Pagination getPagination() {
-		return pagination;
-	}
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
-	}
+//	public Pagination getPagination() {
+//		return pagination;
+//	}
+//	public void setPagination(Pagination pagination) {
+//		this.pagination = pagination;
+//	}
 	public Integer getPageSize() {
 		return pageSize;
 	}

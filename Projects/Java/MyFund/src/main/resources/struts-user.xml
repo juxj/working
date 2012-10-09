@@ -51,6 +51,7 @@
 				<param name="allowedTypes">image/jpeg,image/jpg,image/gif,image/png</param>
 				<param name="maximumSize">3025956</param>
             </interceptor-ref > 
+            <result name="input">/WEB-INF/web/user/uploadOrgError.jsp</result>
 		    <result name="success">/WEB-INF/web/user/org_upload_result.jsp</result>
 		</action>
 		<action name="orgAttach" class="com.zj198.action.user.DownloadImgAction">

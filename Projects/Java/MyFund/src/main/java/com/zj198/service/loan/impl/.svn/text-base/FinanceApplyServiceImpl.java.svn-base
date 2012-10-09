@@ -20,6 +20,7 @@ import com.zj198.dao.PrdExtendsValueDAO;
 import com.zj198.dao.PrdFinanceDAO;
 import com.zj198.dao.PrdPropertyDicDAO;
 import com.zj198.dao.UsrCompanyDAO;
+import com.zj198.dao.UsrUserDAO;
 import com.zj198.model.NtyMessageQueue;
 import com.zj198.model.OrdFaAttachList;
 import com.zj198.model.OrdFinanceApply;
@@ -36,6 +37,7 @@ import com.zj198.model.vo.FinanceApplyAttachModel;
 import com.zj198.service.common.NotifyQueueService;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.model.FindFinanceApplySpModel;
+import com.zj198.service.user.ProfileService;
 import com.zj198.util.Constants;
 import com.zj198.util.FreemarkerUtil;
 import com.zj198.util.OrderNOCreator;
@@ -56,6 +58,8 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	private PrdExtendsPropertyDAO prdExtendsPropertyDAO;
 	private PrdPropertyDicDAO prdPropertyDicDAO;
 	private PrdExtendsValueDAO prdExtendsValueDAO;
+	private UsrUserDAO usrUserDAO;
+	private ProfileService profileService;
 
 	/**
 	 * @author 岳龙 Description: CreateAuthor:岳龙 CreateDate:2012-7-05 15:09:58
@@ -284,6 +288,9 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		return ordFinanceApplyDAO.get(appId);
 	}
 
+	/**
+	 * 融资申请审核
+	 */
 	public void saveApplyStatus(OrdFinanceApply apply, OrdFinanceApplyCheck check) {
 		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
 		ofa.setApplyStatus(apply.getApplyStatus());
@@ -302,6 +309,66 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 			check.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
 		}
 		ordFinanceApplyCheckDAO.save(check);
+	}
+	/**
+	 * 发送邮件
+	 * @param apply  申请单
+	 * @param check  审核单
+	 */
+	private void sendCheckEmail(OrdFinanceApply apply, OrdFinanceApplyCheck check){
+		try {
+			Map<String,Object> pm = new HashMap<String,Object>();
+			UsrUser user = usrUserDAO.get(apply.getUserId());
+			int groupid = profileService.getGroupidByUserType(user.getType());
+			if(groupid == Constants.USERTYPE_GROUP_COMPANY){
+				UsrCompany usrCompany= (UsrCompany) profileService.getProfiles(user.getId());
+				pm.put("userName", usrCompany.getCompanyname());
+			}else if(groupid == Constants.USERTYPE_GROUP_PERSONAL){
+				pm.put("userName", user.getRealname());
+			}
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+			String applyTime = sdf.format(apply.getCreatedt());
+			pm.put("applyTime", applyTime);//申请时间
+			//apply.getApplyStatus();//申请状态
+			String checkInfo="";
+			if(apply.getApplyStatus() == 180){
+				checkInfo="通过资金网预审";
+			}else if(apply.getApplyStatus() == 188){
+				checkInfo="未通过资金网预审";
+			}else if(apply.getApplyStatus() == 182){
+				checkInfo="资金方已接受申请";
+			}else if(apply.getApplyStatus() == 187){
+				checkInfo="未能被资金方受理";
+			}else if(apply.getApplyStatus() == 183){
+				checkInfo="需补充资料";
+			}else if(apply.getApplyStatus() == 185){
+				checkInfo="通过资金方审核";
+			}else if(apply.getApplyStatus() == 186){
+				checkInfo="资金方已放款";
+			}
+			pm.put("applyNum", apply.getApplyNum());
+			pm.put("checkInfo", checkInfo);
+			String body = FreemarkerUtil.getContent("financeApplyCheck.htm", pm, false, null, null);
+			NtyMessageQueue j = new NtyMessageQueue();
+			j.setTitle("融资申请 "+checkInfo+"- 中国资金网");
+			j.setContent(body);
+			j.setReceiver(user.getEmail());
+			j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
+			notifyQueueService.addNewMessage(j);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	/**
+	 * 
+	 */
+	private void sendCheckMsg(){
+		NtyMessageQueue message = new NtyMessageQueue();
+		message.setType(Constants.NTYMESSAGEQUEUE_TYPE_SMS);
+		message.setTitle("");
+		message.setContent("");
+		message.setReceiver("");
+		notifyQueueService.addNewMessage(message);
 	}
 
 	public void saveNewAttach(OrdFinanceApplyAttach attach) {
@@ -370,6 +437,22 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		}
 	}
 	
+	public OrdFinanceApply countAttachApply(OrdFinanceApply apply){
+		List<FinanceApplyAttachModel> attachList = this.findApplyAttach(apply.getId());
+		
+		int uploadNum = attachList.size();
+		int needNum = 0;
+		for(FinanceApplyAttachModel m : attachList){
+			if(m.getUploadStatus().intValue() == 1){
+				needNum ++;
+			}
+		}
+		apply.setUploadAttachNum(uploadNum);
+		apply.setNeedAttachNum(needNum);
+		
+		return apply;
+	}
+	
 	// setter and getter
 	public void setPrdFinanceDAO(PrdFinanceDAO prdFinanceDAO) {
 		this.prdFinanceDAO = prdFinanceDAO;
@@ -421,4 +504,17 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	public void setPrdExtendsValueDAO(PrdExtendsValueDAO prdExtendsValueDAO) {
 		this.prdExtendsValueDAO = prdExtendsValueDAO;
 	}
+
+	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId, Integer num) {
+		return ordFinanceApplyCheckDAO.findApplyCheck(applyId,num);
+	}
+
+	public void setUsrUserDAO(UsrUserDAO usrUserDAO) {
+		this.usrUserDAO = usrUserDAO;
+	}
+
+	public void setProfileService(ProfileService profileService) {
+		this.profileService = profileService;
+	}
+	 
 }

@@ -15,7 +15,7 @@
 
 <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
   <caption>
-  <span class="fr view_all"><a href="/service/club.act?mparamid=17">查看全部»</a></span>
+  <span class="fr view_all"><a href="/service/club.act?mparamid=17&checkstate=1">查看全部»</a></span>
   <h6>资金信息</h6>
   <span class="leftdetail"><a href="javascript:edit();">立即发布</a></span>
   </caption>
@@ -36,11 +36,7 @@
   <s:iterator value="supplyInfoList" id="item">
 	  <tr>
 	    <td title="${title}">
-	    <s:if test="title != null && title.length()>15">
-			<s:property value="title.substring(0,15)"></s:property>...
-		</s:if><s:else>
-			${title}
-		</s:else>
+		    <div class="ellipsis_text_80" title="${item.title}">${item.title}</div>
 	    </td>
 		<td><s:date name="lastPostDate" format="yyyy-MM-dd"/></td>
 		<td>
@@ -63,13 +59,9 @@
    			</s:if>    
 			
 		</td>
-		<td title="${item.workTrade }">
-			<s:if test="#item.workTrade != null && #item.workTrade.length()>15">
-				<s:property value="#item.workTrade.substring(0,15)"></s:property>...
-			</s:if><s:else>
-				${item.workTrade}
-			</s:else>
-	    	<s:if test="#item.workTrade==null or #item.workTrade==''">
+		<td title="${item.workRange }">
+			<div class="ellipsis_text_80" title="${item.workRange}">${item.workRange}</div>
+	    	<s:if test="#item.workRange==null or #item.workRange==''">
 	    		不限
 	    	</s:if>
 		</td>

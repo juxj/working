@@ -42,6 +42,8 @@ public interface FinanceApplyService {
 	OrdFinanceApply findById(Integer id);
 	public List<OrdFinanceApply> findFinanceApply(FindFinanceApplySpModel spModel);
 	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId);
+	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId, Integer num);
 	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId);
 	public void saveFundIntention(FundIntention fi);
+	public OrdFinanceApply countAttachApply(OrdFinanceApply apply);
 }

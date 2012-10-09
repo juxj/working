@@ -45,6 +45,11 @@
                 <comment>贷款用途(14,17,23)</comment>
             </column>
         </property>
+        <property name="loanPurposeOther" type="java.lang.String">
+            <column name="loan_purpose_other" length="100">
+                <comment>其它贷款用途说明</comment>
+            </column>
+        </property>
         <property name="loanAmount" type="java.lang.Long">
             <column name="loan_amount">
                 <comment>贷款金额</comment>

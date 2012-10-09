@@ -1,0 +1,84 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="club" namespace="/club" extends="base">
+	
+		<action name="clubAction" class="com.zj198.action.club.ClubAction">
+    	   <result name="home">/public/club/home.jsp</result>
+    	   <result name="supplyInfoByAllType">/public/club/supply_info_by_all_type.jsp</result>
+    	   <result name="requestInfoByAllType">/public/club/request_info_by_all_type.jsp</result>
+    	</action>
+    	
+    	<action name="requestInfoAction" class="com.zj198.action.club.RequestInfoAction">
+		    <interceptor-ref name="defaultStack"/>
+		    <result name="home">/public/club/request_info_home.jsp</result>
+		    <result name="detail">/public/club/request_info_detail.jsp</result>
+		</action>
+    	
+    	<action name="supplyInfoAction" class="com.zj198.action.club.SupplyInfoAction">
+		    <result name="home">/public/club/supply_info_home.jsp</result>
+		    <result name="detail">/public/club/supply_info_detail.jsp</result>
+		    <result name="pawn_detail">/public/club/pawn_detail.jsp</result>
+		    <result name="guarantee_detail">/public/club/guarantee_detail.jsp</result>
+		    <result name="loan_detail">/public/club/loan_detail.jsp</result>
+		    <result name="project_invest_detail">/public/club/project_invest_detail.jsp</result>
+		    <result name="institution_bank_detail">/public/club/institution_bank_detail.jsp</result>
+		    <result name="institution_insurance_detail">/public/club/institution_insurance_detail.jsp</result>
+		    <result name="institution_trust_detail">/public/club/institution_trust_detail.jsp</result>
+		    <result name="institution_stock_detail">/public/club/institution_stock_detail.jsp</result>
+		    <result name="institution_rent_detail">/public/club/institution_rent_detail.jsp</result>
+		    <result name="institution_fund_detail">/public/club/institution_fund_detail.jsp</result>
+		    <result name="institution_finance_detail">/public/club/institution_finance_detail.jsp</result>
+		</action>
+    	
+    	<action name="club" class="com.zj198.action.club.ClubAction">
+			 <result name="requestHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
+	          <result name="supplyHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		</action>
+		
+		<action name="requestInfoAction4User" class="com.zj198.action.club.RequestInfoAction">
+			<interceptor-ref name="checkInterceptor"/>
+		    <result name="userHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
+		    <result name="edit">/WEB-INF/web/user/club/edit_request_info.jsp</result>
+		</action>
+		
+		
+		<action name="editRequestInfo" class="com.zj198.action.club.RequestInfoAction" method="edit">
+			<interceptor-ref name="checkInterceptor"/>
+		    <result name="edit">/WEB-INF/web/user/club/edit_request_info.jsp</result>
+		</action>
+		
+		<action name="saveRequestInfo" class="com.zj198.action.club.RequestInfoAction" method="edit">
+			<interceptor-ref name="checkInterceptor"/>
+		    <result name="userHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
+		</action>
+		
+		
+		<action name="supplyInfoUserHome" class="com.zj198.action.club.SupplyInfoAction" method="home">
+			<default-interceptor-ref name="userInterceptor"/>
+			<result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		</action>
+		
+		<action name="saveSupplyInfo" class="com.zj198.action.club.SupplyInfoAction" method="save">
+			<default-interceptor-ref name="userInterceptor"/>
+			<result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		</action>
+		
+		<action name="editSupplyInfo" class="com.zj198.action.club.SupplyInfoAction" method="edit">
+			<interceptor-ref name="checkInterceptor"/>
+		    <result name="edit">/WEB-INF/web/user/club/edit_supply_info.jsp</result>
+		    <result name="editFirstStep">/WEB-INF/web/user/club/edit_supply_info_first_step.jsp</result>
+		    <result name="editPawnInfo">/WEB-INF/web/user/club/edit_pawn_info.jsp</result>
+		    <result name="editGuaranteeInfo">/WEB-INF/web/user/club/edit_guarantee_info.jsp</result>
+		    <result name="editLoanInfo">/WEB-INF/web/user/club/edit_loan_info.jsp</result>
+		    <result name="editProjectInvest">/WEB-INF/web/user/club/edit_project_invest.jsp</result>
+		    <result name="editInstitutionBank">/WEB-INF/web/user/club/edit_institution_bank.jsp</result>
+		    <result name="editInstitutionInsurance">/WEB-INF/web/user/club/edit_institution_insurance.jsp</result>
+		    <result name="editInstitutionTrust">/WEB-INF/web/user/club/edit_institution_trust.jsp</result>
+		    <result name="editInstitutionStock">/WEB-INF/web/user/club/edit_institution_stock.jsp</result>
+		    <result name="editInstitutionRent">/WEB-INF/web/user/club/edit_institution_rent.jsp</result>
+		    <result name="editInstitutionFund">/WEB-INF/web/user/club/edit_institution_fund.jsp</result>
+		    <result name="editInstitutionFinance">/WEB-INF/web/user/club/edit_institution_finance.jsp</result>
+		</action>
+	</package>
+</struts>

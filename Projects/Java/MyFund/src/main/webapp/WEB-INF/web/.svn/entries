@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web
 svn://192.168.1.8
 
 
 
-2012-09-13T05:28:03.747665Z
-3410
+2012-09-29T06:45:59.920908Z
+3742
 juxj
 
 
@@ -26,9 +26,9 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-user
+admin
 dir
 
-admin
+user
 dir
 

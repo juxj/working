@@ -43,7 +43,7 @@ function checkform(){
             <dl>
               <dd><h6>用户名：</h6><input id="username" name="username" type=text value="" class="input-text" /></dd>
               <dd><h6>验证码：</h6><input id="verifycode" name="verifycode" type=text value="" class="input-text" style="width:90px;" /><img src="/Captcha.act" title="点击更换" onclick="this.src='/Captcha.act?d='+Math.random();" /></dd>
-              <dd><h6>&nbsp;</h6><input type="button" onclick="checkform()" class="but_gray" style="width:90px;" value="找回密码" /></dd>
+              <dd><h6>&nbsp;</h6><input type="button" onclick="checkform()" class="btnsub bred" style="width:90px;" value="找回密码" /></dd>
             </dl>
           </form>
       </div>

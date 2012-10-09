@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>融资产品查看</title>
+<title><common:print valueId="product.userId" type="user"/>${product.financeName }</title>
+<meta name="keywords" content='<s:if test="productAreaList.size()==0">全国</s:if><s:else><s:iterator value="productAreaList" id="item">${item.name },</s:iterator></s:else><common:print valueId="product.financeType" />'/>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
@@ -152,12 +153,12 @@ function finance_type_chenge(financeType){
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="Search_t_title" align="center" ><input type="button" value="立即申请"  class="but_gray" onclick="window.location='/user/loan/financeApply!financeApply.act?product.id=${product.id}'" ></input></td>
+            <td colspan="4" class="Search_t_title" align="center" ><input type="button" value="立即申请"  class="btnsub bred" onclick="window.location='/user/loan/financeApply!financeApply.act?product.id=${product.id}'" ></input></td>
           </tr>
         </table>
         <!--表格部分结束-->
 	<div class="hr_10"> &nbsp; </div>
-	<div id="view_tabs" style="height:380px;">
+	<div id="view_tabs" style="min-height:380px;">
 		<ul>
 			<li><a href="#view_tabs-1">产品介绍</a></li>
 			<li><a href="#view_tabs-2">申请条件</a></li>
@@ -173,7 +174,7 @@ function finance_type_chenge(financeType){
 		</div>
 		<div id="view_tabs-2">
 			<div style="font-size:12px; ">
-				  <p>
+				  <p class="finance_type_151 finance_type_152">
 	                <tr  style="font-weight:bolder; ">申请企业所属行业：</tr>
 	                	<s:if test="productIndustryList.size()==0">
 	                		不限
@@ -187,52 +188,52 @@ function finance_type_chenge(financeType){
 	                	</s:iterator>
 	                	</s:else>
 	              </p>
-	              <p>
+	              <p class="finance_type_151 finance_type_152">
 	                <tr style="color:#97181d; font-weight:bolder; ">企业的总资产：</tr>
 	                <common:print valueId="product.companyAllAsset" valueSetMap="ZJ112"/>
 	              </p>
-	              <p>
+	              <p class="finance_type_151">
 	                <tr  style="color:#97181d; font-weight:bolder; ">企业的年营业收入：</tr>
 	                <common:print valueId="product.operatIncome" valueSetMap="ZJ104"/>
 	              </p>
-	              <p>
+	              <p class="finance_type_151">
 	                <tr  style="color:#97181d; font-weight:bolder; ">企业成立年数：</tr>
 	                <common:print valueId="product.settingYear" valueSetMap="ZJ105"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_152">
 	                <tr  style="color:#97181d; font-weight:bolder; ">保证金：</tr>
 	                <common:print valueId="product.needEnsure" valueSetMap="ZJ101"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_152">
 	                <tr  style="color:#97181d; font-weight:bolder; ">申请人行业经验：</tr>
 	                <common:print valueId="product.experience" valueSetMap="ZJ106"/>
 	              </p>
-	              <p>
+	              <p style="display:none;" class="finance_type_152">
 	                <tr  style="color:#97181d; font-weight:bolder; ">经营场所：</tr>
 	                <common:print valueId="product.runningArea" valueSetMap="ZJ103"/>
 	              </p>
 	              
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">申请人月工资收入：</tr>
 	                <common:print valueId="product.salaryIncome" valueSetMap="ZJ107"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">工资发放形式：</tr>
 	                <common:print valueId="product.salaryPutWay" valueSetMap="ZJ108"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">现单位工作时长：</tr>
 	                <common:print valueId="product.workTime" valueSetMap="ZJ109"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">所在地自有房产：</tr>
 	                <common:print valueId="product.house" valueSetMap="ZJ103"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_152 finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">信用记录：</tr>
 	                <common:print valueId="product.creditAcount" valueSetMap="ZJ103"/>
 	              </p>
-	              <p style="display:none;" >
+	              <p style="display:none;" class="finance_type_152 finance_type_153 finance_type_154">
 	                <tr  style="color:#97181d; font-weight:bolder; ">银行流水：</tr>
 	                <common:print valueId="product.bankSalaryList" valueSetMap="ZJ103"/>
 	              </p>
@@ -326,6 +327,11 @@ function finance_type_chenge(financeType){
 	</form>
   </div>
 </div>
+
+<div id="QYKF_COPYRIGHT_70718ca91d55dcb82b8020add3fc54fa">
+</div>
+<script src="http://33084.fy.kf.qycn.com/vclient/state.php?webid=33084" language="javascript" type="text/javascript"></script>
+
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

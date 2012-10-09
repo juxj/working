@@ -18,6 +18,8 @@
 <script type="text/javascript" src="/script/profile.js" > </script>
 <script type="text/javascript">
 $(document).ready(function(){
+	$("#City").val('${usrBank.cityid}');
+	$("#District").val('${usrBank.districtid}');
 	$("#bankForm").validate({
 		meta:"validate"
 	});
@@ -95,24 +97,28 @@ $(document).ready(function(){
         <tr>
           <td class="a_right">联系人姓名：</td>
           <td colspan="3"><input type=text value="${usrBank.linkname }" class="{validate:{maxlength:6}} chcharacter input-text" name="usrBank.linkname"/>
-          &nbsp;&nbsp;
-          <s:if test="usrBank.linkgenderr==null">
+          </td>
+        </tr>
+        <tr>
+          <td class="a_right">联系人性别：</td>
+          <td colspan="3">&nbsp;
+          <s:if test="usrBank == null || usrBank.linkgenderr == null">
           <s:radio id="gender1" name="usrBank.linkgenderr" list="#{1:'先生',0:'女士'}" value="1" listKey="key" listValue="value"/>
-          </s:if>&nbsp;&nbsp;<s:else>
+          </s:if><s:else>
           <s:radio id="gender2" name="usrBank.linkgenderr" list="#{1:'先生',0:'女士'}" value="usrBank.linkgenderr" listKey="key" listValue="value"/>
           </s:else>
           </td>
         </tr>
         <tr>
           <td class="a_right">联系地址：</td>
-          <td colspan="3"><s:select id="Province" name="usrBank.provinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('Province','City','District');"/>
-	          <select id="City" name="usrBank.cityid" onchange="changeCity('regCity','regDistrict');">
+          <td colspan="3"><s:select id="Province" name="usrBank.provinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('Province','City','District');"/>
+	          <select id="City" name="usrBank.cityid" onchange="changeCity('City','District');" class="tb_sele">
 	          	<option value="0">--请选择--</option>
 	          	 <s:iterator value="cityMap['City']">
 					<option value="${id}">${name}</option>
 				 </s:iterator>
 	          </select>
-	          <select id="District" name="usrBank.districtid">
+	          <select id="District" name="usrBank.districtid" class="tb_sele">
 	          <option value="0">--请选择--</option>
 	          	<s:iterator value="districtMap['District']">
 					<option value="${id}">${name}</option>
@@ -138,7 +144,7 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right">所属部门：</td>
-          <td><input id="department" type=text value="${usrBank.department }" class="{validate:{maxlength:12}} input-text chne" name="usrBank.department" />
+          <td><input id="department" type="text" value="${usrBank.department }" class="{validate:{maxlength:12}} input-text chne" name="usrBank.department" /></td>
           <td class="a_right">职位：</td>
           <td><input type=text value="${usrBank.position }" class="{validate:{maxlength:8}} input-text chne" name="usrBank.position"/></td>
         </tr>
@@ -147,7 +153,10 @@ $(document).ready(function(){
           <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrBank.remarks" style="width: 540px;height: 150px;">${usrBank.remarks }</textarea></td>
         </tr>
         <tr>
-           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存" /></td>
+           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
+           <input type="submit" class="but_gray" style="width:200px;" value="保存" />&nbsp;&nbsp;
+           <input type="button" class="but_gray" onclick="javascript:window.location.href='/user/Profile.act'" style="width:200px;" value="取消" />
+           </td>
          </tr> 
       </table>
     </form>

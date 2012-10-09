@@ -30,7 +30,7 @@ if(mid != null && !mid.trim().equals("")){
 	</div>
 	<div class="fr logo_r">
 		<div class="hr_10"> &nbsp; </div>
-		<div class="user_menu">${session._user.realname} 您好，欢迎来到中国资金网！ | <a href="/Account!logout.act"> 退出</a>| <a href="/Index.act"> 网站首页</a></div>
+		<div class="user_menu">${session._user.realname} 您好，欢迎来到中国资金网！ | <a href="/Account!logout.act"> 退出</a>| <a href="/Index.act"> 网站首页</a><s:if test="#session._admin != null"> | <a href="/admin/user/User.act">管理员 » 账户管理</a></s:if></div>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg"/></div>
 	</div>
@@ -43,7 +43,7 @@ if(mid != null && !mid.trim().equals("")){
 		<s:iterator value="@com.zj198.util.Constants@MENU_MAP[#session._user.userTypeGroup]" id="menu">
 		<s:if test="#menu.parentid==0">
 			<li><a href="${menu.action}">${menu.menuname }</a></li>
-			<s:if test="#menu.id==2"><s:set name="t2" value="1"/></s:if><s:if test="#menu.id==3"><s:set name="t3" value="1"/></s:if><s:if test="#menu.id==4"><s:set name="t4" value="1"/></s:if><s:if test="#menu.id==5"><s:set name="t5" value="1"/></s:if>
+			<s:if test="#menu.id==2"><s:set name="t2" value="1"/></s:if><s:if test="#menu.id==3"><s:set name="t3" value="1"/></s:if><s:if test="#menu.id==4"><s:set name="t4" value="1"/></s:if><s:if test="#menu.id==5"><s:set name="t5" value="1"/></s:if><s:if test="#menu.id==20"><s:set name="t6" value="1"/></s:if>
 		</s:if>
 		</s:iterator>
     </ul>
@@ -115,6 +115,22 @@ if(mid != null && !mid.trim().equals("")){
 		</s:else>
 		<s:if test="#session.mparamid == id">
 			<script type="text/javascript">loadmenu(4);</script>
+		</s:if>
+	</s:if>
+	</s:iterator>
+	</div></s:if>
+	
+	<s:if test="#t6==1"><div class="xxkboxmenu" style="display:none">
+	<s:iterator value="@com.zj198.util.Constants@MENU_MAP[#session._user.userTypeGroup]" id="submenu">
+	<s:if test="#submenu.parentid==20">| 
+		<s:if test="action.indexOf('?') > 0">
+			<a href="${action}&mparamid=${id}" <s:if test="#session.mparamid == id">style="color:#97181d;"</s:if>>${menuname }</a>
+		</s:if>
+		<s:else>
+			<a href="${action}?mparamid=${id}" <s:if test="#session.mparamid == id">style="color:#97181d;"</s:if>>${menuname }</a>
+		</s:else>
+		<s:if test="#session.mparamid == id">
+			<script type="text/javascript">loadmenu(5);</script>
 		</s:if>
 	</s:if>
 	</s:iterator>

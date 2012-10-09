@@ -7,11 +7,11 @@
   <h6>融资意向</h6>
   <!-- 企业 -->
   <s:if test="#session._user.userTypeGroup == 1">
-	  <span class="leftdetail"><a href="/loan/LoanRequest!loanRequest.act?loan.applyType=136" target="_blank">立即提交</a></span>
+	  <span class="leftdetail"><a href="/loan/LoanRequest.act?loan.applyType=136" target="_blank">立即提交</a></span>
   </s:if>
   <!-- 个人 -->
   <s:if test="#session._user.userTypeGroup == 5">
-	  <span class="leftdetail"><a href="/loan/LoanRequest!loanRequest.act?loan.applyType=138" target="_blank">立即提交</a></span>
+	  <span class="leftdetail"><a href="/loan/LoanRequest.act?loan.applyType=138" target="_blank">立即提交</a></span>
   </s:if>
   </caption>
   <tr>

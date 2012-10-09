@@ -91,11 +91,11 @@ function supplyAttach(apploanid){
 						<p>
 						<s:if test="groupType==5">
 						您可以去<a href="/loan/financeProduct.act?financeType=152&financeDate=12">融资服务频道</a>搜索适合您的融资产品<br/>
-						您也可以<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=138">点此提交融资意向</a><br/>
+						您也可以<a href="/loan/LoanRequest.act?loan.applyType=138">点此提交融资意向</a><br/>
 						</s:if>
 						<s:elseif test="groupType==1">
 						您可以去<a href="/loan/financeProduct.act?financeType=151&financeDate=12">融资服务频道</a>搜索适合您的融资产品<br/>
-						您也可以<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=136">点此提交融资意向</a><br/>
+						您也可以<a href="/loan/LoanRequest.act?loan.applyType=136">点此提交融资意向</a><br/>
 						</s:elseif>
 						<s:elseif test="groupType==2 || groupType==3">
 						您可以<a href="/user/loan/financeProduct!newfin.act">点此发布融资产品</a>

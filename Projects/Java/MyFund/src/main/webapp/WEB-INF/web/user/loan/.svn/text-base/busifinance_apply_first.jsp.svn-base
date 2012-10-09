@@ -17,12 +17,18 @@
 <script language="javascript">
 //文本框触发焦点效果s
 $(function() {
+	var j = new Date();
+	var y = j.getFullYear() - 1;
+	$('.year').html(y);
+	var jm = j.getFullYear() + "年" + j.getMonth() + "月";
+	$('.yearmoth').html(jm);
     $(".input-text,textarea").focus(function() {
         $(this).addClass("input-focus");
     }).blur(function() {
         $(this).removeClass("input-focus");
     })
 })
+
 
 $(function(){
 	$("#loanForm").validate();
@@ -35,6 +41,14 @@ function servicedetail(){
 			$("#loanSubmit").attr("disabled",true);
 		}
 }
+function otherPurpose(){
+	var j = $('#other').val();
+	if(j==68){
+		$('#otherPurpose').html("<input type='text' name='loanPurposeOther'/>");
+	}else{
+		$('#otherPurpose').html('');
+	}
+}
 
 jQuery.validator.addMethod("loanAmount", function(value, element, param) {
 return this.optional(element) || (value >= param[0] && value <= param[1]);
@@ -43,7 +57,7 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 jQuery.validator.addMethod("assetSumcls", function(value, element, param) {
 var s1 = $('#' + param[0]).val();
 var s2 = $('#' + param[1]).val();
-return this.optional(element) || (value >= s1 && value >= s2);
+return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 }, $.validator.format("总资产必须大于融资金额与总负债"));
 </script>
 
@@ -95,20 +109,24 @@ return this.optional(element) || (value >= s1 && value >= s2);
 <form action="/user/loan/financeApply!applySecond.act" id="loanForm"  class="box_form" style="margin:0px;" method="post">
 <!-- 企业经营贷款快速申请类型=136 -->
 <s:hidden name="product.id"></s:hidden>
+<input type="hidden" name="oaucId" value="${oaucId }" />
 	<div class="C_title">融资需求信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
 	</div>
 	<div class="C_form">
             <dl>
               <dd>
                 <h6>融资用途：</h6>
-                <common:select name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:200px;"></common:select>
+                <common:select id="other" name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:160px;" onchange="otherPurpose()"></common:select>
+              	<div id="otherPurpose"></div>
+              </dd>
+              <dd> 
                 <h6>融资金额：</h6>
                 <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="9"/>&nbsp;&nbsp;万元
                 <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>融资期限：</h6>
-                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="9"/>&nbsp;&nbsp;个月
+                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="3"/>&nbsp;&nbsp;个月
                 <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
@@ -123,40 +141,41 @@ return this.optional(element) || (value >= s1 && value >= s2);
 	<div class="C_form">
 		<dl>
 			<dd>
-				<h6 style="width:235px">企业近1年经营成本约为：</h6>
-				<s:textfield name="apply.lastyearCost" cssClass="input-text required number"  id="apply.lastyearCost" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
-				<label for="apply.lastyearCost" class="error" generated="true" style="display:none;"></label>
-			</dd>
-			<dd>
-				<h6 style="width:235px">企业近1年净利润率约为：</h6>
-				<input type="text" name="apply.lastyearProfit" class="input-text required number {loanAmount:[-100,500]}"  id="apply.lastyearProfit" maxlength="10"/>&nbsp;&nbsp;%
-				<label for="apply.lastyearProfit" class="error" generated="true" style="display:none;"></label>
-			</dd>
-			<dd>
-				<h6 style="width:235px">企业近1年销售额约为：</h6>
+				<h6 style="width:235px">企业<span class="year"></span>年销售额约为：</h6>
 				<s:textfield name="apply.lastyearSaleVolume" cssClass="input-text required number"  id="apply.lastyearSaleVolume" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.lastyearSaleVolume" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到上月未，企业应收账款约为：</h6>
+				<h6 style="width:235px">企业<span class="year"></span>年经营成本约为：</h6>
+				<s:textfield name="apply.lastyearCost" cssClass="input-text required number"  id="apply.lastyearCost" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
+				<label for="apply.lastyearCost" class="error" generated="true" style="display:none;"></label>
+			</dd>
+			<dd>
+				<h6 style="width:235px">企业<span class="year"></span>年净利润率约为：</h6>
+				<input type="text" name="apply.lastyearProfit" class="input-text required number {loanAmount:[-100,500]}"  id="apply.lastyearProfit" maxlength="10"/>&nbsp;&nbsp;%
+				<label for="apply.lastyearProfit" class="error" generated="true" style="display:none;"></label>
+			</dd>
+			<dd>
+				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业应收账款约为：</h6>
 				<s:textfield name="apply.receivable" cssClass="input-text required number"  id="apply.receivable" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.receivable" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到上月未，企业总库存约为：</h6>
+				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总库存约为：</h6>
 				<s:textfield name="apply.stockSum" cssClass="input-text required number"  id="apply.stockSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.stockSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到上月未，企业总资产约为：</h6>
+				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总资产约为：</h6>
 				<input type="text" name="apply.assetSum" class="input-text required number {assetSumcls:['apply_debtSum','apply_loanAmount']}"  id="apply.assetSum" maxlength="10"/>&nbsp;&nbsp;万元
 				<label for="apply.assetSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到上月未，企业总负债约为：</h6>
+				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总负债约为：</h6>
 				<s:textfield name="apply.debtSum" cssClass="input-text required number"  id="apply_debtSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply_debtSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
+			<!-- 
 			<dd>
 				<h6 style="width:235px">最大下游客户与您的合作时长：</h6>
 				<s:textfield name="apply.maxCustomTime" cssClass="input-text required number"  id="apply.maxCustomTime" maxlength="10"></s:textfield>&nbsp;&nbsp;年
@@ -177,6 +196,7 @@ return this.optional(element) || (value >= s1 && value >= s2);
 				<s:textfield name="apply.sixmonthBanklist" cssClass="input-text required number"  id="apply.sixmonthBanklist" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.sixmonthBanklist" class="error" generated="true" style="display:none;"></label>
 			</dd>
+			 -->
 		</dl>
 	</div>
 	<div class="clear"></div>
@@ -187,10 +207,10 @@ return this.optional(element) || (value >= s1 && value >= s2);
 				<dd>
 					<h6 style="width:235px">${fieldName }：</h6>
 					<s:if test="fieldType == 1">
-						<input type="text" name="epValue${id }" class="input-text"/>
+						<input type="text" name="epValue${id }" class="input-text required"/>
 					</s:if>
 					<s:if test="fieldType == 2">
-						<textarea name="epValue${id }" rows="5" cols="50"></textarea>
+						<textarea name="epValue${id }" rows="5" cols="50" class="required"></textarea>
 					</s:if>
 					<s:if test="fieldType == 3">
 						<select name="epValue${id }">
@@ -201,8 +221,9 @@ return this.optional(element) || (value >= s1 && value >= s2);
 					</s:if>
 					<s:if test="fieldType == 4">
 						<s:iterator value="propertyDicSet">
-							<input type="checkbox" name="epValue${epid.id }" value="${dicValue }"/>${dicName }
+							<input type="checkbox" name="epValue${epid.id }" value="${dicValue }" class="required"/>${dicName }
 						</s:iterator>
+						<label for="epValue${epid.id }" class="error" generated="true" style="display:none;"></label>
 					</s:if>
 				</dd>
 			</s:iterator>

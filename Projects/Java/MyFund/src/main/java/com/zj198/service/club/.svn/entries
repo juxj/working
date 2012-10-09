@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/club
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/club
 svn://192.168.1.8
 
 
 
-2012-08-27T02:28:09.913969Z
-2930
+2012-09-24T06:38:25.715159Z
+3554
 juxj
 
 
@@ -26,19 +26,16 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-impl
-dir
-
 SupplyRequestService.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-a630423c8ab9b4ec59397a3eca678394
-2012-08-23T03:34:49.100100Z
-2876
+2012-09-24T05:56:00.000000Z
+9ee3211d7a598de334342c1e6019d70c
+2012-09-24T06:38:25.715159Z
+3554
 juxj
 
 
@@ -61,5 +58,8 @@ juxj
 
 
 
-1907
+2154
+
+impl
+dir
 

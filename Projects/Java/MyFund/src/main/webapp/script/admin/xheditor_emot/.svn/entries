@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/script/admin/xheditor_emot
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/script/admin/xheditor_emot
 svn://192.168.1.8
 
 
@@ -26,15 +26,15 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-ipb
+default
 dir
 
-pidgin
+ipb
 dir
 
 msn
 dir
 
-default
+pidgin
 dir
 

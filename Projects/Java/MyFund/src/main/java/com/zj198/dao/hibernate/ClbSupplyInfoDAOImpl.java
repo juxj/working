@@ -4,6 +4,7 @@ import java.util.Hashtable;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.Query;
 
 import com.zj198.dao.ClbSupplyInfoDAO;
 import com.zj198.model.ClbSupplyInfo;
@@ -19,7 +20,7 @@ public class ClbSupplyInfoDAOImpl extends HibernateDAO<ClbSupplyInfo, Integer> i
 	}
 	
 	public List<ClbSupplyInfo> findLastSupplyInfo(int num) {
-		String hql = "from ClbSupplyInfo where (rank=1 or rank=10) order by id desc";
+		String hql = "from ClbSupplyInfo where (rank=1 or rank=10) order by lastPostDate desc";
 		return super.findTopRows(hql, num);
 	}
 	
@@ -94,37 +95,65 @@ public class ClbSupplyInfoDAOImpl extends HibernateDAO<ClbSupplyInfo, Integer> i
 
 	@Override
 	public Pager findClbSupplyInfoList(int pageSize, int pageNo, String[] query) {
-		String hql = "from ClbSupplyInfo where (rank=1 or rank=10)";
+		//String hql = "from ClbSupplyInfo where ( rank=1 or rank=10 )";
+		String hql = "from ClbSupplyInfo where 1=1 ";
 		Hashtable<String, Object> params = new Hashtable<String, Object>();
 
 		String q0 = query[0];
 		String q1 = query[1];
 		String q2 = query[2];
 		String q3 = query[3];
-		//Modify by zeroleavebaoyang@gmail.com(搜索某一地区要同时将='全国'的也显示出来)
-		if (!StringUtil.isNullOrBlank(q0)) {
-			hql = hql + " and (workArea like :area or workArea like :j)";
+		//地区
+		if (StringUtils.isNotBlank(q0.trim())) {
+			hql = hql + " and (workArea like :area or workArea like '%全国%')";
 			params.put("area", "%"+q0+"%");
-			params.put("j", "%全国%");
 		}
-		
-		if (!StringUtil.isNullOrBlank(q1)) {
-			hql = hql + " and workTrade like :industry";
+		//行业或从业范围
+		if (StringUtils.isNotBlank(q1.trim())) {
+			hql = hql + " and ( workTrade like :industry ) ";
 			params.put("industry", "%"+q1+"%");
 		}
-		
-		if (!StringUtil.isNullOrBlank(q2)) {
-			hql = hql + " and workRange like :range";
-			params.put("range", "%"+q2+"%");
+		//类别
+		if (StringUtils.isNotBlank(q2.trim())) {
+			
+			boolean subCategory = true;
+			
+			if (q2.equalsIgnoreCase("短期拆借资金")) {
+				hql = hql + " and (investType like '100%')";
+				subCategory = false;
+			}
+			
+			if (q2.equalsIgnoreCase("项目直投资金")) {
+				hql = hql + " and (investType like '200%')";
+				subCategory = false;
+			}
+			
+			if (q2.equalsIgnoreCase("金融机构资金")) {
+				hql = hql + " and (investType like '300%')";
+				subCategory = false;
+			}
+			
+			if (subCategory) {
+				hql = hql + " and (investType = :investType)";
+				params.put("investType", q2);
+			}
+			
 		}
 		
-		if (!StringUtil.isNullOrBlank(q3)) {
-			hql = hql + " and title like :title";
+		if (StringUtils.isNotBlank(q3)) {
+			hql = hql + " and (title like :title)";
 			params.put("title", "%"+q3+"%");
 		}
 		
+		
+		hql = hql + " and (rank = 1 or rank = 10) order by lastPostDate desc";
+		
 		return super.pagedQuery(hql, pageNo, pageSize, params);
 	}
-	
+
+	public List<ClbSupplyInfo> findByType(String investType, int num) {
+		String hql = "from ClbSupplyInfo where (rank = 1 or rank = 10) and investType = :investType order by lastPostDate desc";
+		return super.findTopRows(hql, num, "investType", investType);
+	}
 	
 }

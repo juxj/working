@@ -1,15 +1,15 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/loan
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/loan
 svn://192.168.1.8
 
 
 
-2012-09-13T03:03:46.672626Z
-3403
-yangb
+2012-09-29T02:12:10.365188Z
+3729
+linm
 
 
 
@@ -25,108 +25,6 @@ yangb
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-LoanServiceAction.java
-file
-
-
-
-
-2012-09-13T05:27:51.000000Z
-839aaa467a28a9158efb04f0ff73333d
-2012-09-13T02:53:57.408492Z
-3401
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5226
-
-LoanAfterAction.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-28b7f3a5afa784e69aec6bc7b78ab30b
-2012-09-06T07:39:34.594849Z
-3232
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5249
-
-OrdLrRecommendAction.java
-file
-
-
-
-
-2012-09-11T09:30:32.000000Z
-baa699430643dff561570255275a7081
-2012-08-10T09:15:42.781237Z
-2240
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3636
 
 AppLoanAttachAction.java
 file
@@ -162,16 +60,84 @@ yuel
 
 3465
 
-UserLoanRequestAction.java
+FileDownloadAction.java
 file
 
 
 
 
-2012-09-13T05:27:51.000000Z
-c2a71bb9d40c8b34a1330e581a96e5b0
-2012-09-13T02:41:57.384706Z
-3400
+2012-09-14T03:13:31.000000Z
+88c3c0425dbc81c677c8ad74e71d7d85
+2012-09-14T01:11:50.695785Z
+3428
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4652
+
+FinanceApplyAction.java
+file
+
+
+
+
+2012-09-29T03:29:34.000000Z
+728d35f09b2bb9793b52aa0121f8ba1a
+2012-09-29T02:12:10.365188Z
+3729
+linm
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+24840
+
+FinanceAttachAction.java
+file
+
+
+
+
+2012-09-25T09:10:53.000000Z
+d05e8cc5116ffb31653baad140ac950f
+2012-09-24T08:40:12.308764Z
+3558
 yangb
 
 
@@ -194,18 +160,18 @@ yangb
 
 
 
-4680
+5133
 
-LoanRequestAction.java
+FinanceProductAction.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-8860129a661ff78b32178ac5911d9dd1
-2012-09-07T03:08:55.198196Z
-3272
+2012-09-27T02:10:10.000000Z
+685359f83f45cdf69b50d3dffdca8bdb
+2012-09-26T04:15:31.458212Z
+3608
 yuel
 
 
@@ -228,10 +194,177 @@ yuel
 
 
 
-28980
+11828
 
-model
-dir
+LoanAfterAction.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+28b7f3a5afa784e69aec6bc7b78ab30b
+2012-09-06T07:39:34.594849Z
+3232
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5249
+
+LoanRequestAction.java
+file
+
+
+
+
+2012-09-20T06:02:26.000000Z
+a2a7214f9b249ee456791f4c2e5ae0d0
+2012-09-18T03:01:31.025671Z
+3507
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+30159
+
+LoanServiceAction.java
+file
+
+
+
+
+2012-09-21T05:55:11.000000Z
+e6af4ddd6fcc04c44c130c743bc96e36
+2012-09-21T07:33:37.375173Z
+3537
+juxj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5229
+
+OrdLrRecommendAction.java
+file
+
+
+
+
+2012-09-11T09:30:32.000000Z
+baa699430643dff561570255275a7081
+2012-08-10T09:15:42.781237Z
+2240
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3636
+
+UnCheckLoanAction.java
+file
+
+
+
+
+2012-09-20T06:02:26.000000Z
+1e0bdc55e92c2113a7a88509bac44f6e
+2012-09-19T01:40:48.492165Z
+3519
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2155
 
 UserFinanceProductAction.java
 file
@@ -267,16 +400,16 @@ yuel
 
 15766
 
-FinanceProductAction.java
+UserLoanRequestAction.java
 file
 
 
 
 
 2012-09-13T05:27:51.000000Z
-6a9dfb8a1d0b27fbeb6a8218a5112399
-2012-09-13T03:03:46.672626Z
-3403
+c2a71bb9d40c8b34a1330e581a96e5b0
+2012-09-13T02:41:57.384706Z
+3400
 yangb
 
 
@@ -299,107 +432,8 @@ yangb
 
 
 
-11833
+4680
 
-FileDownloadAction.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-17bb6ab759d01916efdfa4c704d43e42
-2012-08-28T07:54:13.110675Z
-2949
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4971
-
-FinanceAttachAction.java
-file
-
-
-
-
-2012-09-11T09:30:32.000000Z
-a6da25360b7761441299131269ba0bc5
-2012-08-22T07:38:07.182675Z
-2847
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4875
-
-FinanceApplyAction.java
-file
-
-
-
-
-2012-09-11T09:30:32.000000Z
-11a0f6667ec92b16427f23d6d1b27d87
-2012-09-06T06:56:11.226230Z
-3226
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21698
+model
+dir
 

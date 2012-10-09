@@ -113,7 +113,7 @@ public class SupplyInfoAction extends BaseAction {
 	private void initializeParameters() {
 		provinceList = this.dictoryDataService.findAllProvince();
 		this.amountRangeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_AMOUNT_RANGE);
-		this.industryList = this.dictoryDataService.findDicIndustryList();
+		this.industryList = this.dictoryDataService.findIndustryByParentid(0);
 		this.timeIntervalList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_TIME_INTERVAL);
 		this.investStyleList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_INVEST_STYLE);
 	}

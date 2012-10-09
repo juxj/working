@@ -52,7 +52,7 @@
 						<p>A warning message goes here</p>
 						<span class="close" title="Dismiss"></span>
 					</div>
-					<s:form id="frmKnwType" action="/admin/knwType!save.act">
+					<form id="frmKnwType" action="/admin/knwType!save.act" method="post">
 						<s:hidden  id="typeId" name="knwType.id"></s:hidden>
    	  					<s:hidden  id="parentId" name="knwType.parentId" readonly="true"></s:hidden>
 						<p>
@@ -64,9 +64,10 @@
 								<input type="submit" class="submit small" value="提交"/>
 								<input type="reset" class="submit small" value="重置"/>
 							</p>
-					</s:form>
+					</form>
 				</div>
 				
+   	 </div>
    	 </div>
    	 </div>
    	 </body>

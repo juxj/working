@@ -54,7 +54,6 @@ div.indiv{display:block;}
 .find_table_r{text-align:right; width:80px; height:40px; line-height: 40px; padding-right:5px;}
 .find_table_t{font-weight:bolder; margin-left:5px;}
 .find_table_t span{display:block; margin-top:4px;}
-.v-align{vertical-align: middle;}
 .b_div{margin-bottom: 10px;}
 .b_img{width:150px; height:73px; float:left; margin-right:10px;}
 /*融资服务页*/
@@ -308,7 +307,7 @@ div.indiv{display:block;}
 
 
 .seled {
-	background-color: #97181d;
+	background-color: #888888;
 	color: #FFFFFF;
 	padding:3px;
 }
@@ -331,14 +330,14 @@ div.indiv{display:block;}
 .mews_ul{background:url(/images/lh_img.jpg) 350px 3px no-repeat;}
 .news_menu {height:30px; font-weight:bolder; background:#fff;}
 .news_menu ul { margin-left:-1px; height:30px; border-bottom : 1px solid #d6d6d6;}
-.news_menu li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;}
+.news_menu li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;cursor:pointer;}
 .news_menu .hover {background:url(/images/lh_bg.jpg) repeat-x 0 1px; border:solid #d6d6d6; border-width:0 1px 0 1px;}
 /*tab蓝色背景*/
 
 /*tab灰色背景*/
 .news_menu01 {height:30px; font-weight:bolder; background : #f9f9f7;}
 .news_menu01 ul { margin-left:-1px; height:30px; border-bottom : 1px solid #d6d6d6;}
-.news_menu01 li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;}
+.news_menu01 li { display:inline; float:left; font-size:15px; height:31px; line-height:30px; width:100px; text-align:center;cursor:pointer;}
 .news_menu01 .hover {background:#FFF; border:solid #d6d6d6; border-width:0 1px 0 1px;}
 /*tab灰色背景*/
 .r_bg{width:266px; height:24px; margin-top:3px; float:right; margin-right: 10px;}
@@ -368,22 +367,19 @@ div.indiv{display:block;}
 .M_out_L .M_out_L_box{font-size:14px; border:1px solid #CCC;}
 .M_out_L .M_out_L_box p{text-align:center; border-bottom:1px solid #CCC; line-height:40px;}
 .M_out_L .M_out_L_box .News_list ul{width:650px; margin:0 auto; margin-top:20px;} 
-.M_out_L .M_out_L_box .News_list ul li a{line-height:40px; cursor: hand;}
-   
+.M_out_L .M_out_L_box .News_list ul li a{line-height:40px; cursor: hand;}  
 /*信息中心页面*/
+
 /*系统提示错误页面*/
 .h_error{background:url(/images/gray_line.jpg) repeat-x; padding-top:110px;}
 .h_error .error_bg{width:718px; height:328px; margin:0 auto; background:url(/images/error_bg.jpg) no-repeat; border:1px solid #cecece;}
 .h_error .error_bg img{width:215px; height:32px; margin-top:220px; margin-left:420px; border:1px solid #aeaeae;}
 .upgrade_bg{width:718px; height:328px; margin:0 auto; background:url(/images/upgrade_bg.jpg) no-repeat; border:1px solid #cecece;}
-/*系统提示错误页面*/
-
-
 .option_href a { display:inline-block; height:21px; text-align:center; line-height:21px; color : #97181d; }
 .option_href a:hover { text-decoration:none; color : #424240; }
 /*系统提示错误页面*/
 
-/*找资金项目列表表页*/
+/*找资金项目列表页*/
 .capital_table_0 {padding-left:20px; line-height:25px; padding-top:10px;}
 .capital_table_1 {width:80px; padding-left:20px; padding-top:10px;}
 .capital_table_2 {width:210px; line-height:25px; padding-top:10px;}
@@ -399,7 +395,7 @@ div.indiv{display:block;}
 .capital_table_a2 {width:50px; padding-left:20px; line-height:25px; padding-top:10px;}
 .capital_table_a3 {width:100px; padding-left:20px; line-height:25px; padding-top:10px;}
 
-/*找资金项目列表页面*/
+/*找资金项目列表页*/
 
 /*about*/
 .about_list{background:url(/images/icon_arrow_dot.gif) no-repeat; padding-left: 20px; line-height: 20px; background-position: 0px;}
@@ -407,6 +403,15 @@ div.indiv{display:block;}
 .map_connect td{width:112px;}
 .map_title{font-size: 14px; font-weight:bolder; padding-bottom:5px; padding-top: 5px;}
 /*about*/
+
+/*融资俱乐部-资金信息库*/
+.zjxx_box{width: 310px; float:left; margin-right:10px;}
+.sky_blue{height : 30px; background : #dceaf1; color : #41413f;}
+.sky_blue h6 { height : 30px; overflow : hidden; font-weight : normal; line-height : 30px; padding : 0 0 0 20px; }
+.sky_blue span { padding : 6px 12px 0 0;}
+.sky_new_li { padding : 15px; color : #999; }
+.sky_new_li li { height : 25px; line-height : 25px; overflow : hidden; background:url(/images/pic_dot.gif) 0 10px no-repeat; padding:0 0 0 12px; }
+/*融资俱乐部-资金信息库*/
 
 .middle_input_text 
 { width:260px; height:20px; line-height:20px; font-size:16px; border:1px solid #d3d3d3; padding-left:5px; font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;  font-size:12px;}
@@ -419,3 +424,36 @@ div.indiv{display:block;}
 .l_out p{font-size: 14px;}
 .l_out p a{color:#97181d;}
 /*（未查询到结果）*/
+
+/*融资俱乐部首页*/
+.fund_m{width:470px; height:100px; float:left; background: #b21117;}
+.fund_o{width:470px; height:100px; float:right; background: #374b6e;}
+.fund_m_connect{width:150px; float:left; margin-top:27px;}
+.fund_m_connect a{color:#fff; font-size:16px; font-weight:bolder;}
+.fund_m_connect a:hover{color:#fff22d;}
+.zjfl_box{width:948px; height:80px; border:1px solid #D6D6D6; }
+.zjfl{width:108px; background:#97181d; float:left;}
+.zjfl a{color:#fff; font-size:16px; font-weight:bolder; line-height:80px; text-align:center; display:block;}
+.zjfl a:hover{color:#fff22d;}
+.zjfl_connect {width:auto; margin: 0 auto; margin-top:5px;}
+.zjfl_connect td{width:120px;  height:34px; line-height:34px; font-size: 14px; padding-left:10px;}
+.zjfl01{width:108px; background:#3f4c6b; float:left;}
+.zjfl01 a{color:#fff; font-size:16px; font-weight:bolder; line-height:80px; text-align:center; display:block;}
+.zjfl01 a:hover{color:#fff22d;}
+.zjfl_connect01 {width:auto; margin: 0 auto; margin-top:5px;}
+.zjfl_connect01 td{width:120px;  height:34px; line-height:34px; font-size: 14px; padding-left:10px;}
+/*融资俱乐部首页*/
+
+/*推广公司介绍页面*/
+.tg_top{width:896px; border:2px solid #CCC; margin:0 auto; padding:25px;}
+.tg_intro h1 a{font-size:15px; color:#97181d; display: block;}
+.tg_intro p{line-height:25px; margin-top: 5px;}
+.tg_sever{width:678px;}
+.tg_sever h1 a{font-size:15px; color:#97181d; margin-top:20px; margin-bottom:15px; display: block;}
+.db_gc{background:#ccc;}
+.db_gc dl{width:200px; float:left;}
+.db_gc dl dt{font-weight:bolder;}
+.db_gc dl dd{float:left; width:150px; background:url(/images/pic_dot.gif) 0 10px no-repeat; padding:0 0 0 12px;}
+/*推广公司介绍页面*/
+
+

@@ -283,7 +283,7 @@ function userLogin(type){
 	</div>
 	<div class="hr_10"> &nbsp;</div>
 	<div class="center" style="width:200px;">
-<input type="button" onclick="valilogin();" class="but_gray" style="width:200px;" value="提交申请" id="loanSubmit"/>
+<input type="button" onclick="valilogin();" class="btnsub bred" style="width:200px;" value="提交申请" id="loanSubmit"/>
 	</div>
 </div>
 <!--主体部分结束-->
@@ -321,7 +321,7 @@ function userLogin(type){
 	</dl>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="center">
-	  <input type="button" onclick="quickRegist()" class="but_gray" style="width:100px;" value="注册" />
+	  <input type="button" onclick="quickRegist()" class="btnsub bred" style="width:100px;" value="注册" />
 	</div>
 	<div class="center">
 	  如果您已有帐号，<span class="red" style="cursor:pointer;" onclick="logintab();">点此登录</span>。
@@ -339,7 +339,7 @@ function userLogin(type){
               <dd><h6>用户名：</h6><input type="text" name="login_username" id="login_username" class="input-text" size="40" /></dd>
               <dd><h6>密码：</h6><input id="login_password" name="login_password" type="password" class="input-text" size="40"/></dd>
               <dd><h6>验证码：</h6><input id="Verification_code" value="" name="verifycode" type="text" class="input-text" style="float: left;"/><img id="logincaptcha" src="/Captcha.act" title="点击更换" onclick="this.src='/Captcha.act?d='+Math.random();" /></dd>
-              <dd><h6>&nbsp;</h6><input type="button" onclick="userLogin(1)" class="but_gray" style="width:90px;" value="登录" /><span class="txt_info red"><a href="/Recovery.act" target="_blank"> 忘记密码？</a></span></dd>
+              <dd><h6>&nbsp;</h6><input type="button" onclick="userLogin(1)" class="btnsub bred" style="width:90px;" value="登录" /><span class="txt_info red"><a href="/Recovery.act" target="_blank"> 忘记密码？</a></span></dd>
 			  <dd><h6>&nbsp;</h6>如果您尚未注册过，<span class="red" style="cursor:pointer;" onclick="registertab();">点此快速注册</span>。</dd>
             </dl>
         </div>

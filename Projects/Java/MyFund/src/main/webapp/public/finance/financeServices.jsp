@@ -75,7 +75,7 @@ function showBankProductHome() {
               </dd>
             </dl>
           <div style="margin-left:70px;">
-            <input  type="submit" value="搜索" class="but_gray" name="" style="width:100px;" />
+            <input  type="submit" value="搜索" class="btnsub bred" name="" style="width:100px;" />
           </div>            
           </form>
       </div>
@@ -120,7 +120,7 @@ function showBankProductHome() {
                       </tr>          
                       <s:iterator id ="item" value="bankProductList">  
 					  <tr class="txt_content" >
-						  	<td style="padding-left: 20px; " title="${item.name}" ><a href="/finance/bankProduct!showDetails.act?id=${item.id}">
+						  	<td style="padding-left: 20px;" title="${item.name}" ><a href="/finance/bankProduct!showDetails.act?id=${item.id}" >
 						  		<s:if test="%{null!=#item.name&&#item.name.length()>20}"><s:property value="%{#item.name.substring(0, 20)}" />..</s:if>
 						  			<s:else>${item.name}</s:else>
 						  		</a></td>

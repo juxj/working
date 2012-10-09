@@ -81,35 +81,58 @@ function recoveryReg(){
 	if(checkformresult == 1){
 		$("#regmsg").html("请正确填写注册信息。");
 		checkformresult=0;
-		return false;
-	}
-	var gendervalue = $("input[name='gender']:checked").val();
-	var param = {
-		email:$('#email').val(),
-		mobile:$('#mobile').val(),
-		realname:$('#fullname').val(),
-		gender:gendervalue
-	};
-	if(confirm("如果您修改了注册邮箱或注册手机号码，需要重新验证。")){
-		$.post("/EditReg.act",param,function(a){
-			if(a=='success'){
-				$("#regmsg").html("注册信息修改成功");
-			}else{
-				$("#regmsg").html(a);
-			}
-		});
+	}else{
+		var gendervalue = $("input[name='gender']:checked").val();
+		var param = {
+			email:$('#email').val(),
+			mobile:$('#mobile').val(),
+			realname:$('#fullname').val(),
+			gender:gendervalue
+		};
+		if(confirm("如果您修改了注册邮箱或注册手机号码，需要重新验证。")){
+			$.post("/EditReg.act",param,function(a){
+				if(a=='success'){
+					alert("注册信息成功");
+					window.location.href="/user/regInfo.act";
+					//$("#regmsg").html("注册信息修改成功");
+				}else{
+					$("#regmsg").html(a);
+				}
+			});
+		}
 	}
 }
 function vershow(){
+	$("#pop_verCode").dialog({width:500,
+	modal:true,
+  		close: function(event, ui) { 
+			window.location.href="/user/regInfo.act";
+   		}
+	});
+}
+var settime=60;
+  var i;
+  var showthis;
+function update(num) {
+   if(num==settime) {
+	  $("#sendmobile").attr('disabled',false);
+	  $("#sendmobile").attr("value","点击发送验证码（1分钟内只能发送一次）");
+	 }else {
+	  showthis=settime-num;
+	  $("#sendmobile").attr("value","重新发送("+showthis+")");
+	 }
+}
+function sendMobileMsg(){
+  $("#sendmobile").attr('disabled',true);
+  for(i=1;i<=settime;i++)   {
+     setTimeout("update("+i+")",i*1000);
+  }
 	$.post("/Account!sendMoblie.act",function(a){
-		$("#pop_verCode").dialog({width:500,
-		modal:true,
-   		close: function(event, ui) { 
-				window.location.href="/user/regInfo.act";
-	   		}
-		});
 		if(a!='success'){
 			$("#mobileMsg").html(a);
+		}else{
+			alert("手机验证码已发送");
+			//$("#mobileMsg").html(a);
 		}
 	});
 }
@@ -117,6 +140,8 @@ function verMobile(){
 	$.post("/user/Profile!validMoblie.act",{verifycode:$('#verifycode').val()},function(a){
 		if(a=='success'){
 			$("#mobileMsg").html("手机验证成功");
+			alert("手机验证成功");
+			window.location.href="/user/regInfo.act";
 		}else{
 			$("#mobileMsg").html(a);
 		}
@@ -199,11 +224,11 @@ function uploadImg(){
 	
 	              <div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">手机号码：</div>
 	              <div class="fl" style="width:150px; height:30px">${usrUser.mobile }</div>
-	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype ==0 || #session._user.activetype ==1"><input  name="upload_img" value="验证" type="button" onclick="vershow();" class="but_gray"/></s:if>&nbsp;</div>
+	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype ==0 || #session._user.activetype ==1"><input  name="upload_img" value="验证" type="button" onclick="vershow();" class="but_gray"/></s:if><s:else>已验证</s:else>&nbsp;</div>
 	
 	              <div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">注册邮箱：</div>
 	              <div class="fl" style="width:150px; height:30px">${usrUser.email }</div>
-	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype==0 || #session._user.activetype==2"><input  name="upload_img" value="验证" type="button" class="but_gray"/></s:if>&nbsp;</div>
+	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype==0 || #session._user.activetype==2">&nbsp;</s:if><s:else>已验证</s:else>&nbsp;</div>
 	    <div class="hr_20"> &nbsp; </div>
 	    <div class="hr_20"> &nbsp; </div>
 		<div class="center" style="width:500px;">
@@ -279,8 +304,8 @@ function uploadImg(){
       <div class="user_login01_content">
         <div class="on">
             <table>
-              <tr><td><h6>验证码：</h6><input id="verifycode" type="text" name="verifycode" class="input-text" size="40" />
-            	<span id="code_error" class="txt-info">请输验证码。</span>
+              <tr><td><h6>验证码：</h6><input id="verifycode" type="text" name="verifycode" class="input-text" size="20" />
+            	<input id="sendmobile" type="button" class="but_gray" onclick="sendMobileMsg();" value="点击发送验证码（1分钟内只能发送一次）"/>
               </td></tr>
 	    	  <tr><td><span id="mobileMsg" style="color: red">提示：验证手机可以使您用中国资金网的各项功能</span></td></tr>
               <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:verMobile();" class="but_gray" style="width:90px;" value="确定" /></td></tr>

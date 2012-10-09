@@ -22,6 +22,7 @@ import com.zj198.model.UsrUser;
 import com.zj198.model.vo.FinanceApplyAttachModel;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.FinanceProductService;
+import com.zj198.util.UploadUtil;
 
 public class FinanceAttachAction extends ActionSupport {
 	private FinanceApplyService financeApplyService;
@@ -95,6 +96,12 @@ public class FinanceAttachAction extends ActionSupport {
 	
 	public String viewAttach(){
 		faList = financeApplyService.findAttachList(attachId);
+		if (faList != null && faList.size() > 0) {
+			for (int i = 0; i < faList.size(); i++) {
+				OrdFaAttachList o = (OrdFaAttachList) faList.get(i);
+				o.setExt(UploadUtil.getFileExtName(o.getOldFileName()));
+			}
+		}
 		return "downloan_attach";
 	}
 	

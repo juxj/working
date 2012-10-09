@@ -43,7 +43,7 @@ $(document).ready(function(){
       <div class="gray news_menu tab_menu2">
         <ul>
           <li><a href="/user/Profile.act?companyMark=1">企业基本信息</a></li>
-          <li  class="hover"><span style="float: left;">&nbsp;企业详细信息</span><!-- <s:if test="usrCompany==null">
+          <li  class="hover">企业详细信息<span style="float: left;">&nbsp;</span><!-- <s:if test="usrCompany==null">
 				<div class="graph_red" style="width:90px; float: right;margin-top: 7px; margin-right: 3px; text-align:left;"><span style="width:0%;"></span></div>
 			</s:if>
        		 <s:elseif test="usrCompany.completeratebase<60">

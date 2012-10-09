@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/admin/system
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/system
 svn://192.168.1.8
 
 
@@ -25,74 +25,6 @@ Patrick
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-sysParameter.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-dbd52df7673030a6722ea818b95098e9
-2012-07-20T08:41:09.501709Z
-1441
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4369
-
-editAdmUser.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-99861cfafd2094414e9eb9b3c5397f03
-2012-07-18T10:19:18.953268Z
-1348
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3374
 
 addAdmUser.jsp
 file
@@ -162,6 +94,40 @@ Patrick
 
 2986
 
+editAdmUser.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+99861cfafd2094414e9eb9b3c5397f03
+2012-07-18T10:19:18.953268Z
+1348
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3374
+
 listAdmUser.jsp
 file
 
@@ -195,4 +161,38 @@ Patrick
 
 
 2964
+
+sysParameter.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+dbd52df7673030a6722ea818b95098e9
+2012-07-20T08:41:09.501709Z
+1441
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4369
 

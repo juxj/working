@@ -68,9 +68,13 @@ function userstatus(id,statusid){
 		<td >审核状态：</td>
 		<td ><s:if test="usrUser.auditstatus==0">未审核</s:if><s:elseif test="usrUser.auditstatus==1">待审核</s:elseif><s:elseif test="usrUser.auditstatus==2">已审核</s:elseif></td>
 	</tr>
-	<tr>
-		<td colspan="2"><input type="button" value="阻止" onclick="userstatus(${usrUser.id},'1');" <s:if test="usrUser.status==1">disabled="disabled"</s:if>/>
-		<input type="button" value="解除" onclick="userstatus(${usrUser.id},'0');" <s:if test="usrUser.status==0">disabled="disabled"</s:if>/></td>
-	</tr>
+	<s:if test="updateStatus !=null && updateStatus == 1">
+	</s:if>
+	<s:else>
+		<tr>
+			<td colspan="2"><input type="button" value="阻止" onclick="userstatus(${usrUser.id},'1');" <s:if test="usrUser.status==1">disabled="disabled"</s:if>/>
+			<input type="button" value="解除" onclick="userstatus(${usrUser.id},'0');" <s:if test="usrUser.status==0">disabled="disabled"</s:if>/></td>
+		</tr>
+	</s:else>
 </tbody>
 </table>

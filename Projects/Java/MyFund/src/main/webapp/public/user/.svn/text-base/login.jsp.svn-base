@@ -82,7 +82,7 @@ function chgCaptcha(){
               <h6>用户名：</h6><input id="username" name="username" type=text value="${username }" class="input-text" /></dd>
               <dd><h6>密码：</h6><input id="pass" name="password" type="password" class="input-text" /></dd>
               <dd><h6>验证码：</h6><input id="verifycode" value="" name="verifycode" type="text" class="input-text" style="width:90px;" onfocus="chgCaptcha();"/><img width="120" height="40" src="/images/Captcha.gif" id="captcha" title="点击更换" onclick="this.src='/Captcha.act?d='+Math.random();" /></dd>
-              <dd><h6>&nbsp;</h6><input type="button" onclick="checkform()" class="but_gray" style="width:90px;" value="登录" /><span class="txt_info red"><a href="/Recovery.act"> 忘记密码？</a></span></dd>
+              <dd><h6>&nbsp;</h6><input type="button" onclick="checkform()" class="btnsub bred" value="登录" /><span class="txt_info red"><a href="/Recovery.act"> 忘记密码？</a></span></dd>
               <dd><h6>&nbsp;</h6>如果您尚未注册，立即<a class="red" href="/Register.act">免费注册</a></dd>
             </dl>
           </form>
@@ -96,7 +96,7 @@ function chgCaptcha(){
               <dd><input type="hidden" name="loginType" value="2"/>
               <h6>用户名：</h6><input id="username2" name="username" type=text value="" class="input-text" /></dd>
               <dd><h6>密码：</h6><input id="pass2" name="password" type=password value="" class="input-text" /></dd>
-              <dd><h6>&nbsp;</h6><input id=u4 type="button" onfocus="this.blur()" onclick="discatip();" class="but_gray" style="width:90px;" value="登录" /><span class="txt_info red"><a href="/Recovery.act">忘记密码？</a></span></dd>
+              <dd><h6>&nbsp;</h6><input id=u4 type="button" onfocus="this.blur()" onclick="discatip();" class="btnsub bred"  value="登录" /><span class="txt_info red"><a href="/Recovery.act">忘记密码？</a></span></dd>
               <dd><h6>&nbsp;</h6>如果您尚未注册，立即<a class="red" href="/Register.act">免费注册</a></dd>
             </dl>
           </form>

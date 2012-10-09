@@ -109,7 +109,7 @@ public class UploadImgAction extends ActionSupport{
 		}
 		if(bool == 0){
 			msg = "上传图片格式不正确";
-			return SUCCESS;
+			return "input";
 		}else{	
 			ActionContext ctx = ActionContext.getContext();
 			UsrUser user = (UsrUser)ctx.getSession().get("_user");
@@ -188,7 +188,7 @@ public class UploadImgAction extends ActionSupport{
 			
 		}
 		msg="上传失败";
-		return SUCCESS;
+		return "input";
 	}
 	//   get    and  set
 	public String getMsg() {

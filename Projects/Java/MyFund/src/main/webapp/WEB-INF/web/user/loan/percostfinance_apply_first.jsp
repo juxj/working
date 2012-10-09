@@ -79,8 +79,7 @@
 	</div>
 	<div class="hr_10">&nbsp;</div>
 	<div class="apply_form">
-		<s:form action="financeApply!applySecond.act" id="applyForm"
-			namespace="applyadmin" cssClass="box_form" style="margin:0px;">
+		<form action="/applyadmin/financeApply!applySecond.act" id="applyForm" method="post" class="box_form" style="margin:0px;">
 			<!-- 企业经营贷款快速申请类型=136 -->
 			<s:hidden name="product.id"></s:hidden>
 			<div class="apply_form_title">个人综合消费贷款</div>
@@ -187,7 +186,7 @@
 				<div class="hr_10">&nbsp;</div>
 				<div class="hr_10">&nbsp;</div>
 			</div>
-		</s:form>
+		</form>
 	</div>
 	<!--主体部分结束-->
 	<div class="hr_10">&nbsp;</div>

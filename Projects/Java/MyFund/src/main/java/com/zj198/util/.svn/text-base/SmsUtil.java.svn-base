@@ -10,10 +10,16 @@ import com.esms.common.entity.GsmsResponse;
 import com.esms.common.entity.MTPack;
 
 public class SmsUtil {
-	private static Account ac = new Account("shdhtz", "123456");//
-	private static PostMsg pm = new PostMsg();
+	private static Account ac;
+	private static PostMsg pm;
 	static{
-		pm.getCmHost().setHost("211.147.239.62", 9080);//设置网关的IP和port，用于发送信息
+		String username=PropertiesUtil.getByKey("sms.sender.username");
+		String password=PropertiesUtil.getByKey("sms.sender.password");
+		String ip=PropertiesUtil.getByKey("sms.sender.ip");
+		int port=Integer.parseInt(PropertiesUtil.getByKey("sms.sender.port"));
+		ac = new Account(username,password);
+		pm = new PostMsg();
+		pm.getCmHost().setHost(ip, port);//设置网关的IP和port，用于发送信息
 	}
 	
 	/**

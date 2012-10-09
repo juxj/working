@@ -3,12 +3,11 @@ package com.zj198.action.loan.model;
 import java.util.Date;
 
 import com.zj198.util.Pager;
-import com.zj198.util.Pagination;
 
 public class FindFinanceAdminSpModel {
 	private Integer pageSize = 20;
 	private Integer pageNo = 1;
-	private Pagination pagination;
+//	private Pagination pagination;
 	private Pager pager;
 	
 	private String productName;
@@ -27,12 +26,12 @@ public class FindFinanceAdminSpModel {
 		this.pager = pager;
 	}
 	
-	public Pagination getPagination() {
-		return pagination;
-	}
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
-	}
+//	public Pagination getPagination() {
+//		return pagination;
+//	}
+//	public void setPagination(Pagination pagination) {
+//		this.pagination = pagination;
+//	}
 	public Integer getPageSize() {
 		return pageSize;
 	}

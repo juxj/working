@@ -12,7 +12,6 @@ import com.zj198.service.common.DictoryDataService;
 import com.zj198.service.finservice.FinanceProdService;
 import com.zj198.service.news.NewsService;
 import com.zj198.util.Constants;
-import com.zj198.util.Pagination;
 
 public class FinanceProductAction extends BaseAction{
 
@@ -43,7 +42,7 @@ public class FinanceProductAction extends BaseAction{
 	private String[] query;
 
 	private Integer pageNo;
-	private Pagination pagination;
+//	private Pagination pagination;
 	
 	private PrdBankfinance prdBankfinance;
 	private List<PrdBankfinance> bankProductList;
@@ -184,13 +183,13 @@ public class FinanceProductAction extends BaseAction{
 		this.pageNo = pageNo;
 	}
 
-	public Pagination getPagination() {
-		return pagination;
-	}
-
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
-	}
+//	public Pagination getPagination() {
+//		return pagination;
+//	}
+//
+//	public void setPagination(Pagination pagination) {
+//		this.pagination = pagination;
+//	}
 
 	public PrdBankfinance getPrdBankfinance() {
 		return prdBankfinance;

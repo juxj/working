@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/mch
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/mch
 svn://192.168.1.8
 
 
@@ -25,9 +25,6 @@ juxj
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-impl
-dir
 
 MemberChargeService.java
 file
@@ -62,4 +59,7 @@ linm
 
 
 1059
+
+impl
+dir
 

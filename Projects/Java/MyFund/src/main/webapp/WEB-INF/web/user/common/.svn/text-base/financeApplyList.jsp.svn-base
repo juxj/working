@@ -32,8 +32,8 @@
 	  <tr>
 	    <td>${applyNum}</td>
 		<td><s:date name="createdt" format="yyyy-MM-dd"/></td>
-		<td>
-		<common:print valueId="productUserId" type="user"/>/${productName }</td>
+		<td style="width:200px;" align="center">
+		<common:print valueId="productUserId" type="user"/><br/>${productName }</td>
 		<td><s:number name="loanAmount" />万元</td>
 		<td>${loanMonth}月</td>
    		<td><common:print valueId="applyStatus"/></td>

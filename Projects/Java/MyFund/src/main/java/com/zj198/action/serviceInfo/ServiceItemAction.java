@@ -85,21 +85,17 @@ public class ServiceItemAction extends BaseAction{
 	 */
 	public String saveInfo(){
 		typeId=prdServiceItem.getTypeId();
-		
 		Date issuedDate = prdServiceItem.getIssuedDate();
 		Date expiredDate = prdServiceItem.getExpiredDate();
-		
 		if (issuedDate == null){
 			issuedDate = Calendar.getInstance().getTime();
 		}
-		
 		if (expiredDate != null) {
 			if (expiredDate.before(issuedDate)) {
 				this.msg = "过期日不能小于发布日！";
 				return ERROR;
 			}
 		}
-
 		serviceInfoService.savePrdServiceItem(prdServiceItem);
 		return this.showServiceInfoHomeByPublisher();
 	}

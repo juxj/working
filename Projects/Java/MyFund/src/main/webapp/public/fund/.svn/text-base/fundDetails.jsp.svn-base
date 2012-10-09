@@ -30,7 +30,7 @@
         <table border="0" cellspacing="0" cellpadding="0"  width="710px"  class="box_5 ">
           <tr>
             <td class="Search_t_title red ">圣迈鑫源投资基金低风险高收益计划</td>
-            <td style=" width: 110px; "><input type="button" class="but_gray " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></td>
+            <td style=" width: 110px; "><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></td>
           </tr>
         </table>
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">

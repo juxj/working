@@ -5,7 +5,7 @@
     <constant name="struts.custom.i18n.resources" value="config" />
     <constant name="struts.action.extension" value="act" />
     <constant name="struts.i18n.encoding" value="UTF-8" />
-    <constant name="struts.devMode" value="false" />
+    <constant name="struts.devMode" value="true" />
     <constant name="struts.ui.theme" value="simple" />
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
     
@@ -16,12 +16,14 @@
 	<include file="struts-news.xml"/>
 	<include file="struts-members.xml"/>
 	<include file="struts-serviceInfo.xml"/>
+	<include file="struts-club.xml"/>
 	<include file="struts-json.xml"/>
 	
 	<package name="base" extends="struts-default">
 		<interceptors>
 			<interceptor name="admin" class="com.zj198.interceptor.AdminInterceptor"/>
 			<interceptor name="user" class="com.zj198.interceptor.UserInterceptor"/>
+			<interceptor name="check" class="com.zj198.interceptor.UserCheckInterceptor"/>
 			<interceptor-stack name="adminInterceptor">
 				<interceptor-ref name="defaultStack"/>
 				<interceptor-ref name="admin"/>
@@ -30,8 +32,14 @@
 				<interceptor-ref name="defaultStack"/>
 				<interceptor-ref name="user"/>
 			</interceptor-stack>
+			<interceptor-stack name="checkInterceptor">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="user"/>
+				<interceptor-ref name="check"/>
+			</interceptor-stack>
 		</interceptors>
 		<global-results>
+			<result name="noCheckPrompt">/WEB-INF/web/user/common/noCheckPrompt.jsp</result>
 			<result name="login">/public/user/login.jsp</result>
 			<result name="userCenter" type="redirect">/user/UserAction.act</result>
 			<result name="activate">/public/user/activate.jsp</result>

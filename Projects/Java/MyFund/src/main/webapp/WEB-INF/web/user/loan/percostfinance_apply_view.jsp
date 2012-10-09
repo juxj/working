@@ -36,8 +36,7 @@ function updatestatus(value){
 
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
-<div class="apply_form">
-<s:form action="/user/loan/financeApply!checkApply.act" id="loanForm"  cssClass="box_form" style="margin:0px;" >
+<form action="/user/loan/financeApply!checkApply.act" id="loanForm" method="post" class="box_form" style="margin:0px;" >
 <!-- 企业经营贷款快速申请类型=136 -->
 <s:hidden name="apply.id"></s:hidden>
 <s:hidden name="apply.applyStatus" id="apply_status"></s:hidden>
@@ -145,7 +144,7 @@ function updatestatus(value){
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>
 	</div>
-</s:form>
+</form>
 </div>
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>

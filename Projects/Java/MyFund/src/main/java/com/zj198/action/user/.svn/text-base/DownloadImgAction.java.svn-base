@@ -1,6 +1,5 @@
 package com.zj198.action.user;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -22,27 +21,16 @@ public class DownloadImgAction extends BaseAction{
 			UsrOrgAttach usrOrgAttach = profileService.getById(attachId);
 			ActionContext context = ActionContext.getContext();
 			UsrUser user = (UsrUser) context.getSession().get("_user");
-			if(usrOrgAttach != null && user.getId() == usrOrgAttach.getUserId()){
+			if(usrOrgAttach != null && user.getId()-usrOrgAttach.getUserId()==0){
 				try {				
 					imgName = java.net.URLEncoder.encode(usrOrgAttach.getOldFileName(), "UTF-8");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				downloadFileName = usrOrgAttach.getFilePath();
-			}else{
-				
 			}
 		}
 		InputStream is = UploadUtil.getFileStream(downloadFileName);
-		if(is == null){
-			is = new InputStream() {
-				
-				@Override
-				public int read() throws IOException {
-					return 0;
-				}
-			};
-		}
 		return is;
 	}
 	

@@ -104,7 +104,7 @@ public class UploadUtil {
 			e.printStackTrace();
 		}
 	}
-
+	
 	//计算上传相对路径 (不含文件名)
 	private static String getUploadPath(String module,int privacy){
 		StringBuffer name=new StringBuffer();
@@ -125,7 +125,7 @@ public class UploadUtil {
 	}
 	
 	//获得上传文件扩展名
-	private static String getFileExtName(String userFileName){
+	public static String getFileExtName(String userFileName){
 		int pos = userFileName.indexOf('.');
 		if(pos==-1){
 			return "";

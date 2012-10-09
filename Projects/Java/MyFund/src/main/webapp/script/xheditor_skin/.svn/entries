@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/script/xheditor_skin
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/script/xheditor_skin
 svn://192.168.1.8
 
 
@@ -60,7 +60,7 @@ has-props
 
 43
 
-o2007silver
+default
 dir
 
 nostyle
@@ -69,7 +69,7 @@ dir
 o2007blue
 dir
 
-default
+o2007silver
 dir
 
 vista

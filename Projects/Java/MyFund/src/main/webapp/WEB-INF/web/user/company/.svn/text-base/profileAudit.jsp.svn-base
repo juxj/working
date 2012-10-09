@@ -38,7 +38,7 @@
       <div class="gray news_menu tab_menu2">
         <ul>
           <li class="hover">企业基本信息</li>
-          <li><span style="float: left;">&nbsp;<a href="/user/Profile.act?companyMark=2">企业详细信息</a></span><!-- <s:if test="usrCompany==null">
+          <li><a href="/user/Profile.act?companyMark=2">企业详细信息</a><span style="float: left;">&nbsp;</span><!-- <s:if test="usrCompany==null">
 				<div class="graph_red" style="width:90px; float: right;margin-top: 7px; margin-right: 3px; text-align:left;"><span style="width:0%;"></span></div>
 			</s:if>
        		 <s:elseif test="usrCompany.completeratebase<60">
@@ -57,7 +57,20 @@
        <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
 	       <s:if test="msg!=null">
 		    <tr>
-	           <td colspan="4"><div class="notification success png_bg"><div>${msg }</div></div></td>
+	           <td colspan="4">
+	           	  <div class="notification success png_bg">
+	           	  	  <div>
+	           	  	  	${msg }
+	           	  	  	<s:if test="#session._user.auditstatus==2 && #session.APPLY_LOAN_PRODUCT_ID != null && #session.APPLY_LOAN_PRODUCT_ID != ''">
+	           	  	  	您有未完成的融资产品申请，您可以
+	           	  	  	<a href="/user/loan/financeApply!financeApply.act?product.id=${session.APPLY_LOAN_PRODUCT_ID}" class="zj_href">继续申请</a>
+	           	  	  	<!-- 
+	           	  	  		<input type="button" value="继续申请"  class="but_gray" onclick="window.location='/user/loan/financeApply!financeApply.act?product.id=${session.APPLY_LOAN_PRODUCT_ID}'" ></input>
+	           	  	  	 -->
+	           	  	  	</s:if>
+	           	  	  </div>
+	           	  </div>
+	           </td>
 	         </tr>
 		    </s:if>
            <tr>

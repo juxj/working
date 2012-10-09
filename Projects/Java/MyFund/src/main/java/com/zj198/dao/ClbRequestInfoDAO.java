@@ -12,4 +12,5 @@ public interface ClbRequestInfoDAO extends BaseDAO<ClbRequestInfo, Integer> {
 	public Pager findClbRequestInfoListByUser(int userId, int pageSize, int pageNo);
 	public Pager findByHomeQuery(int pageSize, int pageNo, String[] query);
 	public List<ClbRequestInfo> findLastRequestInfo(int num);
+	public List<ClbRequestInfo> findByIndustryOfTopN(String industry, int num);
 }

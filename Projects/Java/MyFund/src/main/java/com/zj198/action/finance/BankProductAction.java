@@ -11,7 +11,6 @@ import com.zj198.model.PrdRecommendation;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.service.finservice.FinanceProdService;
 import com.zj198.util.Pager;
-import com.zj198.util.Pagination;
 
 public class BankProductAction extends BaseAction{
 	
@@ -26,7 +25,7 @@ public class BankProductAction extends BaseAction{
 	private String[] query;
 
 	private Integer pageNo;
-	private Pagination pagination;
+//	private Pagination pagination;
 	
 	private PrdBankfinance prdBankfinance;
 	private Pager pager;
@@ -129,13 +128,13 @@ public class BankProductAction extends BaseAction{
 		this.pageNo = pageNo;
 	}
 
-	public Pagination getPagination() {
-		return pagination;
-	}
-
-	public void setPagination(Pagination pagination) {
-		this.pagination = pagination;
-	}
+//	public Pagination getPagination() {
+//		return pagination;
+//	}
+//
+//	public void setPagination(Pagination pagination) {
+//		this.pagination = pagination;
+//	}
 	
 	
 	public String[] getQuery() {

@@ -21,6 +21,12 @@
 			window.location.href = url;
 		}
 	}
+	
+	function toPage(pageNo, useless) {
+		document.getElementById("pageNo").value=pageNo;
+		var frmQuery = document.getElementById("frmQueryRequestInfo");
+		frmQuery.submit();
+	}
 </script>
 </head>
 <body>
@@ -29,6 +35,7 @@
 <jsp:include page="/WEB-INF/web/user/head.jsp"></jsp:include>
   <div class="clear"> &nbsp; </div>
 </div>
+<form id="frmQueryRequestInfo" action="/club/showRequestInfoHome.act"><input id="pageNo" type="hidden" name="pageNo"/> </form>
 <div class="container_950">
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 

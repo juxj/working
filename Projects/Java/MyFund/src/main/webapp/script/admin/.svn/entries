@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/script/admin
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/script/admin
 svn://192.168.1.8
 
 
@@ -25,40 +25,6 @@ juxj
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-jquery.autocomplete.min.js
-file
-
-
-
-
-2012-09-11T03:06:52.000000Z
-a30f20db67dc554b7604ff2212fff1d5
-2012-07-26T09:51:16.837033Z
-1668
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-14091
 
 jquery-1.7.2.min.js
 file
@@ -94,16 +60,16 @@ juxj
 
 94825
 
-xheditor-1.1.14-zh-cn.min.js
+jquery-ui-1.8.21.custom.min.js
 file
 
 
 
 
 2012-09-11T03:06:52.000000Z
-259eb39c18917f967f697f43496f2a2c
-2012-07-16T05:10:25.018568Z
-1188
+276c5904c609c914b176ce88a92727c3
+2012-07-16T05:28:37.984197Z
+1196
 Patrick
 
 
@@ -126,7 +92,75 @@ Patrick
 
 
 
-63752
+87531
+
+jquery.autocomplete.js
+file
+
+
+
+
+2012-09-11T03:06:52.000000Z
+11e6e59dc34688d98c5c9124065c244b
+2012-07-26T09:51:16.837033Z
+1668
+juxj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+21271
+
+jquery.autocomplete.min.js
+file
+
+
+
+
+2012-09-11T03:06:52.000000Z
+a30f20db67dc554b7604ff2212fff1d5
+2012-07-26T09:51:16.837033Z
+1668
+juxj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+14091
 
 jquery.checkboxtree.min.js
 file
@@ -196,16 +230,16 @@ Patrick
 
 12795
 
-jquery-ui-1.8.21.custom.min.js
+xheditor-1.1.14-zh-cn.min.js
 file
 
 
 
 
 2012-09-11T03:06:52.000000Z
-276c5904c609c914b176ce88a92727c3
-2012-07-16T05:28:37.984197Z
-1196
+259eb39c18917f967f697f43496f2a2c
+2012-07-16T05:10:25.018568Z
+1188
 Patrick
 
 
@@ -228,46 +262,12 @@ Patrick
 
 
 
-87531
-
-xheditor_plugins
-dir
-
-jquery.autocomplete.js
-file
-
-
-
-
-2012-09-11T03:06:52.000000Z
-11e6e59dc34688d98c5c9124065c244b
-2012-07-26T09:51:16.837033Z
-1668
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21271
+63752
 
 xheditor_emot
+dir
+
+xheditor_plugins
 dir
 
 xheditor_skin

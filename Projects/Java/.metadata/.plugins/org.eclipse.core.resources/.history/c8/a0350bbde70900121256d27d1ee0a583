@@ -1,0 +1,44 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="service" namespace="/service" extends="base">
+		<default-interceptor-ref name="userInterceptor"/>
+		<action name="serviceOrder" class="com.zj198.action.serviceInfo.ServiceOrderAction">
+			<result name="userHome" type="redirect">/user/UserAction.act</result>
+			<!-- 信息发布者已发布的信息 -->
+			<result name="serviceItemHome4Publisher">/WEB-INF/web/user/serviceOrg/sipublisher.jsp</result>
+			<!-- 信息发布者收到的订单 -->
+			<result name="publisherOrders">/WEB-INF/web/user/serviceOrg/publisherOrders.jsp</result>
+			<!-- 申请人所申请的订单, -->
+			<result name="applicantOrders">/WEB-INF/web/user/serviceOrg/applicantOrders.jsp</result>
+			<!-- 服务订单的明细数据 -->
+			<result name="siOrderDetail">/WEB-INF/web/user/serviceOrg/siOrderDetail.jsp</result>
+			<!-- 服务信息的明细数据 -->
+			<result name="siDetail">/WEB-INF/web/user/serviceOrg/siDetail.jsp</result>
+			<result name="siDetailApply">/WEB-INF/web/user/serviceOrg/siDetailApply.jsp</result>
+		</action>
+		
+		<action name="serviceItem" class="com.zj198.action.serviceInfo.ServiceItemAction">
+			<interceptor-ref name="defaultStack"/>
+			<!-- 普通用户(个人或企业)可以看到的服务信息 -->
+		    <result name="serviceItemHome">/WEB-INF/web/user/serviceOrg/serviceItemHome.jsp</result>
+		    <!-- 服务信息的明细数据 -->
+			<result name="siDetail">/WEB-INF/web/user/serviceOrg/siDetail.jsp</result>
+		</action>
+		<action name="userServiceItem" class="com.zj198.action.serviceInfo.ServiceItemAction">
+			<!-- 信息发布者已发布的信息 -->
+			<result name="serviceItemHome4Publisher">/WEB-INF/web/user/serviceOrg/sipublisher.jsp</result>
+			<result name="serviceAddInfo">/WEB-INF/web/user/serviceOrg/addServiceInfo.jsp</result>
+		</action>
+		
+		<action name="requestInfoAction" class="com.zj198.action.club.RequestInfoAction">
+		    <interceptor-ref name="defaultStack"/>
+		    <result name="home">/public/club/request_info_home.jsp</result>
+		    <result name="detail">/public/club/request_info_detail.jsp</result>
+		</action>
+		<!-- 
+			<result name="requestHome" type="redirect">/service/requestInfoAction4User!showUserHome.act</result>
+			<result name="supplyHome" type="redirect">/service/supplyInfoAction4User!showUserHome.act</result>
+		 -->
+		
+	</package>
+</struts>

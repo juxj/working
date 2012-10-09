@@ -1,15 +1,15 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/admin/loan
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/loan
 svn://192.168.1.8
 
 
 
-2012-09-07T04:05:46.404023Z
-3276
-Patrick
+2012-09-28T03:35:40.749821Z
+3711
+yuel
 
 
 
@@ -60,17 +60,17 @@ Patrick
 
 5411
 
-finance_product_view.jsp
+busifinance_apply_view.jsp
 file
 
 
 
 
-2012-09-11T03:06:56.000000Z
-04cde89bd35e1fc2263761074c29646b
-2012-08-31T06:05:31.235137Z
-3031
-yuel
+2012-09-25T09:10:54.000000Z
+58e5c27a5878e2f666ed1e88459670a1
+2012-09-24T05:51:14.228397Z
+3552
+yangb
 
 
 
@@ -92,7 +92,7 @@ yuel
 
 
 
-10397
+12414
 
 busiloan_request_view.jsp
 file
@@ -100,115 +100,14 @@ file
 
 
 
-2012-09-11T03:06:56.000000Z
-c2c0dcf3aafed8f4a8a6876408d8363f
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7894
-
-perrunfinance_apply_view.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-0079558f1921d5ca7f99e3754d44d672
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11231
-
-finance_apply_admin.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-2ee701b31a6a534599a80a7a79540de1
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7195
-
-previewExtendsProperty.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-c30bcc622b11e4460be54a440846a66f
-2012-08-31T06:11:18.912473Z
-3032
+2012-09-29T03:29:35.000000Z
+6888bce18f7e1fa10d40e53e79e840e3
+2012-09-28T03:35:40.749821Z
+3711
 yuel
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -227,144 +126,7 @@ yuel
 
 
 
-
-896
-
-loan_request_detail.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-5e4f3fafd60cf097b937b5c41da4e7ba
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9673
-
-busifinance_apply_view.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-c2e6cc23e6e53a32426ac5c155cc388b
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11765
-
-finance_product_update.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-ba21c69fd0a59dd7813b0550a94a4323
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29437
-
-update_finance_back.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-04be49624e15020780da5b971adb2fbb
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2045
+8411
 
 download_attach.jsp
 file
@@ -400,6 +162,40 @@ yuel
 
 281
 
+finance_apply_admin.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+2ee701b31a6a534599a80a7a79540de1
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7195
+
 finance_product_admin.jsp
 file
 
@@ -434,6 +230,108 @@ Patrick
 
 6471
 
+finance_product_update.jsp
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+56d724e5894dc28c88bdb899f65f38d1
+2012-09-28T03:35:40.749821Z
+3711
+yuel
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+29464
+
+finance_product_view.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+04cde89bd35e1fc2263761074c29646b
+2012-08-31T06:05:31.235137Z
+3031
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10397
+
+loan_request_detail.jsp
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+dc9b704886484b13e6743bcdbb02fde8
+2012-09-28T03:35:40.749821Z
+3711
+yuel
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10191
+
 loan_request_list.jsp
 file
 
@@ -467,4 +365,106 @@ Patrick
 
 
 4599
+
+perrunfinance_apply_view.jsp
+file
+
+
+
+
+2012-09-25T09:10:54.000000Z
+4e2051aa48e782c3671c331bf6427cc8
+2012-09-24T05:51:14.228397Z
+3552
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11913
+
+previewExtendsProperty.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+c30bcc622b11e4460be54a440846a66f
+2012-08-31T06:11:18.912473Z
+3032
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+896
+
+update_finance_back.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+04be49624e15020780da5b971adb2fbb
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2045
 

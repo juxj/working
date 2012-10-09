@@ -9,25 +9,28 @@
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/admin/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/script/admin/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript" src="/script/admin/xheditor-1.1.14-zh-cn.min.js"></script>
 <script type="text/javascript" src="/script/admin/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
 <link href="/css/admin/style.css" rel="stylesheet" type="text/css" />
 <link href="/css/admin/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
 <script language="javascript">
+$(function(){
+	$('#loanForm').validate();
+})
 function updatestatus(value){
 	if (window.confirm('确定提交吗！')) {
 		$('#apply_status').val(value);
 		if(value == 180){
 			$("#agree_num_input").dialog({width:440,modal:true});
-		}else if(value == 188){
-			$("#apply_check").dialog({width:440,modal:true});
-			return;
 		}else{
 			$("#loanForm").submit();
 		}
 	}
+
 }
 function inputCheckView(cview){
 	$('#check_view').val(cview);
@@ -53,28 +56,13 @@ function agreeNumInput(an){
 <s:hidden name="appCheck.checkView" id="check_view"></s:hidden>
 <s:hidden name="userType" value="0"></s:hidden>
 <div class="apply_form">
-<div class="apply_form_title">申请状态</div>
+	<div class="apply_form_title">申请状态</div>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>
 	<table class="apply_form_tb" style="float:left; width:550px;">
 	  <tr>
 	    <td class="r_td">申请状态</td>
 	    <td class="p_td"><common:print valueId="apply.applyStatus"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    	<s:if test="apply.applyStatus == 177"><!-- 待审核 -->
-				<input type="button" value="申请确认"  class="but_gray" onclick="updatestatus(178);" ></input>
-				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-			</s:if>
-			<s:elseif test="apply.applyStatus == 178">
-				<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
-				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-			</s:elseif>
-			<s:elseif test="apply.applyStatus == 179">
-				<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
-				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-			</s:elseif>
-			<s:elseif test="apply.applyStatus == 180">
-				<input type="button" value="提交给金融机构"  class="but_gray" onclick="updatestatus(181);" ></input>
-			</s:elseif>
 	    </td>
 	  </tr>
 	  <tr>
@@ -96,10 +84,8 @@ function agreeNumInput(an){
 	  </tr>
 	</table>
 	<div class="hr_10"> &nbsp; </div>
-	<div class="hr_10"> &nbsp; </div>	 	
-</div>
-<div class="hr_10"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>
+</div>
 <div class="apply_form">
 	<div class="apply_form_title">产品信息</div>
 	<div class="hr_10"> &nbsp; </div>
@@ -255,10 +241,11 @@ function agreeNumInput(an){
 		<div class="hr_10"> &nbsp; </div>
 	</div>
 	
+	<div class="hr_10"> &nbsp; </div>
 	<div class="apply_form">
 	<div class="apply_form_title">其它信息</div>
 	<div class="hr_10"> &nbsp; </div>
-	<div class="hr_10"> &nbsp; </div>
+	
 	<table class="apply_form_tb">
 		<s:iterator value="extendsValueList">
 			<tr>
@@ -270,6 +257,40 @@ function agreeNumInput(an){
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>
 	</div>	
+	
+	<div class="hr_10"> &nbsp; </div>
+	
+	
+	<div class="hr_10"> &nbsp; </div>
+	<div class="apply_form">
+	<div class="apply_form_title">审核</div>
+	<div class="hr_10"> &nbsp; </div>
+		<table class="apply_form_tb">
+			<tr>
+				<td class="r_td" style="vertical-align: top;">审核意见：</td>
+				<td class="p_td"><textarea rows="5" cols="60" class="required" name="checkViewInput" id="advice"></textarea><br/>
+				</td>
+			</tr>
+			<tr><td colspan="2" class="r_td" style="vertical-align: top;">
+			<s:if test="apply.applyStatus == 177"><!-- 待审核 -->
+				<input type="button" value="申请确认"  class="but_gray" onclick="updatestatus(178);" ></input>
+				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
+			</s:if>
+			<s:elseif test="apply.applyStatus == 178">
+				<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
+				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus == 179">
+				<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
+				<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus == 180">
+				<input type="button" value="提交给金融机构"  class="but_gray" onclick="updatestatus(181);" ></input>
+			</s:elseif>
+			</td></tr>
+		</table>
+	<div class="hr_10"> &nbsp; </div>
+	</div>
 	
 <div id="agree_num_input" style="display:none;" title="输入协议编号">
 	<dl>

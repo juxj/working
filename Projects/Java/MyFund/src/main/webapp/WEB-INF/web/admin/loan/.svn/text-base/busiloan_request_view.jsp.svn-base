@@ -18,6 +18,8 @@
 //文本框触发焦点效果s
     $(function() {
         finance_type_chenge('${product.financeType}');
+        $(":button").button();
+		$(".tablesorter").tablesorter();
     });
     
 function finance_type_chenge(financeType){
@@ -79,6 +81,13 @@ function SelectRecom(){
 	$.post("/admin/loan/loanRequest!selectRecProdcutAdmin.act",{checkId:checkIds.toString(),requestId:$("input[name='requestId']").val()});
 	$("#pro_recommend").dialog("close");
 }
+
+function details(id){
+	$.post("/admin/user/User!details.act",{uid:id,updateStatus:1},function(a){
+		$("#pop_info").html(a).dialog({width:500,modal: true});
+
+	});
+}
 </script>
   </head>
   
@@ -100,7 +109,7 @@ function SelectRecom(){
 			<table style="width:660px; font-size:13px;">
 				<tr>
 					<td width="25%" align="right">状态：</td>
-					<td style="padding:15px;"><common:print valueId="loan.applyStatus" /> </td>
+					<td style="padding-left:15px;"><common:print valueId="loan.applyStatus" /> </td>
 					<td colspan="2" width="50%" style="padding:15px;">
 	   				<s:if test="loan.applyStatus == 143">
 						<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(145);" ></input>
@@ -113,6 +122,12 @@ function SelectRecom(){
 					<input type="hidden" id="organization" name="organization" value="${loan.loanOrganization}"/>
 						<input type="button" value="推荐产品"  class="but_gray" onclick="Recommend(${loan.id },${loan.applyType });" ></input>
 					</s:if>
+					</td>
+				</tr>
+				<tr>
+					<td width="25%" align="right">申请人：</td>
+					<td style="padding-left:15px;" colspan="3">
+						<a href="javascript:details(${loan.userId });">查看</a>
 					</td>
 				</tr>
 			</table>
@@ -185,6 +200,7 @@ function SelectRecom(){
 		</div>
 	</div>
 </form>
+<div id="pop_info" style="display:none;" title="用户信息"></div>
 </div>
 </div>
 <!--弹出框内容推荐产品页面-->

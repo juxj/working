@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="club" namespace="/club" extends="base">
+		<action name="clubAction" class="com.zj198.action.club.ClubAction">
+    	   <result name="home">/public/club/home.jsp</result>
+    	   <result name="supplyInfoByAllType">/public/club/supply_info_by_all_type.jsp</result>
+    	   <result name="requestInfoByAllType">/public/club/request_info_by_all_type.jsp</result>
+    	</action>
+    	
+    	<action name="showSupplyInfoHome" class="com.zj198.action.club.SupplyInfoAction" method="showUserHome">
+			<interceptor-ref name="userInterceptor"/>
+			<result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		</action>
+		
+		<action name="showRequestInfoUserHome" class="com.zj198.action.club.RequestInfoAction" method="showUserHome">
+			<interceptor-ref name="userInterceptor"/>
+			<result name="userHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
+		</action>
+		
+	</package>
+</struts>

@@ -19,7 +19,7 @@ public class ClbRequestInfoDAOImpl extends HibernateDAO<ClbRequestInfo, Integer>
 	}
 	
 	public List<ClbRequestInfo> findLastRequestInfo(int num){
-		String hql = "from ClbRequestInfo  where (rank=1 or rank=10) order by id desc";
+		String hql = "from ClbRequestInfo  where (rank=1 or rank=10) order by lastPostDate desc";
 		return this.findTopRows(hql, num);
 	}
 	
@@ -32,9 +32,8 @@ public class ClbRequestInfoDAOImpl extends HibernateDAO<ClbRequestInfo, Integer>
 		String q2 = query[2];
 		String q3 = query[3];
 		if (StringUtils.isNotBlank(q0)) {
-			hql = hql + " and (area like :area or area like :j)";
+			hql = hql + " and (area like :area or area like '%全国%')";
 			params.put("area", "%"+q0+"%");
-			params.put("j", "%全国%");
 		}
 		
 		if (StringUtils.isNotBlank(q1)){
@@ -118,6 +117,11 @@ public class ClbRequestInfoDAOImpl extends HibernateDAO<ClbRequestInfo, Integer>
 		Hashtable<String,Object> params = new Hashtable<String, Object>();
 		params.put("userId", userId);
 		return this.pagedQuery(hql, pageNo, pageSize, params);
+	}
+	
+	public List<ClbRequestInfo> findByIndustryOfTopN(String industry, int num){
+		String hql = "from ClbRequestInfo where (rank = 1 or rank = 10) and industry = :industry order by lastPostDate desc";
+		return this.findTopRows(hql, num, "industry", industry);
 	}
 	
 	

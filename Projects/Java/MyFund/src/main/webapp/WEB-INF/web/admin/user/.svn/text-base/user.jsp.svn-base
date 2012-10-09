@@ -45,7 +45,13 @@ function details(id){
 		$("#umsg").html("请选择用户。").show();
 	}
 }
-
+function adminLoginUser(id,type,au){
+	if(id !=null && id != 0){
+		document.location.href="/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1;
+	}else{
+		$("#umsg").html("请选择用户。").show();
+	}
+}
 </script>
 </head>
 <body>
@@ -133,7 +139,9 @@ function details(id){
 							<td>${u.mobile}</td>
 							<td id="status${u.id}"><s:if test="#u.status==0">正常</s:if><s:if test="#u.status==1"><font color="red">阻止</font></s:if></td>
 							<td><s:if test="#u.auditstatus==0">未审核</s:if><s:elseif test="#u.auditstatus==1">待审核</s:elseif><s:elseif test="#u.auditstatus==2">已审核</s:elseif></td>
-							<td><input type="button" value="详细" onclick="details(${u.id});"/> <input type="button" value="Profile" onclick="profile(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/></td>
+							<td><input type="button" value="详细" onclick="details(${u.id});"/> 
+							<input type="button" value="Profile" onclick="profile(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/> 
+							<input type="button" value="模拟用户登录" onclick="adminLoginUser(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/></td>
 						</tr>
 						</s:iterator>
 					</tbody>

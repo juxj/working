@@ -7,21 +7,9 @@
 <title>快速申请</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/public2.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/index.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
-<script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
 <script type="text/javascript" src="/script/load-loan.js" > </script>
-<script type="text/javascript" src="/script/jquery.metadata.js" > </script>
-<script type="text/javascript" src="/script/jquery.ui.min.js"></script>
-<script type="text/javascript" src="/script/jquery.ui.datepicker.min.js"></script>
-<script type="text/javascript" src="/script/proofRule.js" > </script>
-<script type="text/javascript" src="/script/profile.js" > </script>
-
 </head>
 
 <body>

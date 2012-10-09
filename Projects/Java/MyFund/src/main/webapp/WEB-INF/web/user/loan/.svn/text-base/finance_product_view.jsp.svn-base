@@ -70,15 +70,17 @@ function updatestatus(value){
 	<div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
 		<div class="apply_form_title">状态详情</div>
-		<div class="C_form" style="margin-top:20px;">
+		<div class="C_form" style="margin-top:10px;">
 			<table style="width:800px; font-size:13px;">
 				<tr>
 					<td width="20%" align="right">状态：</td>
 					<td style="padding:15px;"><common:print valueId="product.proStatus" /> </td>
-					<td width="15%" align="right">操作：</td>
-					<td width="30%" style="padding:15px; " class="option_href" >
+				</tr>
+				<tr>
+					<td width="20%" align="right">操作：</td>
+					<td style="padding:15px; " class="view_detail01" >
 	   					<s:if test="product.proStatus == 196">
-				   			<a href="/user/loan/financeProduct!updateFinancePage.act?product.id=${item.id }" >修改</a>&nbsp;&nbsp;
+				   			<a href="/user/loan/financeProduct!updateFinancePage.act?product.id=${product.id }" >修改</a>&nbsp;&nbsp;
 				   			<a href="javascript:updatestatus(197);" >提交审核</a>&nbsp;&nbsp;
 				   			<a href="javascript:updatestatus(199);" >撤销发布</a>
 						</s:if>
@@ -89,7 +91,7 @@ function updatestatus(value){
 							<a href="javascript:updatestatus(199);" >撤销发布</a>
 						</s:elseif>
 		   				<s:elseif test="product.proStatus == 199">
-		   					<a href="/user/loan/financeProduct!updateFinancePage.act?repeatStatus=1&product.id=${item.id }" >重新发布</a>
+		   					<a href="/user/loan/financeProduct!updateFinancePage.act?repeatStatus=1&product.id=${product.id }" >重新发布</a>
 		   				</s:elseif>
 					</td>
 				</tr>

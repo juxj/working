@@ -30,6 +30,12 @@ $(function() {
     $("#regDate").datepicker();
     $("#regCity").val('${usrCompany.regcityid}');
 	$("#regDistrict").val('${usrCompany.regdistrictid}');
+	
+	$("#lpliveCity").val('${usrCompany.lplivecityid}');
+	$("#lpliveDistrict").val('${usrCompany.lplivedistrictid}');
+		
+	$("#lphkCity").val('${usrCompany.lphkcityid}');
+	$("#lphkDistrict").val('${usrCompany.lphkdistrictid}');
 	$("#loanForm").validate();
 	$('#errores').html('');
 });
@@ -196,18 +202,18 @@ function servicedetail(){
         </tr>
         </table>
         <div class="hr_10"> &nbsp; </div>
-        <div class="C_title">法人信息:</div>
+        <div class="C_title">法定代表人信息:</div>
 			<div class="hr_10"> &nbsp; </div>
         <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
         <tr>
           <td class="a_right"><span class="txt-impt">*</span>学历：</td>
-          <td colspan="3"><s:select name="usrCompany.lpeducation" list="dataMap['eduAtion']" value="usrCompany.lpeducation" listKey="id" listValue="name" ></s:select></td>
+          <td colspan="3"><s:select headerKey="" headerValue="--请选择--" class="required" name="usrCompany.lpeducation" list="dataMap['eduAtion']" value="usrCompany.lpeducation" listKey="id" listValue="name" ></s:select></td>
         </tr>
         <tr>
           <td class="a_right"><span class="txt-impt">*</span>婚姻状况：</td>
-          <td width="300px"><s:select name="usrCompany.lpmarry" list="dataMap['marry']" listKey="id" listValue="name"></s:select></td>
+          <td width="300px"><s:select name="usrCompany.lpmarry" list="dataMap['marry']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" class="required"></s:select></td>
           <td class="a_right"><span class="txt-impt">*</span>从事所属行业年限：</td>
-          <td width="300px"><s:select name="usrCompany.lpindustryyears" list="dataMap['workYears']" listKey="id" listValue="name"></s:select></td>
+          <td width="300px"><s:select name="usrCompany.lpindustryyears" list="dataMap['workYears']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" class="required"></s:select></td>
         </tr>
         <tr>
           <td class="a_right"><span class="txt-impt">*</span>身份证号码：</td>
@@ -268,7 +274,13 @@ function servicedetail(){
           <td colspan="3"><input type="text" value="${usrCompany.lphkpostcode }" class="input-text zipCode" name="usrCompany.lphkpostcode"/></td>
         </tr>
         <tr>
-           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存信息" /></td>
+           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
+           <input type="checkbox"/>
+           	选择框  。。。。。。。。。。。。。。。。待定。。。。。。。。。。。
+           </td>
+         </tr>
+        <tr>
+           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="下一步" /></td>
          </tr>
          </table>
 	</div>

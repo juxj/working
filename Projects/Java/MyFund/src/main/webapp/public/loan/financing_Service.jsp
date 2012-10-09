@@ -9,60 +9,10 @@
 <meta name="keywords" content="融资，贷款,银行，担保，上海贷款，创业贷款，无抵押贷款，担保贷款,风险投资"/>
 <meta name="description" content="融资、贷款就上中国资金网!中国资金网在金融服务领域深耕多年，拥有丰富的经验和资源，与国内外多家银行及金融机构建立长期稳定的合作关系，可以为企业及个人提供各种类型的融资服务。"/>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/index.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" ></script>
 <script type="text/javascript" src="/script/load-loan.js"></script>
 <script language="javascript">
-$(document).ready(function() {
-
-//通用选项卡2
-    $('.xxkbox2:gt(0)').hide(); //让从大于0开始的div都隐藏 
-    $('.first2').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
-    var ss = $('.tab_menu2 ul li');
-    ss.click(function() {
-        $(this).addClass('hover').siblings().removeClass();
-        var nb = ss.index(this);
-        $('.xxkbox2').eq(nb).show().siblings().hide();
-    });
-    
-    $('.xxkbox3:gt(0)').hide(); //让从大于0开始的div都隐藏 
-    $('.first3').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
-    var sb = $('.tab_menu3 ul li');
-    sb.click(function() {
-        $(this).addClass('hover').siblings().removeClass();
-        var nb = sb.index(this);
-        $('.xxkbox3').eq(nb).show().siblings().hide();
-    });    
-    //} 
-    
-
-//$('.defaultvalue').css('color','#000000'); 
-    $('.defaultvalue').each(function(){   
-        $(this).data( "txt", $.trim($(this).val()) );   
-    }).focus(function(){   
-        // 获得焦点时判断域内的值是否和默认值相同，如果相同则清空   
-        //$(this).css('color','#333');   
-        if ( $.trim($(this).val()) === $(this).data("txt") ) {   
-            $(this).val("");   
-        }   
-    }).blur(function(){      
-        if ( $.trim($(this).val()) === "") {   
-            //$(this).css('color','#000000');   
-            $(this).val( $(this).data("txt") );   
-        }   
-    }   
-    );   
-}); 
-//文本框触发焦点效果s
-$(function() {
-    $(".input-text,textarea").focus(function() {
-        $(this).addClass("input-focus");
-    }).blur(function() {
-        $(this).removeClass("input-focus");
-    });
-});
-
 function CompanySubmit(){
 	var amount1 = $('#searchForm1 input[name=financeAmount]').val();
 	var date1 = $('#searchForm1 input[name=financeDate]').val();
@@ -119,7 +69,7 @@ function PersonSubmit(){
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
 <!--tab-->
-<div style="width:950px; margin:0 auto;">
+<div class="container_950">
 	<div style="width:630px; height:auto; float:left;">
         <div style="width:628px; height:313px; border : #d6d6d6 solid 1px; background: url(/images/tab_bg.jpg) 0 0 no-repeat; position:relative;">
           <div class="gray news_menu01 tab_menu3" >
@@ -132,7 +82,7 @@ function PersonSubmit(){
           <div >
             <div class="xxkbox3 first3" >
             <div class="fl" style="width:320px;">
-              <s:form cssClass="box_form" id="searchForm1" action="financeProduct.act" namespace="/loan" method="post">
+              <form class="box_form" id="searchForm1" action="/loan/financeProduct.act" method="post">
                 <dl>
                   <dd>
                     <h6 style="width:80px;"><span class="txt-impt"></span>类别：</h6>
@@ -156,16 +106,16 @@ function PersonSubmit(){
                   	<font style="padding-left: 40px;" color="#97181d" id="erro"></font>
                   </dd>
                 </dl>
+              </form>
                </div> 
                 <div class="fr" style="padding-top: 18px;"><a href="/loan/financeProduct!financeSearchDetail.act?financeType=151&financeDate=12"><img src="/images/img_tab_loan1.gif" /></a></div>
-                <div style="position:absolute; top:258px; left:205px;">
-                  <input type="button" onfocus="this.blur()" onclick="CompanySubmit();" class="but_gray" style="width:200px;" value="搜 索" />
+                <div style="position:absolute; top:258px; left:265px;">
+                  <input type="button" onfocus="this.blur()" onclick="CompanySubmit();" class="btnsub bred" style="width:100px;" value="搜 索" />
                 </div>              
-              </s:form>
             </div>
             <div class="xxkbox3">
             <div class="fl" style="width:320px;">
-              <s:form cssClass="box_form" id="searchForm2" action="financeProduct.act" namespace="/loan" method="post">
+              <form class="box_form" id="searchForm2" action="/loan/financeProduct.act" method="post">
                 <input id="poseId" type="hidden" name="poseId" value=""/>
                 <dl>
                   <dd>
@@ -190,153 +140,20 @@ function PersonSubmit(){
                   	<font style="padding-left: 40px;" color="#97181d" id="error"></font>
                   </dd>                  
                   </dl>
+              </form>        
                 </div> 
                 <div class="fr" style="padding-top: 18px;"><a href="/loan/financeProduct.act?financeType=152&financeDate=12"><img src="/images/img_tab_loan2.gif" /></a></div>                  
-                 <div style="position:absolute; top:258px; left:205px;">
-	                <input type="button" onfocus="this.blur()" onclick="PersonSubmit();" class="but_gray" style="width:200px;" value="搜 索" />
+                 <div style="position:absolute; top:258px; left:265px;">
+	                <input type="button" onfocus="this.blur()" onclick="PersonSubmit();" class="btnsub bred" style="width:100px;" value="搜 索" />
 	             </div>	                  
-              </s:form>        
             </div>        
           </div>
         </div>         
         <div class="hr_10"> &nbsp; </div>
-        <div style="width:630px; height:107px;"><a href="/Account.act"><img src="/images/img_loan_Club.jpg" /></a></div>
+        <div style="width:630px; height:107px;"><a href="/club/clubAction.act"><img src="/images/img_loan_Club.jpg" /></a></div>
         <div class="hr_10"> &nbsp; </div>
-      <!-- 投资俱乐部 -->         
-	  <div class="grid_350 box_4" style="overflow:hidden;">       
-        <div class="blue_bg">
-          <div class="gray news_menu tab_menu2">
-            <ul class="mews_ul">
-              <li class="hover">找资金</li>
-              <li>找项目</li>
-            </ul>
-          </div>			         
-          <div>
-          	<div class="xxkbox2 first2">
-          	<!-- 表单开始 -->
-	            <form class="box_form" action="/service/supplyInfoAction!home.act" method="post" id="supplyFormId">
-				<table border="0" cellspacing="0" cellpadding="0" class="find_table">
-				  <tr>
-				    <td class="find_table_r">地区：</td>
-				    <td class="v-align" colspan="2">
-		                <s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name"  style="width:155px;"></s:select>		    	
-				    </td>
-				    <td class="find_table_r">行业：</td>
-				    <td class="v-align" colspan="2">
-		                <select id="mainIndustry" name="query"  style="width:155px;">
-				    	<option value="">不限</option>
-				    	<s:iterator id="item" value="industryList">
-							<s:if test="#item.parentid==0">
-								<option value="${item.name }" >${item.name}</option>
-							</s:if>
-				    	</s:iterator>
-				    	<option value="其他行业" <s:if test="query[1] == '其他行业'">selected</s:if>>其他行业</option>
-				   		</select>			    
-				    </td>
-				  </tr>
-				  <tr>
-				    <td class="find_table_r">融资方式：</td>
-				    <td class="v-align" colspan="2">
-		                <select name="query"  style="width:155px;">
-							<option value="">不限</option>
-							<s:iterator id="item" value="investStyleList">
-								<s:if test="#item.parentId==0" >
-									<option value="${item.name }" > ${item.name }</option>
-								</s:if>
-							</s:iterator>
-						</select>		    
-				    </td>
-				    <td class="find_table_r">输入关键词：</td>
-				    <td class="v-align"><input type="text" class="input-text" name="query"/></td>
-				    <td class="v-align"><a href="javascript:$('#supplyFormId').submit();"><img src="/images/b_button.jpg"/></a></td>
-				  </tr>
-				</table>
-	          	<div class="find_table_t">精选资金<span><img src="/images/line1.jpg" /></span></div>			 
-			  </form>	    
-			  <!-- 表单结束 -->          	
-				  <s:if test="supplyInfoList.size>0">
-				  	<ul style="float:left;margin-right:50px;width:260px;"  class="new_li">
-						<s:iterator id="item" value="supplyInfoList" status="st">
-						<li title="${item.title}"><a href="/service/supplyInfoAction!detail.act?clbSupplyInfoId=${item.id }">
-							<s:if test="#item.title.length()>50">
-								<s:property value="#item.title.substring(0,50)"></s:property>...
-							</s:if><s:else>
-								${item.title}
-							</s:else>
-						</a></li>
-						<s:if test="#st.index == 4">
-							</ul><ul class="new_li" >
-						</s:if>
-						</s:iterator>
-					</ul>
-					
-					</s:if>
-					<s:else>
-						<li>无记录</li>
-					</s:else>
-                <span class="fr" style="padding-right: 13px;padding-bottom: 10px;"><a href="/service/supplyInfoAction!home.act?pageNo=1">更多»</a></span>
-            </div> 
-            <div class="xxkbox2">
-            <!-- 表单开始 -->
-	          <form class="box_form" action="/service/requestInfoAction!home.act" method="post" id="requestFormId">
-				<table border="0" cellspacing="0" cellpadding="0" class="find_table">
-				  <tr>
-				    <td class="find_table_r">地区：</td>
-				    <td class="v-align" colspan="2">
-		                <s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name"  style="width:155px;"></s:select>		    	
-				    </td>
-				    <td class="find_table_r">行业：</td>
-				    <td class="v-align" colspan="2">
-		                <select id="mainIndustry" name="query"  style="width:155px;">
-				    	<option value="">不限</option>
-				    	<s:iterator id="item" value="industryList">
-							<s:if test="#item.parentid==0">
-								<option value="${item.name }" >${item.name}</option>
-							</s:if>
-				    	</s:iterator>
-				    	<option value="其他行业" <s:if test="query[1] == '其他行业'">selected</s:if>>其他行业</option>
-				   		</select>			    
-				    </td>
-				  </tr>
-				  <tr>
-				    <td class="find_table_r">投资方式：</td>
-				    <td class="v-align" colspan="2">
-		                <s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:155px;"></s:select>		    
-				    </td>
-				    <td class="find_table_r">输入关键词：</td>
-				    <td class="v-align"><input type="text" class="input-text" name="query"/></td>
-				   	<td class="v-align"><a href="javascript:$('#requestFormId').submit();"><img src="/images/b_button.jpg" /></a></td>
-				  </tr>
-				</table>
-	          	<div class="find_table_t">精选项目<span><img src="/images/line1.jpg" /></span></div>			 
-			  </form>
-			  <!-- 表单结束 -->            
-            	<s:if test="requestInfoList.size>0">
-            		<ul style="float:left;margin-right:50px;width:260px;"  class="new_li">
-						<s:iterator id="item" value="requestInfoList" status="st">
-							<li title="${item.title}">
-							<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">
-								<s:if test="#item.title != null && #item.title.length()>20">
-									<s:property value="#item.title.substring(0,20)"></s:property>...
-								</s:if><s:else>
-									${item.title}
-								</s:else>
-							</a></li>
-							<s:if test="#st.index == 4">
-								</ul><ul class="new_li" >
-							</s:if>
-						</s:iterator>
-					</ul>				  
-					</s:if>				
-					<s:else>
-						<li>无记录</li>
-					</s:else>
-				  <span class="fr" style="padding-right: 13px;padding-bottom: 10px;"><a href="/service/requestInfoAction!home.act?pageNo=1">更多»</a></span>
-            	            	
-          </div>      
-         </div>        
-        </div>
-       </div>        
+      	<!-- 投资俱乐部 -->         
+	  	<jsp:include page="../club/_query_panel.jsp" />
         <!-- 投资俱乐部 -->
         <div class="hr_10"> &nbsp;</div> 
                

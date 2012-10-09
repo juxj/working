@@ -125,11 +125,11 @@ public class ProfileServiceImpl implements ProfileService {
 		if(profile.getDistrictid()!=null && profile.getDistrictid()!=0){item++;}
 		if(StringUtils.isNotBlank(profile.getAddress())){item++;}
 		if(StringUtils.isNotBlank(profile.getPostcode())){item++;}
-		if(StringUtils.isNotBlank(profile.getTelephone())){item++;}
+		//if(StringUtils.isNotBlank(profile.getTelephone())){item++;}
 		if(profile.getCareerid()!=null && profile.getCareerid()!=0){item++;}
 		if((profile.getIm1type()!=null && profile.getIm1type()!=0)|| (profile.getIm2type()!=null && profile.getIm2type()!=0)||(profile.getIm3type()!=null && profile.getIm3type()!=0)){item++;}
 		UsrUser usrUser=usrUserDAO.get(user.getId());
-		if(item==10){
+		if(item==9){
 			usrUser.setAuditstatus(Constants.USER_AUDITSTATUS_DONE);
 			user.setAuditstatus(Constants.USER_AUDITSTATUS_DONE);
 			context.getSession().put("_user", user);

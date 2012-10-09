@@ -65,6 +65,10 @@ public class OrdFinanceApply implements java.io.Serializable {
 	private String proCreateUserName;
 	private Integer productUserId;
 	private Double lastyearSaleVolume;
+	private String loanPurposeOther;
+	
+	private Integer uploadAttachNum;
+	private Integer needAttachNum;
 	
 	public OrdFinanceApply(Integer id,String applyNum,Integer applyType,Integer applyStatus,
 			Date createdt,Long loanAmount,Integer loanMonth,String applyUserName,String productName, 
@@ -552,6 +556,30 @@ public class OrdFinanceApply implements java.io.Serializable {
 
 	public void setLastyearSaleVolume(Double lastyearSaleVolume) {
 		this.lastyearSaleVolume = lastyearSaleVolume;
+	}
+
+	public String getLoanPurposeOther() {
+		return loanPurposeOther;
+	}
+
+	public void setLoanPurposeOther(String loanPurposeOther) {
+		this.loanPurposeOther = loanPurposeOther;
+	}
+
+	public Integer getUploadAttachNum() {
+		return uploadAttachNum;
+	}
+
+	public void setUploadAttachNum(Integer uploadAttachNum) {
+		this.uploadAttachNum = uploadAttachNum;
+	}
+
+	public Integer getNeedAttachNum() {
+		return needAttachNum;
+	}
+
+	public void setNeedAttachNum(Integer needAttachNum) {
+		this.needAttachNum = needAttachNum;
 	}
 
 }

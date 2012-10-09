@@ -26,6 +26,7 @@
 	<bean name="loanRequestService" class="com.zj198.service.loan.impl.LoanRequestServiceImpl"/>
 	<bean id="financeApplyService" class="com.zj198.service.loan.impl.FinanceApplyServiceImpl"/>
 	<bean id="financeProductService" class="com.zj198.service.loan.impl.FinanceProductServiceImpl"/>
+	<bean id="applyUserService" class="com.zj198.service.loan.impl.ApplyUserServiceImpl"/>
 	<!-- 产品推荐 -->
 	<bean id="ordLrRecommendService" class="com.zj198.service.loan.impl.OrdLrRecommendServiceImpl"/>
 	<!-- 贷后管理 -->

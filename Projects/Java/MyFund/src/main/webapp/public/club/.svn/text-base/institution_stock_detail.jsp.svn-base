@@ -12,9 +12,7 @@
 <div class="clear">&nbsp;</div>
 <!--头部-->
   <div class="hr_10"> &nbsp; </div> 
-  <div class="M_menu" >
-  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/service/supplyInfoAction!home.act">找资金</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;资金信息
-  </div>
+  <jsp:include page="_navigator.jsp" />
    <!--表格部分开始-->
   <div class="M_out">
   	<div class="M_out_L" style="margin-top:10px;">

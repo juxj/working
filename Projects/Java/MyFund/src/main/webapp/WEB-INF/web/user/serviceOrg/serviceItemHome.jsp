@@ -68,7 +68,7 @@
 				<s:if test="pager.data.size()>0">
 				<s:iterator id="item" value="pager.data">
 		      <tr class="capital_table" >
-				<td class="capital_table_z1">${item.title }</td>
+				<td class="capital_table_z1 red" style="font-weight: bolder;">${item.title }</td>
 				<td class="capital_table_z2">${item.typeName }</td>
 				<td class="capital_table_z2">${item.chargeRange }</td>
 				<td class="capital_table_z2">${item.regionName }</td>

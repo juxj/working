@@ -97,7 +97,7 @@ $(document).ready(function(){
     <div class="container_960">
 	    <div class="box_948"> <span class="yourposition">发布服务信息</span>
 	    <div class="clear"> &nbsp; </div>
-	    <form id="frmSinItem" action="/service/userServiceItem!saveInfo.act" class="box_form"  method="post">
+	    <form id="frmSinItem" action="/service/saveServiceItem.act" class="box_form"  method="post">
 		    <s:hidden id="typeName" name="prdServiceItem.typeName"></s:hidden>
 		    <s:hidden name="prdServiceItem.id"></s:hidden>
 		    <s:hidden name="prdServiceItem.contactId"></s:hidden>

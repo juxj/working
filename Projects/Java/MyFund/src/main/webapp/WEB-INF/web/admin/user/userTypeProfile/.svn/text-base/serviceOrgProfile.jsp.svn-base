@@ -43,6 +43,7 @@ function audit(id,audit){
 				<div class="bheadl"></div>
 				<div class="bheadr"></div>
 				<h2>账户管理 » 用户类型详细信息</h2>
+				<span style="float: right; padding-right: 100px;"><a target="_blank" href="http://www.nacao.org.cn/">组织机构代码证查询</a></span>
 			</div>
 			<!-- .block_head ends -->
 			<div class="block_content">

@@ -26,6 +26,7 @@ public class UserAction extends BaseAction{
 	private AccountService accountService;
 	
 	private static final Integer pageSize=8;
+	private Integer updateStatus;
 	
 	//列出当天注册的用户
 	public String execute(){
@@ -147,6 +148,14 @@ public class UserAction extends BaseAction{
 
 	public void setLogindt(Date[] logindt) {
 		this.logindt = logindt;
+	}
+
+	public Integer getUpdateStatus() {
+		return updateStatus;
+	}
+
+	public void setUpdateStatus(Integer updateStatus) {
+		this.updateStatus = updateStatus;
 	}
 
 	

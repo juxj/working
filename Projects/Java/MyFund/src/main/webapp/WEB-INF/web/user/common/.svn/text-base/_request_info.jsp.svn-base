@@ -14,7 +14,7 @@
 </script>
 <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
   <caption>
-  <span class="fr view_all"><a href="/service/club.act?mparamid=17">查看全部»</a></span>
+  <span class="fr view_all"><a href="/service/club!home.act?mparamid=17&checkstate=1">查看全部»</a></span>
   <h6>项目信息</h6>
   <span class="leftdetail"><a href="javascript:edit();">立即发布</a></span>
   </caption>

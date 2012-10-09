@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/admin/authorize
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/authorize
 svn://192.168.1.8
 
 
@@ -59,74 +59,6 @@ juxj
 
 
 5131
-
-siDetail.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-26a53174c318b382fb030472e2443c92
-2012-07-26T09:42:35.461016Z
-1667
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2862
-
-serviceOrderHome4Admin.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-fc19fb28780d44e946f34b40ba9b6e70
-2012-07-26T08:17:24.114338Z
-1655
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4234
 
 recommend_bank_product.jsp
 file
@@ -195,6 +127,74 @@ juxj
 
 
 5860
+
+serviceOrderHome4Admin.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+fc19fb28780d44e946f34b40ba9b6e70
+2012-07-26T08:17:24.114338Z
+1655
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4234
+
+siDetail.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+26a53174c318b382fb030472e2443c92
+2012-07-26T09:42:35.461016Z
+1667
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2862
 
 sinOrder.jsp
 file

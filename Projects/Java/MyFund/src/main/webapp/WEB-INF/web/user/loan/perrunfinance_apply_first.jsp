@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.metadata.js" > </script>
 <script type="text/javascript" src="/script/jquery-ui-1.8.21.custom.min.js" > </script>
 <script type="text/javascript" src="/script/public.js" > </script>
 <script language="javascript">
@@ -21,8 +22,8 @@ $(function() {
         $(this).addClass("input-focus");
     }).blur(function() {
         $(this).removeClass("input-focus");
-    })
-})
+    });
+});
 $(function(){
 	$("#applyForm").validate();
 	servicedetail();
@@ -37,11 +38,14 @@ function servicedetail(){
 
 	function industryList(id){
 		if(id!=''){
-			$.post("applyadmin/financeApply!Industry.act",{industryId:id},function(data){
+			$.post("applyadmin/financeApply!industry.act",{industryId:id},function(data){
 				$("#runningTradeChild").html(data);
 			});
 		}
 	}
+jQuery.validator.addMethod("loanAmount", function(value, element, param) {
+return this.optional(element) || (value >= param[0] && value <= param[1]);
+}, $.validator.format("必须大于{0}小于{1}"));
 </script>
 
   </head>
@@ -89,7 +93,7 @@ function servicedetail(){
 			    </table>
 			    <div class="hr_10"> &nbsp; </div>
 		</div>
-<s:form action="financeApply!applySecond.act" id="applyForm" namespace="applyadmin"  cssClass="box_form" style="margin:0px;" >
+<form action="/user/loan/financeApply!applySecond.act" id="applyForm" method="post" class="box_form" style="margin:0px;" >
 <!-- 个人经营性贷款快速申请类型 -->
 <s:hidden name="product.id"></s:hidden>
 	<div class="C_title">融资需求信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
@@ -99,12 +103,12 @@ function servicedetail(){
                 <h6>贷款用途：</h6>
                 <common:select name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:200px;"></common:select>
                 <h6>贷款金额：</h6>
-                <s:textfield name="apply.loanAmount" cssClass="input-text required digits"  id="apply.loanAmount" maxlength="9"></s:textfield>&nbsp;&nbsp;万元
-                <label for="apply.loanAmount" class="error" generated="true" style="display:none;"></label>
+                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="9"/>&nbsp;&nbsp;万元
+                <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>贷款期限：</h6>
-                <s:textfield name="apply.loanMonth" cssClass="input-text required digits"  id="apply.loanMonth" maxlength="3"></s:textfield>&nbsp;&nbsp;个月
+                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="3"/>&nbsp;&nbsp;个月
                 <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
@@ -120,7 +124,7 @@ function servicedetail(){
 		<dl>
 			<dd>
 				<h6>行业：</h6>
-				<select id="runningTrade"  name="apply.runningTrade" onchange="industryList(this.options[this.options.selectedIndex].value)" >
+				<select id="runningTrade"  name="apply.runningTrade" onchange="industryList(this.options[this.options.selectedIndex].value)"  class="required">
 					<option value="">--请选择--</option>
                 	<s:iterator value="industryList">
 						<option value="${id}">${name}</option>
@@ -133,7 +137,7 @@ function servicedetail(){
 			</dd>
 			<dd>
 				<h6>行业经验：</h6>
-				<s:textfield name="apply.experience" cssClass="input-text required" maxlength="3"></s:textfield>&nbsp;&nbsp;年
+				<s:textfield name="apply.experience" cssClass="input-text required" maxlength="3" id="apply.experience"></s:textfield>&nbsp;&nbsp;年
 				<label for="apply.experience" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
@@ -172,10 +176,10 @@ function servicedetail(){
 				<dd>
 					<h6 style="width:235px">${fieldName }：</h6>
 					<s:if test="fieldType == 1">
-						<input type="text" name="epValue${id }" class="input-text"/>
+						<input type="text" name="epValue${id }" class="input-text required"/>
 					</s:if>
 					<s:if test="fieldType == 2">
-						<textarea name="epValue${id }" rows="5" cols="50"></textarea>
+						<textarea name="epValue${id }" rows="5" cols="50" class="required"></textarea>
 					</s:if>
 					<s:if test="fieldType == 3">
 						<select name="epValue${id }">
@@ -186,11 +190,13 @@ function servicedetail(){
 					</s:if>
 					<s:if test="fieldType == 4">
 						<s:iterator value="propertyDicSet">
-							<input type="checkbox" name="epValue${epid.id }" value="${dicValue }"/>${dicName }
+							<input type="checkbox" name="epValue${epid.id }" value="${dicValue }" class="required"/>${dicName }
 						</s:iterator>
+						<label for="epValue${epid.id }" class="error" generated="true" style="display:none;"></label>
 					</s:if>
 				</dd>
 			</s:iterator>
+			
 		</dl>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="center" style="width:260px;">
@@ -205,7 +211,7 @@ function servicedetail(){
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>
 	</div>
-</s:form>
+</form>
 </div>
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>

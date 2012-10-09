@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.action.loan.model.FinanceApplySpModel;
@@ -11,19 +13,20 @@ import com.zj198.model.DicCommon;
 import com.zj198.model.DicDistrict;
 import com.zj198.model.DicIndustry;
 import com.zj198.model.DicProvince;
+import com.zj198.model.OrdApplyUsrCompany;
 import com.zj198.model.OrdFinanceApply;
 import com.zj198.model.OrdFinanceApplyAttach;
 import com.zj198.model.OrdFinanceApplyCheck;
 import com.zj198.model.PrdExtendsProperty;
 import com.zj198.model.PrdExtendsValue;
 import com.zj198.model.PrdFinance;
-import com.zj198.model.PrdFinanceArea;
 import com.zj198.model.UsrCompany;
 import com.zj198.model.UsrPerson;
 import com.zj198.model.UsrUser;
 import com.zj198.model.vo.FinanceApplyAttachModel;
 import com.zj198.model.vo.FinanceAreaModel;
 import com.zj198.service.common.DictoryDataService;
+import com.zj198.service.loan.ApplyUserService;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.FinanceProductService;
 import com.zj198.service.loan.PrdFinanceAreaService;
@@ -41,6 +44,7 @@ public class FinanceApplyAction extends BaseAction {
 	private FinanceProductService financeProductService;
 	private DictoryDataService dictoryDataService;
 	private ProfileService profileService;
+	private ApplyUserService applyUserService;
 	private OrdFinanceApply apply;
 	private PrdFinance product;
 	private Integer financeId;
@@ -71,6 +75,11 @@ public class FinanceApplyAction extends BaseAction {
 	private UsrPerson usrPerson;
 	private PrdFinanceAreaService prdFinanceAreaService;
 	private List<PrdExtendsValue> extendsValueList;
+	private Map<String,String> profileMap;
+	private Integer applyId;
+	private OrdApplyUsrCompany ordCompany;
+	private String copy;   //用户选择是否把融资详细信息填写到   用户中心表里面
+	private Integer oaucId;  //生成的融资申请单id
 	public String execute() {
 		return null;
 	}
@@ -116,10 +125,10 @@ public class FinanceApplyAction extends BaseAction {
 		ActionContext context = ActionContext.getContext();
 		UsrUser user = (UsrUser) context.getSession().get("_user");
 		if (user == null) {
-			msg = "对不起！您尚未登录，请登录后再提交申请。";
+			msg = "1";//对不起！您尚未登录，请登录后再提交申请。
 			return "applyFailure";
 		}else if(user.getAuditstatus() == null || user.getAuditstatus().intValue() < 2){
-			msg = "您的帐号还未通过审核，请完善用户信息并通过审核后，再申请融资。";
+			msg = "2";//您的帐号还未通过审核，请完善用户信息并通过审核后，再申请融资。
 			return "applyFailure";
 		}
 		int userGroup = user.getUserTypeGroup().intValue();
@@ -127,10 +136,9 @@ public class FinanceApplyAction extends BaseAction {
 		product = financeProductService.getFinance(product.getId());
 		extendsPropertyList = financeProductService.getFinancePropertys(product.getId());
 		int financeType = product.getFinanceType().intValue();
-		
 		if (financeType == 151) {// 企业经营贷款
 			if (userGroup != 1) {
-				msg = "只有企业用户可以申请企业经营性贷款";
+				msg = "3";//只有企业用户可以申请企业经营性贷款
 				return "applyFailure";
 			}else{
 //				UsrCompany usrCompany = (UsrCompany)profileService.getProfiles(user.getId());
@@ -139,12 +147,21 @@ public class FinanceApplyAction extends BaseAction {
 //					return "complementUserInfo";
 //				}
 			}
+			usrCompany = (UsrCompany)profileService.getProfiles(user.getId());
+				String st="";
+				if(usrCompany.getIndustryid()!=null && usrCompany.getIndustryid()!=0){
+					st=dictoryDataService.getIndustryById(usrCompany.getIndustryid()).getName();
+				}
+				profileMap=new HashMap<String,String>();
+				profileMap.put("industry", st);
+				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
+				profileMap.put("eduAtion", dictoryDataService.getValueNameById(usrCompany.getLpeducation()));
 			return companyInfoEdit();
 			//return busiApplyFirst();
 		}
 		if (financeType == 152) {// 个人经营贷款
 			if (userGroup != 5) {
-				msg = "只有个人用户才能申请个人经营贷款";
+				msg = "4";//只有个人用户才能申请个人经营贷款
 				return "applyFailure";
 			}else{
 //				UsrPerson usrPerson = (UsrPerson)profileService.getProfiles(user.getId());
@@ -153,8 +170,14 @@ public class FinanceApplyAction extends BaseAction {
 //					return "complementUserInfo";
 //				}
 			}
+			profileMap=new HashMap<String,String>();
+			usrPerson = (UsrPerson)profileService.getProfiles(user.getId());
+			profileMap.put("address", dictoryDataService.getPCDNameByIds(usrPerson.getProvinceid(), usrPerson.getCityid(), usrPerson.getDistrictid()));
+			profileMap.put("psersoncareer",dictoryDataService.getValueNameById(usrPerson.getCareerid()) );
+			profileMap.put("eduAtion",dictoryDataService.getValueNameById(usrPerson.getEducation()) );
 			return personcInfo();
 		}
+		/*
 		if (financeType == 153) {// 个人综合性消费贷款
 			if (userGroup != 5) {
 				msg = "只有个人用户才能申请个人综合性消费贷款";
@@ -169,7 +192,7 @@ public class FinanceApplyAction extends BaseAction {
 				return "applyFailure";
 			}
 			return perhouseApplyFirst();
-		}
+		}*/
 
 		return null;
 	}
@@ -184,30 +207,41 @@ public class FinanceApplyAction extends BaseAction {
 		product = financeProductService.getFinance(product.getId());
 		extendsPropertyList = financeProductService.getFinancePropertys(product.getId());
 		if(product != null){
-			List<FinanceAreaModel> pms = prdFinanceAreaService.findFiananceArea(product.getId());
-			UsrCompany old_UsrCompany = (UsrCompany)profileService.getProfiles(usrCompany.getUserid());
-			old_UsrCompany.setLoanFields(usrCompany);
-			if(pms != null && pms.size() > 0){				
-				for(FinanceAreaModel j : pms){
-					if (j.getProvinceId() == 0 || j.getProvinceId() == null) {
-						profileService.saveorupdate(old_UsrCompany);
-						break;
-					} else if (j.getProvinceId() == usrCompany.getRegprovinceid() && j.getCityId() == 0) {
-						profileService.saveorupdate(old_UsrCompany);
-						break;
-					} else if(j.getProvinceId() == usrCompany.getRegprovinceid() && j.getCityId() == usrCompany.getRegcityid()){
-						profileService.saveorupdate(old_UsrCompany);
-						break;
-					} else{
-						profileService.saveorupdate(old_UsrCompany);
-						msg = "对不起，该融资产品暂不支持您的企业所在地区，请您重新选择其他融资产品！ ";
-						return "applyFailure";
-					}
-				}
-			}else{
-				profileService.saveorupdate(old_UsrCompany);
+			UsrCompany oldUsrCompany = (UsrCompany)profileService.getProfiles(user.getId());
+			usrCompany.setAuditFields(oldUsrCompany);
+			String message=usrCompany.validLoanFields(usrCompany);
+			copy="1";
+			if(copy=="1"){
+				oldUsrCompany.setLoanFields(usrCompany);
+				profileService.saveorupdate(oldUsrCompany);
 			}
-		}
+			OrdApplyUsrCompany ucmo = new OrdApplyUsrCompany();
+			BeanUtils.copyProperties(usrCompany, ucmo);
+			//if(message.startsWith("0#")){
+				List<FinanceAreaModel> pms = prdFinanceAreaService.findFiananceArea(product.getId());
+				if(pms != null && pms.size() > 0){
+					for(FinanceAreaModel j : pms){
+						if (j.getProvinceId() == 0 || j.getProvinceId() == null) {
+							applyUserService.addCompDetail(ucmo);
+							break;
+						} else if (j.getProvinceId() == usrCompany.getRegprovinceid() && j.getCityId() == 0) {
+							applyUserService.addCompDetail(ucmo);
+							break;
+						} else if(j.getProvinceId() == usrCompany.getRegprovinceid() && j.getCityId() == usrCompany.getRegcityid()){
+							applyUserService.addCompDetail(ucmo);
+							break;
+						} else{
+							applyUserService.addCompDetail(ucmo);
+							msg = "5";
+							return "applyFailure";
+						}
+					}
+				}else{
+					applyUserService.addCompDetail(ucmo);
+				}
+				oaucId=ucmo.getId();
+			}
+		//}
 		return "busi_apply_first";
 	}
 
@@ -239,7 +273,17 @@ public class FinanceApplyAction extends BaseAction {
 		spModel.setParamap(param);
 		
 		financeApplyService.saveFinanceApply(apply, product.getId(), user, spModel);
+		if(oaucId != null && oaucId != 0){
+			OrdApplyUsrCompany ordApplyUsrCompany = applyUserService.getOrdApplyUsrCompanyById(oaucId);
+			ordApplyUsrCompany.setApplyId(apply.getId());
+			applyUserService.updateCompDetail(ordApplyUsrCompany);
+		}
 		return "apply_second";
+	}
+	
+	public String applyCheckList(){
+		applyCheckList = financeApplyService.findApplyCheck(applyId);
+		return "applyCheckList";
 	}
 
 	public String viewFinanceApply() {
@@ -247,7 +291,12 @@ public class FinanceApplyAction extends BaseAction {
 		apply = financeApplyService.getFinanceApply(apply.getId());
 		product = financeProductService.getFinance(apply.getFinanceId());
 		productAreaList = financeProductService.findFiananceArea(product.getId());
-		applyCheckList = financeApplyService.findApplyCheck(apply.getId());
+		applyCheckList = financeApplyService.findApplyCheck(apply.getId(),1);
+		//企业的详细信息和法人信息
+		ordCompany = applyUserService.getByApplyId(apply.getId());
+		//申贷材料列表
+		attachList = financeApplyService.findApplyAttach(apply.getId());
+		apply = financeApplyService.findById(apply.getId());
 		/**
 		 * 扩展属性
 		 */
@@ -415,7 +464,7 @@ public class FinanceApplyAction extends BaseAction {
 	 * @Description 行业异步级联显示
 	 * @return
 	 */
-	public String Industry() {
+	public String industry() {
 		industryList = dictoryDataService.findIndustryByParentid(industryId);
 		return "industryList";
 	}
@@ -673,6 +722,46 @@ public class FinanceApplyAction extends BaseAction {
 
 	public void setGroupType(Integer groupType) {
 		this.groupType = groupType;
+	}
+
+	public Map<String, String> getProfileMap() {
+		return profileMap;
+	}
+
+	public void setProfileMap(Map<String, String> profileMap) {
+		this.profileMap = profileMap;
+	}
+
+	public Integer getApplyId() {
+		return applyId;
+	}
+
+	public void setApplyId(Integer applyId) {
+		this.applyId = applyId;
+	}
+
+	public void setApplyUserService(ApplyUserService applyUserService) {
+		this.applyUserService = applyUserService;
+	}
+
+	public OrdApplyUsrCompany getOrdCompany() {
+		return ordCompany;
+	}
+
+	public void setOrdCompany(OrdApplyUsrCompany ordCompany) {
+		this.ordCompany = ordCompany;
+	}
+
+	public void setCopy(String copy) {
+		this.copy = copy;
+	}
+
+	public Integer getOaucId() {
+		return oaucId;
+	}
+
+	public void setOaucId(Integer oaucId) {
+		this.oaucId = oaucId;
 	}
 	
 	

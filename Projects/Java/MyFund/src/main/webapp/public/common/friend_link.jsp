@@ -87,59 +87,29 @@ $(document).ready(function() {
 				    <td colspan="6" class="map_title">图片链接</td>
 				  </tr>
 				  <tr>
-				    <td><a href=""><img src="/images/linkimg/icbc.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/ccb.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/boc.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/abc.png" /></a></td>
-				    <td colspan="2"><a href=""><img src="/images/linkimg/bankcomm.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/icbc.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/ccb.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/boc.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/abc.png" /></a></td>
+				    <td colspan="2"><a href="#"><img src="/images/linkimg/bankcomm.png" /></a></td>
 				  </tr>
 				  <tr>
-				    <td><a href=""><img src="/images/linkimg/bos.png" /></a></td>				  
-				    <td><a href=""><img src="/images/linkimg/sdb.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/cmb.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/hxb.png" /></a></td>
-				    <td colspan="2"><a href=""><img src="/images/linkimg/cib.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/bos.png" /></a></td>				  
+				    <td><a href="http://www.tacleasing.cn/" target="_blank"/><img src="/images/linkimg/yrzl.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/cmb.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/hxb.png" /></a></td>
+				    <td colspan="2"><a href="#"><img src="/images/linkimg/cib.png" /></a></td>
 				  </tr>
 				  <tr>
-				    <td><a href=""><img src="/images/linkimg/ecitic.png" /></a></td>				  
-				    <td><a href=""><img src="/images/linkimg/gzcb.png" /></a></td>
-				    <td><a href=""><img src="/images/linkimg/njcb.png" /></a></td>
-				    <td colspan="3"><a href="http://www.chinabaohan.com/" target="_blank"/><img src="/images/linkimg/bhw.png" /></a></td>
-				  </tr>				  
-				</table>
-				<table border="0" cellspacing="0" cellpadding="0" class="map_connect">
-				  <tr>
-				    <td colspan="8" class="map_title">文字链接</td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://www.bankhr.com/" target="_blank">金融英才</a></td>
-				    <td><a href="http://mmm.zgjrw.com/" target="_blank" rel="nofollow">中国金融</a></td>
-				    <td><a href="http://www.bankrate.com.cn/cms/calc_list.php" target="_blank">房贷计算器</a></td>
-				    <td><a href="http://rent.gz.soufun.com" target="_blank" rel="nofollow">广州租房</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/fengxiantouzi.html" target="_blank">风险投资</a></td>
-				    <td><a href="http://www.zj198.com/gxyxinvest/jiedai.html" target="_blank">借贷</a></td>
-				    <td><a href="http://www.ajsc.cn/" target="_blank" rel="nofollow">爱家收藏</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/jiekuan.html" target="_blank">短期借款</a></td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://www.zj198.com/daikuan/diandang.html" target="_blank">上海典当行</a></td>				  
-				    <td><a href="http://www.yonghua.net/" target="_blank" rel="nofollow">勇华股票投资</a></td>
-				    <td><a href="http://www.jsinvest.com/" target="_blank">江苏投资</a></td>
-				    <td><a href="http://www.hsbc.com.cn/1/2/" target="_blank">汇丰中国银行</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/shanghaidaikuan.html" target="_blank" title="上海贷款">上海贷款</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/" target="_blank" title="贷款">贷款</a></td>
-				    <td><a href="http://www.zj198.com/gxyxexp/trust.htm" target="_blank">委托融资</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/guoqiaozijin.html" target="_blank">过桥资金</a></td>
-				  </tr>
-				  <tr>
-				    <td><a href="http://www.zj198.com/daikuan/qiyedaikuan.html" target="_blank" title="企业贷款"> 企业贷款</a></td>
-				    <td><a href="http://www.zj198.com/daikuan/wudiyadaikuan.html" target="_blank" title="无抵押贷款">无抵押贷款</a></td>
-				    <td><a href="http://www.vip168168.com/" target="_blank">慧股时空网</a></td>
-				    <td><a href="http://www.amoney.com.cn/" target="_blank">第一理财网</a></td>
-				    <td colspan="3"><a href="http://www.smeclub.org/">上海企福汇俱乐部</a></td>				  
+				    <td><a href="#"><img src="/images/linkimg/ecitic.png" /></a></td>				  
+				    <td><a href="#"><img src="/images/linkimg/gzcb.png" /></a></td>
+				    <td><a href="#"><img src="/images/linkimg/njcb.png" /></a></td>
+				    <td><a href="http://www.chinabaohan.com/" target="_blank"/><img src="/images/linkimg/bhw.png" /></a></td>
+				    <td><a href="http://www.jinyida.cn/" target="_blank"/><img src="/images/linkimg/jyd.png" /></a></td>
 				  </tr>				  
 				</table>
 				<table border="0" cellspacing="0" cellpadding="0">
+				  <tr>&nbsp;</tr>
 				  <tr>
 				    <td class="map_title">链接说明</td>
 				  </tr>
@@ -154,7 +124,7 @@ $(document).ready(function() {
 				  </tr>
 				  <tr>
 				    <td>4、联系电话：400-8890-198 Email:zj198@zj198.com</td>
-				  </tr>	
+				  </tr>				  	
 				  <tr>
 				    <td>我站链接信息：</td>
 				  </tr>

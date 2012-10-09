@@ -187,14 +187,14 @@ function uploadImg(){
         <tr>
           <td class="a_right">注册地址：</td>
           <td colspan="3">
-          <s:select id="regProvince" name="usrServiceorg.regprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');"/>
-          <select id="regCity" name="usrServiceorg.regcityid" onchange="changeCity('regCity','regDistrict');">
+          <s:select id="regProvince" name="usrServiceorg.regprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');"/>
+          <select id="regCity" name="usrServiceorg.regcityid" onchange="changeCity('regCity','regDistrict');" class="tb_sele">
           	 <option value="0">--请选择--</option>
           	 <s:iterator value="cityMap['regCity']">
 				<option value="${id}">${name}</option>
 			 </s:iterator>
           </select>
-          <select id="regDistrict" name="usrServiceorg.regdistrictid">
+          <select id="regDistrict" name="usrServiceorg.regdistrictid" class="tb_sele">
           	<option value="0">--请选择--</option>
           	<s:iterator value="districtMap['regDistrict']">
 				<option value="${id}">${name}</option>
@@ -228,14 +228,14 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">企业联系地址：</td>
-          <td colspan="3"><s:select id="bizProvince" name="usrServiceorg.bizprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
-          <select id="bizCity" name="usrServiceorg.bizcityid" onchange="changeCity('bizCity','bizDistrict');">
+          <td colspan="3"><s:select id="bizProvince" name="usrServiceorg.bizprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
+          <select id="bizCity" name="usrServiceorg.bizcityid" onchange="changeCity('bizCity','bizDistrict');" class="tb_sele">
           	<option value="0">--请选择--</option>
           	<s:iterator value="cityMap['bizCity']">
 				<option value="${id}">${name}</option>
 			</s:iterator>
           </select>
-          <select id="bizDistrict" name="usrServiceorg.bizdistrictid">
+          <select id="bizDistrict" name="usrServiceorg.bizdistrictid" class="tb_sele">
           	<option value="0">--请选择--</option>
           	<s:iterator value="districtMap['bizDistrict']">
 				<option value="${id}">${name}</option>
@@ -253,7 +253,16 @@ function uploadImg(){
         <tr>
           <td class="a_right">联系人姓名：</td>
           <td colspan="3"><input type=text value="${ usrServiceorg.linkname}" class="input-text {validate:{maxlength:6}} chne" name="usrServiceorg.linkname"/>
-          &nbsp;&nbsp;<s:radio id="gender" name="usrServiceorg.linkgender" list="#{1:'先生',0:'女士'}" value="usrServiceorg.linkgender" listKey="key" listValue="value"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="a_right">联系人性别：</td>
+          <td colspan="3">&nbsp;
+          <s:if test="usrServiceorg == null || usrServiceorg.linkgender == null">
+          <s:radio id="gender1" name="usrServiceorg.linkgender" list="#{1:'先生',0:'女士'}" value="1" listKey="key" listValue="value"/>
+          </s:if><s:else>
+          <s:radio id="gender2" name="usrServiceorg.linkgender" list="#{1:'先生',0:'女士'}" value="usrServiceorg.linkgender" listKey="key" listValue="value"/>
+          </s:else>
           </td>
         </tr>
         <tr>
@@ -284,7 +293,10 @@ function uploadImg(){
           <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrServiceorg.remarks" style="width: 550px;height: 150px;">${ usrServiceorg.remarks}</textarea></td>
         </tr>
       <tr>
-           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存" /></td>
+           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
+           <input type="submit" class="but_gray" style="width:200px;" value="保存" />&nbsp;&nbsp;
+           <input type="button" class="but_gray" onclick="javascript:window.location.href='/user/Profile.act'" style="width:200px;" value="取消" />
+           </td>
          </tr>                           
        </table> 
     </form>
@@ -294,14 +306,14 @@ function uploadImg(){
 </div>
 <!--弹出框内容上传扫描件--> 
 <div id="pop_userimg" style="display:none;" title="上传扫描件">
-  <s:form id="imgform" action="uploadOrg.act" namespace="/user" method="post" enctype="multipart/form-data">
+  <form id="imgform" action="/user/uploadOrg.act" method="post" enctype="multipart/form-data">
    <table id="t_border">
    	<tr><td><h6>选择图片 &nbsp;&nbsp; <span id="message" style="color: red"></span></h6></td></tr>
    	<tr><td><s:hidden id="orgType" name="orgType" value="0" /><s:file id="up_img" name="upload" /><input type="button" onclick="uploadImg();" value="确认提交"/></td></tr>
    	<tr><td></td></tr>
    	<tr><td>说明：支持png、jpg、jpeg、gif格式 单个文件大小小于3M</td></tr>
    </table>
-  </s:form>
+  </form>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
-<script type="text/javascript" src="/script/load-loan.js"></script>
+<script type="text/javascript" src="/script/load-club.js" > </script>
 <script type="text/javascript">
 	function toPage(pageNo, useless){
 		var url= "/service/requestInfoAction!home.act?pageNo="+pageNo;
@@ -19,9 +19,22 @@
 	function edit(){
 		var url = "/service/requestInfoAction4User!edit.act";
 		var _user = "${session._user}";
+		var user_type = '${session._user.userTypeGroup}';
 		if (_user==null || _user=="") {
 			alert("您还未的登录，暂不能发布信息!");
-			return false;
+			return ;
+		} else {
+		
+			var user_status = "${session._user.auditstatus}";
+			if (user_status != "2") {
+				alert("您的注册资料尚未通过审核，暂不能发布此信息!");
+				return;
+			} 
+			
+			if (user_type != '1' && user_type !='5') {		
+				alert("只有用户身份为企业或个人才可以发布项目信息！");
+				return ;
+			}
 		}
 		var user_status = "${session._user.auditstatus}";
 		if (user_status != "2") {
@@ -43,11 +56,12 @@
 <!--头部结束-->
 <!--资金信息列表页-->
 <div class="M_menu">
-	<div style="float:left;"><a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;找项目 </div>
-	<input type="button" class="but_gray" value="发布信息" onclick="edit();" style="float: right; margin-top:2px; margin-right: 20px;"/>
+	<div style="float:left;"><a href="/club/clubAction.act">融资俱乐部</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;找项目 </div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main1-->
+<div class="center container_950"><a href="/service/requestInfoAction4User!edit.act">
+	<img src="/images/img_club_pub_project.jpg" width="950" height="56"/></a></div>
 <div class="center box_6_gray" style="height:auto; width:908px; padding-left:20px; padding-bottom:10px;">
 	<form id="searchForm" action="/service/requestInfoAction!home.act" method="post">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -68,7 +82,7 @@
 		    </select></td>
 		    <td width="111" height="40" valign="middle">投资方式：</td>
 		    <td width="194" height="40" valign="middle"><s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:155px;"></s:select></td>
-		    <td width="160" height="40" align="right" valign="middle"><input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray" value="搜索"  style="margin-left: 10px;"/></td>
+		    <td width="160" height="40" align="right" valign="middle"><input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="btnsub blue1" value="重新查询"  style="width:90px; margin-left: 10px;"/></td>
 		  </tr>
 		  <tr>
 		    <td width="108" height="40" valign="middle">输入关键词：</td>
@@ -96,11 +110,15 @@
 				<s:if test="pager.data.size()>0">
 				<s:iterator id="item" value="pager.data">		      
 		      <tr class="capital_table" >
-		        <td class="capital_table_z1">${item.title }</td>
-		        <td class="capital_table_z2">${item.industry }</td>
+		        <td class="capital_table_z1 red" style="font-weight: bolder;"> <div title=" ${item.title }" class="ellipsis_text_180"> ${item.title }</div></td>
+		        <td class="capital_table_z2"><div title="${item.industry }" class="ellipsis_text_60">${item.industry }</div></td>
 		        <td class="capital_table_z2"><s:text name="format.float"><s:param value="#item.totalMoney"></s:param></s:text>（万元）</td>
 		        <td class="capital_table_z2">${item.area }</td>
-		        <td class="capital_table_z2">${item.financeType }</td>
+		        <td class="capital_table_z2"><div title="${item.financeType }" class="ellipsis_text_60">${item.financeType }</div>
+		        	<s:if test="#item.financeType==null or #item.financeType==''">
+			    		不限
+			    	</s:if>
+		        </td>
 		        <td class="capital_table_z2"><s:date name="#item.lastPostDate" /> </td>
 		        <td class="view_detail capital_table_z2"  style="padding-right:20px;"><a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id}" target="_blank">详情</a></td>
 		      </tr>

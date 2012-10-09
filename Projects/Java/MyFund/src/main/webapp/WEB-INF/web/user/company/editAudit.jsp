@@ -72,17 +72,17 @@ $(document).ready(function(){
          </tr>
 	     </s:if>
            <tr>
-             <td class="a_right">企业名称</td>
+             <td class="a_right v-align">企业名称</td>
              <td colspan="3"><input type="hidden" name="companyMark" value="1"/><input id="companyname" type="text" value="${usrCompany.companyname }" class="input-text chne {validate:{maxlength:15}}"  name="usrCompany.companyname"/>
        	    </td>
            </tr>
            <tr>
-             <td class="a_right">营业执照号码</td>
+             <td class="a_right v-align">营业执照号码</td>
              <td colspan="3"><input type="text" value="${usrCompany.licensecode }" class="input-text alnum {validate:{maxlength:15}}" name="usrCompany.licensecode"/></td>
            </tr>
            <tr>
-             <td class="a_right">所属行业</td>
-             <td colspan="3">
+             <td class="a_right v-align">所属行业</td>
+             <td colspan="3" class="v-align">
              	<s:select id="industryParent" name="usrCompany.industryparentid" list="industryList" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"  onchange="changeindustry('industryParent','industry');"></s:select>
                 <select id="industry" name="usrCompany.industryid">
          	      <option value="0">--请选择--</option>
@@ -93,20 +93,20 @@ $(document).ready(function(){
              </td>
           </tr>
           <tr>
-            <td class="a_right">组织机构代码证号码</td>
+            <td class="a_right v-align">组织机构代码证号码</td>
             <td colspan="3"><input id="organizationcode" type="text" value="${usrCompany.organizationcode }" class="input-text Organization {validate:{maxlength:10}}" name="usrCompany.organizationcode" /></td>
           </tr>
           <tr>
-             <td class="a_right">企业经营地址</td>
-             <td colspan="3" style="vertical-align: middle;">
-              <s:select id="bizProvince" name="usrCompany.bizprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
-              <select id="bizCity" name="usrCompany.bizcityid" onchange="changeCity('bizCity','bizDistrict');">
+             <td class="a_right v-align">企业经营地址</td>
+             <td colspan="3" class="v-align">
+              <s:select id="bizProvince" name="usrCompany.bizprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
+              <select id="bizCity" name="usrCompany.bizcityid" onchange="changeCity('bizCity','bizDistrict');" class="tb_sele">
                 <option value="0">--请选择--</option>
           	    <s:iterator value="cityMap['bizCity']">
 				  <option value="${id}">${name}</option>
 			    </s:iterator>
 	          </select>
-	         <select id="bizDistrict" name="usrCompany.bizdistrictid">
+	         <select id="bizDistrict" name="usrCompany.bizdistrictid" class="tb_sele">
 	          <option value="0">--请选择--</option>
 	         	<s:iterator value="districtMap['bizDistrict']">
 				 <option value="${id}">${name}</option>
@@ -115,7 +115,7 @@ $(document).ready(function(){
            </td>
         </tr>
         <tr>
-           <td class="a_right">详细地址</td>
+           <td class="a_right v-align">详细地址</td>
            <td colspan="3"><input type="text" value="${usrCompany.bizaddress }" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrCompany.bizaddress"/></td>
        </tr>              
        <tr>
@@ -123,26 +123,38 @@ $(document).ready(function(){
           <td colspan="3"><input type="text" value="${usrCompany.bizpostcode }" class="input-text zipCode" name="usrCompany.bizpostcode"/></td>
        </tr>            
        <tr>
-         <td class="a_right">联系人姓名</td>
+         <td class="a_right v-align">联系人姓名</td>
          <td colspan="3">
            <input type=text value="${usrCompany.linkname }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrCompany.linkname"/>
-   			&nbsp;&nbsp;<s:radio id="linkgender" name="usrCompany.linkgender" list="#{1:'先生',0:'女士'}"  value="usrCompany.linkgender"/>                	
          </td>
        </tr>
        <tr>
-         <td class="a_right">联系人邮箱</td>
+         <td class="a_right v-align">联系人性别</td>
+         <td colspan="3">&nbsp;
+   		  <s:if test="usrCompany == null || usrCompany.linkgender == null">
+          <s:radio id="gender1" name="usrCompany.linkgender" list="#{1:'先生',0:'女士'}" value="1" listKey="key" listValue="value"/>
+          </s:if><s:else>
+          <s:radio id="gender2" name="usrCompany.linkgender" list="#{1:'先生',0:'女士'}" value="usrCompany.linkgender" listKey="key" listValue="value"/>
+          </s:else>
+         </td>
+       </tr>
+       <tr>
+         <td class="a_right v-align">联系人邮箱</td>
        	 <td style="vertical-align: middle;" colspan="3">
           <input id="linkemail" type=text value="${usrCompany.linkemail }" class="input-text iemail {validate:{maxlength:30}}" name="usrCompany.linkemail"/>
          </td>
       </tr>
        <tr>
-         <td class="a_right">联系人电话</td>
+         <td class="a_right v-align">联系人电话</td>
          <td colspan="3">
          	<input type=text value="${usrCompany.linktelephone }" class="input-text mobile {validate:{maxlength:20}}" name="usrCompany.linktelephone"/>
          </td>
       </tr>                
        <tr>
-         <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存信息" /></td>
+         <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
+           <input type="submit" class="but_gray" style="width:200px;" value="保存" />&nbsp;&nbsp;
+           <input type="button" class="but_gray" onclick="javascript:window.location.href='/user/Profile.act'" style="width:200px;" value="取消" />
+           </td>
        </tr>                           
      </table>
  </form>

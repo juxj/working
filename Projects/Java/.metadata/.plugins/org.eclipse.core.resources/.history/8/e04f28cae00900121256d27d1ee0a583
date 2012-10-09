@@ -1,0 +1,101 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="service" namespace="/service" extends="base">
+		<default-interceptor-ref name="userInterceptor"/>
+		<action name="serviceOrder" class="com.zj198.action.serviceInfo.ServiceOrderAction">
+			<result name="userHome" type="redirect">/user/UserAction.act</result>
+			<!-- 信息发布者已发布的信息 -->
+			<result name="serviceItemHome4Publisher">/WEB-INF/web/user/serviceOrg/sipublisher.jsp</result>
+			<!-- 信息发布者收到的订单 -->
+			<result name="publisherOrders">/WEB-INF/web/user/serviceOrg/publisherOrders.jsp</result>
+			<!-- 申请人所申请的订单, -->
+			<result name="applicantOrders">/WEB-INF/web/user/serviceOrg/applicantOrders.jsp</result>
+			<!-- 服务订单的明细数据 -->
+			<result name="siOrderDetail">/WEB-INF/web/user/serviceOrg/siOrderDetail.jsp</result>
+			<!-- 服务信息的明细数据 -->
+			<result name="siDetail">/WEB-INF/web/user/serviceOrg/siDetail.jsp</result>
+			<result name="siDetailApply">/WEB-INF/web/user/serviceOrg/siDetailApply.jsp</result>
+		</action>
+		
+		<action name="serviceItem" class="com.zj198.action.serviceInfo.ServiceItemAction">
+			<interceptor-ref name="defaultStack"/>
+			<!-- 普通用户(个人或企业)可以看到的服务信息 -->
+		    <result name="serviceItemHome">/WEB-INF/web/user/serviceOrg/serviceItemHome.jsp</result>
+		    <!-- 服务信息的明细数据 -->
+			<result name="siDetail">/WEB-INF/web/user/serviceOrg/siDetail.jsp</result>
+		</action>
+		<action name="userServiceItem" class="com.zj198.action.serviceInfo.ServiceItemAction">
+			<!-- 信息发布者已发布的信息 -->
+			<result name="serviceItemHome4Publisher">/WEB-INF/web/user/serviceOrg/sipublisher.jsp</result>
+			<result name="serviceAddInfo">/WEB-INF/web/user/serviceOrg/addServiceInfo.jsp</result>
+		</action>
+		
+		<action name="requestInfoAction" class="com.zj198.action.club.RequestInfoAction">
+		    <interceptor-ref name="defaultStack"/>
+		    <result name="home">/public/club/request_info_home.jsp</result>
+		    <result name="detail">/public/club/request_info_detail.jsp</result>
+		</action>
+		<action name="supplyInfoAction" class="com.zj198.action.club.SupplyInfoAction">
+		    <interceptor-ref name="defaultStack"/>
+		    <result name="home">/public/club/supply_info_home.jsp</result>
+		    <result name="detail">/public/club/supply_info_detail.jsp</result>
+		    
+		    <result name="pawn_detail">/public/club/pawn_detail.jsp</result>
+		    <result name="guarantee_detail">/public/club/guarantee_detail.jsp</result>
+		    <result name="loan_detail">/public/club/loan_detail.jsp</result>
+		    
+		    <result name="project_invest_detail">/public/club/project_invest_detail.jsp</result>
+		    
+		    <result name="institution_bank_detail">/public/club/institution_bank_detail.jsp</result>
+		    <result name="institution_insurance_detail">/public/club/institution_insurance_detail.jsp</result>
+		    <result name="institution_trust_detail">/public/club/institution_trust_detail.jsp</result>
+		    <result name="institution_stock_detail">/public/club/institution_stock_detail.jsp</result>
+		    <result name="institution_rent_detail">/public/club/institution_rent_detail.jsp</result>
+		    <result name="institution_fund_detail">/public/club/institution_fund_detail.jsp</result>
+		    <result name="institution_finance_detail">/public/club/institution_finance_detail.jsp</result>
+		</action>
+		<!-- 
+			<result name="requestHome" type="redirect">/service/requestInfoAction4User!showUserHome.act</result>
+			<result name="supplyHome" type="redirect">/service/supplyInfoAction4User!showUserHome.act</result>
+		 -->
+		<action name="club" class="com.zj198.action.club.ClubAction">
+			 <result name="requestHome" type="chain">
+	            <param name="actionName">requestInfoAction4User</param>
+	            <param name="namespace">/service</param>
+	            <param name="method">showUserHome</param>
+	          </result>
+	          <result name="supplyHome" type="chain">
+	            <param name="actionName">supplyInfoAction4User</param>
+	            <param name="namespace">/service</param>
+	            <param name="method">showUserHome</param>
+	          </result>
+		</action>
+		
+		<action name="requestInfoAction4User" class="com.zj198.action.club.RequestInfoAction">
+		    <result name="userHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
+		    <result name="edit">/WEB-INF/web/user/club/edit_request_info.jsp</result>
+		</action>
+		
+		<action name="supplyInfoAction4User" class="com.zj198.action.club.SupplyInfoAction">
+		    <result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
+		    <result name="edit">/WEB-INF/web/user/club/edit_supply_info.jsp</result>
+		    <result name="editFirstStep">/WEB-INF/web/user/club/edit_supply_info_first_step.jsp</result>
+		    <result name="editPawnInfo">/WEB-INF/web/user/club/edit_pawn_info.jsp</result>
+		    <result name="editGuaranteeInfo">/WEB-INF/web/user/club/edit_guarantee_info.jsp</result>
+		    <result name="editLoanInfo">/WEB-INF/web/user/club/edit_loan_info.jsp</result>
+		    <result name="editProjectInvest">/WEB-INF/web/user/club/edit_project_invest.jsp</result>
+		    <result name="editInstitutionBank">/WEB-INF/web/user/club/edit_institution_bank.jsp</result>
+		    <result name="editInstitutionInsurance">/WEB-INF/web/user/club/edit_institution_insurance.jsp</result>
+		    <result name="editInstitutionTrust">/WEB-INF/web/user/club/edit_institution_trust.jsp</result>
+		    <result name="editInstitutionStock">/WEB-INF/web/user/club/edit_institution_stock.jsp</result>
+		    <result name="editInstitutionRent">/WEB-INF/web/user/club/edit_institution_rent.jsp</result>
+		    <result name="editInstitutionFund">/WEB-INF/web/user/club/edit_institution_fund.jsp</result>
+		    <result name="editInstitutionFinance">/WEB-INF/web/user/club/edit_institution_finance.jsp</result>
+		    <result name="profile" type="chain">
+	            <param name="actionName">Profile</param>
+	            <param name="namespace">/user</param>
+	            <param name="method">edit</param>
+	        </result>
+		</action>
+	</package>
+</struts>

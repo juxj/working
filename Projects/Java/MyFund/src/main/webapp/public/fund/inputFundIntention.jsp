@@ -70,7 +70,7 @@ $(function(){
 	
 		<div class="hr_10"> &nbsp; </div>
 		<div class="center" style="width:200px;">
-		<s:submit value="确定"  cssClass="but_gray" style="width:200px;"></s:submit>
+		<s:submit value="确定"  cssClass="btnsub bred" style="width:200px;"></s:submit>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>

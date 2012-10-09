@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="500" key="CommitDialog.weights.0"/>
-	<item value="1805" key="RevertDialog.location.x"/>
+	<item value="1906" key="RevertDialog.location.x"/>
 	<item value="1415" key="DifferencesDialog.location.x"/>
-	<item value="500" key="CommitDialog.weights.1"/>
 	<item value="582" key="passwordStores.size.y"/>
+	<item value="196" key="RevertDialog.location.y"/>
 	<item value="603" key="passwordStores.size.x"/>
-	<item value="180" key="RevertDialog.location.y"/>
-	<item value="249" key="HistoryTableProvider.SVNHistoryPage.Author"/>
-	<item value="148" key="CommitDialog.location.y"/>
-	<item value="1777" key="CommitDialog.location.x"/>
-	<item value="213" key="passwordStores.location.y"/>
-	<item value="1855" key="passwordStores.location.x"/>
+	<item value="180" key="BranchTag.location.y"/>
+	<item value="1805" key="BranchTag.location.x"/>
+	<item value="svn://192.168.1.8/branches/MyFund/2012092901" key="UrlCombo.repositoryBrowser.0"/>
 	<item value="613" key="RevertDialog.size.x"/>
+	<item value="svn://192.168.1.8/Branches/MyFund/20120929" key="UrlCombo.repositoryBrowser.2"/>
 	<item value="445" key="RevertDialog.size.y"/>
+	<item value="svn://192.168.1.8/branches/MyFund/20120929" key="UrlCombo.repositoryBrowser.1"/>
+	<item value="1878" key="ChooseUrlDialog.location.x"/>
 	<item value="312" key="HistoryTableProvider.SVNHistoryPage.Date"/>
+	<item value="167" key="ChooseUrlDialog.location.y"/>
 	<item value="437" key="DifferencesDialog.size.y"/>
 	<item value="623" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
-	<item value="669" key="CommitDialog.size.x"/>
-	<item value="493" key="CommitDialog.size.y"/>
 	<item value="758" key="DifferencesDialog.size.x"/>
 	<item value="125" key="HistoryTableProvider.SVNHistoryPage.Revision"/>
 	<item value="119" key="DifferencesDialog.location.y"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="467" key="ChooseUrlDialog.size.x"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="353" key="ChooseUrlDialog.size.y"/>
+	<item value="445" key="BranchTag.size.y"/>
+	<item value="613" key="BranchTag.size.x"/>
+	<item value="249" key="HistoryTableProvider.SVNHistoryPage.Author"/>
+	<item value="832" key="SwitchDialogWithConflictHandling.size.y"/>
+	<item value="613" key="SwitchDialogWithConflictHandling.size.x"/>
+	<item value="1805" key="SwitchDialogWithConflictHandling.location.x"/>
+	<item value="24" key="SwitchDialogWithConflictHandling.location.y"/>
+	<item value="149" key="CommitDialog.location.y"/>
+	<item value="1939" key="CommitDialog.location.x"/>
+	<item value="213" key="passwordStores.location.y"/>
+	<item value="1855" key="passwordStores.location.x"/>
+	<item value="svn://192.168.1.8/MyFund" key="UrlCombo.MyFund.1"/>
+	<item value="svn://192.168.1.8/branches/MyFund/2012092902" key="UrlCombo.MyFund.0"/>
+	<item value="798" key="CommitDialog.size.x"/>
+	<item value="749" key="CommitDialog.size.y"/>
+	<item value="svn://192.168.1.8/branches/MyFund/2012092901" key="UrlCombo.MyFund.2"/>
 	<section name="CommitWizard">
 		<item value="false" key="ShowCompare"/>
 		<item value="500" key="VWeight2"/>

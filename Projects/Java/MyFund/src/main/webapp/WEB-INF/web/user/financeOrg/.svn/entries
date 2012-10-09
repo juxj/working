@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/user/financeOrg
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/user/financeOrg
 svn://192.168.1.8
 
 
 
-2012-09-12T08:56:07.669089Z
-3391
+2012-09-27T03:31:55.420572Z
+3653
 linm
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2012-09-13T05:27:51.000000Z
-a2c0b17fafd90454817806c7ed733f13
-2012-09-12T08:56:07.669089Z
-3391
+2012-09-27T08:56:39.000000Z
+c0cf35d1ba9b6217dd5ddf0e66ea38c1
+2012-09-27T03:31:55.420572Z
+3653
 linm
 
 
@@ -58,7 +58,7 @@ linm
 
 
 
-16446
+17015
 
 index.jsp
 file
@@ -66,11 +66,11 @@ file
 
 
 
-2012-09-11T09:29:22.000000Z
-023531223e24dcdfeecc85be5c43c2ba
-2012-09-11T06:28:45.814599Z
-3345
-linm
+2012-09-20T06:02:32.000000Z
+b3b15f3d0e0ee89154af9445eb0a64b9
+2012-09-19T01:40:48.492165Z
+3519
+yangb
 
 
 
@@ -92,7 +92,7 @@ linm
 
 
 
-6306
+6325
 
 profile.jsp
 file

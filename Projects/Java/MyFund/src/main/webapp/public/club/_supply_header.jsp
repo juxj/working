@@ -16,5 +16,5 @@
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
-<script type="text/javascript" src="/script/load-loan.js"></script>
+<script type="text/javascript" src="/script/load-club.js" > </script>
 </head>

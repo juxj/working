@@ -58,4 +58,10 @@ public interface SupplyRequestService {
 	
 	public List<ClbRequestInfo> findLastRequestInfo(int num);
 	
+	/**取指定类别的前Ｎ个记录*/
+	public List<ClbSupplyInfo> findSupplyInfoByType(String investType, int num);
+	
+	/**取指定类别的前Ｎ个记录*/
+	public List<ClbRequestInfo> findRequestInfoByType(String industry, int num) ;
+	
 }

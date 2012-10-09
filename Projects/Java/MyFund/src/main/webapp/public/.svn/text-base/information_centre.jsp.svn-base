@@ -12,32 +12,20 @@
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/load-news.js" > </script>
 <script language="javascript">
-//通用选项卡
-$(document).ready(function() {
-    $('.xxkbox:gt(0)').hide(); //让从大于0开始的div都隐藏 
-    $('.first').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
-    var sb = $('.tab_menu ul li');
-    sb.hover(function() {
-        $(this).addClass('hover').siblings().removeClass();
-        var nb = sb.index(this);
-        $('.xxkbox').eq(nb).show().siblings().hide();
-    });
-    //} 
-});
 
 //通用选项卡2
 $(document).ready(function() {
-	$('.tab_menu2 ul li:first').addClass('hover');
-    $('.xxkbox2:gt(0)').hide(); //让从大于0开始的div都隐藏 
+	$('.tab_menu3 ul li:first').addClass('hover');
+    $('.xxkbox3:gt(0)').hide(); //让从大于0开始的div都隐藏 
     $('.first2').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
-    var sb = $('.tab_menu2 ul li');
+    var sb = $('.tab_menu3 ul li');
     sb.click(function() {
         $(this).addClass('hover').siblings().removeClass();
         $.post("/news/yellowPage!appendToIndex.act",{type:this.value},function(data){
-        	$('.xxkbox2').html(data);
-        })
+        	$('.xxkbox3').html(data);
+        });
         var nb = sb.index(this);
-        $('.xxkbox2').eq(nb).show().siblings().hide();
+        $('.xxkbox3').eq(nb).show().siblings().hide();
     });
     //} 
 });
@@ -91,8 +79,8 @@ $(function() {
             }
         },3000);
         $.post("/news/yellowPage!appendToIndex.act",{type:255},function(data){
-        	$('.xxkbox2').html(data);
-        })
+        	$('.xxkbox3').html(data);
+        });
     })
     //关键函数：通过控制i，来显示不同的幻灯片
     function showImg(i) {
@@ -101,7 +89,7 @@ $(function() {
     }
     
     function more(){
-    	var type = $('.tab_menu2 ul li[class=hover]').val();
+    	var type = $('.tab_menu3 ul li[class=hover]').val();
     	location.href = "/news/yellowPage!appendAllList.act?type="+type;
     }
     	
@@ -156,16 +144,16 @@ $(function() {
             <h6 style="font-weight:bolder">金融黄页</h6>
           </div>
            <!--tab开始-->
-        	<div >
-              <div class="news_menu tab_menu2" style="background:#f9f9f7;">
-                <ul  >
+        	<div>
+              <div class="news_menu01 tab_menu3" style="background:#f9f9f7;">
+                <ul>
                   <s:iterator value="commons">
 	               <li style="width:auto; padding:0 15px; font-weight:normal; font-size:12px;" value="<s:property value="id"/>"> <a href="javascript:void(0);"><s:property value="name"/></a> </li>   
                   </s:iterator>
                 </ul>
               </div>
               <div>
-                 <ul class="xxkbox2" style="margin-top:10px; margin-left:20px;">
+                 <ul class="xxkbox3" style="margin-top:10px; margin-left:20px;">
                 </ul>
               </div>
                 <div style="float:right; margin-right:20px;"><a href="javascript:more();">更多»</a></div>              

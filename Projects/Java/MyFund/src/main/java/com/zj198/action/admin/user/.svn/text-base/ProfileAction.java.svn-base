@@ -4,8 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.PropertyConfigurator;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.model.UsrBank;
 import com.zj198.model.UsrCompany;
@@ -30,6 +31,7 @@ public class ProfileAction extends BaseAction{
 	private Integer userId;
 	private Short type;
 	private Short audit;
+	private Short alu;//管理员模拟用户登录标示
 	
 	private ProfileService profileService;
 	private DictoryDataService  dictoryDataService;
@@ -50,6 +52,23 @@ public class ProfileAction extends BaseAction{
 			msg="该用户未填充信息。";
 		}
 		int groupid = profileService.getGroupidByUserType(type);
+		if(alu != null){
+			UsrUser _user = accountService.getUserById(userId);
+			ActionContext context = ActionContext.getContext();
+			int userTypeGroup = 0;
+			if(_user.getType()!=Constants.USER_TYPE_NULL){
+				userTypeGroup =groupid;
+			}
+			_user.setUserTypeGroup(userTypeGroup);
+			context.getSession().put("_user", _user);
+//				String prefix = getServletContext().getRealPath("/");
+//				String file = getInitParameter("log4j-init-file");
+//				// if the log4j-init-file is not set, then no point in trying
+//				if (file != null) {
+//				PropertyConfigurator.configure(prefix + file);
+//				}
+			return "adminLoginUser";
+		}
 		switch (groupid){
 			case Constants.USERTYPE_GROUP_BANK:
 				usrBank = (UsrBank)profileService.getProfiles(userId);
@@ -237,5 +256,7 @@ public class ProfileAction extends BaseAction{
 	public Map<String, String> getProfileMap() {
 		return profileMap;
 	}
-	
+	public void setAlu(Short alu) {
+		this.alu = alu;
+	}
 }

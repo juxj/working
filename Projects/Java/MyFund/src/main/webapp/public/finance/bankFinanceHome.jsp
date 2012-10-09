@@ -39,27 +39,27 @@
   </div>
   <div class="hr_10"> &nbsp; </div> 
 	<!--main1-->
-	<div class="center box_6_gray" style="height:auto; width:908px; padding-left:20px; padding-bottom:10px;">
-	  <form id="frmQueryBankProduct" action="/finance/bankProduct!search.act" method="post"  class="box_form">
+	<div class="center box_6_gray" style="width:908px; padding-left:20px; padding-bottom:10px;">
+	  <form id="frmQueryBankProduct" action="/finance/bankProduct!search.act" method="post"  >
   		<input type="hidden" id="pageNo" name="pageNo" /> 	
-			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" >
 			  <tr>
-			    <td width="108" height="40" valign="middle">产品状态：</td>
-			    <td width="180" height="40" valign="middle"><s:select id="q0" name="query" list="productStatus" label="name" listValue="name" listKey="id" value="query[0]"></s:select></td>
-			    <td width="80" height="40" valign="middle">发行银行：</td>
-			    <td width="225" height="40" valign="middle"><s:select id="q1" name="query" list="bankList" label="name" listValue="name" listKey="name" value="query[1]"/></td>
-			    <td width="111" height="40" valign="middle">产品期限：</td>
-			    <td width="194" height="40" valign="middle"><s:select id="q2" name="query" list="investmentCycle" label="name" listValue="name" listKey="id" value="query[2]"></s:select></td>
-			    <td width="160" height="40" align="right" valign="middle"><input type="submit" value="查询" style="float:right; vertical-align:middle" class="but_gray" style="float:rigth;"/></td>
+			    <td width="80" height="28" style="padding-bottom:15px;">产品状态：</td>
+			    <td width="180" >&nbsp;<s:select id="q0" name="query" list="productStatus" label="name" listValue="name" listKey="id" value="query[0]"></s:select></td>
+			    <td width="80" >发行银行：</td>
+			    <td width="225" >&nbsp;<s:select id="q1" name="query" list="bankList" label="name" listValue="name" listKey="name" value="query[1]"/></td>
+			    <td width="80" align="right">产品期限：</td>
+			    <td width="194" >&nbsp;<s:select id="q2" name="query" list="investmentCycle" label="name" listValue="name" listKey="id" value="query[2]"></s:select></td>
+			    <td height="28" align="right" ><input type="submit" value="查询" style="width:90px;" class="btnsub bred" /></td>
 			  </tr>
 			  <tr>
-			    <td height="40" valign="middle">年华收益率：</td>
-			    <td height="40" valign="middle"><s:select id="q3" name="query" list="investmentReturnRate" label="name" listValue="name" listKey="id" value="query[3]"></s:select></td>
-			    <td height="40" valign="middle">起购金额：</td>
-			    <td height="40" valign="middle"><s:select id="q4" name="query" list="investmentQuota" label="name" listValue="name" listKey="id" value="query[4]"></s:select></td>
-			    <td height="40" valign="middle">产品名称：</td>
-			    <td height="40" valign="middle"><input id="q5" type="text" name="query" value="${query[5]}" class="input-text1" onclick="this.value=''"/></td>
-			    <td height="40" align="right" valign="middle"><input type="button" onclick="resetQueryForm();" value="重置" style="float:right; vertical-align:middle" class="but_gray" style="float:rigth;"/></td>
+			    <td height="28" style="padding-bottom:15px;">年化收益率：</td>
+			    <td >&nbsp;<s:select id="q3" name="query" list="investmentReturnRate" label="name" listValue="name" listKey="id" value="query[3]"></s:select></td>
+			    <td >起购金额：</td>
+			    <td >&nbsp;<s:select id="q4" name="query" list="investmentQuota" label="name" listValue="name" listKey="id" value="query[4]"></s:select></td>
+			    <td align="right">产品名称：</td>
+			    <td >&nbsp;<input id="q5" type="text" name="query" value="${query[5]}" class="input-text1" onclick="this.value=''"/></td>
+			    <td ><input type="button" onclick="resetQueryForm();" value="重置" style="width:90px;" class="btnsub bred"/></td>
 			  </tr>
 			</table>
 	   </form>		
@@ -75,9 +75,9 @@
 		        <td class="capital_table_0">产品名称</td>
 		        <td class="capital_table_0">发行银行</td>
 		        <td class="capital_table_0">起销日期</td>
-		        <td class="capital_table_0">投资期限</td>
+		        <td class="capital_table_1">投资期限</td>
 		        <td class="capital_table_0">起点金额</td>
-		        <td class="capital_table_0">预期年化收益率</td>
+		        <td class="capital_table_4">预期年化收益率</td>
 		        <td width="100px;"></td>
 		      </tr>
 				<s:if test="pager.data.size()<0">
@@ -90,9 +90,9 @@
 		        <td class="capital_table_0"><a href="/finance/bankProduct!showDetails.act?id=${item.id}"> ${item.name} </a></td>
 		        <td class="capital_table_0">${item.bank}</td>
 		        <td class="capital_table_0"><s:date name="#item.sellstart" format="yyyy-MM-dd"/></td>
-		        <td class="capital_table_0">${item.manageperiod}</td>
+		        <td class="capital_table_1">${item.manageperiod}</td>
 		        <td class="capital_table_0">${item.minamount}</td>
-		        <td class="capital_table_0">${item.benefitrate}</td>
+		        <td class="capital_table_4">${item.benefitrate}</td>
 		        <td class="view_detail capital_table_z2"  style="padding-right:20px;"><a href="/finance/bankProduct!showDetails.act?id=${item.id}">查看</a></td>
 		      </tr>
 		      </s:iterator>

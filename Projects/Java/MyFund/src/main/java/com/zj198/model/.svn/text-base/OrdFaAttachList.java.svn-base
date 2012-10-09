@@ -17,6 +17,15 @@ public class OrdFaAttachList implements java.io.Serializable {
 	private Date createdt;
 	private Date updatedt;
 	private Integer createUserId;
+	private String ext;
+
+	public String getExt() {
+		return ext;
+	}
+
+	public void setExt(String ext) {
+		this.ext = ext;
+	}
 
 	/** default constructor */
 	public OrdFaAttachList() {

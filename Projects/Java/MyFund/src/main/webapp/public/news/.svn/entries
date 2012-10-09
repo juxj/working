@@ -1,8 +1,8 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/webapp/public/news
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/public/news
 svn://192.168.1.8
 
 
@@ -25,250 +25,6 @@ yuel
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-_financing_guide_news.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-e979f9914c56656ec903f246e1e0be31
-2012-09-06T08:41:46.864644Z
-3257
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-512
-
-knwTitleDetail.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-b6f75f3098e145b60f5b0cf25773e48d
-2012-09-07T07:45:09.424237Z
-3296
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3852
-
-_hot_sale_items_home.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-b6bb5a1ecca524a94f982df904bcf964
-2012-09-06T08:41:46.864644Z
-3257
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1504
-
-_financing_news.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-1b238fcb2c5361a34812766aca5ebd03
-2012-09-06T08:41:46.864644Z
-3257
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-532
-
-knwTitleCommon.jsp
-file
-
-
-
-
-2012-09-11T09:29:22.000000Z
-81da3b979aa62c8ec04fdc432eb93be2
-2012-09-11T06:09:13.626258Z
-3344
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4081
-
-knwTitleHome.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-8519dcbc4d36730e0e7d0e2fb3b62021
-2012-09-06T08:50:22.363698Z
-3259
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4936
-
-_financing_product.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-09f2e990d3596db7a35a2638023b0894
-2012-09-06T08:41:46.864644Z
-3257
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-761
-
-yellow_page
-dir
-
-help
-dir
 
 _finance_news.jsp
 file
@@ -304,14 +60,14 @@ Patrick
 
 512
 
-_hot_sale_items.jsp
+_financing_guide_news.jsp
 file
 
 
 
 
 2012-09-11T03:06:56.000000Z
-d510dd23a206177c228773344bfe3d52
+e979f9914c56656ec903f246e1e0be31
 2012-09-06T08:41:46.864644Z
 3257
 Patrick
@@ -336,16 +92,16 @@ Patrick
 
 
 
-760
+512
 
-_site_news.jsp
+_financing_news.jsp
 file
 
 
 
 
 2012-09-11T03:06:56.000000Z
-8043968d130f01716f2870947905f4c7
+1b238fcb2c5361a34812766aca5ebd03
 2012-09-06T08:41:46.864644Z
 3257
 Patrick
@@ -370,7 +126,41 @@ Patrick
 
 
 
-464
+532
+
+_financing_product.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+09f2e990d3596db7a35a2638023b0894
+2012-09-06T08:41:46.864644Z
+3257
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+761
 
 _goverment_news.jsp
 file
@@ -406,6 +196,213 @@ Patrick
 
 468
 
+_hot_sale_items.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+d510dd23a206177c228773344bfe3d52
+2012-09-06T08:41:46.864644Z
+3257
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+760
+
+_hot_sale_items_home.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+b6bb5a1ecca524a94f982df904bcf964
+2012-09-06T08:41:46.864644Z
+3257
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1504
+
+_site_news.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+8043968d130f01716f2870947905f4c7
+2012-09-06T08:41:46.864644Z
+3257
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+464
+
+help
+dir
+
+knwTitleCommon.jsp
+file
+
+
+
+
+2012-09-11T09:29:22.000000Z
+81da3b979aa62c8ec04fdc432eb93be2
+2012-09-11T06:09:13.626258Z
+3344
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4081
+
+knwTitleDetail.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+b6f75f3098e145b60f5b0cf25773e48d
+2012-09-07T07:45:09.424237Z
+3296
+juxj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3852
+
+knwTitleHome.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+8519dcbc4d36730e0e7d0e2fb3b62021
+2012-09-06T08:50:22.363698Z
+3259
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4936
+
 knwTitleKnowledge.jsp
 file
 
@@ -439,4 +436,7 @@ yuel
 
 
 3103
+
+yellow_page
+dir
 

@@ -1,15 +1,15 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/common
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/common
 svn://192.168.1.8
 
 
 
-2012-09-07T08:42:02.575063Z
-3301
-Patrick
+2012-09-28T02:37:32.193196Z
+3703
+juxj
 
 
 
@@ -25,9 +25,6 @@ Patrick
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-impl
-dir
 
 DictoryDataService.java
 file
@@ -96,4 +93,7 @@ Patrick
 
 
 824
+
+impl
+dir
 

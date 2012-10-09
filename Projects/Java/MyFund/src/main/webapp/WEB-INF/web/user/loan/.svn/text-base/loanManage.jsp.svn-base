@@ -224,11 +224,11 @@
 	<div class="container_950 box_4" style="height:90px;">	
 		<s:if test="groupType==5">
 			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest!loanRequest.act?loan.applyType=138'"/></div>
+			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=138'"/></div>
 		</s:if>
 		<s:elseif test="groupType==1">
 			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest!loanRequest.act?loan.applyType=136'"/></div>
+			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=136'"/></div>
 		</s:elseif>
 		<s:else>
 		<div class="container_950">
@@ -358,14 +358,14 @@
 					<s:if test="groupType==5">
 					<h1 class="l_title">您还未提交过融资意向</h1>
 					<p>
-					您可以<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=138">点此提交融资意向</a><br/>
+					您可以<a href="/loan/LoanRequest.act?loan.applyType=138">点此提交融资意向</a><br/>
 					您也可以去<a href="/loan/financeProduct.act?financeType=152&financeDate=12">融资服务频道</a>搜索适合您的融资产品
 					</p>
 					</s:if>
 					<s:elseif test="groupType==1">
 					<h1 class="l_title">您还未提交过融资意向</h1>
 					<p>
-					您可以<a href="/loan/LoanRequest!loanRequest.act?loan.applyType=136">点此提交融资意向</a><br/>
+					您可以<a href="/loan/LoanRequest.act?loan.applyType=136">点此提交融资意向</a><br/>
 					您也可以去<a href="/loan/financeProduct.act?financeType=151&financeDate=12">融资服务频道</a>搜索适合您的融资产品
 					</p>
 					</s:elseif>

@@ -205,7 +205,7 @@ function quickRegist(){
 		        	<p></p>
 		        	<form id="frmApplyService" action="/service/serviceCenter!apply.act" method="post">
 		        		<input type="hidden" id="itemId" name="itemId" value="${prdServiceItem.id}"/>
-		        		<input id="btnApply" type="button" class="but_gray" onclick="apply();" value="立即申请"/><br/>
+		        		<input id="btnApply" type="button" class="btnsub bred" onclick="apply();" value="立即申请"/><br/>
 		        	</form>
 	       	 	</div>                      
             </td>

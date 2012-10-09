@@ -38,8 +38,17 @@
 			<result name="purposes">/public/common/purposeTypeList.jsp</result>
 		</action>
 	</package>
+	<package name="user_loan_uncheck" namespace="/user/loan/uncheck" extends="base">
+		<action name="unCheckRequest" class="com.zj198.action.loan.UnCheckLoanAction" >
+			<result name="loanRequestHome">/WEB-INF/web/user/common/loanTopThree.jsp</result>
+		</action>
+		<action name="financeApply" class="com.zj198.action.loan.FinanceApplyAction">
+			<result name="findApplyHome">/WEB-INF/web/user/common/financeApplyList.jsp</result>
+		</action>
+	</package>
 	<package name="user_loan" namespace="/user/loan" extends="base">
-		<default-interceptor-ref name="userInterceptor"/>
+	
+		<default-interceptor-ref name="checkInterceptor"/>
 		<action name="LoanRequest" class="com.zj198.action.loan.UserLoanRequestAction" >
 			<!-- begin融资需求管理(add by zeroleavebaoyang@gmail.com) -->
 			<result name="loanManage">/WEB-INF/web/user/loan/loanManage.jsp</result>
@@ -67,6 +76,7 @@
 			<result name="industryList">/public/common/industryList.jsp</result>
 			<result name="applyFailure">/WEB-INF/web/user/loan/apply_failure.jsp</result>
 			<result name="findApplyHome">/WEB-INF/web/user/common/financeApplyList.jsp</result>
+			<result name="applyCheckList">/WEB-INF/web/user/common/allLog.jsp</result>
 			<result name="complementUserInfo" type="chain">
 	            <param name="actionName">Profile</param>
 	            <param name="namespace">/user</param>

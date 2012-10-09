@@ -1,14 +1,14 @@
 10
 
 dir
-3411
-svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/loan/impl
+3743
+svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/loan/impl
 svn://192.168.1.8
 
 
 
-2012-09-13T02:41:57.384706Z
-3400
+2012-09-29T01:22:58.186739Z
+3726
 yangb
 
 
@@ -26,19 +26,20 @@ yangb
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-LoanRequestServiceImpl.java
+ApplyUserServiceImpl.java
 file
 
 
 
 
-2012-09-13T05:27:51.000000Z
-2b3e60bc80de96ebaa220b31cc88ad26
-2012-09-13T02:41:57.384706Z
-3400
+2012-09-29T03:29:34.000000Z
+ad7553c24bd7bb69155ea19316c2ac2f
+2012-09-29T01:22:58.186739Z
+3726
 yangb
 
 
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -57,53 +58,18 @@ yangb
 
 
 
-
-5855
+1133
 
-PrdFinanceAreaServiceImpl.java
+FinanceApplyServiceImpl.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-e1204901f4dd3f8efddc372edeb759fd
-2012-08-31T01:24:58.542539Z
-3009
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-597
-
-OrdFinanceAppLoanServiceImpl.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-772f62fc36b368084f928acfaaf73706
-2012-08-08T03:17:54.113719Z
-2095
+2012-09-27T02:10:10.000000Z
+77dba5935fc64ef5c5c724f03d9fbd7a
+2012-09-25T09:22:20.957422Z
+3599
 linm
 
 
@@ -126,7 +92,7 @@ linm
 
 
 
-4109
+18288
 
 FinanceProductServiceImpl.java
 file
@@ -162,17 +128,17 @@ yuel
 
 48654
 
-FinanceApplyServiceImpl.java
+LoanRequestServiceImpl.java
 file
 
 
 
 
-2012-09-11T09:29:21.000000Z
-ab891de7d6c8dabc6e3d462b8fad4467
-2012-09-11T08:19:58.771371Z
-3352
-yuel
+2012-09-13T05:27:51.000000Z
+2b3e60bc80de96ebaa220b31cc88ad26
+2012-09-13T02:41:57.384706Z
+3400
+yangb
 
 
 
@@ -194,7 +160,41 @@ yuel
 
 
 
-15010
+5855
+
+OrdFinanceAppLoanServiceImpl.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+772f62fc36b368084f928acfaaf73706
+2012-08-08T03:17:54.113719Z
+2095
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4109
 
 OrdLrRecommendServiceImpl.java
 file
@@ -229,4 +229,38 @@ yuel
 
 
 2121
+
+PrdFinanceAreaServiceImpl.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+e1204901f4dd3f8efddc372edeb759fd
+2012-08-31T01:24:58.542539Z
+3009
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+597
 

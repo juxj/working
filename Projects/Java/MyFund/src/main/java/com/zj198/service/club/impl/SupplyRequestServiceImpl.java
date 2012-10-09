@@ -118,6 +118,16 @@ public class SupplyRequestServiceImpl implements SupplyRequestService{
 	public void deleteRequestInfo(int id) {
 		this.clbRequestInfoDAO.delete(id);
 	}
+
+	@Override
+	public List<ClbSupplyInfo> findSupplyInfoByType(String investType, int num) {
+		return this.clbSupplyInfoDAO.findByType(investType, num);
+	}
+
+	@Override
+	public List<ClbRequestInfo> findRequestInfoByType(String industry, int num) {
+		return this.clbRequestInfoDAO.findByIndustryOfTopN(industry, num);
+	}
 	
 	
 

@@ -10,6 +10,7 @@ public class DicIndustry implements java.io.Serializable {
 	private Integer id;
 	private String name;
 	private Integer parentid;
+	private Integer seq;
 
 	/** default constructor */
 	public DicIndustry() {
@@ -38,6 +39,14 @@ public class DicIndustry implements java.io.Serializable {
 
 	public void setParentid(Integer parentid) {
 		this.parentid = parentid;
+	}
+
+	public Integer getSeq() {
+		return seq;
+	}
+
+	public void setSeq(Integer seq) {
+		this.seq = seq;
 	}
 
 }

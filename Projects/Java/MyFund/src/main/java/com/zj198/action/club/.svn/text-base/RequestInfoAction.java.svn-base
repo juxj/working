@@ -51,7 +51,14 @@ public class RequestInfoAction extends BaseAction {
 	}
 	
 	public String edit(){
-		industryList = this.dictoryDataService.findDicIndustryList();
+		
+		UsrUser user = this.getUser();
+		if (user.getAuditstatus() != '2') {
+			this.msg = "您的资料还没有通过审核， 暂不能发布信息！";
+			return ERROR;
+		}
+		
+		industryList = this.dictoryDataService.findIndustryByParentid(0);
 		provinceList = this.dictoryDataService.findAllProvince();
 		projectTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_PROJECT_TYPE);
 		financingTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_FINANCE_TYPE);
@@ -77,7 +84,7 @@ public class RequestInfoAction extends BaseAction {
 	
 	public String home() {
 		provinceList = this.dictoryDataService.findAllProvince();
-		this.industryList = this.dictoryDataService.findDicIndustryList();
+		this.industryList = this.dictoryDataService.findIndustryByParentid(0);
 		this.financingTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_FINANCE_TYPE);
 		
 		if (StringUtil.isNullOrBlank(query)) {
@@ -98,13 +105,11 @@ public class RequestInfoAction extends BaseAction {
 	public String save(){
 		UsrUser user = this.getUser();
 		
-		
 		clbRequestInfo.setUserid(user.getId());
 		clbRequestInfo.setUserName(user.getUsername());
 		clbRequestInfo.setContact(user.getRealname());
 		clbRequestInfo.setEmail(user.getEmail());
 		clbRequestInfo.setMobile(user.getMobile());
-		
 		
 		Object obj = profileService.getProfiles(user.getId());
 		int group = profileService.getGroupidByUserType(user.getType().shortValue());
@@ -137,7 +142,6 @@ public class RequestInfoAction extends BaseAction {
 		clbRequestInfo.setIndexDisplay("F");
 		
 		clbRequestInfo.setCreateDate(st);
-		
 		
 		this.supplyRequestService.saveClbRequestInfo(clbRequestInfo);
 		projectTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_PROJECT_TYPE);

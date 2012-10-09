@@ -30,11 +30,24 @@
 			<result name="serviceAddInfo">/WEB-INF/web/user/serviceOrg/addServiceInfo.jsp</result>
 		</action>
 		
+		<action name="editServiceItem" class="com.zj198.action.serviceInfo.ServiceItemAction" method="editInfo">
+			<!-- 信息发布者已发布的信息 -->
+			<interceptor-ref name="checkInterceptor"/>
+			<result name="serviceAddInfo">/WEB-INF/web/user/serviceOrg/addServiceInfo.jsp</result>
+		</action>
+		
+		<action name="saveServiceItem" class="com.zj198.action.serviceInfo.ServiceItemAction" method="saveInfo">
+		   <interceptor-ref name="checkInterceptor"/>
+		   <result name="serviceItemHome4Publisher">/WEB-INF/web/user/serviceOrg/sipublisher.jsp</result>
+		</action>
+		
+		
 		<action name="requestInfoAction" class="com.zj198.action.club.RequestInfoAction">
 		    <interceptor-ref name="defaultStack"/>
 		    <result name="home">/public/club/request_info_home.jsp</result>
 		    <result name="detail">/public/club/request_info_detail.jsp</result>
 		</action>
+		
 		<action name="supplyInfoAction" class="com.zj198.action.club.SupplyInfoAction">
 		    <interceptor-ref name="defaultStack"/>
 		    <result name="home">/public/club/supply_info_home.jsp</result>
@@ -53,7 +66,6 @@
 		    <result name="institution_rent_detail">/public/club/institution_rent_detail.jsp</result>
 		    <result name="institution_fund_detail">/public/club/institution_fund_detail.jsp</result>
 		    <result name="institution_finance_detail">/public/club/institution_finance_detail.jsp</result>
-		    
 		</action>
 		<!-- 
 			<result name="requestHome" type="redirect">/service/requestInfoAction4User!showUserHome.act</result>
@@ -61,23 +73,24 @@
 		 -->
 		<action name="club" class="com.zj198.action.club.ClubAction">
 			 <result name="requestHome" type="chain">
-	            <param name="actionName">requestInfoAction4User</param>
-	            <param name="namespace">/service</param>
-	            <param name="method">showUserHome</param>
+	            <param name="actionName">showRequestInfoUserHome</param>
+	            <param name="namespace">/club</param>
 	          </result>
 	          <result name="supplyHome" type="chain">
-	            <param name="actionName">supplyInfoAction4User</param>
-	            <param name="namespace">/service</param>
-	            <param name="method">showUserHome</param>
+	            <param name="actionName">showSupplyInfoHome</param>
+	            <param name="namespace">/club</param>
 	          </result>
 		</action>
 		
+		
 		<action name="requestInfoAction4User" class="com.zj198.action.club.RequestInfoAction">
+			<interceptor-ref name="userInterceptor"/>
 		    <result name="userHome">/WEB-INF/web/user/club/request_info_home.jsp</result>
 		    <result name="edit">/WEB-INF/web/user/club/edit_request_info.jsp</result>
 		</action>
 		
 		<action name="supplyInfoAction4User" class="com.zj198.action.club.SupplyInfoAction">
+			<interceptor-ref name="checkInterceptor"/>
 		    <result name="userHome">/WEB-INF/web/user/club/supply_info_home.jsp</result>
 		    <result name="edit">/WEB-INF/web/user/club/edit_supply_info.jsp</result>
 		    <result name="editFirstStep">/WEB-INF/web/user/club/edit_supply_info_first_step.jsp</result>

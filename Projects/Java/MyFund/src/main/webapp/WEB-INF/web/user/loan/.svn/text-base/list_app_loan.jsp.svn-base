@@ -125,7 +125,7 @@ function addMessage(appId){
 	       </div>
 			<div class="hr_10"> &nbsp;</div>
 <div id="add_attach" style="display:none;" title="补充材料">
-	<s:form id="uploadForm" action="loanAfter!needAttach.act" namespace="/user/loan">
+	<form id="uploadForm" action="/user/loan/loanAfter!needAttach.act" method="post">
 	<s:hidden name="loanData.appLoanId" id="apploanid"></s:hidden>
 	<s:hidden name="currentPage"></s:hidden>
 	<s:hidden name="pageCount"></s:hidden>
@@ -147,10 +147,10 @@ function addMessage(appId){
 	<div class="center" style="width:300px;">
 			<s:submit value="确定" cssClass="but_gray"></s:submit>	
 	</div>
-	</s:form>
+	</form>
 </div>   
 <div id="add_message" style="display:none;" title="添加消息">
-	<s:form id="messageForm" action="ntyMessage!sendMessage.act" namespace="/news">
+	<form id="messageForm" action="/news/ntyMessage!sendMessage.act" method="post" >
 	<s:hidden name="applyId" id="message_apply_id"></s:hidden>
 	<s:hidden name="currentPage"></s:hidden>
 	<s:hidden name="pageCount"></s:hidden>
@@ -168,7 +168,7 @@ function addMessage(appId){
 	<div class="center" style="width:200px;">
 			<s:submit value="确定" cssClass="but_gray"></s:submit>	
 	</div>
-	</s:form>
+	</form>
 </div>   
 
 <!--主体部分结束-->

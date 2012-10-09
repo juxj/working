@@ -18,11 +18,9 @@ function audit(id,audit,type){
 	$.post("/admin/user/Profile!audit.act",{userId:id,audit:audit,type:type},function(a){
 		if(a=='1'){
 			$("#umsg").html("已修改为待审核状态。").show();
-			<s:if test="audit=1"></s:if>
 			$("#auditMsg").html("待审核");
 		}else if(a=='2'){
 			$("#umsg").html("已审核。").show();
-			<s:if test="audit=2"></s:if>
 			$("#auditMsg").html("已审核");
 		}else{
 			$("#umsg").html(a).show();
@@ -63,7 +61,7 @@ function audit(id,audit,type){
 						</s:else>
 					</td></tr>
 				<s:if test="usrBank!=null">
-					<tr><td>银行名称</td><td>${profileMap['bankName'] } ${usrBank.detailname }&nbsp;</td></tr>
+					<tr><td>银行名称</td><td><s:if test="audit == 0">${profileMap['bankName'] } ${usrBank.detailname }</s:if><s:elseif test="audit == 1 || audit == 2">${usrBank.detailname }</s:elseif>&nbsp;</td></tr>
 					<tr><td>联系人姓名</td><td>&nbsp;<s:if test="usrBank.linkgenderr==1">${usrBank.linkname} 先生</s:if><s:elseif test="usrBank.linkgenderr==0">${usrBank.linkname} 女士</s:elseif></td></tr>
 					<tr><td>联系人地址 </td><td>${profileMap['address'] }&nbsp;</td></tr>
 					<tr><td>联系人详细地址 </td><td>${usrBank.address }&nbsp;</td></tr>

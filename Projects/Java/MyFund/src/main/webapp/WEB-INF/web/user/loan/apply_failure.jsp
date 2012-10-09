@@ -34,8 +34,6 @@
 	</s:elseif>
 	</p>
 	<div class="hr_10"> &nbsp; </div>
-	<div class="hr_10"> &nbsp; </div>
-	<div class="hr_10"> &nbsp; </div>
 	<div class="apply_menu">
         <div class="finance_apply_menu app_menu001" >1、完善企业信息</div>
         <div class="finance_apply_menu app_menu02" >2、填写申请信息</div>
@@ -50,13 +48,32 @@
 	<div class="S_table_icon"><img src="/images/wrong_ico.png" /></div>
 	<div class="S_table_connect">
 		<span class="Prompt_01">
-		${msg }
+			<s:if test="msg == 1">
+				对不起！您尚未登录，请登录后再提交申请。
+			</s:if>
+			<s:elseif test="msg == 2">
+				您的帐号还未通过审核，请完善用户信息并通过审核后，再申请融资。
+			</s:elseif>
+			<s:elseif test="msg == 3">
+				只有企业用户可以申请企业经营性贷款!
+			</s:elseif>
+			<s:elseif test="msg == 4">
+				只有个人用户才能申请个人经营贷款!
+			</s:elseif>
+			<s:elseif test="msg == 5">
+			对不起，该融资产品暂不支持您的企业所在地区，请您重新选择其他融资产品！ 
+			</s:elseif>
 		</span>
 	</div>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>
-	<div class="center" style="width:300px;">
-	  <input type="button" onclick="window.location='/loan/financeProduct!cusViewFinance.act?product.id=${product.id}';" class="but_gray" style="width:200px;" value="返回产品页面" />
+	<div align="center">
+		<s:if test="msg == 2">
+			<input type="button" onclick="window.location='/user/Profile!edit.act?mparamid=6';" class="btnsub bred"  value="完善用户信息" />
+		</s:if>
+		<s:else>
+		  <input type="button" onclick="window.location='/loan/financeProduct!cusViewFinance.act?product.id=${product.id}';" class="btnsub bred" value="返回产品页面" />
+		</s:else>
 	</div>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>

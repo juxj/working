@@ -13,9 +13,7 @@
 <!--头部-->
   <!--资金信息详细页面开始-->
   <div class="hr_10"> &nbsp; </div> 
-  <div class="M_menu" >
-  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/service/supplyInfoAction!home.act">找资金</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;资金信息
-  </div>
+  <jsp:include page="_navigator.jsp" />
    <!--表格部分开始-->
   <div class="M_out">
   	<div class="M_out_L" style="margin-top:10px;">
@@ -49,6 +47,15 @@
 		    			<s:if test="#hasValue==0">
 		    				${clbSupplyInfo.workTranche }
 		    			</s:if>        
+            </td>
+            
+          
+          </tr>
+          
+          <tr>
+          	  <td class="Search_t_connect">担保范围</td>
+            <td class="Search_t_connect01" colspan="3">
+		    			${clbSupplyInfo.workRange }
             </td>
           </tr>
           <jsp:include page="_common_info.jsp" />

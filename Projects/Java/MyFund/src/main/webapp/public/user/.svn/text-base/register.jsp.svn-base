@@ -80,7 +80,7 @@ $(function() {
           <span id="mobile_error" class="txt-info">常用的手机号码，用于接受通知和验证等。</span></dd>
         <dd>
           <h6>&nbsp; </h6>
-          <input id=u4 type="button" onclick="checkform()" class="but_gray" style="width:200px;" value="同意以下协议并提交" />
+          <input id=u4 type="button" onclick="checkform()" class="btnsub bred"  value="同意以下协议并提交" />
         </dd>
       </dl>
       <textarea class="txt_tiaokuan" readonly="readonly">

@@ -116,11 +116,6 @@
 			<tr>
 				<td class="form_table field_name">资金描述</td>
 				<td>
-				</td>
-			</tr>
-			<tr>
-				<td class="form_table field_name">资金描述</td>
-				<td>
 					<s:textarea id="clbSupplyInfo.remark" rows="8" cols="80" name="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 				</td>
 			</tr>

@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>理财服务详情页_中国资金网</title>
+<meta name="keywords" content="${prdBankfinance.sellarea},${prdBankfinance.type}" />
+<meta name="description" content=""/>
+<title>${prdBankfinance.bank}${prdBankfinance.name}</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>

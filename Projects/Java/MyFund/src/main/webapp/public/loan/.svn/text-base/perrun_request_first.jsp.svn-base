@@ -22,13 +22,14 @@ $(function() {
 })
 
 $(function(){
-	$("#loanForm").validate();
+	$("#loanForm").validate();/*
 	document.getElementsByName('loan.repaymentType')[0].checked=true;
 	document.getElementsByName('loan.teachLevel')[0].checked=true;
-	document.getElementsByName('loan.workTime')[0].checked=true;
+	document.getElementsByName('loan.workTime')[0].checked=true;*/
 });
 </script>
 <script language="javascript">
+/*
 			var XMLHttpReq;//用于获取服务端返回的XML序列
 		 	//创建XMLHttpRequest对象
 		    function createXMLHttpRequest() {
@@ -83,7 +84,20 @@ $(function(){
 				list.options.length=0;
 		    	list.add(new Option("---请选择---",""));
 			}
-		
+			
+*/
+			function changeindustry(industryParent,industry){
+				if($("#"+industryParent).val()=='0'){
+					$("#"+industry).html("<option value='0'>--请选择--</option>");
+					$("#"+industry).hide();
+				}else{
+					$.post("/DataCommon!findIndustry.act",{industryId:$("#"+industryParent).val()},function(a){
+						$("#"+industry).show();
+						$("#"+industry).html('<option value="0">--请选择--</option>');
+						$("#"+industry).append(a);
+					});
+				}
+			}
 		</script>
   </head>
   
@@ -93,6 +107,7 @@ $(function(){
 <jsp:include page="/public/head1.jsp"/>
   <div class="clear"> &nbsp; </div>
 </div>
+<div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
 <div class="apply_title" >
 	<p>个人经营性贷款需求意向单</p>
@@ -104,7 +119,7 @@ $(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
-<form action="/loan/LoanRequest!loanSecond.act" id="loanForm" style="width:950px;" class="box_form" >
+<form action="/loan/LoanRequest!loanSecond.act" id="loanForm" style="width:950px; margin:0px;" class="box_form">
 
 <s:hidden name="loan.applyType" value="138"></s:hidden>
 	<div class="apply_form_title">第一步&nbsp;&nbsp;填写申请信息</div>
@@ -123,7 +138,10 @@ $(function(){
                 <h6>贷款期限：</h6>
                 <s:textfield name="loan.loanMonth" cssClass="input-text required digits" id="loan_loanMonth" size="10" maxlength="3"></s:textfield>&nbsp;个月
                 <label for="loan_loanMonth" class="error" generated="true" style="display:none;"></label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是否有抵押物：<s:radio value="1" name="loan.haveMortgage" list="%{#{1:'能提供',0:'无法提供'}}" cssClass="required"></s:radio>
+              </dd>
+              <dd>
+                <h6>是否有抵押物：</h6>
+                <s:radio value="1" name="loan.haveMortgage" list="%{#{1:'能提供',0:'无法提供'}}" cssClass="required"></s:radio>
 				  <label for="loan.haveMortgage" class="error" generated="true" style="display:none;"></label>
 				</dd>
 			 </dl>
@@ -135,20 +153,17 @@ $(function(){
 			
 			<dd>
 				<h6>行业：</h6>
-				<select onchange="showList(this.options[this.options.selectedIndex].value)" name="loan.runningTrade"  >
-					<option>--请选择--</option>
-					<s:iterator value="industryList">
-					<option value="<s:property value="id"/>"><s:property value="name"/></option>
-					</s:iterator>
-				</select>
-				
-				<select id="childID" name="loan.runningTradeChild">
-					<option>--请选择--</option>
-				</select>
+				<s:select id="industryParent" name="loan.runningTrade" list="industryList" listKey="id" listValue="name" headerKey="" headerValue="--请选择--"  onchange="changeindustry('industryParent','industry');" cssClass="required"></s:select>
+                <select id="industry" name="loan.runningTradeChild">
+         	      <option value="0">--请选择--</option>
+         	      <s:iterator value="industry">
+			        <option value="${id}">${name}</option>
+		          </s:iterator>
+               </select>
 			</dd>
 			<dd>
-				<h6>行业经验：</h6>
-				<s:textfield name="loan.experience" cssClass="input-text required"  maxlength="3"></s:textfield>&nbsp;&nbsp;年
+				<h6>行业经验：</h6> 
+				<s:textfield name="loan.experience" cssClass="input-text required"  maxlength="3" id="loan.experience"></s:textfield>&nbsp;&nbsp;年
 				<label for="loan.experience" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
@@ -179,7 +194,7 @@ $(function(){
 		</dl>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="center" style="width:200px;">
-		<s:submit value="下一步"  cssClass="but_gray" style="width:200px;"></s:submit>
+		<s:submit value="下一步"  cssClass="btnsub bred" style="width:200px;"></s:submit>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>

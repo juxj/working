@@ -11,4 +11,6 @@ public interface ClbSupplyInfoDAO extends BaseDAO<ClbSupplyInfo, Integer>{
 	public Pager findByAdmin(ClbSupplyInfo supplyInfo,  int pageSize, int pageNo) ;
 	public Pager findClbSupplyInfoList(int pageSize, int pageNo, String[] query);
 	public List<ClbSupplyInfo> findLastSupplyInfo(int num);
+	
+	public List<ClbSupplyInfo> findByType(String investType, int num);
 }

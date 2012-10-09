@@ -38,6 +38,7 @@ $(function(){
 <jsp:include page="/public/head1.jsp"/>
   <div class="clear"> &nbsp; </div>
 </div>
+<div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
 <div class="apply_title" >
 	<p>个人消费贷款快速申请</p>
@@ -50,7 +51,6 @@ $(function(){
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
 <form action="/loan/LoanRequest!loanSecond.act" id="loanForm" style="width:950px;" class="box_form" >
-
 <s:hidden name="loan.applyType" value="137"></s:hidden>
 	<div class="apply_form_title">第一步&nbsp;&nbsp;填写申请信息</div>
 	<div class="C_title">贷款需求信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
@@ -120,7 +120,7 @@ $(function(){
 		</dl>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="center" style="width:200px;">
-		<s:submit value="下一步"  cssClass="but_gray" style="width:200px;"></s:submit>
+		<s:submit value="下一步"  cssClass="btnsub bred" style="width:200px;"></s:submit>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>

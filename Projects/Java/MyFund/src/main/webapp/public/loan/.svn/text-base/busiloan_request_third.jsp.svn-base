@@ -192,7 +192,7 @@ $(document).ready(function(){
 			          <input type=text value="${usrPerson.im3 }" class="input-text {validate:{maxlength:32}} chne" name="usrPerson.im3"/><span class="ask_text"></span></td>
 			         </tr>
 			         <tr>
-			           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存" /></td>
+			           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="btnsub bred" style="width:200px;" value="保存" /></td>
 			         </tr>
 			       </table>        	
 			   	  </form>
@@ -286,7 +286,7 @@ $(document).ready(function(){
 				         </td>                
 				      </tr>
 				       <tr>
-				         <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="but_gray" style="width:200px;" value="保存信息" /></td>
+				         <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;"><input type="submit" class="btnsub bred" style="width:200px;" value="保存信息" /></td>
 				       </tr>                           
 				     </table>
 				 </form>
@@ -302,19 +302,19 @@ $(document).ready(function(){
 		<s:if test="applyNum==null or applyNum==''">
 			<s:if test="msg == 1">
 				<s:if test="loan.applyType==136">
-				<input type="button" onclick="window.location='/loan/LoanRequest!busiFirst.act?loan.loanAmount=${loan.loanAmount}&loan.loanMonth=${loan.loanMonth }'" class="but_gray" style="width:150px;" value="登陆" />
+				<input type="button" onclick="window.location='/loan/LoanRequest!busiFirst.act?loan.loanAmount=${loan.loanAmount}&loan.loanMonth=${loan.loanMonth }'" class="btnsub bred" style="width:150px;" value="登陆" />
 				</s:if>
 				<s:if test="loan.applyType==138">
-				<input type="button" onclick="window.location='/loan/LoanRequest!perrunFirst.act?loan.loanAmount=${loan.loanAmount}&loan.loanMonth=${loan.loanMonth }'" class="but_gray" style="width:150px;" value="登陆" />
+				<input type="button" onclick="window.location='/loan/LoanRequest!perrunFirst.act?loan.loanAmount=${loan.loanAmount}&loan.loanMonth=${loan.loanMonth }'" class="btnsub bred" style="width:150px;" value="登陆" />
 				</s:if>
 			</s:if>
 			<s:else>
-				<input type="button" onclick="window.location='/Index.act'" class="but_gray" style="width:150px;" value="返回首页" />
+				<input type="button" onclick="window.location='/Index.act'" class="btnsub bred" style="width:150px;" value="返回首页" />
 			</s:else>
 		</s:if>
 		<s:else>
 		  <s:if test="#session._user.auditstatus==2">
-		  	<input type="button" onclick="window.location='/user/UserAction.act'" class="but_gray" style="width:150px;" value="确定" />
+		  	<input type="button" onclick="window.location='/user/UserAction.act'" class="btnsub bred" style="width:150px;" value="确定" />
 		  </s:if>
 		</s:else>
 	</div>

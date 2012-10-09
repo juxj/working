@@ -221,7 +221,7 @@ function interest(){
 		var interTrObj = $('#interTr' + i);
 		if(interTrObj.length <=0){
 			var intetr = "<tr id='interTr" + i + "'><td>" + inteTextArr[i-1] + "</td><td>" + inteArr[i-1] + "%</td><td> + <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='7'/>%</td>";
-			intetr = intetr + "<td width='100px'><div id='slider-range" + i + "'></div></td></tr>";
+			intetr = intetr + "<td width='200px'><div id='slider-range" + i + "'></div></td></tr>";
 			$('#interest_table').append($(intetr));
 			sliderAdd(('slider-range' + i),('rateUp' + i),0);
 		}
@@ -234,7 +234,7 @@ $(sliderId).slider({
 			range: "min",
 			value: sliValue,
 			min: 0,
-			max: 100,
+			max: 500,
 			slide: function( event, ui ) {
 				$( rateId ).val(ui.value );
 			}
@@ -286,7 +286,7 @@ function updateCheck(noid,boxName){
     		}
     	}
     }
-    function validateExtendsPro(){
+    function validateExtendsSubmit(){
     	var st = 1;
     	$("input[name='financeProductSpModel.extendsName']").each(function(){
 			if($(this).val().length == 0){
@@ -301,9 +301,7 @@ function updateCheck(noid,boxName){
 			}
 		});
 		if(st == 1){
-			$('#extendsError').hide();
-		}else{
-			return false;
+			$('#loanForm').submit();
 		}
     }
 function previewExtends(){
@@ -375,7 +373,7 @@ function previewExtends(){
     <tr id="finance_interest_type">
 		<td>&nbsp;</td>
 		<td>
-			<table width="500" id="interest_table">
+			<table width="600" id="interest_table">
 							<tr>
 								<th align='left'>贷款期限</th>
 								<th align='left'>基准利率</th>
@@ -410,7 +408,7 @@ function previewExtends(){
 										<td>
 											+<input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp<%=i %>' size='7' value="${item.rateUp }"/>%
 										</td>
-										<td width='100px'>
+										<td width='200px'>
 											<div id='slider-range<%=i %>'></div>
 											<script>sliderAdd(('slider-range<%=i%>'),('rateUp<%=i%>'),$('#rateUp<%=i%>').val());</script>
 										</td>
@@ -667,7 +665,7 @@ function previewExtends(){
 		<tr>
 			<td colspan="2">
 				<input type="button" value="预览" onclick="preview()" />
-				<s:submit value="保存" ></s:submit>
+				<input type="button" value="保存"  class="but_gray"  onclick="validateExtendsSubmit();"/>
 			</td>
 		</tr>
 	</tbody>

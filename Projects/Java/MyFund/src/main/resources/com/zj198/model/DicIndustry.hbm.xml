@@ -16,5 +16,9 @@
         <property name="parentid" type="java.lang.Integer">
             <column name="parentid" not-null="true" />
         </property>
+        
+        <property name="seq" type="java.lang.Integer">
+            <column name="seq"/>
+        </property>
     </class>
 </hibernate-mapping>

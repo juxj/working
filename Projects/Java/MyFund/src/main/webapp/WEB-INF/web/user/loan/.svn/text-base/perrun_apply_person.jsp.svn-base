@@ -60,7 +60,7 @@ return this.optional(element) || (value >= s1 && value >= s2);
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
 <div class="apply_title" >
-	<p>融资申请-企业经营贷款</p>
+	<p>融资申请-个人经营性贷款</p>
 	<div class="apply_menu">
 		<div class="finance_apply_menu app_menu01">1.查看个人信息</div>
         <div class="finance_apply_menu app_menu02" >2.填写申请信息</div>

@@ -22,13 +22,13 @@ public class StringUtil {
 		return list;
 	}
 	
-	//生成6位随机字符数字的激活验证码
+	//生成6位随机数字的激活验证码
 	public static String createActiveCode(){
-		char c[] = {'a','b','c','d','e','f','g','h','i','j','k','m','n','p','q','r','s','t','u','v','w','x','y','3','4','5','6','7','8','9'};
+		char c[] = {'1','2','3','4','5','6','7','8','9','0'};
 		StringBuilder sRand = new StringBuilder();
 		for (int i = 0; i < 6; i++){
 			Random random = new Random();
-			int index = random.nextInt(30);
+			int index = random.nextInt(10);
 			String rand = String.valueOf(c[index]);
 			sRand.append(rand);
 		}

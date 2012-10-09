@@ -102,15 +102,14 @@
 					</div>
 					<div>
 						<p>
-							<label><input type="radio"  value="1" name="userType" checked="true"/> 企业</label>
+							<label><input type="radio"  value="1" name="userType" checked="checked"/> 企业</label>
 							<label><input type="radio"  value="2" name="userType" /> 银行</label>
 							<label><input type="radio"  value="3" name="userType"/> 非银行金融机构</label>
 							<label><input type="radio"  value="4" name="userType"/> 服务机构</label>
 							<label><input type="radio"  value="5" name="userType"/> 个人</label>
 						</p>
 					</div>
-					<s:form id="frmContract" action="/admin/userContract!saveContract.act"
-						method="post">
+					<form id="frmContract" action="/admin/userContract!saveContract.act" method="post">
 						<s:hidden id="id" name="contract.id"></s:hidden>
 						<s:hidden id="contractTypeName" name="contract.contractTypeName"></s:hidden>
 						<s:hidden id="userId" name="contract.userId" value="%{#session._admin.id}"></s:hidden>
@@ -143,12 +142,10 @@
 							<input type="submit" class="submit small" value="提交" /> <input
 								type="reset" class="submit small" value="重置" />
 						</p>
-					</s:form>
+					</form>
 				</div>
 			</div>
 		</div>
+		</div>
 </body>
-<script language="javascript">
-	
-</script>
 </html>

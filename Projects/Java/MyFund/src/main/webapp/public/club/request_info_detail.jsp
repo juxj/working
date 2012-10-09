@@ -21,9 +21,7 @@
   .info_table td .title_tb{font-weight:bolder;}
   </style>
   <div class="hr_10"> &nbsp; </div> 
-  <div class="M_menu" >
-  	<a href="/loan/LoanService.act">融资服务</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/service/requestInfoAction!home.act">找项目</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;项目信息
-  </div>
+  <jsp:include page="_navigator_request.jsp" />
    <!--表格部分开始-->
   <div class="M_out">
   	<div class="M_out_L" style="margin-top:10px;">
@@ -60,7 +58,10 @@
           </tr>
           <tr>
             <td class="Search_t_connect">融资方式</td>
-            <td colspan="3" style="padding-left:10px;">${clbRequestInfo.financeType } </td>
+            <td colspan="3" style="padding-left:10px;">${clbRequestInfo.financeType } 
+            <s:if test="clbRequestInfo.financeType==null or clbRequestInfo.financeType==''">
+			    		不限
+			    	</s:if> </td>
           </tr>
           <tr>
             <td class="Search_t_connect">项目联系人</td>
