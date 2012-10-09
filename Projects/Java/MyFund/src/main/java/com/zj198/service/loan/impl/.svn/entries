@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/loan/impl
 svn://192.168.1.8
 
@@ -25,40 +25,6 @@ yangb
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-ApplyUserServiceImpl.java
-file
-
-
-
-
-2012-09-29T03:29:34.000000Z
-ad7553c24bd7bb69155ea19316c2ac2f
-2012-09-29T01:22:58.186739Z
-3726
-yangb
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1133
 
 FinanceApplyServiceImpl.java
 file
@@ -94,16 +60,16 @@ linm
 
 18288
 
-FinanceProductServiceImpl.java
+OrdLrRecommendServiceImpl.java
 file
 
 
 
 
 2012-09-11T09:30:32.000000Z
-1bd69cc8bebe52f7be867f6693398bd3
-2012-09-04T07:26:27.261362Z
-3126
+f79a8efd547f63a2e32baecaf986554d
+2012-08-10T09:15:42.781237Z
+2240
 yuel
 
 
@@ -126,7 +92,7 @@ yuel
 
 
 
-48654
+2121
 
 LoanRequestServiceImpl.java
 file
@@ -162,6 +128,40 @@ yangb
 
 5855
 
+PrdFinanceAreaServiceImpl.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+e1204901f4dd3f8efddc372edeb759fd
+2012-08-31T01:24:58.542539Z
+3009
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+597
+
 OrdFinanceAppLoanServiceImpl.java
 file
 
@@ -196,50 +196,16 @@ linm
 
 4109
 
-OrdLrRecommendServiceImpl.java
+ApplyUserServiceImpl.java
 file
 
 
 
 
-2012-09-11T09:30:32.000000Z
-f79a8efd547f63a2e32baecaf986554d
-2012-08-10T09:15:42.781237Z
-2240
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2121
-
-PrdFinanceAreaServiceImpl.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-e1204901f4dd3f8efddc372edeb759fd
-2012-08-31T01:24:58.542539Z
-3009
+2012-09-29T03:29:34.000000Z
+ad7553c24bd7bb69155ea19316c2ac2f
+2012-09-29T01:22:58.186739Z
+3726
 yangb
 
 
@@ -262,5 +228,39 @@ yangb
 
 
 
-597
+1133
+
+FinanceProductServiceImpl.java
+file
+
+
+
+
+2012-09-11T09:30:32.000000Z
+1bd69cc8bebe52f7be867f6693398bd3
+2012-09-04T07:26:27.261362Z
+3126
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+48654
 

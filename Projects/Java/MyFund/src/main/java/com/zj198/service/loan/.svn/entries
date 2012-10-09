@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/loan
 svn://192.168.1.8
 
@@ -25,40 +25,6 @@ yangb
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-ApplyUserService.java
-file
-
-
-
-
-2012-09-29T03:29:34.000000Z
-fc506f6627c923dfb061e81127223ef7
-2012-09-29T01:22:58.186739Z
-3726
-yangb
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-471
 
 FinanceApplyService.java
 file
@@ -94,16 +60,16 @@ yuel
 
 2280
 
-FinanceProductService.java
+OrdLrRecommendService.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-ced22df649e6ee404b26459522cce39a
-2012-08-31T03:35:48.232228Z
-3021
+2012-09-11T09:30:32.000000Z
+309e71cf19b486c48e41a86a469a312e
+2012-08-07T02:11:48.324425Z
+2041
 yuel
 
 
@@ -126,7 +92,13 @@ yuel
 
 
 
-3064
+1245
+
+model
+dir
+
+impl
+dir
 
 LoanRequestService.java
 file
@@ -162,74 +134,6 @@ yangb
 
 3161
 
-OrdFinanceAppLoanService.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-749f750e06c2a49a073cc9ec31a7dacf
-2012-07-30T08:31:27.072593Z
-1774
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1482
-
-OrdLrRecommendService.java
-file
-
-
-
-
-2012-09-11T09:30:32.000000Z
-309e71cf19b486c48e41a86a469a312e
-2012-08-07T02:11:48.324425Z
-2041
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1245
-
 PrdFinanceAreaService.java
 file
 
@@ -264,9 +168,105 @@ yangb
 
 227
 
-impl
-dir
+OrdFinanceAppLoanService.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+749f750e06c2a49a073cc9ec31a7dacf
+2012-07-30T08:31:27.072593Z
+1774
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1482
 
-model
-dir
+ApplyUserService.java
+file
+
+
+
+
+2012-09-29T03:29:34.000000Z
+fc506f6627c923dfb061e81127223ef7
+2012-09-29T01:22:58.186739Z
+3726
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+471
+
+FinanceProductService.java
+file
+
+
+
+
+2012-09-11T03:06:57.000000Z
+ced22df649e6ee404b26459522cce39a
+2012-08-31T03:35:48.232228Z
+3021
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3064
 

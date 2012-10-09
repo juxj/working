@@ -72,6 +72,7 @@ class FormatHTMLToJson:
 		title = str(line[4]).replace('\n','')
 		node_id = str(line[0])
 		properties = str(line[5]).replace('\n','')
+
 		#json = "{\"data\":\""+title+"\", \"attr\":{\"id\":\""+node_id+"\",\"properties\":\""+properties+"\"},\"state\":\"closed\",\"children\":["+str(self.get_children(line, lines))+"]}";
 
 		comma = ''
@@ -80,9 +81,9 @@ class FormatHTMLToJson:
 
 		children = self.get_children(line, lines)
 		if children == "true":
-			json = "{name:\""+title+"\"}"
+			json = "{\"name\":\""+title+"\"}"
 		else:
-			json = "{name:\""+title+"\",children:["+str(self.get_children(line, lines))+"]}";
+			json = "{\"name\":\""+title+"\",\"children\":["+str(self.get_children(line, lines))+"]}";
 
 		json = comma + json
 		return json
@@ -127,5 +128,5 @@ class FormatHTMLToJson:
 		return self.get_json(lines) 
 
 if __name__ == '__main__':
-	f =  FormatHTMLToJson('new')
+	f =  FormatHTMLToJson('sohu.prettify')
 	print f.run()

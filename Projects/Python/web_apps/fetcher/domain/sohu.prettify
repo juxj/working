@@ -1,0 +1,1282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="keywords" content="银行产品,银行产品大全,搜狐银行产品库" />
+  <mata name="description" contect="搜狐信托产品拥有全国各家银行产品,是中国最具影响力的银行产品库。">
+   <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+   <title>
+    搜狐银行产品库
+   </title>
+   <link type="text/css" rel="stylesheet" href="/bank/css/BIZ_comm-1.4.1.css" media="screen" />
+   <link type="text/css" rel="stylesheet" href="/bank/skin/base.css" />
+   <link type="text/css" rel="stylesheet" href="/bank/skin/layout.css" />
+   <script language="javascript" src="/bank/js/bank.js">
+   </script>
+   <style type="text/css">
+    .tabhide{display:none;}
+.tabshow{display:true;}
+   </style>
+  </mata>
+ </head>
+ <body onload="doWithTop5()">
+  <!-- 搜狐通用页眉A START -->
+  <div id="criterionNav" class="Area_w">
+   <a target="_blank" href="http://www.sohu.com/" id="sohu_logo">
+    <img height="22" border="0" src="/bank/images/sohu_logo2.gif" alt="搜狐网站" />
+   </a>
+   <a target="_blank" href="http://stock.sohu.com/" id="sohu_sec_logo">
+    <img height="22" border="0" src="/bank/images/stock_logo2.gif" alt="搜狐证券" />
+   </a>
+   <div id="criterionNav_right" class="Area">
+    <ul class="right">
+     <li>
+      <a target="_top" href="http://www.sohu.com/">
+       搜狐首页
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li class="red">
+      <a target="_top" href="http://news.sohu.com/">
+       新闻
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://sports.sohu.com/">
+       体育
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://s.sohu.com/">
+       S
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://yule.sohu.com/">
+       娱乐
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://v.sohu.com/">
+       V
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li class="red">
+      <a target="_top" href="http://business.sohu.com/">
+       财经
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://it.sohu.com/">
+       IT
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://auto.sohu.com/">
+       汽车
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://house.sohu.com/">
+       房产
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://home.sohu.com/">
+       家居
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://women.sohu.com/">
+       女人
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://tv.sohu.com/">
+       视频
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://v.blog.sohu.com/">
+       播客
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://www.chinaren.com/">
+       ChinaRen
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://login.mail.sohu.com/">
+       邮件
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://blog.sohu.com/">
+       博客
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://club.sohu.com/">
+       BBS
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li>
+      <a target="_top" href="http://comment2.news.sohu.com/">
+       我说两句
+      </a>
+     </li>
+     <li>
+      -
+     </li>
+     <li class="end">
+      <a target="_top" href="http://www.sogou.com/">
+       搜狗
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <!-- 搜狐通用页眉A END -->
+  <div collectionxy="Y" id="033" class="navF Area">
+   <div class="wd01">
+    <a target="_blank" href="http://business.sohu.com/">
+     <img width="70" height="45" src="http://money.sohu.com/upload/licaitouping/images/title01.gif" alt="" />
+    </a>
+    <div class="left">
+     <p>
+      <a target="_blank" href="http://business.sohu.com/guoneixinwen.shtml">
+       国内
+      </a>
+      |
+      <a target="_blank" href="http://business.sohu.com/guojixinwen.shtml">
+       国际
+      </a>
+     </p>
+     <p>
+      <a target="_blank" href="http://business.sohu.com/guoneixinwen.shtml">
+       产经
+      </a>
+      |
+      <a target="_blank" href="http://business.sohu.com/gongsi.shtml">
+       公司
+      </a>
+     </p>
+    </div>
+   </div>
+   <div class="wd02">
+    <a href="http://stock.sohu.com/">
+     <img width="70" height="45" src="http://money.sohu.com/upload/licaitouping/images/title02.gif" alt="" />
+    </a>
+    <div class="left">
+     <p>
+      <a href="http://stock.sohu.com/news/">
+       要闻
+      </a>
+      |
+      <a href="http://stock.sohu.com/gegufengyun/">
+       个股
+      </a>
+     </p>
+     <p>
+      <a target="_blank" href="http://q.stock.sohu.com/">
+       <font color="#cc0000">
+        行情
+       </font>
+      </a>
+      |
+      <a target="_blank" href="http://q.stock.sohu.com/cn/mystock.shtml">
+       自选
+      </a>
+     </p>
+    </div>
+   </div>
+   <div class="wd03">
+    <a href="http://money.sohu.com/">
+     <img width="70" height="45" src="http://money.sohu.com/upload/licaitouping/images/title03.gif" alt="" />
+    </a>
+    <div class="left">
+     <p>
+      <a href="http://money.sohu.com/yinhang/">
+       银行
+      </a>
+      |
+      <a href="http://money.sohu.com/xyk/">
+       信用卡
+      </a>
+      |
+      <a href="http://money.sohu.com/baoxian/">
+       保险
+      </a>
+      |
+      <a href="http://money.sohu.com/jin/">
+       黄金
+      </a>
+      |
+      <a href="http://money.sohu.com/waihui/">
+       外汇
+      </a>
+      |
+      <a href="http://money.sohu.com/qihuo/">
+       期货
+      </a>
+      |
+      <a href="http://money.sohu.com/zhaiquan/">
+       债券
+      </a>
+      |
+      <a href="http://money.sohu.com/xintuo/">
+       信托
+      </a>
+      |
+      <a href="http://money.sohu.com/collection/">
+       收藏
+      </a>
+     </p>
+     <p>
+      <a href="http://money.sohu.com/ketang/">
+       课堂
+      </a>
+      |
+      <a href="http://money.sohu.com/rmbdt/">
+       人民币
+      </a>
+      |
+      <a href="http://money.sohu.com/tzbd/">
+       贴士
+      </a>
+      |
+      <a href="http://money.sohu.com/wycy/">
+       创业
+      </a>
+      |
+      <a href="http://money.sohu.com/2011sz100/">
+       评测
+      </a>
+      |
+      <a target="_blank" href="http://card.money.sohu.com/case/index.php">
+       案例
+      </a>
+      |
+      <a href="http://money.sohu.com/xpzb/">
+       新品
+      </a>
+      |
+      <a target="_blank" href="http://club.money.sohu.com/businessmain.php?c=82&amp;b=licai">
+       社区
+      </a>
+      |
+      <a target="_blank" href="http://blog.sohu.com/money/">
+       博客
+      </a>
+     </p>
+    </div>
+   </div>
+   <div class="wd04">
+    <a href="http://fund.sohu.com/">
+     <img width="70" height="45" src="http://money.sohu.com/upload/licaitouping/images/title04.gif" alt="" />
+    </a>
+    <div class="left">
+     <p>
+      <a href="http://fund.sohu.com/hqsj/">
+       要闻
+      </a>
+      |
+      <a target="_blank" href="http://q.fund.sohu.com/q/bulletina.php">
+       公告
+      </a>
+     </p>
+     <p>
+      <a target="_blank" href="http://q.fund.sohu.com/jzph/zxjz_date_up.shtml">
+       净值
+      </a>
+      |
+      <a target="_blank" href="http://q.fund.sohu.com/jzhb/kfs_rate_all_down.shtml">
+       回报
+      </a>
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container_24">
+   <div class="navbgx">
+    <div class="nav nav_bank" style="position:relative;">
+     <a class="catlink" target="_blank" href="http://db.money.sohu.com/bank/">
+     </a>
+     <a class="join" href="javascript:addBookmark('银行产品库-搜狐理财','http://money.sohu.com/bank');">
+      加入收藏
+     </a>
+     <div class="navlink">
+      <a href="http://db.money.sohu.com/bank/bksearch.html?currency=1">
+       人民币产品
+      </a>
+      |
+      <a href="http://db.money.sohu.com/bank/bksearch.html?currency=0">
+       外币产品
+      </a>
+     </div>
+     <div class="navSea xt_navSea">
+      <ul>
+       <li class="s1">
+        产品状态：
+       </li>
+       <li>
+        <select id="s1" class="sel01">
+         <option value="">
+          全部
+         </option>
+         <option value="1">
+          在售
+         </option>
+         <option value="2">
+          预售
+         </option>
+         <option value="3">
+          停售
+         </option>
+        </select>
+       </li>
+       <li class="s2">
+        发行机构：
+       </li>
+       <li>
+        <select id="s2" class="sel02">
+         <option value="">
+          所有
+         </option>
+         <option value="澳新银行">
+          澳新银行
+         </option>
+         <option value="包商银行">
+          包商银行
+         </option>
+         <option value="北京农村商业银行">
+          北京农村商业银行
+         </option>
+         <option value="北京农商银行">
+          北京农商银行
+         </option>
+         <option value="北京银行">
+          北京银行
+         </option>
+         <option value="滨海银行">
+          滨海银行
+         </option>
+         <option value="渤海银行">
+          渤海银行
+         </option>
+         <option value="成都银行">
+          成都银行
+         </option>
+         <option value="大华银行">
+          大华银行
+         </option>
+         <option value="大连银行">
+          大连银行
+         </option>
+         <option value="德阳银行">
+          德阳银行
+         </option>
+         <option value="德意志银行">
+          德意志银行
+         </option>
+         <option value="德州银行">
+          德州银行
+         </option>
+         <option value="东莞银行">
+          东莞银行
+         </option>
+         <option value="东亚银行">
+          东亚银行
+         </option>
+         <option value="法国兴业银行">
+          法国兴业银行
+         </option>
+         <option value="富滇银行">
+          富滇银行
+         </option>
+         <option value="福建海峡银行">
+          福建海峡银行
+         </option>
+         <option value="阜新银行">
+          阜新银行
+         </option>
+         <option value="福州市商业银行">
+          福州市商业银行
+         </option>
+         <option value="赣州银行">
+          赣州银行
+         </option>
+         <option value="工商银行">
+          工商银行
+         </option>
+         <option value="光大银行">
+          光大银行
+         </option>
+         <option value="广发银行">
+          广发银行
+         </option>
+         <option value="广州农村商业银行">
+          广州农村商业银行
+         </option>
+         <option value="广州农商银行">
+          广州农商银行
+         </option>
+         <option value="广州银行">
+          广州银行
+         </option>
+         <option value="桂林银行">
+          桂林银行
+         </option>
+         <option value="贵阳商业银行">
+          贵阳商业银行
+         </option>
+         <option value="哈尔滨银行">
+          哈尔滨银行
+         </option>
+         <option value="杭州联合银行">
+          杭州联合银行
+         </option>
+         <option value="杭州银行">
+          杭州银行
+         </option>
+         <option value="汉口银行">
+          汉口银行
+         </option>
+         <option value="河北银行">
+          河北银行
+         </option>
+         <option value="荷兰银行">
+          荷兰银行
+         </option>
+         <option value="恒丰银行">
+          恒丰银行
+         </option>
+         <option value="恒生银行">
+          恒生银行
+         </option>
+         <option value="华侨银行">
+          华侨银行
+         </option>
+         <option value="花旗银行">
+          花旗银行
+         </option>
+         <option value="华夏银行">
+          华夏银行
+         </option>
+         <option value="华一银行">
+          华一银行
+         </option>
+         <option value="湖北银行">
+          湖北银行
+         </option>
+         <option value="汇丰银行">
+          汇丰银行
+         </option>
+         <option value="徽商银行">
+          徽商银行
+         </option>
+         <option value="江苏银行">
+          江苏银行
+         </option>
+         <option value="建设银行">
+          建设银行
+         </option>
+         <option value="交通银行">
+          交通银行
+         </option>
+         <option value="嘉兴银行">
+          嘉兴银行
+         </option>
+         <option value="吉林银行">
+          吉林银行
+         </option>
+         <option value="晋商银行">
+          晋商银行
+         </option>
+         <option value="锦州银行">
+          锦州银行
+         </option>
+         <option value="九江银行">
+          九江银行
+         </option>
+         <option value="莱商银行">
+          莱商银行
+         </option>
+         <option value="兰州银行">
+          兰州银行
+         </option>
+         <option value="辽阳银行">
+          辽阳银行
+         </option>
+         <option value="柳州市商业银行">
+          柳州市商业银行
+         </option>
+         <option value="洛阳银行">
+          洛阳银行
+         </option>
+         <option value="民生银行">
+          民生银行
+         </option>
+         <option value="南昌银行">
+          南昌银行
+         </option>
+         <option value="南京银行">
+          南京银行
+         </option>
+         <option value="南洋商业银行">
+          南洋商业银行
+         </option>
+         <option value="宁波银行">
+          宁波银行
+         </option>
+         <option value="宁夏银行">
+          宁夏银行
+         </option>
+         <option value="农商行">
+          农商行
+         </option>
+         <option value="农业银行">
+          农业银行
+         </option>
+         <option value="平安银行（原）">
+          平安银行（原）
+         </option>
+         <option value="平安银行">
+          平安银行
+         </option>
+         <option value="浦发银行">
+          浦发银行
+         </option>
+         <option value="齐鲁银行">
+          齐鲁银行
+         </option>
+         <option value="青岛银行">
+          青岛银行
+         </option>
+         <option value="齐商银行">
+          齐商银行
+         </option>
+         <option value="瑞丰银行">
+          瑞丰银行
+         </option>
+         <option value="厦门国际银行">
+          厦门国际银行
+         </option>
+         <option value="厦门银行">
+          厦门银行
+         </option>
+         <option value="上海农商行">
+          上海农商行
+         </option>
+         <option value="上海农商银行">
+          上海农商银行
+         </option>
+         <option value="上海银行">
+          上海银行
+         </option>
+         <option value="上饶银行">
+          上饶银行
+         </option>
+         <option value="绍兴银行">
+          绍兴银行
+         </option>
+         <option value="深发展银行">
+          深发展银行
+         </option>
+         <option value="盛京银行">
+          盛京银行
+         </option>
+         <option value="深圳农村商业银行">
+          深圳农村商业银行
+         </option>
+         <option value="深圳农商行">
+          深圳农商行
+         </option>
+         <option value="深圳商业银行">
+          深圳商业银行
+         </option>
+         <option value="苏州银行">
+          苏州银行
+         </option>
+         <option value="台州银行">
+          台州银行
+         </option>
+         <option value="天津银行">
+          天津银行
+         </option>
+         <option value="威海市商业银行">
+          威海市商业银行
+         </option>
+         <option value="温州银行">
+          温州银行
+         </option>
+         <option value="乌鲁木齐市商业银行">
+          乌鲁木齐市商业银行
+         </option>
+         <option value="西安市商业银行">
+          西安市商业银行
+         </option>
+         <option value="兴业银行">
+          兴业银行
+         </option>
+         <option value="星展银行">
+          星展银行
+         </option>
+         <option value="营口银行">
+          营口银行
+         </option>
+         <option value="鄞州银行">
+          鄞州银行
+         </option>
+         <option value="渣打银行">
+          渣打银行
+         </option>
+         <option value="长沙银行">
+          长沙银行
+         </option>
+         <option value="湛江市商业银行">
+          湛江市商业银行
+         </option>
+         <option value="招商银行">
+          招商银行
+         </option>
+         <option value="浙江稠州商业银行">
+          浙江稠州商业银行
+         </option>
+         <option value="浙江民泰商业银行">
+          浙江民泰商业银行
+         </option>
+         <option value="浙江泰隆商业银行">
+          浙江泰隆商业银行
+         </option>
+         <option value="郑州银行">
+          郑州银行
+         </option>
+         <option value="浙商银行">
+          浙商银行
+         </option>
+         <option value="中国银行">
+          中国银行
+         </option>
+         <option value="中国邮政储蓄银行">
+          中国邮政储蓄银行
+         </option>
+         <option value="重庆三峡银行">
+          重庆三峡银行
+         </option>
+         <option value="重庆银行">
+          重庆银行
+         </option>
+         <option value="中信银行">
+          中信银行
+         </option>
+         <option value="珠海华润银行">
+          珠海华润银行
+         </option>
+        </select>
+       </li>
+       <li class="s3">
+        产品期限：
+       </li>
+       <li>
+        <select id="s3" name="select" class="sel03">
+         <option value="">
+          不限
+         </option>
+         <option value="0_3">
+          3个月以下
+         </option>
+         <option value="3_6">
+          3月至6月
+         </option>
+         <option value="6_12">
+          6月至1年
+         </option>
+         <option value="12_36">
+          1年至3年
+         </option>
+         <option value="36_">
+          3年以上
+         </option>
+        </select>
+       </li>
+       <li class="s4">
+        年收益率：
+       </li>
+       <li>
+        <select id="s4" name="select" class="sel04">
+         <option value="">
+          不限
+         </option>
+         <option value="0_2">
+          2%以下
+         </option>
+         <option value="2_5">
+          2%--5%
+         </option>
+         <option value="5_10">
+          5%--10%
+         </option>
+         <option value="10_15">
+          10%--15%
+         </option>
+         <option value="15_">
+          15%以上
+         </option>
+        </select>
+       </li>
+       <li class="s5">
+        起购金额：
+       </li>
+       <li>
+        <select id="s5" name="select" class="sel05">
+         <option value="">
+          不限
+         </option>
+         <option value="0_5">
+          5万以下
+         </option>
+         <option value="5_10">
+          5万―10万
+         </option>
+         <option value="10_20">
+          10万―20万
+         </option>
+         <option value="20_">
+          20万以上
+         </option>
+        </select>
+       </li>
+       <li class="s6">
+        产品名称：
+       </li>
+       <li>
+        <input id="s6" class="sel06" maxlength="30" value="关键字" onclick="this.value=''" />
+       </li>
+       <li>
+        <input class="seaBtn" type="button" onclick="bkrearch()" value="搜 索" />
+       </li>
+      </ul>
+     </div>
+     <span class="navr">
+     </span>
+    </div>
+    <form name="yhsearch1" id="yhsearch1" method="post" target="">
+    </form>
+   </div>
+   <div class="pageNav">
+    <a href="http://money.sohu.com/yinhang/" target="_blank">
+     银行首页
+    </a>
+    &gt;
+    <a href="http://money.sohu.com/yhcpk/index.shtml" target="_blank">
+     银行理财产品
+    </a>
+    &gt; 详细页
+   </div>
+   <div class="grid_17 fl">
+    <div class="bor proShow">
+     <span class="blank15">
+     </span>
+     <h4 class="fl">
+      2012年阳光理财资产管理类理财产品“T计划92-115天”产品(EB2197)
+     </h4>
+     <span class="fr">
+      人气：
+      <img src="/bank/skin/star3.gif" />
+      <img src="/bank/skin/star3.gif" />
+      <img src="/bank/skin/star3.gif" />
+      <img src="/bank/skin/star3.gif" />
+      <img src="/bank/skin/star4.gif" />
+     </span>
+     <input id="topuldb" type="hidden" value="00045665" />
+     <span class="blank10">
+     </span>
+     <table width="100%" border="0" cellpadding="0" cellspacing="0" class="showTable03">
+      <tr>
+       <td class="td1">
+        产品名称
+       </td>
+       <td colspan="3">
+        2012年阳光理财资产管理类理财产品“T计划92-115天”产品(EB2197)
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        发行银行
+       </td>
+       <td class="td2">
+        光大银行
+       </td>
+       <td class="td3">
+        币种
+       </td>
+       <td class="td4">
+        人民币
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        委托管理期
+       </td>
+       <td>
+        115天
+       </td>
+       <td class="td3">
+        收益起计日
+       </td>
+       <td>
+        2012-10-09
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        销售起始日期
+       </td>
+       <td id="sell_s">
+        2012-09-27
+       </td>
+       <td class="td3">
+        销售终止日期
+       </td>
+       <td id="sell_e">
+        2012-10-08
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        付息周期
+       </td>
+       <td>
+        115天
+       </td>
+       <td class="td3">
+        预期最高年化收益率（%）
+       </td>
+       <td>
+        4.5
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        产品类型
+       </td>
+       <td>
+        组合型
+       </td>
+       <td class="td3">
+        委托起始金额
+       </td>
+       <td>
+        5 万元
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        收益类型
+       </td>
+       <td>
+        浮动收益型
+       </td>
+       <td class="td3">
+        发售地区
+       </td>
+       <td>
+        全国
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        递增单位（单位：元）
+       </td>
+       <td>
+        10000
+       </td>
+       <td class="td3">
+        产品管理费
+       </td>
+       <td>
+        无
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        是否保本
+       </td>
+       <td>
+        否
+       </td>
+       <td class="td3">
+        在售状态
+       </td>
+       <td id="sell_c">
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        提前终止条件
+       </td>
+       <td colspan="3">
+        银行可提前终止，客户不可赎回。
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        产品说明
+       </td>
+       <td colspan="3">
+        本产品投资范围为国内市场具有良好收益性与流动性的金融工具,包括银行存款,货币市场工具,债券类产品,新股申购类信托计划和准债券类产品.其中,银行存款,货币市场工具,债券类产品投资占比不低于30%,新股申购类信托计划和准债券类产品投资占比不高于70%.
+       </td>
+      </tr>
+      <tr>
+       <td class="td1">
+        收益率说明
+       </td>
+       <td colspan="3">
+        <p>
+         预计最高年收益率:4.50%
+        </p>
+       </td>
+      </tr>
+     </table>
+     <table class="showTable02" width="100%" border="0">
+      <tr>
+      </tr>
+     </table>
+     <span class="blank5">
+     </span>
+     <div id="shareIn" class="shareIn clear">
+      <ul>
+       <li class="fxd">
+        分享到：
+       </li>
+       <li class="blg">
+        <a href="javascript:void(0)" onclick="jumpUrl('t')" title="分享到搜狐微博">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="qq">
+        <a href="javascript:void(0)" onclick="jumpUrl('qq')" title="分享给QQ好友">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="sina">
+        <a href="javascript:void(0)" onclick="jumpUrl('sina')" title="分享到新浪微博">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="bsh">
+        <a href="javascript:void(0)" onclick="jumpUrl('bai')" title="分享到白社会">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="kxw">
+        <a href="javascript:void(0)" onclick="jumpUrl('kaixin')" title="分享到开心网">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="rrw">
+        <a href="javascript:void(0)" onclick="jumpUrl('renren')" title="分享到人人网">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="db">
+        <a href="javascript:void(0)" onclick="jumpUrl('douban')" title="分享到豆瓣">
+        </a>
+        <em>
+        </em>
+       </li>
+       <li class="go139">
+        <a href="javascript:void(0)" onclick="jumpUrl('go139')" title="免费分享到手机">
+        </a>
+        <em>
+        </em>
+       </li>
+      </ul>
+     </div>
+     <script type="text/javascript">
+      var tcO = document.getElementById("shareIn").getElementsByTagName("a");
+		function shareIn(o){
+			for(var i=0; i&lt;o.length; i++){
+				o[i].onmouseover = function (){
+					this.parentNode.getElementsByTagName("em")[0].style.display = "block";
+				}
+				o[i].onmouseout = function (){
+					this.parentNode.getElementsByTagName("em")[0].style.display = "none";
+				}
+			}
+		}
+		shareIn(tcO);
+     </script>
+     <span class="blank15">
+     </span>
+     <div class="tc">
+      本产品数据由
+      <font class="orange">
+       第一理财网
+      </font>
+      提供
+     </div>
+     <span class="blank15">
+     </span>
+    </div>
+   </div>
+   <!--left end-->
+   <div class="grid_7 fr">
+    <div class="bor">
+     <h4 class="title01">
+      光大银行介绍
+     </h4>
+     <div class="descText">
+      <p class="tc">
+       <img src="/bank/images/logo/b21130353131a6ac66a62c7ed5fcdf21.jpg" width="200" height="70" />
+      </p>
+      <p class="text">
+       中国光大银行成立于1992年8月，1997年1月完成股份制改造，成为国内第一家国有控股并有国际金融组织参股的全国性股份制商业银行。
+      </p>
+     </div>
+    </div>
+    <span class="blank10">
+    </span>
+    <div class="bor">
+     <div class="title01">
+      <h4 class="fl">
+       相关产品
+      </h4>
+      <span class="tMore">
+       <a href="bank/bksearch.html?org=光大银行" target="_blank">
+        更多
+       </a>
+      </span>
+     </div>
+     <ul class="list01" id="topul">
+      <li id="00046169">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/169/00046169.html" target="_blank" title="2012年阳光理财资产管理类理财产品“T计划94-42天”产品(EB2199)">
+        2012年阳光理财资产管理类理财产品..
+       </a>
+      </li>
+      <li id="00046167">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/167/00046167.html" target="_blank" title="2012年阳光理财“e理财”第18期产品(EB4036)">
+        2012年阳光理财“e理财”第18期产品(..
+       </a>
+      </li>
+      <li id="00046168">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/168/00046168.html" target="_blank" title="2012年阳光理财资产管理类理财产品“T计划93-49天”产品(EB2198)">
+        2012年阳光理财资产管理类理财产品..
+       </a>
+      </li>
+      <li id="00046170">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/170/00046170.html" target="_blank" title="2012年阳光理财“T计划”第17期产品1(2012001142044)">
+        2012年阳光理财“T计划”第17期产品1..
+       </a>
+      </li>
+      <li id="00046171">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/171/00046171.html" target="_blank" title="2012年阳光理财“T计划”第17期产品2(2012001142045)">
+        2012年阳光理财“T计划”第17期产品2..
+       </a>
+      </li>
+      <li id="00046172">
+       <span>
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star3.gif" />
+        <img src="/insurance/skin/star4.gif" />
+       </span>
+       <a href="/bank/view/172/00046172.html" target="_blank" title="2012年阳光理财“T计划”第17期产品3(2012001142046)">
+        2012年阳光理财“T计划”第17期产品3..
+       </a>
+      </li>
+     </ul>
+    </div>
+    <span class="blank10">
+    </span>
+    <div class="bor">
+     <div class="title01">
+      <h4 class="fl">
+       相关新闻
+      </h4>
+      <span class="tMore">
+       <a href="http://money.sohu.com/yhcp/" target="_blank">
+        更多
+       </a>
+      </span>
+     </div>
+     <ul class="list01">
+      <li>
+       <a href="http://money.sohu.com/20121008/n354428977.shtml" target="_blank" rel="external">
+        银行热推“养老”理财产品 专家支...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20121008/n354203190.shtml" target="_blank" rel="external">
+        浦发银行推“轻松理财―同程”借贷...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20121004/n354331394.shtml" target="_blank" rel="external">
+        银行理财产品:门槛走高收益率走低(图)
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20120930/n354223718.shtml" target="_blank" rel="external">
+        光大银行设小微专业支行 贴身服务...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20120929/n354182899.shtml" target="_blank" rel="external">
+        携手美国运通 招商银行推出运通百...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20120928/n354103770.shtml" target="_blank" rel="external">
+        中信推房贷专属卡 可同时申请房屋...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20120927/n354036529.shtml" target="_blank" rel="external">
+        建行速通卡在京发行 十一之后开始...
+       </a>
+      </li>
+      <li>
+       <a href="http://money.sohu.com/20120926/n353956857.shtml" target="_blank" rel="external">
+        天津农商银行再推多种期限“宝益得...
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <!--right end-->
+   <span class="blank10">
+   </span>
+   <span class="blank20">
+   </span>
+   <span class="blank20">
+   </span>
+   <span class="blank20">
+   </span>
+  </div>
+ </body>
+ <script type="text/javascript" src="http://js.sohu.com/mail/pv/pv_v203_ajax.js">
+ </script>
+ <script type="text/javascript">
+  function doStatus(){
+		try{
+		    var st = document.getElementById("sell_s").innerText;
+				var et = document.getElementById("sell_e").innerText;
+				if(st &amp;&amp; et &amp;&amp; ""!=st &amp;&amp; ""!=et){
+					var s = new Date(st+" 00:00:00");
+					var c = new Date();
+					var e = new Date(et+" 00:00:00");
+					if(c&lt;s){
+						  document.getElementById("sell_c").innerText = "未开始销售";
+					}else if(c&gt;s &amp;&amp; c&lt;e){
+						  document.getElementById("sell_c").innerText = "正在销售中";
+					}else if(c&gt;e){
+						  document.getElementById("sell_c").innerText = "已结束销售";
+					}else{
+						  document.getElementById("sell_c").innerText = "";
+					}
+				}
+		}catch(err){
+		   document.getElementById("sell_c").innerText = "";
+		}
+	} 
+	doStatus();
+ </script>
+</html>

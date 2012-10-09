@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/public/finance
 svn://192.168.1.8
 
@@ -26,17 +26,17 @@ xusj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-_financing_tools.jsp
+fundDetails.jsp
 file
 
 
 
 
 2012-09-11T03:06:56.000000Z
-efb6aba8261b4f7d9a550ac6b4d1d1ae
-2012-08-18T03:19:30.814035Z
-2641
-juxj
+2333363e5b78fe073618bb0087cd20cd
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
 
 
 
@@ -58,7 +58,75 @@ juxj
 
 
 
-1313
+4687
+
+fundHome.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+7499a716d196c1fc667c20021db81b48
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3809
+
+financeServices.jsp
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+081527a78094f38c290b3bc3f05eeb45
+2012-09-28T08:11:10.774638Z
+3721
+xusj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10009
 
 bankFinanceHome.jsp
 file
@@ -73,7 +141,7 @@ file
 xusj
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -162,51 +230,17 @@ juxj
 
 6489
 
-financeServices.jsp
-file
-
-
-
-
-2012-09-29T03:29:35.000000Z
-081527a78094f38c290b3bc3f05eeb45
-2012-09-28T08:11:10.774638Z
-3721
-xusj
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10009
-
-fundDetails.jsp
+_financing_tools.jsp
 file
 
 
 
 
 2012-09-11T03:06:56.000000Z
-2333363e5b78fe073618bb0087cd20cd
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
+efb6aba8261b4f7d9a550ac6b4d1d1ae
+2012-08-18T03:19:30.814035Z
+2641
+juxj
 
 
 
@@ -228,39 +262,5 @@ Patrick
 
 
 
-4687
-
-fundHome.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-7499a716d196c1fc667c20021db81b48
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3809
+1313
 

@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/finance
 svn://192.168.1.8
 
@@ -25,40 +25,6 @@ Patrick
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-BankProductAction.java
-file
-
-
-
-
-2012-09-20T06:02:24.000000Z
-8fda91f43e42068e91cac1e468eba20d
-2012-09-17T03:46:18.142877Z
-3482
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6059
 
 FinanceProductAction.java
 file
@@ -93,4 +59,38 @@ Patrick
 
 
 5997
+
+BankProductAction.java
+file
+
+
+
+
+2012-09-20T06:02:24.000000Z
+8fda91f43e42068e91cac1e468eba20d
+2012-09-17T03:46:18.142877Z
+3482
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6059
 

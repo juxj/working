@@ -1,16 +1,32 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+#!/usr/bin/env python
+# -*- coding utf-8 -*- 
 
-Replace this with more appropriate tests for your application.
-"""
+from domain.json_builder import JsonBuilder
+from domain.web_fetcher import *
+import os, sys, string, httplib
 
-from django.test import TestCase
+class Test:
 
+	def run(self):
+		url = "/bank/view/665/00045665.html"
+		fetcher = WebFetcher(url)
+		data = fetcher.get_html_page()
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+		m = 0
+		for d in data:
+			if d=='\n':
+				m = m+1
+		print m
+		#html_file = open('45665','a')
+		#html_file.write(data)
+		#html_file.close()
+		
+		#html_file = open('45665','r')
+		#data = html_file.readlines()
+		#json = JsonBuilder(data)
+		#print json.run()
+
+if __name__=='__main__':
+	
+	test = Test()
+	test.run()

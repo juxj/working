@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/resources
 svn://192.168.1.8
 
@@ -25,108 +25,6 @@ has-props
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-applicationContext-dao.xml
-file
-
-
-
-
-2012-09-27T02:10:10.000000Z
-9e153c64fc05974a00fa3bdfcc91c7bc
-2012-09-26T06:56:34.785077Z
-3621
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5938
-
-applicationContext-service.xml
-file
-
-
-
-
-2012-09-29T03:29:35.000000Z
-eaf979262569f15ff782e80642459146
-2012-09-28T01:08:36.316859Z
-3698
-yangb
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2524
-
-applicationContext-timertask.xml
-file
-
-
-
-
-2012-09-11T09:29:21.000000Z
-0ce891f3e2807ec657c764e3450c1ef3
-2012-09-11T08:19:58.771371Z
-3352
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-980
 
 applicationContext.xml
 file
@@ -162,23 +60,87 @@ yuel
 
 3204
 
-com
-dir
-
-config.properties
+applicationContext-timertask.xml
 file
 
 
 
 
-2012-09-29T03:29:34.000000Z
-0ac9c95e52e96ee0a539f3660223e4ca
-2012-09-28T03:01:48.685355Z
-3705
+2012-09-11T09:29:21.000000Z
+0ce891f3e2807ec657c764e3450c1ef3
+2012-09-11T08:19:58.771371Z
+3352
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+980
+
+applicationContext-dao.xml
+file
+
+
+
+
+2012-09-27T02:10:10.000000Z
+9e153c64fc05974a00fa3bdfcc91c7bc
+2012-09-26T06:56:34.785077Z
+3621
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5938
+
+struts-json.xml
+file
+
+
+
+
+2012-09-11T03:06:51.000000Z
+84058c9de298758997971d322efd0340
+2012-07-27T08:09:15.805736Z
+1710
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
 
 
 
@@ -197,7 +159,8 @@ svn:special svn:externals svn:needs-lock
 
 
 
-989
+
+487
 
 log4j.properties
 file
@@ -233,16 +196,87 @@ Patrick
 
 727
 
-struts-admin.xml
+struts-serviceInfo.xml
 file
 
 
 
 
-2012-09-21T08:25:11.000000Z
-b1f58e1608055663d3f8a77a810b6b3c
-2012-09-21T05:56:00.591873Z
-3535
+2012-09-29T06:32:01.000000Z
+6a96ead53b630dadd107461737ce4081
+2012-09-29T06:45:59.920908Z
+3742
+juxj
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6604
+
+struts-news.xml
+file
+
+
+
+
+2012-09-11T03:06:51.000000Z
+cd301076f85f1cef48b371899bf41cd6
+2012-09-06T09:28:14.172770Z
+3264
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1817
+
+com
+dir
+
+struts-user.xml
+file
+
+
+
+
+2012-09-14T06:23:36.000000Z
+5d48a3dfb6628f4107ffc4f7d3efc50e
+2012-09-14T04:06:07.432186Z
+3445
 linm
 
 
@@ -265,7 +299,7 @@ linm
 
 
 
-8282
+4045
 
 struts-club.xml
 file
@@ -301,17 +335,17 @@ juxj
 
 1065
 
-struts-finance.xml
+struts-admin.xml
 file
 
 
 
 
-2012-09-11T09:29:21.000000Z
-f182b2908dab02fe812b1bf34b830ab5
-2012-09-11T08:19:58.771371Z
-3352
-yuel
+2012-09-21T08:25:11.000000Z
+b1f58e1608055663d3f8a77a810b6b3c
+2012-09-21T05:56:00.591873Z
+3535
+linm
 
 
 
@@ -333,41 +367,7 @@ yuel
 
 
 
-1242
-
-struts-json.xml
-file
-
-
-
-
-2012-09-11T03:06:51.000000Z
-84058c9de298758997971d322efd0340
-2012-07-27T08:09:15.805736Z
-1710
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-487
+8282
 
 struts-loan.xml
 file
@@ -437,51 +437,20 @@ linm
 
 568
 
-struts-news.xml
-file
-
-
-
-
-2012-09-11T03:06:51.000000Z
-cd301076f85f1cef48b371899bf41cd6
-2012-09-06T09:28:14.172770Z
-3264
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1817
+templates
+dir
 
-struts-serviceInfo.xml
+config.properties
 file
 
 
 
 
-2012-09-29T06:32:01.000000Z
-6a96ead53b630dadd107461737ce4081
-2012-09-29T06:45:59.920908Z
-3742
-juxj
+2012-09-29T03:29:34.000000Z
+0ac9c95e52e96ee0a539f3660223e4ca
+2012-09-28T03:01:48.685355Z
+3705
+Patrick
 
 
 
@@ -503,41 +472,7 @@ juxj
 
 
 
-6604
-
-struts-user.xml
-file
-
-
-
-
-2012-09-14T06:23:36.000000Z
-5d48a3dfb6628f4107ffc4f7d3efc50e
-2012-09-14T04:06:07.432186Z
-3445
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4045
+989
 
 struts.xml
 file
@@ -573,6 +508,71 @@ juxj
 
 4339
 
-templates
-dir
+struts-finance.xml
+file
+
+
+
+
+2012-09-11T09:29:21.000000Z
+f182b2908dab02fe812b1bf34b830ab5
+2012-09-11T08:19:58.771371Z
+3352
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1242
+
+applicationContext-service.xml
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+eaf979262569f15ff782e80642459146
+2012-09-28T01:08:36.316859Z
+3698
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2524
 

@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF
 svn://192.168.1.8
 
@@ -26,19 +26,13 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-classes
-dir
-
-lib
-dir
-
 tld
 dir
 
 upload
 dir
 
-web
+lib
 dir
 
 web.xml
@@ -74,4 +68,10 @@ yangb
 
 
 1230
+
+classes
+dir
+
+web
+dir
 

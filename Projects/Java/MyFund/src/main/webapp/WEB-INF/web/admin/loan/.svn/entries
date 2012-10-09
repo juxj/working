@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/loan
 svn://192.168.1.8
 
@@ -25,40 +25,6 @@ yuel
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-apply_upload_attach.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-1f8ecde5d75a871f9d1226d94293a40b
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5411
 
 busifinance_apply_view.jsp
 file
@@ -94,20 +60,19 @@ yangb
 
 12414
 
-busiloan_request_view.jsp
+finance_product_update.jsp
 file
 
 
 
 
 2012-09-29T03:29:35.000000Z
-6888bce18f7e1fa10d40e53e79e840e3
+56d724e5894dc28c88bdb899f65f38d1
 2012-09-28T03:35:40.749821Z
 3711
 yuel
 
 
-svn:special svn:externals svn:needs-lock
 
 
 
@@ -126,7 +91,42 @@ svn:special svn:externals svn:needs-lock
 
 
 
-8411
+
+29464
+
+update_finance_back.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+04be49624e15020780da5b971adb2fbb
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2045
 
 download_attach.jsp
 file
@@ -162,40 +162,6 @@ yuel
 
 281
 
-finance_apply_admin.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-2ee701b31a6a534599a80a7a79540de1
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7195
-
 finance_product_admin.jsp
 file
 
@@ -229,108 +195,6 @@ Patrick
 
 
 6471
-
-finance_product_update.jsp
-file
-
-
-
-
-2012-09-29T03:29:35.000000Z
-56d724e5894dc28c88bdb899f65f38d1
-2012-09-28T03:35:40.749821Z
-3711
-yuel
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29464
-
-finance_product_view.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-04cde89bd35e1fc2263761074c29646b
-2012-08-31T06:05:31.235137Z
-3031
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10397
-
-loan_request_detail.jsp
-file
-
-
-
-
-2012-09-29T03:29:35.000000Z
-dc9b704886484b13e6743bcdbb02fde8
-2012-09-28T03:35:40.749821Z
-3711
-yuel
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10191
 
 loan_request_list.jsp
 file
@@ -366,6 +230,108 @@ Patrick
 
 4599
 
+apply_upload_attach.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+1f8ecde5d75a871f9d1226d94293a40b
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5411
+
+finance_product_view.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+04cde89bd35e1fc2263761074c29646b
+2012-08-31T06:05:31.235137Z
+3031
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10397
+
+busiloan_request_view.jsp
+file
+
+
+
+
+2012-09-29T03:29:35.000000Z
+6888bce18f7e1fa10d40e53e79e840e3
+2012-09-28T03:35:40.749821Z
+3711
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8411
+
 perrunfinance_apply_view.jsp
 file
 
@@ -399,6 +365,40 @@ yangb
 
 
 11913
+
+finance_apply_admin.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+2ee701b31a6a534599a80a7a79540de1
+2012-09-07T01:36:08.469106Z
+3265
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7195
 
 previewExtendsProperty.jsp
 file
@@ -434,17 +434,17 @@ yuel
 
 896
 
-update_finance_back.jsp
+loan_request_detail.jsp
 file
 
 
 
 
-2012-09-11T03:06:56.000000Z
-04be49624e15020780da5b971adb2fbb
-2012-09-07T01:36:08.469106Z
-3265
-Patrick
+2012-09-29T03:29:35.000000Z
+dc9b704886484b13e6743bcdbb02fde8
+2012-09-28T03:35:40.749821Z
+3711
+yuel
 
 
 
@@ -466,5 +466,5 @@ Patrick
 
 
 
-2045
+10191
 

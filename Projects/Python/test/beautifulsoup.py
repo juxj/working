@@ -20,7 +20,7 @@ class Main:
 
 	def get_html_dom(self, data):
 		soup = BeautifulSoup(''.join(data))
-		print soup.prettify()	
+		return soup.prettify()	
 		
 	
 	def print_nodes(self, contents):
@@ -30,9 +30,12 @@ class Main:
 			print contents[i]
 
 	def run(self):
-		html_file = open('sohu.html','r')
+		html_file = open('new.html','r')
 		data = html_file.read()
-		self.get_html_dom(data);
+		data =self.get_html_dom(data);
+		html_file = open('new.prettify', 'a')
+		html_file.write(data)
+		html_file.close()
 
  
 if __name__ == '__main__':

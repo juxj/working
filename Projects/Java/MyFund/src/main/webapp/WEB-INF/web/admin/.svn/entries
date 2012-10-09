@@ -1,7 +1,7 @@
 10
 
 dir
-3743
+3754
 svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin
 svn://192.168.1.8
 
@@ -26,85 +26,23 @@ yuel
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-ajax.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-595bd7ee9fdd2e722c3fc777d0dd03e3
-2012-08-03T08:17:42.475504Z
-1964
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-71
-
-assessment
+message
 dir
 
-authorize
-dir
-
-caiwu
+system
 dir
 
 club
 dir
 
-dashboard.htm
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-845574546534da0da44c9df7796babd8
-2012-06-18T03:26:56.369550Z
-334
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-52889
+assessment
+dir
+
+promotion
+dir
+
+loan
+dir
 
 head.jsp
 file
@@ -174,9 +112,6 @@ Patrick
 
 12356
 
-loan
-dir
-
 login.jsp
 file
 
@@ -211,27 +146,92 @@ Patrick
 
 1768
 
-message
+supplyrequest
 dir
 
-news
+caiwu
+dir
+
+authorize
 dir
 
 order
 dir
 
-product
+news
 dir
 
-promotion
-dir
+dashboard.htm
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+845574546534da0da44c9df7796babd8
+2012-06-18T03:26:56.369550Z
+334
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+52889
 
-supplyrequest
-dir
-
-system
-dir
+ajax.jsp
+file
+
+
+
+
+2012-09-11T03:06:56.000000Z
+595bd7ee9fdd2e722c3fc777d0dd03e3
+2012-08-03T08:17:42.475504Z
+1964
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+71
 
 user
+dir
+
+product
 dir
 
