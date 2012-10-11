@@ -3,39 +3,30 @@
 
 import os, sys, string, httplib
 from BeautifulSoup import *
+from utils.string_util import StringUtil
+from fetcher.domain.html_attr_remover import *
+from HTMLParser import HTMLParser
 
 class WebFetcher:
 	def __init__(self, url):
-		self.url = url
-
-	def __get_domain(self):
-		url = self.url.split('/')
-		result = ''
-		if self.url.startswith('http'):
-			result = url[2]
-		else:
-			result = url[0]
-		return result 
-
-	def __get_url(self):
-		url = self.url.replace('https//','').replace('http://','')
-		url = url.replace(self.__get_domain(),'')
-		return url
+		parser = HTMLParser()
+		self.url = parser.unescape(url)
 
 	def get_html_page(self):
 		# get server domain
-		server_domain = self.__get_domain();
+		domain = StringUtil.get_url_domain(self.url)
+		url = StringUtil.get_url_suffix(self.url)
+		
 		# connect to the web server
-		conn = httplib.HTTPConnection(server_domain)
+		conn = httplib.HTTPConnection(domain)
 		# fetch the page.
-		conn.request('GET', self.__get_url())
+		conn.request('GET', url)
 		response = conn.getresponse()
-		html_data = response.read()
-		#html_data = unicode(html_data, 'gbk')
-		#html_data = html_data.encode('utf-8')
-		#html_data = self.format_html_data(html_data, 0)
-		#soup = BeautifulSoup(''.join(html_data))
-		#html_data = soup.prettify()
-		#html_data = self.format_html_data(html_data, 1)
-		#html_data = html_data.replace('&nbsp;','').replace('&copy;','')
-		return html_data
+		data = response.read()
+		data = unicode(data, 'gb2312')
+		data = data.encode('utf-8')
+
+		remover	= HTMLAttrRemover()
+		data = remover.read(data)
+	
+		return data
