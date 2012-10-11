@@ -9,7 +9,7 @@ class JsonBuilder:
 		self.html_data = html_data
 
 	def is_ignore_tag(self, line):
-		tags  = ['<!--', '.', '</']
+		tags  = ['<!--', '<img' '.', '</']
 		result = 0
 		for tag in tags:
 			if line.lstrip().startswith(tag):
@@ -100,14 +100,14 @@ class JsonBuilder:
 
 	#生成单节点JSON
 	def build_node(self,m, line, lines):
+		if len(line) == 0:
+			return '[]'
 
 		try:
 			title = str(line[4]).replace('\n','')
 			node_id = str(line[0])
 			properties = str(line[5]).replace('\n','')
-
 			#json = "{\"data\":\""+title+"\", \"attr\":{\"id\":\""+node_id+"\",\"properties\":\""+properties+"\"},\"state\":\"closed\",\"children\":["+str(self.get_children(line, lines))+"]}";
-
 			comma = ''
 			if m>0:
 				comma=','
