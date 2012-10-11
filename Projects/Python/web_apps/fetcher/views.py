@@ -14,11 +14,28 @@ def build_tree(request):
 	return render_to_response('fetcher/tree.html',{'url':url}, RequestContext(request))
 
 def get_tree_data(request):
-	fetcher = WebFetcher(request.GET['url'])
-	data = fetcher.get_html_page()
-	json = JsonBuilder(data)
-	result_value = json.run()
 
-	#json_file = open('/home/tju/Workspaces/Projects/Python/web_apps/fetcher/ll.json', 'r')
-	#result_value = json_file.read()
-	return HttpResponse(data);
+	url = request.GET['url']
+	# define file name which temporary store html data.
+	path = '/home/tju/Workspaces/Projects/Python/web_apps/data/'
+	file_name = path + request.session.session_key
+	# if file exists, remove it.
+	if os.path.isfile(file_name):
+		os.remove(file_name)
+	# fetch web page
+	fetcher = WebFetcher(url)
+	data = fetcher.get_html_page()
+	remover	= HTMLAttrRemover()
+	data = remover.read(data)
+
+	# save to file
+	f = open(file_name, 'a')
+	for line in data:
+		f.write(line)
+	f.close()
+	# convert html to json
+	json = JsonBuilder(file_name)
+	result = json.get_html_json()
+
+	#return HttpResponse('');
+	return HttpResponse(result);

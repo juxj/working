@@ -16,7 +16,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
  	#url(r'^$',TemplateView.as_view(template_name="fetcher/index.html")),
  	url(r'^$','web_apps.main.index'),
-	url(r'^grappelli/', include('grappelli.urls')),
  	url(r'^treeBuilder.do','fetcher.views.build_tree'),
  	url(r'^get_tree_data','fetcher.views.get_tree_data'),
     url(r'^admin/', include(admin.site.urls)),

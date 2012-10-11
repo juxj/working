@@ -1,0 +1,6047 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+   信托理财
+  </title>
+  <link href="/flcf/Tpl/default/Public/css/style.css" rel="stylesheet" type="text/css" />
+  <script language="javascript" type="text/javascript" src="/flcf/Tpl/default/Public/js/jquery.pack.js">
+  </script>
+ </head>
+ <body>
+  <div class="top">
+   <div class="top_m">
+    <div class="left">
+     <form id="form1" name="form1" method="post" action="/index.php?m=Index&amp;a=login">
+      <span style="float:left; display:block;">
+       用户名：
+      </span>
+      <label for="textfield">
+      </label>
+      <input type="text" name="username" class="textfield" style="width:85px; float:left; margin-top:4px; _margin-top:5px; *margin-top:5px;" />
+      <span style="float:left; display:block;">
+       密码：
+      </span>
+      <label for="textfield2">
+      </label>
+      <input name="password" type="password" class="textfield" style="width:85px; float:left; margin-top:4px; _margin-top:5px; *margin-top:5px;" />
+      <input type="image" name="submit" src="/flcf/Tpl/default/Public/images/top_btn.jpg" style=" float:left; margin-top:4px; margin-left:5px; _margin-top:5px; *margin-top:5px;" />
+      
+      <a href="/index.php?m=Reg&amp;a=index">
+       注册
+      </a>
+      <a href="re_pwd.html">
+       忘记密码
+      </a>
+      <input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c" />
+     </form>
+    </div>
+    <div class="right">
+     2012年10月11日 财富热线：
+     <span class="red">
+      <strong>
+       4001-888-598
+      </strong>
+     </span>
+     
+     <a onclick="this.style.behavior='url(#default#homepage)';
+
+this.setHomePage('http://www.fulee.com.cn');" href="#">
+      设为首页
+     </a>
+     <a href="javascript:void(0);" onclick="window.external.AddFavorite(document.location.href,document.title)">
+      加入收藏
+     </a>
+     
+     <a href="http://www.fulee.com.cn/index.php?m=Feedback&amp;a=index">
+      投诉建议
+     </a>
+    </div>
+   </div>
+  </div>
+  <div class="top2">
+   <div class="top2_m">
+    <div class="logo">
+     <a href="index.php">
+      <img src="/flcf/Tpl/default/Public/images/logo_1.jpg" width="183" height="90" />
+     </a>
+    </div>
+    <div class="top2_m2">
+     <!--&lt;img src="/Uploads/poto/506693c262628.jpg" width="584" height="90"  /&gt;-->
+     <table width="584" height="90" border="0" align="center" cellpadding="0" cellspacing="0" id="__01">
+      <tr>
+       <td>
+        <script type="text/javascript">
+         var _c = _h = 0;
+                    $(document).ready(function () {
+                        $('#play  li').click(function(){
+                            var i = $(this).attr('alt') - 1;
+                            clearInterval(_h);
+                            _c = i;
+                            //play();
+                            change(i);       
+                        })
+                        $("#pic img").hover(function(){clearInterval(_h)}, function(){play()});
+                        play();
+                    })
+                    function play()
+                    {
+                        _h = setInterval("auto()", 5000);    //图片切换间隔时间，1000为毫秒=1秒
+                    }
+                    function change(i)
+                    {
+                        $('#play li').css('background-color','#d1d1d1').eq(i).css('background-color','#661837').blur();
+                        $("#pic img").fadeOut('slow').eq(i).fadeIn('slow');
+                    }
+                    function auto()
+                    {   
+                        _c = _c &gt; 1 ? 0 : _c + 1;    //_c的值+2为显示图片数 最少3张
+                        change(_c);
+                    }
+        </script>
+        <div class="img_switch">
+         <div class="img_switch_content" id="pic">
+          <a href="http://www.xtlcw.com/index.php?m=Xtlc&amp;a=view&amp;id=209">
+           <img src="/Uploads/poto/506693c262628.jpg" />
+          </a>
+          <a href="http://www.xtlcw.com/index.php?m=Xtlc&amp;a=view&amp;id=183">
+           <img src="/Uploads/poto/5062880971a6e.jpg" />
+          </a>
+          <a href="http://www.xtlcw.com/index.php?m=Xtlc&amp;a=view&amp;id=193">
+           <img src="/Uploads/poto/505de00a41829.jpg" />
+          </a>
+          <div class="img_switch_text">
+           <div class="number_nav">
+            <ul id="play">
+             <li alt="1" title="">
+             </li>
+             <li alt="2" title="">
+             </li>
+             <li alt="3" title="">
+             </li>
+            </ul>
+           </div>
+          </div>
+         </div>
+        </div>
+       </td>
+      </tr>
+     </table>
+    </div>
+    <div class="top2_m3">
+     <ul>
+      <li>
+       <a href="/index.php?m=Lczx&amp;a=view&amp;id=1097" title="股票质押业务竞争白热化 今年收益率已降一成">
+        股票质押业务竞争白热化
+       </a>
+      </li>
+      <li>
+       <a href="/index.php?m=Lczx&amp;a=view&amp;id=1106" title="布鲁金斯学会：全球经济复苏命悬一线">
+        布鲁金斯学会：全球经济
+       </a>
+      </li>
+      <li>
+       <a href="/index.php?m=Lczx&amp;a=view&amp;id=1089" title="国土资源部：防止高价地扰乱市场预期">
+        国土资源部：防止高价地
+       </a>
+      </li>
+      <li>
+       <a href="/index.php?m=Lczx&amp;a=view&amp;id=1074" title="不良资产包质押重现信托江湖">
+        不良资产包质押重现信托
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="top2_ma2">
+    <div class="menu" style="width:918px;">
+     <a href="/index.php?m=Index&amp;a=index" onfocus="this.blur();">
+      主页
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Xtlc&amp;a=index" onfocus="this.blur();">
+      信托理财
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Xtyj&amp;a=index" onfocus="this.blur();">
+      信托研究
+     </a>
+     <span class="span1">
+     </span>
+     <a href="#" onfocus="this.blur();">
+      VC/PE
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Lczx&amp;a=index" onfocus="this.blur();">
+      理财资讯
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=News&amp;a=index" onfocus="this.blur();">
+      财经新闻
+     </a>
+     <span class="span1">
+     </span>
+     <a href="#" onfocus="this.blur();">
+      海外信托
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Xtfw&amp;a=index" onfocus="this.blur();">
+      投融资服务
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Index&amp;a=index" onfocus="this.blur();">
+      财富论坛
+     </a>
+     <span class="span1">
+     </span>
+     <a href="/index.php?m=Lcxy&amp;a=index" onfocus="this.blur();">
+      理财学院
+     </a>
+    </div>
+    <!--&lt;div class="right" style="width:185px;"&gt;&lt;span style="float:left; display:block; background:url(/flcf/Tpl/default/Public/images/asds.gif) left center no-repeat; padding-left:12px;"&gt;&lt;a onClick="window.external.AddFavorite(location.href,document.title)" style="cursor:pointer; color:#FFF;"&gt;收藏本站&lt;/a&gt;&lt;/span&gt;&lt;span style="width:33px; _width:32px; display:block; float:left;"&gt;&lt;/span&gt;&lt;span style="display:block; float:left;"&gt;&lt;a href="/index.php?m=Contact&amp;a=index" style="color:#FFF; background:url(/flcf/Tpl/default/Public/images/asds.gif) left center no-repeat; padding-left:12px;"&gt;联系我们&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;-->
+   </div>
+  </div>
+  <div class="ggl">
+   <div class="ggl_le">
+    <span class="color_org" style="display:block; float:left; color:#a10505;">
+     最新资讯：
+    </span>
+    <marquee onmouseover="this.stop()" onmouseout="this.start()" direction="left" behavior="scroll" scrollamount="1" width="600px" style="display:block; float:left;">
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1107">
+      建信信托筹备养老金业务的步伐提速
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1098">
+      台湾前首富王永庆把财产交给海外信托
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1097">
+      股票质押业务竞争白热化 今年收益率已降一成
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1136">
+      郎咸平：为何只有中国在炒房
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1135">
+      财政部一天发两文充实地方财力 利于各地参与改革
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1134">
+      传原深发展营销岗位降薪四成 平安银行回应称未听说
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1133">
+      集合信托季末迸发 一周成立百款
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1131">
+      北京个人贷款利率普遍上浮10%以上 资金全面吃紧
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1130">
+      网传国内市场上40%金条用铱或钨掺假 工行否认
+     </a>
+     
+     <a href="/index.php?m=Lczx&amp;a=view&amp;id=1129">
+      上半年金隅四大产业强劲增长 营业收入147.46亿
+     </a>
+     
+    </marquee>
+   </div>
+   <div class="ggl_r">
+    <span class="color_org" style="color:#a10505;">
+     官方微博：
+    </span>
+    <a href="http://weibo.com/u/2691380991" target="_blank">
+     新浪
+    </a>
+    
+    <a href="http://fulitrust.t.sohu.com/" target="_blank">
+     搜狐
+    </a>
+    
+    <a href="http://t.163.com/1245320528" target="_blank">
+     网易
+    </a>
+    
+    <a href="http://t.qq.com/fulitrust" target="_blank">
+     腾讯
+    </a>
+   </div>
+   <!-- JiaThis Button BEGIN -->
+   <script type="text/javascript" src="http://v2.jiathis.com/code/jiathis_r.js?move=0" charset="utf-8">
+   </script>
+   <!-- JiaThis Button END -->
+  </div>
+  <div class="ab_main" style="padding-bottom:0;">
+   <div class="ab_left">
+    <!--&lt;div class="main1_le_lczx"&gt;
+                &lt;div class="le_lczx1"&gt;我的理财中心&lt;/div&gt;
+                &lt;div class="le_lczx2"&gt;&lt;a href="/index.php?m=Feedback&amp;a=index" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu1.jpg"  /&gt;&lt;/a&gt;&lt;a href="/index.php?m=Xtfw&amp;a=myproduct" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu2.jpg"  /&gt;&lt;/a&gt;&lt;a href="/index.php?m=Xtlc&amp;a=product" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu3.jpg"  /&gt;&lt;/a&gt;&lt;a href="/index.php?m=Xtfw&amp;a=mycell" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu4.jpg"  /&gt;&lt;/a&gt;&lt;a href="/index.php?m=Shuju&amp;a=index" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu5.jpg"  /&gt;&lt;/a&gt;&lt;a href="/index.php?m=Blog&amp;a=index&amp;id=87" target="_blank" onfocus="this.blur()"&gt;&lt;img src="/flcf/Tpl/default/Public/images/le_lczx2_tu6.jpg"  /&gt;&lt;/a&gt;&lt;/div&gt;
+                &lt;div class="le_lczx3"&gt;产品搜索&lt;/div&gt;
+                &lt;div class="le_lczx4"&gt;
+                  &lt;form id="form2" name="form2" method="post" action="/index.php?m=Xtlc&amp;a=product"&gt;
+                    &lt;label for="textfield2"&gt;&lt;/label&gt;
+                    &lt;input type="text" name="title" id="textfield2" onfocus="if(this.value=='输入关键字搜索') this.value='';" onblur="if(this.value=='') this.value='输入关键字搜索';"  /&gt; 
+                    &lt;input type="submit" name="button" id="button" value=""  /&gt;
+                  &lt;input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c"  /&gt;&lt;/form&gt;
+                &lt;/div&gt;
+             &lt;/div&gt;-->
+    <div class="ab_left_gg1" style="height:396px; padding-top:0;">
+     <a href="http://www.xtlcw.com/index.php?m=Xtfw&amp;a=index">
+      <img src="/Uploads/poto/505ad15175af8.jpg" width="252" height="396" />
+     </a>
+    </div>
+    <div class="xtlc_left1" style="height:180px;">
+     <div class="main3_right11">
+      <span class="left">
+       常见问题
+      </span>
+      <span class="right">
+       <a href="/index.php?m=Xtlc&amp;a=li&amp;id=9">
+        更多&gt;&gt;
+       </a>
+      </span>
+     </div>
+     <div class="xtlc_left1_1">
+      <ul>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=212">
+         业内分析深圳古玩市场：90%为假货
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=90">
+         什么是价值投资？
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=138">
+         你适合投资信托产品吗？
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=135">
+         票据信托
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=134">
+         信托产品利息是否应缴个税？
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=102">
+         信托投资中常见问题解答
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="xtlc_left2 mtop5">
+     <div class="main3_right11">
+      集合产品热点排行
+     </div>
+     <script language="javascript">
+      $(function(){
+				    $('.main3_right12 ul li').each(function(i){
+						var t=i+1;
+					     $(this).click(function(){
+						    $("div.main3_right12 ul li[id=t"+t+"]").find('a').addClass('hover');
+			                $("div.main3_right12 ul li[id!=t"+t+"]").find('a').removeClass('hover');
+							$('#show1'+t).show();	 
+			                $('div#right12&gt;div[id!=show1'+t+']').hide();
+						 })	
+				      })
+				 })
+     </script>
+     <div class="main3_right12" style="padding:5px 3px;">
+      <ul>
+       <li id="t1">
+        <a href="javascript:;" class="hover" onfocus="this.blur();">
+         本周排行
+        </a>
+       </li>
+       <li id="t2">
+        <a href="javascript:;" onfocus="this.blur();">
+         本月排行
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div id="right12">
+      <div class="main3_right13" id="show11">
+       <ul>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          1
+         </span>
+         <span class="left">
+          <a title="中融信托·融尊基金集合资金信托计划 " href="/index.php?m=Xtlc&amp;a=view&amp;id=113">
+           中融信托·融尊基金集合资金信托计
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          2
+         </span>
+         <span class="left">
+          <a title="新华信托·普天3号集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=33">
+           新华信托·普天3号集合信托计划
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          3
+         </span>
+         <span class="left">
+          <a title="中星集团·中星兴宏投资企业（有限合伙）投资集合计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=58">
+           中星集团·中星兴宏投资企业（有限
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          4
+         </span>
+         <span class="left">
+          <a title="五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=36">
+           五矿信托·矿资源宝矿一期—东南利
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          5
+         </span>
+         <span class="left">
+          <a title="中诚信托·建金杭州1号集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=61">
+           中诚信托·建金杭州1号集合信托计划
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          6
+         </span>
+         <span class="left">
+          <a title="新华信托·元一希尔顿收益权投资集合资金信托计划 " href="/index.php?m=Xtlc&amp;a=view&amp;id=106">
+           新华信托·元一希尔顿收益权投资集
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          7
+         </span>
+         <span class="left">
+          <a title="中信信托·聚信汇金煤炭资源产业投资计划5号" href="/index.php?m=Xtlc&amp;a=view&amp;id=28">
+           中信信托·聚信汇金煤炭资源产业投
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          8
+         </span>
+         <span class="left">
+          <a title="新华信托·中邦系列稳健型并购投资集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=53">
+           新华信托·中邦系列稳健型并购投资
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          9
+         </span>
+         <span class="left">
+          <a title="四川信托·惠誉1号武汉广发银行大厦集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=105">
+           四川信托·惠誉1号武汉广发银行大厦
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          10
+         </span>
+         <span class="left">
+          <a title="洲海·燕东动车环路大桥引线工程建设集合基金计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=75">
+           洲海·燕东动车环路大桥引线工程建
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          11
+         </span>
+         <span class="left">
+          <a title="中信信托·民享7号安置房集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=11">
+           中信信托·民享7号安置房集合信托计
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          12
+         </span>
+         <span class="left">
+          <a title="长安信托·金沐贸易实业贷款集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=40">
+           长安信托·金沐贸易实业贷款集合资
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          13
+         </span>
+         <span class="left">
+          <a title="新华信托·重庆红鼎高尔夫项目贷款集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=49">
+           新华信托·重庆红鼎高尔夫项目贷款
+          </a>
+         </span>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_right13" id="show12" style="display:none;">
+       <ul>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          1
+         </span>
+         <span class="left">
+          <a title="中融信托·融尊基金集合资金信托计划 " href="/index.php?m=Xtlc&amp;a=view&amp;id=113">
+           中融信托·融尊基金集合资金信托计
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          2
+         </span>
+         <span class="left">
+          <a title="新华信托·普天3号集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=33">
+           新华信托·普天3号集合信托计划
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          3
+         </span>
+         <span class="left">
+          <a title="中星集团·中星兴宏投资企业（有限合伙）投资集合计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=58">
+           中星集团·中星兴宏投资企业（有限
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          4
+         </span>
+         <span class="left">
+          <a title="五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=36">
+           五矿信托·矿资源宝矿一期—东南利
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          5
+         </span>
+         <span class="left">
+          <a title="中诚信托·建金杭州1号集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=61">
+           中诚信托·建金杭州1号集合信托计划
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          6
+         </span>
+         <span class="left">
+          <a title="新华信托·元一希尔顿收益权投资集合资金信托计划 " href="/index.php?m=Xtlc&amp;a=view&amp;id=106">
+           新华信托·元一希尔顿收益权投资集
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          7
+         </span>
+         <span class="left">
+          <a title="中信信托·聚信汇金煤炭资源产业投资计划5号" href="/index.php?m=Xtlc&amp;a=view&amp;id=28">
+           中信信托·聚信汇金煤炭资源产业投
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          8
+         </span>
+         <span class="left">
+          <a title="新华信托·中邦系列稳健型并购投资集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=53">
+           新华信托·中邦系列稳健型并购投资
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          9
+         </span>
+         <span class="left">
+          <a title="四川信托·惠誉1号武汉广发银行大厦集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=105">
+           四川信托·惠誉1号武汉广发银行大厦
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          10
+         </span>
+         <span class="left">
+          <a title="洲海·燕东动车环路大桥引线工程建设集合基金计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=75">
+           洲海·燕东动车环路大桥引线工程建
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          11
+         </span>
+         <span class="left">
+          <a title="中信信托·民享7号安置房集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=11">
+           中信信托·民享7号安置房集合信托计
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          12
+         </span>
+         <span class="left">
+          <a title="长安信托·金沐贸易实业贷款集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=40">
+           长安信托·金沐贸易实业贷款集合资
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; display:block; padding-right:6px;">
+          13
+         </span>
+         <span class="left">
+          <a title="新华信托·重庆红鼎高尔夫项目贷款集合资金信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=49">
+           新华信托·重庆红鼎高尔夫项目贷款
+          </a>
+         </span>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="xtlc_left2 mtop5">
+     <div class="main3_right11">
+      银信产品热点排行
+     </div>
+     <script language="javascript">
+      $(function(){
+				    $('.xtlc_left2_1 ul li').each(function(i){
+						var t=i+1;
+					     $(this).click(function(){
+						    $("div.xtlc_left2_1 ul li[id=t"+t+"]").find('a').addClass('hover');
+			                $("div.xtlc_left2_1 ul li[id!=t"+t+"]").find('a').removeClass('hover');
+							$('#s'+t).show();	 
+			                $('div#t12&gt;div[id!=s'+t+']').hide();
+						 })	
+				      })
+				 })
+     </script>
+     <div class="xtlc_left2_1" style="padding:5px 3px;">
+      <ul>
+       <li id="t1">
+        <a href="javascript:;" class="hover" onfocus="this.blur();">
+         本周排行
+        </a>
+       </li>
+       <li id="t2">
+        <a href="javascript:;" onfocus="this.blur();">
+         本月排行
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div id="t12">
+      <div class="main3_right13" id="s1">
+       <ul>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          1
+         </span>
+         <span class="left">
+          <a title="沃信思源卓达明郡地产项目" href="/index.php?m=Xtlc&amp;a=view&amp;id=2">
+           沃信思源卓达明郡地产项目
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          2
+         </span>
+         <span class="left">
+          <a title="“金葵花绽放”－招银进宝之点贷成金733号人民币63天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=4">
+           “金葵花绽放”－招银进宝之点贷成
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          3
+         </span>
+         <span class="left">
+          <a title="“安盈理财1068—55期”人民币182天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=18">
+           “安盈理财1068—55期”人民币182天
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          4
+         </span>
+         <span class="left">
+          <a title="“金钥匙·本利丰”2012年第7期欧元32天保证收益型产品  " href="/index.php?m=Xtlc&amp;a=view&amp;id=6">
+           “金钥匙·本利丰”2012年第7期欧元
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          5
+         </span>
+         <span class="left">
+          <a title="电子银行理财夜市－招银进宝之点贷成金735号人民币49天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=20">
+           电子银行理财夜市－招银进宝之点贷
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          6
+         </span>
+         <span class="left">
+          <a title="“非凡资产管理周增利”（周三-普通版）人民币7天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=21">
+           “非凡资产管理周增利”（周三-普通
+          </a>
+         </span>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_right13" id="s2" style="display:none;">
+       <ul>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          1
+         </span>
+         <span class="left">
+          <a title="沃信思源卓达明郡地产项目" href="/index.php?m=Xtlc&amp;a=view&amp;id=2">
+           沃信思源卓达明郡地产项目
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          2
+         </span>
+         <span class="left">
+          <a title="“金葵花绽放”－招银进宝之点贷成金733号人民币63天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=4">
+           “金葵花绽放”－招银进宝之点贷成
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          3
+         </span>
+         <span class="left">
+          <a title="“安盈理财1068—55期”人民币182天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=18">
+           “安盈理财1068—55期”人民币182天
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          4
+         </span>
+         <span class="left">
+          <a title="“金钥匙·本利丰”2012年第7期欧元32天保证收益型产品  " href="/index.php?m=Xtlc&amp;a=view&amp;id=6">
+           “金钥匙·本利丰”2012年第7期欧元
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          5
+         </span>
+         <span class="left">
+          <a title="电子银行理财夜市－招银进宝之点贷成金735号人民币49天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=20">
+           电子银行理财夜市－招银进宝之点贷
+          </a>
+         </span>
+        </li>
+        <li>
+         <span class="red left" style="width:10px; text-align:center; padding-right:6px; display:block;">
+          6
+         </span>
+         <span class="left">
+          <a title="“非凡资产管理周增利”（周三-普通版）人民币7天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=21">
+           “非凡资产管理周增利”（周三-普通
+          </a>
+         </span>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="smpm_left5 mtop5">
+     <div class="main3_right21">
+      <span class="left">
+       信托产品年度数据
+      </span>
+      <span class="right">
+       <a href="/index.php?m=Xtlc&amp;a=li&amp;id=10">
+        更多&gt;&gt;
+       </a>
+      </span>
+     </div>
+     <div class="smpm_left4_1">
+      <ul>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=199">
+         2012年07月银信理财产品统计数据
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=196">
+         信托周评（8.20—8.26）：银监会窗口指导政信合作
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=189">
+         最新信托产品全览
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=103">
+         信托行业：2010年集合信托数据点评
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=23">
+         国内集合信托产品统计数据（2010年度）
+        </a>
+       </li>
+       <li>
+        <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=22">
+         2010年11月集合信托产品统计数据
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="main3_right2 mtop5">
+     <div class="main3_right21">
+      <span class="left">
+       机构大全
+      </span>
+      <span class="right">
+       <a href="/index.php?m=Xtlc&amp;a=jigou">
+        更多&gt;&gt;
+       </a>
+      </span>
+     </div>
+     <script language="javascript">
+      $(function(){
+				    $('.main3_right22 ul li').each(function(i){
+						var t=i+1;
+					     $(this).click(function(){
+						    $("div.main3_right22 ul li[id=t"+t+"]").find('a').addClass('hover');
+			                $("div.main3_right22 ul li[id!=t"+t+"]").find('a').removeClass('hover');
+							$('#s1'+t).show();	 
+			                $('div#aa&gt;div[id!=s1'+t+']').hide();
+						 })	
+				      })
+				 })
+     </script>
+     <div class="main3_right22">
+      <ul>
+       <li id="t1">
+        <a href="javascript:;" class="hover" onfocus="this.blur();">
+         信托公司
+        </a>
+       </li>
+       <li id="t2">
+        <a href="javascript:;" onfocus="this.blur();">
+         商业银行
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div id="aa">
+      <div class="main3_right23" id="s11">
+       <ul>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=325">
+          <img src="/Uploads/news/4f2d375de65b0.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=326">
+          <img src="/Uploads/news/4f2d377fd097d.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=282">
+          <img src="/Uploads/news/4f2d2df1c4795.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=281">
+          <img src="/Uploads/news/4f2d2dcd67172.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=280">
+          <img src="/Uploads/news/4f2d2da8bf01b.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=279">
+          <img src="/Uploads/news/4f2d2d7ecbe80.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=278">
+          <img src="/Uploads/news/4f2d2d54d2ff0.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=277">
+          <img src="/Uploads/news/4f2d2d3532fd8.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=276">
+          <img src="/Uploads/news/4f2d2d1271333.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=275">
+          <img src="/Uploads/news/4f2d2cf5b117c.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=274">
+          <img src="/Uploads/news/4f2d2cd5ccfb9.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=272">
+          <img src="/Uploads/news/4f2d2c92c7c51.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=271">
+          <img src="/Uploads/news/4f2d2c74ca33e.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=270">
+          <img src="/Uploads/news/4f2d2c5de1727.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=269">
+          <img src="/Uploads/news/4f2d2c389de25.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=268">
+          <img src="/Uploads/news/4f2d2c18c4dff.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=267">
+          <img src="/Uploads/news/4f2d2bf426bea.gif" width="100" height="24" />
+         </a>
+        </li>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=266">
+          <img src="/Uploads/news/4f2d2bcb22c78.gif" width="100" height="24" />
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_right23" id="s12" style="display:none;">
+       <ul>
+        <li style="height:30px;">
+         <a href="/index.php?m=Xtlc&amp;a=jigou_view&amp;id=327">
+          <img src="/Uploads/news/4f2d37b4ac0c5.gif" width="100" height="24" />
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="ab_right">
+    <div class="ab_right1">
+     <div class="ab_right1_1">
+      信托理财
+     </div>
+     <div class="ab_right1_2">
+      <div class="xtlc_ri1">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=li&amp;id=4" onfocus="this.blur();">
+          专家
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=li&amp;id=6" onfocus="this.blur();">
+          故事
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=li&amp;id=5" onfocus="this.blur();">
+          规划
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=li&amp;id=8" onfocus="this.blur();">
+          学堂
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=li&amp;id=1" onfocus="this.blur();">
+          市场
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=product" onfocus="this.blur();">
+          产品
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=jigou" onfocus="this.blur();">
+          机构
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=product&amp;id=2" onfocus="this.blur();">
+          银信
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=product&amp;id=1" onfocus="this.blur();">
+          信托
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <script language="javascript">
+     $(function(){
+				    $('.xtlc_ri2_11 ul li').each(function(i){
+						var t=i+1;
+					     $(this).click(function(){
+						    $("div.xtlc_ri2_11 ul li[id=t"+t+"]").find('a').addClass('hover');
+			                $("div.xtlc_ri2_11 ul li[id!=t"+t+"]").find('a').removeClass('hover');
+							$('#as'+t).show();	 
+			                $('div#aaa&gt;div[id!=as'+t+']').hide();
+						 })	
+				      })
+				 })
+    </script>
+    <div class="xtlc_ri2 mtop5">
+     <div class="xtlc_ri2_1">
+      <div class="xtlc_ri2_11" style="width:440px;">
+       <ul>
+        <li id="t1">
+         <a href="javascript:;" class="hover" onfocus="this.blur();">
+          信托产品
+         </a>
+        </li>
+        <li id="t2">
+         <a href="javascript:;" onfocus="this.blur();">
+          阳光私募
+         </a>
+        </li>
+        <li id="t3">
+         <a href="javascript:;" onfocus="this.blur();">
+          银信产品
+         </a>
+        </li>
+        <li id="t4">
+         <a href="javascript:;" onfocus="this.blur();">
+          股权私募
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="xtlc_ri2_12">
+       信托理财产品速递
+      </div>
+     </div>
+     <div id="aaa">
+      <div class="xtlc_ri2_2" id="as1">
+       <div class="xtlx_ri2_21">
+        <form id="form3" name="form3" method="post" action="/index.php?m=Xtlc&amp;a=search">
+         <table width="100%" border="0">
+          <tr>
+           <td>
+            产品状态：
+            <label for="select">
+            </label>
+            <select name="select" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              售罄
+             </option>
+             <option>
+              在售
+             </option>
+             <option>
+              转让中
+             </option>
+             <option>
+              售磬
+             </option>
+            </select>
+           </td>
+           <td>
+            发行机构：
+            <label for="select2">
+            </label>
+            <select name="select2" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              中铝
+             </option>
+             <option>
+              华澳信托
+             </option>
+             <option>
+              某央企信托
+             </option>
+             <option>
+              西安信托
+             </option>
+             <option>
+              北京信托
+             </option>
+             <option>
+              平安信托
+             </option>
+             <option>
+              中方财富
+             </option>
+             <option>
+              农业银行
+             </option>
+             <option>
+              长安信托
+             </option>
+             <option>
+              招商银行
+             </option>
+             <option>
+              平安银行
+             </option>
+             <option>
+              杰银京华
+             </option>
+             <option>
+              星神风信托
+             </option>
+             <option>
+              国民信托
+             </option>
+             <option>
+              中投信托
+             </option>
+             <option>
+              华融信托
+             </option>
+             <option>
+              华宝信托
+             </option>
+             <option>
+              交银信托
+             </option>
+             <option>
+              陆家嘴信托
+             </option>
+             <option>
+              陕西省国际信托
+             </option>
+             <option>
+              方正东亚信托
+             </option>
+             <option>
+              华能信托
+             </option>
+             <option>
+              深发展银行
+             </option>
+             <option>
+              同创伟业
+             </option>
+             <option>
+              阿拉丁
+             </option>
+             <option>
+              盈信瑞丰
+             </option>
+             <option>
+              德信资本
+             </option>
+             <option>
+              山西信托
+             </option>
+             <option>
+              金谷信托
+             </option>
+             <option>
+              民生银行
+             </option>
+             <option>
+              央企信托
+             </option>
+             <option>
+              中星集团
+             </option>
+             <option>
+              爱建信托
+             </option>
+             <option>
+              中诚信托
+             </option>
+             <option>
+              中铁信托
+             </option>
+             <option>
+              湖南信托
+             </option>
+             <option>
+              中信锦绣
+             </option>
+             <option>
+              方正东亚
+             </option>
+             <option>
+              中融信托
+             </option>
+             <option>
+              洲海投资
+             </option>
+             <option>
+              中科创
+             </option>
+             <option>
+              金瑞格
+             </option>
+             <option>
+              中尚集团
+             </option>
+             <option>
+              世纪方舟
+             </option>
+             <option>
+              中天财智
+             </option>
+             <option>
+              新时代信托
+             </option>
+             <option>
+              中信信托
+             </option>
+             <option>
+              外贸信托
+             </option>
+             <option>
+              五矿信托
+             </option>
+             <option>
+              新华信托
+             </option>
+             <option>
+              方正信托
+             </option>
+             <option>
+              中航信托
+             </option>
+             <option>
+              四川信托
+             </option>
+             <option>
+              联华信托
+             </option>
+            </select>
+           </td>
+           <td>
+            产品期限：
+            <label for="select3">
+            </label>
+            <select name="select3" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              5年
+             </option>
+             <option>
+              4年
+             </option>
+             <option>
+              1年
+             </option>
+             <option>
+              0.3年
+             </option>
+             <option>
+              0.5年
+             </option>
+             <option>
+              0.75年
+             </option>
+             <option>
+              2年
+             </option>
+             <option>
+              7年
+             </option>
+             <option>
+              10年
+             </option>
+             <option>
+              2.5年
+             </option>
+             <option>
+              3年
+             </option>
+             <option>
+              1.5年
+             </option>
+             <option>
+              6年
+             </option>
+            </select>
+           </td>
+           <td width="80" rowspan="2" align="center">
+            <a href="#">
+             <input type="image" src="/flcf/Tpl/default/Public/images/ser.jpg" name="submit" />
+            </a>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            年收效率：
+            <label for="select4">
+            </label>
+            <select name="select4" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              10.7%
+             </option>
+             <option>
+              10.2%
+             </option>
+             <option>
+              0%
+             </option>
+             <option>
+              30%
+             </option>
+             <option>
+              5.3%
+             </option>
+             <option>
+              3%
+             </option>
+             <option>
+              5.5%
+             </option>
+             <option>
+              5.8%
+             </option>
+             <option>
+              5.2%
+             </option>
+             <option>
+              9.6%
+             </option>
+             <option>
+              15%
+             </option>
+             <option>
+              50%
+             </option>
+             <option>
+              22%
+             </option>
+             <option>
+              12.5%
+             </option>
+             <option>
+              11.8%
+             </option>
+             <option>
+              3.45%
+             </option>
+             <option>
+              117%
+             </option>
+             <option>
+              8.8%
+             </option>
+             <option>
+              8%
+             </option>
+             <option>
+              25%
+             </option>
+             <option>
+              10.8%
+             </option>
+             <option>
+              40%
+             </option>
+             <option>
+              9%
+             </option>
+             <option>
+              9.5%
+             </option>
+             <option>
+              14%
+             </option>
+             <option>
+              17%
+             </option>
+             <option>
+              13%
+             </option>
+             <option>
+              53%
+             </option>
+             <option>
+              18%
+             </option>
+             <option>
+              9.8%
+             </option>
+             <option>
+              12%
+             </option>
+             <option>
+              10%
+             </option>
+             <option>
+              11.5%
+             </option>
+             <option>
+              9.2%
+             </option>
+             <option>
+              11%
+             </option>
+             <option>
+              10.5%
+             </option>
+             <option>
+              16.7%
+             </option>
+             <option>
+              8.5%
+             </option>
+             <option>
+              13.5%
+             </option>
+            </select>
+           </td>
+           <td>
+            资金投向：
+            <label for="select5">
+            </label>
+            <select name="select5" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              保障房建设
+             </option>
+             <option>
+              矿产
+             </option>
+             <option>
+              厂房建设
+             </option>
+             <option>
+              煤电铝一体化项目建设
+             </option>
+             <option>
+              金融市场
+             </option>
+             <option>
+              高成长企业上市
+             </option>
+             <option>
+              证券投资
+             </option>
+             <option>
+              汽车4S店
+             </option>
+             <option>
+              流动性资金补充
+             </option>
+             <option>
+              城市建设
+             </option>
+             <option>
+              基础建设
+             </option>
+             <option>
+              基础设施建设
+             </option>
+             <option>
+              旅游开发
+             </option>
+             <option>
+              实业投资
+             </option>
+             <option>
+              项目开发建设
+             </option>
+             <option>
+              定向增发和固定投资
+             </option>
+             <option>
+              流动性资金
+             </option>
+             <option>
+              房地产
+             </option>
+             <option>
+              酒店装修
+             </option>
+             <option>
+              组合投资
+             </option>
+             <option>
+              保障房等地产类
+             </option>
+             <option>
+              保障房项目
+             </option>
+             <option>
+              食品行业
+             </option>
+             <option>
+              项目建设
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              主焦煤
+             </option>
+             <option>
+              房地产项目
+             </option>
+             <option>
+              旅游业
+             </option>
+             <option>
+              软件开发项目
+             </option>
+             <option>
+              政府安置房
+             </option>
+             <option>
+              金融类产品
+             </option>
+             <option>
+              铜矿企业上市
+             </option>
+             <option>
+              房地产股权
+             </option>
+             <option>
+              市政建设
+             </option>
+             <option>
+              租赁性物业收益权
+             </option>
+             <option>
+              溧城镇废弃露天采矿山环境综合治理项目
+             </option>
+             <option>
+              信托产品优先级
+             </option>
+             <option>
+              酒店项目建设
+             </option>
+             <option>
+              权益投资
+             </option>
+             <option>
+              未上市公司股权投资
+             </option>
+             <option>
+              丹阳·恒大名都项目开发
+             </option>
+             <option>
+              市政基建
+             </option>
+             <option>
+              增资桐乡广源公司
+             </option>
+             <option>
+              动车
+             </option>
+             <option>
+              高尔夫项目
+             </option>
+             <option>
+              流动资金补充
+             </option>
+             <option>
+              资源投资项目
+             </option>
+             <option>
+              受让股权收益权
+             </option>
+             <option>
+              哈尔滨锦观城项目的建设
+             </option>
+             <option>
+              农村基建
+             </option>
+             <option>
+              政府项目建设
+             </option>
+             <option>
+              教育行业
+             </option>
+             <option>
+              有色金属贸易
+             </option>
+             <option>
+              煤矿资源开发
+             </option>
+             <option>
+              房地产开发
+             </option>
+             <option>
+              工商企业
+             </option>
+             <option>
+              煤炭资源
+             </option>
+             <option>
+              建材节能
+             </option>
+             <option>
+              开采铅锌矿
+             </option>
+             <option>
+              矿石资源
+             </option>
+             <option>
+              主要投资：用于购买铁马矿业的特定资产收益权
+             </option>
+             <option>
+              煤炭能源整合
+             </option>
+             <option>
+              基础设施
+             </option>
+             <option>
+              煤炭开发
+             </option>
+             <option>
+              江苏淮安古黄河治理。
+             </option>
+             <option>
+              金融 市场
+             </option>
+             <option>
+              矿产资源
+             </option>
+             <option>
+              舟山海洋旅游与游艇产业开发
+             </option>
+             <option>
+              补充现金流
+             </option>
+             <option>
+              向江锂科技发放信托贷款
+             </option>
+             <option>
+              港口开发
+             </option>
+             <option>
+              证券 债券
+             </option>
+            </select>
+           </td>
+           <td>
+            产品类型：
+            <label for="select6">
+            </label>
+            <select name="select6" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              基金
+             </option>
+             <option>
+              收益权类
+             </option>
+             <option>
+              财产收益权
+             </option>
+             <option>
+              股权投资类
+             </option>
+             <option>
+              主动管理型
+             </option>
+             <option>
+              证券投资集合资金信托计划
+             </option>
+             <option>
+              银信合作
+             </option>
+             <option>
+              证券投资类集合资金信托计划
+             </option>
+             <option>
+              自主管理
+             </option>
+             <option>
+              应收账款收益权
+             </option>
+             <option>
+              集合信托基金
+             </option>
+             <option>
+              贷款类
+             </option>
+             <option>
+              权益类
+             </option>
+             <option>
+              合伙基金计划
+             </option>
+             <option>
+              股权收益权
+             </option>
+             <option>
+              PE
+             </option>
+             <option>
+              阳光私募
+             </option>
+             <option>
+              贷款信托
+             </option>
+             <option>
+              收益权信托
+             </option>
+             <option>
+              贷款类信托
+             </option>
+             <option>
+              集合信托
+             </option>
+             <option>
+              财产权信托
+             </option>
+             <option>
+              集合资金信托
+             </option>
+             <option>
+              私募股权
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              股权私募
+             </option>
+             <option>
+              固定收益型
+             </option>
+             <option>
+              固定收益类
+             </option>
+             <option>
+              固定收益
+             </option>
+             <option>
+              浮动
+             </option>
+             <option>
+              结构化
+             </option>
+             <option>
+              TOT
+             </option>
+             <option>
+              管理型
+             </option>
+            </select>
+           </td>
+          </tr>
+         </table>
+         <input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c" />
+        </form>
+       </div>
+       <div class="xtlc_ri2_3">
+        <table width="100%" border="0">
+         <tr>
+          <td width="340" height="25">
+           
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product1">
+             产品期限
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product2">
+             最高年收益
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            发行机构
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product3">
+             发行日期
+            </a>
+           </strong>
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=214" title="四川信托·红利26号集合资金信托计划">
+            四川信托·红利26号集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           9%
+          </td>
+          <td width="85" height="23">
+           四川信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=213" title="中融信托·咏恒2号财产权项目">
+            中融信托·咏恒2号财产权项目
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           10.2%
+          </td>
+          <td width="85" height="23">
+           中融信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=212" title="方正东亚·沈阳亿丰置业贷款项目">
+            方正东亚·沈阳亿丰置业贷款项目
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1.5年
+          </td>
+          <td width="85" height="23" align="left">
+           10%
+          </td>
+          <td width="85" height="23">
+           方正东亚信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=181" title="新华信托·华锦69号融创绿城并购项目股权收益权投资集合资金信托计划 ">
+            新华信托·华锦69号融创绿城并购项目股权收益权投资
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           10.7%
+          </td>
+          <td width="85" height="23">
+           新华信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=207" title="湖南信托·天房集团大寺新家园保障房项目 ">
+            湖南信托·天房集团大寺新家园保障房项目
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           10.8%
+          </td>
+          <td width="85" height="23">
+           湖南信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=183" title="新华信托·华锦22号哈尔滨锦观城项目贷款 ">
+            新华信托·华锦22号哈尔滨锦观城项目贷款
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           10%
+          </td>
+          <td width="85" height="23">
+           新华信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=210" title="方正东亚信托·沈阳亿丰置业贷款集合资金信托计划 ">
+            方正东亚信托·沈阳亿丰置业贷款集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1.5年
+          </td>
+          <td width="85" height="23" align="left">
+           10%
+          </td>
+          <td width="85" height="23">
+           方正东亚信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=209" title="华澳信托•长盈21号集合资金信托计划">
+            华澳信托•长盈21号集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1.5年
+          </td>
+          <td width="85" height="23" align="left">
+           10%
+          </td>
+          <td width="85" height="23">
+           华澳信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=208" title="新华信托•华恒23号贷款集合资金信托计划">
+            新华信托•华恒23号贷款集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           10.8%
+          </td>
+          <td width="85" height="23">
+           新华信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=205" title="中融信托·重庆西彭铝财产权信托计划">
+            中融信托·重庆西彭铝财产权信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           10.2%
+          </td>
+          <td width="85" height="23">
+           中融信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=198" title="新时代信托·蓝海26号集合资金信托计划">
+            新时代信托·蓝海26号集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           8.5%
+          </td>
+          <td width="85" height="23">
+           新时代信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=193" title="四川信托·新华联国际石油贸易信托贷款集合资金信托计划">
+            四川信托·新华联国际石油贸易信托贷款集合资金信托
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           11%
+          </td>
+          <td width="85" height="23">
+           四川信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=211" title="中融信托·天津武清财产权信托计划">
+            中融信托·天津武清财产权信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           9%
+          </td>
+          <td width="85" height="23">
+           中融信托
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div class="xtlc_ri2_2" id="as3" style="display:none;">
+       <div class="xtlx_ri2_21">
+        <form id="form3" name="form3" method="post" action="/index.php?m=Xtlc&amp;a=search">
+         <table width="100%" border="0">
+          <tr>
+           <td>
+            产品状态：
+            <label for="select">
+            </label>
+            <select name="select" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              中方财富·国酒茅台投资基金
+             </option>
+             <option>
+              星神风信托·贷款项目集合资金信托计划
+             </option>
+             <option>
+              中融信托·聚融1号结构化集合资金信托计划（优先B4级）
+             </option>
+            </select>
+           </td>
+           <td>
+            发行机构：
+            <label for="select2">
+            </label>
+            <select name="select2" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              中铝·阜宁稀土收储投资基金
+             </option>
+             <option>
+              华澳信托•长盈21号集合资金信托计划
+             </option>
+             <option>
+              某央企信托·西安高新控股应收账款流动化信托项目
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              北京信托·中关村瞪羚投资发展集合计划
+             </option>
+             <option>
+              平安财富·投资精英之翼虎
+             </option>
+             <option>
+              北京汇丰财富投资中心（有限合伙）集合计划
+             </option>
+             <option>
+              “金钥匙·本利丰”2012年第7期欧元32天保证收益型产品
+             </option>
+             <option>
+              西安国投·呈瑞价值1期
+             </option>
+             <option>
+              “金葵花绽放”－招银进宝之点贷成金733号人民币63天产品
+             </option>
+             <option>
+              “安盈理财1068—55期”人民币182天产品
+             </option>
+             <option>
+              杰银京华·嘉凯城保本地产投资基金
+             </option>
+             <option>
+              星神风信托·贷款项目集合资金信托计划
+             </option>
+             <option>
+              国民信托- 郑州动漫基地
+             </option>
+             <option>
+              中投·景瑞应收债权投资集合资金信托计划
+             </option>
+             <option>
+              华融信托·弘源兰炭股权投资集合资金信托计划
+             </option>
+             <option>
+              华宝信托·大连万达商业地产集合资金信托计划（湖北襄樊万达广场项目）
+             </option>
+             <option>
+              交银信托·上海旭创信托贷款集合资金信托计划
+             </option>
+             <option>
+              陆家嘴信托·淮安开发控股应收账款收益权投资集合资金信托计划
+             </option>
+             <option>
+              陕国投信托·裕丰公司二期建设项目贷款信托
+             </option>
+             <option>
+              方正东亚信托·成都三联花木财产权投资集合金信托计划
+             </option>
+             <option>
+              华能信托·世荣兆业股票收益权信托计划
+             </option>
+             <option>
+              沃信思源卓达明郡地产项目
+             </option>
+             <option>
+              同创伟业1号创投信托集合计划
+             </option>
+             <option>
+              阿拉丁·海航绿色成长系列投资1期集合计划
+             </option>
+             <option>
+              盈信瑞峰资本·银杏2号投资基金
+             </option>
+             <option>
+              联邦·德信地产投资基金(有限合伙)
+             </option>
+             <option>
+              山西信托·信临2号集合资金信托计划
+             </option>
+             <option>
+              金谷信托·北京唯达煤田项目
+             </option>
+             <option>
+              “非凡资产管理周增利”（周三-普通版）人民币7天产品
+             </option>
+             <option>
+              央企信托·聚信汇金煤炭资源产业投资基金4号集合信托计划
+             </option>
+             <option>
+              中星集团·中星兴宏投资企业（有限合伙）投资集合计划
+             </option>
+             <option>
+              爱建信托·常州溧阳宏盛项目财产权信托计划
+             </option>
+             <option>
+              中诚信托·建金杭州1号集合信托计划
+             </option>
+             <option>
+              中铁信托·聚金稳健增值13号集合资金信托计划
+             </option>
+             <option>
+              湖南信托·京汉置业集团股份有限公司贷款集合资金信托计划
+             </option>
+             <option>
+              中信锦绣·中信锦绣稳健成长股权投资基金
+             </option>
+             <option>
+              方正东亚·东兴1号桐乡佳源投资集合信托计划
+             </option>
+             <option>
+              中融信托·聚融1号结构化集合资金信托计划（优先B4级）
+             </option>
+             <option>
+              洲海·燕东动车环路大桥引线工程建设集合基金计划
+             </option>
+             <option>
+              中科创·财富通
+             </option>
+             <option>
+              金瑞格·高赢股权投资合伙企业（有限合伙）集合计划
+             </option>
+             <option>
+              中尚·松田教育有限合伙1期集合计划
+             </option>
+             <option>
+              中金赛富金矿投资集合信托计划
+             </option>
+             <option>
+              中天财智·重庆西部总部投资集合计划
+             </option>
+             <option>
+              新时代信托·中小企业融资通44期集合资金信托计划
+             </option>
+             <option>
+              中信信托·大瑞煤炭资源整合信托
+             </option>
+             <option>
+              外贸信托·德源安1-1期
+             </option>
+             <option>
+              五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划
+             </option>
+             <option>
+              新华信托·普天3号集合信托计划
+             </option>
+             <option>
+              方正东亚·天津临港控股应收款债权投资集合信托
+             </option>
+             <option>
+              中航信托·天富12号集合资金信托计划
+             </option>
+             <option>
+              四川信托·长江畔桂圆林生态墅区项目
+             </option>
+             <option>
+              德源安战略成长3号
+             </option>
+            </select>
+           </td>
+           <td>
+            产品期限：
+            <label for="select3">
+            </label>
+            <select name="select3" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              电子银行理财夜市－招银进宝之点贷成金735号人民币49天产品
+             </option>
+             <option>
+              “金钥匙·本利丰”2012年第7期欧元32天保证收益型产品
+             </option>
+             <option>
+              “金葵花绽放”－招银进宝之点贷成金733号人民币63天产品
+             </option>
+             <option>
+              “安盈理财1068—55期”人民币182天产品
+             </option>
+             <option>
+              湖南信托·芙蓉29号项目集合资金信托计
+             </option>
+             <option>
+              沃信思源卓达明郡地产项目
+             </option>
+             <option>
+              同创伟业1号创投信托集合计划
+             </option>
+             <option>
+              中融信托·汇聚金1号货币基金集合资金信托计划
+             </option>
+             <option>
+              中信信托·聚信汇金煤炭资源产业投资基金5号集合信托计划
+             </option>
+             <option>
+              中金赛富金矿投资集合信托计划
+             </option>
+             <option>
+              中信信托 • 聚信汇金矿产资源Ⅰ号集合信托计划
+             </option>
+             <option>
+              德源安战略成长3号
+             </option>
+            </select>
+           </td>
+           <td width="80" rowspan="2" align="center">
+            <a href="#">
+             <input type="image" src="/flcf/Tpl/default/Public/images/ser.jpg" name="submit" />
+            </a>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            年收效率：
+            <label for="select4">
+            </label>
+            <select name="select4" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              新华信托·华锦69号融创绿城并购项目股权收益权投资集合资金信托计划
+             </option>
+             <option>
+              中融信托·重庆西彭铝财产权信托计划
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              北京信托·中关村瞪羚投资发展集合计划
+             </option>
+             <option>
+              电子银行理财夜市－招银进宝之点贷成金735号人民币49天产品
+             </option>
+             <option>
+              “金钥匙·本利丰”2012年第7期欧元32天保证收益型产品
+             </option>
+             <option>
+              “金葵花绽放”－招银进宝之点贷成金733号人民币63天产品
+             </option>
+             <option>
+              “安盈理财1068—55期”人民币182天产品
+             </option>
+             <option>
+              湖南信托·芙蓉29号项目集合资金信托计
+             </option>
+             <option>
+              南通海安交投1号财产权信托推介书
+             </option>
+             <option>
+              沃信思源卓达明郡地产项目
+             </option>
+             <option>
+              同创伟业1号创投信托集合计划
+             </option>
+             <option>
+              新华信托·和泓1号房地产投资基金集合资金信托计划
+             </option>
+             <option>
+              阿拉丁·海航绿色成长系列投资1期集合计划
+             </option>
+             <option>
+              四川信托·惠誉1号武汉广发银行大厦集合资金信托计划
+             </option>
+             <option>
+              “非凡资产管理周增利”（周三-普通版）人民币7天产品
+             </option>
+             <option>
+              中信信托·沈阳焦煤股权投资基金（有限合伙）
+             </option>
+             <option>
+              新时代信托·慧金522号非上市公司股权收益权投资集合资金信托计划
+             </option>
+             <option>
+              中融信托·汇聚金1号货币基金集合资金信托计划
+             </option>
+             <option>
+              北京信托·长盈1号集合资金信托计划
+             </option>
+             <option>
+              新华信托·华惠65号内蒙古精恒装备制造项目债权买入
+             </option>
+             <option>
+              中信锦绣·中信锦绣稳健成长股权投资基金
+             </option>
+             <option>
+              中航信托·天启251号新城股份贷款集合资金信托计划
+             </option>
+             <option>
+              中融信托·南京江宁城建1号财产权信托集合计划
+             </option>
+             <option>
+              五矿信托·阳光海西投资集合资金信托计划
+             </option>
+             <option>
+              中金赛富金矿投资集合信托计划
+             </option>
+             <option>
+              中天财智·重庆西部总部投资集合计划
+             </option>
+             <option>
+              中信信托·聚信泰和煤炭能源投资1期集合计划
+             </option>
+             <option>
+              新华信托·中邦系列稳健型并购投资集合信托计划
+             </option>
+             <option>
+              新时代信托·中小企业融资通44期集合资金信托计划
+             </option>
+             <option>
+              长安信托·金沐贸易实业贷款集合资金信托计划
+             </option>
+             <option>
+              中信信托 • 聚信汇金矿产资源Ⅰ号集合信托计划
+             </option>
+             <option>
+              中信信托·大瑞煤炭资源整合信托
+             </option>
+             <option>
+              新华信托·重庆市綦江西部齿轮城项目集合资金信托计划
+             </option>
+             <option>
+              中信信托·聚信汇金煤炭资源产业投资计划5号
+             </option>
+             <option>
+              中信信托·民享7号安置房集合信托计划
+             </option>
+             <option>
+              新华信托·普天3号集合信托计划
+             </option>
+             <option>
+              中航信托·天富12号集合资金信托计划
+             </option>
+             <option>
+              四川信托·长江畔桂圆林生态墅区项目
+             </option>
+            </select>
+           </td>
+           <td>
+            资金投向：
+            <label for="select5">
+            </label>
+            <select name="select5" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              湖南信托·天房集团大寺新家园保障房项目
+             </option>
+             <option>
+              中铝·阜宁稀土收储投资基金
+             </option>
+             <option>
+              新华信托•华恒23号贷款集合资金信托计划
+             </option>
+             <option>
+              华融信托•新疆嘉润股权收益权集合资金信托计划
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              北京信托·中关村瞪羚投资发展集合计划
+             </option>
+             <option>
+              平安财富·投资精英之翼虎
+             </option>
+             <option>
+              北京汇丰财富投资中心（有限合伙）集合计划
+             </option>
+             <option>
+              星神风信托·贷款项目集合资金信托计划
+             </option>
+             <option>
+              陆家嘴信托·盐城市城市资产经营有限公司应收账款收益权投资集合资金信托计划
+             </option>
+             <option>
+              陆家嘴信托·淮安开发控股应收账款收益权投资集合资金信托计划
+             </option>
+             <option>
+              新华信托•信展I号合伙企业有限合伙人财产份额投资
+             </option>
+             <option>
+              新华信托·华恒21号重庆开县综合旅游开发二期集合资金信托计划
+             </option>
+             <option>
+              中融信托·后山煤矿信托贷款结构化集合资金信托计划
+             </option>
+             <option>
+              四川信托·沈阳佳兆业中心集合资金信托计划
+             </option>
+             <option>
+              中融信托·融尊基金集合资金信托计划
+             </option>
+             <option>
+              方正东亚信托·成都三联花木财产权投资集合金信托计划
+             </option>
+             <option>
+              沃信思源卓达明郡地产项目
+             </option>
+             <option>
+              金谷信托·江苏润澳·环球酒店装修项目集合资金信托计划
+             </option>
+             <option>
+              同创伟业1号创投信托集合计划
+             </option>
+             <option>
+              新华信托·金海I号投资基金集合信托计划
+             </option>
+             <option>
+              新华信托·和泓1号房地产投资基金集合资金信托计划
+             </option>
+             <option>
+              阿拉丁·海航绿色成长系列投资1期集合计划
+             </option>
+             <option>
+              联邦·德信地产投资基金(有限合伙)
+             </option>
+             <option>
+              中方财富·盛煌实业投资基金
+             </option>
+             <option>
+              中信信托·沈阳焦煤股权投资基金（有限合伙）
+             </option>
+             <option>
+              新华信托·鄂尔多斯正东地产股权投资集合资金信托计划
+             </option>
+             <option>
+              金谷信托·东方酒店股权投资集合资金信托计划
+             </option>
+             <option>
+              新时代信托·慧金522号非上市公司股权收益权投资集合资金信托计划
+             </option>
+             <option>
+              方正东亚·东兴6号保障房“古运新苑”项目集合资金信托计划
+             </option>
+             <option>
+              中融信托·汇聚金1号货币基金集合资金信托计划
+             </option>
+             <option>
+              中星集团·中星兴宏投资企业（有限合伙）投资集合计划
+             </option>
+             <option>
+              北京信托·长盈1号集合资金信托计划
+             </option>
+             <option>
+              新华信托·华惠65号内蒙古精恒装备制造项目债权买入
+             </option>
+             <option>
+              中融信托·福建中庚城物业收益权投资集合资金信托计划
+             </option>
+             <option>
+              爱建信托·常州溧阳宏盛项目财产权信托计划
+             </option>
+             <option>
+              中诚信托·建金杭州1号集合信托计划
+             </option>
+             <option>
+              新华信托·元一希尔顿收益权投资集合资金信托计划
+             </option>
+             <option>
+              中铁信托·聚金稳健增值13号集合资金信托计划
+             </option>
+             <option>
+              中信锦绣·中信锦绣稳健成长股权投资基金
+             </option>
+             <option>
+              四川信托·恒大名都镇江丹阳股权投资集合资金信托计划
+             </option>
+             <option>
+              中融信托·泰州1号财产权信托计划
+             </option>
+             <option>
+              方正东亚·东兴1号桐乡佳源投资集合信托计划
+             </option>
+             <option>
+              洲海·燕东动车环路大桥引线工程建设集合基金计划
+             </option>
+             <option>
+              新华信托·重庆红鼎高尔夫项目贷款集合资金信托计划
+             </option>
+             <option>
+              中科创·财富通
+             </option>
+             <option>
+              中信信托·聚信汇金煤炭资源产业投资基金5号集合信托计划
+             </option>
+             <option>
+              四川信托·泉州农商行股权收益权集合资金信托计划
+             </option>
+             <option>
+              新华信托·华锦22号哈尔滨锦观城项目贷款集合资金信托计划
+             </option>
+             <option>
+              四川信托·新农村基础设施及配套项目集合信托计划
+             </option>
+             <option>
+              中融信托·重庆华信财产权信托 计划
+             </option>
+             <option>
+              中尚·松田教育有限合伙1期集合计划
+             </option>
+             <option>
+              中航信托·天启251号新城股份贷款集合资金信托计划
+             </option>
+             <option>
+              中融信托·中国庆华新能源资源集合资金信托计划
+             </option>
+             <option>
+              五矿信托·阳光海西投资集合资金信托计划
+             </option>
+             <option>
+              中金赛富金矿投资集合信托计划
+             </option>
+             <option>
+              中信信托·聚信泰和煤炭能源投资1期集合计划
+             </option>
+             <option>
+              新华信托·华惠37号隆亿工业信托贷款集合资金信托计划
+             </option>
+             <option>
+              长安信托·金沐贸易实业贷款集合资金信托计划
+             </option>
+             <option>
+              中信信托·聚信汇金矿产资源I号集合信托计划
+             </option>
+             <option>
+              中信信托 • 聚信汇金矿产资源Ⅰ号集合信托计划
+             </option>
+             <option>
+              中信信托·大瑞煤炭资源整合信托
+             </option>
+             <option>
+              新华信托·重庆市綦江西部齿轮城项目集合资金信托计划
+             </option>
+             <option>
+              中信信托·聚信汇金煤炭资源产业投资计划5号
+             </option>
+             <option>
+              中信信托·民享7号安置房集合信托计划
+             </option>
+             <option>
+              外贸信托·德源安1-1期
+             </option>
+             <option>
+              五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划
+             </option>
+             <option>
+              新华信托·普天3号集合信托计划
+             </option>
+             <option>
+              四川信托·三浦威特信托贷款集合资金信托计划
+             </option>
+             <option>
+              五矿信托·江锂科技信托贷款集合资金信托计划
+             </option>
+             <option>
+              方正东亚·天津临港控股应收款债权投资集合信托
+             </option>
+             <option>
+              德源安战略成长3号
+             </option>
+            </select>
+           </td>
+           <td>
+            产品类型：
+            <label for="select6">
+            </label>
+            <select name="select6" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              中铝·阜宁稀土收储投资基金
+             </option>
+             <option>
+              新时代信托·蓝海26号集合资金信托计划
+             </option>
+             <option>
+              中融信托·常德经投（一期）财产权信托
+             </option>
+             <option>
+              中融信托·湖南德思勤写字楼股权投资集合信托计划
+             </option>
+             <option>
+              联华信托·云程泰3期
+             </option>
+             <option>
+              西安信托·龙腾7期
+             </option>
+             <option>
+              “金钥匙·本利丰”2012年第7期欧元32天保证收益型产品
+             </option>
+             <option>
+              西安国投·呈瑞价值1期
+             </option>
+             <option>
+              “金葵花绽放”－招银进宝之点贷成金733号人民币63天产品
+             </option>
+             <option>
+              陆家嘴信托·淮安开发控股应收账款收益权投资集合资金信托计划
+             </option>
+             <option>
+              中融信托·融尊基金集合资金信托计划
+             </option>
+             <option>
+              金谷信托·向日葵8号-无锡富华中小企业发展信托基金（计划）
+             </option>
+             <option>
+              方正东亚信托·成都三联花木财产权投资集合金信托计划
+             </option>
+             <option>
+              沃信思源卓达明郡地产项目
+             </option>
+             <option>
+              金谷信托·江苏润澳·环球酒店装修项目集合资金信托计划
+             </option>
+             <option>
+              新华信托·和泓1号房地产投资基金集合资金信托计划
+             </option>
+             <option>
+              盈信瑞峰资本·银杏2号投资基金
+             </option>
+             <option>
+              新华信托·中国医药城投资基金集合资金信托计划
+             </option>
+             <option>
+              新时代信托·慧金522号非上市公司股权收益权投资集合资金信托计划
+             </option>
+             <option>
+              湖南信托·京汉置业集团股份有限公司贷款集合资金信托计划
+             </option>
+             <option>
+              中航信托·天启272号重庆大渡口道路建设项目集合资金信托计划
+             </option>
+             <option>
+              中融信托·重庆渝兴 1 号财产权信托计划
+             </option>
+             <option>
+              中融信托·中国庆华新能源资源集合资金信托计划
+             </option>
+             <option>
+              中金赛富金矿投资集合信托计划
+             </option>
+             <option>
+              中天财智·重庆西部总部投资集合计划
+             </option>
+             <option>
+              中信信托·聚信泰和煤炭能源投资1期集合计划
+             </option>
+             <option>
+              中信信托·大瑞煤炭资源整合信托
+             </option>
+             <option>
+              新华信托·重庆市綦江西部齿轮城项目集合资金信托计划
+             </option>
+             <option>
+              中信信托·聚信汇金煤炭资源产业投资计划
+             </option>
+             <option>
+              外贸信托·德源安1-1期
+             </option>
+             <option>
+              五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划
+             </option>
+             <option>
+              中航信托·天富12号集合资金信托计划
+             </option>
+             <option>
+              德源安战略成长3号
+             </option>
+            </select>
+           </td>
+          </tr>
+         </table>
+         <input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c" />
+        </form>
+       </div>
+       <div class="xtlc_ri2_3">
+        <table width="100%" border="0">
+         <tr>
+          <td width="340" height="25">
+           
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product1">
+             产品期限
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product2">
+             最高年收益
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            发行机构
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product3">
+             发行日期
+            </a>
+           </strong>
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=20">
+            电子银行理财夜市－招银进宝之点贷成金735号人民币4
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           4年
+          </td>
+          <td width="85" height="23" align="left">
+           5.3%
+          </td>
+          <td width="85" height="23">
+           招商银行
+          </td>
+          <td width="85" height="23">
+           2012-09-27
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=6">
+            “金钥匙·本利丰”2012年第7期欧元32天保证收益型产
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           3%
+          </td>
+          <td width="85" height="23">
+           农业银行
+          </td>
+          <td width="85" height="23">
+           2012-09-27
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=4">
+            “金葵花绽放”－招银进宝之点贷成金733号人民币63天
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           0.3年
+          </td>
+          <td width="85" height="23" align="left">
+           5.5%
+          </td>
+          <td width="85" height="23">
+           招商银行
+          </td>
+          <td width="85" height="23">
+           2011-11-15
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=18">
+            “安盈理财1068—55期”人民币182天产品
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           0.5年
+          </td>
+          <td width="85" height="23" align="left">
+           5.8%
+          </td>
+          <td width="85" height="23">
+           平安银行
+          </td>
+          <td width="85" height="23">
+           2012-01-11
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=2">
+            沃信思源卓达明郡地产项目
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           15%
+          </td>
+          <td width="85" height="23">
+           深发展银行
+          </td>
+          <td width="85" height="23">
+           2012-03-31
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=21">
+            “非凡资产管理周增利”（周三-普通版）人民币7天产
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           3年
+          </td>
+          <td width="85" height="23" align="left">
+           3.45%
+          </td>
+          <td width="85" height="23">
+           民生银行
+          </td>
+          <td width="85" height="23">
+           2012-01-01
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div class="xtlc_ri2_2" id="as2" style="display:none;">
+       <div class="xtlx_ri2_21">
+        <form id="form3" name="form3" method="post" action="/index.php?m=Xtlc&amp;a=search">
+         <table width="100%" border="0">
+          <tr>
+           <td>
+            产品状态：
+            <label for="select">
+            </label>
+            <select name="select" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              售罄
+             </option>
+             <option>
+              在售
+             </option>
+             <option>
+              转让中
+             </option>
+             <option>
+              售磬
+             </option>
+            </select>
+           </td>
+           <td>
+            发行机构：
+            <label for="select2">
+            </label>
+            <select name="select2" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              中铝
+             </option>
+             <option>
+              华澳信托
+             </option>
+             <option>
+              某央企信托
+             </option>
+             <option>
+              西安信托
+             </option>
+             <option>
+              北京信托
+             </option>
+             <option>
+              平安信托
+             </option>
+             <option>
+              中方财富
+             </option>
+             <option>
+              农业银行
+             </option>
+             <option>
+              长安信托
+             </option>
+             <option>
+              招商银行
+             </option>
+             <option>
+              平安银行
+             </option>
+             <option>
+              杰银京华
+             </option>
+             <option>
+              星神风信托
+             </option>
+             <option>
+              国民信托
+             </option>
+             <option>
+              中投信托
+             </option>
+             <option>
+              华融信托
+             </option>
+             <option>
+              华宝信托
+             </option>
+             <option>
+              交银信托
+             </option>
+             <option>
+              陆家嘴信托
+             </option>
+             <option>
+              陕西省国际信托
+             </option>
+             <option>
+              方正东亚信托
+             </option>
+             <option>
+              华能信托
+             </option>
+             <option>
+              深发展银行
+             </option>
+             <option>
+              同创伟业
+             </option>
+             <option>
+              阿拉丁
+             </option>
+             <option>
+              盈信瑞丰
+             </option>
+             <option>
+              德信资本
+             </option>
+             <option>
+              山西信托
+             </option>
+             <option>
+              金谷信托
+             </option>
+             <option>
+              民生银行
+             </option>
+             <option>
+              央企信托
+             </option>
+             <option>
+              中星集团
+             </option>
+             <option>
+              爱建信托
+             </option>
+             <option>
+              中诚信托
+             </option>
+             <option>
+              中铁信托
+             </option>
+             <option>
+              湖南信托
+             </option>
+             <option>
+              中信锦绣
+             </option>
+             <option>
+              方正东亚
+             </option>
+             <option>
+              中融信托
+             </option>
+             <option>
+              洲海投资
+             </option>
+             <option>
+              中科创
+             </option>
+             <option>
+              金瑞格
+             </option>
+             <option>
+              中尚集团
+             </option>
+             <option>
+              世纪方舟
+             </option>
+             <option>
+              中天财智
+             </option>
+             <option>
+              新时代信托
+             </option>
+             <option>
+              中信信托
+             </option>
+             <option>
+              外贸信托
+             </option>
+             <option>
+              五矿信托
+             </option>
+             <option>
+              新华信托
+             </option>
+             <option>
+              方正信托
+             </option>
+             <option>
+              中航信托
+             </option>
+             <option>
+              四川信托
+             </option>
+             <option>
+              联华信托
+             </option>
+            </select>
+           </td>
+           <td>
+            产品期限：
+            <label for="select3">
+            </label>
+            <select name="select3" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              5年
+             </option>
+             <option>
+              4年
+             </option>
+             <option>
+              1年
+             </option>
+             <option>
+              0.3年
+             </option>
+             <option>
+              0.5年
+             </option>
+             <option>
+              0.75年
+             </option>
+             <option>
+              2年
+             </option>
+             <option>
+              7年
+             </option>
+             <option>
+              10年
+             </option>
+             <option>
+              2.5年
+             </option>
+             <option>
+              3年
+             </option>
+             <option>
+              1.5年
+             </option>
+             <option>
+              6年
+             </option>
+            </select>
+           </td>
+           <td width="80" rowspan="2" align="center">
+            <a href="#">
+             <input type="image" src="/flcf/Tpl/default/Public/images/ser.jpg" name="submit" />
+            </a>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            年收效率：
+            <label for="select4">
+            </label>
+            <select name="select4" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              10.7%
+             </option>
+             <option>
+              10.2%
+             </option>
+             <option>
+              0%
+             </option>
+             <option>
+              30%
+             </option>
+             <option>
+              5.3%
+             </option>
+             <option>
+              3%
+             </option>
+             <option>
+              5.5%
+             </option>
+             <option>
+              5.8%
+             </option>
+             <option>
+              5.2%
+             </option>
+             <option>
+              9.6%
+             </option>
+             <option>
+              15%
+             </option>
+             <option>
+              50%
+             </option>
+             <option>
+              22%
+             </option>
+             <option>
+              12.5%
+             </option>
+             <option>
+              11.8%
+             </option>
+             <option>
+              3.45%
+             </option>
+             <option>
+              117%
+             </option>
+             <option>
+              8.8%
+             </option>
+             <option>
+              8%
+             </option>
+             <option>
+              25%
+             </option>
+             <option>
+              10.8%
+             </option>
+             <option>
+              40%
+             </option>
+             <option>
+              9%
+             </option>
+             <option>
+              9.5%
+             </option>
+             <option>
+              14%
+             </option>
+             <option>
+              17%
+             </option>
+             <option>
+              13%
+             </option>
+             <option>
+              53%
+             </option>
+             <option>
+              18%
+             </option>
+             <option>
+              9.8%
+             </option>
+             <option>
+              12%
+             </option>
+             <option>
+              10%
+             </option>
+             <option>
+              11.5%
+             </option>
+             <option>
+              9.2%
+             </option>
+             <option>
+              11%
+             </option>
+             <option>
+              10.5%
+             </option>
+             <option>
+              16.7%
+             </option>
+             <option>
+              8.5%
+             </option>
+             <option>
+              13.5%
+             </option>
+            </select>
+           </td>
+           <td>
+            资金投向：
+            <label for="select5">
+            </label>
+            <select name="select5" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              保障房建设
+             </option>
+             <option>
+              矿产
+             </option>
+             <option>
+              厂房建设
+             </option>
+             <option>
+              煤电铝一体化项目建设
+             </option>
+             <option>
+              金融市场
+             </option>
+             <option>
+              高成长企业上市
+             </option>
+             <option>
+              证券投资
+             </option>
+             <option>
+              汽车4S店
+             </option>
+             <option>
+              流动性资金补充
+             </option>
+             <option>
+              城市建设
+             </option>
+             <option>
+              基础建设
+             </option>
+             <option>
+              基础设施建设
+             </option>
+             <option>
+              旅游开发
+             </option>
+             <option>
+              实业投资
+             </option>
+             <option>
+              项目开发建设
+             </option>
+             <option>
+              定向增发和固定投资
+             </option>
+             <option>
+              流动性资金
+             </option>
+             <option>
+              房地产
+             </option>
+             <option>
+              酒店装修
+             </option>
+             <option>
+              组合投资
+             </option>
+             <option>
+              保障房等地产类
+             </option>
+             <option>
+              保障房项目
+             </option>
+             <option>
+              食品行业
+             </option>
+             <option>
+              项目建设
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              主焦煤
+             </option>
+             <option>
+              房地产项目
+             </option>
+             <option>
+              旅游业
+             </option>
+             <option>
+              软件开发项目
+             </option>
+             <option>
+              政府安置房
+             </option>
+             <option>
+              金融类产品
+             </option>
+             <option>
+              铜矿企业上市
+             </option>
+             <option>
+              房地产股权
+             </option>
+             <option>
+              市政建设
+             </option>
+             <option>
+              租赁性物业收益权
+             </option>
+             <option>
+              溧城镇废弃露天采矿山环境综合治理项目
+             </option>
+             <option>
+              信托产品优先级
+             </option>
+             <option>
+              酒店项目建设
+             </option>
+             <option>
+              权益投资
+             </option>
+             <option>
+              未上市公司股权投资
+             </option>
+             <option>
+              丹阳·恒大名都项目开发
+             </option>
+             <option>
+              市政基建
+             </option>
+             <option>
+              增资桐乡广源公司
+             </option>
+             <option>
+              动车
+             </option>
+             <option>
+              高尔夫项目
+             </option>
+             <option>
+              流动资金补充
+             </option>
+             <option>
+              资源投资项目
+             </option>
+             <option>
+              受让股权收益权
+             </option>
+             <option>
+              哈尔滨锦观城项目的建设
+             </option>
+             <option>
+              农村基建
+             </option>
+             <option>
+              政府项目建设
+             </option>
+             <option>
+              教育行业
+             </option>
+             <option>
+              有色金属贸易
+             </option>
+             <option>
+              煤矿资源开发
+             </option>
+             <option>
+              房地产开发
+             </option>
+             <option>
+              工商企业
+             </option>
+             <option>
+              煤炭资源
+             </option>
+             <option>
+              建材节能
+             </option>
+             <option>
+              开采铅锌矿
+             </option>
+             <option>
+              矿石资源
+             </option>
+             <option>
+              主要投资：用于购买铁马矿业的特定资产收益权
+             </option>
+             <option>
+              煤炭能源整合
+             </option>
+             <option>
+              基础设施
+             </option>
+             <option>
+              煤炭开发
+             </option>
+             <option>
+              江苏淮安古黄河治理。
+             </option>
+             <option>
+              金融 市场
+             </option>
+             <option>
+              矿产资源
+             </option>
+             <option>
+              舟山海洋旅游与游艇产业开发
+             </option>
+             <option>
+              补充现金流
+             </option>
+             <option>
+              向江锂科技发放信托贷款
+             </option>
+             <option>
+              港口开发
+             </option>
+             <option>
+              证券 债券
+             </option>
+            </select>
+           </td>
+           <td>
+            产品类型：
+            <label for="select6">
+            </label>
+            <select name="select6" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              基金
+             </option>
+             <option>
+              收益权类
+             </option>
+             <option>
+              财产收益权
+             </option>
+             <option>
+              股权投资类
+             </option>
+             <option>
+              主动管理型
+             </option>
+             <option>
+              证券投资集合资金信托计划
+             </option>
+             <option>
+              银信合作
+             </option>
+             <option>
+              证券投资类集合资金信托计划
+             </option>
+             <option>
+              自主管理
+             </option>
+             <option>
+              应收账款收益权
+             </option>
+             <option>
+              集合信托基金
+             </option>
+             <option>
+              贷款类
+             </option>
+             <option>
+              权益类
+             </option>
+             <option>
+              合伙基金计划
+             </option>
+             <option>
+              股权收益权
+             </option>
+             <option>
+              PE
+             </option>
+             <option>
+              阳光私募
+             </option>
+             <option>
+              贷款信托
+             </option>
+             <option>
+              收益权信托
+             </option>
+             <option>
+              贷款类信托
+             </option>
+             <option>
+              集合信托
+             </option>
+             <option>
+              财产权信托
+             </option>
+             <option>
+              集合资金信托
+             </option>
+             <option>
+              私募股权
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              股权私募
+             </option>
+             <option>
+              固定收益型
+             </option>
+             <option>
+              固定收益类
+             </option>
+             <option>
+              固定收益
+             </option>
+             <option>
+              浮动
+             </option>
+             <option>
+              结构化
+             </option>
+             <option>
+              TOT
+             </option>
+             <option>
+              管理型
+             </option>
+            </select>
+           </td>
+          </tr>
+         </table>
+         <input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c" />
+        </form>
+       </div>
+       <div class="xtlc_ri2_3">
+        <table width="100%" border="0">
+         <tr>
+          <td width="340" height="25">
+           
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product1">
+             产品期限
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product2">
+             最高年收益
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            发行机构
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product3">
+             发行日期
+            </a>
+           </strong>
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=16" title="联华信托·云程泰3期">
+            联华信托·云程泰3期
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           5年
+          </td>
+          <td width="85" height="23" align="left">
+           0%
+          </td>
+          <td width="85" height="23">
+           联华信托
+          </td>
+          <td width="85" height="23">
+           2011-12-05
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=1" title="西安信托·龙腾7期">
+            西安信托·龙腾7期
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           5年
+          </td>
+          <td width="85" height="23" align="left">
+           0%
+          </td>
+          <td width="85" height="23">
+           西安信托
+          </td>
+          <td width="85" height="23">
+           2011-11-04
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=15" title="平安财富·投资精英之翼虎">
+            平安财富·投资精英之翼虎
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           5年
+          </td>
+          <td width="85" height="23" align="left">
+           0%
+          </td>
+          <td width="85" height="23">
+           平安信托
+          </td>
+          <td width="85" height="23">
+           2011-11-25
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=14" title="西安国投·呈瑞价值1期">
+            西安国投·呈瑞价值1期
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           5年
+          </td>
+          <td width="85" height="23" align="left">
+           0%
+          </td>
+          <td width="85" height="23">
+           长安信托
+          </td>
+          <td width="85" height="23">
+           2012-03-11
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=117" title="盈信瑞峰资本·银杏2号投资基金">
+            盈信瑞峰资本·银杏2号投资基金
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           30%
+          </td>
+          <td width="85" height="23">
+           盈信瑞丰
+          </td>
+          <td width="85" height="23">
+           2012-06-12
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=10" title="外贸信托·德源安1-1期">
+            外贸信托·德源安1-1期
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           0%
+          </td>
+          <td width="85" height="23">
+           外贸信托
+          </td>
+          <td width="85" height="23">
+           2011-12-02
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+      <div class="xtlc_ri2_2" id="as4" style="display:none;">
+       <div class="xtlx_ri2_21">
+        <form id="form3" name="form3" method="post" action="/index.php?m=Xtlc&amp;a=search">
+         <table width="100%" border="0">
+          <tr>
+           <td>
+            产品状态：
+            <label for="select">
+            </label>
+            <select name="select" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              售罄
+             </option>
+             <option>
+              在售
+             </option>
+             <option>
+              转让中
+             </option>
+             <option>
+              售磬
+             </option>
+            </select>
+           </td>
+           <td>
+            发行机构：
+            <label for="select2">
+            </label>
+            <select name="select2" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              中铝
+             </option>
+             <option>
+              华澳信托
+             </option>
+             <option>
+              某央企信托
+             </option>
+             <option>
+              西安信托
+             </option>
+             <option>
+              北京信托
+             </option>
+             <option>
+              平安信托
+             </option>
+             <option>
+              中方财富
+             </option>
+             <option>
+              农业银行
+             </option>
+             <option>
+              长安信托
+             </option>
+             <option>
+              招商银行
+             </option>
+             <option>
+              平安银行
+             </option>
+             <option>
+              杰银京华
+             </option>
+             <option>
+              星神风信托
+             </option>
+             <option>
+              国民信托
+             </option>
+             <option>
+              中投信托
+             </option>
+             <option>
+              华融信托
+             </option>
+             <option>
+              华宝信托
+             </option>
+             <option>
+              交银信托
+             </option>
+             <option>
+              陆家嘴信托
+             </option>
+             <option>
+              陕西省国际信托
+             </option>
+             <option>
+              方正东亚信托
+             </option>
+             <option>
+              华能信托
+             </option>
+             <option>
+              深发展银行
+             </option>
+             <option>
+              同创伟业
+             </option>
+             <option>
+              阿拉丁
+             </option>
+             <option>
+              盈信瑞丰
+             </option>
+             <option>
+              德信资本
+             </option>
+             <option>
+              山西信托
+             </option>
+             <option>
+              金谷信托
+             </option>
+             <option>
+              民生银行
+             </option>
+             <option>
+              央企信托
+             </option>
+             <option>
+              中星集团
+             </option>
+             <option>
+              爱建信托
+             </option>
+             <option>
+              中诚信托
+             </option>
+             <option>
+              中铁信托
+             </option>
+             <option>
+              湖南信托
+             </option>
+             <option>
+              中信锦绣
+             </option>
+             <option>
+              方正东亚
+             </option>
+             <option>
+              中融信托
+             </option>
+             <option>
+              洲海投资
+             </option>
+             <option>
+              中科创
+             </option>
+             <option>
+              金瑞格
+             </option>
+             <option>
+              中尚集团
+             </option>
+             <option>
+              世纪方舟
+             </option>
+             <option>
+              中天财智
+             </option>
+             <option>
+              新时代信托
+             </option>
+             <option>
+              中信信托
+             </option>
+             <option>
+              外贸信托
+             </option>
+             <option>
+              五矿信托
+             </option>
+             <option>
+              新华信托
+             </option>
+             <option>
+              方正信托
+             </option>
+             <option>
+              中航信托
+             </option>
+             <option>
+              四川信托
+             </option>
+             <option>
+              联华信托
+             </option>
+            </select>
+           </td>
+           <td>
+            产品期限：
+            <label for="select3">
+            </label>
+            <select name="select3" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              5年
+             </option>
+             <option>
+              4年
+             </option>
+             <option>
+              1年
+             </option>
+             <option>
+              0.3年
+             </option>
+             <option>
+              0.5年
+             </option>
+             <option>
+              0.75年
+             </option>
+             <option>
+              2年
+             </option>
+             <option>
+              7年
+             </option>
+             <option>
+              10年
+             </option>
+             <option>
+              2.5年
+             </option>
+             <option>
+              3年
+             </option>
+             <option>
+              1.5年
+             </option>
+             <option>
+              6年
+             </option>
+            </select>
+           </td>
+           <td width="80" rowspan="2" align="center">
+            <a href="#">
+             <input type="image" src="/flcf/Tpl/default/Public/images/ser.jpg" name="submit" />
+            </a>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            年收效率：
+            <label for="select4">
+            </label>
+            <select name="select4" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              10.7%
+             </option>
+             <option>
+              10.2%
+             </option>
+             <option>
+              0%
+             </option>
+             <option>
+              30%
+             </option>
+             <option>
+              5.3%
+             </option>
+             <option>
+              3%
+             </option>
+             <option>
+              5.5%
+             </option>
+             <option>
+              5.8%
+             </option>
+             <option>
+              5.2%
+             </option>
+             <option>
+              9.6%
+             </option>
+             <option>
+              15%
+             </option>
+             <option>
+              50%
+             </option>
+             <option>
+              22%
+             </option>
+             <option>
+              12.5%
+             </option>
+             <option>
+              11.8%
+             </option>
+             <option>
+              3.45%
+             </option>
+             <option>
+              117%
+             </option>
+             <option>
+              8.8%
+             </option>
+             <option>
+              8%
+             </option>
+             <option>
+              25%
+             </option>
+             <option>
+              10.8%
+             </option>
+             <option>
+              40%
+             </option>
+             <option>
+              9%
+             </option>
+             <option>
+              9.5%
+             </option>
+             <option>
+              14%
+             </option>
+             <option>
+              17%
+             </option>
+             <option>
+              13%
+             </option>
+             <option>
+              53%
+             </option>
+             <option>
+              18%
+             </option>
+             <option>
+              9.8%
+             </option>
+             <option>
+              12%
+             </option>
+             <option>
+              10%
+             </option>
+             <option>
+              11.5%
+             </option>
+             <option>
+              9.2%
+             </option>
+             <option>
+              11%
+             </option>
+             <option>
+              10.5%
+             </option>
+             <option>
+              16.7%
+             </option>
+             <option>
+              8.5%
+             </option>
+             <option>
+              13.5%
+             </option>
+            </select>
+           </td>
+           <td>
+            资金投向：
+            <label for="select5">
+            </label>
+            <select name="select5" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              保障房建设
+             </option>
+             <option>
+              矿产
+             </option>
+             <option>
+              厂房建设
+             </option>
+             <option>
+              煤电铝一体化项目建设
+             </option>
+             <option>
+              金融市场
+             </option>
+             <option>
+              高成长企业上市
+             </option>
+             <option>
+              证券投资
+             </option>
+             <option>
+              汽车4S店
+             </option>
+             <option>
+              流动性资金补充
+             </option>
+             <option>
+              城市建设
+             </option>
+             <option>
+              基础建设
+             </option>
+             <option>
+              基础设施建设
+             </option>
+             <option>
+              旅游开发
+             </option>
+             <option>
+              实业投资
+             </option>
+             <option>
+              项目开发建设
+             </option>
+             <option>
+              定向增发和固定投资
+             </option>
+             <option>
+              流动性资金
+             </option>
+             <option>
+              房地产
+             </option>
+             <option>
+              酒店装修
+             </option>
+             <option>
+              组合投资
+             </option>
+             <option>
+              保障房等地产类
+             </option>
+             <option>
+              保障房项目
+             </option>
+             <option>
+              食品行业
+             </option>
+             <option>
+              项目建设
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              主焦煤
+             </option>
+             <option>
+              房地产项目
+             </option>
+             <option>
+              旅游业
+             </option>
+             <option>
+              软件开发项目
+             </option>
+             <option>
+              政府安置房
+             </option>
+             <option>
+              金融类产品
+             </option>
+             <option>
+              铜矿企业上市
+             </option>
+             <option>
+              房地产股权
+             </option>
+             <option>
+              市政建设
+             </option>
+             <option>
+              租赁性物业收益权
+             </option>
+             <option>
+              溧城镇废弃露天采矿山环境综合治理项目
+             </option>
+             <option>
+              信托产品优先级
+             </option>
+             <option>
+              酒店项目建设
+             </option>
+             <option>
+              权益投资
+             </option>
+             <option>
+              未上市公司股权投资
+             </option>
+             <option>
+              丹阳·恒大名都项目开发
+             </option>
+             <option>
+              市政基建
+             </option>
+             <option>
+              增资桐乡广源公司
+             </option>
+             <option>
+              动车
+             </option>
+             <option>
+              高尔夫项目
+             </option>
+             <option>
+              流动资金补充
+             </option>
+             <option>
+              资源投资项目
+             </option>
+             <option>
+              受让股权收益权
+             </option>
+             <option>
+              哈尔滨锦观城项目的建设
+             </option>
+             <option>
+              农村基建
+             </option>
+             <option>
+              政府项目建设
+             </option>
+             <option>
+              教育行业
+             </option>
+             <option>
+              有色金属贸易
+             </option>
+             <option>
+              煤矿资源开发
+             </option>
+             <option>
+              房地产开发
+             </option>
+             <option>
+              工商企业
+             </option>
+             <option>
+              煤炭资源
+             </option>
+             <option>
+              建材节能
+             </option>
+             <option>
+              开采铅锌矿
+             </option>
+             <option>
+              矿石资源
+             </option>
+             <option>
+              主要投资：用于购买铁马矿业的特定资产收益权
+             </option>
+             <option>
+              煤炭能源整合
+             </option>
+             <option>
+              基础设施
+             </option>
+             <option>
+              煤炭开发
+             </option>
+             <option>
+              江苏淮安古黄河治理。
+             </option>
+             <option>
+              金融 市场
+             </option>
+             <option>
+              矿产资源
+             </option>
+             <option>
+              舟山海洋旅游与游艇产业开发
+             </option>
+             <option>
+              补充现金流
+             </option>
+             <option>
+              向江锂科技发放信托贷款
+             </option>
+             <option>
+              港口开发
+             </option>
+             <option>
+              证券 债券
+             </option>
+            </select>
+           </td>
+           <td>
+            产品类型：
+            <label for="select6">
+            </label>
+            <select name="select6" class="select" style="width:110px">
+             <option>
+              所有
+             </option>
+             <option>
+              基金
+             </option>
+             <option>
+              收益权类
+             </option>
+             <option>
+              财产收益权
+             </option>
+             <option>
+              股权投资类
+             </option>
+             <option>
+              主动管理型
+             </option>
+             <option>
+              证券投资集合资金信托计划
+             </option>
+             <option>
+              银信合作
+             </option>
+             <option>
+              证券投资类集合资金信托计划
+             </option>
+             <option>
+              自主管理
+             </option>
+             <option>
+              应收账款收益权
+             </option>
+             <option>
+              集合信托基金
+             </option>
+             <option>
+              贷款类
+             </option>
+             <option>
+              权益类
+             </option>
+             <option>
+              合伙基金计划
+             </option>
+             <option>
+              股权收益权
+             </option>
+             <option>
+              PE
+             </option>
+             <option>
+              阳光私募
+             </option>
+             <option>
+              贷款信托
+             </option>
+             <option>
+              收益权信托
+             </option>
+             <option>
+              贷款类信托
+             </option>
+             <option>
+              集合信托
+             </option>
+             <option>
+              财产权信托
+             </option>
+             <option>
+              集合资金信托
+             </option>
+             <option>
+              私募股权
+             </option>
+             <option>
+              股权投资
+             </option>
+             <option>
+              股权私募
+             </option>
+             <option>
+              固定收益型
+             </option>
+             <option>
+              固定收益类
+             </option>
+             <option>
+              固定收益
+             </option>
+             <option>
+              浮动
+             </option>
+             <option>
+              结构化
+             </option>
+             <option>
+              TOT
+             </option>
+             <option>
+              管理型
+             </option>
+            </select>
+           </td>
+          </tr>
+         </table>
+         <input type="hidden" name="__hash__" value="e672793334689d97d946b86194b9637c" />
+        </form>
+       </div>
+       <div class="xtlc_ri2_3">
+        <table width="100%" border="0">
+         <tr>
+          <td width="340" height="25">
+           
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product1">
+             产品期限
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product2">
+             最高年收益
+            </a>
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            发行机构
+           </strong>
+          </td>
+          <td width="85" height="25">
+           <strong>
+            <a href="/index.php?m=Xtlc&amp;a=product3">
+             发行日期
+            </a>
+           </strong>
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=206" title="中铝·阜宁稀土收储投资基金">
+            中铝·阜宁稀土收储投资基金
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           12%
+          </td>
+          <td width="85" height="23">
+           中铝
+          </td>
+          <td width="85" height="23">
+           2012-10-10
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=54" title="北京信托·中关村瞪羚投资发展集合计划">
+            北京信托·中关村瞪羚投资发展集合计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           7年
+          </td>
+          <td width="85" height="23" align="left">
+           30%
+          </td>
+          <td width="85" height="23">
+           北京信托
+          </td>
+          <td width="85" height="23">
+           2012-04-09
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=68" title="北京汇丰财富投资中心（有限合伙）集合计划">
+            北京汇丰财富投资中心（有限合伙）集合计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           14%
+          </td>
+          <td width="85" height="23">
+           中方财富
+          </td>
+          <td width="85" height="23">
+           2012-09-20
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=95" title="中方财富·国酒茅台投资基金">
+            中方财富·国酒茅台投资基金
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           14%
+          </td>
+          <td width="85" height="23">
+           中方财富
+          </td>
+          <td width="85" height="23">
+           2012-09-27
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=171" title="杰银京华·嘉凯城保本地产投资基金">
+            杰银京华·嘉凯城保本地产投资基金
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           25%
+          </td>
+          <td width="85" height="23">
+           杰银京华
+          </td>
+          <td width="85" height="23">
+           2012-09-25
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=41" title="同创伟业1号创投信托集合计划">
+            同创伟业1号创投信托集合计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           7年
+          </td>
+          <td width="85" height="23" align="left">
+           50%
+          </td>
+          <td width="85" height="23">
+           同创伟业
+          </td>
+          <td width="85" height="23">
+           2012-01-05
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=71" title="新华信托·金海I号投资基金集合信托计划">
+            新华信托·金海I号投资基金集合信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           14%
+          </td>
+          <td width="85" height="23">
+           新华信托
+          </td>
+          <td width="85" height="23">
+           2012-05-15
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=77" title="新华信托·和泓1号房地产投资基金集合资金信托计划">
+            新华信托·和泓1号房地产投资基金集合资金信托计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           6年
+          </td>
+          <td width="85" height="23" align="left">
+           22%
+          </td>
+          <td width="85" height="23">
+           新华信托
+          </td>
+          <td width="85" height="23">
+           2012-05-22
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=57" title="阿拉丁·海航绿色成长系列投资1期集合计划">
+            阿拉丁·海航绿色成长系列投资1期集合计划
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           12.5%
+          </td>
+          <td width="85" height="23">
+           阿拉丁
+          </td>
+          <td width="85" height="23">
+           2012-04-11
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=120" title="联邦·德信地产投资基金(有限合伙) ">
+            联邦·德信地产投资基金(有限合伙)
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           2年
+          </td>
+          <td width="85" height="23" align="left">
+           22%
+          </td>
+          <td width="85" height="23">
+           德信资本
+          </td>
+          <td width="85" height="23">
+           2012-07-12
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=135" title="中方财富·盛煌实业投资基金">
+            中方财富·盛煌实业投资基金
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           15%
+          </td>
+          <td width="85" height="23">
+           中方财富
+          </td>
+          <td width="85" height="23">
+           2012-07-17
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=134" title="金谷信托·北京唯达煤田项目">
+            金谷信托·北京唯达煤田项目
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           1年
+          </td>
+          <td width="85" height="23" align="left">
+           13.5%
+          </td>
+          <td width="85" height="23">
+           金谷信托
+          </td>
+          <td width="85" height="23">
+           2012-07-12
+          </td>
+         </tr>
+         <tr class="tr1">
+          <td width="340" height="23">
+           <a href="/index.php?m=Xtlc&amp;a=view&amp;id=124" title="中信信托·沈阳焦煤股权投资基金（有限合伙）">
+            中信信托·沈阳焦煤股权投资基金（有限合伙）
+           </a>
+          </td>
+          <td width="85" height="23" align="left">
+           3年
+          </td>
+          <td width="85" height="23" align="left">
+           117%
+          </td>
+          <td width="85" height="23">
+           中信锦绣
+          </td>
+          <td width="85" height="23">
+           2012-07-10
+          </td>
+         </tr>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="main3_left3 mtop5">
+     <div class="main3_le2_11">
+      <div class="le2_11_list">
+       一周阳光信托收益排名
+      </div>
+      <div class="le2_11_list">
+       一周集合信托发行收益排名
+      </div>
+      <div class="le2_11_list">
+       一周信托产品发行收益排名
+      </div>
+     </div>
+     <div class="main3_left3_2">
+      <table width="100%" height="146" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td width="215" valign="top">
+         <div class="main3_le3_gj1">
+          <table width="100%" border="0">
+           <tr style="color:#000;">
+            <td width="30" height="20" align="center" bgcolor="#e5e5e5">
+             排名
+            </td>
+            <td width="110" height="20" align="center" bgcolor="#e5e5e5">
+             产品名称
+            </td>
+            <td height="20" align="center" bgcolor="#e5e5e5">
+             收益
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             1
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="盈信瑞峰资本·银杏2号投资基金" href="/index.php?m=Xtlc&amp;a=view&amp;id=117">
+              盈信瑞峰资本
+             </a>
+            </td>
+            <td height="20" align="center">
+             30%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             2
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="西安信托·龙腾7期" href="/index.php?m=Xtlc&amp;a=view&amp;id=1">
+              西安信托·龙
+             </a>
+            </td>
+            <td height="20" align="center">
+             0%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             3
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="外贸信托·德源安1-1期" href="/index.php?m=Xtlc&amp;a=view&amp;id=10">
+              外贸信托·德
+             </a>
+            </td>
+            <td height="20" align="center">
+             0%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             4
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="西安国投·呈瑞价值1期" href="/index.php?m=Xtlc&amp;a=view&amp;id=14">
+              西安国投·呈
+             </a>
+            </td>
+            <td height="20" align="center">
+             0%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             5
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="平安财富·投资精英之翼虎" href="/index.php?m=Xtlc&amp;a=view&amp;id=15">
+              平安财富·投
+             </a>
+            </td>
+            <td height="20" align="center">
+             0%
+            </td>
+           </tr>
+          </table>
+         </div>
+        </td>
+        <td width="232" valign="top">
+         <div class="main3_le3_gj2">
+          <table width="100%" border="0">
+           <tr style="color:#000;">
+            <td width="30" height="20" align="center" bgcolor="#e5e5e5">
+             排名
+            </td>
+            <td width="110" height="20" align="center" bgcolor="#e5e5e5">
+             产品名称
+            </td>
+            <td height="20" align="center" bgcolor="#e5e5e5">
+             收益
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             1
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="中星集团·中星兴宏投资企业（有限合伙）投资集合计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=58">
+              中星集团·中
+             </a>
+            </td>
+            <td height="20" align="center">
+             25%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             2
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="中融信托·融尊基金集合资金信托计划 " href="/index.php?m=Xtlc&amp;a=view&amp;id=113">
+              中融信托·融
+             </a>
+            </td>
+            <td height="20" align="center">
+             25%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             3
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="新华信托·中邦系列稳健型并购投资集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=53">
+              新华信托·中
+             </a>
+            </td>
+            <td height="20" align="center">
+             18%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             4
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="五矿信托·矿资源宝矿一期—东南利成结构化集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=36">
+              五矿信托·矿
+             </a>
+            </td>
+            <td height="20" align="center">
+             17%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             5
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="中诚信托·建金杭州1号集合信托计划" href="/index.php?m=Xtlc&amp;a=view&amp;id=61">
+              中诚信托·建
+             </a>
+            </td>
+            <td height="20" align="center">
+             17%
+            </td>
+           </tr>
+          </table>
+         </div>
+        </td>
+        <td width="214" valign="top">
+         <div class="main3_le3_gj3">
+          <table width="100%" border="0">
+           <tr style="color:#000;">
+            <td width="30" height="20" align="center" bgcolor="#e5e5e5">
+             排名
+            </td>
+            <td width="110" height="20" align="center" bgcolor="#e5e5e5">
+             产品名称
+            </td>
+            <td height="20" align="center" bgcolor="#e5e5e5">
+             收益
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             1
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="沃信思源卓达明郡地产项目" href="/index.php?m=Xtlc&amp;a=view&amp;id=2">
+              沃信思源卓达
+             </a>
+            </td>
+            <td height="20" align="center">
+             15%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             2
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="“安盈理财1068—55期”人民币182天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=18">
+              “安盈理财10
+             </a>
+            </td>
+            <td height="20" align="center">
+             5.8%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             3
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="“金葵花绽放”－招银进宝之点贷成金733号人民币63天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=4">
+              “金葵花绽放
+             </a>
+            </td>
+            <td height="20" align="center">
+             5.5%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             4
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="电子银行理财夜市－招银进宝之点贷成金735号人民币49天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=20">
+              电子银行理财
+             </a>
+            </td>
+            <td height="20" align="center">
+             5.3%
+            </td>
+           </tr>
+           <tr>
+            <td width="30" height="20" align="center">
+             5
+            </td>
+            <td width="110" height="20" align="center">
+             <a title="“非凡资产管理周增利”（周三-普通版）人民币7天产品" href="/index.php?m=Xtlc&amp;a=view&amp;id=21">
+              “非凡资产管
+             </a>
+            </td>
+            <td height="20" align="center">
+             3.45%
+            </td>
+           </tr>
+          </table>
+         </div>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+    <div class="xtlc_ri3" style="height:100px;">
+     <a href="http://www.xtlcw.com/index.php?m=Xtyj&amp;a=index">
+      <img src="/Uploads/poto/4fe1bc88e4472.gif" height="100" width="690" />
+     </a>
+    </div>
+    <div class="xtlc_ri4">
+     <div class="main3_le2_11">
+      <span class="left">
+       产品转让
+       <a href="#" style="color:#cc0000;">
+       </a>
+      </span>
+      <span class="right">
+       <a href="/index.php?m=Xtlc&amp;a=product&amp;id=5">
+        更多&gt;&gt;
+       </a>
+      </span>
+     </div>
+     <div class="xtlc_ri4_2">
+      <table width="100%" border="0">
+       <tr>
+        <td width="200" height="25">
+         <strong>
+          产品名称
+         </strong>
+        </td>
+        <td width="110" height="25">
+         <strong>
+          发行机构
+         </strong>
+        </td>
+        <td width="70" height="25">
+         <strong>
+          成立日期
+         </strong>
+        </td>
+        <td width="120" height="25">
+         <strong>
+          期限
+         </strong>
+        </td>
+        <td width="60" height="25">
+         <strong>
+          收益率
+         </strong>
+        </td>
+        <td width="60" height="25">
+         <strong>
+          转让金额
+         </strong>
+        </td>
+        <td height="25">
+         <strong>
+          状态
+         </strong>
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=200" title="中融信托·大丰城建财产权信托1期 ">
+          中融信托·大丰城建财产权信托
+         </a>
+        </td>
+        <td height="23">
+         中融信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         2年
+        </td>
+        <td height="23">
+         9%
+        </td>
+        <td height="23">
+         %
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=201" title="陆家嘴信托·盐城市城市资产经营有限公司应收账款收益权投资集合资金信托计划">
+          陆家嘴信托·盐城市城市资产经
+         </a>
+        </td>
+        <td height="23">
+         陆家嘴信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         2年
+        </td>
+        <td height="23">
+         10%
+        </td>
+        <td height="23">
+         %
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=202" title="国民信托- 郑州动漫基地">
+          国民信托- 郑州动漫基地
+         </a>
+        </td>
+        <td height="23">
+         国民信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         2年
+        </td>
+        <td height="23">
+         9.5%
+        </td>
+        <td height="23">
+         %
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=203" title="中投·景瑞应收债权投资集合资金信托计划 ">
+          中投·景瑞应收债权投资集合资
+         </a>
+        </td>
+        <td height="23">
+         中投信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         1.5年
+        </td>
+        <td height="23">
+         10%
+        </td>
+        <td height="23">
+         %
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=154" title="星神风信托·贷款项目集合资金信托计划">
+          星神风信托·贷款项目集合资金
+         </a>
+        </td>
+        <td height="23">
+         星神风信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         1.5年
+        </td>
+        <td height="23">
+         9%
+        </td>
+        <td height="23">
+         100 万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=177" title="五矿信托·盛鑫矿业集合资金信托计划">
+          五矿信托·盛鑫矿业集合资金信
+         </a>
+        </td>
+        <td height="23">
+         五矿信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         1.5年
+        </td>
+        <td height="23">
+         10%
+        </td>
+        <td height="23">
+         300万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=165" title="华融信托·弘源兰炭股权投资集合资金信托计划">
+          华融信托·弘源兰炭股权投资集
+         </a>
+        </td>
+        <td height="23">
+         华融信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         2年
+        </td>
+        <td height="23">
+         10%
+        </td>
+        <td height="23">
+         100 万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=189" title="华宝信托·大连万达商业地产集合资金信托计划（湖北襄樊万达广场项目）">
+          华宝信托·大连万达商业地产集
+         </a>
+        </td>
+        <td height="23">
+         华宝信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         1年
+        </td>
+        <td height="23">
+         8%
+        </td>
+        <td height="23">
+         100 万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=188" title="交银信托·上海旭创信托贷款集合资金信托计划">
+          交银信托·上海旭创信托贷款集
+         </a>
+        </td>
+        <td height="23">
+         交银信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         0.5年
+        </td>
+        <td height="23">
+         9.8%
+        </td>
+        <td height="23">
+         300万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=187" title="湖南信托·芙蓉29号项目集合资金信托计">
+          湖南信托·芙蓉29号项目集合资
+         </a>
+        </td>
+        <td height="23">
+         湖南信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         0.75年
+        </td>
+        <td height="23">
+         5.2%
+        </td>
+        <td height="23">
+         100 万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=176" title="新华信托·湖州凯旋国际社区股权投资集合资金信托计划">
+          新华信托·湖州凯旋国际社区股
+         </a>
+        </td>
+        <td height="23">
+         新华信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         1.5年
+        </td>
+        <td height="23">
+         11.5%
+        </td>
+        <td height="23">
+         3240万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+       <tr>
+        <td height="23">
+         <a href="/index.php?m=Xtlc&amp;a=view&amp;id=173" title="中融信托·大丰城建财产权信托1期">
+          中融信托·大丰城建财产权信托
+         </a>
+        </td>
+        <td height="23">
+         中融信托
+        </td>
+        <td height="23">
+         12-09-26
+        </td>
+        <td height="23">
+         2年
+        </td>
+        <td height="23">
+         9%
+        </td>
+        <td height="23">
+         100 万
+        </td>
+        <td height="23">
+         待转让
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+    <div class="xtlc_ri5 mtop5">
+     <div class="xtlc_ri5_le">
+      <div class="main3_le2_11">
+       <span class="left">
+        市场动态
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=1">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="main6_le1_3" style="height:auto">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=214" title="保险资管信托产品开户全面放开">
+          保险资管信托产品开户全面放开
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=215" title="解密信托类理财产品">
+          解密信托类理财产品
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=235" title="上周信托产品成立规模环比增长一成 平均收益率达9.23%">
+          上周信托产品成立规模环比增长一成 平均收益率达9.2
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=236" title="流动信托的尖峰时刻：10%收益居首">
+          流动信托的尖峰时刻：10%收益居首
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=237" title="信托业被指过度营销：募集期缩短 风险提示不充分">
+          信托业被指过度营销：募集期缩短 风险提示不充分
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_le2_11">
+       <span class="left">
+        理财社区
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=3">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=232" title="85后北京小夫妻年入23万的悲催月光生活">
+          85后北京小夫妻年入23万的悲催月光生活
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=231" title="二十五种成为有钱人的方法：做真正感兴趣的事">
+          二十五种成为有钱人的方法：做真正感兴趣的事
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=217" title="长假理财小心遭遇“空窗期”">
+          长假理财小心遭遇“空窗期”
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=204" title="异地恋情侣年入17万 如何理财存10万结婚购车 ">
+          异地恋情侣年入17万 如何理财存10万结婚购车
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=203" title="懒人一族轻松理财三招">
+          懒人一族轻松理财三招
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=195" title="家庭主妇值多少钱 全职太太是易碎的奢侈品">
+          家庭主妇值多少钱 全职太太是易碎的奢侈品
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="main5_le2">
+      <div class="main3_le2_11">
+       <span class="left">
+        产品动态
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=2">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="main6_le1_3" style="height:auto">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=179" title="洪峰来临 1006款房地产信托监测报告">
+          洪峰来临 1006款房地产信托监测报告
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=180" title="2015年中国信托资产增至1万亿美元">
+          2015年中国信托资产增至1万亿美元
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=200" title="信托理财网信托产品月报2012.08">
+          信托理财网信托产品月报2012.08
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=233" title="信托理财网信托产品月报2012.09（上）">
+          信托理财网信托产品月报2012.09（上）
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=240" title="信托理财网信托产品月报2012.09（下）">
+          信托理财网信托产品月报2012.09（下）
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=245" title="7只新基金担心市场冷遇 获批半年仍未发行">
+          7只新基金担心市场冷遇 获批半年仍未发行
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_le2_11">
+       <span class="left">
+        专家点评
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=4">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=230" title="信海光：留给苹果的时间不多了">
+          信海光：留给苹果的时间不多了
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=229" title="免费遭抵制 公路何时还路于民 ">
+          免费遭抵制 公路何时还路于民
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=218" title="女星陈廷嘉：合理分配投资方向 付出就是幸福">
+          女星陈廷嘉：合理分配投资方向 付出就是幸福
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=205" title="姚树洁：郎咸平地产论足以祸国殃民">
+          姚树洁：郎咸平地产论足以祸国殃民
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=164" title="周小川：实现经济软着陆存在诸多困难">
+          周小川：实现经济软着陆存在诸多困难
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=163" title="叶檀：高利贷是“自杀”金融模式">
+          叶檀：高利贷是“自杀”金融模式
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="xtlc_ri6" style="height:100px;">
+     <a href="http://www.xtlcw.com/index.php?m=Xtlc&amp;a=index">
+      <img src="/Uploads/poto/4fe1b9b098335.jpg" height="100" width="690" />
+     </a>
+    </div>
+    <div class="xtlc_ri7">
+     <div class="xtlc_ri7_le">
+      <div class="main3_le2_11">
+       <span class="left">
+        理财规划
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=5">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=228" title="名人财富传承那些事：林心如婚前财产做信托 ">
+          名人财富传承那些事：林心如婚前财产做信托
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=219" title="房产类 &gt; 房贷等额本息还款 &gt; 房贷提前还款 &gt; 购房税费 &gt; 房贷等额本金还款 &gt; 公积金贷款年">
+          房贷等额本息还款 &gt; 房贷提前还款 &gt; 购房税费 &gt; 房贷等额本金还款 &gt; 公积金贷款年"&gt;房产类 &gt; 房贷等额本息还款 &gt; 房贷提前还款 &gt; 购房税
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=206" title="再婚家庭资产重组 理财为儿买婚房富足养老">
+          再婚家庭资产重组 理财为儿买婚房富足养老
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=192" title="资产管理公司接盘信托有望规范化">
+          资产管理公司接盘信托有望规范化
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=191" title="理财产品也可质押贷款 购房理财两不误">
+          理财产品也可质押贷款 购房理财两不误
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=182" title="中信·星耀水乡">
+          中信·星耀水乡
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_le2_11">
+       <span class="left">
+        投资收藏
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=7">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=225" title="艺术品市场持续低迷 秋拍行情不容乐观">
+          艺术品市场持续低迷 秋拍行情不容乐观
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=224" title="中国文物艺术品拍卖市场回调已成定局">
+          中国文物艺术品拍卖市场回调已成定局
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=221" title="冯小刚油画拍出1700万天价遭调侃 究竟画了几笔">
+          冯小刚油画拍出1700万天价遭调侃 究竟画了几笔
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=209" title="中国当代陶瓷收藏十年记 当代名瓷价格已今非昔比">
+          中国当代陶瓷收藏十年记 当代名瓷价格已今非昔比
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=208" title="北京奥运金银币4年涨跌路 藏家欲罢还休">
+          北京奥运金银币4年涨跌路 藏家欲罢还休
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=166" title="百年野人参30克拍出300万天价 均价超黄金虫草">
+          百年野人参30克拍出300万天价 均价超黄金虫草
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="main3_left2_r">
+      <div class="main3_le2_11">
+       <span class="left">
+        理财故事
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=6">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=242" title="40岁接触期货，150万新台币作为本金进入台湾股指期货，五年后竟然赚了1400万新台币（以下都为台币">
+          40岁接触期货，150万新台币作为本金进入台湾股指期货
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=241" title="节后理财从清理账单开始">
+          节后理财从清理账单开始
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=234" title="客户180万理财亏成1万：平安银行强硬拒调解 ">
+          客户180万理财亏成1万：平安银行强硬拒调解
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=227" title="买车砍价神帖 网传专业人士吐血总结砍价技巧">
+          买车砍价神帖 网传专业人士吐血总结砍价技巧
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=226" title="80后单身男另类买房经：以房养房为工资松绑">
+          80后单身男另类买房经：以房养房为工资松绑
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=220" title="深圳三口之家合理规划为孩子准备教育成长金">
+          深圳三口之家合理规划为孩子准备教育成长金
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="main3_le2_11">
+       <span class="left">
+        理财学堂
+       </span>
+       <span class="right">
+        <a href="/index.php?m=Xtlc&amp;a=li&amp;id=8">
+         更多&gt;&gt;
+        </a>
+       </span>
+      </div>
+      <div class="ullist">
+       <ul>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=244" title="贵价珠宝3折疯狂甩卖 价格虚高已成行内潜规则">
+          贵价珠宝3折疯狂甩卖 价格虚高已成行内潜规则
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=243" title="富人应该纳更多税吗">
+          富人应该纳更多税吗
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=223" title="上班一族巧用钱生钱 重点做到存省投">
+          上班一族巧用钱生钱 重点做到存省投
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=222" title="红木家具在新疆内前景广阔(图) ">
+          红木家具在新疆内前景广阔(图)
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=211" title="书画收藏的六个技巧">
+          书画收藏的六个技巧
+         </a>
+        </li>
+        <li>
+         <a href="/index.php?m=Xtlc&amp;a=view2&amp;id=210" title="张杰：收藏投资首先还是要自己喜欢">
+          张杰：收藏投资首先还是要自己喜欢
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!--&lt;div class="xtlc_gj"&gt;
+  &lt;table width="100%" border="0"&gt;
+    &lt;tr&gt;
+      &lt;td width="40" height="220" align="center" valign="top"&gt;&lt;img src="/flcf/Tpl/default/Public/images/lcgg.jpg" width="19" height="76"  /&gt;&lt;/td&gt;
+      &lt;td valign="top"&gt;
+      &lt;div class="gj"&gt;
+             &lt;ul&gt;
+            &lt;li&gt;&lt;a  href="http://money.msn.com.cn/FinanceCalculator/Html/CalcBondERate.htm" target="_blank"&gt;债券到期收益率计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcBondBuy.htm" target="_blank"&gt;债券认购收益率计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcBondDealCompare.htm" target="_blank"&gt;债券买卖比较器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcOpenFundRet.htm" target="_blank"&gt;开基赎回金额计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcFundDeclare.htm" target="_blank"&gt;开放式基金申购计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcFundInvestLost.htm" target="_blank"&gt;封基投资损益计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcStockProfit.htm" target="_blank"&gt;股票市盈率计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcStockTradeFee.htm" target="_blank"&gt;股票交易手续费计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcStockInvestLost.htm" target="_blank"&gt;股票投资损益计算器&lt;/a&gt;&lt;/li&gt;
+
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcLoan.htm" target="_blank"&gt;贷款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/LoanAccumFund.htm" target="_blank"&gt;公积金贷款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/LoanComp.htm" target="_blank"&gt;商贷和公积金贷款比较器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcLoanAdv.htm" target="_blank"&gt;提前还款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcLoanOrRental.htm" target="_blank"&gt;购房与租房净资产比较器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcLoanChg.htm" target="_blank"&gt;利率变动后还款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcImpLoan.htm" target="_blank"&gt;提前支取与存单质押比较&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcBuyHouse.htm" target="_blank"&gt;按揭购房相关税费计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcBuyCar.htm" target="_blank"&gt;按揭购车相关税费计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcEqualRateRet.htm" target="_blank"&gt;等比累进还款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcEqualSumRet.htm" target="_blank"&gt;等额累进还款计算器&lt;/a&gt;&lt;/li&gt;
+        
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcDeposit.htm" target="_blank"&gt;存款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcEdu.htm" target="_blank"&gt;教育储蓄计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcForeSaving.htm" target="_blank"&gt;外币储蓄计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcExRate.htm"&gt;外币兑换计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcSavingComb.htm" target="_blank"&gt;最佳存款组合计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcInformSave.htm" target="_blank"&gt;通知存款计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcZCLQ.htm" target="_blank"&gt;整存零取计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcDingHuo.htm" target="_blank"&gt;定活两便计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcSaveCapGetAcc.htm" target="_blank"&gt;存本取息计算器&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcActiveSave.htm" target="_blank"&gt;活期储蓄计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcCompPartSum.htm" target="_blank"&gt;部分提支与全额提支比较&lt;/a&gt;&lt;/li&gt;
+       
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcTax.htm" target="_blank"&gt;个人所得税计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcInflatOrInVest.htm" target="_blank"&gt;通货膨胀影响投资计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcInflatOrInCom.htm" target="_blank"&gt;通货膨胀影响消费计算器&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcSaveRate.htm" target="_blank"&gt;人民币存款利率表&lt;/a&gt;&lt;/li&gt;
+           &lt;li&gt;&lt;a href="http://money.msn.com.cn/FinanceCalculator/Html/CalcForeSaveRate.htm" target="_blank"&gt;外币存款利率表&lt;/a&gt;&lt;/li&gt;
+           &lt;/ul&gt;  
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;-->
+  <div class="ab_bottom_gg">
+   <a href="http://www.xtlcw.com/index.php?m=Index&amp;a=index">
+    <img src="/Uploads/poto/4fe1c3646ecb5.jpg" height="100" width="950" />
+   </a>
+  </div>
+  <div class="bottom1">
+   <p>
+    <a href="/index.php?m=Sitemap&amp;a=index">
+     网站导航
+    </a>
+    |
+    <a href="/index.php?m=About&amp;a=index">
+     关于我们
+    </a>
+    |
+    <a href="/index.php?m=Hezuo&amp;a=index">
+     合作交流
+    </a>
+    |
+    <a href="/index.php?m=Service&amp;a=index">
+     产品与服务
+    </a>
+    |
+    <a href="/index.php?m=Guanggao&amp;a=index">
+     广告服务
+    </a>
+    |
+    <a href="/index.php?m=Law&amp;a=index">
+     法律申明
+    </a>
+    |
+    <a href="/index.php?m=Zgqs&amp;a=index">
+     征稿启事
+    </a>
+    |
+    <a href="/index.php?m=Xtyj&amp;a=li&amp;id=10">
+     人才招聘
+    </a>
+    |
+    <a href="/index.php?m=Feedback&amp;a=index">
+     意见或建议
+    </a>
+    |
+    <a href="/index.php?m=Contact&amp;a=index">
+     联系我们
+    </a>
+   </p>
+   <p>
+    Copyright @ 2011-2012 www.xtlcw.com Inc. All Rights Reserced. 复利财富
+    <span>
+     版权所有
+    </span>
+   </p>
+  </div>
+  <div class="bottom2">
+   <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+     <td width="118" height="52" valign="middle">
+      <img src="/flcf/Tpl/default/Public/images/bottom_tu1.jpg" />
+      <p>
+       经营型网站
+      </p>
+      <p>
+       备案信息
+      </p>
+     </td>
+     <td width="118" height="52" valign="middle">
+      <p>
+       <img src="/flcf/Tpl/default/Public/images/bottom_tu2.jpg" />
+       中国互联网违法和不良信息举报中心
+      </p>
+     </td>
+     <td width="118" height="52" valign="middle">
+      <img src="/flcf/Tpl/default/Public/images/bottom_tu3.jpg" />
+      深圳互联网违法和不良信息举报中心
+     </td>
+     <td width="118" height="52" valign="middle">
+      <p>
+       <img src="/flcf/Tpl/default/Public/images/bottom_tu4.jpg" />
+       深圳网络
+      </p>
+      <p>
+       行业协会
+      </p>
+     </td>
+     <td width="118" height="52" valign="middle">
+      <p>
+       <img src="/flcf/Tpl/default/Public/images/bottom_tu5.jpg" />
+       网络 110
+      </p>
+      <p>
+       报警服务
+      </p>
+     </td>
+     <td width="118" height="52" valign="middle">
+      <p>
+       <img src="/flcf/Tpl/default/Public/images/bottom_tu6.jpg" />
+       网络传播违法和不良视听节目举报
+      </p>
+     </td>
+     <td width="118" height="52" valign="middle">
+      <img src="/flcf/Tpl/default/Public/images/bottom_tu7.jpg" />
+      中国互联网
+      <br />
+      协会网络诚
+      <br />
+      信推进联盟
+     </td>
+     <td width="118" height="52" valign="middle">
+      <img src="/flcf/Tpl/default/Public/images/bottom_tu8.jpg" />
+      深圳12318
+      <br />
+      文化市场
+      <br />
+      举报热线
+     </td>
+    </tr>
+   </table>
+  </div>
+  <div class="bottom3" style="height:32px;">
+   <table width="100%" height="30" border="0">
+    <tr>
+     <td width="80%">
+      <div align="center">
+       客服热线：4001-888-598 　客服邮箱：service@xtlcw.com   
+        　投诉热线：4001-888-598　 投诉邮箱：
+       <span style="text-decoration:underline">
+        service@xtlcw.com
+       </span>
+       　备案号：粤ICP备12035634号
+       <script src="http://s17.cnzz.com/stat.php?id=3865622&amp;web_id=3865622&amp;show=pic1" language="JavaScript">
+       </script>
+      </div>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <script language="JavaScript" src="http://float2006.tq.cn/floatcard?adminid=9345038&amp;sort=0">
+  </script>
+  <!--&lt;script type="text/javascript" src="http://cs.ecqun.com/?id=223462" charset="utf-8"&gt;&lt;/script&gt;-->
+  <script src="http://www.website360.cn/stat.aspx?id=919&amp;s=" type="text/javascript" charset="utf-8">
+  </script>
+ </body>
+</html>
