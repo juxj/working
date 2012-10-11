@@ -6,7 +6,13 @@
 	<script type="text/javascript" src="{% static "ztree/js/jquery.ztree.core-3.4.js" %}"></script>
 	<script type="text/javascript" src="{% static "fetcher/js/jquery.json-2.3.js" %}"></script>
 	<script type="text/javascript">
-		var setting = {	};
+		var setting = {
+			check:{
+				enable:true,
+				chkStyle:"checkbox",
+				chkboxType:{"Y":"p","N":"s"}
+			}
+		};
 
 		function build_html_tree() {
 			var url = "/get_tree_data";
@@ -17,7 +23,7 @@
 				data: {url: "{{url}}"},
 				success: function(data){
 					console.log(data)
-					//$.fn.zTree.init($("#treeDemo"), setting,data);
+					$.fn.zTree.init($("#treeDemo"), setting,data);
 				}
 			});
 		}

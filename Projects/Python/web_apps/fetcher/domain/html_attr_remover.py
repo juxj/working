@@ -7,7 +7,7 @@ class HTMLAttrRemover(HTMLParser):
 	__useless = 0	
 	
 	def discard_tag(self, tag):
-		tags = ['script', 'link', 'style', 'img', 'meta']
+		tags = ['script', 'link', 'style', 'img', 'meta', 'mata']
 		#tags = ['script', 'style' ]
 		if tag in tags:
 			 HTMLAttrRemover.__useless = 1

@@ -15,7 +15,7 @@ class JsonBuilder:
 		children = parent.getchildren()
 
 		if len(children)>0:
-			json = '{\"name\":\"'+parent.tag+'\",\"children\":[' 
+			json = '{\"name\":\"'+parent.tag+'\", \"children\":[' 
 			m = 0
 			for child in children:
 				if m==0:
@@ -23,7 +23,7 @@ class JsonBuilder:
 				else:
 					json = json + ',' + self.get_children(child)
 				m = m+1
-			json = json + ']'							
+			json = json + ']}'							
 		else:
 			json = '{\"name\":\"'+parent.tag+'\"}' 
 
