@@ -13,9 +13,20 @@ class JsonBuilder:
 	def get_children(self, parent):
 		json = ''
 		children = parent.getchildren()
+		
+		tag = parent.tag
+		text = parent.text
+		try:	
+			if len(text)==1:
+				text = ''
+			else:
+				text = text.strip()
+		except:
+			text = ''
 
 		if len(children)>0:
-			json = '{\"name\":\"'+parent.tag+'\", \"children\":[' 
+			json = '{\"name\":\"'+tag+'('+text+')'+'\",\"title\":\"'+text+'\",\"children\":[' 
+			#json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\",\"children\":[' 
 			m = 0
 			for child in children:
 				if m==0:
@@ -25,7 +36,8 @@ class JsonBuilder:
 				m = m+1
 			json = json + ']}'							
 		else:
-			json = '{\"name\":\"'+parent.tag+'\"}' 
+			json = '{\"name\":\"'+tag+'('+text+')'+'\",\"title\":\"'+text+'\"}' 
+			#json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\"}' 
 
 		return json
 
