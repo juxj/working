@@ -18,6 +18,11 @@
   <h6>项目信息</h6>
   <span class="leftdetail"><a href="javascript:edit();">立即发布</a></span>
   </caption>
+  <s:if test="requestInfoList == null || requestInfoList.size<=0">
+  	<tr>
+  		<td colspan="7" align="center">暂无项目信息</td>
+  	</tr>
+  </s:if><s:else>
   <tr>
   	 <th>项目标题</th>
      <th>发布时间</th>
@@ -27,11 +32,7 @@
      <th>状态</th>
      <th>操作</th>
   </tr>
-  <s:if test="requestInfoList == null || requestInfoList.size<=0">
-  	<tr>
-  		<td colspan="7" align="center">暂无项目信息</td>
-  	</tr>
-  </s:if>
+  </s:else>
   <s:iterator value="requestInfoList" id="item">
 	  <tr>
 	    <td title="${title}">

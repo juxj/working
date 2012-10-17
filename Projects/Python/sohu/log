@@ -1,0 +1,38 @@
+/bank/bksearch.html?yh=1&pageNO=1&bkstatus=1 200 OK
+/bank/bksearch.html?yh=1&pageNO=2&bkstatus=1 200 OK
+/bank/bksearch.html?yh=1&pageNO=3&bkstatus=1 200 OK
+/bank/bksearch.html?yh=1&pageNO=4&bkstatus=1 200 OK
+/bank/bksearch.html?yh=1&pageNO=5&bkstatus=1 200 OK
+/bank/bksearch.html?yh=1&pageNO=1&bkstatus=2 200 OK
+Web: 202 DB: 182 Size: 20
+total: 20
+/bank/view/537/00046537.html 200 OK
+/bank/view/562/00046562.html 200 OK
+/bank/view/717/00046717.html 200 OK
+/bank/view/564/00046564.html 200 OK
+/bank/view/557/00046557.html 200 OK
+/bank/view/729/00046729.html 200 OK
+/bank/view/559/00046559.html 200 OK/bank/view/722/00046722.html 200
+ OK
+/bank/view/633/00046633.html 200 OK
+/bank/view/520/00046520.html 200 OK
+/bank/view/519/00046519.html 200 OK/bank/view/563/00046563.html 200 /bank/view/793/00046793.html 200OK 
+
+OK
+/bank/view/556/00046556.html /bank/view/582/00046582.html 200200  OKOK
+
+/bank/view/558/00046558.html 200 OK
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_0.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_3.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_6.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_4.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_5.sql -f
+/bank/view/731/00046731.html 200 OK
+/bank/view/721/00046721.html 200 /bank/view/726/00046726.html OK
+ /bank/view/560/00046560.html 200200 OK
+ OK
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_8.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_1.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_7.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_2.sql -f
+mysql -h 192.168.1.7 -u test -ptest  test<sql/sohu_9.sql -f

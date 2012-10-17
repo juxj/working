@@ -424,6 +424,20 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 					m.put("serviceTime", "工作日晚间");
 				}
 			}
+			switch (fi.getJtype()) {
+			case 1:
+				m.put("financeName", "圣迈鑫源投资基金低风险高收益计划");
+				break;
+			case 2:
+				m.put("financeName", "中铁信托集合资金信托计划");
+				break;
+			case 3:
+				m.put("financeName", "中融-中天城投基础设施1号财产权投资集合资金信托计划");
+				break;
+			default:
+				m.put("financeName", "");
+				break;
+			}
 			m.put("serviceContent", fi.getServiceContent());
 			String body = FreemarkerUtil.getContent("fundIntentionTemplate.htm", m, false, null, null);
 			NtyMessageQueue j = new NtyMessageQueue();
@@ -478,7 +492,6 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		this.usrCompanyDAO = usrCompanyDAO;
 	}
 
-	@Override
 	public OrdFinanceApply findById(Integer id) {
 		return ordFinanceApplyDAO.findById(id);
 	}
@@ -515,6 +528,10 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 
 	public void setProfileService(ProfileService profileService) {
 		this.profileService = profileService;
+	}
+
+	public void deleteAttach(Integer[] ids) {
+		ordFinanceApplyAttachDAO.deleteAttach(ids);
 	}
 	 
 }

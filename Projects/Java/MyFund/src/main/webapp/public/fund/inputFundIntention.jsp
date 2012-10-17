@@ -35,7 +35,7 @@ $(function(){
 <!--主体部分开始-->
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_title red" style="height:50px;">
-	<p>圣迈鑫源股权投资基金--在线预约</p>
+	<p>在线预约</p>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">

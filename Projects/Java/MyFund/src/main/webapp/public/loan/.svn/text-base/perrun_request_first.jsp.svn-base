@@ -131,12 +131,12 @@ $(function(){
                 <h6>贷款用途：</h6>
                 <s:select name="loan.loanPurpose" list="dataMap['loanpurpose']" listKey="id" listValue="name" cssClass="S_width" style="width:200px;"></s:select>
                 <h6>贷款金额：</h6>
-                <s:textfield name="loan.loanAmount" cssClass="input-text required digits" id="loan_loanAmount" size="10" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
+                <s:textfield name="loan.loanAmount" cssClass="input-text required digits" id="loan_loanAmount" size="10" maxlength="6"></s:textfield>&nbsp;&nbsp;万元
                 <label for="loan_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>贷款期限：</h6>
-                <s:textfield name="loan.loanMonth" cssClass="input-text required digits" id="loan_loanMonth" size="10" maxlength="3"></s:textfield>&nbsp;个月
+                <s:textfield name="loan.loanMonth" cssClass="input-text required digits" id="loan_loanMonth" size="10" maxlength="2"></s:textfield>&nbsp;个月
                 <label for="loan_loanMonth" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>

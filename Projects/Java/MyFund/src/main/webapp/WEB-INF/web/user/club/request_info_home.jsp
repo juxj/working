@@ -36,7 +36,7 @@
   <div class="clear"> &nbsp; </div>
 </div>
 <form id="frmQueryRequestInfo" action="/club/showRequestInfoHome.act"><input id="pageNo" type="hidden" name="pageNo"/> </form>
-<div class="container_950">
+
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
 	<div class="M_menu">
@@ -44,12 +44,10 @@
 	</div>
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
-	<div class="container_950 box_4" style="height:90px;">
-		<div class="P_title">项目信息</div>
-		<div class="line"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
-	</div>		
+<div class="container_950">
+		<div class="P_title box_4">项目信息</div>
+		<div class="line"  style="height:28px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
 	<!-- 表格 -->
-	<div class="hr_10"> &nbsp; </div> 	
 	<table class="gold-table">
 	<th>资金标题</th>
 	<th>发布时间</th>
@@ -116,18 +114,17 @@
 		</s:iterator>
 	</s:if>
 	</table>
-	<div class="hr_10"> &nbsp; </div>
 	<jsp:include page="/public/pagination.jsp"></jsp:include>
 </div>
+<div class="clear"> &nbsp; </div>
 <s:if test="pager.data == null || pager.data.size<=0">
-       <div class="container_950 box_4">
-			<div class="l_out">
+       <div class="container_950 ">
+			<div class="txt_content box_4">
 			<s:if test="#session._user.userTypeGroup==5 || #session._user.userTypeGroup==1">
-				<h1 class="l_title">您还未发布任何项目信息</h1>
-				<p> 
-				您可以<a href="javascript:edit();">点此免费发布项目信息</a>让资金方来找您<br/>
-				您也可以去<a href="/service/supplyInfoAction!home.act">融资俱乐部</a>寻找适合您的资金信息
-				</p>
+				<h5>您还未发布任何项目信息!</h5>
+				<h6> 
+				您可以<a href="javascript:edit();" class="red">点此免费发布项目信息</a>让资金方来找您，您也可以去<a href="/service/supplyInfoAction!home.act" class="red">融资俱乐部</a>寻找适合您的资金信息
+				</h6>
 			</s:if>
 			</div>
        </div> 

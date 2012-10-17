@@ -13,6 +13,7 @@
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.tabs.min.js" > </script>
+<script type="text/javascript" src="/script/jquery.ui.dialog.min.js" > </script>
 <script type="text/javascript" src="/script/load-loan.js" > </script>
 <script language="javascript">
 //文本框触发焦点效果s
@@ -43,12 +44,122 @@ function finance_type_chenge(financeType){
 		$('.finance_type_154').show();
 	}
 }
+var settime=60;
+var i;
+var showthis;
+function update(num) {
+ if(num==settime) {
+	  $("#sendmobile").attr('disabled',false);
+	  $("#sendmobile").attr("value","点击发送验证码（1分钟内只能发送一次）");
+	 }else {
+	  showthis=settime-num;
+	  $("#sendmobile").attr("value","重新发送("+showthis+")");
+	 }
+}
+function verMobile(pid){
+	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	$.post("/user/Profile!validMoblie.act",{verifycode:$('#verifycode').val()},function(a){
+		if(a=='success'){
+			$("#mobileMsg").html("手机验证成功");
+			window.location.href= url;
+		}else{
+			$("#mobileMsg").html(a);
+		}
+	});
+}
+function sendMobileMsg(){
+	  $("#sendmobile").attr('disabled',true);
+	  for(i=1;i<=settime;i++)   {
+	     setTimeout("update("+i+")",i*1000);
+	  }
+		$.post("/Account!sendMoblie.act",function(a){
+			if(a!='success'){
+				$("#mobileMsg").html(a);
+			}else{
+				alert("手机验证码已发送");
+				//$("#mobileMsg").html(a);
+			}
+		});
+	}
+function vershow(){
+	$("#pop_verCode").dialog({
+		width:500,
+		modal:true
+	});
+	$("#isPhoneCheck").dialog('close');
+}
+function applyRN(pid){
+	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	if('${session._user}'=='' || '${session._user}'== null){
+		window.location= url;
+	}else{
+		if('${session._user.activetype}' ==0 || '${session._user.activetype}' ==1){
+			$("#isPhoneCheck").dialog({
+				width:500,
+				modal:true
+			});
+			/*
+			if(confirm("尊敬的用户：\
+			    \n    建议您在提交融资申请前验证您的注册手机号，以便资金网工作人员及时和您联系！验证成功后，您的融资申请将被优先处理！")){
+				vershow();
+				return false;
+			}else{
+				window.location= url;
+				return true;
+			}*/
+		}else{
+			window.location= url;
+		}
+	}
+}
 
+function cancelCheck(pid){
+	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	window.location= url;
+}
 </script>
 
   </head>
   
   <body>
+<!-- 是否进行手机验证 -->
+<div id="isPhoneCheck" style="display:none;" title="手机验证">
+  <div class="user_login01">
+    <div class="clear"> &nbsp; </div>
+    <div class="user_login01_content">
+       <div class="on">
+          <table>
+   	  		<tr>
+   	  			<td>
+					尊敬的用户：<br/>
+			     &nbsp;&nbsp;&nbsp;&nbsp;建议您在提交融资申请前验证您的注册手机号，以便资金网工作人员及时和您联系！验证成功后，您的融资申请将被优先处理！
+				</td>
+			</tr>
+            <tr><td align="center"><input type="button" onclick="javascript:vershow();" class="but_gray" style="width:90px;" value="立即验证  " />
+            <input type="button" onclick="cancelCheck(${product.id})" class="but_gray" style="width:90px;" value="跳过验证" />
+            </td></tr>
+            </table>
+        </div>
+	  </div>
+	</div>
+</div>
+<!--弹出框内容手机验证-->
+<div id="pop_verCode" style="display:none;" title="手机验证">
+  <div class="user_login01">
+    <div class="clear"> &nbsp; </div>
+    <div class="user_login01_content">
+       <div class="on">
+          <table>
+            <tr><td><h6>验证码：</h6><input id="verifycode" type="text" name="verifycode" class="input-text" size="20" />
+          	<input id="sendmobile" type="button" class="but_gray" onclick="sendMobileMsg();" value="点击发送验证码（1分钟内只能发送一次）"/>
+            </td></tr>
+   	  		<tr><td><span id="mobileMsg" style="color: red">提示：验证手机可以使您用中国资金网的各项功能</span></td></tr>
+            <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:verMobile(${product.id});" class="but_gray" style="width:90px;" value="确定" /></td></tr>
+            </table>
+        </div>
+	  </div>
+	</div>
+</div>
 <!--头部2-->
 <div class="header index_header">
 <jsp:include page="/public/head1.jsp"/>
@@ -153,7 +264,7 @@ function finance_type_chenge(financeType){
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="Search_t_title" align="center" ><input type="button" value="立即申请"  class="btnsub bred" onclick="window.location='/user/loan/financeApply!financeApply.act?product.id=${product.id}'" ></input></td>
+            <td colspan="4" class="Search_t_title" align="center" ><input type="button" value="立即申请" class="btnsub bred" onclick="applyRN(${product.id})" ></input></td>
           </tr>
         </table>
         <!--表格部分结束-->
@@ -239,7 +350,13 @@ function finance_type_chenge(financeType){
 	              </p>
 	              
 	              <p >
-	                <tr style="color:#97181d; font-weight:bolder; ">其他申请条件：</tr>${product.otherRequire }
+	                <tr style="color:#97181d; font-weight:bolder; ">其他申请条件：</tr>
+	                <s:if test="product.otherRequire ==null || product.otherRequire == ''">
+	                	无
+	                </s:if>
+	                <s:else>
+		                ${product.otherRequire }
+	                </s:else>
 	              </p>
 			</div>
 		</div>
@@ -252,7 +369,7 @@ function finance_type_chenge(financeType){
 						<s:if test="item.dataSupply != null">(${item.dataSupply })</s:if>
 						</div>
 						<s:if test="haveMemo == 1">
-							<div style="background:none; padding-left:40px;">${item.otherMemo }</div>
+							<div style="background:none; padding-left:15px;">${item.otherMemo }</div>
 						</s:if>
 					</s:iterator>
 	            </s:if>
@@ -278,11 +395,6 @@ function finance_type_chenge(financeType){
 	        			<td ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2458068476&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2458068476:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
 	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  韩先生</td>
 	        		</tr>
-	        		<tr>
-	        			<td>
-	        			<a href="msnim:chat?contact=zijin198@hotmail.com" ><img src="http://www.andasen.com/images/msn.gif" alt="MSN:zijin198@hotmail.com" border="0" /></a>
-	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  刘先生</td>
-	        		</tr>       			        		
 	        		<tr>
 	        			<td>
 	        			<a target="_blank" href="http://amos1.taobao.com/msg.aw?site=cntaobao&charset=utf-8&v=2&uid=zhongguozijinwang&s=1" ><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=zhongguozijinwang&s=1" alt="Taobao.com ID:victorbsds" /></a> 

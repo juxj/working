@@ -33,6 +33,8 @@ public class FinanceAttachAction extends ActionSupport {
 	private String uploadContentType;
 	private Integer attachId;
 	private Integer applyId;
+	
+	private Integer[] ckbox;
 	/**
 	 * 
 	 */
@@ -85,6 +87,13 @@ public class FinanceAttachAction extends ActionSupport {
 		apply = financeApplyService.findById(applyId);
 		
 		return "apply_upload_attach";
+	}
+	
+	public String selectCancel() {
+		if (ckbox != null && ckbox.length > 0) {
+			financeApplyService.deleteAttach(ckbox);
+		}
+		return attachMana();
 	}
 	
 	public String attachAdminManag(){
@@ -185,5 +194,12 @@ public class FinanceAttachAction extends ActionSupport {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
+	public Integer[] getCkbox() {
+		return ckbox;
+	}
+	public void setCkbox(Integer[] ckbox) {
+		this.ckbox = ckbox;
+	}
+	
 
 }

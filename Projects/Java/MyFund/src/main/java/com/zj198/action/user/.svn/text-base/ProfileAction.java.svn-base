@@ -104,7 +104,8 @@ public class ProfileAction extends BaseAction  {
 				}
 				profileMap.put("industry", industry);
 				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
-				if(companyMark == null || companyMark == 1){
+				if(companyMark == null){
+				}else if(companyMark == 1){
 					return "auditCompanyProfile";
 				}
 				profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
@@ -347,9 +348,11 @@ public class ProfileAction extends BaseAction  {
 					}
 				}
 				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
-//				UsrBank old_UsrBank = (UsrBank)profileService.getProfiles(usrUser.getId());
-//				if(old_UsrBank!=null){
-				if(usrUser.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE){
+				if(usrUser.getAuditstatus() != Constants.USER_AUDITSTATUS_NONE){
+					UsrBank old_UsrBank = (UsrBank)profileService.getProfiles(usrUser.getId());
+					old_UsrBank.setAuditFields(usrBank);
+					profileService.saveorupdate(old_UsrBank);
+				}else{
 					if(usrBank.getBankid()!=null && usrBank.getBankid()!=0){
 						bankList=dictoryDataService.findDicBankList();
 						if(bankList.get(usrBank.getBankid()-1)!=null){
@@ -582,7 +585,11 @@ public class ProfileAction extends BaseAction  {
 		ActionContext ectx = ActionContext.getContext();
 		UsrUser euser = (UsrUser)ectx.getSession().get("_user");
 		if(euser.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE && (euser.getUserTypeGroup() == Constants.USERTYPE_GROUP_PERSONAL || euser.getUserTypeGroup() == Constants.USERTYPE_GROUP_COMPANY)){
-			msg="保存成功,您当前账户信息未填写完整请继续填写。";
+			if(companyMark == null || companyMark == 2){
+				msg="保存成功,您当前账户基本信息未填写完整请继续填写。";
+			}else{
+				msg="保存成功,您当前账户信息未填写完整请继续填写。";
+			}
 			return edit();
 		}else{
 			msg="保存成功。";

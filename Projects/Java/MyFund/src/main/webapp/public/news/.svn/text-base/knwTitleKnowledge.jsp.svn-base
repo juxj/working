@@ -1,10 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Àí²Æ·şÎñ²úÆ·Ò³_ÖĞ¹ú×Ê½ğÍø</title>
+	<title>ç†è´¢æœåŠ¡äº§å“é¡µ_ä¸­å›½èµ„é‡‘ç½‘</title>
 	<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
@@ -13,7 +13,7 @@
   <body>
 	<div class="header index_header"><jsp:include page="/public/head1.jsp" /></div>
 	<div class="clear"> &nbsp; </div><div class="hr_10"> &nbsp; </div> 
-	<div class="M_menu"><a href="/news/InfoCenter.act">ĞÅÏ¢ÖĞĞÄ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
+	<div class="M_menu"><a href="/news/InfoCenter.act">ä¿¡æ¯ä¸­å¿ƒ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
 		${knwTitle.typeName }</div>
 	<div class="hr_10"> &nbsp; </div> 
 	
@@ -22,7 +22,7 @@
 		<div style="font-size:14px; border:1px solid #CCC; padding:20px; line-height:30px;">
 	        <h5 style="line-height:30px; color:#003961;">${knwTitle.title}</h5>
 	        <hr style="width:100%;"/>      
-			<p class="txt_content_new">${knwTitle.contents }</p>¡¡
+			<p class="txt_content_new">${knwTitle.contents }</p>ã€€
         </div>
     </div>
     <div class="box_4 fr" style="width:230px;">
@@ -69,7 +69,7 @@
 </div>	
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp;</div>
-  	<!--Ö÷Ìå²¿·Ö½áÊø-->
+  	<!--ä¸»ä½“éƒ¨åˆ†ç»“æŸ-->
 	<jsp:include page="/public/bottom.jsp" />
   </body>
   </html>

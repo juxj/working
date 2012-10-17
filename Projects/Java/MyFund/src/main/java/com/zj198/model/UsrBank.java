@@ -31,23 +31,21 @@ public class UsrBank implements java.io.Serializable {
 	public UsrBank() {
 	}
 
-//	/**保护审核字段*** @param usrBank*/       
-//	public void setAuditFields( UsrBank usrBank) {
-//		this.bankid = usrBank.bankid;
-//		this.detailname = usrBank.detailname;
-//		this.linkname = usrBank.linkname;
-//		this.linkgenderr = usrBank.linkgenderr;
-//		this.linkemail = usrBank.linkemail;
-//		this.linktelephone = usrBank.linktelephone;
-//		this.department = usrBank.department;
-//		this.position = usrBank.position;
-//		this.remarks = usrBank.remarks;
-//		this.provinceid = usrBank.provinceid;
-//		this.cityid = usrBank.cityid;
-//		this.districtid = usrBank.districtid;
-//		this.address = usrBank.address;
-//		this.postcode = usrBank.postcode;
-//	}
+	/**保护审核字段*** @param usrBank*/       
+	public void setAuditFields( UsrBank usrBank) {
+		this.linkname = usrBank.linkname;
+		this.linkgenderr = usrBank.linkgenderr;
+		this.linkemail = usrBank.linkemail;
+		this.linktelephone = usrBank.linktelephone;
+		this.department = usrBank.department;
+		this.position = usrBank.position;
+		this.remarks = usrBank.remarks;
+		this.provinceid = usrBank.provinceid;
+		this.cityid = usrBank.cityid;
+		this.districtid = usrBank.districtid;
+		this.address = usrBank.address;
+		this.postcode = usrBank.postcode;
+	}
 	/**验证银行信息审核字段 // 返回字段以0#或1#开头   0#验证正确  1#验证失败*/
 	public String validAuditFields(UsrBank usrBank){
 		String msg="1#";

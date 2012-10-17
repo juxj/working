@@ -1,14 +1,14 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/user
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/user
 svn://192.168.1.8
 
 
 
-2012-09-29T06:02:48.312131Z
-3740
+2012-10-16T04:27:50.445526Z
+3871
 linm
 
 
@@ -26,16 +26,16 @@ linm
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-UploadImgAction.java
+AccountAction.java
 file
 
 
 
 
-2012-09-14T06:23:36.000000Z
-e0443a4cb2d07ae989c2cf8630ac5c12
-2012-09-14T04:06:51.953027Z
-3446
+2012-10-12T06:32:11.089456Z
+fa55bcb0357fdbeb200572e51b5a48b6
+2012-10-12T03:36:46.611831Z
+3810
 linm
 
 
@@ -58,7 +58,7 @@ linm
 
 
 
-7239
+21432
 
 DownloadImgAction.java
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2012-09-14T03:13:31.000000Z
+2012-10-12T06:32:11.089456Z
 34aceb723860e5a2a9d8c4ea04108949
 2012-09-14T01:11:50.695785Z
 3428
@@ -94,13 +94,81 @@ Patrick
 
 1862
 
+ProfileAction.java
+file
+
+
+
+
+2012-10-16T09:07:30.000000Z
+584f06c2924896449eb32f66ff0bf574
+2012-10-16T04:27:50.445526Z
+3871
+linm
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+37932
+
+RecoveryAction.java
+file
+
+
+
+
+2012-10-12T06:32:11.089456Z
+9ea5bd22cdb8ad76091417a40db14995
+2012-10-12T03:51:46.330305Z
+3812
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8170
+
 RegisterAction.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
+2012-10-12T06:32:11.093458Z
 386e9776543cd44c45aafb9b98f32a40
 2012-08-16T09:23:02.823542Z
 2532
@@ -128,16 +196,16 @@ Patrick
 
 5428
 
-AccountAction.java
+UploadImgAction.java
 file
 
 
 
 
-2012-09-29T06:44:35.000000Z
-ad4ad868f6fb292e5a6e68ac9b4978fe
-2012-09-29T06:02:48.312131Z
-3740
+2012-10-12T06:32:11.089456Z
+e0443a4cb2d07ae989c2cf8630ac5c12
+2012-09-14T04:06:51.953027Z
+3446
 linm
 
 
@@ -160,41 +228,7 @@ linm
 
 
 
-21285
-
-RecoveryAction.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-4ff9d37d016fd4448972e0692cf36e17
-2012-08-18T04:11:25.504521Z
-2660
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5292
+7239
 
 UserAction.java
 file
@@ -202,11 +236,14 @@ file
 
 
 
-2012-09-12T01:20:44.000000Z
-c153991b72eefb99cfa1b179c371e12e
-2012-09-11T10:04:52.268700Z
-3360
-linm
+2012-10-16T09:07:30.000000Z
+2f71bb3c485aa1fcc8cfdd82a1850060
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -225,22 +262,22 @@ linm
 
 
 
-
-
-
-11107
+11133
 
-ProfileAction.java
+UserMenuAction.java
 file
 
 
 
 
-2012-09-29T03:29:34.000000Z
-4cff63c875534bc6261db6301c5fcc92
-2012-09-29T02:02:02.361314Z
-3727
-linm
+2012-10-16T09:07:30.000000Z
+716e622c1c038e10e134b8394f3381cd
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -259,8 +296,5 @@ linm
 
 
 
-
-
-
-37694
+933
 

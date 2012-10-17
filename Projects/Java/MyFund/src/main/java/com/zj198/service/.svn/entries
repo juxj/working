@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/service
 svn://192.168.1.8
 
 
 
-2012-09-29T01:22:58.186739Z
-3726
-yangb
+2012-10-15T07:20:30.500351Z
+3862
+Patrick
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2012-09-11T03:06:57.000000Z
+2012-10-12T06:32:11.421622Z
 3b621b31af02571ead14dd2cd301f0fc
 2012-06-20T01:27:43.918381Z
 384
@@ -60,33 +60,33 @@ Patrick
 
 72
 
-news
-dir
-
-finservice
-dir
-
-user
-dir
-
-message
+admin
 dir
 
 club
 dir
 
-mch
-dir
-
-admin
-dir
-
 common
+dir
+
+finservice
 dir
 
 loan
 dir
 
+mch
+dir
+
+message
+dir
+
+news
+dir
+
 sin
+dir
+
+user
 dir
 

@@ -200,7 +200,7 @@ function updatestatus(value){
             </s:if>
               <tr>
                 <td class="r_td" width="180px">贷款用途：</td>
-                <td class="p_td"><common:print valueId="apply.loanPurpose" /></td>
+                <td class="p_td"><common:print valueId="apply.loanPurpose" />&nbsp;${apply.loanPurposeOther }</td>
                 <td class="r_td">贷款金额：</td>
                 <td class="p_td" width="180px"><s:number name="apply.loanAmount" />万元</td>
               </tr>

@@ -31,8 +31,8 @@
 		var sb = $('.tab_menu ul li');
 		sb.hover(function(){
 			$(this).addClass('hover').siblings().removeClass();
-			var nb = sb .index(this);
-			var news_box = $('.xxkbox').eq(nb-3);
+			var nb = sb.index(this);
+			var news_box = $('.xxkbox').eq(nb-4);
 			news_box.show().siblings().hide();
 		});
 	});

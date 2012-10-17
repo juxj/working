@@ -27,77 +27,76 @@
   <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
-        <table border="0" cellspacing="0" cellpadding="0"  width="710px"  class="box_5 ">
+        <table border="0" cellspacing="0" cellpadding="0"  width="100%"  class="box_5" >
           <tr>
-            <td class="Search_t_title red ">圣迈鑫源投资基金低风险高收益计划</td>
-            <td style=" width: 110px; "><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></td>
-          </tr>
+            <td ><span class="Search_t_title red fl">圣迈鑫源投资基金低风险高收益计划</span><span class="Search_t_title fr"><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></span></td>
+        </tr>
         </table>
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
             <td class="Search_t_connect">产品名称</td>
-            <td colspan="3" style="padding-left:10px;">圣迈鑫源股权投资基金</td>
+            <td colspan="3" style="padding:5px 10px 5px 10px;">圣迈鑫源股权投资基金</td>
           </tr>
           <tr>
-            <td class="Search_t_connect" style="width: 300px;">发行银行</td>
-            <td class="Search_t_connect01">鑫鑫源投资基金管理有限公司</td>
+            <td class="Search_t_connect" >发行银行</td>
+            <td style="padding:5px 10px 5px 10px;">鑫鑫源投资基金管理有限公司</td>
             <td class="Search_t_connect">发行地</td>
-            <td class="Search_t_connect01">北京</td>
+            <td style="padding:5px 10px 5px 10px;">北京</td>
           </tr>
           <tr>
             <td class="Search_t_connect">发行规模</td>
-            <td class="Search_t_connect01">1亿元</td>
+            <td style="padding:5px 10px 5px 10px;">1亿元</td>
             <td class="Search_t_connect">资金门槛</td>
-            <td class="Search_t_connect01">100万</td>
+            <td style="padding:5px 10px 5px 10px;">100万</td>
           </tr>
           <tr>
             <td class="Search_t_connect">预期年化收益率</td>
-            <td class="Search_t_connect01">
+            <td class="red" style="padding:5px 10px 5px 10px;">
 					14%~26%(投资额<300万)<br/>
 					15%~26%(投资额>=300万)
 			</td>
             <td class="Search_t_connect">收益类型</td>
-            <td class="Search_t_connect01">固定型</td>
+            <td style="padding:5px 10px 5px 10px;">固定型</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">投资期限</td>
-            <td class="Search_t_connect01">18个月</td>
-            <td class="Search_t_connect02">期限类型</td>
-            <td class="Search_t_connect01">单一期限</td>
+            <td class="Search_t_connect">投资期限</td>
+            <td style="padding:5px 10px 5px 10px;">18个月</td>
+            <td class="Search_t_connect">期限类型</td>
+            <td style="padding:5px 10px 5px 10px;">单一期限</td>
           </tr>
           <tr>
             <td class="Search_t_connect">投资方式</td>
-            <td class="Search_t_connect01">股权投资</td>
+            <td style="padding:5px 10px 5px 10px;">股权投资</td>
             <td class="Search_t_connect">资金流向</td>
-            <td class="Search_t_connect01">小额贷公司</td>
+            <td style="padding:5px 10px 5px 10px;">小额贷公司</td>
           </tr>
           <tr>
             <td class="Search_t_connect">分红情况</td>
-            <td class="Search_t_connect01">每6个月</td>
+            <td style="padding:5px 10px 5px 10px;">每6个月</td>
             <td class="Search_t_connect">退出情况</td>
-            <td class="Search_t_connect01">中途不可退出</td>
+            <td style="padding:5px 10px 5px 10px;">中途不可退出</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">认购费</td>
-            <td class="Search_t_connect01">1%（一次性收取）</td>
+            <td class="Search_t_connect">认购费</td>
+            <td style="padding:10px;">1%（一次性收取）</td>
             <td class="Search_t_connect">管理费</td>
-            <td class="Search_t_connect01">每年1%</td>
+            <td style="padding:5px 10px 5px 10px;">每年1%</td>
           </tr>
           <tr>
             <td class="Search_t_connect">基金托管费</td>
-            <td class="Search_t_connect01">0.10%</td>
+            <td style="padding:5px 10px 5px 10px;">0.10%</td>
             <td class="Search_t_connect"></td>
             <td></td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">成立日期</td>
-            <td class="Search_t_connect01">2012年12月7日</td>
+            <td class="Search_t_connect">成立日期</td>
+            <td style="padding:5px 10px 5px 10px;">2012年12月7日</td>
             <td class="Search_t_connect">到期日期</td>
-            <td class="Search_t_connect01">2014年6月7日</td>
+            <td style="padding:5px 10px 5px 10px;">2014年6月7日</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">资金运用情况</td>
-            <td colspan="3" style="padding-left:10px; padding-bottom:5px;">
+            <td class="Search_t_connect">资金运用情况</td>
+            <td colspan="3" style="padding:5px 10px 5px 10px;">
 			本基金是由鑫鑫源投资基金管理有限公司接受投资者的委托，将募集共计人民币1亿元的资金，以股权投资方式投资于相关的小额贷款公司，在严格控制投资风险情况下，分享小额贷款公司的稳定，较高的投资回报。
 			</td>
           </tr>

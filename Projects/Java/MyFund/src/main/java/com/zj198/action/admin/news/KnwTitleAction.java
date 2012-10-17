@@ -7,6 +7,7 @@ import com.zj198.action.BaseAction;
 import com.zj198.model.KnwTitle;
 import com.zj198.model.KnwType;
 import com.zj198.service.news.NewsService;
+import com.zj198.util.CacheUtil;
 import com.zj198.util.Constants;
 import com.zj198.util.Pager;
 
@@ -34,7 +35,7 @@ public class KnwTitleAction extends BaseAction {
 	}
 	
 	public String refresh(){
-		Constants.NEWS_MAP.clear();
+		CacheUtil.delete("KnwTitle_last_typeId_"+typeId);//TODO:
 		return null;
 	}
 	

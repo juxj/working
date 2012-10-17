@@ -3,7 +3,11 @@ url=192.168.1.7
 #register active type 1:email 2:mobile
 activeType=1
 #old user id largest value
-oldUserId=5
+oldUserId=100
+
+#Memcache config
+memcached.ip=192.168.1.6
+memcached.port=11211
 
 #email config
 mail.smtp.host=mail.zj198.com
@@ -29,3 +33,4 @@ format.float.3={0,number,\#\#0.000}
 #SMS template
 sms.template.veriry=\u5C0A\u656C\u7684\u4E2D\u56FD\u8D44\u91D1\u7F51\u4F1A\u5458%s%s\uFF0C\u60A8\u7684\u624B\u673A\u9A8C\u8BC1\u7801\u4E3A%s\uFF0C\u8BF7\u5728\u624B\u673A\u9A8C\u8BC1\u9875\u9762\u586B\u5199\u6765\u7ED1\u5B9A\u60A8\u7684\u624B\u673A\u53F7\u7801\u3002
 sms.template.apply.check=\u60A8\u5728%s\u63D0\u4EA4\u7684\u7F16\u53F7\u4E3A%s\u7684\u878D\u8D44\u7533\u8BF7%s
+sms.template.retrievery.pwd=\u5C0A\u656C\u7684\u4E2D\u56FD\u8D44\u91D1\u7F51\u4F1A\u5458 %s %s\uFF0C\u60A8\u6B63\u5728\u901A\u8FC7\u624B\u673A\u6267\u884C\u627E\u56DE\u5BC6\u7801\u64CD\u4F5C\uFF0C\u9ED8\u8BA4\u5BC6\u7801\uFF1A%s;\u8BF7\u5C3D\u5FEB\u767B\u5F55\u8D26\u6237\u5E76\u53CA\u65F6\u4FEE\u6539\u5BC6\u7801\u3002

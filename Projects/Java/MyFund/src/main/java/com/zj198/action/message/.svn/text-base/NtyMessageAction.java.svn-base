@@ -46,7 +46,7 @@ public class NtyMessageAction extends BaseAction {
 		rid[0] = financeApplyService.findById(applyId).getUserId();
 		addMessageSpModel.setReceiverId(rid);
 		ntyMessageService.addNewMessage(addMessageSpModel);
-		return "success";
+		return SUCCESS;
 	}
 
 	/**

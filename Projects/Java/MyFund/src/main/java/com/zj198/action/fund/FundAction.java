@@ -14,9 +14,24 @@ public class FundAction extends BaseAction {
 	private FundIntention fundIntention;
 	private List<PrdRecommendation> bankFinanceRecommendationList;
 	
+	/**新增了3个产品*/
+	private int jtype;
+	
 	public String execute() {
 		bankFinanceRecommendationList = this.financeProdService.findRecommendationByTopNumber(1, 4);
-		return "view_fund";
+		String j = "SUCCESS";
+		switch (jtype) {
+		case 1:
+			j = "view_fund1";
+			break;
+		case 2:
+			j = "view_fund2";
+			break;
+		case 3:
+			j = "view_fund3";
+			break;
+		}
+		return j;
 	}
 	
 	public String inputIntention(){
@@ -53,4 +68,14 @@ public class FundAction extends BaseAction {
 	public void setFinanceProdService(FinanceProdService financeProdService) {
 		this.financeProdService = financeProdService;
 	}
+
+	public int getJtype() {
+		return jtype;
+	}
+
+	public void setJtype(int jtype) {
+		this.jtype = jtype;
+	}
+	
+	
 }

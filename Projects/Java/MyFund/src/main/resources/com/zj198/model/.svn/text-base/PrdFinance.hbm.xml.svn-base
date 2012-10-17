@@ -232,6 +232,17 @@
             </column>
         </property>
         
+        <property name="memo" type="java.lang.String">
+            <column name="memo" length="1000">
+                <comment>产品备注</comment>
+            </column>
+        </property>
+        <property name="attach" type="java.lang.String">
+            <column name="attach" length="200">
+                <comment>产品附件</comment>
+            </column>
+        </property>
+        
         <set name="interests" order-by="id">
         	<key column="finance_id"></key>
         	<one-to-many class="com.zj198.model.PrdFinanceInterest" />

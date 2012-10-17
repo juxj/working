@@ -15,7 +15,7 @@ public class PropertiesUtil {
 			return props.getProperty(key,"");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			return "";
 		}
 	}
 }

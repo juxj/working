@@ -1,8 +1,8 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/script/xheditor_skin
+3878
+svn://192.168.1.8/MyFund/src/main/webapp/script/xheditor_skin
 svn://192.168.1.8
 
 
@@ -26,19 +26,13 @@ linm
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-default
-dir
-
-vista
-dir
-
 blank.gif
 file
 
 
 
 
-2012-09-11T03:06:52.000000Z
+2012-10-12T06:32:10.144985Z
 df3e567d6f16d040326c7a0ea29a4f41
 2012-08-13T09:18:25.227190Z
 2295
@@ -66,12 +60,18 @@ has-props
 
 43
 
-o2007silver
+default
 dir
 
 nostyle
 dir
 
 o2007blue
+dir
+
+o2007silver
+dir
+
+vista
 dir
 

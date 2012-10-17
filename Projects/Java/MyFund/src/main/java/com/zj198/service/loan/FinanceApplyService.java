@@ -46,4 +46,6 @@ public interface FinanceApplyService {
 	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId);
 	public void saveFundIntention(FundIntention fi);
 	public OrdFinanceApply countAttachApply(OrdFinanceApply apply);
+	
+	public void deleteAttach(Integer[] ids);
 }

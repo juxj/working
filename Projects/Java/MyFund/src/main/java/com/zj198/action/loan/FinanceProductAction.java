@@ -79,7 +79,7 @@ public class FinanceProductAction extends BaseAction {
 
 	public String execute() {
 		getMapSource();
-		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 5 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
+		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
 		return "financeSearchDetail";
 	}
 
@@ -114,7 +114,7 @@ public class FinanceProductAction extends BaseAction {
 	 */
 	public String financeSearchDetail() {
 		getMapSource();
-		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 5 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
+		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
 		return "financeSearchDetail";
 	}
 

@@ -105,7 +105,7 @@ $(function() {
 				    <td class="v-align"><a href="javascript:$('#frmQuerySupplyInfo').submit();" class="btn blue1">搜索</a></td>
 				  </tr>
 				</table>
-	          	<div class="find_table_t">精选资金<span><img src="/images/line1.jpg" /></span></div>			 
+	          	<div class="find_table_t">最新资金信息<span><img src="/images/line1.jpg" /></span></div>			 
 			  </form>	    
 			  <!-- 表单结束 -->          	
 				  <s:if test="supplyInfoList.size>0">
@@ -163,7 +163,7 @@ $(function() {
 				   	<td class="v-align"><a href="javascript:$('#frmQueryRequestInfo').submit();" class="btn blue1">搜索</a></td>
 				  </tr>
 				</table>
-	          	<div class="find_table_t">精选项目<span><img src="/images/line1.jpg" /></span></div>			 
+	          	<div class="find_table_t">最新项目信息<span><img src="/images/line1.jpg" /></span></div>			 
 			  </form>
 			  <!-- 表单结束 -->            
             	<s:if test="requestInfoList.size>0">

@@ -1,14 +1,14 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/loan
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/loan
 svn://192.168.1.8
 
 
 
-2012-09-29T01:22:58.186739Z
-3726
+2012-10-12T09:13:10.137004Z
+3843
 yangb
 
 
@@ -26,17 +26,51 @@ yangb
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
+ApplyUserService.java
+file
+
+
+
+
+2012-10-12T06:32:11.373598Z
+182764044760321f90a54aaabfaf4792
+2012-10-11T09:00:28.825957Z
+3801
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+769
+
 FinanceApplyService.java
 file
 
 
 
 
-2012-09-25T09:10:53.000000Z
-d8baefe963defc6f21322204bae35dc7
-2012-09-25T02:45:35.535927Z
-3564
-yuel
+2012-10-12T06:32:11.373598Z
+447523e6a21739d6b41e4a5e670ab9aa
+2012-10-08T01:57:13.557898Z
+3747
+yangb
 
 
 
@@ -58,18 +92,18 @@ yuel
 
 
 
-2280
+2326
 
-OrdLrRecommendService.java
+FinanceProductService.java
 file
 
 
 
 
-2012-09-11T09:30:32.000000Z
-309e71cf19b486c48e41a86a469a312e
-2012-08-07T02:11:48.324425Z
-2041
+2012-10-12T06:32:11.373598Z
+ced22df649e6ee404b26459522cce39a
+2012-08-31T03:35:48.232228Z
+3021
 yuel
 
 
@@ -92,13 +126,7 @@ yuel
 
 
 
-1245
-
-model
-dir
-
-impl
-dir
+3064
 
 LoanRequestService.java
 file
@@ -106,7 +134,7 @@ file
 
 
 
-2012-09-13T05:27:51.000000Z
+2012-10-12T06:32:11.373598Z
 33f5b15fb251661580a0ac21cd292305
 2012-09-13T02:41:57.384706Z
 3400
@@ -134,47 +162,13 @@ yangb
 
 3161
 
-PrdFinanceAreaService.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-6ebe75793020f72e022c474ac1eb1d90
-2012-08-31T01:24:58.542539Z
-3009
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-227
-
 OrdFinanceAppLoanService.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
+2012-10-12T06:32:11.373598Z
 749f750e06c2a49a073cc9ec31a7dacf
 2012-07-30T08:31:27.072593Z
 1774
@@ -202,50 +196,16 @@ yuel
 
 1482
 
-ApplyUserService.java
+OrdLrRecommendService.java
 file
 
 
 
 
-2012-09-29T03:29:34.000000Z
-fc506f6627c923dfb061e81127223ef7
-2012-09-29T01:22:58.186739Z
-3726
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-471
-
-FinanceProductService.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-ced22df649e6ee404b26459522cce39a
-2012-08-31T03:35:48.232228Z
-3021
+2012-10-12T06:32:11.373598Z
+309e71cf19b486c48e41a86a469a312e
+2012-08-07T02:11:48.324425Z
+2041
 yuel
 
 
@@ -268,5 +228,45 @@ yuel
 
 
 
-3064
+1245
+
+PrdFinanceAreaService.java
+file
+
+
+
+
+2012-10-12T06:32:11.373598Z
+6ebe75793020f72e022c474ac1eb1d90
+2012-08-31T01:24:58.542539Z
+3009
+yangb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+227
+
+impl
+dir
+
+model
+dir
 

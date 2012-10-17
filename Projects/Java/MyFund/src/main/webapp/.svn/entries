@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp
+3878
+svn://192.168.1.8/MyFund/src/main/webapp
 svn://192.168.1.8
 
 
 
-2012-09-29T06:45:59.920908Z
-3742
-juxj
+2012-10-16T08:34:37.073654Z
+3878
+yangb
 has-props
 
 
@@ -25,142 +25,6 @@ has-props
 
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
-
-
-
-
-
-
-0
-
-upload
-dir
-
-WEB-INF
-dir
-
-css
-dir
-
-admin
-dir
-
-favicon.ico
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-764ae68b638c1c518d664a11c802aff2
-2012-08-18T06:31:45.478788Z
-2676
-Patrick
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1406
-
-META-INF
-dir
-
-index.jsp
-file
-
-
-
-
-2012-09-20T06:02:32.000000Z
-822ab69702addd109a96318139df53e3
-2012-09-17T05:20:34.148502Z
-3486
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-112
-
-script
-dir
-
-html
-dir
-
-images
-dir
-
-downloadfile
-dir
-
-index.html
-file
-
-
-
-
-2012-09-13T05:27:52.000000Z
-822ab69702addd109a96318139df53e3
-2012-09-13T03:40:35.705932Z
-3408
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-112
 
 404.html
 file
@@ -168,7 +32,7 @@ file
 
 
 
-2012-09-13T05:27:52.000000Z
+2012-10-12T06:32:11.033428Z
 46cecf0e2003940ce41301ec842e6cd0
 2012-09-12T08:50:57.915290Z
 3390
@@ -196,9 +60,138 @@ xusj
 
 1088
 
+META-INF
+dir
+
+WEB-INF
+dir
+
+admin
+dir
+
+css
+dir
+
+downloadfile
+dir
+
+favicon.ico
+file
+
+
+
+
+2012-10-12T06:32:11.033428Z
+764ae68b638c1c518d664a11c802aff2
+2012-08-18T06:31:45.478788Z
+2676
+Patrick
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1406
+
+html
+dir
+
 html_new
 dir
 
+images
+dir
+
+index.html
+file
+
+
+
+
+2012-10-12T06:32:11.033428Z
+822ab69702addd109a96318139df53e3
+2012-09-13T03:40:35.705932Z
+3408
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+112
+
+index.jsp
+file
+
+
+
+
+2012-10-12T06:32:11.037430Z
+822ab69702addd109a96318139df53e3
+2012-09-17T05:20:34.148502Z
+3486
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+112
+
 public
+dir
+
+script
+dir
+
+upload
 dir
 

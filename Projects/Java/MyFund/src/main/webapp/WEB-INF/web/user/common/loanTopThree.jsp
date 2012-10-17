@@ -14,6 +14,11 @@
 	  <span class="leftdetail"><a href="/loan/LoanRequest.act?loan.applyType=138" target="_blank">立即提交</a></span>
   </s:if>
   </caption>
+  <s:if test="topThree.size<=0">
+  	<tr>
+  		<td colspan="7" align="center">暂无申请记录</td>
+  	</tr>
+  </s:if><s:else>
   <tr>
   	 <th>融资意向编号</th>
      <th>发布时间</th>
@@ -23,11 +28,7 @@
      <th>状态</th>
      <th>操作</th>
   </tr>
-  <s:if test="topThree.size<=0">
-  	<tr>
-  		<td colspan="7" align="center">暂无申请记录</td>
-  	</tr>
-  </s:if>
+  </s:else>
   <s:iterator value="topThree" id="item">
 	  <tr>
 	    <td>${applyNum}</td>

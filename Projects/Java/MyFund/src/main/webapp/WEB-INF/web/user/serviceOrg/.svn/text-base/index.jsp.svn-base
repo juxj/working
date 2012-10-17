@@ -38,7 +38,7 @@
     <div class="user_real fl">
       <h6>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else></h6>
       <p class="notice">您上次登录的时间为 <font color="#CC0000"><s:date name="usrLoginhistory.logindt" format="yyyy-MM-dd HH:mm:ss" /></font>，如有疑问请及时修改密码并联系客服。</p>
-      <span class="msg">您有（<a class="red" href="/news/ntyMessage!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
+      <span class="msg">您有（<a class="red" href="/user/message!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
       <p>查看您的<a href="/user/Profile.act"><font style="color: red;">详细信息</font></a>。</p>
     </div>
     <div class="clear"> &nbsp; </div>
@@ -51,6 +51,7 @@
       <span class="fr view_all"><a href="/service/serviceOrder!showPublisherOrders.act">查看全部»</a></span>
       <h6>服务订单</h6>
       </caption>
+      <s:if test="sinOrderList.data.size>0">
       <tr>
         <th>申请编号</th>
 		<th>服务编号</th>
@@ -60,7 +61,6 @@
 		<th>申请时间</th>
 		<th>状态</th>
       </tr>
-      <s:if test="sinOrderList.data.size>0">
 		<s:iterator id="item" value="sinOrderList.data">
 		<tr  class="gold_connect">
 			<td>${item.orderNo }</td>
@@ -94,6 +94,7 @@
       <span class="fr view_all"><a href="/service/userServiceItem!showServiceInfoHomeByPublisher.act">查看全部»</a></span>
       <h6>已发布服务</h6>
       </caption>
+       <s:if test="sinItemList.data.size>0">
       <tr>
         <th>服务主题</th>
 		<th>服务类型</th>
@@ -103,7 +104,6 @@
 		<th>截止日期</th>
 		<th>审核状态</th>
       </tr>
-       <s:if test="sinItemList.data.size>0">
 		<s:iterator id="item" value="sinItemList.data">
 		<tr  class="gold_connect">
 			<td title="${item.title }">

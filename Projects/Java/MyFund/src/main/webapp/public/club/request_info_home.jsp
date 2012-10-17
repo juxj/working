@@ -60,88 +60,98 @@
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main1-->
-<div class="center container_950"><a href="/service/requestInfoAction4User!edit.act">
-	<img src="/images/img_club_pub_project.jpg" width="950" height="56"/></a></div>
-<div class="center box_6_gray" style="height:auto; width:908px; padding-left:20px; padding-bottom:10px;">
-	<form id="searchForm" action="/service/requestInfoAction!home.act" method="post">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-		  <tr>
-		    <td width="108" height="40" valign="middle">地区：</td>
-		    <td width="206" height="40" valign="middle"><s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name" style="width:155px;"></s:select></td>
-		    <td width="69" height="40" valign="middle">行业：</td>
-		    <td width="225" height="40" valign="middle">
-		    <select id="mainIndustry" name="query"  style="width:155px;">
-		    	<option value="">不限</option>
-		    	<s:iterator id="item" value="industryList">
-					<s:if test="#item.parentid==0">
-						<option value="${item.name }" <s:if test="query[1] == name">selected</s:if>>${item.name}</option>
-					</s:if>
-		    	</s:iterator>
-		    	<option value="其他行业" <s:if test="query[1] == '其他行业'">selected</s:if>>其他行业</option>
-		    	
-		    </select></td>
-		    <td width="111" height="40" valign="middle">投资方式：</td>
-		    <td width="194" height="40" valign="middle"><s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:155px;"></s:select></td>
-		    <td width="160" height="40" align="right" valign="middle"><input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="btnsub blue1" value="重新查询"  style="width:90px; margin-left: 10px;"/></td>
-		  </tr>
-		  <tr>
-		    <td width="108" height="40" valign="middle">输入关键词：</td>
-		    <td height="40" colspan="5" valign="middle"><input type="text" class="input-text" name="query" value="${query[3]}" /></td>
-		    <td height="40" valign="middle">&nbsp;</td>
-		  </tr>
-		</table>
+<div class="center container_950"><a href="/service/supplyInfoAction4User!editFirstStep.act"><img src="/images/img_club_pub_project.jpg" width="950" height="56"/></a>
+	<div class="box_5" style="background:#edf0ff;">
+	<form id="searchForm" action="/service/supplyInfoAction!home.act" method="post">
+		<div class="fl">
+			<span>行业：&nbsp;&nbsp;</span>
+			<span style="padding-right:20px;">
+			    <select id="mainIndustry" name="query"  style="width:100px;">
+			    	<option value="">不限</option>
+			    	<s:iterator id="item" value="industryList">
+						<s:if test="#item.parentid==0">
+							<option value="${item.name }" <s:if test="query[1] == name">selected</s:if>>${item.name}</option>
+						</s:if>
+			    	</s:iterator>
+			    	<option value="其他行业" <s:if test="query[1] == '其他行业'">selected</s:if>>其他行业</option>
+			    	
+			    </select>&nbsp;&nbsp;&nbsp;&nbsp;		
+			</span>
+			<span>投资方式：&nbsp;&nbsp;</span>
+			<span style="padding-right:20px;">
+				<s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:100px;"></s:select>
+			</span>
+			<span>地区：&nbsp;&nbsp;</span>
+			<span style="padding-right:20px;"><s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name" style="width:100px;"></s:select></span>
+			<span>关键字：&nbsp;&nbsp;</span>
+			<span class="input-text" style="padding-right:20px;"><input type="text" class="input-text"  style="width:100px;" name="query" value="${query[3]}" />&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</div>
+		<span class="fr"><input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="btnsub blue1" value="重新查询"  style="width:90px; margin-left: 10px;"/></span>
 	</form>
 	<div class="clear">&nbsp;</div>
+	</div>
 </div>
 <!--main1-->
-<div class="hr_10"> &nbsp;</div>
-	<div class="M_box">
-		<!--投资俱乐部项目列表开始-->
-		<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
-		      <tr class="top_color">
-		        <td class="capital_table_z1">项目主题</td>
-		        <td class="capital_table_z2">所属行业</td>
-		        <td class="capital_table_z2">融资金额</td>
-		        <td class="capital_table_z2">所属地域</td>
-		        <td class="capital_table_z2">融资方式</td>
-		        <td class="capital_table_z2">发布时间</td>
-		        <td width="100px;"></td>
-		      </tr>
-				<s:if test="pager.data.size()>0">
-				<s:iterator id="item" value="pager.data">		      
-		      <tr class="capital_table" >
-		        <td class="capital_table_z1 red" style="font-weight: bolder;"> <div title=" ${item.title }" class="ellipsis_text_180"> ${item.title }</div></td>
-		        <td class="capital_table_z2"><div title="${item.industry }" class="ellipsis_text_60">${item.industry }</div></td>
-		        <td class="capital_table_z2"><s:text name="format.float"><s:param value="#item.totalMoney"></s:param></s:text>（万元）</td>
-		        <td class="capital_table_z2">${item.area }</td>
-		        <td class="capital_table_z2"><div title="${item.financeType }" class="ellipsis_text_60">${item.financeType }</div>
-		        	<s:if test="#item.financeType==null or #item.financeType==''">
-			    		不限
-			    	</s:if>
-		        </td>
-		        <td class="capital_table_z2"><s:date name="#item.lastPostDate" /> </td>
-		        <td class="view_detail capital_table_z2"  style="padding-right:20px;"><a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id}" target="_blank">详情</a></td>
-		      </tr>
-		      </s:iterator>
-		      <tr class="top_color">
-			        <td style="padding-left:20px; font-size:14px;" colspan="9">
-			        <div class="pagination right">
+<div class="hr_10"> &nbsp; </div>
+<!-- gaidong -->
+<table class="container_950 center">
+	<tr class="top_color box_4">
+		<td style="padding-left:20px; border-bottom:3px solid #003961;">项目主题</td>
+		<td style="border-bottom:3px solid #003961;">所属行业</td>
+		<td style="border-bottom:3px solid #003961;">融资金额</td>
+		<td style="border-bottom:3px solid #003961;">所属地域</td>
+		<td style="border-bottom:3px solid #003961;">融资方式</td>
+		<td style="border-bottom:3px solid #003961;">发布时间</td>
+		<td style="border-bottom:3px solid #003961;width:90px"></td>
+	</tr>	
+	<s:set name="style" value="'border:1px solid #f0f0f0; background:#f9f9f7;'"></s:set>
+	<s:if test="pager.data.size()>0">
+				<s:iterator id="item" value="pager.data" status="st">		
+	<tr <s:if test="#st.even"> style="${style}" </s:if>>
+		<td style="padding-top:15px;padding-bottom:15px;padding-left:20px;">
+					<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id}" target="_blank" style="font-size: 14px; color:#003961; ">
+					${item.title }</a><br/>${userInfoList[st.index][1]}</td>
+		<td><div title="${item.industry }" class="ellipsis_text_60">${item.industry }</div></td>
+		<td><s:text name="format.float"><s:param value="#item.totalMoney"></s:param></s:text>（万元）</td>
+		<td>${item.area }</td>
+		<td>
+			<div title="${item.financeType }" class="ellipsis_text_60">${item.financeType }</div>
+        	<s:if test="#item.financeType==null or #item.financeType==''">
+	    		不限
+	    	</s:if>
+		</td>
+		<td><s:date name="#item.lastPostDate" /> </td>
+		<td style="padding-top:15px;padding-bottom:15px;">
+			<s:if test="userInfoList[#st.index][0]==1">
+				<span class="fl"><img src="/images/ico_cert_ca.gif" width="20" height="20" /></span>&nbsp;认证会员<br />
+			</s:if>
+			
+			<s:if test="userInfoList[#st.index][0]==2">
+				<span class="fl"><img src="/images/ico_cert_vip.gif" width="20" height="20" /></span>&nbsp;VIP会员<br />
+			</s:if>
+		
+			<s:if test="userInfoList[#st.index][0]==0">
+				<span class="fl"><img src="/images/ico_cert_ca.gif" width="20" height="20" /></span>&nbsp;普通会员<br />
+			</s:if>
+		</td>
+	</tr>
+	</s:iterator>
+		<tr>
+		   <td style="padding-left:20px; font-size:14px;" colspan="9">
+			   <div class="pagination right">
 					<s:include value="/public/pagination.jsp"/>
-					</div>
-					</td>
-			   </tr>
-		      </s:if><s:else>
-		      	<s:else>
-			      <tr class="top_color">
-				        <td style="padding-left:20px; font-size:14px;" colspan="7">
-				       		抱歉！未查询到相符的结果
-						</td>
-				   </tr>
-		      </s:else>		
-		      </s:else>		      
-		</table>
-		<!--投资俱乐部项目列表结束-->		
-	</div>
+				</div>
+			</td>
+		</tr>
+      </s:if><s:else>
+	      <tr class="top_color">
+		        <td style="padding-left:20px; font-size:14px;" colspan="7">
+		       		抱歉！未查询到相符的结果
+				</td>
+		   </tr>
+      </s:else>		  
+</table>	
+
 <div class="clear"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

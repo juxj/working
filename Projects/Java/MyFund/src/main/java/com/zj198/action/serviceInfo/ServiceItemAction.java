@@ -108,7 +108,15 @@ public class ServiceItemAction extends BaseAction{
 		dataMap = new HashMap<String,List<DicCommon>>();
 		this.provinceList = this.dictoryDataService.findAllProvince();
 		dataMap.put("obj", dictoryDataService.findCommonDataByGroupId(31));
-		prdServiceItem=serviceInfoService.getPrdServiceItemById(prdServiceItem.getId());
+		if (prdServiceItem != null && prdServiceItem.getId() != null) {
+			prdServiceItem=serviceInfoService.getPrdServiceItemById(prdServiceItem.getId());
+		} else {
+			prdServiceItem = new PrdServiceItem();
+			prdServiceItem.setCompanyId(user.getId());
+			prdServiceItem.setCompanyName(usrServiceorg.getOrgname());
+			prdServiceItem.setContactId(user.getId());
+			prdServiceItem.setContactName(user.getRealname());
+		}
 		return "serviceAddInfo";
 	}
 	/**删除服务信息*/

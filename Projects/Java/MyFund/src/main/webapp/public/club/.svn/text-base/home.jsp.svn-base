@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<title>融资俱乐部_首页</title>
+<title>融资俱乐部_中国资金网</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
@@ -39,14 +39,14 @@
 		<div class="fund_m">
 			<a href="/club/clubAction!getSupplyInfoByAllType.act" class="fl"><img src="/images/zjj.jpg"/></a>
 			<div class="fund_m_connect">
-				<div><a href="/Register.act">注册企业/个人会员</a></div>
+				<div><a href="/Register.act">注册会员</a></div>
 				<div><a href="/service/requestInfoAction4User!edit.act">发布项目信息</a></div>
 			</div>
 		</div>
 		<div class="fund_o">
 			<a href="/club/clubAction!getRequestInfoByAllType.act" class="fl"><img src="/images/zxm.jpg"/></a>
 			<div class="fund_m_connect">
-				<div><a href="/Register.act">注册金融机构会员</a></div>
+				<div><a href="/Register.act">注册会员</a></div>
 				<div><a href="/service/supplyInfoAction4User!editFirstStep.act">发布投资信息</a></div>
 			</div>			
 		</div>		

@@ -82,7 +82,11 @@ function showBankProductHome() {
     </div>
     <!--列表1开始-->
        <div class="hr_10"> &nbsp; </div>
-       <div ><a href="/finance/fund.act"><img src="/images/ad_c2_1.jpg" width="230" height="90" /></a></div>
+       <div ><a href="/finance/fund.act?jtype=1"><img src="/images/ad_c2_1.jpg" width="230" height="90" /></a></div>
+       <div class="hr_10"> &nbsp; </div>
+       <div><a href="/finance/fund.act?jtype=2"><img src="/images/ad_c2_2.jpg" width="230" height="90" /></a></div>
+       <div class="hr_10"> &nbsp; </div>
+       <div><a href="/finance/fund.act?jtype=3"><img src="/images/ad_c2_3.jpg" width="230" height="90" /></a></div>
        <div class="hr_10"> &nbsp; </div>
        <div class="menu_red white">
       <h6>理财工具</h6>
@@ -92,9 +96,9 @@ function showBankProductHome() {
        	<jsp:include page="_financing_tools.jsp" />
       </ul>
     </div>
-   <!--列表1结束-->
     <div class="hr_10"> &nbsp; </div>
-    <div><img src="/images/ad_c2_2.jpg" width="230" height="280" /></div>
+    <div><img src="/images/ad_c2_4.jpg" width="230" height="76" /></div>
+   <!--列表1结束-->
     <div class="hr_10"> &nbsp; </div>
    </div>
     <div class="grid_710">

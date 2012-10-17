@@ -245,12 +245,7 @@ function quickRegist(){
 	        		<tr>
 	        			<td ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2458068476&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2458068476:42" alt="点击这里给我发消息" title="点击这里给我发消息"></a></td>
 	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  韩先生</td>
-	        		</tr>
-	        		<tr>
-	        			<td>
-	        			<a href="msnim:chat?contact=zijin198@hotmail.com" ><img src="http://www.andasen.com/images/msn.gif" alt="MSN:zijin198@hotmail.com" border="0" /></a>
-	        			<td style="height:30px; vertical-align: middle;">&nbsp;&nbsp;客户经理  刘先生</td>
-	        		</tr>       			        		
+	        		</tr>    			        		
 	        		<tr>
 	        			<td>
 	        			<a target="_blank" href="http://amos1.taobao.com/msg.aw?site=cntaobao&charset=utf-8&v=2&uid=zhongguozijinwang&s=1" ><img border="0" src="http://amos1.taobao.com/online.ww?v=2&uid=zhongguozijinwang&s=1" alt="Taobao.com ID:victorbsds" /></a> 

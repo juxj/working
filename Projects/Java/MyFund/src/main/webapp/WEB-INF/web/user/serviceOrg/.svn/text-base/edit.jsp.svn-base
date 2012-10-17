@@ -28,6 +28,7 @@ $(document).ready(function(){
 	$("#bizCity").val('${usrServiceorg.bizcityid}');
 	$("#bizDistrict").val('${usrServiceorg.bizdistrictid}');
 	//$(".date_picker").datepicker({changeMonth: true,changeYear: true});
+	$('textarea').xheditor({tools:'simple',skin:'nostyle'});
 	$( "#regDate" ).datepicker({changeMonth: true,changeYear: true,maxDate: "0d"});
 	$("#serForm").validate({
 		meta:"validate"
@@ -100,7 +101,7 @@ function uploadImg(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/Profile.act">详细信息</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
@@ -290,7 +291,7 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">服务介绍：</td>
-          <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrServiceorg.remarks" style="width: 550px;height: 150px;">${ usrServiceorg.remarks}</textarea></td>
+          <td colspan="3"><textarea name="usrServiceorg.remarks" style="width: 550px;height: 150px;">${ usrServiceorg.remarks}</textarea></td>
         </tr>
       <tr>
            <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">

@@ -74,7 +74,7 @@ button { border:none; }
 /*按钮样式*/
 .but_gray { background : url(/images/btn_bg.gif) repeat-x; height:26px; border:1px solid #aeadad; font-weight:bold; cursor:pointer; padding:1px 15px 0 15px;}
 .btnsub { 
-	text-decoration: none;border:0px solid #aeadad; cursor:pointer; padding:0px 15px 0 15px;font: 14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:30px;
+	text-decoration: none;border:0px solid #aeadad; cursor:pointer; padding:0px 15px 0 15px;font:14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:30px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -86,7 +86,7 @@ button { border:none; }
 	transition: all 0.15s ease;	
 	}
 .btn {
-	vertical-align:middle;display: inline-block;position: relative;padding: 2px 15px 0 15px;text-align: center;text-decoration: none;font: 14px/25px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;
+	vertical-align:middle;display: inline-block;position: relative;padding: 2px 15px 0 15px;text-align: center;text-decoration: none;font: 14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -99,7 +99,7 @@ button { border:none; }
 	}
 
 .btn_s {
-	vertical-align:middle;display: inline-block;position: relative;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px/25px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:26px;
+	vertical-align:middle;display: inline-block;position: relative;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:26px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -194,15 +194,11 @@ button { border:none; }
 	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
 	box-shadow: inset 0px 0px 10px rgba(0,0,0, .8);
 	}	
-.bgray {color: #484848;
-	background: #EAE9EA;/* Old browsers */
-	background: -moz-linear-gradient(top,  #EAE9EA 0%, #CDCDCD 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EAE9EA), color-stop(100%,#CDCDCD)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #EAE9EA 0%,#CDCDCD 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #EAE9EA 0%,#CDCDCD 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #EAE9EA 0%,#CDCDCD 100%); /* IE10+ */
-	background: linear-gradient(top,  #EAE9EA 0%,#CDCDCD 100%); /* W3C */
-	}
+.bgray {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:24px;border:1px solid #d6d6d6;color: #000;background: #e1e1e1;/* Old browsers */}
+.bgray:visited {color: #000;border:1px solid #7accc8;}
+.bgray:hover {text-decoration: none;color: #000;background: #7accc8;border:1px solid #7accc8;}
+.bgray:active {text-decoration: none;none;color: #000;background: #7accc8;border:1px solid #7accc8;}		
+
 /*常用样式*/
 .box_3 { border : #d6d6d6 solid; border-width : 0 1px 1px 1px; overflow:hidden;}
 .box_4 { border : #d6d6d6 solid 1px;}
@@ -215,7 +211,7 @@ button { border:none; }
 /* 表单一行通用 */
 .box_form {margin:10px; }
 .box_form dt{ border-bottom:1px solid #CCC; color:#97181d; margin:20px 20px 40px; padding:10px;}
-.box_form dd{overflow : hidden; padding-bottom:15px;display:inline-block; width:100%;height:28px; line-height:28px; }
+.box_form dd{overflow : hidden; padding-bottom:15px;display:inline-block; width:100%;}
 .box_form dd:after { content:'.'; clear:both; display:block; height:0; visibility:hidden; line-height:0 }
 .box_form dd{ zoom:1 }
 

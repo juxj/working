@@ -31,6 +31,7 @@ import com.zj198.model.UsrCompany;
 import com.zj198.model.UsrFinanceorg;
 import com.zj198.model.UsrUser;
 import com.zj198.service.common.DictoryDataService;
+import com.zj198.util.Constants;
 
 public class DictoryDataServiceImpl implements DictoryDataService {
 	
@@ -59,17 +60,17 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 		if(userType == null){
 			return "";
 		}
-		if(userType.getGroup().intValue() == 2){
+		if(userType.getGroup() == Constants.USERTYPE_GROUP_BANK){
 			UsrBank bank = usrBankDAO.get(userId);
 			if(bank != null){
 				companyName = bank.getDetailname();
 			}
-		}else if(userType.getGroup().intValue() == 3){
+		}else if(userType.getGroup() == Constants.USERTYPE_GROUP_FINANCEORG){
 			UsrFinanceorg financeOrg = usrFinanceorgDAO.get(userId);
 			if(financeOrg != null){
 				companyName = financeOrg.getOrgname();
 			}
-		}else if(userType.getGroup().intValue() == 1){
+		}else if(userType.getGroup() == Constants.USERTYPE_GROUP_COMPANY){
 			UsrCompany company = usrCompanyDAO.get(userId);
 			if(company != null){
 				companyName = company.getCompanyname();
@@ -265,7 +266,6 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 	}
 	@Override
 	public DicIndustry getIndustryById(Integer id) {
-		
 		return dicIndustryDAO.get(id);
 	}
 

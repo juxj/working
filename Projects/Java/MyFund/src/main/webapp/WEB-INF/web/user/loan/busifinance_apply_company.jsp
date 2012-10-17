@@ -27,6 +27,7 @@ $(function() {
     }).blur(function() {
         $(this).removeClass("input-focus");
     });
+    $('textarea').xheditor({tools:'simple',skin:'nostyle'});
     $("#regDate").datepicker();
     $("#regCity").val('${usrCompany.regcityid}');
 	$("#regDistrict").val('${usrCompany.regdistrictid}');
@@ -192,7 +193,7 @@ function servicedetail(){
         </tr>
         <tr style="height:160px;line-height:160px;">
           <td class="a_right">经营范围：</td>
-          <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrCompany.bizscope" style="width: 550px;height: 150px;">${usrCompany.bizscope }</textarea></td>
+          <td colspan="3"><textarea name="usrCompany.bizscope" style="width: 550px;height: 150px;">${usrCompany.bizscope }</textarea></td>
         </tr>
         <tr>
           <td class="a_right">所属部门：</td>
@@ -275,8 +276,8 @@ function servicedetail(){
         </tr>
         <tr>
            <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
-           <input type="checkbox"/>
-           	选择框  。。。。。。。。。。。。。。。。待定。。。。。。。。。。。
+           <input type="checkbox" name="copy" value="1"/>
+           	将申请企业信息保存到用户注册信息中
            </td>
          </tr>
         <tr>

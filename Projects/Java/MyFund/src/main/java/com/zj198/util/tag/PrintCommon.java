@@ -1,7 +1,9 @@
 package com.zj198.util.tag;
 
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.apache.struts2.components.Component;
 import org.springframework.context.ApplicationContext;
@@ -9,6 +11,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.util.ValueStack;
+import com.zj198.model.DicCommon;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.util.Constants;
 import com.zj198.util.InterestBean;
@@ -25,6 +28,12 @@ public class PrintCommon extends Component{
 	 * user：根据用户ID输入公司名称
 	 */
 	private String type;
+	/**
+	 * 分隔符
+	 * 取值：comma(逗号)，br(换行)
+	 * 默认为逗号
+	 */
+	private String divide;
 	
 	public PrintCommon(ValueStack value){
 		super(value);
@@ -89,8 +98,21 @@ public class PrintCommon extends Component{
 					if(!valueId.equals("")){
 						ApplicationContext ac = (ApplicationContext) (new ActionContext(this.stack.getContext())).getApplication().get(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
 						DictoryDataService dictoryDataService = (DictoryDataService) ac.getBean("dictoryDataService");
-						if(valueId.indexOf(",") != -1){							
-							valueIdStr = dictoryDataService.getValueNamesByIds(valueId);
+						if(valueId.indexOf(",") != -1){	
+							String[] idss = valueId.split(",");
+							StringBuffer strname = new StringBuffer();
+							for(int m = 0; m < idss.length; m++){
+								String name = dictoryDataService.getValueNameById(Integer.valueOf(idss[m]));
+								strname.append(name);
+								if(m  != (idss.length - 1)){
+									if(divide != null && divide.equals("br")){
+										strname.append("<br/>");
+									}else{										
+										strname.append(",");
+									}
+								}
+							}
+							valueIdStr = strname.toString();
 						}else{
 							valueIdStr = dictoryDataService.getValueNameById(Integer.valueOf(valueId));
 						}
@@ -136,6 +158,14 @@ public class PrintCommon extends Component{
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getDivide() {
+		return divide;
+	}
+
+	public void setDivide(String divide) {
+		this.divide = divide;
 	}
 
 }

@@ -87,4 +87,37 @@
 .in_td{text-align:right; padding-right:25px;}
 /*融资管理-相关页面*/
 
+/*用户中心-融资管理-融资申请详情页*/
+.f_text01{font-size: 14px; font-weight:bolder; margin-bottom:10px;}
+.f_text01 span{padding-right:30px;}
+.f_liucheng{margin-top:20px;}
+.f_gz{font-size: 14px; font-weight:bolder; padding-bottom: 30px; display: block; color:#426d7d;}
+.y_title{width:890px; background:#ebe6b9; height:27px; line-height:27px;}
+.y_title_01{width:220px; float:left; padding-left:18px;}
+.y_connect{margin-top:5px;}
+.left_gray{background:url(/images/left_grey.png) 0 7px no-repeat; width:15px; height:40px; float:left;}
+.m_red{background:url(/images/m_red_bg.png) no-repeat; width:144px; height:40px; float:left; line-height:40px; text-align:center; color: #fff; font-weight:bolder;}
+.m_gray{background:url(/images/3_grey_bg.png) 0 7px no-repeat; width:144px; height:40px; float:left; line-height:40px; text-align:center; color: #fff; font-weight:bolder;}
+.right_gray{background:url(/images/right_grey.png) 0 7px no-repeat; width:13px; height:40px; float:left; line-height:40px; text-align:center; color: #fff;}
 
+.box_6{border: #426d7d solid; border-width : 0 2px 2px 2px; overflow:hidden;}
+.f_box{margin:0 auto; margin:25px;}
+.y_title_02{width:180px; float:left;}
+
+.f_sqxx{width:900px; border-bottom:1px solid #d6d6d6;}
+.f_qyxx{width:435px; height:auto; background:#edf0ff;}
+.menu_nobg{height:35px; line-height:35px; font-weight:bolder; border-bottom: 1px solid #fff; padding-left:12px;}
+.menu_out{width:900px;} 
+.menu_out span{display:block; padding-top:3px; padding-left:12px;}
+.menu_out span font{font-weight:bolder; font-size:12px;}
+.m_20{margin-bottom:18px;}
+
+.sq_table{width:900px; border-top: 1px solid #d6d6d6; border-right: 1px solid #d6d6d6;}
+.sq_table td{border-bottom: 1px solid #d6d6d6; border-left: 1px solid #d6d6d6;}
+.sq_title{background:#edf0ff; height:25px; line-height:25px;}
+.sq_title td{padding-left:30px;}
+.sq_connect{height:35px; line-height:35px;}
+.sq_connect td{padding-left:30px;}
+.js_bank{padding:15px 0px 15px 20px; float: left;}
+.sudait{display:block; font-size: 16px; font-weight: bolder; color : #97181d; padding-top:30px;}
+/*用户中心-融资管理-融资申请详情页*/

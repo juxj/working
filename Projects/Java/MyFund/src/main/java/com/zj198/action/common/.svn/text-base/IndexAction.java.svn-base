@@ -18,8 +18,6 @@ import com.zj198.util.Constants;
 public class IndexAction extends BaseAction{
 	
 	private List<PrdBankfinance> bankFinanceList;
-	/*首页公告*/
-	private List<KnwTitle> announcements;
 	/*融资案例*/
 	private List<KnwTitle> financingCases;
 	/*新闻-政府动态*/
@@ -38,18 +36,13 @@ public class IndexAction extends BaseAction{
 	private FinanceProdService financeProdService;
 	private NewsService newsService;
 	private ServiceInfoService serviceInfoService;
-//	private SupplyRequestService supplyRequestService;
 	private FinanceProductService financeProductService;
-	
-//	ActionContext context = ActionContext.getContext();
-//	Map<String, Object> application = context.getApplication();
 	
 	//整站首页
 	public String execute(){
 		bankFinanceList = financeProdService.findByBenefitRate(3);
 		this.getNewsRelatedData();
 		this.getServiceInfoList();
-//		this.getSupplyRequestData();
 		this.getImportentProduct();
 		return SUCCESS;
 	}
@@ -66,8 +59,6 @@ public class IndexAction extends BaseAction{
 	}
 	
 	private void getNewsRelatedData() {
-		//滚动新闻.
-		this.announcements = newsService.findLastestByType(Constants.ANNOUNCED_NEWS,5);
 		//融资案例
 		this.financingCases = newsService.findLastestByType(Constants.FINANCING_CASE,5);
 		//政府动态
@@ -78,20 +69,6 @@ public class IndexAction extends BaseAction{
 		this.siteNews = newsService.findLastestByType(Constants.SITE_NEWS,5);
 	}
 	
-	
-//	/**供求信息*/
-//	private void getSupplyRequestData(){
-//		if (Constants.SUPPLY_INFO_LIST != null) {
-//			Pager page = this.supplyRequestService.findClbSupplyInfoList(10, 1);
-//			Constants.SUPPLY_INFO_LIST = page.getData();
-//		}
-//		
-//		if (Constants.REQUEST_INFO_LIST !=null){
-//			Pager page = this.supplyRequestService.findRequestInfoList(10, 1);
-//			Constants.REQUEST_INFO_LIST = page.getData();
-//		}
-//	}
-	
 	//setter and getter
 	public List<PrdBankfinance> getBankFinanceList() {
 		return bankFinanceList;
@@ -101,12 +78,6 @@ public class IndexAction extends BaseAction{
 	}
 	public void setFinanceProdService(FinanceProdService financeProdService) {
 		this.financeProdService = financeProdService;
-	}
-	public List<KnwTitle> getAnnouncements() {
-		return announcements;
-	}
-	public void setAnnouncements(List<KnwTitle> announcements) {
-		this.announcements = announcements;
 	}
 	public void setNewsService(NewsService newsService) {
 		this.newsService = newsService;
@@ -129,9 +100,6 @@ public class IndexAction extends BaseAction{
 	public List<KnwTitle> getSiteNews() {
 		return siteNews;
 	}
-//	public void setSupplyRequestService(SupplyRequestService supplyRequestService) {
-//		this.supplyRequestService = supplyRequestService;
-//	}
 	public List<PrdFinance> getPrdFinanceList() {
 		return prdFinanceList;
 	}

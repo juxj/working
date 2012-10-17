@@ -1,8 +1,8 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/loan/model
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/loan/model
 svn://192.168.1.8
 
 
@@ -26,16 +26,16 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-LoanOrgCountModel.java
+AppLoanAttachSpModel.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-6b5c3e2ba507a6e53c86cd8decfec6a9
-2012-06-28T01:44:43.405457Z
-533
+2012-10-12T06:32:11.173498Z
+8939e5025e4472ef1f758591161a0526
+2012-07-30T08:31:27.072593Z
+1774
 yuel
 
 
@@ -58,41 +58,7 @@ yuel
 
 
 
-1235
-
-PreviewFinanceProSrModel.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-9282481bb0b350a30952d875e9faca12
-2012-08-31T03:35:48.232228Z
-3021
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1305
+1174
 
 FinanceApplySpModel.java
 file
@@ -100,7 +66,7 @@ file
 
 
 
-2012-09-20T06:02:26.000000Z
+2012-10-12T06:32:11.173498Z
 de1c565df245ff4592ab54a7a850730f
 2012-09-17T03:42:36.465088Z
 3481
@@ -134,7 +100,7 @@ file
 
 
 
-2012-09-11T09:30:32.000000Z
+2012-10-12T06:32:11.173498Z
 899df6a383081e76449f9f5130e12b6f
 2012-07-24T10:04:17.331521Z
 1549
@@ -162,47 +128,13 @@ yuel
 
 3567
 
-RequestSearch.java
-file
-
-
-
-
-2012-09-11T03:06:57.000000Z
-cdeae6a2d9d5ffa3ef3ac32123d5bf47
-2012-08-03T06:42:46.453515Z
-1954
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2148
-
 FindFinanceAdminSpModel.java
 file
 
 
 
 
-2012-09-20T06:02:26.000000Z
+2012-10-12T06:32:11.173498Z
 916af5a1f49205a42521c782374b82d5
 2012-09-17T03:42:36.465088Z
 3481
@@ -230,16 +162,16 @@ Patrick
 
 2027
 
-AppLoanAttachSpModel.java
+LoanOrgCountModel.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
-8939e5025e4472ef1f758591161a0526
-2012-07-30T08:31:27.072593Z
-1774
+2012-10-12T06:32:11.173498Z
+6b5c3e2ba507a6e53c86cd8decfec6a9
+2012-06-28T01:44:43.405457Z
+533
 yuel
 
 
@@ -262,5 +194,73 @@ yuel
 
 
 
-1174
+1235
+
+PreviewFinanceProSrModel.java
+file
+
+
+
+
+2012-10-12T06:32:11.173498Z
+9282481bb0b350a30952d875e9faca12
+2012-08-31T03:35:48.232228Z
+3021
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1305
+
+RequestSearch.java
+file
+
+
+
+
+2012-10-12T06:32:11.173498Z
+cdeae6a2d9d5ffa3ef3ac32123d5bf47
+2012-08-03T06:42:46.453515Z
+1954
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2148
 

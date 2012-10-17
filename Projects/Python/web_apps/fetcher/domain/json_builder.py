@@ -20,13 +20,16 @@ class JsonBuilder:
 			if len(text)==1:
 				text = ''
 			else:
-				text = text.strip()
+				text = text.strip().replace('/','').replace('\n','')
+				temp = ''
+				for t in text:
+					temp = temp + t
+				text = temp	
 		except:
 			text = ''
-
+	
 		if len(children)>0:
-			json = '{\"name\":\"'+tag+'('+text+')'+'\",\"title\":\"'+text+'\",\"children\":[' 
-			#json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\",\"children\":[' 
+			json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\",\"children\":[' 
 			m = 0
 			for child in children:
 				if m==0:
@@ -36,8 +39,7 @@ class JsonBuilder:
 				m = m+1
 			json = json + ']}'							
 		else:
-			json = '{\"name\":\"'+tag+'('+text+')'+'\",\"title\":\"'+text+'\"}' 
-			#json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\"}' 
+			json = '{\"name\":\"'+tag+'\",\"title\":\"'+text+'\"}' 
 
 		return json
 

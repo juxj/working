@@ -25,6 +25,13 @@
 	
 </script>
 <script language="javascript">
+	function watchIt(id){
+		$('#img_app').html("<img src='/user/loan/downloadAttach.act?type=0&falistId="+id+"'/>");
+		$('#img_app').dialog({
+			width : 700,
+			modal:true
+		});
+	}
 	function updatestatus(value) {
 		if (window.confirm('确定要提交吗？')) {
 			$('#apply_status').val(value);
@@ -96,6 +103,17 @@
 			$(this).attr("value","全部选中");
 		});
 	})
+	
+	function applyCancel(){
+		//$("#loanForm").("action","/user/loan/financeAttach!selectCancel.act");
+		var arrChk=$("input[name='ckbox']:checked");
+		if(arrChk.length > 0){
+			$("#loanForm").submit();
+		}else{
+			alert("请您选择操作数据！");
+			return false;
+		}
+	}
 </script>
 
 </head>
@@ -145,13 +163,14 @@
 			}</div>
 	</div>
 	<div class="hr_10">&nbsp;</div>
-	<form action="/user/loan/financeApply!checkApply.act" id="loanForm"
-		class="box_form" style="margin:0px;" method="post">
+	<form action="/user/loan/financeAttach!selectCancel.act" id="loanForm" class="box_form" style="margin:0px;" method="post">
 		<!-- 企业经营贷款快速申请类型=136 -->
-		<s:hidden id="applyid" name="apply.id"></s:hidden>
+		<input type="hidden" id="applyid" name="applyId" value="${apply.id }">
+		<!--
 		<s:hidden name="apply.applyStatus" id="apply_status"></s:hidden>
 		<s:hidden name="appCheck.checkView" id="check_view"></s:hidden>
 		<s:hidden name="userType" value="1"></s:hidden>
+		-->
 		<div class="apply_form">
 			<div class="hr_10">&nbsp;</div>
 			<div class="hr_10">&nbsp;</div>
@@ -324,7 +343,7 @@
 				</tr>
 				<tr>
 					<td class="r_td">企业类型：</td>
-					<td class="p_td">${ordCompany.enterprisetypeid }</td>
+					<td class="p_td">${ordCompany.enterprisetypeid } </td>
 					<td class="r_td">员工人数：</td>
 					<td class="p_td">${ordCompany.employeesid }</td>
 				</tr>
@@ -356,7 +375,7 @@
 				</tr>
 				<tr>
 					<td class="r_td">婚姻状况：</td>
-					<td class="p_td">${ordCompany.lpmarry}</td>
+					<td class="p_td"><common:print valueId="ordCompany.lpmarry" /></td>
 					<td class="r_td">从事所属行业年限：</td>
 					<td class="p_td">${ordCompany.lpindustryyears}</td>
 				</tr>
@@ -383,17 +402,17 @@
 					<td class="r_td">法定代表人：</td>
 					<td class="p_td">${ordCompany.legalperson }</td>
 					<td class="r_td">学历：</td>
-					<td class="p_td">${ordCompany.lpeducation}</td>
+					<td class="p_td"><common:print valueId="ordCompany.lpeducation" /></td>
 				</tr>
 				<tr>
 					<td class="r_td">婚姻状况：</td>
-					<td class="p_td">${ordCompany.lpmarry}</td>
+					<td class="p_td"><common:print valueId="ordCompany.lpmarry" /></td>
 					<td class="r_td">从事所属行业年限：</td>
-					<td class="p_td">${ordCompany.lpindustryyears}</td>
+					<td class="p_td"><common:print valueId="ordCompany.lpindustryyears" /> </td>
 				</tr>
 				<tr>
 					<td class="r_td">常住地址：</td>
-					<td colspan="3">${ordCompany.lpliveprovinceid} ${ordCompany.lplivedistrictid} </td>
+					<td colspan="3">${ordCompany.lpliveaddress } </td>
 				</tr>
 				<tr>
 					<td class="r_td">邮编：</td>
@@ -401,7 +420,7 @@
           		</tr>
           		<tr>
           			<td class="r_td">户籍所在地：</td>
-          			<td colspan="3">${ordCompany.lphkcityid }  ${ordCompany.lphkdistrictid }</td>
+          			<td colspan="3">${profileMap['address'] }</td>
 				</tr>
 				<tr>
 					<td class="r_td">邮编：</td>
@@ -411,7 +430,42 @@
 			<div class="hr_10">&nbsp;</div>
 		</div>
 		<div class="hr_10">&nbsp;</div>
+		<!--4-->
+		<div class="apply_form">
+			<div class="apply_form_title">申请信息</div>
+			<div class="hr_10">&nbsp;</div>
+			<div class="hr_10">&nbsp;</div>
+			<table class="apply_form_tb">
+				<s:if
+					test="#session._user.userTypeGroup == 2 || #session._user.userTypeGroup == 3">
+					<tr>
+						<td class="r_td">企业详情：</td>
+						<td class="p_td" colspan="3"><input type="button" value="查看"
+							class="but_gray"
+							onclick="window.open('/user/Profile!viewUserInfo.act?usrUser.id=${apply.userId}');" />
+						</td>
+					</tr>
+				</s:if>
+				<tr>
+					<td class="r_td">贷款用途：</td>
+					<td class="p_td" width="180px"><common:print valueId="apply.loanPurpose" /> &nbsp;${apply.loanPurposeOther }
+					</td>
+					<td class="r_td">贷款金额：</td>
+					<td class="p_td" width="180px"><s:number
+							name="apply.loanAmount" />万元</td>
+				</tr>
+				<tr>
+					<td class="r_td">贷款期限：</td>
+					<td class="p_td">${apply.loanMonth}个月</td>
+					<td class="r_td">是否有抵押物：</td>
+					<td class="p_td"><common:print valueId="apply.haveMortgage"
+							valueSetMap="ZJ102" />
+					</td>
+				</tr>
+			</table>
+		</div>
 		<!-- 3 -->
+		<div class="hr_10">&nbsp;</div>
 		<div class="apply_form">
 			<div class="apply_form_title">企业经营信息</div>
 			<div class="hr_10">&nbsp;</div>
@@ -449,43 +503,10 @@
 			<div class="hr_10">&nbsp;</div>
 		</div>
 		<div class="hr_10">&nbsp;</div>
-		<!--4-->
-		<div class="apply_form">
-			<div class="apply_form_title">申请信息</div>
-			<div class="hr_10">&nbsp;</div>
-			<div class="hr_10">&nbsp;</div>
-			<table class="apply_form_tb">
-				<s:if
-					test="#session._user.userTypeGroup == 2 || #session._user.userTypeGroup == 3">
-					<tr>
-						<td class="r_td">企业详情：</td>
-						<td class="p_td" colspan="3"><input type="button" value="查看"
-							class="but_gray"
-							onclick="window.open('/user/Profile!viewUserInfo.act?usrUser.id=${apply.userId}');" />
-						</td>
-					</tr>
-				</s:if>
-				<tr>
-					<td class="r_td">贷款用途：</td>
-					<td class="p_td" width="180px"><common:print
-							valueId="apply.loanPurpose" />
-					</td>
-					<td class="r_td">贷款金额：</td>
-					<td class="p_td" width="180px"><s:number
-							name="apply.loanAmount" />万元</td>
-				</tr>
-				<tr>
-					<td class="r_td">贷款期限：</td>
-					<td class="p_td">${apply.loanMonth}个月</td>
-					<td class="r_td">是否有抵押物：</td>
-					<td class="p_td"><common:print valueId="apply.haveMortgage"
-							valueSetMap="ZJ102" />
-					</td>
-				</tr>
-			</table>
-		</div>
+		
 		<!-- 6 -->
 		<div class="hr_10">&nbsp;</div>
+		
 		<div class="apply_form">
 			<div class="apply_form_title">申贷资料</div>
 			<div class="hr_10">&nbsp;</div>
@@ -523,7 +544,7 @@
           
 		 	<s:iterator id ="item" value="attachList">
 			<tr class="top_color01">
-				<td><input type="checkbox" name="ckbox"/> </td>
+				<td><input type="checkbox" name="ckbox" class="ckbox" value="${item.id }"/> </td>
 				<td style="padding-left:25px;">
 						${item.dataName }
 						${item.supplyName }
@@ -547,9 +568,9 @@
 			</s:iterator>
 			</tbody>
 			<tr>
-				<td><input type="button" class="but_gray" id="selectall" value="全部选中"/></td>
-				<td><input type="button" class="but_gray" value="确认" onclick=""/></td>
-				<td><input type="button" class="but_gray" value="撤销" onclick=""/></td>
+				<td colspan="6"><input type="button" class="but_gray" id="selectall" value="全部选中"/>
+				<input type="button" class="but_gray" value="确认" onclick=""/>
+				<input type="button" class="but_gray" value="撤销" onclick="applyCancel()"/></td>
 			</tr>
         </table>
 			<div class="hr_10">&nbsp;</div>
@@ -588,7 +609,10 @@
 
 <div id="download_attach" style="display:none;" title="文件下载">
 
-</div> 
+</div>
+<div id="img_app" style="display:none;" title="图片预览">
+
+</div>  
 	<!--弹出框内日志页面-->
 	<div id="all_log" style="display:none;" title="查看全部日志信息："></div>
 	<!--主体部分结束-->

@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/resources
+3878
+svn://192.168.1.8/MyFund/src/main/resources
 svn://192.168.1.8
 
 
 
-2012-09-29T06:45:59.920908Z
-3742
-juxj
+2012-10-16T08:34:37.073654Z
+3878
+yangb
 has-props
 
 
@@ -26,81 +26,13 @@ has-props
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-applicationContext.xml
-file
-
-
-
-
-2012-09-29T05:24:40.000000Z
-dd3bb24e49327388bde9130061bc6c7e
-2012-09-06T03:04:00.452788Z
-3214
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3204
-
-applicationContext-timertask.xml
-file
-
-
-
-
-2012-09-11T09:29:21.000000Z
-0ce891f3e2807ec657c764e3450c1ef3
-2012-09-11T08:19:58.771371Z
-3352
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-980
-
 applicationContext-dao.xml
 file
 
 
 
 
-2012-09-27T02:10:10.000000Z
+2012-10-12T06:32:07.527677Z
 9e153c64fc05974a00fa3bdfcc91c7bc
 2012-09-26T06:56:34.785077Z
 3621
@@ -128,16 +60,50 @@ yangb
 
 5938
 
-struts-json.xml
+applicationContext-service.xml
 file
 
 
 
 
-2012-09-11T03:06:51.000000Z
-84058c9de298758997971d322efd0340
-2012-07-27T08:09:15.805736Z
-1710
+2012-10-16T09:07:28.000000Z
+0e3343830d9cbaa753a6ccb3cbb2425f
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2625
+
+applicationContext-timertask.xml
+file
+
+
+
+
+2012-10-12T06:32:07.527677Z
+38313474ac4b1c08233c28284c5550d7
+2012-10-11T03:34:01.974904Z
+3789
 Patrick
 
 
@@ -160,7 +126,78 @@ Patrick
 
 
 
-487
+988
+
+applicationContext.xml
+file
+
+
+
+
+2012-10-12T06:32:07.527677Z
+dd3bb24e49327388bde9130061bc6c7e
+2012-09-06T03:04:00.452788Z
+3214
+yuel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3204
+
+com
+dir
+
+config.properties
+file
+
+
+
+
+2012-10-12T06:32:07.527677Z
+a35c257eb81c91629a0ee6413689dbae
+2012-10-10T07:54:52.106997Z
+3777
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1380
 
 log4j.properties
 file
@@ -168,7 +205,7 @@ file
 
 
 
-2012-09-14T03:13:31.000000Z
+2012-10-12T06:32:07.527677Z
 aa628d1ce5c428ca5dec3a45a0ef883d
 2012-09-14T01:11:50.695785Z
 3428
@@ -196,152 +233,13 @@ Patrick
 
 727
 
-struts-serviceInfo.xml
-file
-
-
-
-
-2012-09-29T06:32:01.000000Z
-6a96ead53b630dadd107461737ce4081
-2012-09-29T06:45:59.920908Z
-3742
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6604
-
-struts-news.xml
-file
-
-
-
-
-2012-09-11T03:06:51.000000Z
-cd301076f85f1cef48b371899bf41cd6
-2012-09-06T09:28:14.172770Z
-3264
-yuel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1817
-
-com
-dir
-
-struts-user.xml
-file
-
-
-
-
-2012-09-14T06:23:36.000000Z
-5d48a3dfb6628f4107ffc4f7d3efc50e
-2012-09-14T04:06:07.432186Z
-3445
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4045
-
-struts-club.xml
-file
-
-
-
-
-2012-09-29T06:15:29.000000Z
-0c2765e41b7d9bb6b96468251b464e8b
-2012-09-29T06:45:59.920908Z
-3742
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1065
-
 struts-admin.xml
 file
 
 
 
 
-2012-09-21T08:25:11.000000Z
+2012-10-12T06:32:07.527677Z
 b1f58e1608055663d3f8a77a810b6b3c
 2012-09-21T05:56:00.591873Z
 3535
@@ -369,121 +267,16 @@ linm
 
 8282
 
-struts-loan.xml
+struts-club.xml
 file
 
 
 
 
-2012-09-25T09:10:54.000000Z
-a100c55b543ba935e4292e021f04fd5b
-2012-09-24T04:06:15.352976Z
-3549
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10664
-
-struts-members.xml
-file
-
-
-
-
-2012-09-11T03:06:51.000000Z
-19d5f585f528a22e28b0f82dd2c81d51
-2012-06-28T08:43:11.976979Z
-577
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-568
-
-templates
-dir
-
-config.properties
-file
-
-
-
-
-2012-09-29T03:29:34.000000Z
-0ac9c95e52e96ee0a539f3660223e4ca
-2012-09-28T03:01:48.685355Z
-3705
-Patrick
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-989
-
-struts.xml
-file
-
-
-
-
-2012-09-21T05:26:06.000000Z
-8da4a8d1ccb03ea8d4013c069dae6166
-2012-09-21T07:33:37.375173Z
-3537
+2012-10-12T06:32:07.527677Z
+0c2765e41b7d9bb6b96468251b464e8b
+2012-09-29T06:45:59.920908Z
+3742
 juxj
 
 
@@ -506,7 +299,7 @@ juxj
 
 
 
-4339
+1065
 
 struts-finance.xml
 file
@@ -514,11 +307,14 @@ file
 
 
 
-2012-09-11T09:29:21.000000Z
-f182b2908dab02fe812b1bf34b830ab5
-2012-09-11T08:19:58.771371Z
-3352
-yuel
+2012-10-15T03:47:58.000000Z
+dcded51a1c164a856e7ad79a8c844f6b
+2012-10-12T08:56:22.789713Z
+3838
+yangb
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -537,24 +333,121 @@ yuel
 
 
 
-
-
-
-1242
+1377
 
-applicationContext-service.xml
+struts-json.xml
 file
 
 
 
 
-2012-09-29T03:29:35.000000Z
-eaf979262569f15ff782e80642459146
-2012-09-28T01:08:36.316859Z
-3698
+2012-10-12T06:32:07.527677Z
+84058c9de298758997971d322efd0340
+2012-07-27T08:09:15.805736Z
+1710
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+487
+
+struts-loan.xml
+file
+
+
+
+
+2012-10-16T09:07:28.000000Z
+3531650fe65e3df6740d1944c4074d26
+2012-10-16T08:34:37.073654Z
+3878
 yangb
 
 
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10874
+
+struts-news.xml
+file
+
+
+
+
+2012-10-16T09:07:28.000000Z
+db32f39a4b9c379c6bb88cb0ad8649e8
+2012-10-15T05:09:59.693152Z
+3858
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1199
+
+struts-serviceInfo.xml
+file
+
+
+
+
+2012-10-12T06:32:07.527677Z
+6a96ead53b630dadd107461737ce4081
+2012-09-29T06:45:59.920908Z
+3742
+juxj
 
 
 
@@ -574,5 +467,78 @@ yangb
 
 
 
-2524
+
+
+6604
+
+struts-user.xml
+file
+
+
+
+
+2012-10-16T09:07:28.000000Z
+e79018b4e72e46ba6d5f82d5b4a6d796
+2012-10-15T05:14:54.496130Z
+3859
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4981
+
+struts.xml
+file
+
+
+
+
+2012-10-12T06:32:07.527677Z
+f3c7bbbeb11af7697def92e1dff8e9c3
+2012-10-09T07:03:53.420395Z
+3754
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4440
+
+templates
+dir
 

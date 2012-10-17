@@ -231,9 +231,9 @@ function uploadImg(){
 	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype==0 || #session._user.activetype==2">&nbsp;</s:if><s:else>已验证</s:else>&nbsp;</div>
 	    <div class="hr_20"> &nbsp; </div>
 	    <div class="hr_20"> &nbsp; </div>
-		<div class="center" style="width:500px;">
-			<input  name="upload_img" value="修改注册信息" type="button" onclick="regshow();" class="but_gray"/>
-			<input name="upload_img" value="修改登录密码" type="button" onclick="rpshow();"  class="but_gray"/>
+		<div align="center">
+			<input name="upload_img" value="修改注册信息" type="button" onclick="regshow();" class="btnsub blue1"/>&nbsp;&nbsp;
+			<input name="upload_img" value="修改登录密码" type="button" onclick="rpshow();"  class="btnsub blue1"/>
 		</div>
 		<div class="hr_20"> &nbsp; </div>	    
 	</div>
@@ -328,5 +328,5 @@ function uploadImg(){
 </div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp"></jsp:include>
-<body>
+</body>
 </html>

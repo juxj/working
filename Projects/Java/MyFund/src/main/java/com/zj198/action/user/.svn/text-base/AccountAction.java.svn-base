@@ -371,6 +371,9 @@ public class AccountAction extends BaseAction {
 					}
 					usrUser.setMobile(mobile);
 					//oldInfo(usrUser);
+					if(usrUser.getOldid()!=null){
+						usrUser.setOldid(null);
+					}
 					if(accountService.updateUser(usrUser)>0){
 						ctx.getSession().put("_user", user);
 						//TODO: 增加发送手机激活码
@@ -391,6 +394,9 @@ public class AccountAction extends BaseAction {
 //					msg="更新失败。";
 //					return "ajax";
 //				}
+				if(usrUser.getOldid()!=null){
+					usrUser.setOldid(null);
+				}
 				if(accountService.updateUser(usrUser)>0){
 					ctx.getSession().put("_user", user);
 					msg=SUCCESS;

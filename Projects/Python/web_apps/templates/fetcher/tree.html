@@ -1,19 +1,17 @@
 {% extends "fetcher/base.html" %}
 {% load admin_static %}
 {% block extrastyle %}
-	<link rel="stylesheet" href="{% static "ztree/css/demo.css" %}" type="text/css">
-	<link rel="stylesheet" href="{% static "ztree/css/zTreeStyle/zTreeStyle.css" %}" type="text/css">
-	<script type="text/javascript" src="{% static "ztree/js/jquery.ztree.core-3.4.js" %}"></script>
-	<script type="text/javascript" src="{% static "fetcher/js/jquery.json-2.3.js" %}"></script>
+	<link rel="stylesheet" 
+		href="{% static "ztree/css/demo.css" %}" type="text/css">
+	<link rel="stylesheet" 
+		href="{% static "ztree/css/zTreeStyle/zTreeStyle.css" %}" type="text/css">
+	<script type="text/javascript" 
+		src="{% static "ztree/js/jquery.ztree.core-3.4.js" %}"></script>
+	<script type="text/javascript" 
+		src="{% static "ztree/js/jquery.ztree.excheck-3.4.js" %}"></script>
+		<script type="text/javascript" 
+		src="{% static "fetcher/js/jquery.json-2.3.js" %}"></script>
 	<script type="text/javascript">
-		var setting = {
-			check:{
-				enable:true,
-				chkStyle:"checkbox",
-				chkboxType:{"Y":"p","N":"s"}
-			}
-		};
-
 		function build_html_tree() {
 			var url = "/get_tree_data";
 			$.ajax({
@@ -23,20 +21,76 @@
 				data: {url: "{{url}}"},
 				success: function(data){
 					console.log(data)
+					setting = {
+						check:{
+							enable:true,
+							chkStyle:"checkbox",
+							chkboxType:{"Y":"p","Y":"s"},
+							autoCheckTrigger:true,
+							nocheckinherit:true
+						},
+						view:{
+							showTitle:true
+						},
+						callback:{
+							onClick: showHTMLPanel
+						}
+					};
+
 					$.fn.zTree.init($("#treeDemo"), setting,data);
 				}
 			});
 		}
+		
+		function showHTMLPanel(event, treeId, treeNode) {
+			tag = build_html_tag(treeNode);
+			$("#html_panel").html(tag)
+		}
+
+		function build_html_tag(node) {
+					
+			var children = node.children	
+
+			var size = 0;
+			if (children != null) {
+				size = children.length
+			}
+
+
+			if (size>0) {
+				tag = '<'+node.name+'>' +node.title 
+				for (var i=0; i<size; i++) {
+					child = children[i]
+					tag = tag + build_html_tag(child) 
+				}
+				tag = tag +  '</'+node.name+'>'
+			} else {
+				tag = '<'+node.name+'>' +node.title + '</'+node.name+'>'
+			}
+			return tag
+		}
+	
 
 		$(document).ready(function(){
 			build_html_tree()
 		});
+
 	</script>
 {% endblock %}
 {% block title %}Web Fetcher{% endblock %}
 {% block header%} Tree {% endblock%}
 {% block content%} 
-	<div id="tree">
-		<ul id="treeDemo" class="ztree"></ul>
-	</div>
+	<table>
+		<tr>
+			<td>
+				<div id="tree">
+					<ul id="treeDemo" class="ztree"></ul>
+				</div>
+			</td>
+			<td>
+				<div id="html_panel">
+				</div>
+			<td>
+		</tr>
+	</table>	
 {% endblock%}

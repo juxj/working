@@ -73,10 +73,10 @@ public class UserAction extends BaseAction {
 		context.getSession().remove("mparamid");
 		//context.getSession().put("show_home_page", true);
 		//用户中心菜单--patrick
-		if(Constants.MENU_MAP.get(user.getUserTypeGroup())==null){
-			List<UsrMenu> menuList = profileService.findMenuListByUid(user.getUserTypeGroup());
-			Constants.MENU_MAP.put(user.getUserTypeGroup(),menuList);
-		}
+//		if(Constants.MENU_MAP.get(user.getUserTypeGroup())==null){
+//			List<UsrMenu> menuList = profileService.findMenuListByGroupType(user.getUserTypeGroup());
+//			Constants.MENU_MAP.put(user.getUserTypeGroup(),menuList);
+//		}
 		this.bankFinanceRecommendationList = this.financeProdService.findRecommendationByTopNumber(1, 5);
 		usrLoginhistory=profileService.getLoginHistory();
 		if(profileService.getProfiles(user.getId())!=null){
@@ -118,19 +118,16 @@ public class UserAction extends BaseAction {
 		return ERROR;
 	}
 	
-	
-	
-
 	/**edit profile跳过*/
 	public String next(){
 		ActionContext context = ActionContext.getContext();	
 		UsrUser user = (UsrUser)context.getSession().get("_user");
 		context.getSession().remove("mparamid");
-		//用户中心菜单--patrick
-		if(Constants.MENU_MAP.get(user.getUserTypeGroup())==null){
-			List<UsrMenu> menuList = profileService.findMenuListByUid(user.getUserTypeGroup());
-			Constants.MENU_MAP.put(user.getUserTypeGroup(),menuList);
-		}
+//		//用户中心菜单--patrick
+//		if(Constants.MENU_MAP.get(user.getUserTypeGroup())==null){
+//			List<UsrMenu> menuList = profileService.findMenuListByGroupType(user.getUserTypeGroup());
+//			Constants.MENU_MAP.put(user.getUserTypeGroup(),menuList);
+//		}
 		usrLoginhistory=profileService.getLoginHistory();
 		int groupId = profileService.getGroupidByUserType(user.getType());
 		typeName=dictoryDataService.getDicUserTypeById(user.getType()).getName();
@@ -186,8 +183,8 @@ public class UserAction extends BaseAction {
 		return ERROR;
 	}
 	public String capitalLetter(){
-		ActionContext context = ActionContext.getContext();	
-		UsrUser user = (UsrUser)context.getSession().get("_user");
+//		ActionContext context = ActionContext.getContext();	
+//		UsrUser user = (UsrUser)context.getSession().get("_user");
 		return "capital";
 	}
 	/**取得用户所申请的服务订单*/

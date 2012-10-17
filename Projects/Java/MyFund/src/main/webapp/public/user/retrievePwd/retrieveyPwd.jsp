@@ -16,7 +16,15 @@ $(function() {
 });
 function checkform(){
 	if($("#pass").val() && $("#rpass").val() && $("#verifycode").val()){
-		$("#loginform").submit();
+		$.post("/Recovery!resetPwd.act",{password:$('#pass').val(),verifycode:$('#verifycode').val(),v:$('#vid').val()},function(a){
+			if(a=='success'){
+				alert("密码修改成功");
+				window.location.href="/Account.act";
+			}else{
+				alert(a);
+			}
+		});
+		//$("#loginform").submit();
 	}else{
 		$("#msg").html("<div>请填写用户名、和验证码。</div>");
 		$("#msg").show();
@@ -36,6 +44,7 @@ function check_rpass() {
 	var rpass_error = $("#rpass_error");
 	if($("#pass").val()==$("#rpass").val()){
 		rpass_error.html("");
+		
 	}else{
 		rpass_error.addClass("txt-err");
 		rpass_error.html("输入的密码不一致。");
@@ -63,7 +72,7 @@ function check_rpass() {
             <dl>
               <dd>
 		          <h6><span class="txt-impt">*</span>新密码：</h6>
-		          <input type="hidden" name="v" value="${v }"/>
+		          <input type="hidden" name="v" id="vid" value="${v }"/>
 		          <input id="pass" name="password" onblur="check_pass()" type=password value="" class="input-text" />
 		          <span id="pass_error" class="txt-info">6~16个字符，区分大小写</span></dd>
 		        <dd>

@@ -1,10 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Àí²Æ·þÎñ²úÆ·Ò³_ÖÐ¹ú×Ê½ðÍø</title>
+	<title>ç†è´¢æœåŠ¡äº§å“é¡µ_ä¸­å›½èµ„é‡‘ç½‘</title>
 	<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
@@ -13,7 +13,7 @@
   <body>
 	<div class="header index_header"><jsp:include page="/public/head1.jsp" /></div>
 	<div class="clear"> &nbsp; </div><div class="hr_10"> &nbsp; </div> 
-	<div class="M_menu"><a href="/news/InfoCenter.act">ÐÅÏ¢ÖÐÐÄ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
+	<div class="M_menu"><a href="/news/InfoCenter.act">ä¿¡æ¯ä¸­å¿ƒ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
 		${knwTitle.typeName }</div>
 	<div class="hr_10"> &nbsp; </div> 	
 	<div class="M_out">	
@@ -22,15 +22,15 @@
 	        <h5 style="line-height:30px;">${knwTitle.title}</h5>
 	        <hr style="width:100%;"/>	        
 	        <div class="hr_10"> &nbsp;</div>		
-			<p class="txt_content_guide">${knwTitle.contents }</p>¡¡         ¡¡        
+			<p class="txt_content_guide">${knwTitle.contents }</p>ã€€         ã€€        
         </div>
     </div>    
     <div class="M_out_right_text fr">
     <div class="menu_red white">
-      <h6>ÓÃ»§Ö¸ÄÏ</h6>
+      <h6>ç”¨æˆ·æŒ‡å—</h6>
     </div>
     <div class="box_3">
-      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">×¢²áÓëµÇÂ¼</div>
+      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">æ³¨å†Œä¸Žç™»å½•</div>
       <ul class="new_li">
 		<s:iterator id="item" value="knwTitleMap['NEWS_REGISTER_LOGIN']">
 	        	<li>	          	
@@ -43,7 +43,7 @@
 	       		</li>
 		</s:iterator>  
       </ul>
-      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">ÈÚ×ÊÓë·þÎñ</div>
+      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">èžèµ„ä¸ŽæœåŠ¡</div>
       <ul class="new_li">
 		<s:iterator id="item" value="knwTitleMap['NEWS_FINANCING_SERVICE']">
 	        	<li>	          	
@@ -56,7 +56,7 @@
 	       		</li>
 		</s:iterator>  
       </ul>
-      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">·þÎñÐ­ÒéÓë¹æÔò</div>
+      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">æœåŠ¡åè®®ä¸Žè§„åˆ™</div>
       <ul class="new_li">
 		<s:iterator id="item" value="knwTitleMap['NEWS_SERVICE_AGREEMENT']">
 	        	<li>	          	
@@ -69,7 +69,7 @@
 	       		</li>
 		</s:iterator>  
       </ul>
-      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">³£¼ûÎÊÌâ</div>
+      <div style="background: #f4f4f4; font-weight: bolder; color: #333; line-height:30px; padding-left:20px;">å¸¸è§é—®é¢˜</div>
       <ul class="new_li">
 		<s:iterator id="item" value="knwTitleMap['NEWS_COMMON_ISSUES']">
 	        	<li>	          	
@@ -89,7 +89,7 @@
 </div>	
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp;</div>
-  	<!--Ö÷Ìå²¿·Ö½áÊø-->
+  	<!--ä¸»ä½“éƒ¨åˆ†ç»“æŸ-->
 	<jsp:include page="/public/bottom.jsp" />
   </body>
   </html>

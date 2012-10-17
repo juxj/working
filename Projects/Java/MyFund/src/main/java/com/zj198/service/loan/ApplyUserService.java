@@ -1,6 +1,7 @@
 package com.zj198.service.loan;
 
 import com.zj198.model.OrdApplyUsrCompany;
+import com.zj198.model.OrdApplyUsrPerson;
 
 
 /**
@@ -18,5 +19,14 @@ public interface ApplyUserService {
 	public OrdApplyUsrCompany getByApplyId(Integer id);
 	
 	public OrdApplyUsrCompany getOrdApplyUsrCompanyById(Integer id);
+	
+	/**linm*/
+	public void addPersDetail(OrdApplyUsrPerson aup);
+	
+	public void updateCompDetail(OrdApplyUsrPerson aup);
+	
+	public OrdApplyUsrPerson getByApplyUsrPerId(Integer id);
+	
+	public OrdApplyUsrPerson getOrdApplyUsrPersonById(Integer id);
 
 }

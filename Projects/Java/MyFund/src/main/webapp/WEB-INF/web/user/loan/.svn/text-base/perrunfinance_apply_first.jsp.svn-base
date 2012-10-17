@@ -28,6 +28,14 @@ $(function(){
 	$("#applyForm").validate();
 	servicedetail();
 });
+function otherPurpose(){
+	var j = $('#other').val();
+	if(j==68){
+		$('#otherPurpose').html("<input type='text' name='apply.loanPurposeOther'/>");
+	}else{
+		$('#otherPurpose').html('');
+	}
+}
 function servicedetail(){
 		if($("#zjservice").attr("checked")){
 			$("#loanSubmit").attr("disabled",false);
@@ -38,7 +46,7 @@ function servicedetail(){
 
 	function industryList(id){
 		if(id!=''){
-			$.post("applyadmin/financeApply!industry.act",{industryId:id},function(data){
+			$.post("/user/loan/financeApply!industry.act",{industryId:id},function(data){
 				$("#runningTradeChild").html(data);
 			});
 		}
@@ -96,19 +104,21 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 <form action="/user/loan/financeApply!applySecond.act" id="applyForm" method="post" class="box_form" style="margin:0px;" >
 <!-- 个人经营性贷款快速申请类型 -->
 <s:hidden name="product.id"></s:hidden>
+<input type="hidden" name="oaucId" value="${oaucId }" />
 	<div class="C_title">融资需求信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
 	</div>
 	<div class="C_form">
              <dd>
                 <h6>贷款用途：</h6>
                 <common:select name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:200px;"></common:select>
+               	<div id="otherPurpose"></div>
                 <h6>贷款金额：</h6>
-                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="9"/>&nbsp;&nbsp;万元
+                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="6"/>&nbsp;&nbsp;万元
                 <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>贷款期限：</h6>
-                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="3"/>&nbsp;&nbsp;个月
+                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="2"/>&nbsp;&nbsp;个月
                 <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>

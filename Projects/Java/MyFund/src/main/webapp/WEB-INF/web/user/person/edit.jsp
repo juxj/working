@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title>完善信息（个人）用户中心_中国资金网</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/public2.css" type="text/css" media="screen, projection" />
@@ -39,7 +40,7 @@ $(document).ready(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/Profile.act">详细信息</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->

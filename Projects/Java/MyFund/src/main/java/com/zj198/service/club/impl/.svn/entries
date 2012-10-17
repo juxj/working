@@ -1,8 +1,8 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/club/impl
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/club/impl
 svn://192.168.1.8
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2012-09-24T05:56:18.000000Z
+2012-10-12T06:32:11.289556Z
 71dd94b2c2f46dea161d7a06e0d73480
 2012-09-24T06:38:25.715159Z
 3554

@@ -15,10 +15,15 @@
 
 <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
   <caption>
-  <span class="fr view_all"><a href="/service/club.act?mparamid=17&checkstate=1">查看全部»</a></span>
+  <span class="fr view_all"><a href="/service/club!home.act?mparamid=17&checkstate=1">查看全部»</a></span>
   <h6>资金信息</h6>
   <span class="leftdetail"><a href="javascript:edit();">立即发布</a></span>
   </caption>
+  <s:if test="supplyInfoList == null || supplyInfoList.size<=0">
+  	<tr>
+  		<td colspan="7" align="center">暂无资金信息</td>
+  	</tr>
+  </s:if><s:else>
   <tr>
   	 <th>资金标题</th>
      <th>发布时间</th>
@@ -28,11 +33,7 @@
      <th>状态</th>
      <th>操作</th>
   </tr>
-  <s:if test="supplyInfoList == null || supplyInfoList.size<=0">
-  	<tr>
-  		<td colspan="7" align="center">暂无资金信息</td>
-  	</tr>
-  </s:if>
+  </s:else>
   <s:iterator value="supplyInfoList" id="item">
 	  <tr>
 	    <td title="${title}">

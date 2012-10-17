@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>资料管理</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
@@ -130,64 +131,62 @@
 <div class="hr_10"> &nbsp; </div>
 <!--头部结束-->
   <!--理财服务产品列表页面开始-->
-  <div class="M_menu">
-  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=${viewAttachType }&applyId=${applyId}">资料管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#97181d;">${msg }</span>
-  </div>
-  <div class="hr_10"> &nbsp; </div> 
-  <div class="hr_10"> &nbsp; </div> 
-  <div class="M_box">
-	  <div style="padding-left:20px;">
-	  <s:if test="viewAttachType == 1">
-		<li>请在5个工作日内将需要线下提交的材料邮寄或者传真给我们</li>
-		<li>上海市浦东新区张杨路707号生命人寿大厦501室中国资金网 邮编：200120</li>
-		<li>传真号：021-56784323</li>
-	  </s:if>
-	  </div>
-  </div>
+	<div class="M_menu">
+	  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=${viewAttachType }&applyId=${applyId}">资料管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#97181d;">${msg }</span>
+	</div>
+	<div class="hr_10"> &nbsp; </div> 
+	<div class="container_950 box_4">
+		  <div class="P_title">上传资料</div>
+		  <div class="line">
+			  <s:if test="viewAttachType == 1">
+				<li>请在5个工作日内将需要线下提交的材料邮寄或者传真给我们</li>
+				<li>上海市浦东新区张杨路707号生命人寿大厦501室中国资金网 邮编：200120</li>
+				<li>传真号：021-56784323</li>
+			  </s:if>
+		  </div>
+	</div>
   <s:form id="financeManage" action="financeAttach!checkAttach.act" namespace="/user/loan">
   <s:hidden name="applyId"></s:hidden>
   <s:hidden name="viewAttachType"></s:hidden>
   <s:hidden name="attach.id" id="upload_attach_id"></s:hidden>
   <s:hidden name="attach.uploadStatus" id="uploadStatus"></s:hidden>
   <div class="hr_10"> &nbsp; </div> 
-  <div class="hr_10"> &nbsp;</div>
-  <div class="M_box">
-        <table class="container_950 center box_4">
+  <div class="container_950 box_4">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
      		<tr class="top_color">
-            <td style="padding-left:25px;">资料名称</td>
-            <td>说明</td>
-            <td>递交方式</td>
-            <td>状态</td>
-            <td>操作</td>
-
-          </tr>
+	            <td style="padding-left:25px; width:350px;">资料名称</td>
+	            <td style="width:150px;">说明</td>
+	            <td style="width:160px;">递交方式</td>
+	            <td >状态</td>
+	            <td align="center">操作</td>
+            </tr>
           <tbody>
-           <tr class="top_color01">
-           	<td class="view_detail" style="padding-left:25px;">
-           		<label>中国资金网融资咨询服务协议加盖公章&nbsp;</label>
-           		<s:if test="viewAttachType == 1">
-           		  <a href="/user/loan/downloadAttach!downAgreeTemplate.act" target="_blank" style="float:left;">模板下载</a>
-           		</s:if>
-           	</td>
-           	<td></td>
-           	<td></td>
-           	<td>
-           		<s:if test="apply.agreeFileUpload == null || apply.agreeFileUpload == ''">
-           			未递交
-           		</s:if>
-           		<s:else>
-           			已上传
-           		</s:else>
-           	</td>
-           	<td>
-          	   <s:if test="viewAttachType == 1">
-           		<input type="button" class="but_gray" value="上传" onclick="uploadFile(0,1);"/>
-          	   </s:if>
-          	   <s:if test="apply.agreeFileUpload != null && apply.agreeFileUpload != ''">
-           		<input type="button" class="but_gray" value="下载" onclick="window.open('/user/loan/downloadAttach!downAgree.act?applyId=${applyId}');"/>
-          	   </s:if>
-           	</td>
-           </tr>
+           	<tr class="top_color01">
+	           	<td class="view_detail" style="padding-left:25px;" >
+	           		<span>中国资金网融资咨询服务协议加盖公章&nbsp;</span>
+	           		<s:if test="viewAttachType == 1">
+	           		  <span><a href="/user/loan/downloadAttach!downAgreeTemplate.act" target="_blank" style="float:left;">模板下载</a></span>
+	           		</s:if>
+	           	</td>
+	           	<td></td>
+	           	<td></td>
+	           	<td>
+	           		<s:if test="apply.agreeFileUpload == null || apply.agreeFileUpload == ''">
+	           			未递交
+	           		</s:if>
+	           		<s:else>
+	           			已上传
+	           		</s:else>
+	           	</td>
+	           	<td align="right" style="padding-right:25px;">
+	          	   <s:if test="viewAttachType == 1">
+	           		<input type="button" class="but_gray" value="上传" onclick="uploadFile(0,1);"/>
+	          	   </s:if>
+	          	   <s:if test="apply.agreeFileUpload != null && apply.agreeFileUpload != ''">
+	           		<input type="button" class="but_gray" value="下载" onclick="window.open('/user/loan/downloadAttach!downAgree.act?applyId=${applyId}');"/>
+	          	   </s:if>
+	           	</td>
+           	</tr>
           
 		 	<s:iterator id ="item" value="attachList">
 			<tr class="top_color01">
@@ -200,7 +199,7 @@
 				</td>
 				<td><common:print valueId="#item.supplyWay"/></td>
 	   			<td><common:print valueId="#item.uploadStatus"/></td>
-	   			<td class="view_detail">
+	   			<td class="view_detail" align="right" style="padding-right:25px;">
 	   			<s:if test="viewAttachType == 1">
 		   			<input type="button" class="but_gray" value="上传" onclick="uploadFile('${item.id}',0);"/>
 	   			</s:if>
@@ -245,11 +244,8 @@
 	</s:form>
 </div>   
 <div id="download_attach" style="display:none;" title="文件下载">
-
 </div>   
-  
 <div id="img_app" style="display:none;" title="图片预览">
-
 </div>  
 <!-- 
 未递交
@@ -259,10 +255,10 @@
 修改待确认
  -->
   <!--理财服务产品列表页面结束--> 
-
+</div>
+<div class="hr_10"> &nbsp;</div>
 <!--foot-->
 <jsp:include page="/public/bottom.jsp" />
 <!--foot-->
-</div>
 </body>
 </html>

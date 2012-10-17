@@ -32,11 +32,13 @@
         <!--表格部分开始-->
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
-            <td colspan="4" class="Search_t_title">${prdBankfinance.name}</td>
+            <td colspan="4" class="Search_t_title red">${prdBankfinance.name}</td>
           </tr>
+        </table>
+        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
             <td class="Search_t_connect">产品名称</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.name}</td>
+            <td colspan="3" class="Search_t_connect01">${prdBankfinance.name}</td>
           </tr>
           <tr>
             <td class="Search_t_connect">发行银行</td>
@@ -57,10 +59,10 @@
             <td class="Search_t_connect01"><s:date name="prdBankfinance.sellend"/></td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">休息周期</td>
+            <td class="Search_t_connect">休息周期</td>
             <td class="Search_t_connect01">${prdBankfinance.benefitperiod}</td>
-            <td class="Search_t_connect02">预期最高年化收益率(%)</td>
-            <td class="Search_t_connect01">${prdBankfinance.benefitrate}</td>
+            <td class="Search_t_connect">预期最高年化收益率(%)</td>
+            <td class="Search_t_connect01 red">${prdBankfinance.benefitrate}</td>
           </tr>
           <tr>
             <td class="Search_t_connect">产品类型</td>
@@ -75,7 +77,7 @@
             <td class="Search_t_connect01">${prdBankfinance.sellarea}</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">递增单位（单位：元）</td>
+            <td class="Search_t_connect">递增单位（单位：元）</td>
             <td class="Search_t_connect01">${prdBankfinance.addunit}</td>
             <td class="Search_t_connect">产品管理费</td>
             <td class="Search_t_connect01">${prdBankfinance.managefee}</td>
@@ -88,15 +90,15 @@
           </tr>
           <tr>
             <td class="Search_t_connect">提前终止条件</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.endcondition}</td>
+            <td colspan="3" class="Search_t_connect01" >${prdBankfinance.endcondition}</td>
           </tr>
           <tr>
-            <td class="Search_t_connect02">产品说明</td>
-            <td colspan="3" style="padding-left:10px; padding-bottom:5px;">${prdBankfinance.description}</td>
+            <td class="Search_t_connect">产品说明</td>
+            <td colspan="3" class="Search_t_connect01">${prdBankfinance.description}</td>
           </tr>
           <tr>
             <td class="Search_t_connect">收益率说明</td>
-            <td colspan="3" style="padding-left:10px;">${prdBankfinance.benefitratedesc}</td>
+            <td colspan="3" class="Search_t_connect01">${prdBankfinance.benefitratedesc}</td>
           </tr>
         </table>
         <!--表格部分结束-->

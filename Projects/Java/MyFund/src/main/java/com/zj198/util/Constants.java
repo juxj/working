@@ -1,15 +1,11 @@
 package com.zj198.util;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.zj198.model.DicCommon;
 import com.zj198.model.DicInvestRange;
-import com.zj198.model.KnwTitle;
-import com.zj198.model.UsrMenu;
 
 
 public class Constants{
@@ -179,28 +175,27 @@ public class Constants{
 	/**无效状态*/
 	public static final int BASEDATA_GROUP_ORG_ATTACH_STATUS_OFF = 0;	//无效状态
 	
-	public static final String LOAN_EMAIL = "shixl@zj198.com"; // "zeroleavebaoyang@gmail.com";//
-																// 接受邮件地址
+	public static final String LOAN_EMAIL = "shixl@zj198.com"; // "zeroleavebaoyang@gmail.com";//// 接受邮件地址
 
-																// 暂时硬编码
-	public static final String LOAN_BCC = "shenyd@zj198.com";
+	public static final String LOAN_BCC = "shenyd@zj198.com";// 暂时硬编码
+	
+//	//---begin 改用memecached缓存，以下变量将废弃--Patrick
 	//用户中心菜单,非final，第一次调用填充，同种用户共用,需要调整至DAO--patrick
-	public static Map<Integer,List<UsrMenu>> MENU_MAP = new HashMap<Integer,List<UsrMenu>>();
-	
-	//Common字典数据缓存,非直接取用，仅可以从DAO层取用，reference DicCommonDAOImpl.java
-	//按group缓存
-	public static Map<Integer,List<DicCommon>> COMMON_DATA_GROUP_MAP = new HashMap<Integer,List<DicCommon>>();
-	//单个common缓存
-	public static Map<Integer,DicCommon> COMMON_DATA_ID = new HashMap<Integer,DicCommon>();
-	
-	public static Map<Integer, List<KnwTitle>> NEWS_MAP = new HashMap<Integer, List<KnwTitle>>();
+//	public static Map<Integer,List<UsrMenu>> MENU_MAP = new HashMap<Integer,List<UsrMenu>>();
+//	//Common字典数据缓存,非直接取用，仅可以从DAO层取用，reference DicCommonDAOImpl.java
+//	//按group缓存
+//	public static Map<Integer,List<DicCommon>> COMMON_DATA_GROUP_MAP = new HashMap<Integer,List<DicCommon>>();
+//	//单个common缓存
+//	public static Map<Integer,DicCommon> COMMON_DATA_ID = new HashMap<Integer,DicCommon>();
+//	public static Map<Integer, List<KnwTitle>> NEWS_MAP = new HashMap<Integer, List<KnwTitle>>();
+//	//---end 改用memecached缓存，以上变量将废弃--Patrick
 	
 	public static Map<Integer, List<DicInvestRange>> CLUB_PARAMETERS = new HashMap<Integer, List<DicInvestRange>>();
 	
-	public static List<Object> REQUEST_INFO_LIST  = new ArrayList<Object>();
-	public static List<Object>  SUPPLY_INFO_LIST = new ArrayList<Object>();
+//	public static List<Object> REQUEST_INFO_LIST  = new ArrayList<Object>();
+//	public static List<Object> SUPPLY_INFO_LIST = new ArrayList<Object>();
 	
-	public static Map<String, LinkedHashMap<String, String>> valueSet = getValueSet();	
+	public static Map<String, LinkedHashMap<String, String>> valueSet = getValueSet();
 	public static Map<String, LinkedHashMap<String, String>> getValueSet(){
 		Map<String, LinkedHashMap<String, String>> m = new HashMap<String, LinkedHashMap<String, String>>();
 		LinkedHashMap<String, String> v1 = new LinkedHashMap<String, String> ();

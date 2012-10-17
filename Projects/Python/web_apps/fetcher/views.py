@@ -18,11 +18,10 @@ def get_tree_data(request):
 
 	url = request.GET['url']
 	path = '/home/tju/Workspaces/Projects/Python/web_apps/data/'
-	'''
+
 	file_name = path + request.session.session_key+'.html'
 	if os.path.isfile(file_name):
 		os.remove(file_name)
-
 	fetcher = WebFetcher(url)
 	data = fetcher.get_html_page()	
 
@@ -31,8 +30,8 @@ def get_tree_data(request):
 	for line in data:
 		f.write(line)
 	f.close()
-	'''
-	#json = JsonBuilder(file_name)
-	json = JsonBuilder(path+'new.html')
+
+	json = JsonBuilder(file_name)
+	#json = JsonBuilder(path+'new.html')
 	result = json.get_html_json()
 	return HttpResponse(result);

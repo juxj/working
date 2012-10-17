@@ -37,17 +37,17 @@
 </div>
 <form id="frmQuerySupplyInfo" action="/club/showSupplyInfoHome.act"><input id="pageNo" type="hidden" name="pageNo"/> </form>
 <div class="hr_10"> &nbsp; </div>
+<div class="clear"> &nbsp;</div>
 <div class="container_950">
-	<div class="clear"> &nbsp;</div>
-	<div class="M_menu">
+<div class="M_menu">
 		融资管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;融资俱乐部
+</div>
+<div class="clear"> &nbsp; </div>
+<div class="hr_10"> &nbsp; </div> 
+<div class="box_4">
+	<div class="P_title">资金信息</div>
+	<div class="line" style="height:30px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
 	</div>
-	<div class="clear"> &nbsp; </div>
-	<div class="hr_10"> &nbsp; </div> 
-	<div class="container_950 box_4" style="height:90px;">
-		<div class="P_title">资金信息</div>
-		<div class="line"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
-	</div>		
 	<div class="hr_10"> &nbsp; </div> 
 	<!-- 表格 -->	
 	<table class="gold-table">
@@ -57,7 +57,7 @@
 		<th>资金数额</th>
 		<th>投资方式</th>
 		<th>状态</th>
-		<th width="12%">操作</th>
+		<th width="15%">操作</th>
 		<s:if test="pager.data != null || pager.data.size>0">
 			<s:iterator id="item" value="pager.data" status="st">
 				<tr style="padding-left:8px;">
@@ -107,7 +107,7 @@
 						已阻止
 					</s:if>
 				</td>
-				<td>
+				<td class="red">
 					<a class="view_detail" href="/service/supplyInfoAction!detail.act?clbSupplyInfoId=${item.id }">查看</a>
 					<s:if test="#item.rank==0 || #item.rank==9">
 						<a href="/service/supplyInfoAction4User!edit.act?clbSupplyInfoId=${item.id }">编辑</a>

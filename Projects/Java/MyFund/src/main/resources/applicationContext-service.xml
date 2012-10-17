@@ -11,6 +11,7 @@
 	<bean name="dictoryDataService" class="com.zj198.service.common.impl.DictoryDataServiceImpl"/>
 	
 	<bean name="profileService" class="com.zj198.service.user.impl.ProfileServiceImpl"/>
+	<bean name="userCenterMenuService" class="com.zj198.service.user.impl.UserCenterMenuServiceImpl"/>
 	<bean name="financeProdService" class="com.zj198.service.finservice.impl.FinanceProdServiceImpl"/>
 	<!-- admin -->
 	<bean name="adminAccountService" class="com.zj198.service.admin.impl.AdminAccountServiceImpl"/>

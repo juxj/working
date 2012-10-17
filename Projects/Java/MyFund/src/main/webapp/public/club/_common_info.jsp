@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf8" pageEncoding="utf8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <tr>
   <td class="Search_t_connect">信息时效期</td>
@@ -30,7 +30,7 @@
 </tr>            
 <tr>
   <td colspan="4" class="box_5">
-  <p style="color:#97181d; font-weight: bold;">公司介绍</p><p>${clbSupplyInfo.infoCompanyinfoDisp }</p><p class="hr_20"></p>
-  <p style="color:#97181d; font-weight: bold;">资金描述</p><p>${clbSupplyInfo.remarkDisp}</p>
+  <p style="color:#97181d; font-weight: bold;">公司介绍</p><p>${clbSupplyInfo.infoCompanyinfo}</p><p class="hr_20"></p>
+  <p style="color:#97181d; font-weight: bold;">资金描述</p><p>${clbSupplyInfo.remark}</p>
   </td>
 </tr>

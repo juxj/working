@@ -9,7 +9,11 @@
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
-
+<script type="text/javascript">
+	function tiaoz(){
+		window.location.href = '/user/Profile!edit.act?companyMark=2'
+	}
+</script>
 </head>
 
 <body>
@@ -26,8 +30,9 @@
   		<div class="box_948">
           <div class="fl" style="padding-top:20px;padding-left:60px;padding-right:20px;padding-bottom:40px;"><img src="/images/wrong_ico.png"/></div>
           <div class="txt_content" >  		
-		  <h5>对不起，你的帐户尚未通过审核，无法执行该操作 ! 请您<a href="/user/Profile!edit.act?companyMark=2" class="red">点此</a>完善您的详细信息</h5><span>
+		  <h5>对不起，你的帐户尚未通过审核，无法执行该操作 ! 请您完善您的详细信息</h5><span>
 		  </div>
+		  <input type="button" onclick="tiaoz()" value="完善信息">
 		</div>
 </div>
 <!--主体部分结束-->

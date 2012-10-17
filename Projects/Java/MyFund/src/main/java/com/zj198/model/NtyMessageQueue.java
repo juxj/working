@@ -16,6 +16,15 @@ public class NtyMessageQueue implements java.io.Serializable {
 	private String receiver;
 	private Integer status;
 	private Date createdt;
+	private String financeName;
+
+	public String getFinanceName() {
+		return financeName;
+	}
+
+	public void setFinanceName(String financeName) {
+		this.financeName = financeName;
+	}
 
 	/** default constructor */
 	public NtyMessageQueue() {

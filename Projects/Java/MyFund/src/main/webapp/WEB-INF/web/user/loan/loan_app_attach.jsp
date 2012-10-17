@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.min.js"></script>
 <script type="text/javascript" src="/script/jquery.ui.dialog.min.js" > </script>
@@ -116,18 +117,19 @@
   <s:hidden name="loanData.uploadStatus" id="uploadStatus"></s:hidden>
   <div class="hr_10"> &nbsp; </div> 
   <div class="hr_10"> &nbsp;</div>
-  <div class="M_box">
-        <table border="0" cellspacing="0" cellpadding="0" style="width:100%" >
-     		<tr class="BankProductHeader">
-            <th>资料名称</th>
-            <th>说明</th>
-            <th>递交方式</th>
-            <th>状态</th>
-            <th>操作</th>
+  <div class="container_950 ">
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">查看材料</div>
+        <table class="box_4" border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%">
+     		<tr class="top_color">
+            <td style="padding-left:25px;">资料名称</td>
+            <td style="padding-left:10px;">说明</td>
+            <td style="padding-left:10px;">递交方式</td>
+            <td style="padding-left:10px;">状态</td>
+            <td width="200px" align="center">操作</td>
           </tr>
 		 	<s:iterator id ="item" value="loanDataList">
 			<tr class="gold_connect">
-				<td>
+				<td style="padding-left:25px;">
 					${item.supplyName }
 				</td>
 				<td>
@@ -135,7 +137,7 @@
 				</td>
 				<td><common:print valueId="#item.supplyWay"/></td>
 	   			<td><common:print valueId="#item.uploadStatus"/></td>
-	   			<td class="view_detail">
+	   			<td class="view_detail" align="right">
 	   			<s:if test="viewAttachType == 1">
 		   			<input type="button" class="but_gray" value="上传" onclick="uploadFile('${item.id}',0);"/>
 	   			</s:if>

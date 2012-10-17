@@ -7,7 +7,7 @@ class HTMLAttrRemover(HTMLParser):
 	__useless = 0	
 	
 	def discard_tag(self, tag):
-		tags = ['script', 'link', 'style', 'img', 'meta', 'mata']
+		tags = ['script', 'link', 'base',  'style', 'img', 'meta', 'mata' ]
 		#tags = ['script', 'style' ]
 		if tag in tags:
 			 HTMLAttrRemover.__useless = 1
@@ -30,4 +30,4 @@ class HTMLAttrRemover(HTMLParser):
 
 	def handle_data(self, data):
 		if not HTMLAttrRemover.__useless:
-			self._result.append(data)
+			self._result.append(data.strip().replace('/',''))

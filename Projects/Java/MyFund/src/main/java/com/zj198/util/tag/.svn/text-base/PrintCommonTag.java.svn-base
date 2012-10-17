@@ -14,6 +14,7 @@ public class PrintCommonTag extends ComponentTagSupport{
 	private String valueSetId;
 	protected String valueSetMap;
 	private String type;
+	private String divide;
 	
 	@Override
 	public Component getBean(ValueStack stack, HttpServletRequest request, HttpServletResponse response){
@@ -27,6 +28,7 @@ public class PrintCommonTag extends ComponentTagSupport{
 		print.setValueSetId(valueSetId);
 		print.setValueSetMap(valueSetMap);
 		print.setType(type);
+		print.setDivide(divide);
 	}
 	
 	public String getValueId() {
@@ -56,6 +58,14 @@ public class PrintCommonTag extends ComponentTagSupport{
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getDivide() {
+		return divide;
+	}
+
+	public void setDivide(String divide) {
+		this.divide = divide;
 	}
 
 }

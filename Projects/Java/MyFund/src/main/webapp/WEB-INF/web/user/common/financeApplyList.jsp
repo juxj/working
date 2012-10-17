@@ -14,6 +14,11 @@
 	  <span class="leftdetail"><a href="/loan/financeProduct.act?financeType=152&financeDate=12" target="_blank">立即申请</a></span>
   </s:if>
   </caption>
+  <s:if test="applyList.size<=0">
+  	<tr>
+  		<td colspan="7" align="center">暂无申请记录</td>
+  	</tr>
+  </s:if><s:else>
   <tr>
   	 <th>申请编号</th>
      <th>申请时间</th>
@@ -23,11 +28,7 @@
      <th>状态</th>
      <th>操作</th>
   </tr>
-  <s:if test="applyList.size<=0">
-  	<tr>
-  		<td colspan="7" align="center">暂无申请记录</td>
-  	</tr>
-  </s:if>
+  </s:else>
   <s:iterator value="applyList" id="item">
 	  <tr>
 	    <td>${applyNum}</td>

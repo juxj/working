@@ -43,12 +43,9 @@ $(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">
-	<div class="P_title" style="border-bottom:5px solid #003961;">发布新资金信息</div>
-</div>
-<div class="hr_10"> &nbsp;</div>
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">发布新资金信息</div>
 <!--发布新资金信息-->
-<div style="margin:0 auto; width:950px;">
-<div class="apply_form">
+<div class="box_3">
 	<div class="apply_form_title">第二步</div>
 	<div class="xxkbox2">
 	<form action="/service/supplyInfoAction4User!save.act" id="frmProjectInvest" method="post">
@@ -66,7 +63,7 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td width="24%" class="form_table field_name">标题</td>
+				<td width="18%" class="form_table field_name">标题</td>
 				<td><s:textfield id="clbSupplyInfo.title" name="clbSupplyInfo.title" cssClass="required"/>
 				</td>
 			</tr>

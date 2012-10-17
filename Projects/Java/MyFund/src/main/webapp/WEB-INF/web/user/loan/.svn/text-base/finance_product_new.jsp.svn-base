@@ -658,8 +658,7 @@ function previewExtends(){
 <div id="previewExtendsProperty" title="自定义申请表单预览">
 	
 </div>
-
-<div style="width:850px;height:200px; overflow-y:scroll; border:1px solid;"> 
+<div style="width:890px;height:200px; overflow-y:scroll; border:1px solid;padding-left:10px;margin-left:20px;"> 
 中国资金网融资产品发布规则<br/>
 <p>
 &nbsp;&nbsp;&nbsp;&nbsp;本网站由鼎辉信息技术（上海）有限公司负责运营【以下本网站均指中国资金网及鼎辉信息技术（上海）有限公司】。请您使用本网站之前敬请仔细阅本服务协议。通过访问或使用本网站，您即明确同意遵守本服务协议并接受之约束。如果您不接受本服务条款的全部规定，则请勿使用本网站。您一旦使用本网站的服务，即视为您已了解并完全同意本服务协议各项内容，包括本网站对服务协议随时做出的任何修改。除非另有规定，否则任何变更或修改将在修订内容于本网站发布之时立即生效，您对本网站的使用、继续使用将表明您接受此等变更或修改。如您不同意本服务协议及/或随时对其的修改、及/或法律声明，您可以主动取消本网站提供的服务。 

@@ -1,8 +1,8 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/WEB-INF/web/admin/authorize
+3878
+svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/admin/authorize
 svn://192.168.1.8
 
 
@@ -26,17 +26,17 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-serviceOrderHome4Admin.jsp
+bank_product.jsp
 file
 
 
 
 
-2012-09-11T03:06:56.000000Z
-fc19fb28780d44e946f34b40ba9b6e70
-2012-07-26T08:17:24.114338Z
-1655
-Patrick
+2012-10-12T06:32:09.388607Z
+00db2df30bfdbf82151f9fa52054eeca
+2012-08-15T07:06:01.752394Z
+2445
+juxj
 
 
 
@@ -58,7 +58,7 @@ Patrick
 
 
 
-4234
+5131
 
 recommend_bank_product.jsp
 file
@@ -66,7 +66,7 @@ file
 
 
 
-2012-09-11T03:06:56.000000Z
+2012-10-12T06:32:09.388607Z
 7316bb0b79e3d0a1d608ea29d66cb681
 2012-08-18T03:19:30.814035Z
 2641
@@ -100,7 +100,7 @@ file
 
 
 
-2012-09-11T03:06:56.000000Z
+2012-10-12T06:32:09.388607Z
 80258eb7b08bae5d7903594d3be35949
 2012-08-16T09:59:05.219347Z
 2542
@@ -128,14 +128,14 @@ juxj
 
 5860
 
-sinOrder.jsp
+serviceOrderHome4Admin.jsp
 file
 
 
 
 
-2012-09-11T03:06:56.000000Z
-f1c64c22dec6c532dcd2052232bca54e
+2012-10-12T06:32:09.388607Z
+fc19fb28780d44e946f34b40ba9b6e70
 2012-07-26T08:17:24.114338Z
 1655
 Patrick
@@ -160,41 +160,7 @@ Patrick
 
 
 
-3292
-
-bank_product.jsp
-file
-
-
-
-
-2012-09-11T03:06:56.000000Z
-00db2df30bfdbf82151f9fa52054eeca
-2012-08-15T07:06:01.752394Z
-2445
-juxj
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5131
+4234
 
 siDetail.jsp
 file
@@ -202,7 +168,7 @@ file
 
 
 
-2012-09-11T03:06:56.000000Z
+2012-10-12T06:32:09.388607Z
 26a53174c318b382fb030472e2443c92
 2012-07-26T09:42:35.461016Z
 1667
@@ -229,4 +195,38 @@ Patrick
 
 
 2862
+
+sinOrder.jsp
+file
+
+
+
+
+2012-10-12T06:32:09.388607Z
+f1c64c22dec6c532dcd2052232bca54e
+2012-07-26T08:17:24.114338Z
+1655
+Patrick
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3292
 

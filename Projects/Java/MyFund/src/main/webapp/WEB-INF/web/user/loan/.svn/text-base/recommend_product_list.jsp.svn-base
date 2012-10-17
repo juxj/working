@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>推荐产品</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.min.js"></script>
@@ -82,28 +83,26 @@
 <div class="hr_10"> &nbsp; </div>
 <!--头部结束-->
   <!--资金网推荐产品-->
-  <div class="M_menu">
-  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/LoanRequest!loanManage.act">融资意向单管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;推荐产品
-  </div>
-  <div class="M_menu" style="border: 0px;">
-  	根据您的需求，中国资金网在进行了详尽的分析后为您推荐以下几款最为适合您的融资产品
-  </div>
-  <div class="M_box">
-        <table border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%" >
-     	<tr class="BankProductHeader">
-     		<th width="16%" style="padding-left:25px;">融资渠道/项目</th>
-            <th width="10%">金额</th>
-	        <th>期限</th>
-	        <th>基准年利率</th>
-	        <th>浮动范围</th>
-	        <th width="15%;">还款方式</th>
-	        <th >产品特点</th>
-	        <th >审批时间</th>
-            <th align="center">操作</th>
+<div class="M_menu">融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/LoanRequest!loanManage.act">融资意向单管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;推荐产品</div>
+<div class="hr_10"> &nbsp; </div>
+<div class="container_950">
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">推荐产品</div>
+	<div class="txt_content"><h6>经过分析评估，中国资金网为您推荐的融资产品:</h6></div>
+		<table class="box_4" border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%" >
+	      <tr class="top_color" >
+     		<td width="220px" style="padding-left:25px;">融资渠道/项目</td>
+            <td width="100px" align="center">金额</td>
+	        <td width="60px" align="center">期限</td>
+	        <td width="80px" align="center">基准年利率</td>
+	        <td width="50px" align="center">浮动范围</td>
+	        <td width="120px" align="center">还款方式</td>
+	        <td width="120px" align="center">产品特点</td>
+	        <td width="90px"  align="center">审批时间</td>
+            <td align="center">操作</td>
           </tr>
 		 	<s:iterator id ="item" value="recommendByAdm">
 			<tr  class="gold_connect">
-				<td width="16%" style="padding-left:25px;">
+				<td style="padding-left:25px;">
 					<s:if test="logo == null">
 				        <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap;">
 			        </s:if>
@@ -115,8 +114,8 @@
 			        	${financeName }
 			        </div>
 				</td>
-		        <td width="10%"><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元</td>
-		        <td width="15%">${loan.loanMonth }个月</td>
+		        <td ><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元</td>
+		        <td >${loan.loanMonth }个月</td>
 		        <td>
 		        	<common:print valueId="loan.loanMonth" type="rate"/>%
 		        	<s:if test="serviceCost != null && serviceCost > 0">
@@ -135,34 +134,30 @@
 		        <td><common:print valueId="repaymentType" /></td>
 		       	<td><common:print valueId="proSpecial" /></td>
 		        <td>${checkTime }个工作日</td>
-		        <td width="10%"><input  type="button" value="查看" class="but_gray" onclick="selectDetail(${id})" name="" style="width:80px;" /></td>
+		        <td ><input  type="button" value="查看" class="but_gray" onclick="selectDetail(${id})" name="" style="width:80px;" /></td>
 			</tr>
 			</s:iterator>
         </table>
-  </div>
    <div class="hr_10"> &nbsp;</div>
   <!--资金网推荐产品--> 
   
   <!--金融机构推荐产品-->
-  <div class="M_menu" style="border: 0px;">
-  	另外，银行或贷款机构也为您推荐了以下产品
-  </div>
-  <div class="M_box">
-        <table border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%" >
-     	<tr class="BankProductHeader">
-     		<th width="16%" style="padding-left:25px;">融资渠道/项目</th>
-            <th width="10%">金额</th>
-	        <th>期限</th>
-	        <th>基准年利率</th>
-	        <th>浮动范围</th>
-	        <th width="15%;">还款方式</th>
-	        <th >产品特点</th>
-	        <th >审批时间</th>
-            <th align="center">操作</th>
+  <div class="txt_content"><h6>银行或贷款机构为您推荐的融资产品:</h6></div>
+		<table class="box_4" border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%" >
+	      <tr class="top_color">
+    		<td width="220px" style="padding-left:25px;">融资渠道/项目</td>
+            <td width="100px" align="center">金额</td>
+	        <td width="60px" align="center">期限</td>
+	        <td width="80px" align="center">基准年利率</td>
+	        <td width="50px" align="center">浮动范围</td>
+	        <td width="120px" align="center">还款方式</td>
+	        <td width="120px" align="center">产品特点</td>
+	        <td width="90px"  align="center">审批时间</td>
+            <td align="center">操作</td>
           </tr>
 		 	<s:iterator id ="item" value="recommendByOrg">
 			<tr  class="gold_connect">
-				<td width="16%" style="padding-left:25px;">
+				<td style="padding-left:25px;">
 					<s:if test="logo == null">
 				        <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap;">
 			        </s:if>
@@ -174,8 +169,8 @@
 			        	${financeName }
 			        </div>
 				</td>
-		        <td width="10%"><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元</td>
-		        <td width="15%">${loan.loanMonth }个月</td>
+		        <td ><s:number name="financeLittleamount" />~<s:number name="financeBigamount" />万元</td>
+		        <td >${loan.loanMonth }个月</td>
 		        <td>
 		        	<common:print valueId="loan.loanMonth" type="rate"/>%
 		        	<s:if test="serviceCost != null && serviceCost > 0">
@@ -194,18 +189,15 @@
 		        <td><common:print valueId="repaymentType" /></td>
 		       	<td><common:print valueId="proSpecial" /></td>
 		        <td>${checkTime }个工作日</td>
-		        <td width="10%"><input  type="button" value="查看" class="but_gray" onclick="selectDetail(${id})" name="" style="width:80px;" /></td>
+		        <td ><input  type="button" value="查看" class="but_gray" onclick="selectDetail(${id})" name="" style="width:80px;" /></td>
 			</tr>
 			</s:iterator>
         </table>
   </div>
    <div class="hr_10"> &nbsp;</div>
-  <!--金融机构推荐产品--> 
+<!--金融机构推荐产品--> 
 <div class="clear"> &nbsp; </div>
 <div class="hr_20"> &nbsp; </div>
-
-    
-</div>
 <!--弹出框内容推荐产品页面-->
 <!--foot-->
 <jsp:include page="/public/bottom.jsp" />

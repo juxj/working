@@ -87,7 +87,7 @@
 		    <result name="recoverPage">/public/user/retrievePwd/index.jsp</result>
 		    <result name="sendSuccess">/public/user/retrievePwd/retrieveyResult.jsp</result>
 		    <result name="resetPwd">/public/user/retrievePwd/retrieveyPwd.jsp</result>
-		    <result name="success" type="redirect">/Account.act</result>
+		    <!-- <result name="success" type="redirect">/Account.act</result> -->
 		</action>
 	</package>
 </struts>

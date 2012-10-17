@@ -7,6 +7,7 @@ public class FundIntention {
 	private String email;
 	private Integer serviceTime;//期望服务时间
 	private String serviceContent;//预约服务内容
+	private Integer jtype;
 	public String getUserName() {
 		return userName;
 	}
@@ -43,4 +44,11 @@ public class FundIntention {
 	public void setServiceContent(String serviceContent) {
 		this.serviceContent = serviceContent;
 	}
+	public Integer getJtype() {
+		return jtype;
+	}
+	public void setJtype(Integer jtype) {
+		this.jtype = jtype;
+	}
+	
 }

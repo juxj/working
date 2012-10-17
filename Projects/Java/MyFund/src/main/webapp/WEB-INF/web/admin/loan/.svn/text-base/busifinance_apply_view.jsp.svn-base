@@ -219,6 +219,7 @@ function agreeNumInput(an){
 			<td class="r_td">截止到上月未，企业总负债约为：</td>
 			<td class="p_td"><s:number name="apply.debtSum" />&nbsp;&nbsp;万元</td>
 		</tr>
+		<!-- 
 		<tr>
 			<td class="r_td">最大下游客户与您的合作时长：</td>
 			<td class="p_td">${apply.maxCustomTime}&nbsp;&nbsp;年</td>
@@ -235,6 +236,7 @@ function agreeNumInput(an){
 			<td class="r_td">最近六月银行流水量：</td>
 			<td class="p_td"><s:number name="apply.sixmonthBanklist" />&nbsp;&nbsp;万元</td>
 		</tr>
+		 -->
 	</table>
 	
 		<div class="hr_10"> &nbsp; </div>

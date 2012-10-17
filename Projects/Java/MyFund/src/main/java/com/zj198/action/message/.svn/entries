@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action/message
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/message
 svn://192.168.1.8
 
 
 
-2012-08-08T04:46:31.230620Z
-2104
-yangb
+2012-10-11T03:34:01.974904Z
+3789
+Patrick
 
 
 
@@ -32,11 +32,11 @@ file
 
 
 
-2012-09-11T03:06:57.000000Z
-52f86e8e6c91d1f260840c5432baa57e
-2012-08-08T04:46:31.230620Z
-2104
-yangb
+2012-10-12T06:32:11.097460Z
+5341a782661c1ac755b79baf96af12ba
+2012-10-11T03:34:01.974904Z
+3789
+Patrick
 
 
 
@@ -58,5 +58,5 @@ yangb
 
 
 
-5583
+5581
 

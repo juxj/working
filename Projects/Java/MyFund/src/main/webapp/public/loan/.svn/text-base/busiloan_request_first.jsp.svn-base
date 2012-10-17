@@ -49,12 +49,12 @@ $(function(){
                 <h6>用途：</h6>
                 <s:select name="loan.loanPurpose" list="dataMap['loanpurpose']" listKey="id" listValue="name" cssClass="S_width" style="width:200px;"></s:select>
                 <h6>金额：</h6>
-                <s:textfield name="loan.loanAmount" cssClass="input-text required digits"  id="loan.loanAmount" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
+                <s:textfield name="loan.loanAmount" cssClass="input-text required digits"  id="loan.loanAmount" maxlength="6"></s:textfield>&nbsp;&nbsp;万元
                 <label for="loan.loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>期限：</h6>
-                <s:textfield name="loan.loanMonth" cssClass="input-text required digits"  id="loan.loanMonth" maxlength="3"></s:textfield>&nbsp;&nbsp;个月
+                <s:textfield name="loan.loanMonth" cssClass="input-text required digits"  id="loan.loanMonth" maxlength="2"></s:textfield>&nbsp;&nbsp;个月
                 <label for="loan.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>

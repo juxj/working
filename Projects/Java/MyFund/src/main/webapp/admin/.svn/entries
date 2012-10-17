@@ -1,8 +1,8 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/webapp/admin
+3878
+svn://192.168.1.8/MyFund/src/main/webapp/admin
 svn://192.168.1.8
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2012-09-11T03:06:56.000000Z
+2012-10-12T06:32:09.704765Z
 2f76617b4a7dd49f8fd2624b31b637e1
 2012-06-15T09:01:02.258458Z
 333

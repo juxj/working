@@ -19,7 +19,9 @@
 			<result name="catering">/public/finance/cateringFund.jsp</result>
 		</action>
 		<action name="fund" class="com.zj198.action.fund.FundAction">
-			<result name="view_fund">/public/fund/fundDetails.jsp</result>
+			<result name="view_fund1">/public/fund/fundDetails.jsp</result>
+			<result name="view_fund2">/public/fund/fundZhongT.jsp</result>
+			<result name="view_fund3">/public/fund/fundZhongR.jsp</result>
 			<result name="input_intention">/public/fund/inputFundIntention.jsp</result>
 			<result name="success">/public/fund/success.jsp</result>
 		</action>

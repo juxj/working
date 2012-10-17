@@ -48,22 +48,19 @@
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">
-	<div class="P_title" style="border-bottom:5px solid #003961;">发布新资金信息</div>
-</div>
-<div class="hr_10"> &nbsp;</div>
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">发布新资金信息</div>
 <!--发布新资金信息-->
-<div style="margin:0 auto; width:950px;">
-<div class="apply_form">
+<div class="box_3">
 	<div class="apply_form_title">第一步</div>
 	<div class="C_title">请选择投资方式(您只能选择一项)</div>
-	<div class="C_form">
+	<div style="padding:20px 20px 20px 25px;">
          <div id="investStyleParent">
          		<s:radio list="investStyleList.{?#this.parentId==0}" listKey="code" listValue="name" name="mainType"  onclick="showSubType();"></s:radio>
          </div>
 	</div>
 	<div class="clear"> &nbsp; </div>
 	<div class="C_title">请选择具体类型 （您只能选择一类）</div>
-	<div class="C_form">
+	<div style="padding:20px 20px 20px 25px;">
 		<dl>
 			<dd>
                 <div id="investStyleDetails">
@@ -80,18 +77,18 @@
 			</dd>		
 		</dl>
 		<div class="hr_10"> &nbsp; </div>
-		<div class="center" style="width:200px;">
+		<div class="hr_10"> &nbsp; </div>
+		<div class="center" style="width:150px;">
 			<form id="frmFirstStep" action="" method="post">
 				<input type="hidden" id="investType" name="investType"/>
 			</form>
 			<input type="button" id="btnGotoNext" disabled="disabled"  onclick="gotoNext();"  value="确认进入下一步"/>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
-		<div class="hr_10"> &nbsp; </div>
 	</div>
+</div>
 </div>       
 <div class="hr_10"> &nbsp; </div>
-</div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp"></jsp:include>
 </body>

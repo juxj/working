@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/service/user/impl
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/user/impl
 svn://192.168.1.8
 
 
 
-2012-09-27T05:34:25.796199Z
-3665
-linm
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
 
 
 
@@ -32,7 +32,7 @@ file
 
 
 
-2012-09-11T03:06:57.000000Z
+2012-10-12T06:32:11.421622Z
 1b5535dd3b65aa69d3605ac19a761c7e
 2012-09-07T08:49:45.397926Z
 3305
@@ -66,11 +66,14 @@ file
 
 
 
-2012-09-27T08:56:39.000000Z
-a082cffd0467eb58dab9352051b4dffb
-2012-09-27T05:34:25.796199Z
-3665
-linm
+2012-10-16T09:07:30.000000Z
+a33e0923c4ad7626e973072ebefd24b6
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
 
 
 
@@ -89,8 +92,39 @@ linm
 
 
 
+19985
+
+UserCenterMenuServiceImpl.java
+file
 
 
 
-19870
+
+2012-10-16T09:07:30.000000Z
+f9e2f834cab0981191bd0457168fdce4
+2012-10-15T05:00:53.744557Z
+3857
+Patrick
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+546
 

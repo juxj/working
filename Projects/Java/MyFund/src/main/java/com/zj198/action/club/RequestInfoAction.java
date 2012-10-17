@@ -1,27 +1,33 @@
 package com.zj198.action.club;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.model.ClbRequestInfo;
+import com.zj198.model.ClbSupplyInfo;
 import com.zj198.model.DicIndustry;
 import com.zj198.model.DicInvestRange;
 import com.zj198.model.DicProvince;
 import com.zj198.model.PrdRecommendation;
+import com.zj198.model.UsrBank;
 import com.zj198.model.UsrCompany;
+import com.zj198.model.UsrFinanceorg;
 import com.zj198.model.UsrPerson;
+import com.zj198.model.UsrServiceorg;
 import com.zj198.model.UsrUser;
 import com.zj198.service.club.SupplyRequestService;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.service.finservice.FinanceProdService;
+import com.zj198.service.user.AccountService;
 import com.zj198.service.user.ProfileService;
 import com.zj198.util.Constants;
 import com.zj198.util.Pager;
 import com.zj198.util.StringUtil;
 
-public class RequestInfoAction extends BaseAction {
+public class RequestInfoAction extends BaseClubAction {
 	
 	private static final int PAGE_SIZE = 10;
 	private static final int PAGE_SIZE_20 = 20;
@@ -32,12 +38,12 @@ public class RequestInfoAction extends BaseAction {
 	private SupplyRequestService supplyRequestService;
 	private DictoryDataService dictoryDataService;
 	private FinanceProdService financeProdService;
-	private ProfileService profileService;
 	
 	private List<DicIndustry> industryList;
 	private List<DicProvince> provinceList;
 	private List<DicInvestRange> projectTypeList;
 	private List<DicInvestRange> financingTypeList;
+	private List<String[]> userInfoList;
 	private String[] query;
 	
 	private List<String> checkedFinanceTypeList;
@@ -53,7 +59,8 @@ public class RequestInfoAction extends BaseAction {
 	public String edit(){
 		
 		UsrUser user = this.getUser();
-		if (user.getAuditstatus() != '2') {
+		
+		if (user.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE) {
 			this.msg = "您的资料还没有通过审核， 暂不能发布信息！";
 			return ERROR;
 		}
@@ -83,6 +90,8 @@ public class RequestInfoAction extends BaseAction {
 	}
 	
 	public String home() {
+		this.userInfoList = new ArrayList<String[]>();
+		
 		provinceList = this.dictoryDataService.findAllProvince();
 		this.industryList = this.dictoryDataService.findIndustryByParentid(0);
 		this.financingTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_FINANCE_TYPE);
@@ -92,6 +101,19 @@ public class RequestInfoAction extends BaseAction {
 		} else {
 			pager = this.supplyRequestService.findByHomeQuery(PAGE_SIZE, pageNo, query);
 		}
+		
+		List<Object> list = pager.getData();
+		
+		for (int i=0; i<list.size(); i++) {
+			String userInfo[] = new String[2];
+			ClbRequestInfo info = (ClbRequestInfo) list.get(i);
+			UsrUser user = accountService.getUserById(info.getUserid());
+			if (user != null) {
+				userInfo = this.getUserInfo(user);
+			}
+			this.userInfoList.add(userInfo);
+		}
+		
 		
 		return "home";
 	}
@@ -248,6 +270,14 @@ public class RequestInfoAction extends BaseAction {
 
 	public List<String> getCheckedFinanceTypeList() {
 		return checkedFinanceTypeList;
+	}
+
+	public List<String[]> getUserInfoList() {
+		return userInfoList;
+	}
+
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
 	}
 
 }

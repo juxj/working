@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main/java/com/zj198/action
+3878
+svn://192.168.1.8/MyFund/src/main/java/com/zj198/action
 svn://192.168.1.8
 
 
 
-2012-09-29T06:45:59.920908Z
-3742
-juxj
+2012-10-16T08:34:37.073654Z
+3878
+yangb
 
 
 
@@ -26,22 +26,13 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-finance
-dir
-
-message
-dir
-
-club
-dir
-
 BaseAction.java
 file
 
 
 
 
-2012-09-11T03:06:57.000000Z
+2012-10-12T06:32:11.193508Z
 29a56fb49c65e145d610175a3179475f
 2012-07-25T06:44:13.398455Z
 1578
@@ -72,7 +63,16 @@ yangb
 admin
 dir
 
+club
+dir
+
 common
+dir
+
+finance
+dir
+
+fund
 dir
 
 loan
@@ -81,7 +81,7 @@ dir
 members
 dir
 
-fund
+message
 dir
 
 news

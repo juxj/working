@@ -32,14 +32,9 @@ $(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">
-	<div class="P_title" style="border-bottom:5px solid #003961;">发布新信息</div>
-</div>
-<div class="hr_10"> &nbsp;</div>
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">发布项目信息</div>
 <!--发布新资金信息-->
-<div style="margin:0 auto; width:950px;">
-<div class="apply_form">
-	<div class="apply_form_title"></div>
-	<div class="xxkbox2">
+	<div class="box_3">
 	<form id="frmRequestInfo" action="/service/requestInfoAction4User!save.act" method="post">
 		<s:hidden name="clbRequestInfo.id"></s:hidden>
 		<table class="form_table">
@@ -73,7 +68,7 @@ $(function(){
 			</tr>
 			<tr>
 				<td class="form_table field_name" >投资总额</td>
-				<td><s:textfield name="clbRequestInfo.totalMoney"  cssClass="required number"/>
+				<td><s:textfield name="clbRequestInfo.totalMoney" length="6"  cssClass="required number"/>(万元)
 				<label for="clbRequestInfo.totalMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
@@ -131,7 +126,6 @@ $(function(){
 	</div>
 </div>       
 <div class="hr_10"> &nbsp; </div>
-</div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp"></jsp:include>
 </body>

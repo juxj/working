@@ -11,7 +11,7 @@
       </s:if>
       <s:else>
         <a href="/Account.act"> 登录</a><a href="/Register.act">注册</a>
-      </s:else> | <font color="#555"><a href="/Index.act">网站首页</a><s:if test="#session._admin != null"> | <a href="/admin/user/User.act">管理员 » 账户管理</a></s:if></font>
+      </s:else> | <a href="/Index.act">网站首页</a>
       </div>
       <div class="hr_10"> &nbsp; </div>
       <div class="pic_logo_r fr"><img src="/images/logo_right_pic.jpg" alt="" /></div>

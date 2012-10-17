@@ -81,12 +81,12 @@ function checkOldForm(){
           <span id="fullname_error" class="txt-info">请输入真实姓名</span></dd>
         <dd>
           <h6><span class="txt-impt">*</span>邮箱：</h6>
-          <input id="email" name="email" onblur="check_email()" type="text" value="${email }" class="input-text" />
-          <span id="email_error" class="txt-info">该邮箱用于激活用户、找回密码等</span></dd>
+          <input id="email" name="email" onblur="check_email()" type="text" value="${email }" class="input-text" <s:if test='#session._user.activetype==1 || #session._user.activetype==3'>disabled="disabled"</s:if>/>
+          <s:if test='#session._user.activetype==1 || #session._user.activetype==3'><span class="txt-info">该邮箱已验证</span></s:if><s:else><span id="email_error" class="txt-info">该邮箱用于激活用户、找回密码等</span></s:else></dd>
         <dd>
           <h6><span class="txt-impt">*</span>手机号：</h6>
-          <input id="mobile" onblur="check_mobile()" type="text" value="${mobile }" class="input-text" />
-          <span id="mobile_error" class="txt-info">请输入常用的手机号码，用于接受通知和验证等</span></dd>
+          <input id="mobile" onblur="check_mobile()" type="text" value="${mobile }" class="input-text" <s:if test='#session._user.activetype==2 || #session._user.activetype==3'>disabled="disabled"</s:if> />
+          <s:if test='#session._user.activetype==2 || #session._user.activetype==3'><span class="txt-info">手机号码已验证。</span></s:if><s:else><span id="mobile_error" class="txt-info">请输入常用的手机号码，用于接受通知和验证等</span></s:else></dd>
         <dd>
           <h6>&nbsp; </h6>
           <input type="button" onclick="checkOldForm();" class="but_gray" style="width:200px;" value="同意以下协议并提交" />

@@ -36,7 +36,7 @@ $(document).ready(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑企业基本信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/Profile.act?companyMark=1">企业基本信息</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑企业基本信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->

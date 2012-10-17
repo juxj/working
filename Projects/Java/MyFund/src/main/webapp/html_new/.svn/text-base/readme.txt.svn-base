@@ -71,6 +71,8 @@ Financing_int_management.html-----------融资意向管理页面(企业/个人)
 Financing_demand_details.html-----------融资需求管理(企业/个人)-需求详情页面
 Financing_app_management01.html---------融资申请管理页面(企业/个人)
 Financing_app_needs.html----------------融资申请管理(企业/个人)-申请详情页面
+Financing_app_needs01.html--------------融资申请管理-申请详情页面（改动后的******）
+
 Financing_Credit_details.html-----------融资申请管理(企业/个人)-申贷资料详情页
 Financing_Loan_management.html----------融资贷后管理页面(企业/个人)
 Financing_Loan_details.html-------------融资贷后管理(企业/个人)-贷款详情页

@@ -44,7 +44,7 @@ function servicedetail(){
 function otherPurpose(){
 	var j = $('#other').val();
 	if(j==68){
-		$('#otherPurpose').html("<input type='text' name='loanPurposeOther'/>");
+		$('#otherPurpose').html("<input type='text' name='apply.loanPurposeOther'/>");
 	}else{
 		$('#otherPurpose').html('');
 	}
@@ -121,12 +121,12 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
               </dd>
               <dd> 
                 <h6>融资金额：</h6>
-                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="9"/>&nbsp;&nbsp;万元
+                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="6"/>&nbsp;&nbsp;万元
                 <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
                 <h6>融资期限：</h6>
-                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="3"/>&nbsp;&nbsp;个月
+                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="2"/>&nbsp;&nbsp;个月
                 <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
@@ -141,58 +141,58 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 	<div class="C_form">
 		<dl>
 			<dd>
-				<h6 style="width:235px">企业<span class="year"></span>年销售额约为：</h6>
+				<h6 style="width:260px">企业<span class="year"></span>年销售额约为：</h6>
 				<s:textfield name="apply.lastyearSaleVolume" cssClass="input-text required number"  id="apply.lastyearSaleVolume" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.lastyearSaleVolume" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">企业<span class="year"></span>年经营成本约为：</h6>
+				<h6 style="width:260px">企业<span class="year"></span>年经营成本约为：</h6>
 				<s:textfield name="apply.lastyearCost" cssClass="input-text required number"  id="apply.lastyearCost" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.lastyearCost" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">企业<span class="year"></span>年净利润率约为：</h6>
+				<h6 style="width:260px">企业<span class="year"></span>年净利润率约为：</h6>
 				<input type="text" name="apply.lastyearProfit" class="input-text required number {loanAmount:[-100,500]}"  id="apply.lastyearProfit" maxlength="10"/>&nbsp;&nbsp;%
 				<label for="apply.lastyearProfit" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业应收账款约为：</h6>
+				<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业应收账款约为：</h6>
 				<s:textfield name="apply.receivable" cssClass="input-text required number"  id="apply.receivable" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.receivable" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总库存约为：</h6>
+				<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总库存约为：</h6>
 				<s:textfield name="apply.stockSum" cssClass="input-text required number"  id="apply.stockSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.stockSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总资产约为：</h6>
+				<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总资产约为：</h6>
 				<input type="text" name="apply.assetSum" class="input-text required number {assetSumcls:['apply_debtSum','apply_loanAmount']}"  id="apply.assetSum" maxlength="10"/>&nbsp;&nbsp;万元
 				<label for="apply.assetSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">截止到<span class="yearmoth"></span>，企业总负债约为：</h6>
+				<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总负债约为：</h6>
 				<s:textfield name="apply.debtSum" cssClass="input-text required number"  id="apply_debtSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply_debtSum" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<!-- 
 			<dd>
-				<h6 style="width:235px">最大下游客户与您的合作时长：</h6>
+				<h6 style="width:260px">最大下游客户与您的合作时长：</h6>
 				<s:textfield name="apply.maxCustomTime" cssClass="input-text required number"  id="apply.maxCustomTime" maxlength="10"></s:textfield>&nbsp;&nbsp;年
 				<label for="apply.maxCustomTime" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">第二大下游客户与您的合作时长：</h6>
+				<h6 style="width:260px">第二大下游客户与您的合作时长：</h6>
 				<s:textfield name="apply.nextCustomTime" cssClass="input-text required number"  id="apply.nextCustomTime" maxlength="10"></s:textfield>&nbsp;&nbsp;年
 				<label for="apply.nextCustomTime" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">以上两家客户占您年销售额比率：</h6>
+				<h6 style="width:260px">以上两家客户占您年销售额比率：</h6>
 				<s:textfield name="apply.twoCusSalerate" cssClass="input-text required number {max:100}"  id="apply.twoCusSalerate" maxlength="10"></s:textfield>&nbsp;&nbsp;%
 				<label for="apply.twoCusSalerate" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6 style="width:235px">最近六月银行流水量：</h6>
+				<h6 style="width:260px">最近六月银行流水量：</h6>
 				<s:textfield name="apply.sixmonthBanklist" cssClass="input-text required number"  id="apply.sixmonthBanklist" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="apply.sixmonthBanklist" class="error" generated="true" style="display:none;"></label>
 			</dd>

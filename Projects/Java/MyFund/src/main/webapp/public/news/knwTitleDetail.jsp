@@ -1,11 +1,11 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta keyword="${knwTitle.keyword}" />
-	<title>${knwTitle.title}_ÖĞ¹ú×Ê½ğÍø</title>
+	<title>${knwTitle.title}_ä¸­å›½èµ„é‡‘ç½‘</title>
 	<link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 	<link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
@@ -14,8 +14,8 @@
   <body>
 	<div class="header index_header"><jsp:include page="/public/head1.jsp" /></div>
 	<div class="clear"> &nbsp; </div><div class="hr_10"> &nbsp; </div> 
-	<div class="M_menu"><a href="/news/InfoCenter.act">ĞÅÏ¢ÖĞĞÄ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
-		<a href="/news/Info!infoGroup.act?typeId=${knwTitle.typeId }">${knwTitle.typeName }</a> >&nbsp;&nbsp; ÏêÏ¸Ò³Ãæ</div>
+	<div class="M_menu"><a href="/news/InfoCenter.act">ä¿¡æ¯ä¸­å¿ƒ</a>&nbsp;&nbsp;>&nbsp;&nbsp;
+		<a href="/news/Info!infoGroup.act?typeId=${knwTitle.typeId }">${knwTitle.typeName }</a> >&nbsp;&nbsp; è¯¦ç»†é¡µé¢</div>
 	<div class="hr_10"> &nbsp; </div> 
 	
 	<div class="M_out">
@@ -26,11 +26,11 @@
 	        <hr style="width:100%;"/>
 	        <h6 style="text-align:center; line-height:30px;"> ${knwTitle.author} &nbsp; &nbsp;&nbsp; <s:date name="knwTitle.issuedDate" /></h6>
 	        <div class="hr_20"> &nbsp;</div>		
-			<p style="text-indent:24px;">${knwTitle.contents }</p>¡¡
+			<p style="text-indent:24px;">${knwTitle.contents }</p>ã€€
             <p style="text-indent:24px;"></p>
             <p style="text-indent:24px;"></p>
-            <p style="text-indent:24px; text-align:right">À´Ô´: &nbsp;&nbsp; ${knwTitle.source} &nbsp; &nbsp;&nbsp;</p>
-            <p style="text-indent:24px;"></p>                            ¡¡        
+            <p style="text-indent:24px; text-align:right">æ¥æº: &nbsp;&nbsp; ${knwTitle.source} &nbsp; &nbsp;&nbsp;</p>
+            <p style="text-indent:24px;"></p>                            ã€€        
         </div>
       	<div class="hr_10"> &nbsp; </div>
         <div><img src="/images/img_lc.jpg" /></div>
@@ -42,7 +42,7 @@
 	    </div>
 	     -->
 	    <div class="M_out_right_text">
-    	<h1>ÈÈÃÅÈÚ×Ê²úÆ·</h1>
+    	<h1>çƒ­é—¨èèµ„äº§å“</h1>
         <div class="box_3">
           <div class="qyrz-top">
 	            <s:action name="financeProduct!findRecom" namespace="/loan" executeResult="true"></s:action>
@@ -51,7 +51,7 @@
 	    </div>
 		<div class="hr_10"> &nbsp;</div>
 	    <div class="M_out_right_text">
-	    	<h1>ÈÈÃÅÀí²Æ²úÆ·</h1>
+	    	<h1>çƒ­é—¨ç†è´¢äº§å“</h1>
 	        <div class="box_3">
 	        	<div class="qyrz-top" style="width : 230px;">
 				    <table class="qyrz-top_table">
@@ -84,7 +84,7 @@
 </div>	
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp;</div>
-  	<!--Ö÷Ìå²¿·Ö½áÊø-->
+  	<!--ä¸»ä½“éƒ¨åˆ†ç»“æŸ-->
 	<jsp:include page="/public/bottom.jsp" />
   </body>
   </html>

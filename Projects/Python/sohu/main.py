@@ -28,7 +28,7 @@ class Main:
 		parser = TotalPageParser()
 
 		for p_type in p_types:
-			url = summary_url + '&pageNo=1&bkstatus='+p_type
+			url = summary_url + '&pageNO=1&bkstatus='+p_type
 			data = fetcher.run(url)
 			data = parser.read(data)
 			urls = urls + data[1]
@@ -40,7 +40,7 @@ class Main:
 			
 			m = 2; # start from 2
 			while m <= pages:
-				url = summary_url + '&pageNo='+str(m)+'&bkstatus='+p_type
+				url = summary_url + '&pageNO='+str(m)+'&bkstatus='+p_type
 				data = fetcher.run(url)
 				data = parser.read(data)
 				urls = urls + data[1]

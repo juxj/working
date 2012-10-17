@@ -29,6 +29,9 @@
 		    <result name="editServiceorgProfile">/WEB-INF/web/user/serviceOrg/edit.jsp</result>
 			<result name="success" type="redirect">/user/UserAction.act</result>
 		</action>
+		<action name="menu" class="com.zj198.action.user.UserMenuAction" method="execute">
+			<result name="success">/WEB-INF/web/user/_menu.jsp</result>
+		</action>
 		<action name="regInfo" class="com.zj198.action.user.ProfileAction" method="regInfo">
 		    <result name="regInfo">/WEB-INF/web/user/regInfo.jsp</result>
 		</action>
@@ -61,6 +64,18 @@
 		 	<param name="inputName">attachStream</param>
 		 	<param name="bufferSize">4096</param>  
 		 </result>
+		</action>
+		<action name="message" class="com.zj198.action.message.NtyMessageAction">
+            <result name="success" type="redirect">/user/loan/loanAfter!loanAfterList.act</result><!-- TODO:??? -->
+            <result name="viewMsg" >/WEB-INF/web/user/message/msg_list.jsp</result>
+            <result name="delAll" type="redirect">/news/ntyMessage!viewMsg.act</result>
+        </action>
+        
+        <!-- 会员及付费 -->
+        <action name="memberType" class="com.zj198.action.members.memberServiceAction">
+		    <result name="typeList">/WEB-INF/web/user/members/chargeType.jsp</result>
+		    <result name="addType">/WEB-INF/web/user/members/addChargeType.jsp</result>
+		    <result name="success" type="redirect">/user/memberType.act</result>
 		</action>
 	</package>
 </struts>

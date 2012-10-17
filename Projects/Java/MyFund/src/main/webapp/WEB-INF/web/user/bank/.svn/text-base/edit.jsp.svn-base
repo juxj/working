@@ -20,6 +20,7 @@
 $(document).ready(function(){
 	$("#City").val('${usrBank.cityid}');
 	$("#District").val('${usrBank.districtid}');
+	$('textarea').xheditor({tools:'simple',skin:'nostyle'});
 	$("#bankForm").validate({
 		meta:"validate"
 	});
@@ -37,7 +38,7 @@ $(document).ready(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;详细信息&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
@@ -150,7 +151,7 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right">服务介绍：</td>
-          <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrBank.remarks" style="width: 540px;height: 150px;">${usrBank.remarks }</textarea></td>
+          <td colspan="3"><textarea name="usrBank.remarks" style="width: 540px;height: 150px;">${usrBank.remarks }</textarea></td>
         </tr>
         <tr>
            <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">

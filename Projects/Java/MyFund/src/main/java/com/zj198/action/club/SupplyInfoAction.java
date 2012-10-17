@@ -1,9 +1,9 @@
 package com.zj198.action.club;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,29 +17,32 @@ import com.zj198.model.DicProvince;
 import com.zj198.model.DicUsertype;
 import com.zj198.model.PrdRecommendation;
 import com.zj198.model.UsrBank;
+import com.zj198.model.UsrCompany;
 import com.zj198.model.UsrFinanceorg;
+import com.zj198.model.UsrServiceorg;
 import com.zj198.model.UsrUser;
 import com.zj198.service.club.SupplyRequestService;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.service.finservice.FinanceProdService;
+import com.zj198.service.user.AccountService;
 import com.zj198.service.user.ProfileService;
 import com.zj198.util.Constants;
 import com.zj198.util.Pager;
 import com.zj198.util.StringUtil;
 
-public class SupplyInfoAction extends BaseAction {
+public class SupplyInfoAction extends BaseClubAction {
 
 	private final static int PAGE_SIZE = 10;
 	private final static int PAGE_SIZE_20 = 20;
 	
 	private SupplyRequestService supplyRequestService;
-	private ProfileService profileService;
 	private DictoryDataService dictoryDataService;
 	
 	private List<String> checkedItems;
 	private List<String> checkedProvinces;
 	private List<String> checkedIndustry;
 	private List<String> checkedServiceType;
+	private List<String[]> userInfoList;
 	
 	private int pageNo = 1;
 	private Pager pager;
@@ -248,12 +251,27 @@ public class SupplyInfoAction extends BaseAction {
 	}
 	
 	public String home() {
+		this.userInfoList = new ArrayList<String[]>();
 		this.initializeParameters();
+		
 		if (StringUtil.isNullOrBlank(query)) {
 			pager = this.supplyRequestService.findClbSupplyInfoList(PAGE_SIZE, pageNo);
 		} else {
 			pager = this.supplyRequestService.findClbSupplyInfoList(PAGE_SIZE, pageNo, query);
 		}
+		
+		List<Object> list = pager.getData();
+		
+		for (int i=0; i<list.size(); i++) {
+			String userInfo[] = new String[2];
+			ClbSupplyInfo clbSupplyInfo = (ClbSupplyInfo) list.get(i);
+			UsrUser user = accountService.getUserById(clbSupplyInfo.getUserid());
+			if (user != null) {
+				userInfo = this.getUserInfo(user);
+			}
+			this.userInfoList.add(userInfo);
+		}
+		
 		return "home";
 	}
 	
@@ -463,6 +481,14 @@ public class SupplyInfoAction extends BaseAction {
 
 	public List<String> getCheckedServiceType() {
 		return checkedServiceType;
+	}
+
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
+	}
+
+	public List<String[]> getUserInfoList() {
+		return userInfoList;
 	}
 	
 

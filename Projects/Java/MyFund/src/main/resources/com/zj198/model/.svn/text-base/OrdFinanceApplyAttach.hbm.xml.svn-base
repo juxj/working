@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
     <class name="com.zj198.model.OrdFinanceApplyAttach" table="ORD_FINANCE_APPLY_ATTACH" >
-        <id name="id" type="java.lang.Integer">
+         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
         </id>

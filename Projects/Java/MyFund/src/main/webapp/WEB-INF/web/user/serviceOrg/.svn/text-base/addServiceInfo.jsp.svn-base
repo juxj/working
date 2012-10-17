@@ -30,6 +30,7 @@ $(function(){
 
 $(function() {
 	$(".datepicker").datepicker();
+	$('textarea').xheditor({tools:'simple',skin:'nostyle'});
 });
 
 
@@ -137,8 +138,7 @@ $(document).ready(function(){
 				    <s:textfield id="prdServiceItem.title" name="prdServiceItem.title" cssClass="required" maxlength="50" ></s:textfield></dd>
 				<dd>
 			    	<h6><span class="txt-impt">*</span>服务介绍：</h6>
-			    	<textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" 
-			    		id="prdServiceItem.serviceInfo"  name="prdServiceItem.serviceInfo"  
+			    	<textarea id="prdServiceItem.serviceInfo"  name="prdServiceItem.serviceInfo"  
 			    		style="width: 550px;height: 150px;" class="required"></textarea>
 			    </dd>
 			     	

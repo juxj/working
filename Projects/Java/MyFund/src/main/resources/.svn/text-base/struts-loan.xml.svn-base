@@ -62,8 +62,12 @@
 		<action name="financeApply" class="com.zj198.action.loan.FinanceApplyAction">
 			<result name="busi_apply_first">/WEB-INF/web/user/loan/busifinance_apply_first.jsp</result>
 			<result name="apply_second">/WEB-INF/web/user/loan/finance_apply_second.jsp</result>
-			<result name="view_busi_apply">/WEB-INF/web/user/loan/busifinance_apply_view.jsp</result>
-			<result name="view_perrun_apply">/WEB-INF/web/user/loan/perrunfinance_apply_view.jsp</result>
+			<result name="view_busi_apply">/WEB-INF/web/user/loan/apply_details_company.jsp</result>
+			<result name="view_perrun_apply">/WEB-INF/web/user/loan/apply_details_user.jsp</result>
+			
+			<result name="view_busi_apply_bybank">/WEB-INF/web/user/loan/apply_details_companyBank.jsp</result>
+			<result name="view_perrun_apply_bybank">/WEB-INF/web/user/loan/apply_details_userBank.jsp</result>
+			
 			<result name="view_percost_apply">/WEB-INF/web/user/loan/percostfinance_apply_view.jsp</result>
 			<result name="view_perhouse_apply">/WEB-INF/web/user/loan/perhousefinance_apply_view.jsp</result>
 			<result name="industryList">/public/common/industryList.jsp</result>

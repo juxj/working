@@ -55,7 +55,7 @@ function showApply(){
     <div class="user_real fl">
       <h6>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else></h6>
       <p class="notice">您上次登录的时间为 <font color="#CC0000"><s:date name="usrLoginhistory.logindt" format="yyyy-MM-dd HH:mm:ss" /></font>，如有疑问请及时修改密码并联系客服。</p>
-      <span class="msg">您有（<a class="red" href="/news/ntyMessage!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
+      <span class="msg">您有（<a class="red" href="/user/message!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
       <p>查看您的<a href="/user/Profile.act"><font style="color: red;">详细信息</font></a>。</p>
     </div>
     <div class="clear"> &nbsp; </div>

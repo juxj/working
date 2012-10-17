@@ -150,7 +150,7 @@ function addMessage(appId){
 	</form>
 </div>   
 <div id="add_message" style="display:none;" title="添加消息">
-	<form id="messageForm" action="/news/ntyMessage!sendMessage.act" method="post" >
+	<form id="messageForm" action="/user/message!sendMessage.act" method="post" >
 	<s:hidden name="applyId" id="message_apply_id"></s:hidden>
 	<s:hidden name="currentPage"></s:hidden>
 	<s:hidden name="pageCount"></s:hidden>

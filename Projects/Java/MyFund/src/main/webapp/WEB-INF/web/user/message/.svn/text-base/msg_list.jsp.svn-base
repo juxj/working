@@ -26,7 +26,7 @@
 	});
 
 	function toPage(pageNum, pageSize) {
-		var url = "/news/ntyMessage!viewMsg.act?pager.currentPage=" + pageNum
+		var url = "/user/message!viewMsg.act?pager.currentPage=" + pageNum
 				+ "&pager.pageCount=" + pageSize;
 		$('#comForm').attr('action', url);
 		$('#comForm').submit();
@@ -52,7 +52,7 @@
 			return false;
 		}
 		if (window.confirm('你确定要删除该记录！')) {
-			var url = "/news/ntyMessage!delAll.act";
+			var url = "/user/message!delAll.act";
 			$('#comForm').attr('action', url);
 			$('#comForm').submit();
 			return true;
@@ -62,7 +62,7 @@
 	}
 	function del(mId) {
 		if (window.confirm('你确定要删除该记录！')) {
-			location.href= "/news/ntyMessage!delAll.act?mid="+mId;
+			location.href= "/user/message!delAll.act?mid="+mId;
 			return true;
 		} else {
 			return false;
@@ -72,7 +72,7 @@
 		$('#content').html(con);
 		$('#content').dialog({width:700,modal:true});
 		$.ajax({
-			url : '/news/ntyMessage!upIsRead.act',
+			url : '/user/message!upIsRead.act',
 			dataType : 'json',
 			type : 'post',
 			data : {mid: mid},
@@ -131,7 +131,7 @@
 	  <form id="comForm" action="" name="">
 		<table class="n_table">
 		  <tr>
-		    <td colspan="6" class="b_td"><a href="/news/ntyMessage!viewMsg.act"  <s:if test="css==-1">class="a_active"</s:if> >所有消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/news/ntyMessage!unRead.act" <s:if test="css==0">class="a_active"</s:if>>未读消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/news/ntyMessage!read.act" <s:if test="css==1">class="a_active"</s:if> >已读消息</a></td>
+		    <td colspan="6" class="b_td"><a href="/user/message!viewMsg.act"  <s:if test="css==-1">class="a_active"</s:if> >所有消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/message!unRead.act" <s:if test="css==0">class="a_active"</s:if>>未读消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/message!read.act" <s:if test="css==1">class="a_active"</s:if> >已读消息</a></td>
 		  </tr>
 		  <s:iterator value="pager.data" var="j">
 		  <tr>

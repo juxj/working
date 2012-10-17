@@ -78,6 +78,12 @@ public class InfoAction extends BaseAction {
 		return SUCCESS;
 	}
 	
+	//公告专用
+	public String gonggao(){
+		siteNews = newsService.findKnwTitleByType(Constants.ANNOUNCED_NEWS);
+		return "gonggao";
+	}
+	
 	//setter and getter
 	public Integer getTypeId() {
 		return typeId;

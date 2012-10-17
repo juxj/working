@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.zj198.model.UserModel;
 import com.zj198.model.UsrLoginhistory;
-import com.zj198.model.UsrMenu;
 import com.zj198.model.UsrOrgAttach;
 
 
@@ -37,12 +36,12 @@ public interface ProfileService {
 	 */
 	public UsrLoginhistory getLoginHistory();
 	
-	/**
-	 * 根据用户组类型获取用户中心菜单
-	 * @param userTypeGroup
-	 * @return 菜单list
-	 */
-	public List<UsrMenu> findMenuListByUid(Integer userTypeGroup);
+//	/**
+//	 * 根据用户组类型获取用户中心菜单
+//	 * @param userTypeGroup
+//	 * @return 菜单list
+//	 */
+//	public List<UsrMenu> findMenuListByGroupType(Integer userTypeGroup);
 	
 	/**获取签约方数据(JSON)*/
 	public List<UserModel> getUserList(Short userType, String userName);

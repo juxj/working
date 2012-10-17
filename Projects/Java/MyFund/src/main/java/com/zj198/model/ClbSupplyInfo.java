@@ -328,23 +328,5 @@ public class ClbSupplyInfo implements java.io.Serializable {
 	public void setLastPostDateBak(Timestamp lastPostDateBak) {
 		this.lastPostDateBak = lastPostDateBak;
 	}
-	
-	public String getInfoCompanyinfoDisp(){
-		if(infoCompanyinfo != null){			
-			String s = this.infoCompanyinfo.replaceAll(" ", "&nbsp;");
-			String j = s.replaceAll("\r\n","<br>");  
-			return j;
-		}else{
-			return "";
-		}
-	}
-	public String getRemarkDisp(){
-		String s = "";
-		if(remark != null){
-			s = this.remark.replaceAll(" ", "&nbsp;");
-		}
-		String j = s.replaceAll("\r\n","<br>");  
-		return j;
-	}
 
 }

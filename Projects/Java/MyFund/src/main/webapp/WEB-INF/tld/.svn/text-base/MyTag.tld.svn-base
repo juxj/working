@@ -28,6 +28,11 @@
 	      <required>false</required>
 	      <rtexprvalue>false</rtexprvalue>
 	    </attribute>
+	    <attribute>
+	      <name>divide</name>
+	      <required>false</required>
+	      <rtexprvalue>false</rtexprvalue>
+	    </attribute>
     </tag>   
     <tag>   
         <name>img</name>   

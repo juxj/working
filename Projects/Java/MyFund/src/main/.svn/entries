@@ -1,15 +1,15 @@
 10
 
 dir
-3754
-svn://192.168.1.8/branches/MyFund/2012092902/src/main
+3878
+svn://192.168.1.8/MyFund/src/main
 svn://192.168.1.8
 
 
 
-2012-09-29T06:45:59.920908Z
-3742
-juxj
+2012-10-16T08:34:37.073654Z
+3878
+yangb
 
 
 
@@ -26,12 +26,12 @@ juxj
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-webapp
-dir
-
 java
 dir
 
 resources
+dir
+
+webapp
 dir
 

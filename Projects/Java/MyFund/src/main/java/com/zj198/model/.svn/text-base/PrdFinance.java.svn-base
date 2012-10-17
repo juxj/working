@@ -67,6 +67,9 @@ public class PrdFinance implements java.io.Serializable {
 	private String recommendName;
 	private Date recommendTime;
 	private Integer recommendNo;
+	
+	private String memo;
+	private String attach;
 
 	/** default constructor */
 	public PrdFinance() {
@@ -476,6 +479,22 @@ public class PrdFinance implements java.io.Serializable {
 
 	public void setRecommendNo(Integer recommendNo) {
 		this.recommendNo = recommendNo;
+	}
+
+	public String getMemo() {
+		return memo;
+	}
+
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
+
+	public String getAttach() {
+		return attach;
+	}
+
+	public void setAttach(String attach) {
+		this.attach = attach;
 	}
 
 }

@@ -100,7 +100,7 @@ div.indiv{display:block;}
 .Search_t_title{font-size:20px; padding:15px;}
 .Search_t_title_bank{font-size:16px; font-weight:bolder; padding:20px; border: none; width:178px;}
 .Search_t_connect{width:127px; height:30px; text-align:center; line-height:30px; background:#f4f4f4; valign:top }
-.Search_t_connect01{width:178px; height:30px; line-height:30px; padding-left:10px;}
+.Search_t_connect01{padding:5px 10px 5px 10px;}
 .Search_t_connect02{width:127px; height:50px; line-height:50px; padding-left:10px; text-align:center; background:#f4f4f4;}
 /*理财服务搜索结果详情页*/
 
@@ -188,7 +188,7 @@ div.indiv{display:block;}
 /*融资服务搜索结果页*/
 .list_text{line-height:25px; padding: 20; border-bottom:1px solid #d7d7d7;}
 .top_color{background:#f9f9f7;}
-.top_color td{height:30px; line-height:30px; font-weight:bolder; border-bottom:1px solid #d7d7d7;}
+.top_color td{line-height:30px; font-weight:bolder; border-bottom:1px solid #d7d7d7;}
 .top_color01 td{height:40px; line-height:25px; border-bottom:1px solid #d7d7d7; vertical-align: middle;}
 .td_img{float:left; margin-right:10px; margin-left:10px;}
 .box_3_text{width:600px; margin:18px 0 18px 22px;}

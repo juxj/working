@@ -42,7 +42,7 @@ public class ProfileServiceImpl implements ProfileService {
 	private UsrServiceorgDAO usrServiceorgDAO;
 	private UsrCompanyDAO usrCompanyDAO;
 	private UsrLoginhistoryDAO usrLoginhistoryDAO;
-	private UsrMenuDAO usrMenuDAO;
+//	private UsrMenuDAO usrMenuDAO;
 	private UsrOrgAttachDAO usrOrgAttachDAO;
 	
 	public void setUsrLoginhistoryDAO(UsrLoginhistoryDAO usrLoginhistoryDAO) {
@@ -69,9 +69,9 @@ public class ProfileServiceImpl implements ProfileService {
 	public void setUsrCompanyDAO(UsrCompanyDAO usrCompanyDAO) {
 		this.usrCompanyDAO = usrCompanyDAO;
 	}
-	public void setUsrMenuDAO(UsrMenuDAO usrMenuDAO) {
-		this.usrMenuDAO = usrMenuDAO;
-	}
+//	public void setUsrMenuDAO(UsrMenuDAO usrMenuDAO) {
+//		this.usrMenuDAO = usrMenuDAO;
+//	}
 	public void setUsrOrgAttachDAO(UsrOrgAttachDAO usrOrgAttachDAO) {
 		this.usrOrgAttachDAO = usrOrgAttachDAO;
 	}
@@ -345,17 +345,18 @@ public class ProfileServiceImpl implements ProfileService {
 		return usrLoginhistoryDAO.getLastByUid(user.getId());
 	}
 
-	@Override
-	public List<UsrMenu> findMenuListByUid(Integer userTypeGroup){
-		List<UsrMenu> all = usrMenuDAO.findAll();
-		List<UsrMenu> list = new ArrayList<UsrMenu>();
-		for(UsrMenu menu:all){
-			if(NumberUtil.ifExist(menu.getRights(),(2<<userTypeGroup)/4)){
-				list.add(menu);
-			}
-		}
-		return list;
-	}
+//	@Override
+//	public List<UsrMenu> findMenuListByGroupType(Integer userTypeGroup){
+////		List<UsrMenu> all = usrMenuDAO.findAll();
+////		List<UsrMenu> list = new ArrayList<UsrMenu>();
+////		for(UsrMenu menu:all){
+////			if(NumberUtil.ifExist(menu.getRights(),(2<<userTypeGroup)/4)){
+////				list.add(menu);
+////			}
+////		}
+////		return list;
+//		return usrMenuDAO.findMenuListByGroupType(userTypeGroup);
+//	}
 	
 	@Override
 	public List<UserModel> getUserList(Short userType, String userName) {

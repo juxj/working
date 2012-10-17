@@ -47,7 +47,8 @@ function details(id){
 }
 function adminLoginUser(id,type,au){
 	if(id !=null && id != 0){
-		document.location.href="/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1;
+		window.open("/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1);
+		//document.location.href="/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1;
 	}else{
 		$("#umsg").html("请选择用户。").show();
 	}
@@ -125,8 +126,8 @@ function adminLoginUser(id,type,au){
 					<tbody>
 						<s:iterator value="pager.data" var="u" status="i">
 						<tr <s:if test="#i.even">class="even"</s:if><s:else>class="odd"</s:else>>
-							<td>${u.username}</td>
-							<td>${u.realname}</td>
+							<td>${u.username}&nbsp;</td>
+							<td>${u.realname}&nbsp;</td>
 							<td>
 							<s:if test="#u.type==0">未定</s:if>
 							<s:if test="#u.type==1">个人</s:if>
@@ -135,8 +136,8 @@ function adminLoginUser(id,type,au){
 							<s:elseif test="#u.type>=7 && #u.type<=12">金融机构</s:elseif>
 							<s:elseif test="#u.type>=13 && #u.type<=18">服务机构</s:elseif>
 							</td>
-							<td>${u.email}<s:if test="#u.activetype==1 || #u.activetype==3"> <font color="red">√</font></s:if></td>
-							<td>${u.mobile}</td>
+							<td>${u.email}<s:if test="#u.activetype==1 || #u.activetype==3"> <font color="red">√</font></s:if>&nbsp;</td>
+							<td>${u.mobile}<s:if test="#u.activetype==2 || #u.activetype==3"> <font color="red">√</font></s:if>&nbsp;</td>
 							<td id="status${u.id}"><s:if test="#u.status==0">正常</s:if><s:if test="#u.status==1"><font color="red">阻止</font></s:if></td>
 							<td><s:if test="#u.auditstatus==0">未审核</s:if><s:elseif test="#u.auditstatus==1">待审核</s:elseif><s:elseif test="#u.auditstatus==2">已审核</s:elseif></td>
 							<td><input type="button" value="详细" onclick="details(${u.id});"/> 

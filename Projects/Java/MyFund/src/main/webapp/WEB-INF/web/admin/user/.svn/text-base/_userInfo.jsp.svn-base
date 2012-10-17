@@ -42,11 +42,11 @@ function userstatus(id,statusid){
 	</tr>
 	<tr>
 		<td >邮箱：</td>
-		<td >${usrUser.email }</td>
+		<td >${usrUser.email }<s:if test="usrUser.activetype==1 || usrUser.activetype==3"> <font color="red">√</font></s:if></td>
 	</tr>
 	<tr class="odd">
 		<td >电话</td>
-		<td >${usrUser.mobile }</td>
+		<td >${usrUser.mobile }<s:if test="usrUser.activetype==2 || usrUser.activetype==3"> <font color="red">√</font></s:if></td>
 	</tr>
 	<tr>
 		<td >注册时间：</td>

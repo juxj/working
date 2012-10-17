@@ -51,12 +51,26 @@
         </dl>
       </div>
       <form class="box_form">
+	     <s:if test="msg!=null">
+      <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
+		    <tr>
+	           <td>
+	           	  <div class="notification success png_bg">
+	           	  	  <div>
+	           	  	  	${msg }
+	           	  	  	<s:if test="#session._user.auditstatus==2 && #session.APPLY_LOAN_PRODUCT_ID != null && #session.APPLY_LOAN_PRODUCT_ID != ''">
+	           	  	  	您有未完成的融资产品申请，您可以
+	           	  	  	<a href="/user/loan/financeApply!financeApply.act?product.id=${session.APPLY_LOAN_PRODUCT_ID}" class="zj_href">继续申请</a>
+
+	           	  	  	</s:if>
+	           	  	  </div>
+	           	  </div>
+	           </td>
+	         </tr>
+      </table>
+		    </s:if>
        <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
-         <s:if test="msg!=null">
-          <tr>
-           <td colspan="4"><div class="notification success png_bg"><div>${msg }</div></div></td>
-         </tr>
-	     </s:if>
+	     
          <tr>
            <td class="a_right">姓名</td>
            <td colspan="3"> ${session._user.realname} <s:if test="#session._user.gender==1">先生</s:if><s:else>女士</s:else></td>

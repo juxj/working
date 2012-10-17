@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.zj198.dao.KnwTitleDAO;
 import com.zj198.model.KnwTitle;
-import com.zj198.util.Constants;
+import com.zj198.util.CacheUtil;
 import com.zj198.util.Pager;
 
 public class KnwTitleDAOImpl extends HibernateDAO<KnwTitle, Integer> implements KnwTitleDAO {
@@ -51,15 +51,25 @@ public class KnwTitleDAOImpl extends HibernateDAO<KnwTitle, Integer> implements 
 
 	@Override
 	public List<KnwTitle> findLastestByType(Integer typeId, Integer num) {
-		List<KnwTitle> result = Constants.NEWS_MAP.get(typeId);
-		
-		if(result == null || result.size()<1) {
+		Object object = CacheUtil.get("KnwTitle_last_typeId_"+typeId);
+		if(object==null){
 			String hql = "from KnwTitle as model where typeId=:typeId and isAuthenticated=1 and isActive=1 order by issuedDate desc";
-			result = findTopRows(hql, num, "typeId",typeId);
-			Constants.NEWS_MAP.put(typeId, result);
+			List<KnwTitle> result = findTopRows(hql, num, "typeId",typeId);
+			CacheUtil.set("KnwTitle_last_typeId_"+typeId, result);
+			return result;
+		}else{
+			return (List<KnwTitle>)object;
 		}
 		
-		return result;
+//		List<KnwTitle> result = Constants.NEWS_MAP.get(typeId);
+//		
+//		if(result == null || result.size()<1) {
+//			String hql = "from KnwTitle as model where typeId=:typeId and isAuthenticated=1 and isActive=1 order by issuedDate desc";
+//			result = findTopRows(hql, num, "typeId",typeId);
+//			Constants.NEWS_MAP.put(typeId, result);
+//		}
+//		
+//		return result;
 	}
 
 }

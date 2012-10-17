@@ -176,7 +176,6 @@
 		</tr>
 	</table>
 	 -->
-	</form>
 </div>
 <!--main1-->
 <!--main2-->
@@ -489,7 +488,7 @@
 	    <tr class="capital_table" >
       </s:else>
         <td class="capital_table_a1" style="padding-left:10px; word-wrap:break-word;word-break:break-all; border:0px;">
-        <s:if test="logo == null">
+        <s:if test="logo == null || logo == ''">
 	        <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap; padding-top:2px;"/>
         </s:if>
         <s:else>
@@ -521,8 +520,8 @@
         		视具体情况而定
         	</s:else>
         </td>
-        <td class="capital_table_a3" title="<common:print valueId="repaymentType" />" style="border:0px;"><common:print valueId="repaymentType" /></td>
-       	<td class="capital_table_a3" title="<common:print valueId="proSpecial" />" style="border:0px;"><common:print valueId="proSpecial" /></td>
+        <td class="capital_table_a3" title='<common:print valueId="repaymentType"/>' style="border:0px;"><common:print valueId="repaymentType" divide="br"/></td>
+       	<td class="capital_table_a3" title='<common:print valueId="proSpecial" />' style="border:0px;"><common:print valueId="proSpecial" divide="br"/></td>
         <td class="capital_table_a3" style="border:0px;">${checkTime}个工作日</td>
         <td class="capital_table_a3 " style="border:0px;">
         	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}" class="btn_s blue2" target="_blank">查看</a>

@@ -23,8 +23,9 @@ class WebFetcher:
 		conn.request('GET', url)
 		response = conn.getresponse()
 		data = response.read()
-		data = unicode(data, 'gb2312')
-		data = data.encode('utf-8')
+		#data = data.decode('gb2312','ignore').encode('utf-8') 
+		soup = BeautifulSoup(data)
+		data = soup.prettify()
 
 		remover	= HTMLAttrRemover()
 		data = remover.read(data)

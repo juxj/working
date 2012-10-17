@@ -24,6 +24,7 @@ $(document).ready(function(){
 	$("#comForm").validate({
 		meta:"validate"
 	});
+	$('textarea').xheditor({tools:'simple',skin:'nostyle'});
 	$( "#regDate" ).datepicker({changeMonth: true,changeYear: true,maxDate: "0d"});
 	$("#regCity").val('${usrCompany.regcityid}');
 	$("#regDistrict").val('${usrCompany.regdistrictid}');
@@ -42,7 +43,7 @@ $(document).ready(function(){
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="M_menu">
-&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑企业详细信息
+&nbsp;&nbsp;账户管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;<a href="/user/Profile.act">企业详细信息</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;编辑企业详细信息
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分-->
@@ -139,7 +140,7 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right v-align">经营范围：</td>
-          <td colspan="3"><textarea class="xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="usrCompany.bizscope" style="width: 550px;height: 150px;">${usrCompany.bizscope }</textarea></td>
+          <td colspan="3"><textarea name="usrCompany.bizscope" style="width: 550px;height: 150px;">${usrCompany.bizscope }</textarea></td>
         </tr>
         <tr>
           <td class="a_right v-align">所属部门：</td>

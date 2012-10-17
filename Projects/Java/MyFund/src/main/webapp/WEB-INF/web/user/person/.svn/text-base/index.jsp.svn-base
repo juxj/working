@@ -55,8 +55,8 @@ function showApply(){
     <div class="user_real fl">
       <h6>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else></h6>
       <p class="notice">您上次登录的时间为 <font color="#CC0000"><s:date name="usrLoginhistory.logindt" format="yyyy-MM-dd HH:mm:ss" /></font>，如有疑问请及时修改密码并联系客服。</p>
-      <span class="msg">您有（<a class="red" href="/news/ntyMessage!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
-      <p>查看您的<a href="/user/Profile.act"><font style="color: red;">详细信息</font></a>。</p>
+      <span class="msg">您有（<a class="red" href="/user/message!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
+      <s:if test="#session._user.activetype==0 || #session._user.activetype==1"><p>您的手机尚未通过验证，为了您更方便开展业务，<a href="/user/regInfo.act"><font style="color: red;">请验证</font></a>您的手机。</p></s:if>
     </div>
     <div class="clear"> &nbsp; </div>
   </div>
@@ -82,15 +82,15 @@ function showApply(){
       <h6>我的服务申请</h6>
       <span class="leftdetail"><a href="/service/serviceItem!showHome.act" target="_blank">立即申请</a></span>
       </caption>
-       <tr>
-      	<th width="26%">服务标题</th>
-        <th width="26%">服务方</th>
-        <th width="12%">服务类型</th>
-        <th>申请日期</th>
-        <th>状态</th>
-        <th>操作</th>
-      </tr>
       <s:if test="sinOrderList.data.size()>0">
+	       <tr>
+	      	<th width="26%">服务标题</th>
+	        <th width="26%">服务方</th>
+	        <th width="12%">服务类型</th>
+	        <th>申请日期</th>
+	        <th>状态</th>
+	        <th>操作</th>
+	      </tr>
 	      <s:iterator value="sinOrderList.data" id="item">
 	       <tr>
 	       	  <td  title="${item.itemTitle}">
