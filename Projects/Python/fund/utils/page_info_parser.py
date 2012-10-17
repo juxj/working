@@ -1,7 +1,6 @@
 from HTMLParser import HTMLParser
 
 class PageInfoParser(HTMLParser):
-
 	def __init__ (self, selected_tags, data_list_tags):
 
 		HTMLParser.__init__(self)
@@ -30,6 +29,7 @@ class PageInfoParser(HTMLParser):
 		tag = "/".join(self._level_stack);
 		#print tag, data
 		if tag in PageInfoParser.data_list_tags:
+			#print tag, data
 			data =data.strip().replace('\r\n','')
 			if len(data)>0:
 				self._lines.append(data)
