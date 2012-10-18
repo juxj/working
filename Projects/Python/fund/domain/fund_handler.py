@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from bs4 import BeautifulSoup
 from env import sites, nodes, read
 from utils.app_config import AppConfig
 from utils.page_info_parser import PageInfoParser
@@ -15,9 +16,9 @@ class FundHandler:
 
 	def get_html_data(self, config, node, data, multi):
 		# get settings.
-		selected_tags = config.get(node, 'selected_tags').split(',')
-		data_list_tags = config.get(node, 'data_list_tags').split(',')
-		data_index = config.get(node, 'data_index').split(',')
+		selected_tags = config.get(node, 'selected_tags').strip().split(',')
+		data_list_tags = config.get(node, 'data_list_tags').strip().split(',')
+		data_index = config.get(node, 'data_index').strip().split(',')
 		# parser html data.
 		parser = PageInfoParser(selected_tags, data_list_tags)
 		data = parser.read(data)
@@ -33,12 +34,6 @@ class FundHandler:
 		
 	def get_collections(self, data, start_index, field_count, data_index):
 		m = 0
-		'''
-		for m in range(int(start_index)):
-			data = data.pop(0)
-			m = m + 1
-			print len(data)
-		'''
 		data = app_util.divide_by_record(data, field_count)	
 
 		records = []
@@ -46,9 +41,28 @@ class FundHandler:
 			record = []
 			for index in data_index:
 				record.append(item[int(index)])
-			print record
+			#print record
 			records.append(record)
+		print len(records)
 		return records	
+
+	def handle_invest(self, config, node, data):
+		invest_nodes = config.get(node, 'data_nodes').split(',')
+		data_tag_depth = config.get(node, 'data_tag_depth').split(',')	
+		data_tag  = config.get(node, 'data_tag').strip()
+
+		soup = BeautifulSoup(data)	
+		for tag in data_tag_depth:
+			soup = soup.find(tag)
+		soup = soup.find_all(data_tag)			
+		for invest_node in invest_nodes:
+			node_name = node +'_'+ invest_node 	
+			print '******'+node_name+'******'
+
+			table_index = config.get(node_name, 'table_index')
+			data = soup[int(table_index)].prettify()
+			self.get_html_data(config, node_name, data, 1)
+			
 		
 	def get_data(self):
 		for site in sites:
@@ -65,6 +79,8 @@ class FundHandler:
 						self.get_json_data(config, node+'_json', data)
 					else:
 						self.get_html_data(config, node+'_html', data, 1 )
+				elif node == 'invest':
+					self.handle_invest(config, node, data)
 				else:
 					self.get_html_data(config, node, data, 0)
 
