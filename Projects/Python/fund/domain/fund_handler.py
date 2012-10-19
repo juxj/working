@@ -27,6 +27,15 @@ class FundHandler:
 		if multi:
 			field_count = int(config.get(node, 'field_count'))
 			start_index = int(config.get(node, 'start_index'))
+			tmp = []
+
+			m = 1
+			for item in data:            
+				if m > start_index:
+					tmp.append(item)
+				m = m + 1
+			data = tmp
+
 			self.get_collections(data, start_index,field_count, data_index)
 		else:
 			for index in data_index:
@@ -40,28 +49,42 @@ class FundHandler:
 		for item in data:
 			record = []
 			for index in data_index:
-				record.append(item[int(index)])
-			#print record
+				tmp = unicode(item[int(index)], 'gbk').encode('utf-8')
+				print tmp
+				record.append(tmp)
 			records.append(record)
 		print len(records)
 		return records	
 
-	def handle_invest(self, config, node, data):
-		invest_nodes = config.get(node, 'data_nodes').split(',')
-		data_tag_depth = config.get(node, 'data_tag_depth').split(',')	
+	def soup_handler(self, config, node, data):
+		tag_depth = config.get(node, 'tag_depth').split(',')	
+		tag_depth_index = config.get(node, 'tag_depth_index').split(',')	
 		data_tag  = config.get(node, 'data_tag').strip()
+		soup = BeautifulSoup(data)
+		m = 0
+		for tag in tag_depth:
+			if tag.strip() != '':
+				soup = soup.find_all(tag)
+				soup = soup[int(tag_depth_index[m])]
+				m = m + 1
+		soup = soup.find_all(data_tag)	
+		return soup
+	
+	def handle_invest(self, config, node, data):
 
-		soup = BeautifulSoup(data)	
-		for tag in data_tag_depth:
-			soup = soup.find(tag)
-		soup = soup.find_all(data_tag)			
+		invest_nodes = config.get(node, 'data_nodes').split(',')
+		soup = self.soup_handler(config, node, data)	
+				
 		for invest_node in invest_nodes:
 			node_name = node +'_'+ invest_node 	
 			print '******'+node_name+'******'
-
 			table_index = config.get(node_name, 'table_index')
 			data = soup[int(table_index)].prettify()
 			self.get_html_data(config, node_name, data, 1)
+
+	def handle_home(self, config, node, data):
+		soup = self.soup_handler(config, node, data)
+		self.get_html_data(config, node, data, 1)		
 			
 		
 	def get_data(self):
@@ -81,6 +104,7 @@ class FundHandler:
 						self.get_html_data(config, node+'_html', data, 1 )
 				elif node == 'invest':
 					self.handle_invest(config, node, data)
+				elif node == 'home':
+					self.handle_home(config, node, data)
 				else:
 					self.get_html_data(config, node, data, 0)
-

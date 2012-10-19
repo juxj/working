@@ -1,8 +1,8 @@
 from HTMLParser import HTMLParser
 
 class PageInfoParser(HTMLParser):
-	def __init__ (self, selected_tags, data_list_tags):
 
+	def __init__ (self, selected_tags, data_list_tags):
 		HTMLParser.__init__(self)
 		PageInfoParser.selected_tags = selected_tags
 		PageInfoParser.data_list_tags = data_list_tags 
