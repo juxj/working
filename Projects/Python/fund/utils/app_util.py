@@ -40,6 +40,24 @@ class app_util:
 		return result
 
 	@staticmethod
+	def remove_duplicate(string_array):
+		result = []
+		m = 0
+		for item in string_array:
+			if m == 0:
+				result.append(item)
+			else:
+				exist = 0
+				for value in result:
+					if value == item:
+						exist = 1
+				if not exist:
+					result.append(item)
+			m = m + 1	
+		return result
+
+
+	@staticmethod
 	def divide_by_group(items, group_count):
 
 		result = []

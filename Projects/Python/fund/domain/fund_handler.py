@@ -4,8 +4,9 @@ from env import sites, nodes, read
 from utils.app_config import AppConfig
 from utils.page_info_parser import PageInfoParser
 from utils.app_util import app_util
+from utils.web_fetcher import WebFetcher
 
-import os, string, json
+import os, string, json, re
 
 class FundHandler:
 
@@ -21,6 +22,7 @@ class FundHandler:
 		data_index = config.get(node, 'data_index').strip().split(',')
 		# parser html data.
 		parser = PageInfoParser(selected_tags, data_list_tags)
+		#print data
 		data = parser.read(data)
 		# refine the data user selected
 
@@ -49,26 +51,35 @@ class FundHandler:
 		for item in data:
 			record = []
 			for index in data_index:
-				tmp = unicode(item[int(index)], 'gbk').encode('utf-8')
-				print tmp
+				tmp = item[int(index)]
 				record.append(tmp)
 			records.append(record)
 		print len(records)
 		return records	
 
 	def soup_handler(self, config, node, data):
-		tag_depth = config.get(node, 'tag_depth').split(',')	
-		tag_depth_index = config.get(node, 'tag_depth_index').split(',')	
+
+		keys = config.get(node, 'property_name').split(',')	
+		values = config.get(node, 'property_value').split(',')	
 		data_tag  = config.get(node, 'data_tag').strip()
 		soup = BeautifulSoup(data)
-		m = 0
-		for tag in tag_depth:
-			if tag.strip() != '':
-				soup = soup.find_all(tag)
-				soup = soup[int(tag_depth_index[m])]
+		m = 0	
+		attrs = '{'
+		for key in keys:
+			if key.strip() != '':
+				attrs = attrs + '\"' + key +'\":\"' + values[m] + '\"'
 				m = m + 1
-		soup = soup.find_all(data_tag)	
-		return soup
+		attrs = attrs + '}';
+		
+		attrs_value = json.loads(attrs);		
+
+		if data_tag.strip() != '':
+			if len(attrs_value)>0:
+				data = soup(data_tag, attrs = attrs_value)
+			else:
+				data = soup(data_tag)
+
+		return data
 	
 	def handle_invest(self, config, node, data):
 
@@ -82,29 +93,43 @@ class FundHandler:
 			data = soup[int(table_index)].prettify()
 			self.get_html_data(config, node_name, data, 1)
 
-	def handle_home(self, config, node, data):
-		soup = self.soup_handler(config, node, data)
-		self.get_html_data(config, node, data, 1)		
-			
+	def handle_home(self, config, fetcher):
+		node = 'home'
+		url = config.get(node, 'url')
+		data = fetcher.get(url)
+		data = self.soup_handler(config, node, data)
+		codes = []
+		for item in data:
+			for link in item.find_all('a'):
+				code =  link.get('href')
+				code = re.search('[\d]{6}', code)
+				if code != None:
+					codes.append(code.group(0))
+		codes = set(codes)
+		return codes
+
 		
 	def get_data(self):
 		for site in sites:
 			print '================'+site+'===================='
 			config = AppConfig().load('config/'+site+'.ini')
-			for node in nodes:
-				print '*******'+node+'********'
-				file_name = 'data/'+site+'_'+node+'.html'
-				#print file_name
-				data = read(file_name)	
-				if node == 'nav':
-					data_type = config.get(node, 'data_type')
-					if data_type == 'json':
-						self.get_json_data(config, node+'_json', data)
+			domain = config.get('server', 'domain')
+			fetcher = WebFetcher(domain)
+			codes = self.handle_home(config,fetcher)
+			for code in codes:
+				for node in nodes:
+					print '*******'+node+'('+code+')'+'********'
+					url = config.get(node, 'url')
+					url = url%(code)
+					#print file_name
+					data = fetcher.get(url)	
+					if node == 'nav':
+						data_type = config.get(node, 'data_type')
+						if data_type == 'json':
+							self.get_json_data(config, node+'_json', data)
+						else:
+							self.get_html_data(config, node+'_html', data, 1 )
+					elif node == 'invest':
+						self.handle_invest(config, node, data)
 					else:
-						self.get_html_data(config, node+'_html', data, 1 )
-				elif node == 'invest':
-					self.handle_invest(config, node, data)
-				elif node == 'home':
-					self.handle_home(config, node, data)
-				else:
-					self.get_html_data(config, node, data, 0)
+						self.get_html_data(config, node, data, 0)

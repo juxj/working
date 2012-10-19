@@ -1,1589 +1,1196 @@
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
+================06====================
+*******home********
+<table border="0" cellpadding="0" cellspacing="0" class="sharetable tablebt intervalbg" id="tabFundData" style="margin-bottom: 5px;" width="100%">
+<tbody>
 <tr>
-<td background="/images/zhlc_img/topbg01.jpg" height="26">
-<table border="0" cellpadding="0" cellspacing="0" width="1000">
-<tr>
-<td height="26" width="13"></td>
-<td align="left" width="600"> </td>
-<td align="right" width="350"><a href="http://www.bosera.com.hk" target="_blank">English</a>   |   <a href="/sitemap.html">网站地图</a>   |   <a href="http://weibo.com/bosera" target="_blank">官方微博</a></td>
-<td width="13"></td>
+<th class="borderb" width="9%">基金<br/>类型</th>
+<th class="borderb" width="9%">基金<br/>代码</th>
+<th class="borderb" width="18%">基金<br/>名称</th>
+<th class="borderb" width="10%">更新<br/>日期</th>
+<th class="borderb" width="7%">单位<br/>净值</th>
+<th class="borderb" width="7%">累计<br/>净值</th>
+<th class="borderb" width="7%">最近<br/>一天</th>
+<th class="borderb" width="8%">最近<br/>三月</th>
+<th class="borderb" width="7%">最近<br/>一年</th>
+<th class="borderb" width="7%">成立以来<br/>增长率</th>
+<th class="borderb" width="7%">状态</th>
+<th class="borderb" width="5%">比较</th>
 </tr>
-</table>
+<!-- tr  -->
+<tr id="519008">
+<th rowspan="2" width="8%">
+<div class="sn_name">
+<a href="###">混合型</a>
+<div class="sn_tip">
+<p>
+<strong>混合型基金：</strong>指投资于股票、债券和货币市场工具等有价证券，
+
+股票资产占基金资产比例的下限低于60%的基金。预期风险收益水平低于股票基金，高于债券基金。
+							</p>
+</div>
+</div>
+</th>
+<td width="9%">
+<a href="/main/products/pofund/519008/fundgk.shtml" target="_blank" title="本基金重点投资于具有持续竞争优势的企业，分享其在中国经济持续成长背景下的长期优异业绩。荣获第四、五、六届中国基金业金牛奖。">519008</a>
 </td>
-</tr>
-<tr>
-<td height="75"><a href="/"><img alt="博时基金" border="0" src="/images/toppic1.jpg"/></a><img src="/images/toppic2.jpg"/></td>
-</tr>
-</table>
-<table cellpadding="0" cellspacing="0" width="100%"><tr><td><input class="search_text" name="keyword" onblur="if(this.value==''){this.value='站内搜索'}" onfocus="if(this.value=='站内搜索'){this.value=''}" value="站内搜索"/></td><td><a href="javascript:;" name="searchButton" onclick="searchForm.submit()"><img border="0" height="38" src="/images/pic_heads_12.jpg" width="52"/></a></td></tr></table>
-<table border="0" cellpadding="0" cellspacing="0" id="navTab">
-<tr>
-<td classid="000200020001"><div class="colBoxOut"><a class="" href="/index.html" style="" target="_self">首页</a></div>
-<div class="menu0" id="menu0" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-</dt>
-</dl>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519008/fundgk.shtml" target="_blank">汇添富优势精选混合</a>
+<div class="sn_tip">
+<p>
+								本基金重点投资于具有持续竞争优势的企业，分享其在中国经济持续成长背景下的长期优异业绩。荣获第四、五、六届中国基金业金牛奖。
+							</p>
 </div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
-</td>
-<td classid="000200020003"><div class="colBoxOut"><a class="" href="/fund/jijinchanpin.html" style="" target="_self">基金产品</a></div>
-<div class="menu1" id="menu1" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/fund/kaifangshijijin.html" style="" target="_self">开放式基金</a>
-<div>
-<a class="" href="/fund/huobishichangjijin.html" style="color:#F00; font-weight:bold" target="_self">货币型基金</a>
-<div>
-<a class="" href="/fund/boshixianjinshouyi.html" style="" target="_self">博时现金收益货币</a>
-</div>
-<a class="" href="/fund/gupiaoxingjijin.html" style="color:#F00; font-weight:bold" target="_self">股票型基金</a>
-<div>
-<a class="" href="/fund/hushen300zhishujijin.html" style="" target="_self">博时沪深300指数</a>
-<a class="" href="/fund/boshijingxuanjijin.html" style="" target="_self">博时精选股票</a>
-<a class="" href="/fund/boshizhuti.html" style="" target="_self">博时主题行业股票(LOF)</a>
-<a class="" href="/fund/boshidisanchanye.html" style="" target="_self">博时第三产业股票</a>
-<a class="" href="/fund/boshixinxing.html" style="" target="_self">博时新兴成长股票</a>
-<a class="" href="/fund/boshitexujiazhi.html" style="" target="_self">博时特许价值股票</a>
-<a class="" href="/fund/boshishangzhengchaodapanetfjijin.html" style="" target="_self">博时上证超大盘ETF</a>
-<a class="" href="/fund/boshietf.html" style="" target="_self">博时上证超大盘ETF联接</a>
-<a class="" href="/fund/boshichuangyechengzhangjijin.html" style="" target="_self">博时创业成长股票</a>
-<a class="" href="/fund/boshidazhonghuaqdii.html" style="" target="_self">博时大中华亚太精选股票(QDII)</a>
-<a class="" href="/fund/boshihangyelundong.html" style="" target="_self">博时行业轮动股票</a>
-<a class="" href="/fund/boshizhuoyuepinpaijijin.html" style="" target="_self">博时卓越品牌股票(LOF)</a>
-<a class="" href="/fund/boshishenzhengjibenmian200etf.html" style="" target="_self">博时深证基本面200ETF</a>
-<a class="" href="/fund/boshishenzhengjibenmian200etflianjiejijin.html" style="" target="_self">博时深证基本面200ETF联接</a>
-<a class="" href="/fund/boshishangzhengziranziyuanetf.html" style="" target="_self">博时上证自然资源ETF</a>
-<a class="" href="/fund/boshishangzhengziranziyuan.html" style="" target="_self">博时上证自然资源ETF联接</a>
-<a class="" href="/fund/boshibiaopu500qdii.html" style="" target="_self">博时标普500指数(QDII)</a>
-<a class="" href="/fund/boshiyiliaobaojianhangye.html" style="" target="_self">博时医疗保健行业股票</a>
-</div>
-<a class="" href="/fund/hunhexingjijin.html" style="color:#F00; font-weight:bold" target="_self">混合型基金</a>
-<div>
-<a class="" href="/fund/boshijiazhizengzhang.html" style="" target="_self">博时价值增长混合</a>
-<a class="" href="/fund/boshipingheng.html" style="" target="_self">博时平衡配置混合</a>
-<a class="" href="/fund/boshijiazhizengzhangerhao.html" style="" target="_self">博时价值增长贰号混合</a>
-<a class="" href="/fund/boshiceluehunhe.html" style="" target="_self">博时策略混合</a>
-<a class="" href="/fund/boshihuibaolinghuojijin.html" style="" target="_self">博时回报混合</a>
-</div>
-<a class="" href="/fund/zhaiquanxingjijin.html" style="color:#F00; font-weight:bold" target="_self">债券型基金</a>
-<div>
-<a class="" href="/fund/boshiwendingjiazhi.html" style="" target="_self">博时稳定价值债券</a>
-<a class="" href="/fund/boshixinyongzhaiquan.html" style="" target="_self">博时信用债券</a>
-<a class="" href="/fund/boshihongguanhuibaozhaiquan.html" style="" target="_self">博时宏观回报债券</a>
-<a class="" href="/fund/boshizhuanzhaizengqiangzhaiquan.html" style="" target="_self">博时转债增强债券</a>
-<a class="" href="/fund/boshiyuxiangfenjizaiquan.html" style="" target="_self">博时裕祥分级债券</a>
-<a class="" href="/fund/boshitianyizhaiquan.html" style="" target="_self">博时天颐债券</a>
-<a class="" href="/fund/boshixinyongzhaichunzhai.html" style="" target="_self">博时信用债纯债</a>
-</div>
-<a class="" href="/fund/qitaxingjijin.html" style="color:#F00; font-weight:bold" target="_self">其他型基金</a>
-<div>
-<a class="" href="/fund/boshikangtongzhangjijin.html" style="" target="_self">博时抗通胀增强回报(QDII-FOF)</a>
-</div>
-</div>
-<a class="boldFirst" href="/fund/etfjijin.html" style="" target="_self">ETF</a>
-<div>
-<a class="" href="/fund/boshishangzhengchaodapanetfjijin.html" style="" target="_self">博时上证超大盘ETF</a>
-<a class="" href="/fund/boshishenzhengjibenmian200etfjijin.html" style="" target="_self">博时深证基本面200ETF</a>
-<a class="" href="/fund/boshishangzhengziranziyuanetf.html" style="" target="_self">博时上证自然资源ETF</a>
-</div>
-<a class="boldFirst" href="/fund/qdiijijin.html" style="" target="_self">QDII</a>
-<div>
-<a class="" href="/fund/boshidazhonghuaqdii.html" style="" target="_self">博时大中华亚太精选股票(QDII)</a>
-<a class="" href="/fund/boshikangtongzhangjijin.html" style="" target="_self">博时抗通胀增强回报(QDII-FOF)</a>
-<a class="" href="/fund/boshibiaopu500qdii.html" style="" target="_self">博时标普500指数(QDII)</a>
-</div>
-<a class="boldFirst" href="/fund/fengbishijijin.html" style="" target="_self">封闭式基金</a>
-<div>
-<a class="" href="/fund/boshiyuyang.html" style="" target="_self">博时裕阳封闭</a>
-<a class="" href="/fund/boshiyulong.html" style="" target="_self">博时裕隆封闭</a>
-<a class="" href="/fund/boshiyuyuan.html" style="" target="_self">博时裕元封闭(封转开)</a>
-<a class="" href="/fund/boshiyuhua.html" style="" target="_self">博时裕华封闭(封转开)</a>
-<a class="" href="/fund/boshiyuze.html" style="" target="_self">博时裕泽封闭(封转开)</a>
-</div>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
 </div>
 </td>
-<td classid="000200020004"><div class="colBoxOut"><a class="" href="/trade/jijinchaxun.html" style="" target="_self">网上交易与查询</a></div>
-<div class="menu2" id="menu2" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="https://trade.bosera.com/account/verifyIdentity.jsp?channel=transaccount" style="" target="_blank">网上交易开户</a>
-<a class="boldFirst" href="https://trade.bosera.com" style="" target="_blank">网上交易登录</a>
-<a class="boldFirst" href="https://trade.bosera.com" style="" target="_blank">账户查询与管理</a>
-<span class="boldFirst" style="" target="_self">交易指南</span>
-<div>
-<a class="" href="https://trade.bosera.com/doc/1.0.html" style="" target="_blank">帮助手册</a>
-</div>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
+<td width="10%">
+							2012-10-18 
+			  </td>
+<td width="7%">
+								 2.1363
+			   </td>
+<td width="7%">
+								4.3163 
+				</td>
+<td width="7%">
+<span class="red">+1.13%</span>
 </td>
-<td classid="000200020005"><div class="colBoxOut"><a class="" href="/wealth/licaizaixian.html" style="" target="_self">理财在线</a></div>
-<div class="menu3" id="menu3" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/wealth/licaigongjuxiang.html" style="" target="_self">理财工具</a>
-<div>
-<a class="" href="/wealth/jijinzuhetaocanjinshenxing.html" style="" target="_self">理财规划师</a>
-<div>
-<a class="" href="/wealth/jijintuijianjinquxingkehu.html" style="" target="_self">2012夏季主打星-积极型精选</a>
-<a class="" href="/wealth/jijintuijianjinshenxingkehu.html" style="" target="_self">2012夏季主打星-稳健型精选</a>
-</div>
-<a class="" href="/wealth/zichanpeizhifenxi.html" style="" target="_self">理财计算器</a>
-<div>
-<a class="" href="/wealth/zichanpeizhifenxi.html" style="" target="_self">资产配置分析</a>
-<a class="" href="/wealth/licaijisuanqi.html" style="" target="_self">算算需要投资多少年</a>
-<a class="" href="/wealth/xianjinshouyijisuanqi.html" style="" target="_self">算算能有多少投资收益</a>
-<a class="" href="/wealth/jijindingtoujisuanqi.html" style="" target="_self">基金定投计算器</a>
-</div>
-<a class="" href="/wealth/nianjinjijin.html" style="" target="_self">年金计算器</a>
-<a class="" href="/minisite/boshi_dt/html/abacus.jsp" style="" target="_blank">理财工具-定投小算盘</a>
-<a class="" href="/wealth/bijiaoshisuanqi.html" style="" target="_self">比较试算器</a>
-<a class="" href="/wealth/jijinshengoufeilv.html" style="" target="_self">费用计算器</a>
-</div>
-<a class="boldFirst" href="/wealth/boshieshijie.html" style="" target="_self">博时e视界</a>
-<div>
-<a class="" href="/wealth/boshijijindaxue.html" style="" target="_self">博时基金大学</a>
-<a class="" href="/wealth/boshishijie.html" style="" target="_self">博时视界</a>
-<a class="" href="/wealth/zhuanhushalong.html" style="" target="_self">博时快e专户沙龙</a>
-<a class="" href="/wealth/caifuluntan.html" style="" target="_self">博时快e财富论坛</a>
-<a class="" href="/wealth/jingcaihuigu.html" style="" target="_self">精彩回顾</a>
-</div>
-<a class="boldFirst" href="/wealth/jijindingtou.html" style="" target="_self">基金定投</a>
-<a class="boldFirst" href="/wealth/jijinfengxian.html" style="" target="_self">投资者教育</a>
-<div>
-<a class="" href="/wealth/jijinfengxian.html" style="" target="_self">风险教育</a>
-<a class="" href="/wealth/jijinfagui.html" style="" target="_self">法律法规</a>
-<a class="" href="/wealth/fanxiqian.html" style="" target="_self">反洗钱专栏</a>
-<a class="" href="/wealth/zhengquanqizhai.html" style="" target="_self">防范证券欺诈活动</a>
-</div>
-<a class="boldFirst" href="/wealth/fengxianceping.html" style="" target="_self">风险测评</a>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
+<td width="8%">
+<span class="red">+2.94%</span>
 </td>
-<td classid="000200020006"><div class="colBoxOut"><a class="" href="/pension/nianjinguanli.html" style="" target="_self">养老基金</a></div>
-<div class="menu4" id="menu4" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/pension/nianjinguanli.html" style="" target="_self">年金管理</a>
-<div>
-<a class="" href="/pension/nianjinguanli.html" style="" target="_self">业务概要</a>
-<a class="" href="/pension/qiyenianjinguanli.html" style="" target="_self">管理优势</a>
-<a class="" href="/pension/yanglaojinguanlituandui.html" style="" target="_self">服务团队</a>
-<a class="" href="/pension/nianjinjijin.html" style="" target="_self">服务流程</a>
-</div>
-<a class="boldFirst" href="/pension/quanguoshehuibaozhangjijin.html" style="" target="_self">全国社保基金</a>
-<a class="boldFirst" href="/pension/jibenyanglaobaoxian.html" style="" target="_self">基本养老保险</a>
-<a class="boldFirst" href="/pension/qiyenianjindongtai.html" style="" target="_self">年金动态</a>
-<a class="boldFirst" href="/pension/nianjinjijinchanpin.html" style="" target="_self">年金产品</a>
-<div>
-<a class="" href="/pension/nianjinjisuanqi.html" style="" target="_self">年金计算器</a>
-</div>
-<a class="boldFirst" href="/column/index-00020002000600040001.html" style="" target="_self">客户专区</a>
-<div>
-<a class="" href="/column/index-00020002000600040001.html" style="" target="_self">信息披露</a>
-<a class="" href="/column/index-00020002000600040002.html" style="" target="_self">研究报告</a>
-<a class="" href="/column/index-00020002000600040003.html" style="" target="_self">动态月报</a>
-<a class="" href="/column/index-00020002000600040004.html" style="" target="_self">净值与持仓</a>
-<a class="" href="/column/index-00020002000600040005.html" style="" target="_self">修改密码</a>
-<a class="" href="/column/index-00020002000600040006.html" style="" target="_self">客户投诉</a>
-</div>
-<a class="boldFirst" href="/pension/qiyenianjinshishenme.html" style="" target="_self">知识天地</a>
-<div>
-<a class="" href="/pension/qiyenianjinshishenme.html" style="" target="_self">博时专栏</a>
-<a class="" href="/pension/nianjinfuwu.html" style="" target="_self">年金问答</a>
-<a class="" href="/pension/nianjinxiaoyouxi.html" style="" target="_self">年金小游戏</a>
-</div>
-<a class="boldFirst" href="/pension/nianjinfagui.html" style="" target="_self">政策法规</a>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
+<td width="7%">
+<span class="red">+3.21%</span>
 </td>
-<td classid="000200020007"><div class="colBoxOut"><a class="" href="/vip/zhuanhulicai.html" style="" target="_self">专户理财</a></div>
-<div class="menu5" id="menu5" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/vip/zhuanhulicai.html" style="" target="_self">业务简介</a>
-<div>
-<a class="" href="/vip/zhuanhulicai.html" style="" target="_self">业务概要</a>
-<a class="" href="/vip/zhuanhuguanliyoushi.html" style="" target="_self">管理优势</a>
-<a class="" href="/vip/zhuanhufuwutuandui.html" style="" target="_self">服务团队</a>
-<a class="" href="/vip/zhuanhufuwuliucheng.html" style="" target="_self">服务流程</a>
-<a class="" href="/vip/zhuanhufuwutese.html" style="" target="_self">服务特色</a>
-</div>
-<a class="boldFirst" href="/vip/zhuanhulicaixinwen.html" style="" target="_self">动态信息</a>
-<a class="boldFirst" href="/vip/zhuanhuchanpin.html" style="" target="_self">专户产品</a>
-<div>
-<a class="" href="/vip/zhuanhuchanpin.html" style="" target="_self">产品系列表</a>
-<span class="" style="" target="_self">发行中产品</span>
-<a class="" href="/vip/yifaxingzhuanhuchanpin.html" style="" target="_self">已发行产品</a>
-</div>
-<a class="boldFirst" href="/vip/zhuanhulicailianxifangshi.html" style="" target="_self">开通专户</a>
-<div>
-<a class="" href="/vip/zhuanhulicailianxifangshi.html" style="" target="_self">联系方式</a>
-<a class="" href="/vip/zhuanhukaitongliucheng.html" style="" target="_self">开通流程</a>
-<a class="" href="/vip/boshikuaietong.html" style="" target="_self">链接快e通</a>
-<a class="" href="/vip/zhuanhuzhishi.html" style="" target="_self">专户问答</a>
-</div>
-<a class="boldFirst" href="/vip/yiduiduojijinchaxun.html" style="" target="_self">客户专区</a>
-<div>
-<a class="" href="/vip/yiduiduojijinchaxun.html" style="" target="_self">一对多专户理财</a>
-<a class="" href="/column/index-000200020007000400020001.html" style="" target="_self">一对一专户理财</a>
-<div>
-<a class="" href="/column/index-000200020007000400020001.html" style="" target="_self">信息披露</a>
-<a class="" href="/column/index-000200020007000400020002.html" style="" target="_self">修改密码</a>
-<a class="" href="/column/index-000200020007000400020003.html" style="" target="_self">客户投诉</a>
-<a class="" href="/column/index-000200020007000400020004.html" style="" target="_self">净值与持仓</a>
-</div>
-</div>
-<a class="boldFirst" href="/vip/zhuanhuzhengcefagui.html" style="" target="_self">政策法规</a>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
+<td width="7%">
+<span class="red">+367.03%</span>
 </td>
-<td classid="000200020008"><div class="colBoxOut"><a class="" href="/service/jijinlicaifuwupingtai.html" style="" target="_self">服务中心</a></div>
-<div class="menu6" id="menu6" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/service/jijinlicaipingtai.html" style="" target="_self">服务内容</a>
-<a class="boldFirst" href="/service/zenmegoumaijijin.html" style="" target="_self">常见问题</a>
-<a class="boldFirst" href="/service/jijingoumaiqudao.html" style="" target="_self">销售机构</a>
-<a class="boldFirst" href="/service/jijinyewuguize.html" style="" target="_self">规则指引</a>
-<a class="boldFirst" href="/service/ninwenwoda.html" style="" target="_self">互动频道</a>
-<div>
-<a class="" href="http://ls.bosera.com/" style="" target="_blank">在线客服</a>
-<a class="" href="/service/ninwenwoda.html" style="" target="_self">您问我答</a>
-<a class="" href="/service/zaixiandiaocha.html" style="" target="_self">网上调查</a>
-</div>
-<a class="boldFirst" href="/service/touziyulicaizhoukandingyuepingtai.html" style="" target="_self">订阅平台</a>
-<a class="boldFirst" href="/service/xiazaizhongxinbiaogexiazai.html" style="" target="_self">下载中心</a>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
-</td>
-<td classid="000200020002"><div class="colBoxOut"><a class="" href="/aboutus/boshijijingongsi.html" style="" target="_self">关于博时</a></div>
-<div class="menu7" id="menu7" iscurrent="0">
-<div class="subMenu06">
-<dl>
-<dt>
-<a class="boldFirst" href="/aboutus/boshijijingongsi.html" style="" target="_self">公司信息</a>
-<div>
-<a class="" href="/aboutus/boshijijingongsi.html" style="" target="_self">公司简介</a>
-<a class="" href="/aboutus/boshijijin.html" style="" target="_self">发展历程</a>
-<a class="" href="/aboutus/gongsijiagou.html" style="" target="_self">组织架构</a>
-<a class="" href="/aboutus/gongsiyuangong.html" style="" target="_self">员工结构</a>
-<a class="" href="/aboutus/boshijijinguanliyouxiangongsi.html" style="" target="_self">社会荣誉</a>
-<a class="" href="/aboutus/qiyegongmin.html" style="" target="_self">企业公民</a>
-<a class="" href="/aboutus/jijinyewuzizhi.html" style="" target="_self">业务资质</a>
-<a class="" href="/aboutus/jijinxiaoshoutuandui.html" style="" target="_self">销售团队</a>
-</div>
-<a class="boldFirst" href="/aboutus/touziredianwenti.html" style="" target="_self">持有人关系</a>
-<div>
-<a class="" href="/aboutus/touziredianwenti.html" style="" target="_self">宏观大视野</a>
-<a class="" href="/aboutus/xinxipilu.html" style="" target="_self">信息披露</a>
-<a class="" href="/aboutus/chuanmeibaodao.html" style="" target="_self">传媒报道</a>
-<a class="" href="/aboutus/licaizhoukan.html" style="" target="_self">博时刊物</a>
-<a class="" href="/aboutus/zhuantihuigu.html" style="" target="_self">专题回顾</a>
-</div>
-<a class="boldFirst" href="/aboutus/xuweiyidai.html" style="" target="_self">职业机会</a>
-<a class="boldFirst" href="/aboutus/lianxiwomen.html" style="" target="_self">联系我们</a>
-</dt>
-</dl>
-</div>
-<div class="subMenu05" style="width:100%; height:22px"></div>
-</div>
+<td width="7%">
+						 正常 
+											 </td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519008"/>
 </td>
 </tr>
-</table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
-<tr>
-<td><table border="0" cellpadding="0" cellspacing="0" width="1000">
-<tr>
-<td align="center" valign="top" width="242">
-<div class="m-pt10">
-<table border="0" cellpadding="0" cellspacing="0" width="239">
-<tr>
-<td align="center">
-<div class="deal_online ">
-<div class="btn-deal">
-<a href="https://trade.bosera.com/" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('wsjy','','/images/login2_2011_8.png',0)" target="_blank"><img alt="网上交易" border="0" id="wsjy" name="wsjy" osrc="/images/login1_2011_8.png" src="/images/login1_2011_8.png"/></a>
+<tr id="519066">
+<td width="9%">
+<a href="/main/products/pofund/519066/fundgk.shtml" target="_blank" title="本基金将把握中国经济成长脉搏，优选受益于中国经济成长且价值相对低估的蓝筹公司。">519066</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519066/fundgk.shtml" target="_blank">汇添富蓝筹稳健混合</a>
+<div class="sn_tip">
+<p>
+								本基金将把握中国经济成长脉搏，优选受益于中国经济成长且价值相对低估的蓝筹公司。
+							</p>
 </div>
-<div class="links">
-<a class="white_arrow_link" href="https://trade.bosera.com/account/verifyIdentity.jsp">免费开户</a>
-<a class="white_arrow_link" href="https://trade.bosera.com/notes/index_feerate.html">优惠费率</a>
-<a class="white_arrow_link" href="/column/index-00020002000600040001.html">年金查询</a>
-<a class="white_arrow_link" href="/column/index-000200020007000400020001.html">专户查询</a>
 </div>
-</div></td>
+</td>
+<td width="10%">
+							2012-10-18 
+			  </td>
+<td width="7%">
+								 1.164
+			   </td>
+<td width="7%">
+								1.484 
+				</td>
+<td width="7%">
+<span class="red">+1.04%</span>
+</td>
+<td width="8%">
+<span class="red">+1.57%</span>
+</td>
+<td width="7%">
+<span class="green">-0.09%</span>
+</td>
+<td width="7%">
+<span class="red">+46.03%</span>
+</td>
+<td width="7%">
+						 正常 
+											 </td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519066"/>
+</td>
 </tr>
-<tr>
-<td align="center" valign="top"><div class="m-pt10"><div style="background:#ebebeb">
-<link href="/column/css/col.css" rel="stylesheet" type="text/css"/>
-<table border="0" cellpadding="0" cellspacing="0" width="239">
-<tr>
-<td class="colName" height="36"><div>基金产品</div></td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" style="border-left:1px solid #CCCCCC; border-right:1px solid #CCCCCC;" width="239">
-<tr><td>
-<div class="colParent">
-<a class="colMdefault" href="/fund/kaifangshijijin.html" id="child000200020003_FUND_OPEN" target="_self">开放式基金</a>
-<div class="colSwitch">
-<a class="colChild" depth="5" href="/fund/huobishichangjijin.html" id="child000200020003_FUND_OPEN_1109" style="margin-left:1em" target="_self">货币型基金</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="6" href="/fund/boshixianjinshouyi.html" id="child000200020003_FUND_OPEN_1109_050003" style="margin-left:2em" target="_self">博时现金收益货币</a><a class="colChild" depth="5" href="/fund/gupiaoxingjijin.html" id="child000200020003_FUND_OPEN_1101" style="margin-left:1em" target="_self">股票型基金</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="6" href="/fund/hushen300zhishujijin.html" id="child000200020003_FUND_OPEN_1101_050002" style="margin-left:2em" target="_self">博时沪深300指数</a><a class="colChild" depth="6" href="/fund/boshijingxuanjijin.html" id="child000200020003_FUND_OPEN_1101_050004" style="margin-left:2em" target="_self">博时精选股票</a><a class="colChild" depth="6" href="/fund/boshizhuti.html" id="child000200020003_FUND_OPEN_1101_160505" style="margin-left:2em" target="_self">博时主题行业股票(LOF)</a><a class="colChild" depth="6" href="/fund/boshidisanchanye.html" id="child000200020003_FUND_OPEN_1101_050008" style="margin-left:2em" target="_self">博时第三产业股票</a><a class="colChild" depth="6" href="/fund/boshixinxing.html" id="child000200020003_FUND_OPEN_1101_050009" style="margin-left:2em" target="_self">博时新兴成长股票</a><a class="colChild" depth="6" href="/fund/boshitexujiazhi.html" id="child000200020003_FUND_OPEN_1101_050010" style="margin-left:2em" target="_self">博时特许价值股票</a><a class="colChild" depth="6" href="/fund/boshishangzhengchaodapanetfjijin.html" id="child000200020003_FUND_OPEN_1101_510020" style="margin-left:2em" target="_self">博时上证超大盘ETF</a><a class="colChild" depth="6" href="/fund/boshietf.html" id="child000200020003_FUND_OPEN_1101_050013" style="margin-left:2em" target="_self">博时上证超大盘ETF联接</a><a class="colChild" depth="6" href="/fund/boshichuangyechengzhangjijin.html" id="child000200020003_FUND_OPEN_1101_050014" style="margin-left:2em" target="_self">博时创业成长股票</a><a class="colChild" depth="6" href="/fund/boshidazhonghuaqdii.html" id="child000200020003_FUND_OPEN_1101_050015" style="margin-left:2em" target="_self">博时大中华亚太精选股票(QDII)</a><a class="colChild" depth="6" href="/fund/boshihangyelundong.html" id="child000200020003_FUND_OPEN_1101_050018" style="margin-left:2em" target="_self">博时行业轮动股票</a><a class="colChild" depth="6" href="/fund/boshizhuoyuepinpaijijin.html" id="child000200020003_FUND_OPEN_1101_160512" style="margin-left:2em" target="_self">博时卓越品牌股票(LOF)</a><a class="colChild" depth="6" href="/fund/boshishenzhengjibenmian200etf.html" id="child000200020003_FUND_OPEN_1101_159908" style="margin-left:2em" target="_self">博时深证基本面200ETF</a><a class="colChild" depth="6" href="/fund/boshishenzhengjibenmian200etflianjiejijin.html" id="child000200020003_FUND_OPEN_1101_050021" style="margin-left:2em" target="_self">博时深证基本面200ETF联接</a><a class="colChild" depth="6" href="/fund/boshishangzhengziranziyuanetf.html" id="child000200020003_FUND_OPEN_1101_510410" style="margin-left:2em" target="_self">博时上证自然资源ETF</a><a class="colChild" depth="6" href="/fund/boshishangzhengziranziyuan.html" id="child000200020003_FUND_OPEN_1101_050024" style="margin-left:2em" target="_self">博时上证自然资源ETF联接</a><a class="colChild" depth="6" href="/fund/boshibiaopu500qdii.html" id="child000200020003_FUND_OPEN_1101_050025" style="margin-left:2em" target="_self">博时标普500指数(QDII)</a><a class="colChild" depth="6" href="/fund/boshiyiliaobaojianhangye.html" id="child000200020003_FUND_OPEN_1101_050026" style="margin-left:2em" target="_self">博时医疗保健行业股票</a><a class="colChild" depth="5" href="/fund/hunhexingjijin.html" id="child000200020003_FUND_OPEN_1103" style="margin-left:1em" target="_self">混合型基金</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="6" href="/fund/boshijiazhizengzhang.html" id="child000200020003_FUND_OPEN_1103_050001" style="margin-left:2em" target="_self">博时价值增长混合</a><a class="colChild" depth="6" href="/fund/boshipingheng.html" id="child000200020003_FUND_OPEN_1103_050007" style="margin-left:2em" target="_self">博时平衡配置混合</a><a class="colChild" depth="6" href="/fund/boshijiazhizengzhangerhao.html" id="child000200020003_FUND_OPEN_1103_050201" style="margin-left:2em" target="_self">博时价值增长贰号混合</a><a class="colChild" depth="6" href="/fund/boshiceluehunhe.html" id="child000200020003_FUND_OPEN_1103_050012" style="margin-left:2em" target="_self">博时策略混合</a><a class="colChild" depth="6" href="/fund/boshihuibaolinghuojijin.html" id="child000200020003_FUND_OPEN_1103_050022" style="margin-left:2em" target="_self">博时回报混合</a><a class="colChild" depth="5" href="/fund/zhaiquanxingjijin.html" id="child000200020003_FUND_OPEN_1105" style="margin-left:1em" target="_self">债券型基金</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="6" href="/fund/boshiwendingjiazhi.html" id="child000200020003_FUND_OPEN_1105_050006" style="margin-left:2em" target="_self">博时稳定价值债券</a><a class="colChild" depth="6" href="/fund/boshixinyongzhaiquan.html" id="child000200020003_FUND_OPEN_1105_050011" style="margin-left:2em" target="_self">博时信用债券</a><a class="colChild" depth="6" href="/fund/boshihongguanhuibaozhaiquan.html" id="child000200020003_FUND_OPEN_1105_050016" style="margin-left:2em" target="_self">博时宏观回报债券</a><a class="colChild" depth="6" href="/fund/boshizhuanzhaizengqiangzhaiquan.html" id="child000200020003_FUND_OPEN_1105_050019" style="margin-left:2em" target="_self">博时转债增强债券</a><a class="colChild" depth="6" href="/fund/boshiyuxiangfenjizaiquan.html" id="child000200020003_FUND_OPEN_1105_160513" style="margin-left:2em" target="_self">博时裕祥分级债券</a><a class="colChild" depth="6" href="/fund/boshitianyizhaiquan.html" id="child000200020003_FUND_OPEN_1105_050023" style="margin-left:2em" target="_self">博时天颐债券</a><a class="colChild" depth="6" href="/fund/boshixinyongzhaichunzhai.html" id="child000200020003_FUND_OPEN_1105_050027" style="margin-left:2em" target="_self">博时信用债纯债</a><a class="colChild" depth="5" href="/fund/qitaxingjijin.html" id="child000200020003_FUND_OPEN_1199" style="margin-left:1em" target="_self">其他型基金</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="6" href="/fund/boshikangtongzhangjijin.html" id="child000200020003_FUND_OPEN_1199_050020" style="margin-left:2em" target="_self">博时抗通胀增强回报(QDII-FOF)</a>
+<!-- end tr -->
+<tr class="even">
+<th class="leftbg " rowspan="12" width="8%">
+<div class="sn_name">
+<a href="###">股票型</a>
+<div class="sn_tip">
+<p>
+<strong>股票型基金：</strong>指以股票为主要投资对象，股票资产占基
+
+金资产比例超过60%的基金。预期收益较高，预期风险也较高。
+								</p>
 </div>
 </div>
-<div class="colParent">
-<a class="colMdefault" href="/fund/etfjijin.html" id="child000200020003_FUND_ETF" target="_self">ETF</a>
-<div class="colSwitch">
-<a class="colChild" depth="5" href="/fund/boshishangzhengchaodapanetfjijin.html" id="child000200020003_FUND_ETF_510020" style="margin-left:1em" target="_self">博时上证超大盘ETF</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshishenzhengjibenmian200etfjijin.html" id="child000200020003_FUND_ETF_159908" style="margin-left:1em" target="_self">博时深证基本面200ETF</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshishangzhengziranziyuanetf.html" id="child000200020003_FUND_ETF_510410" style="margin-left:1em" target="_self">博时上证自然资源ETF</a><div><img src="/column/images/menuline102.gif"/></div>
-</div>
-</div>
-<div class="colParent">
-<a class="colMdefault" href="/fund/qdiijijin.html" id="child000200020003_FUND_QDII" target="_self">QDII</a>
-<div class="colSwitch">
-<a class="colChild" depth="5" href="/fund/boshidazhonghuaqdii.html" id="child000200020003_FUND_QDII_050015" style="margin-left:1em" target="_self">博时大中华亚太精选股票(QDII)</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshikangtongzhangjijin.html" id="child000200020003_FUND_QDII_050020" style="margin-left:1em" target="_self">博时抗通胀增强回报(QDII-FOF)</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshibiaopu500qdii.html" id="child000200020003_FUND_QDII_050025" style="margin-left:1em" target="_self">博时标普500指数(QDII)</a><div><img src="/column/images/menuline102.gif"/></div>
-</div>
-</div>
-<div class="colParent">
-<a class="colMdefault" href="/fund/fengbishijijin.html" id="child000200020003_FUND_CLOSE" target="_self">封闭式基金</a>
-<div class="colSwitch">
-<a class="colChild" depth="5" href="/fund/boshiyuyang.html" id="child000200020003_FUND_CLOSE_500006" style="margin-left:1em" target="_self">博时裕阳封闭</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshiyulong.html" id="child000200020003_FUND_CLOSE_184692" style="margin-left:1em" target="_self">博时裕隆封闭</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshiyuyuan.html" id="child000200020003_FUND_CLOSE_500016" style="margin-left:1em" target="_self">博时裕元封闭(封转开)</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshiyuhua.html" id="child000200020003_FUND_CLOSE_184696" style="margin-left:1em" target="_self">博时裕华封闭(封转开)</a><div><img src="/column/images/menuline102.gif"/></div><a class="colChild" depth="5" href="/fund/boshiyuze.html" id="child000200020003_FUND_CLOSE_184705" style="margin-left:1em" target="_self">博时裕泽封闭(封转开)</a><div><img src="/column/images/menuline102.gif"/></div>
+</th>
+<td class="sn_subth" colspan="11">
+<div class="sn_name">
+<a href="###">风格类</a>
+<div class="sn_tip">
+<p>
+<strong>风格类股票型基金：</strong>指重点投资特定风格类资产的基金
+
+。
+								</p>
 </div>
 </div>
 </td>
 </tr>
-</table>
-</div></div></td>
-</tr>
-<tr>
-<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
-<tr>
-<td align="center">
-<table align="center" border="0" cellpadding="0" cellspacing="0" width="236">
-<tr>
-<td> <div class="online_money m-pt10 fn-clear">
-<div class="product fn-clear">
-<ul>
-<li><a href="/minisite/xjb/xianjinbao.html?WT.mc_id=ECXJB001101B003" onclick="AdStats('现金宝-栏目')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pic096','','/images/leftD_1_2011_8_.jpg',0)" target="_blank">
-<span class="icon"><img id="pic096" src="/images/leftD_1_2011_8.jpg"/></span>
-<div class="text txtL">
-<h3>博时现金宝</h3>
-        您的基金钱包<br/>
-省钱好帮手
-        </div>
-</a></li>
-<li><a href="/minisite/boshi_dt/" onclick="AdStats('博时e+定投-栏目')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pic11','','/images/leftD_2_2011_8_.jpg',0)" target="_blank">
-<span class="icon"><img id="pic11" src="/images/leftD_2_2011_8.jpg"/></span>
-<div class="text txtL">
-<h3>博时e+定投</h3>
-        采用定期投资的方式<br/>
-帮您攒小钱，办大事
-        </div>
-</a></li>
-<li><a href="/minisite/market/2010/wsmj/" onclick="AdStats('汇款买基-栏目')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pic299','','/images/leftD_3_2011_8_.jpg',0)" target="_blank">
-<span class="icon"><img id="pic299" src="/images/leftD_3_2011_8.jpg"/></span>
-<div class="text txtL">
-<h3>汇款买基</h3>
-        不受银行卡限制<br/>
-最全面的4折优惠
-        </div>
-</a></li>
-<li><a href="https://trade.bosera.com/notes/index_feerate.html" onclick="AdStats('栏目网上直销4折起')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('pic338','','/images/wszx4z_leftColumn_over.jpg',0)" target="_blank">
-<span class="icon"><img id="pic338" src="/images/wszx4z_leftColumn.jpg"/></span>
-<div class="text txtL">
-<h3>网上直销4折起</h3>
-        将优惠进行到底
-        </div>
-</a></li>
-</ul>
-</div>
-</div></td>
-</tr>
-</table>
-<script src="/js/stats.js" type="text/javascript"></script></td>
-</tr>
-<tr>
-<td height="15"></td>
-</tr>
-<tr>
-<td align="center">
-<table background="/images/hotline.gif" border="0" cellpadding="0" cellspacing="0" width="239">
-<tr>
-<td colspan="3" height="38">
-<div onclick="window.location.href='/service/yixiantong.html'" style="height:30px; cursor:pointer; width:100%; margin:5px auto"></div></td>
-</tr>
-<tr>
-<td align="center" valign="bottom" width="75">　   <a href="http://ls.bosera.com" target="_blank">在线客服</a></td>
-<td align="center" height="27" valign="bottom" width="90">   <a href="/service/ninwenwoda.html">您问我答</a></td>
-<td align="left" valign="bottom" width="77">   <a href="/service/zenmegoumaijijin.html">常见问题</a></td>
-</tr>
-<tr>
-<td align="center" valign="bottom" width="75">　   <a href="https://trade.bosera.com/#demo.html">交易指南</a></td>
-<td align="center" height="23" valign="bottom">   <a href="/service/xiazaizhongxinbiaogexiazai.html">下载中心</a></td>
-<td align="left" valign="bottom">   <a href="/service/jijingoumaiqudao.html">销售机构</a></td>
-</tr>
-<tr>
-<td width="75"></td>
-<td colspan="2" height="10"></td>
-</tr>
-</table></td>
-</tr>
-</table></td>
-</tr>
-</table>
-</div></td>
-<td align="center" bgcolor="#FFFFFF" valign="top" width="748">
-<div class="m-pt10">
-<style type="text/css">
-	.selectedRow { background-color:#f2f2f2; }
-</style>
-<table align="center" cellpadding="0" cellspacing="0" class="center_top">
-<tr>
-<td align="left" height="30" width="18"><img height="12" src="/images/icon_navigation.gif" width="12"/></td>
-<td align="left" width="706"><span id="current_location">当前位置：基金产品</span></td>
-</tr>
-<tr>
-<td></td>
-<td align="left" class="border_b_c3c3c3" height="35">
-<h1 class="sty_14_black" id="column_name">
-					基金产品<br/><span style="color:#C00"><span>
-</span></span></h1>
-<!-- <a href='/minisite/eb/2012/fason/index.jsp?WT.mc_id=ECKXXB1207T001' target='_blank' style='font-weight:bold;color:#cc0000'>呼叫基主 开箱寻宝——货币基金份额、当当卡、京东卡、iphone4等你来赢！</a> -->
-<span id="sq_sh_img"></span>
+<tr class="sn_bggray" id="519068">
+<td width="9%">
+<a href="/main/products/pofund/519068/fundgk.shtml" target="_blank" title="本基金精选成长性较高，且估值有吸引力的股票进行布局。">519068</a>
 </td>
-</tr>
-</table>
-<script src="/js/jquery/jquery.js" type="text/javascript"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$(".stripeTbl tr").mouseover(function() {
-		$(this).addClass('selectedRow');
-	}).mouseout(function(){
-		$(this).removeClass('selectedRow');
-	});
-});
-</script>
-<table border="0" cellpadding="0" cellspacing="0" style="margin-left:32px; margin-top:10px;" width="691">
-<tr><td align="left"><div style=" text-indent:2em">
-博时基金为投资者提供高、中、低不同风险水平的基金产品，使您的基金投资选择更加多样化。目前，我们产品线包含了开放式基金、封闭式基金、ETF基金和QDII基金，登录网站您可以了解博时旗下所有基金产品信息，包括：基金代码、基金净值、回报率及交易状态等信息，您还能以低至4折的费率在线申购适合您的基金产品。
-</div>
-</td></tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" style="margin-left:32px; margin-top:20px;" width="691">
-<!-- ****************************START 开放式基金**************************** -->
-<tr>
-<td>
-<table background="/images/fund/menu_common_2.gif" border="0" cellpadding="0" cellspacing="0" height="33" width="100%">
-<tr>
-<td align="center" width="35"><img height="14" src="/images/arrow_title.gif" width="14"/></td>
-<td align="left" class="sty_white">开放式基金</td>
-<td align="left" class="sty_white" width="80"><a class="white_link" href="/jjcp/query/queryNetValue.jsp?fundType=1" target="_blank">历史净值&gt;&gt;</a></td>
-</tr>
-</table>
-</td>
-</tr>
-<tr>
-<td align="right" valign="top">
-<div id="area1" style="display:block;">
-<table border="0" cellpadding="0" cellspacing="0" width="687">
-<tr>
-<td align="left" bgcolor="#e7e7e7" height="23" style="border-left:1px solid #d0cfcf;">
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td align="left" class="fundleft_nav_over" height="27" id="left_nav1_1" onmouseover="setFundList(1, 5)" valign="middle" width="81"><span class="fundTableHead">   </span>货币型基金</td>
-<td align="center" class="fundleft_nav_out" height="23" id="left_nav1_2" onmouseover="setFundList(2, 5)" valign="middle" width="81"> 股票型基金 </td>
-<td align="center" class="fundleft_nav_out" height="23" id="left_nav1_3" onmouseover="setFundList(3, 5)" valign="middle" width="81"> 混合型基金 </td>
-<td align="center" class="fundleft_nav_out" height="23" id="left_nav1_4" onmouseover="setFundList(4, 5)" valign="middle" width="81"> 债券型基金 </td>
-<td align="center" class="fundleft_nav_out" height="23" id="left_nav1_5" onmouseover="setFundList(5, 5)" valign="middle" width="81"> 其他型基金 </td>
-</tr>
-</table><!--end of print type-->
-</td>
-</tr>
-</table>
-<div id="left_area1_1" style="display:block;">
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<!-- 货币型基金表头 -->
-<tr>
-<td align="left" class="fundTableHead" height="51" width="20%">    基金名称</td>
-<td align="left" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">万份<br/>收益</td>
-<td align="center" class="fundTableHead" width="6%">7日<br/>年化%</td>
-<td align="center" class="fundTableHead" width="10%">30日<br/>年化%</td>
-<td align="center" class="fundTableHead" width="10%">今年<br/>年化%</td>
-<td align="center" class="fundTableHead" width="10%">成立<br/>年化%</td>
-<td align="center" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="center" class="fundTableHead" width="7%">交易<br/>状态<br/></td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<!-- 货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="22%"><a href="/fund/boshixianjinshouyi.html">博时现金收益货币</a></td>
-<td align="left" class="border_b_c3c3c3">050003</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.1729</td>
-<td align="center" class="border_b_c3c3c3" width="8%">4.054%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.025%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.512%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">2.875%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">04/01/16</td>
-<td align="center" class="border_b_c3c3c3" width="7%">限额 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050003" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-</table>
-</div>
-<div class="dn" id="left_area1_2" style="width:100%;">
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<!-- 非货币型基金表头 -->
-<tr>
-<td align="left" class="fundTableHead" height="51" width="21%">    基金名称</td>
-<td align="center" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="left" class="fundTableHead" width="7%">交易<br/>状态<br/></td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/hushen300zhishujijin.html">博时沪深300指数</a></td>
-<td align="left" class="border_b_c3c3c3">050002</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6497</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.6297</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.40%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.57%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">105.45%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">03/08/26</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050002" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshijingxuanjijin.html">博时精选股票</a></td>
-<td align="left" class="border_b_c3c3c3">050004</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.1986</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.7036</td>
-<td align="center" class="border_b_c3c3c3" width="10%">2.50%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.94%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">215.74%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">04/06/22</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050004" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshizhuti.html">博时主题行业股票(LOF)</a></td>
-<td align="left" class="border_b_c3c3c3">160505</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.500</td>
-<td align="center" class="border_b_c3c3c3" width="6%">3.316</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.33%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.12%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">342.94%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">05/01/06</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=160505" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshidisanchanye.html">博时第三产业股票</a></td>
-<td align="left" class="border_b_c3c3c3">050008</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.996</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.624</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.94%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.64%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">21.12%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">07/04/12</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050008" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshixinxing.html">博时新兴成长股票</a></td>
-<td align="left" class="border_b_c3c3c3">050009</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.506</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.469</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.40%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-3.44%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-17.46%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">07/07/06</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050009" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshitexujiazhi.html">博时特许价值股票(前端)</a></td>
-<td align="left" class="border_b_c3c3c3">050010</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.981</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.326</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-1.01%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">27.45%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">08/05/28</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050010" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshitexujiazhi.html">博时特许价值股票(后端)</a></td>
-<td align="left" class="border_b_c3c3c3">051010</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.981</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.326</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-1.01%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">27.45%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">08/05/28</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051010" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshishangzhengchaodapanetfjijin.html">博时上证超大盘ETF</a></td>
-<td align="left" class="border_b_c3c3c3">510020</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.1764</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6506</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.15%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.33%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-34.94%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/12/29</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-        	  
-              	 
-              
-              </td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshietf.html">博时上证超大盘ETF联接</a></td>
-<td align="left" class="border_b_c3c3c3">050013</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6640</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6640</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.08%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.00%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-33.60%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/12/29</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050013" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshichuangyechengzhangjijin.html">博时创业成长股票(前端)</a></td>
-<td align="left" class="border_b_c3c3c3">050014</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.900</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.923</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.76%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-8.00%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/06/01</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050014" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshichuangyechengzhangjijin.html">博时创业成长股票(后端)</a></td>
-<td align="left" class="border_b_c3c3c3">051014</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.900</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.923</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.76%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-8.00%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/06/01</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051014" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshidazhonghuaqdii.html">博时大中华亚太精选股票(QDII)</a></td>
-<td align="left" class="border_b_c3c3c3">050015</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.898</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.904</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.13%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">12.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-9.68%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/07/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050015" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshihangyelundong.html">博时行业轮动股票</a></td>
-<td align="left" class="border_b_c3c3c3">050018</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.735</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.735</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.94%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.80%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-26.50%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/12/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050018" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshizhuoyuepinpaijijin.html">博时卓越品牌股票(LOF)</a></td>
-<td align="left" class="border_b_c3c3c3">160512</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.883</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.902</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.03%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-1.45%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-15.75%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/04/22</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=160512" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshishenzhengjibenmian200etf.html">博时深证基本面200ETF</a></td>
-<td align="left" class="border_b_c3c3c3">159908</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6843</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6843</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.05%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-3.90%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-31.57%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-        	  
-              	 
-              
-              </td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshishenzhengjibenmian200etflianjiejijin.html">博时深证基本面200ETF联接</a></td>
-<td align="left" class="border_b_c3c3c3">050021</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6972</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6972</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.97%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-3.66%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-30.28%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050021" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshishangzhengziranziyuanetf.html">博时上证自然资源ETF</a></td>
-<td align="left" class="border_b_c3c3c3">510410</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8757</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8757</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.34%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.43%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.43%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/04/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-        	  
-              	 
-              
-              </td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshishangzhengziranziyuan.html">博时上证自然资源ETF联接</a></td>
-<td align="left" class="border_b_c3c3c3">050024</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8752</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8752</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.32%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.48%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.48%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/04/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050024" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshibiaopu500qdii.html">博时标普500指数(QDII)</a></td>
-<td align="left" class="border_b_c3c3c3">050025</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.0419</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.0699</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.43%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.97%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.97%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/06/14</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050025" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiyiliaobaojianhangye.html">博时医疗保健行业股票</a></td>
-<td align="left" class="border_b_c3c3c3">050026</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.013</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.013</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.70%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.30%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.30%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/08/28</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050026" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-</table>
-</div>
-<div class="dn" id="left_area1_3" style="width:100%;">
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<!-- 非货币型基金表头 -->
-<tr>
-<td align="left" class="fundTableHead" height="51" width="21%">    基金名称</td>
-<td align="center" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="left" class="fundTableHead" width="7%">交易<br/>状态<br/></td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshijiazhizengzhang.html">博时价值增长混合(前端)</a></td>
-<td align="left" class="border_b_c3c3c3">050001</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.685</td>
-<td align="center" class="border_b_c3c3c3" width="6%">3.187</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.03%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-4.73%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">266.73%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">02/10/09</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050001" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshijiazhizengzhang.html">博时价值增长混合(后端)</a></td>
-<td align="left" class="border_b_c3c3c3">051001</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.685</td>
-<td align="center" class="border_b_c3c3c3" width="6%">3.187</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.03%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-4.73%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">266.73%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">02/10/09</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051001" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshipingheng.html">博时平衡配置混合</a></td>
-<td align="left" class="border_b_c3c3c3">050007</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.781</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.196</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.51%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.03%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">116.89%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">06/05/31</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050007" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshijiazhizengzhangerhao.html">博时价值增长贰号混合(前端)</a></td>
-<td align="left" class="border_b_c3c3c3">050201</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.618</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.073</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-5.94%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">77.70%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">06/09/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050201" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshijiazhizengzhangerhao.html">博时价值增长贰号混合(后端)</a></td>
-<td align="left" class="border_b_c3c3c3">051201</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.618</td>
-<td align="center" class="border_b_c3c3c3" width="6%">2.073</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-5.94%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">77.70%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">06/09/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051201" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiceluehunhe.html">博时策略混合</a></td>
-<td align="left" class="border_b_c3c3c3">050012</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.804</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.828</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.90%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.37%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-17.72%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/08/11</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050012" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshihuibaolinghuojijin.html">博时回报混合</a></td>
-<td align="left" class="border_b_c3c3c3">050022</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.031</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.031</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.29%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">2.79%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">3.10%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/11/08</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050022" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-</table>
-</div>
-<div class="dn" id="left_area1_4" style="width:100%;">
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<!-- 非货币型基金表头 -->
-<tr>
-<td align="left" class="fundTableHead" height="51" width="21%">    基金名称</td>
-<td align="center" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="left" class="fundTableHead" width="7%">交易<br/>状态<br/></td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiwendingjiazhi.html">博时稳定价值债券A(前端)</a></td>
-<td align="left" class="border_b_c3c3c3">050106</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.010</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.256</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.00%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.77%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">21.63%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">07/09/06</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050106" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiwendingjiazhi.html">博时稳定价值债券A(后端)</a></td>
-<td align="left" class="border_b_c3c3c3">051106</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.010</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.256</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.00%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.77%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">21.63%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">07/09/06</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051106" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiwendingjiazhi.html">博时稳定价值债券B</a></td>
-<td align="left" class="border_b_c3c3c3">050006</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.991</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.237</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.00%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.54%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">19.54%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">05/08/24</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050006" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshixinyongzhaiquan.html">博时信用债券A</a></td>
-<td align="left" class="border_b_c3c3c3">050011</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.013</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.073</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.40%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.65%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">7.22%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050011" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshixinyongzhaiquan.html">博时信用债券B</a></td>
-<td align="left" class="border_b_c3c3c3">051011</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.013</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.073</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.40%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.65%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">7.22%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051011" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshixinyongzhaiquan.html">博时信用债券C</a></td>
-<td align="left" class="border_b_c3c3c3">050111</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.000</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.060</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.40%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.28%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">5.88%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050111" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshihongguanhuibaozhaiquan.html">博时宏观回报债券A</a></td>
-<td align="left" class="border_b_c3c3c3">050016</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.061</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.068</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.28%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.12%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.83%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/07/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050016" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshihongguanhuibaozhaiquan.html">博时宏观回报债券B</a></td>
-<td align="left" class="border_b_c3c3c3">051016</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.061</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.068</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.28%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.12%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.83%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/07/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=051016" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshihongguanhuibaozhaiquan.html">博时宏观回报债券C</a></td>
-<td align="left" class="border_b_c3c3c3">050116</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.056</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.058</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.38%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">3.73%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">5.81%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/07/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050116" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshizhuanzhaizengqiangzhaiquan.html">博时转债增强债券A</a></td>
-<td align="left" class="border_b_c3c3c3">050019</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.890</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.890</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.79%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.22%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-11.00%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/11/24</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050019" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshizhuanzhaizengqiangzhaiquan.html">博时转债增强债券C</a></td>
-<td align="left" class="border_b_c3c3c3">050119</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.883</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.883</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.68%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.56%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-11.70%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/11/24</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050119" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiyuxiangfenjizaiquan.html">博时裕祥分级债券</a></td>
-<td align="left" class="border_b_c3c3c3">160513</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.052</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.092</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.77%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">8.35%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">11.62%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%"> </td>
-<td align="center" class="border_b_c3c3c3">
-        	  
-              	 
-              
-              </td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiyuxiangfenjizaiquan.html">博时裕祥分级债券A</a></td>
-<td align="left" class="border_b_c3c3c3">160514</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.017</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.067</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.10%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">3.92%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.72%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">封闭 </td>
-<td align="center" class="border_b_c3c3c3">
-<img border="0" height="17" src="/images/fund/btn_sggray.gif"/>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshiyuxiangfenjizaiquan.html">博时裕祥分级债券封闭B</a></td>
-<td align="left" class="border_b_c3c3c3">150043</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.192</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.192</td>
-<td align="center" class="border_b_c3c3c3" width="10%">3.20%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">16.07%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">19.20%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">只允许转托管 </td>
-<td align="center" class="border_b_c3c3c3">
-<img border="0" height="17" src="/images/fund/btn_sggray.gif"/>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshitianyizhaiquan.html">博时天颐债券A</a></td>
-<td align="left" class="border_b_c3c3c3">050023</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.010</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.016</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.50%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.60%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.60%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/02/29</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050023" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshitianyizhaiquan.html">博时天颐债券C</a></td>
-<td align="left" class="border_b_c3c3c3">050123</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.008</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.013</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.50%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.30%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.30%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/02/29</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050123" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshixinyongzhaichunzhai.html">博时信用债纯债</a></td>
-<td align="left" class="border_b_c3c3c3">050027</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.006</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.006</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.20%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.60%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.60%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/09/07</td>
-<td align="center" class="border_b_c3c3c3" width="7%">封闭 </td>
-<td align="center" class="border_b_c3c3c3">
-<img border="0" height="17" src="/images/fund/btn_sggray.gif"/>
-</td>
-</tr>
-</table>
-</div>
-<div class="dn" id="left_area1_5" style="width:100%;">
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<!-- 非货币型基金表头 -->
-<tr>
-<td align="left" class="fundTableHead" height="51" width="21%">    基金名称</td>
-<td align="center" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="left" class="fundTableHead" width="7%">交易<br/>状态<br/></td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<!-- 非货币型基金数据 -->
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshikangtongzhangjijin.html">博时抗通胀增强回报(QDII-FOF)</a></td>
-<td align="left" class="border_b_c3c3c3">050020</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.805</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.805</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-1.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-19.50%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/04/25</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050020" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-</table>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519068/fundgk.shtml" target="_blank">汇添富成长焦点股票</a>
+<div class="sn_tip">
+<p>
+								本基金精选成长性较高，且估值有吸引力的股票进行布局。
+							</p>
 </div>
 </div>
-<table align="right" border="0" cellpadding="0" cellspacing="0" class="bg_two_line" width="687">
-<tr>
-<td height="2"><img height="1" src="/images/pic_spaces.gif" width="1"/></td>
-</tr>
-</table></td>
-</tr>
-<!-- ****************************END 开放式基金************************ -->
-<!-- ****************************START ETF**************************** -->
-<tr>
-<td align="right"><table background="/images/fund/menu_common_2.gif" border="0" cellpadding="0" cellspacing="0" height="33" width="100%">
-<tr>
-<td align="center" width="35"><img height="14" src="/images/arrow_title.gif" width="14"/></td>
-<td align="left" class="sty_white">ETF </td>
-<td align="left" class="sty_white" width="80"><a class="white_link" href="/jjcp/query/queryNetValue.jsp?fundType=3" target="_blank">历史净值&gt;&gt;</a></td>
-</tr>
-</table>
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<tr>
-<td align="left" class="fundTableHead" height="51" width="19%">    基金名称</td>
-<td align="left" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="left" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="center" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="center" class="fundTableHead" width="7%">交易<br/>状态</td>
-<td align="center" class="fundTableHead">申购/<br/>赎回清单</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="20%"><a href="/fund/boshishangzhengchaodapanetfjijin.html">博时上证超大盘ETF</a></td>
-<td align="left" class="border_b_c3c3c3">510020</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.1764</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6506</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.15%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.33%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-34.94%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">09/12/29</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="/jjcp/etf/etfList.jsp?fundCode=510020" target="_blank"><img border="0" height="17" src="/images/fund/btn_ck.gif"/></a>
+</td>
+<td width="10%">
+					 2012-10-18 
+				</td>
+<td width="7%">
+					 1.0758 
+				</td>
+<td width="7%">
+						1.3158 				</td>
+<td width="7%">
+<span class="red">+0.76%</span>
+</td>
+<td width="8%">
+<span class="red">+1.60%</span>
+</td>
+<td width="7%">
+<span class="red">+1.04%</span>
+</td>
+<td width="7%">
+<span class="red">+27.00%</span>
+</td>
+<td width="7%">
+						 正常 
+										  </td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519068"/>
 </td>
 </tr>
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="20%"><a href="/fund/boshishenzhengjibenmian200etfjijin.html">博时深证基本面200ETF</a></td>
-<td align="left" class="border_b_c3c3c3">159908</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6843</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.6843</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.05%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-3.90%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-31.57%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/06/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="/jjcp/etf/etfList.jsp?fundCode=159908" target="_blank"><img border="0" height="17" src="/images/fund/btn_ck.gif"/></a>
+<tr class="sn_bggray" id="519069">
+<td width="9%">
+<a href="/main/products/pofund/519069/fundgk.shtml" target="_blank" title="本基金采用“自下而上”的公司基本面分析方法，精选价值相对低估的优质公司进行投资布局。">519069</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519069/fundgk.shtml" target="_blank">汇添富价值精选股票</a>
+<div class="sn_tip">
+<p>
+								本基金采用“自下而上”的公司基本面分析方法，精选价值相对低估的优质公司进行投资布局。
+							</p>
+</div>
+</div>
+</td>
+<td width="10%">
+					 2012-10-18 
+				</td>
+<td width="7%">
+					 1.091 
+				</td>
+<td width="7%">
+						1.561 				</td>
+<td width="7%">
+<span class="red">+1.39%</span>
+</td>
+<td width="8%">
+<span class="red">+1.68%</span>
+</td>
+<td width="7%">
+<span class="red">+4.32%</span>
+</td>
+<td width="7%">
+<span class="red">+55.27%</span>
+</td>
+<td width="7%">
+						 正常 
+										  </td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519069"/>
 </td>
 </tr>
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="20%"><a href="/fund/boshishangzhengziranziyuanetf.html">博时上证自然资源ETF</a></td>
-<td align="left" class="border_b_c3c3c3">510410</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/18</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8757</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.8757</td>
-<td align="center" class="border_b_c3c3c3" width="10%">0.34%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.43%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-12.43%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/04/10</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="/jjcp/etf/etfList.jsp?fundCode=510410" target="_blank"><img border="0" height="17" src="/images/fund/btn_ck.gif"/></a>
-</td>
-</tr>
-</table>
-<table align="right" border="0" cellpadding="0" cellspacing="0" class="bg_two_line" width="687">
-<tr>
-<td height="2"><img height="1" src="/images/pic_spaces.gif" width="1"/></td>
-</tr>
-</table></td>
-</tr>
-<!-- ****************************END ETF**************************** -->
-<!-- ****************************START QDII**************************** -->
-<tr>
-<td align="right"><table background="/images/fund/menu_common_2.gif" border="0" cellpadding="0" cellspacing="0" height="33" width="100%">
-<tr>
-<td align="center" width="35"><img height="14" src="/images/arrow_title.gif" width="14"/></td>
-<td align="left" class="sty_white">QDII </td>
-<td align="left" class="sty_white" width="80"><a class="white_link" href="/jjcp/query/queryNetValue.jsp?fundType=4" target="_blank">历史净值&gt;&gt;</a></td>
-</tr>
-</table>
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" width="687">
-<tr>
-<td align="left" class="fundTableHead" height="51" width="21%">    基金名称</td>
-<td align="center" class="fundTableHead">  基金代码</td>
-<td align="center" class="fundTableHead" width="9%">净值<br/>日期</td>
-<td align="center" class="fundTableHead" width="6%">最新<br/>净值<br/></td>
-<td align="center" class="fundTableHead" width="6%">累计<br/>净值<br/></td>
-<td align="left" class="fundTableHead" width="10%">最近一周<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">今年以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="10%">成立以来<br/>总回报率%</td>
-<td align="left" class="fundTableHead" width="8%">成立<br/>日期<br/></td>
-<td align="left" class="fundTableHead" width="7%">交易<br/>状态</td>
-<td align="center" class="fundTableHead">博时<br/>快e通</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshidazhonghuaqdii.html">博时大中华亚太精选股票(QDII)</a></td>
-<td align="left" class="border_b_c3c3c3">050015</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.898</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.904</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.13%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">12.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-9.68%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">10/07/27</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050015" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshikangtongzhangjijin.html">博时抗通胀增强回报(QDII-FOF)</a></td>
-<td align="left" class="border_b_c3c3c3">050020</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.805</td>
-<td align="center" class="border_b_c3c3c3" width="6%">0.805</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-0.98%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-1.11%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">-19.50%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">11/04/25</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050020" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-<tr>
-<td align="left" class="border_b_c3c3c3" height="25" width="24%"><a href="/fund/boshibiaopu500qdii.html">博时标普500指数(QDII)</a></td>
-<td align="left" class="border_b_c3c3c3">050025</td>
-<td align="center" class="border_b_c3c3c3" width="9%">12/10/17</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.0419</td>
-<td align="center" class="border_b_c3c3c3" width="6%">1.0699</td>
-<td align="center" class="border_b_c3c3c3" width="10%">1.43%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.97%</td>
-<td align="center" class="border_b_c3c3c3" width="10%">6.97%</td>
-<td align="center" class="border_b_c3c3c3" width="8%">12/06/14</td>
-<td align="center" class="border_b_c3c3c3" width="7%">正常 </td>
-<td align="center" class="border_b_c3c3c3">
-<a href="https://trade.bosera.com/index_s.jsp?apkind=022&amp;fundid=050025" target="_blank"><img border="0" height="17" src="/images/fund/btn_sg.gif"/></a>
-</td>
-</tr>
-</table>
-<table align="right" border="0" cellpadding="0" cellspacing="0" class="bg_two_line" width="687">
-<tr>
-<td height="2"><img height="1" src="/images/pic_spaces.gif" width="1"/></td>
-</tr>
-</table></td>
-</tr>
-<!-- ****************************END QDII**************************** -->
-<!-- ****************************START 封闭式基金******************** -->
-<tr>
-<td align="right"><table background="/images/fund/menu_common_2.gif" border="0" cellpadding="0" cellspacing="0" height="33" width="100%">
-<tr>
-<td align="center" width="35"><img height="14" src="/images/arrow_title.gif" width="14"/></td>
-<td align="left" class="sty_white">封闭式基金</td>
-<td align="left" class="sty_white" width="80"><a class="white_link" href="/jjcp/query/queryNetValue.jsp?fundType=2" target="_blank">历史净值&gt;&gt;</a></td>
-</tr>
-</table>
-<table background="/images/fund/table_head.gif" border="0" cellpadding="0" cellspacing="0" style="background-position:bottom;" width="687">
-<tr>
-<td align="left" class="fundTableHead" height="33" width="15%">    基金名称</td>
-<td align="left" class="fundTableHead" width="10%">  基金代码</td>
-<td align="center" class="fundTableHead" width="10%">净值日期</td>
-<td align="center" class="fundTableHead" width="9%">份额净值</td>
-<td align="center" class="fundTableHead" width="10%">累计净值</td>
-<td align="center" class="fundTableHead" width="17%">累计净值增长率%</td>
-</tr>
-</table>
-<table border="0" cellpadding="0" cellspacing="0" class="stripeTbl" width="687">
-<tr>
-<td align="left" background="#" class="border_b_c3c3c3" height="25" width="15%"><a href="/fund/boshiyuyang.html">博时裕阳封闭</a></td>
-<td align="left" class="border_b_c3c3c3" width="10%">500006</td>
-<td align="center" class="border_b_c3c3c3" width="10%">12/10/12</td>
-<td align="center" class="border_b_c3c3c3" width="9%">0.8237</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.5017</td>
-<td align="center" class="border_b_c3c3c3" width="17%">558.47%</td>
-</tr>
-<tr>
-<td align="left" background="#" class="border_b_c3c3c3" height="25" width="15%"><a href="/fund/boshiyulong.html">博时裕隆封闭</a></td>
-<td align="left" class="border_b_c3c3c3" width="10%">184692</td>
-<td align="center" class="border_b_c3c3c3" width="10%">12/10/12</td>
-<td align="center" class="border_b_c3c3c3" width="9%">0.9142</td>
-<td align="center" class="border_b_c3c3c3" width="10%">4.2302</td>
-<td align="center" class="border_b_c3c3c3" width="17%">437.97%</td>
-</tr>
-</table>
-<table align="right" border="0" cellpadding="0" cellspacing="0" class="bg_two_line" width="687">
-<tr>
-<td height="2"><img height="1" src="/images/pic_spaces.gif" width="1"/></td>
-</tr>
-</table></td>
-</tr>
-<!-- ****************************END 封闭式基金**************************** -->
-</table>
+<tr class="sn_bg">
+<td class="sn_subth" colspan="11">
+<div class="sn_name">
+<a href="###">主题类</a>
+<div class="sn_tip">
+<p>
+<strong>主题类股票型基金：</strong>指根据不同主题投资策略重点投资
+
+相应主题资产的基金。
+								</p>
+</div>
 </div>
 </td>
 </tr>
-</table></td>
+<tr class="sn_bggray" id="470008">
+<td width="9%">
+<a href="/main/products/pofund/470008/fundgk.shtml" target="_blank" title="本基金采用“自上而下”的投资方式，灵活运用资产配置策略、行业轮动策略和个股精选策略，构建有效的投资组合。">470008</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470008/fundgk.shtml" target="_blank">汇添富策略回报股票</a>
+<div class="sn_tip">
+<p>
+										本基金采用“自上而下”的投资方式，灵活运用资产配置策略、行业轮动策略和个股精选策略，构建有效的投资组合。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.940 
+						</td>
+<td width="7%">
+							0.960 
+						</td>
+<td width="7%">
+<span class="red">+1.08%</span>
+</td>
+<td width="8%">
+<span class="red">+0.43%</span>
+</td>
+<td width="7%">
+<span class="green">-2.39%</span>
+</td>
+<td width="7%">
+<span class="green">-4.33%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470008"/>
+</td>
 </tr>
-</table>
-<table align="center" border="0" cellpadding="0" cellspacing="0" height="176" width="1000">
-<tr>
-<td align="left" class="border_b_c3c3c3 gray"><iframe allowtransparency="true" frameborder="0" height="173" id="bottomNormal" name="bottomNormal" scrolling="no" src="/common/forBottomIframe.html" width="100%"></iframe></td>
+<tr class="sn_bggray" id="470009">
+<td width="9%">
+<a href="/main/products/pofund/470009/fundgk.shtml" target="_blank" title="本基金采用自下而上的方法，重点投资与中国经济发展密切相关的优秀民营企业上市公司股票。">470009</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470009/fundgk.shtml" target="_blank">汇添富民营活力股票</a>
+<div class="sn_tip">
+<p>
+										本基金采用自下而上的方法，重点投资与中国经济发展密切相关的优秀民营企业上市公司股票。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.055 
+						</td>
+<td width="7%">
+							1.055 
+						</td>
+<td width="7%">
+<span class="red">+0.67%</span>
+</td>
+<td width="8%">
+<span class="red">+4.35%</span>
+</td>
+<td width="7%">
+<span class="red">+9.90%</span>
+</td>
+<td width="7%">
+<span class="red">+5.50%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470009"/>
+</td>
 </tr>
-</table>
+<tr class="sn_bggray" id="470028">
+<td width="9%">
+<a href="/main/products/pofund/470028/fundgk.shtml" target="_blank" title="在长期价值投资理念的基础上，本基金坚持社会责任投资，重点考察企业社会责任的履行，立足企业基本面，自下而上精选个股，努力实现本基金的投资目标。">470028</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470028/fundgk.shtml" target="_blank">汇添富社会责任股票</a>
+<div class="sn_tip">
+<p>
+										在长期价值投资理念的基础上，本基金坚持社会责任投资，重点考察企业社会责任的履行，立足企业基本面，自下而上精选个股，努力实现本基金的投资目标。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.886 
+						</td>
+<td width="7%">
+							0.886 
+						</td>
+<td width="7%">
+<span class="red">+1.26%</span>
+</td>
+<td width="8%">
+<span class="red">+1.37%</span>
+</td>
+<td width="7%">
+<span class="green">-3.28%</span>
+</td>
+<td width="7%">
+<span class="green">-11.40%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470028"/>
+</td>
+</tr>
+<tr class="sn_bggray" id="470098">
+<td width="9%">
+<a href="/main/products/pofund/470098/fundgk.shtml" target="_blank" title="　本基金主要采用逆向投资策略进行主动投资管理，在科学严格的投资风险管理前提下，谋求基金资产长期稳健回报。">470098</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470098/fundgk.shtml" target="_blank">汇添富逆向投资股票</a>
+<div class="sn_tip">
+<p>
+										　本基金主要采用逆向投资策略进行主动投资管理，在科学严格的投资风险管理前提下，谋求基金资产长期稳健回报。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.010 
+						</td>
+<td width="7%">
+							1.010 
+						</td>
+<td width="7%">
+<span class="red">+0.70%</span>
+</td>
+<td width="8%">
+<span class="green">-1.85%</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+1.00%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470098"/>
+</td>
+</tr>
+<tr class="sn_bg">
+<td class="sn_subth" colspan="11">
+<div class="sn_name">
+<a href="###">行业类</a>
+<div class="sn_tip">
+<p>
+<strong>行业类股票型基金：</strong>指重点投资某一行业或板块的基金
+
+。
+								</p>
+</div>
+</div>
+</td>
+</tr>
+<tr class="sn_bggray" id="470006">
+<td width="9%">
+<a href="/main/products/pofund/470006/fundgk.shtml" target="_blank" title="国内首只医药行业投资基金，精选医药保健行业的优质上市公司。">470006</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470006/fundgk.shtml" target="_blank">汇添富医药保健股票</a>
+<div class="sn_tip">
+<p>
+										国内首只医药行业投资基金，精选医药保健行业的优质上市公司。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.915 
+						</td>
+<td width="7%">
+							0.915 
+						</td>
+<td width="7%">
+<span class="red">+0.66%</span>
+</td>
+<td width="8%">
+<span class="red">+6.64%</span>
+</td>
+<td width="7%">
+<span class="red">+10.37%</span>
+</td>
+<td width="7%">
+<span class="green">-8.50%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470006"/>
+</td>
+</tr>
+<tr class="sn_bg">
+<td class="sn_subth" colspan="11">
+<div class="sn_name">
+<a href="###">普通类</a>
+<div class="sn_tip">
+<p>
+<strong>普通类股票型基金：</strong>指在风格类资产、主题类资产、行
+
+业类资产等相对均衡配置的股票型基金。
+								</p>
+</div>
+</div>
+</td>
+</tr>
+<tr class="sn_bggray" id="519018">
+<td width="9%">
+<a href="/main/products/pofund/519018/fundgk.shtml" target="_blank" title="本基金应用“由上而下”和“自下而上”相结合的投资策略，通过行业的相对均衡配置和投资布局于具有持续增长潜质的企业。荣获第六届中国基金业金牛奖。">519018</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519018/fundgk.shtml" target="_blank">汇添富均衡增长股票</a>
+<div class="sn_tip">
+<p>
+										本基金应用“由上而下”和“自下而上”相结合的投资策略，通过行业的相对均衡配置和投资布局于具有持续增长潜质的企业。荣获第六届中国基金业金牛奖。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.6347 
+						</td>
+<td width="7%">
+							2.2383 
+						</td>
+<td width="7%">
+<span class="red">+1.13%</span>
+</td>
+<td width="8%">
+<span class="red">+1.89%</span>
+</td>
+<td width="7%">
+<span class="green">-0.16%</span>
+</td>
+<td width="7%">
+<span class="red">+120.39%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519018"/>
+</td>
+</tr>
+<tr id="470888">
+<th rowspan="2" width="8%">
+<div class="sn_name">
+<a href="###">海外基金</a>
+<div class="sn_tip">
+<p>
+<strong>海外基金：</strong>指在中国大陆募集投资于境外市场
+
+有价证券的基金。有利于帮助投资者把握海外市场投资机会。预期风险收益水平高。
+									</p>
+</div>
+</div>
+</th>
+<td width="9%">
+<a href="/main/products/pofund/470888/fundgk.shtml" target="_blank" title="本基金主要投资亚洲澳洲成熟证券市场（除日本外），精选具有持续竞争优势且估值有吸引力的公司股票等证券，是首只重点投资澳洲市场的基金。">470888</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470888/fundgk.shtml" target="_blank">汇添富亚澳成熟优选股票(QDII)</a>
+<div class="sn_tip">
+<p>
+										本基金主要投资亚洲澳洲成熟证券市场（除日本外），精选具有持续竞争优势且估值有吸引力的公司股票等证券，是首只重点投资澳洲市场的基金。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-17 
+						</td>
+<td width="7%">
+							 0.918 
+						</td>
+<td width="7%">
+							0.938 
+						</td>
+<td width="7%">
+<span class="red">+0.66%</span>
+</td>
+<td width="8%">
+<span class="red">+6.99%</span>
+</td>
+<td width="7%">
+<span class="red">+3.85%</span>
+</td>
+<td width="7%">
+<span class="green">-6.52%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470888"/>
+</td>
+</tr>
+<tr id="164701">
+<td width="9%">
+<a href="/main/products/pofund/164701/fundgk.shtml" target="_blank" title="本基金主要投资于境外有实物黄金或其他实物贵金属支持的交易所交易基金(ETF)，力争基金收益率超越同期黄金价格走势。是国内首只贵金属基金。">164701</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/164701/fundgk.shtml" target="_blank">汇添富黄金及贵金属（QDII-LOF-FOF）</a>
+<div class="sn_tip">
+<p>
+										本基金主要投资于境外有实物黄金或其他实物贵金属支持的交易所交易基金(ETF)，力争基金收益率超越同期黄金价格走势。是国内首只贵金属基金。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-17 
+						</td>
+<td width="7%">
+							 0.946 
+						</td>
+<td width="7%">
+							0.946 
+						</td>
+<td width="7%">
+<span class="red">+0.11%</span>
+</td>
+<td width="8%">
+<span class="red">+10.90%</span>
+</td>
+<td width="7%">
+<span class="red">+0.42%</span>
+</td>
+<td width="7%">
+<span class="green">-5.40%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="164701"/>
+</td>
+</tr>
+<tr class="sn_bg" id="470007">
+<th class="leftbg" rowspan="3" width="8%">
+<div class="sn_name">
+<a href="###">指数型</a>
+<div class="sn_tip">
+<p>
+<strong>指数型基金：</strong>指以标的股票指数为主要跟踪对
+
+象进行指数化投资运作的基金。预期风险收益水平低于股票基金，高于混合基金。
+									</p>
+</div>
+</div>
+</th>
+<td width="9%">
+<a href="/main/products/pofund/470007/fundgk.shtml" target="_blank" title="本基金以上证综合指数为跟踪对象，进行指数化投资运作，是中国首只上证综合指数基金。">470007</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470007/fundgk.shtml" target="_blank">汇添富上证综合指数</a>
+<div class="sn_tip">
+<p>
+										本基金以上证综合指数为跟踪对象，进行指数化投资运作，是中国首只上证综合指数基金。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.711 
+						</td>
+<td width="7%">
+							0.711 
+						</td>
+<td width="7%">
+<span class="red">+1.14%</span>
+</td>
+<td width="8%">
+<span class="green">-1.25%</span>
+</td>
+<td width="7%">
+<span class="green">-7.54%</span>
+</td>
+<td width="7%">
+<span class="green">-28.90%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470007"/>
+</td>
+</tr>
+<tr class="sn_bg" id="159912">
+<td width="9%">
+<a href="/main/products/pofund/159912/fundgk.shtml" target="_blank" title="本基金以深证300指数为投资对象，进行指数化投资运作，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。">159912</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/159912/fundgk.shtml" target="_blank">汇添富深证300ETF</a>
+<div class="sn_tip">
+<p>
+										本基金以深证300指数为投资对象，进行指数化投资运作，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.8439 
+						</td>
+<td width="7%">
+							0.8439 
+						</td>
+<td width="7%">
+<span class="red">+1.79%</span>
+</td>
+<td width="8%">
+<span class="green">-4.23%</span>
+</td>
+<td width="7%">
+<span class="green">-15.54%</span>
+</td>
+<td width="7%">
+<span class="green">-15.59%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="159912"/>
+</td>
+</tr>
+<tr class="sn_bg" id="470068">
+<td width="9%">
+<a href="/main/products/pofund/470068/fundgk.shtml" target="_blank" title="本基金以汇添富深证300ETF为投资对象，通过投资于目标ETF，紧密跟踪深证300指数，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。">470068</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470068/fundgk.shtml" target="_blank">汇添富深证300ETF联接</a>
+<div class="sn_tip">
+<p>
+										本基金以汇添富深证300ETF为投资对象，通过投资于目标ETF，紧密跟踪深证300指数，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.9193 
+						</td>
+<td width="7%">
+							0.9193 
+						</td>
+<td width="7%">
+<span class="red">+1.68%</span>
+</td>
+<td width="8%">
+<span class="green">-3.93%</span>
+</td>
+<td width="7%">
+<span class="green">-8.07%</span>
+</td>
+<td width="7%">
+<span class="green">-8.07%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470068"/>
+</td>
+</tr>
+<tr id="470018">
+<th rowspan="1" width="8%">
+<div class="sn_name">
+<a href="###">保本型</a>
+<div class="sn_tip">
+<p>
+<strong>保本型基金：</strong>指投资人在投资契约到期时，可
+
+以收回投资本金至少某一约定百分比的基金。预期风险收益水平低于债券基金，高于货币基金。
+									</p>
+</div>
+</div>
+</th>
+<td width="9%">
+<a href="/main/products/pofund/470018/fundgk.shtml" target="_blank" title="本基金主要通过投资组合保险技术来运作，在保证本金安全的前提下，力争在保本周期内实现基金财产的稳健增值。">470018</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470018/fundgk.shtml" target="_blank">汇添富保本混合</a>
+<div class="sn_tip">
+<p>
+										本基金主要通过投资组合保险技术来运作，在保证本金安全的前提下，力争在保本周期内实现基金财产的稳健增值。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.043 
+						</td>
+<td width="7%">
+							1.043 
+						</td>
+<td width="7%">
+<span class="red">+0.10%</span>
+</td>
+<td width="8%">
+<span class="green">-0.38%</span>
+</td>
+<td width="7%">
+<span class="red">+4.30%</span>
+</td>
+<td width="7%">
+<span class="red">+4.30%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470018"/>
+</td>
+</tr>
+<tr class="even" id="519078">
+<th rowspan="9" width="8%">
+<div class="sn_name">
+<a href="###">债券型</a>
+<div class="sn_tip">
+<p>
+<strong>债券型基金：</strong>指以债券为主要投资对象，债券
+
+资产占基金资产比例超过80%的基金。预期风险收益水平低于混合基金，高于货币基金。
+									</p>
+</div>
+</div>
+</th>
+<td width="9%">
+<a href="/main/products/pofund/519078/fundgk.shtml" target="_blank" title="本基金主要投资于债券等固定收益类品种和其他低风险品种。A类收取前端认申购费和赎回费。">519078</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/519078/fundgk.shtml" target="_blank">汇添富增强收益债券A</a>
+<div class="sn_tip">
+<p>
+										本基金主要投资于债券等固定收益类品种和其他低风险品种。A类收取前端认申购费和赎回费。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.033 
+						</td>
+<td width="7%">
+							1.233 
+						</td>
+<td width="7%">
+<span class="red">+0.19%</span>
+</td>
+<td width="8%">
+<span class="green">-0.39%</span>
+</td>
+<td width="7%">
+<span class="red">+7.48%</span>
+</td>
+<td width="7%">
+<span class="red">+24.76%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="519078"/>
+</td>
+</tr>
+<tr class="even" id="470078">
+<td width="9%">
+<a href="/main/products/pofund/470078/fundgk.shtml" target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470078</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470078/fundgk.shtml" target="_blank">汇添富增强收益债券C</a>
+<div class="sn_tip">
+<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.023 
+						</td>
+<td width="7%">
+							1.223 
+						</td>
+<td width="7%">
+<span class="red">+0.10%</span>
+</td>
+<td width="8%">
+<span class="green">-0.49%</span>
+</td>
+<td width="7%">
+<span class="red">+7.12%</span>
+</td>
+<td width="7%">
+<span class="red">+12.52%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470078"/>
+</td>
+</tr>
+<tr class="even" id="470058">
+<td width="9%">
+<a href="/main/products/pofund/470058/fundgk.shtml" target="_blank" title="本基金重点投资于可转换债券(含可分离交易可转债)，努力在控制投资组合下方风险的基础上实现基金资产的长期稳健增值。">470058</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470058/fundgk.shtml" target="_blank">汇添富可转换债券A</a>
+<div class="sn_tip">
+<p>
+										本基金重点投资于可转换债券(含可分离交易可转债)，努力在控制投资组合下方风险的基础上实现基金资产的长期稳健增值。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.960 
+						</td>
+<td width="7%">
+							0.960 
+						</td>
+<td width="7%">
+<span class="red">+0.52%</span>
+</td>
+<td width="8%">
+<span class="green">-3.90%</span>
+</td>
+<td width="7%">
+<span class="green">-0.41%</span>
+</td>
+<td width="7%">
+<span class="green">-4.00%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470058"/>
+</td>
+</tr>
+<tr class="even" id="470059">
+<td width="9%">
+<a href="/main/products/pofund/470059/fundgk.shtml" target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470059</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470059/fundgk.shtml" target="_blank">汇添富可转换债券C</a>
+<div class="sn_tip">
+<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 0.955 
+						</td>
+<td width="7%">
+							0.955 
+						</td>
+<td width="7%">
+<span class="red">+0.53%</span>
+</td>
+<td width="8%">
+<span class="green">-3.92%</span>
+</td>
+<td width="7%">
+<span class="green">-0.73%</span>
+</td>
+<td width="7%">
+<span class="green">-4.50%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470059"/>
+</td>
+</tr>
+<tr class="even" id="470088">
+<td width="9%">
+<a href="/main/products/pofund/470088/fundgk.shtml" target="_blank" title="本基金主要投资于信用债券类固定收益品种，在严格管理投资风险、保持资产流动性的基础上，为基金份额持有人追求资产的长期稳定增值。 ">470088</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470088/fundgk.shtml" target="_blank">汇添富信用债债券A</a>
+<div class="sn_tip">
+<p>
+										本基金主要投资于信用债券类固定收益品种，在严格管理投资风险、保持资产流动性的基础上，为基金份额持有人追求资产的长期稳定增值。 
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.061 
+						</td>
+<td width="7%">
+							1.061 
+						</td>
+<td width="7%">
+<span class="red">+0.00%</span>
+</td>
+<td width="8%">
+<span class="green">-0.28%</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+6.10%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470088"/>
+</td>
+</tr>
+<tr class="even" id="470089">
+<td width="9%">
+<a href="/main/products/pofund/470089/fundgk.shtml" target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470089</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470089/fundgk.shtml" target="_blank">汇添富信用债债券C</a>
+<div class="sn_tip">
+<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-18 
+						</td>
+<td width="7%">
+							 1.057 
+						</td>
+<td width="7%">
+							1.057 
+						</td>
+<td width="7%">
+<span class="red">+0.00%</span>
+</td>
+<td width="8%">
+<span class="green">-0.38%</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+5.70%</span>
+</td>
+<td width="7%">
+							 正常 
+						</td>
+<td width="5%">
+<input name="fund" type="checkbox" value="470089"/>
+</td>
+</tr>
+<tr class="even" id="164702">
+<td width="9%">
+<a href="/main/products/pofund/164702/fundgk.shtml" target="_blank" title="&lt;P class=indent&gt;本基金主要投资于债券类固定收益品种，在严格管理投资风险的基础上，追求资产的长期稳定增值。&lt;/P&gt;">164702</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/164702/fundgk.shtml" target="_blank">汇添富季季红定期开放债券</a>
+<div class="sn_tip">
+<p>
+</p><p class="indent">本基金主要投资于债券类固定收益品种，在严格管理投资风险的基础上，追求资产的长期稳定增值。</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-12 
+						</td>
+<td width="7%">
+							 1.004 
+						</td>
+<td width="7%">
+							1.004 
+						</td>
+<td width="7%">
+<span class="red">+0.10%</span>
+</td>
+<td width="8%">
+<span>--</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+0.30%</span>
+</td>
+<td width="7%">
+<span class="yellow">封闭期</span>
+</td>
+<td width="5%">
+<input disabled="" name="fund" type="checkbox" value="164702"/>
+</td>
+</tr>
+<tr class="even" id="470010">
+<td width="9%">
+<a href="/main/products/pofund/470010/fundgk.shtml" target="_blank" title="本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。">470010</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470010/fundgk.shtml" target="_blank">汇添富多元收益债券A</a>
+<div class="sn_tip">
+<p>
+										本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-12 
+						</td>
+<td width="7%">
+							 1.002 
+						</td>
+<td width="7%">
+							1.002 
+						</td>
+<td width="7%">
+<span class="red">+0.20%</span>
+</td>
+<td width="8%">
+<span>--</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+0.30%</span>
+</td>
+<td width="7%">
+<span class="yellow">封闭期</span>
+</td>
+<td width="5%">
+<input disabled="" name="fund" type="checkbox" value="470010"/>
+</td>
+</tr>
+<tr class="even" id="470011">
+<td width="9%">
+<a href="/main/products/pofund/470011/fundgk.shtml" target="_blank" title="本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。">470011</a>
+</td>
+<td class="left2" width="18%">
+<div class="sn_namelist">
+<a href="/main/products/pofund/470011/fundgk.shtml" target="_blank">汇添富多元收益债券C</a>
+<div class="sn_tip">
+<p>
+										本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。
+									</p>
+</div>
+</div>
+</td>
+<td width="10%">
+							 2012-10-12 
+						</td>
+<td width="7%">
+							 1.002 
+						</td>
+<td width="7%">
+							1.002 
+						</td>
+<td width="7%">
+<span class="red">+0.20%</span>
+</td>
+<td width="8%">
+<span>--</span>
+</td>
+<td width="7%">
+<span>--</span>
+</td>
+<td width="7%">
+<span class="red">+0.30%</span>
+</td>
+<td width="7%">
+<span class="yellow">封闭期</span>
+</td>
+<td width="5%">
+<input disabled="" name="fund" type="checkbox" value="470011"/>
+</td>
+</tr>
+</tbody></table>
