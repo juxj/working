@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from env import sites, nodes, save
+from env import sites, save
 from utils.web_fetcher import WebFetcher
 from utils.app_config import AppConfig
 
@@ -13,6 +13,7 @@ class PageFetcher:
 			# call web fetcher
 			fetcher = WebFetcher(config.get('server', 'domain'))
 			# get pages by node defined in config.ini
+			nodes = config.get('server', 'nodes')
 			for node in nodes:
 				# encode setting.
 				encode = int(config.get(node, 'encode'))

@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 from bs4 import BeautifulSoup
-from env import sites, nodes, read
+from env import sites, read, save
 from utils.app_config import AppConfig
 from utils.page_info_parser import PageInfoParser
 from utils.app_util import app_util
 from utils.web_fetcher import WebFetcher
 
-import os, string, json, re
+import os, string, json, re, urllib
 
 class FundHandler:
 
@@ -114,22 +114,40 @@ class FundHandler:
 			print '================'+site+'===================='
 			config = AppConfig().load('config/'+site+'.ini')
 			domain = config.get('server', 'domain')
+			nodes = config.get('server', 'nodes').split(',')
+
 			fetcher = WebFetcher(domain)
 			codes = self.handle_home(config,fetcher)
+			error = ''
 			for code in codes:
 				for node in nodes:
-					print '*******'+node+'('+code+')'+'********'
-					url = config.get(node, 'url')
-					url = url%(code)
-					#print file_name
-					data = fetcher.get(url)	
-					if node == 'nav':
-						data_type = config.get(node, 'data_type')
-						if data_type == 'json':
-							self.get_json_data(config, node+'_json', data)
+					try:
+						print '*******'+site+'/'+node+'('+code+')'+'********'
+						url = config.get(node, 'url')
+						encode = config.get(node, 'encode')
+						url = url.replace('{fund_code}', code)
+						data = fetcher.get(url)	
+						if encode:
+							data = self.encode_data(data)	
+
+						if node == 'nav':
+							data_type = config.get(node, 'data_type')
+							if data_type == 'json':
+								self.get_json_data(config, node+'_json', data)
+							else:
+								self.get_html_data(config, node+'_html', data, 1 )
+						elif node == 'invest':
+							self.handle_invest(config, node, data)
 						else:
-							self.get_html_data(config, node+'_html', data, 1 )
-					elif node == 'invest':
-						self.handle_invest(config, node, data)
-					else:
-						self.get_html_data(config, node, data, 0)
+							self.get_html_data(config, node, data, 0)
+					except:
+						info = site + '/'+ code + '/' + node
+						print info
+						error = error + site + '/'+ code + '/' + node + '\n'
+						pass
+			if len(error)>0:
+				save('error', error)	
+
+	def encode_data(self, data):
+		data = unicode(data, 'gbk')
+		return data.encode('utf-8')

@@ -4,7 +4,6 @@ from utils.app_config import AppConfig
 app_config = AppConfig().load('config/config.ini')
 
 sites = app_config.get('funds', 'sites').strip().split(',')
-nodes = app_config.get('funds', 'nodes').strip().split(',')
 
 def save(file_name, data):
 	f = open(file_name, 'a')
