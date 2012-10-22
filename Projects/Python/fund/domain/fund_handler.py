@@ -2,6 +2,7 @@
 from env import sites, read, save, handler
 from utils.app_config import AppConfig
 from utils.web_fetcher import WebFetcher
+import os, string, json, re, urllib
 
 class FundHandler:
 
@@ -51,8 +52,8 @@ class FundHandler:
 			domain = config.get('server', 'domain')
 			nodes = config.get('server', 'nodes').split(',')
 			fetcher = WebFetcher(domain)
-			#codes = self.handle_home(config,fetcher)
-			codes = ['519068']
+			codes = self.get_home(config,fetcher)
+			#codes = ['050002']
 			error = ''
 			for code in codes:
 				for node in nodes:
@@ -62,6 +63,7 @@ class FundHandler:
 						encode = int(config.get(node, 'encode'))
 						url = url.replace('{fund_code}', code)
 						data = fetcher.get(url)	
+
 						if encode:
 							data = self.encode_data(data)	
 
@@ -78,15 +80,15 @@ class FundHandler:
 						elif node == 'consignee':
 							self.get_consignee(config, node, data)
 						else:
+							
 							handler.get_html_data(config, node, data, 0)
 					except:
 						info = site + '/'+ code + '/' + node
-						print info
-						error = error + site + '/'+ code + '/' + node + '\n'
-						raise
-
+						error = error + 'Error:' + site + '/'+ code + '/' + node + '\n'
+						pass
 			if len(error)>0:
 				save('error', error)	
+				print error
 
 	def encode_data(self, data):
 		data = unicode(data, 'gbk')

@@ -19,28 +19,55 @@ class DataHandler:
 		data_index = config.get(node, 'data_index').strip().split(',')
 		# parser html data.
 		parser = PageInfoParser(selected_tags, data_list_tags)
-		#print data
 		data = parser.read(data)
+		'''
+		m = 0
+		for item in data:
+			print m, item
+			m = m + 1
+		'''
 		# refine the data user selected
-
 		if multi:
 			field_count = int(config.get(node, 'field_count'))
 			start_index = int(config.get(node, 'start_index'))
 			tmp = []
-
 			m = 1
 			for item in data:            
 				if m > start_index:
 					tmp.append(item)
 				m = m + 1
 			data = tmp
-			self.get_collections(data, start_index,field_count, data_index)
+			data = self.get_collections(data, start_index,field_count, data_index)
 		else:
+			tmp = []
 			for index in data_index:
-				print data[int(index)]	
+				index = int(index)
+				if index == -1:
+					tmp.append('')
+				else:
+					tmp.append(data[index])
+			data = tmp
+		
+		m = 0
+		for item in data:
+			print m, item
+			m = m + 1
+		return data
+
+	def get_collections(self, data, start_index, field_count, data_index):
+		m = 0
+		data = app_util.divide_by_record(data, field_count)	
+
+		records = []
+		for item in data:
+			record = []
+			for index in data_index:
+				tmp = item[int(index)]
+				record.append(tmp)
+			records.append(record)
+		return records	
 
 	def get_soup_data (self, config, node, data):
-
 		keys = config.get(node, 'property_name').split(',')	
 		values = config.get(node, 'property_value').split(',')	
 		data_tag  = config.get(node, 'data_tag').strip()
@@ -54,7 +81,6 @@ class DataHandler:
 		attrs = attrs + '}';
 		
 		attrs_value = json.loads(attrs);		
-		print attrs_value
 
 		if data_tag.strip() != '':
 			if len(attrs_value)>0:
@@ -64,17 +90,4 @@ class DataHandler:
 		return data
 
 
-	def get_collections(self, data, start_index, field_count, data_index):
-		m = 0
-		data = app_util.divide_by_record(data, field_count)	
 
-		records = []
-		for item in data:
-			record = []
-			for index in data_index:
-				tmp = item[int(index)]
-				record.append(tmp)
-			records.append(record)
-			print record
-		print len(records)
-		return records	

@@ -1,4 +1,5 @@
 from HTMLParser import HTMLParser
+from bs4 import BeautifulSoup
 
 class PageInfoParser(HTMLParser):
 
@@ -8,6 +9,7 @@ class PageInfoParser(HTMLParser):
 		PageInfoParser.data_list_tags = data_list_tags 
 	
 	def read(self, data):
+		data = data.replace('&nbsp',' ')
 		self._lines = []
 		self.reset()
 		self.feed(data)
@@ -27,9 +29,11 @@ class PageInfoParser(HTMLParser):
 
 	def handle_data(self, data):
 		tag = "/".join(self._level_stack);
-		#print tag, data
 		if tag in PageInfoParser.data_list_tags:
-			#print tag, data
-			data =data.strip().replace('\r\n','')
-			if len(data)>0:
-				self._lines.append(data)
+			html_data = '&nbsp'	
+			if len(data.strip())>1:
+				html_data = ''
+				for item in data:
+					html_data = html_data + item.strip().replace('\r\n','')
+			html_data = html_data.strip()
+			self._lines.append(html_data)
