@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from domain.page_fetcher import PageFetcher
-from domain.fund_handler import FundHandler
+from domain.handler.page_fetcher import PageFetcher
+from domain.handler.fund_handler import FundHandler
 
 import sys
 
