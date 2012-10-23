@@ -18,14 +18,10 @@ class app_util:
 		return yesterday	
 
 	@staticmethod
-	def getToday():
+	def get_now():
 		now = datetime.datetime.now()
-		return now.strftime('%Y-%m-%d');
+		return now.strftime('%Y-%m-%d %h:%m:%s');
 	
-	@staticmethod
-	def getNow():
-		return datetime.datetime.now()
-
 	@staticmethod	
 	def str2bool(v):
 		return v.lower() in ("yes", "true", "t", "1")
@@ -104,3 +100,8 @@ class app_util:
 			result.append(sub_result)
 			m = m +1
 		return result
+
+	@staticmethod
+	def encode_data(data):
+		data = unicode(data, 'gbk')
+		return data.encode('utf-8')

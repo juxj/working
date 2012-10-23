@@ -1,34 +1,27 @@
 #!/usr/bin/env python
-from env import sites, read, save, handler
+import os, string, json, re, urllib
+
+from utils.app_util import app_util
+from env import sites, read, save, handler, Session
 from utils.app_config import AppConfig
 from utils.web_fetcher import WebFetcher
-import os, string, json, re, urllib
+from domain.dao.fund_company_dao import FundCompanyDAO
+from domain.dao.fund_dao import FundDAO
+from domain.handler.generic_handler import GenericHandler
 
 
 class FundHandler:
 
-	def get_bonus(self, config, node, data):
-		data = handler.get_soup_data(config, node, data)
-		table_index = config.get(node, 'table_index').split(',')
-		for index in table_index:	
-			data = data[int(index)].prettify()
-			handler.get_html_data(config, node, data, 1)
+	def get_sites(self):
+		dao = FundCompanyDAO()
+		sites = dao.get_fund_company_by_status('1')	
+		return sites
 
-	def get_consignee(self, config, node, data):
-		data = handler.get_soup_data(config, node, data)
-		data = data[0].prettify()
-		data = handler.get_html_data(config, node, data, 1)
-	
-	def get_invest(self, config, node, data):
-		invest_nodes = config.get(node, 'data_nodes').split(',')
-		data = handler.get_soup_data(config, node, data)
-				
-		for invest_node in invest_nodes:
-			node_name = node +'_'+ invest_node 	
-			print '******'+node_name+'******'
-			table_index = config.get(node_name, 'table_index')
-			data = data[int(table_index)].prettify()
-			handler.get_html_data(config, node_name, data, 1)
+	def get_dao(self, node):
+		dao = None
+		if node == 'info':
+			dao = FundDAO()
+		return dao
 
 	def get_home(self, config, fetcher):
 		node = 'home'
@@ -45,52 +38,35 @@ class FundHandler:
 		codes = set(codes)
 		return codes
 
-		
+
 	def get_data(self):
 		error = ''
+		sites = self.get_sites()
 		for site in sites:
-			print '================'+site+'===================='
-			config = AppConfig().load('config/'+site+'.ini')
+
+			config_file = 'config/'+site.config_file
+			config = AppConfig().load(config_file)
 			domain = config.get('server', 'domain')
 			nodes = config.get('server', 'nodes').split(',')
 			fetcher = WebFetcher(domain)
 			codes = self.get_home(config,fetcher)
-			#codes = ['050002']
-			for code in codes:
-				for node in nodes:
+			for node in nodes:
+				dao = self.get_dao(node)
+				url = config.get(node, 'url')
+				encode = int(config.get(node, 'encode'))
+				for code in codes:
 					try:
-						print '***'+site+'/'+code+'/'+node+'***'
-						url = config.get(node, 'url')
-						encode = int(config.get(node, 'encode'))
 						url = url.replace('{fund_code}', code)
 						data = fetcher.get(url)	
 
 						if encode:
-							data = self.encode_data(data)	
-
-						if node == 'nav':
-							data_type = config.get(node, 'data_type')
-							if data_type == 'json':
-								handler.get_json_data(config, node+'_json', data)
-							else:
-								handler.get_html_data(config, node+'_html', data, 1 )
-						elif node == 'invest' :
-							self.get_invest(config, node, data)
-						elif node == 'bonus' or node == 'ROI':
-							self.bonus_handler(config, node, data)					
-						elif node == 'consignee':
-							self.get_consignee(config, node, data)
-						else:
-							
-							handler.get_html_data(config, node, data, 0)
+							data = app_util.encode_data(data)	
+						handler = GenericHandler(config, site, node, code, data, dao)
+						handler.handle_data()
 					except:
-						info = site + '/'+ code + '/' + node
-						error = error + 'Error:' + site + '/'+ code + '/' + node + '\n'
-						pass
-		if len(error)>0:
-			save('error', error)	
-			print error
-
-	def encode_data(self, data):
-		data = unicode(data, 'gbk')
-		return data.encode('utf-8')
+						error=error+ site.full_name + '/'+ code + '/' + node + '\n'
+						error = error + '['+app_util.get_now()+']'
+						error = error + '\n'
+						raise
+				Session.commit()
+		save('error', error.encode('utf8'))
