@@ -10,7 +10,7 @@ class DataHandler:
 	def get_json_data(self, config, node, data):
 		data_node = config.get(node, 'data_node')
 		data = json.loads(data)
-		return data
+		return data[data_node]
 
 	def get_html_data(self, config, node, data, multi):
 		# get settings.
@@ -20,12 +20,10 @@ class DataHandler:
 		# parser html data.
 		parser = PageInfoParser(selected_tags, data_list_tags)
 		data = parser.read(data)
-		'''
 		m = 0
 		for item in data:
-			print m, item
+			#print m, item
 			m = m + 1
-		'''
 		# refine the data user selected
 		if multi:
 			field_count = int(config.get(node, 'field_count'))
@@ -50,7 +48,7 @@ class DataHandler:
 		
 		m = 0
 		for item in data:
-			print m, item
+			#print m, item
 			m = m + 1
 		return data
 
@@ -88,6 +86,3 @@ class DataHandler:
 			else:
 				data = soup(data_tag)
 		return data
-
-
-

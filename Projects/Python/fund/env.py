@@ -4,8 +4,7 @@ from domain.handler.data_handler import DataHandler
 from utils.db_engine import DBEngine
 
 app_config = AppConfig().load('config/config.ini')
-
-sites = app_config.get('funds', 'sites').strip().split(',')
+show_error = int(app_config.get('app', 'show_error'))
 
 handler = DataHandler()
 

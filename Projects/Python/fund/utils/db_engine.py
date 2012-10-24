@@ -17,7 +17,7 @@ class DBEngine:
 	
 		url = 'mysql://'+self.user+':'+self.password+'@'+self.host+':'+self.port+'/'+self.db
 		try:
-			engine = create_engine (url, connect_args={'charset':'utf8'}, echo=True )
+			engine = create_engine (url, connect_args={'charset':'utf8'}, echo=False )
 			return engine
 		except Exception as e:
 			print 'fetal error encounted', e

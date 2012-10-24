@@ -9,7 +9,7 @@ class WebFetcher:
 		try:
 			self.conn.request('GET', url)
 			response = self.conn.getresponse()
-			#print url, response.status, response.reason
+			print url, response.status, response.reason
 			data = response.read()
 			return data
 		except:

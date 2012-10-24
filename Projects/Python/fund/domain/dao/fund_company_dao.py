@@ -1,5 +1,5 @@
 from env import Session
-from domain.model.models import FundCompany
+from domain.model.fund_company import FundCompany
 
 class FundCompanyDAO:
 

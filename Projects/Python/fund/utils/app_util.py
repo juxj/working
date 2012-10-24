@@ -1,14 +1,8 @@
-import os
-import os.path
-import sys
-import string
-import time
-import json
-import shutil
-import datetime
+import os, os.path, sys, string, time, json, shutil, datetime
 from datetime import timedelta
 
 class app_util:
+
 	@staticmethod
 	def getDayByOffset(offset):
 		now = datetime.datetime.now()
@@ -18,9 +12,10 @@ class app_util:
 		return yesterday	
 
 	@staticmethod
-	def get_now():
+	def get_now(dt_type):
 		now = datetime.datetime.now()
-		return now.strftime('%Y-%m-%d %h:%m:%s');
+		dt_format = ['%Y-%m-%d %H:%M:%S','%Y-%m-%d','%Y%m%d%H%M%S']
+		return now.strftime(dt_format[dt_type]);
 	
 	@staticmethod	
 	def str2bool(v):
@@ -34,6 +29,13 @@ class app_util:
 			if c in number:
 				result = result + c
 		return result
+
+	@staticmethod	
+	def print_list(value):
+		m = 0
+		for item in value:
+			print m, item
+			m = m + 1
 
 	@staticmethod
 	def remove_duplicate(string_array):
@@ -105,3 +107,10 @@ class app_util:
 	def encode_data(data):
 		data = unicode(data, 'gbk')
 		return data.encode('utf-8')
+
+	@staticmethod
+	def is_null(value):
+		result = 1
+		if len(value.strip())>1:
+			result = 0
+		return result
