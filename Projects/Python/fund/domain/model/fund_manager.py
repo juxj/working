@@ -11,6 +11,7 @@ class FundManager(Base):
 	id=Column(Integer, primary_key=True)
 
 	manager = Column(String)
+	gender = Column(String)
 	resume = Column(String)
 	pic = Column(String)
 	start_date = Column(String)
@@ -25,10 +26,11 @@ class FundManager(Base):
 	def __init__(self, company, fund, html_data):
 
 		self.manager = html_data[0]
-		self.resume = html_data[1]
-		self.pic = html_data[2]
-		self.start_date = html_data[3]
-		self.end_date = html_data[4]
+		self.gender= html_data[1]
+		self.resume = html_data[2]
+		self.pic = html_data[3]
+		self.start_date = html_data[4]
+		self.end_date = html_data[5]
 		
 		if app_util.is_null(self.start_date):
 			self.start_date = None

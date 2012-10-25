@@ -49,11 +49,17 @@ class GenericHandler:
 		fund_dao.save_fund(self.company, self.code, data)
 	
 	def get_manager(self):
-		data = handler.get_html_data(self.config, self.node, self.data, 0)
+		data = handler.get_soup_data(self.config, self.node, self.data)
+		table_index = self.config.get(self.node, 'table_index').split(',');
+		table = data[0]
+		table = table.prettify()
+	
+		data = handler.get_html_data(self.config, self.node,table,1)
 		fund = self.get_fund()
 		if fund != None:
-			manager = FundManager(self.company, fund, data) 
-			fund_manager_dao.save_fund_manager(manager)
+			for item in data:
+				manager = FundManager(self.company, fund, item) 
+				fund_manager_dao.save_fund_manager(manager)
 
 	def get_nav(self):
 		data_type = self.config.get(self.node, 'data_type')

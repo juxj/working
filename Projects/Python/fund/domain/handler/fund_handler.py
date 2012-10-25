@@ -41,8 +41,8 @@ class FundHandler:
 			domain = config.get('server', 'domain')
 			nodes = config.get('server', 'nodes').split(',')
 			fetcher = WebFetcher(domain)
-			codes = self.get_home(config,fetcher)
-			#codes = ['050002']
+			#codes = self.get_home(config,fetcher)
+			codes = ['121099']
 			for node in nodes:
 				encode = int(config.get(node, 'encode'))
 				for code in codes:

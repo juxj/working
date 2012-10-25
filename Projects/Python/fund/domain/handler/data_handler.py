@@ -20,10 +20,6 @@ class DataHandler:
 		# parser html data.
 		parser = PageInfoParser(selected_tags, data_list_tags)
 		data = parser.read(data)
-		m = 0
-		for item in data:
-			#print m, item
-			m = m + 1
 		# refine the data user selected
 		if multi:
 			field_count = int(config.get(node, 'field_count'))
@@ -35,36 +31,40 @@ class DataHandler:
 					tmp.append(item)
 				m = m + 1
 			data = tmp
-			data = self.get_collections(data, start_index,field_count, data_index)
+			data = self.get_collections(data, field_count, data_index)
 		else:
 			tmp = []
+			length = len(data)
 			for index in data_index:
 				index = int(index)
+				if index>=length:
+					index = -1
 				if index == -1:
 					tmp.append('')
 				else:
 					tmp.append(data[index])
 			data = tmp
-		
-		m = 0
-		for item in data:
-			#print m, item
-			m = m + 1
 		return data
 
-	def get_collections(self, data, start_index, field_count, data_index):
+	def get_collections(self, data,field_count, data_index):
 		m = 0
 		data = app_util.divide_by_record(data, field_count)	
 		records = []
 		for item in data:
 			record = []
+			length = len(item)
 			for index in data_index:
 				index = int(index)
+				if index > length:
+					index = -1
+
 				if index == -1:
 					record.append('')
 				else:
 					tmp = item[index]
+					print tmp
 					record.append(tmp)
+
 			records.append(record)
 		return records	
 
