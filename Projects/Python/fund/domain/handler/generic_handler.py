@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from env import read, save, handler 
+from env import read, save, handler
 from utils.app_util import app_util
 from domain.dao import * 
 from domain.model.fund_manager import FundManager
@@ -7,6 +7,9 @@ from domain.model.fund_nav import FundNAV
 from domain.model.fund_invest import FundInvest
 from domain.model.fund_charge import FundCharge
 from domain.model.fund_roi import FundROI
+from domain.model.fund_dividend import FundDividend
+from domain.model.fund_file import FundFile
+from domain.model.fund_announcement import FundAnnouncement
 
 class GenericHandler:
 	
@@ -25,8 +28,9 @@ class GenericHandler:
 			'invest':lambda:self.get_invest(),
 			'charge':lambda:self.get_charge(),
 			'roi':lambda:self.get_roi(),
-			'consignee':lambda:self.get_consignee(),
-			'yield':lambda:self.get_yield()
+			'files':lambda:self.get_file(),
+			'dividend':lambda:self.get_dividend(),
+			'announcement':lambda:self.get_announcement()
 		}			
 		return actions[self.node]()
 		
@@ -96,22 +100,68 @@ class GenericHandler:
 		dao = fund_charge_dao
 		dao.save_fund_charge(charge)
 
-	def get_yield(self):
-		'''
-		data = handler.get_soup_data(config, node, data)
-		table_index = config.get(node, 'table_index').split(',')
-		for index in table_index:	
-			data = data[int(index)].prettify()
-			handler.get_html_data(config, node, data, 1)
-		'''
+	def get_dividend(self):
+		config = self.config
+		node = self.node
+		data = self.data
 
-	def get_consignee(self):
-		'''
 		data = handler.get_soup_data(config, node, data)
-		data = data[0].prettify()
+		index = config.get(node, 'table_index')
+		data = data[int(index)].prettify()
 		data = handler.get_html_data(config, node, data, 1)
-		'''
-	
+		dao = fund_dividend_dao
+		fund = self.get_fund()
+		for item in data:
+			dividend = FundDividend(fund, item)
+			dao.add(dividend)
+
+	def get_file(self):
+		data_type = self.config.get(self.node, 'data_type')
+		data = ''
+		if data_type == 'json':
+			node = self.node+'_json'
+			data = handler.get_json_data(self.config, node , self.data)
+			source_fields = self.config.get(node, 'source_fields').split(',')
+			domain = self.config.get('server', 'domain')
+			fund = self.get_fund() 
+			dao = fund_file_dao
+			if fund != None:
+				for item in data:
+					record = []
+					for field in source_fields:
+						value = item[field]
+						if field == 'url':
+							value = domain + value
+						record.append(value)
+					fund_file = FundFile(fund, record)
+					dao.add(fund_file)
+		else:
+			print 'html'
+
+	def get_announcement(self):
+		data_type = self.config.get(self.node, 'data_type')
+		data = ''
+		if data_type == 'json':
+			node = self.node+'_json'
+			data = handler.get_json_data(self.config, node , self.data)
+			source_fields = self.config.get(node, 'source_fields').split(',')
+			domain = self.config.get('server', 'domain')
+			fund = self.get_fund() 
+			dao = fund_announcement_dao
+			if fund != None:
+				for item in data:
+					record = []
+					for field in source_fields:
+						value = item[field]
+						if field == 'url':
+							value = domain + value
+						record.append(value)
+					announcement = FundAnnouncement(fund, record)
+					dao.add(announcement)
+		else:
+			print 'html'
+
+
 	def get_fund(self):
 		fund = fund_dao.get_fund_by_code(self.code)
 		return fund

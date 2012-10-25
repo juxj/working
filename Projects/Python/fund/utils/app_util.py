@@ -14,7 +14,10 @@ class app_util:
 	@staticmethod
 	def get_now(dt_type):
 		now = datetime.datetime.now()
-		dt_format = ['%Y-%m-%d %H:%M:%S','%Y-%m-%d','%Y%m%d%H%M%S']
+		dt_format = ['%Y-%m-%d %H:%M:%S','%Y-%m-%d','%Y%m%d%H%M%S','%Y-%m-%d-%H-%M-%S']
+		length = len(dt_format)
+		if dt_type > length:
+			dt_type = length
 		return now.strftime(dt_format[dt_type]);
 	
 	@staticmethod	

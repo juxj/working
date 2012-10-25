@@ -41,8 +41,8 @@ class FundHandler:
 			domain = config.get('server', 'domain')
 			nodes = config.get('server', 'nodes').split(',')
 			fetcher = WebFetcher(domain)
-			#codes = self.get_home(config,fetcher)
-			codes = ['050002']
+			codes = self.get_home(config,fetcher)
+			#codes = ['050002']
 			for node in nodes:
 				encode = int(config.get(node, 'encode'))
 				for code in codes:
@@ -64,4 +64,4 @@ class FundHandler:
 						else:
 							pass	
 				Session.commit()
-		save('log/'+app_util.get_now(2)+'_error', error.encode('utf8'))
+		save('log/'+app_util.get_now(3)+'_error', error.encode('utf8'))

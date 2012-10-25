@@ -6,6 +6,9 @@ from domain.dao.fund_extra_info_dao import FundExtraInfoDAO
 from domain.dao.fund_invest_dao import FundInvestDAO
 from domain.dao.fund_charge_dao import FundChargeDAO
 from domain.dao.fund_roi_dao import FundROIDAO
+from domain.dao.fund_dividend_dao import FundDividendDAO
+from domain.dao.fund_file_dao import FundFileDAO
+from domain.dao.fund_announcement_dao import FundAnnouncementDAO
 
 fund_dao = FundDAO()
 fund_manager_dao = FundManagerDAO()
@@ -15,3 +18,6 @@ fund_extra_info_dao = FundExtraInfoDAO()
 fund_invest_dao = FundInvestDAO()
 fund_charge_dao = FundChargeDAO()
 fund_roi_dao = FundROIDAO()
+fund_dividend_dao = FundDividendDAO()
+fund_file_dao = FundFileDAO()
+fund_announcement_dao= FundAnnouncementDAO()

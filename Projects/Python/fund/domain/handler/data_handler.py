@@ -55,13 +55,16 @@ class DataHandler:
 	def get_collections(self, data, start_index, field_count, data_index):
 		m = 0
 		data = app_util.divide_by_record(data, field_count)	
-
 		records = []
 		for item in data:
 			record = []
 			for index in data_index:
-				tmp = item[int(index)]
-				record.append(tmp)
+				index = int(index)
+				if index == -1:
+					record.append('')
+				else:
+					tmp = item[index]
+					record.append(tmp)
 			records.append(record)
 		return records	
 
