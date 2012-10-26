@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import app_util
+from utils.app_util import *
 
 Base = declarative_base()
 
@@ -60,8 +60,8 @@ class Fund(Base):
 		self.fund_company_name = company.full_name
 		self.catelog_id = None
 		self.status = '0' 
-		self.created_time = app_util.get_now(0)
-		self.last_updated_time = app_util.get_now(0) 
+		self.created_time = get_now(0)
+		self.last_updated_time = get_now(0) 
 
 	'''
 	def __init__(self, code, short_name, full_name, issued_date, catelog_name, manager, administrator,

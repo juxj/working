@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import app_util
+from utils.app_util import *
 
 Base = declarative_base()
 
@@ -32,10 +32,10 @@ class FundManager(Base):
 		self.start_date = html_data[4]
 		self.end_date = html_data[5]
 		
-		if app_util.is_null(self.start_date):
+		if is_null(self.start_date):
 			self.start_date = None
 		
-		if app_util.is_null(self.end_date):
+		if is_null(self.end_date):
 			self.end_date = None
 		
 		self.fund_company_id = company.id

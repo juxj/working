@@ -4,9 +4,10 @@ from domain.handler.data_handler import DataHandler
 from utils.db_engine import DBEngine
 
 app_config = AppConfig().load('config/config.ini')
-show_error = int(app_config.get('app', 'show_error'))
+skipped_error = int(app_config.get('app', 'skipped_error'))
+debug = app_config.get('app', 'debug').split(',')
 
-handler = DataHandler()
+handler = DataHandler(debug)
 
 def save(file_name, data):
 	f = open(file_name, 'a')

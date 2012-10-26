@@ -30,7 +30,7 @@ class PageInfoParser(HTMLParser):
 	def handle_data(self, data):
 		tag = "/".join(self._level_stack);
 		if tag in PageInfoParser.data_list_tags:
-			html_data = '&nbsp'	
+			html_data = ' '	
 			if len(data.strip())>1:
 				html_data = ''
 				for item in data:

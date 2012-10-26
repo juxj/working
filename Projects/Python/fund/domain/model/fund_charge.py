@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import app_util
+from utils.app_util import *
 
 Base = declarative_base()
 
@@ -45,5 +45,5 @@ class FundCharge(Base):
 		self.fund_id = fund.id
 		self.fund_code = fund.code
 		self.fund_name = fund.full_name
-		self.created_time = app_util.get_now(0)
-		self.last_updated_time = app_util.get_now(0)
+		self.created_time = get_now(0)
+		self.last_updated_time = get_now(0)

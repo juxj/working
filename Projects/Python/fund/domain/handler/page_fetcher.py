@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-from env import save
 from utils.web_fetcher import WebFetcher
 from utils.app_config import AppConfig
+from utils.app_util import *
 from domain.dao.fund_company_dao import FundCompanyDAO
 
 class PageFetcher:

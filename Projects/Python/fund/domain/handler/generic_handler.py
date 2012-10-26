@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-from env import read, save, handler
-from utils.app_util import app_util
+from bs4 import BeautifulSoup
+from env import read, save, handler,debug
+from utils.app_util import * 
 from domain.dao import * 
 from domain.model.fund_manager import FundManager
 from domain.model.fund_nav import FundNAV
@@ -10,6 +11,7 @@ from domain.model.fund_roi import FundROI
 from domain.model.fund_dividend import FundDividend
 from domain.model.fund_file import FundFile
 from domain.model.fund_announcement import FundAnnouncement
+from domain.model.fund_sales import FundSales
 
 class GenericHandler:
 	
@@ -28,17 +30,16 @@ class GenericHandler:
 			'invest':lambda:self.get_invest(),
 			'charge':lambda:self.get_charge(),
 			'roi':lambda:self.get_roi(),
-			'files':lambda:self.get_file(),
+			'files':lambda:self.get_files(),
 			'dividend':lambda:self.get_dividend(),
+			'sales':lambda:self.get_sales(),
 			'announcement':lambda:self.get_announcement()
 		}			
 		return actions[self.node]()
 		
 	def get_roi(self):
 		tables = handler.get_soup_data(self.config, self.node, self.data)
-		table_index = self.config.get(self.node, 'table_index')
-		data = tables[int(table_index)].prettify()
-		data = handler.get_html_data(self.config, self.node,data, 0)
+		data = handler.get_html_data(self.config, self.node,tables[0], 0)
 		fund = self.get_fund()	
 		roi = FundROI(fund, data)
 		dao = fund_roi_dao
@@ -50,61 +51,58 @@ class GenericHandler:
 	
 	def get_manager(self):
 		data = handler.get_soup_data(self.config, self.node, self.data)
-		table_index = self.config.get(self.node, 'table_index').split(',');
 		table = data[0]
-		table = table.prettify()
-	
 		data = handler.get_html_data(self.config, self.node,table,1)
 		fund = self.get_fund()
 		if fund != None:
 			for item in data:
-				manager = FundManager(self.company, fund, item) 
-				fund_manager_dao.save_fund_manager(manager)
+				if int(debug[2]):
+					print_list(item)
+				
+				if int(debug[3]):
+					manager = FundManager(self.company, fund, item) 
+					fund_manager_dao.save_fund_manager(manager)
 
 	def get_nav(self):
+		fund = self.get_fund() 
 		data_type = self.config.get(self.node, 'data_type')
+		dao = fund_nav_dao
 		data = ''
 		if data_type == 'json':
 			node = self.node+'_json'
 			data = handler.get_json_data(self.config, node , self.data)
 			source_fields = self.config.get(node, 'source_fields').split(',')
-			fund = self.get_fund() 
 			if fund != None:
 				for item in data:
 					record = []
 					for field in source_fields:
 						record.append(item[field])
-				
-					nav = FundNAV(fund, record)
-					fund_nav_dao.save_fund_nav(nav)
-		else:
-			data = handler.get_html_data(self.config, self.node+'_html', self.data, 1 )
+					self.add_nav(dao, fund, record)			
+
+		if data_type == 'html':
+			data = handler.get_soup_data(self.config, self.node, self.data)
+			data = handler.get_html_data(self.config, self.node, data[0], 1 )
+			for item in data:
+				self.add_nav(dao, fund, item)
 
 	def get_invest(self):
-
 		data = handler.get_soup_data(self.config, self.node, self.data)
-		table_index = self.config.get(self.node, 'table_index').split(',')
-		tables = []
-		for index in table_index:
-			tables.append(data[int(index)])
-
 		fund = self.get_fund()
-		invest = FundInvest(fund, tables)	
+		invest = FundInvest(fund, data)	
 		dao = fund_invest_dao
 		dao.save_fund_invest(invest)
 
 	def get_charge(self):
-
 		data = handler.get_soup_data(self.config, self.node, self.data)
-		table_index = self.config.get(self.node, 'table_index').split(',')
-		tables = []
-		for index in table_index:
-			tables.append(data[int(index)])
 
-		fund = self.get_fund()
-		charge = FundCharge(fund, tables)	
-		dao = fund_charge_dao
-		dao.save_fund_charge(charge)
+		if int(debug[2]):
+			print_list(data)	
+
+		if int(debug[3]):
+			fund = self.get_fund()
+			charge = FundCharge(fund, data)	
+			dao = fund_charge_dao
+			dao.save_fund_charge(charge)
 
 	def get_dividend(self):
 		config = self.config
@@ -112,8 +110,10 @@ class GenericHandler:
 		data = self.data
 
 		data = handler.get_soup_data(config, node, data)
-		index = config.get(node, 'table_index')
-		data = data[int(index)].prettify()
+		index = config.get(node, 'soup_index')
+
+		data = data[int(index)]
+
 		data = handler.get_html_data(config, node, data, 1)
 		dao = fund_dividend_dao
 		fund = self.get_fund()
@@ -121,16 +121,16 @@ class GenericHandler:
 			dividend = FundDividend(fund, item)
 			dao.add(dividend)
 
-	def get_file(self):
+	def get_files(self):
 		data_type = self.config.get(self.node, 'data_type')
+		domain = self.company.web_site 
+		fund = self.get_fund() 
+		dao = fund_file_dao
 		data = ''
 		if data_type == 'json':
 			node = self.node+'_json'
 			data = handler.get_json_data(self.config, node , self.data)
 			source_fields = self.config.get(node, 'source_fields').split(',')
-			domain = self.config.get('server', 'domain')
-			fund = self.get_fund() 
-			dao = fund_file_dao
 			if fund != None:
 				for item in data:
 					record = []
@@ -139,21 +139,27 @@ class GenericHandler:
 						if field == 'url':
 							value = domain + value
 						record.append(value)
-					fund_file = FundFile(fund, record)
-					dao.add(fund_file)
+					self.add_files(dao, fund, record)
 		else:
-			print 'html'
+			data = handler.get_soup_data(self.config, self.node, self.data)
+			url_list = self.get_url_list(data[0])
+			data = handler.get_html_data(self.config, self.node, data[0], 1) 
+			m = 0
+			for record in data:
+				record.insert(1, domain + url_list[m])
+				self.add_files(dao, fund, record)
+				m = m + 1
 
 	def get_announcement(self):
 		data_type = self.config.get(self.node, 'data_type')
+		domain = self.company.web_site 
+		dao = fund_announcement_dao
+		fund = self.get_fund() 
 		data = ''
 		if data_type == 'json':
 			node = self.node+'_json'
 			data = handler.get_json_data(self.config, node , self.data)
 			source_fields = self.config.get(node, 'source_fields').split(',')
-			domain = self.config.get('server', 'domain')
-			fund = self.get_fund() 
-			dao = fund_announcement_dao
 			if fund != None:
 				for item in data:
 					record = []
@@ -162,12 +168,61 @@ class GenericHandler:
 						if field == 'url':
 							value = domain + value
 						record.append(value)
-					announcement = FundAnnouncement(fund, record)
-					dao.add(announcement)
+	 				self.add_announcement(dao, fund, record)
 		else:
-			print 'html'
+			data = handler.get_soup_data(self.config, self.node, self.data)
+			url_list = self.get_url_list(data[0])
+			data = handler.get_html_data(self.config, self.node, data[0], 1) 
+			m = 0
+			for record in data:
+				record.insert(1, domain + url_list[m])
+				self.add_announcement(dao, fund, record)
+				m = m + 1
 
+	def add_nav(self,dao, fund, record):
+		if int(debug[2]):
+			print_list(record)
+
+		if int(debug[3]):
+			nav = FundNAV(fund, record)
+			dao.save_fund_nav(nav)
 
 	def get_fund(self):
 		fund = fund_dao.get_fund_by_code(self.code)
 		return fund
+
+	def get_url_list(self, data):
+		url_list = []
+		soup = BeautifulSoup(data)
+		for link in soup.find_all('a'):
+			url =  link.get('href')
+			url_list.append(url)
+		return url_list
+
+	def add_files(self, dao, fund, record):
+
+		if int(debug[2]):
+			print_list(record)
+
+		if int(debug[3]):
+			fund_file = FundFile(fund, record)
+			dao.add(fund_file)
+
+	def add_announcement(self, dao, fund, record):
+
+		if int(debug[2]):
+			print_list(record)
+
+		if int(debug[3]):
+			announcement = FundAnnouncement(fund, record)
+			dao.add(announcement)
+
+	def get_sales(self):
+		data = handler.get_soup_data(self.config, self.node, self.data)
+		if int(debug[2]):
+			print_list(data)	
+		if int(debug[3]):
+			fund = self.get_fund()
+			sales = FundSales(fund, data[0])	
+			dao = fund_sales_dao
+			dao.add(sales)
