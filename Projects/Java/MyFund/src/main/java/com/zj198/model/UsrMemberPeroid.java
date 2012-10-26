@@ -1,6 +1,9 @@
 package com.zj198.model;
 
-import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Date;
+
+import com.zj198.util.DateUtil;
 
 /**
  * UsrMemberPeroid entity. @author MyEclipse Persistence Tools
@@ -10,14 +13,21 @@ public class UsrMemberPeroid implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer userId;
-	private Timestamp memberStart;
-	private Timestamp memberEnd;
+	private Date memberStart;
+	private Date memberEnd;
 	private Integer memberType;
-	private Timestamp createTime;
+	private Date createTime;
 	private Integer orderId;
 	private Integer status;
+	
+	private Integer days;
+	private String username;
 
 	// Constructors
 
@@ -25,22 +35,10 @@ public class UsrMemberPeroid implements java.io.Serializable {
 	public UsrMemberPeroid() {
 	}
 
-	/** minimal constructor */
-	public UsrMemberPeroid(Integer userId, Timestamp memberStart,
-			Timestamp memberEnd, Integer memberType, Timestamp createTime,
-			Integer status) {
-		this.userId = userId;
-		this.memberStart = memberStart;
-		this.memberEnd = memberEnd;
-		this.memberType = memberType;
-		this.createTime = createTime;
-		this.status = status;
-	}
-
-	/** full constructor */
-	public UsrMemberPeroid(Integer userId, Timestamp memberStart,
-			Timestamp memberEnd, Integer memberType, Timestamp createTime,
-			Integer orderId, Integer status) {
+	/** 复合查询 constructor */
+	public UsrMemberPeroid(Integer userId, Date memberStart,
+			Date memberEnd, Integer memberType, Date createTime,
+			Integer orderId, Integer status,String username) {
 		this.userId = userId;
 		this.memberStart = memberStart;
 		this.memberEnd = memberEnd;
@@ -48,6 +46,7 @@ public class UsrMemberPeroid implements java.io.Serializable {
 		this.createTime = createTime;
 		this.orderId = orderId;
 		this.status = status;
+		this.username=username;
 	}
 
 	// Property accessors
@@ -68,19 +67,19 @@ public class UsrMemberPeroid implements java.io.Serializable {
 		this.userId = userId;
 	}
 
-	public Timestamp getMemberStart() {
+	public Date getMemberStart() {
 		return this.memberStart;
 	}
 
-	public void setMemberStart(Timestamp memberStart) {
+	public void setMemberStart(Date memberStart) {
 		this.memberStart = memberStart;
 	}
 
-	public Timestamp getMemberEnd() {
+	public Date getMemberEnd() {
 		return this.memberEnd;
 	}
 
-	public void setMemberEnd(Timestamp memberEnd) {
+	public void setMemberEnd(Date memberEnd) {
 		this.memberEnd = memberEnd;
 	}
 
@@ -92,11 +91,11 @@ public class UsrMemberPeroid implements java.io.Serializable {
 		this.memberType = memberType;
 	}
 
-	public Timestamp getCreateTime() {
+	public Date getCreateTime() {
 		return this.createTime;
 	}
 
-	public void setCreateTime(Timestamp createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 
@@ -116,4 +115,15 @@ public class UsrMemberPeroid implements java.io.Serializable {
 		this.status = status;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Integer getDays() {
+		return DateUtil.differDays(Calendar.getInstance().getTime(), getMemberEnd());
+	}
 }

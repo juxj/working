@@ -1,15 +1,15 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/user
 svn://192.168.1.8
 
 
 
-2012-10-15T05:00:53.744557Z
-3857
-Patrick
+2012-10-24T09:38:53.315471Z
+4019
+linm
 
 
 
@@ -26,39 +26,8 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-AccountService.java
-file
-
-
-
-
-2012-10-12T06:32:11.421622Z
-f852b6a972fd92ca544ca1590646c999
-2012-09-04T07:01:27.288198Z
-3125
-yangb
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3488
+impl
+dir
 
 ProfileService.java
 file
@@ -66,14 +35,14 @@ file
 
 
 
-2012-10-16T09:07:30.000000Z
+2012-10-26T07:35:59.176410Z
 b9b7602a3f576490f2786d8e6123b2a4
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -100,14 +69,14 @@ file
 
 
 
-2012-10-16T09:07:30.000000Z
+2012-10-26T07:35:59.176410Z
 6d7732c7ac0574e478d0a84544049222
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -128,6 +97,71 @@ svn:special svn:externals svn:needs-lock
 
 327
 
-impl
-dir
+MemberService.java
+file
+
+
+
+
+2012-10-26T07:35:59.176410Z
+7b08fd99fca2750dfb3f89deb73dd36d
+2012-10-24T09:38:53.315471Z
+4019
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1578
+
+AccountService.java
+file
+
+
+
+
+2012-10-26T07:35:59.176410Z
+9e7a0d458a425275d7903b85ea93ae71
+2012-10-22T08:11:42.000807Z
+3956
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3615
 

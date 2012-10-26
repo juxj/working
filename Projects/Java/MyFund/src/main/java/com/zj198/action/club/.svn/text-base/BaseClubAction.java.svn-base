@@ -21,10 +21,15 @@ public class BaseClubAction extends BaseAction {
 		return null;
 	}
 	
+	protected int getUserGroup(UsrUser user) {
+		return this.profileService.getGroupidByUserType(user.getType());
+	}
+	
 	protected String[] getUserInfo(UsrUser user) {
 		String userInfo[] = new String[2];
 		userInfo[0] = String.valueOf(user.getViptype());
-		int group = this.profileService.getGroupidByUserType(user.getType());
+		int group = this.getUserGroup(user);
+		
 		Object obj = this.profileService.getProfiles(user.getId());
 		if (obj != null) {
 			if (group == Constants.USERTYPE_GROUP_BANK) {

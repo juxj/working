@@ -65,6 +65,13 @@ public class RequestInfoAction extends BaseClubAction {
 			return ERROR;
 		}
 		
+		int group = this.getUserGroup(user);
+		
+		if (group != Constants.USERTYPE_GROUP_PERSONAL && group != Constants.USERTYPE_GROUP_COMPANY) {
+			this.msg = "只有企业与个人才能发布此类信息！";
+			return ERROR;
+		}
+		
 		industryList = this.dictoryDataService.findIndustryByParentid(0);
 		provinceList = this.dictoryDataService.findAllProvince();
 		projectTypeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_PROJECT_TYPE);

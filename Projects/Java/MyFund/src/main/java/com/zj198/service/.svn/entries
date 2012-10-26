@@ -1,15 +1,15 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/service
 svn://192.168.1.8
 
 
 
-2012-10-15T07:20:30.500351Z
-3862
-Patrick
+2012-10-26T07:26:17.072363Z
+4060
+yuel
 
 
 
@@ -26,13 +26,28 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
+mch
+dir
+
+admin
+dir
+
+common
+dir
+
+loan
+dir
+
+sin
+dir
+
 BaseService.java
 file
 
 
 
 
-2012-10-12T06:32:11.421622Z
+2012-10-26T07:35:59.176410Z
 3b621b31af02571ead14dd2cd301f0fc
 2012-06-20T01:27:43.918381Z
 384
@@ -60,33 +75,18 @@ Patrick
 
 72
 
-admin
-dir
-
-club
-dir
-
-common
+news
 dir
 
 finservice
 dir
 
-loan
-dir
-
-mch
+user
 dir
 
 message
 dir
 
-news
-dir
-
-sin
-dir
-
-user
+club
 dir
 

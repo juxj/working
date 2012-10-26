@@ -36,7 +36,7 @@ $(function() {
 	$('.yearmoth').html(jm);
 })
 function all() {
-		$.post('/user/loan/financeApply!applyCheckList.act', {
+		$.post('/user/loan/userApplyManag!applyCheckList.act', {
 			applyId : $('#applyid').val()
 		}, function(data) {
 			$("#all_log").html(data);
@@ -47,6 +47,9 @@ function all() {
 			modal : true
 		});
 	}
+function print(appId){
+	window.open('/user/loan/userApplyManag!print.act?print=1&apply.id='+appId)
+}
 </script>
 </head>
 
@@ -61,7 +64,7 @@ function all() {
 	<!--主体部分开始-->
 	<div class="M_menu">
 		融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a
-			href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
+			href="/user/loan/userApplyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
 	</div>
 	<div class="hr_10">&nbsp;</div>
 	
@@ -73,18 +76,18 @@ function all() {
 			<span>申请单号：${apply.applyNum}</span>
 			<span>协议编号：<font color="d5652c"> ${apply.agreeNum}</font></span>
 			<span>申请状态：<font color="d5652c"><common:print valueId="apply.applyStatus" /></font></span>
-			<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" type="button" value="打印"></span>
+			<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" type="button" onclick="print(${apply.id})" value="打印"></span>
 			<span style="padding-right:0px; float:right;"><input class="btnsub blue1" type="button" value="操作"></span>
 		</div>
 		<div>尊敬的用户：您的融资申请已通过资金网预审，我们将会尽快将您的融资申请递交给资金方。</div>
 		<div class="hr_20"> &nbsp; </div>
 		<div class="center">
 			<div class="left_gray">&nbsp;</div>
-			<div class="m_gray">填写申请信息</div>
+			<div class="m_gray1">个人信息</div>
+			<div class="m_gray1">填写申请信息</div>
 			<div class="m_red">预审中</div>
 			<div class="m_gray">提交材料</div>
 			<div class="m_gray">资金网审核</div>
-			<div class="m_gray">金融机构审核</div>
 			<div class="m_gray">金融机构审核</div>
 			<div class="right_gray">&nbsp;</div>	
 		</div>
@@ -100,7 +103,7 @@ function all() {
 			<s:iterator value="applyCheckList">
 			<div class="y_connect">
 				<span class="y_title_01"><s:date name="createdt" format="yyyy-MM-dd hh:mm:ss"/></span>
-				<span class="y_title_01">${checkView }</span>
+				<span class="y_title_01">${checkView }&nbsp;</span>
 				<span>${createUserId }</span>
 			</div>
 			</s:iterator>

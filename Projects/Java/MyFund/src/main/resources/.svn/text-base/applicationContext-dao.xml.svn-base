@@ -54,13 +54,14 @@
     <bean name="mchTypeDAO" class="com.zj198.dao.hibernate.MchTypeDAOImpl"/>
     <bean name="mchChargeDAO" class="com.zj198.dao.hibernate.MchChargeDAOImpl"/>
     <bean name="mchBankDAO" class="com.zj198.dao.hibernate.MchBankDAOImpl"/>
-    
+    <bean name="ordMemberShipDAO" class="com.zj198.dao.hibernate.OrdMemberShipDAOImpl"/>
+    <bean name="usrMemberPeroidDAO" class="com.zj198.dao.hibernate.UsrMemberPeroidDAOImpl"/>
     <!-- 融资 -->
    <bean id="ordLoanRequestDAO" class="com.zj198.dao.hibernate.OrdLoanRequestDAOImpl"/>
    <bean id="dicBaseRateDAO" class="com.zj198.dao.hibernate.DicBaseRateDAOImpl"/>
 	<bean id="ordFinanceApplyDAO" class="com.zj198.dao.hibernate.OrdFinanceApplyDAOImpl"/>
 	<bean id="ordFinanceApplyAttachDAO" class="com.zj198.dao.hibernate.OrdFinanceApplyAttachDAOImpl"/>
-	<bean id="ordFinanceApplyCheckDAO" class="com.zj198.dao.hibernate.OrdFinanceApplyCheckDAOImpl"/>
+	<bean id="ordCheckLogDAO" class="com.zj198.dao.hibernate.OrdCheckLogDAOImpl"/>
 	<bean id="prdFinanceInterestDAO" class="com.zj198.dao.hibernate.PrdFinanceInterestDAOImpl"/>
 	<bean id="prdFinanceDAO" class="com.zj198.dao.hibernate.PrdFinanceDAOImpl"/>
 	<bean id="prdDatafileListDAO" class="com.zj198.dao.hibernate.PrdDatafileListDAOImpl"/>
@@ -77,6 +78,8 @@
 	<bean id="prdExtendsPropertyDAO" class="com.zj198.dao.hibernate.PrdExtendsPropertyDAOImpl"/>
 	<bean id="prdExtendsValueDAO" class="com.zj198.dao.hibernate.PrdExtendsValueDAOImpl"/>
 	<bean id="prdPropertyDicDAO" class="com.zj198.dao.hibernate.PrdPropertyDicDAOImpl"/>
+	
+	<bean id="ordRequestAllocationDAO" class="com.zj198.dao.hibernate.OrdRequestAllocationDAOImpl"/>
 	
 	<bean name="ordApplyUsrPersonDAO" class="com.zj198.dao.hibernate.OrdApplyUsrPersonDAOImpl"/>
 	<bean name="ordApplyUsrCompanyDAO" class="com.zj198.dao.hibernate.OrdApplyUsrCompanyDAOImpl"/>

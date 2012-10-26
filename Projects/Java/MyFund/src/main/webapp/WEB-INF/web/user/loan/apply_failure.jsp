@@ -34,14 +34,16 @@
 	</s:elseif>
 	</p>
 	<div class="hr_10"> &nbsp; </div>
-	<div class="apply_menu">
-        <div class="finance_apply_menu app_menu001" >1、完善企业信息</div>
-        <div class="finance_apply_menu app_menu02" >2、填写申请信息</div>
-        <div class="finance_apply_menu app_menu002">3、申请失败</div>
-        <div class="finance_apply_menu app_menu02">4、提交资料</div>
-        <div class="finance_apply_menu app_menu02">5、资金网审核</div>
-        <div class="finance_apply_menu app_menu03">6、金融机构审核</div>	
-	</div>
+		<div class="center" style="width:900px;">
+			<div class="left_gray">&nbsp;</div>
+			<div class="m_gray1">完善企业信息</div>
+			<div class="m_gray1">填写申请信息</div>
+			<div class="m_red">申请失败</div>
+			<div class="m_gray">提交资料</div>
+			<div class="m_gray">资金网审核</div>
+			<div class="m_gray">金融机构审核</div>
+			<div class="right_gray">&nbsp;</div>	
+		</div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">

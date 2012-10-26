@@ -22,6 +22,15 @@ $(document).ready(function() {
     });
     //} 
 });
+function send(id){
+	var url = "/user/memberType.act?mType="+id;
+	var user_status = "${session._user.auditstatus}";
+	if (user_status != "2") {
+		alert("您的注册资料尚未通过审核，暂不能申请会员!");
+	} else {
+		window.location.href = url;
+	}
+}
 </script>
 
 <style>
@@ -54,7 +63,7 @@ $(document).ready(function() {
 				<h6>年费：365元人民币</h6>
 				<h6>多重特权，融资全程无忧!</h6>
 				<div class="center">
-				  <input type="button"  class="but_gray"  value="申请资信通会员" />
+				  <input type="button" onclick="send(1);" class="but_gray" value="申请资信通认证会员" />
 				</div>
 				<span>您也可以拨打客服热线400-8890-189进行申请</span>								
 			</div>
@@ -94,7 +103,7 @@ $(document).ready(function() {
 				<p>资信通认证会员将能以优惠的价格购买资金网推出的资金盾，只要通过简单的绑定，便能全方位保护您的帐户安全，并且资金盾用户只需通过数字签名方式即可以通过线上传递文件，保证了您的文件信息安全，同时也免去您线下传递文件的种种繁琐操作，鼠标一点，轻松申请。</p>
 			</div>
 		</div>
-		<div style="text-align:center; margin-bottom: 20px;"><input type="button" class="but_gray" value="立即申请"/></div>									
+		<div style="text-align:center; margin-bottom: 20px;"><input type="button" onclick="send(1);" class="but_gray" value="立即申请"/></div>									
 	</div>
 	<!--右边部分 -->
 	<div style="width:468px;" class="box_4 fr">
@@ -105,7 +114,7 @@ $(document).ready(function() {
 				<h6>年费：5000元人民币</h6>
 				<h6>最高特权，尊享贵宾待遇!</h6>
 				<div class="center">
-				  <input type="button" onfocus="this.blur()" onclick="this.form.submit()" class="but_gray"  value="资信通VIP会员" />
+				  <input type="button" onclick="send(2);" class="but_gray"  value="申请资信通VIP会员" />
 				</div>
 				<span>您也可以拨打客服热线400-8890-189进行申请</span>								
 			</div>
@@ -125,14 +134,14 @@ $(document).ready(function() {
 			</div>
 		</div>
 		<div class="zxt_left">
-			<div class="zxt_left_img"><img src="/images/m_icon06.jpg" alt="资信通认证会员" /></div>
+			<div class="zxt_left_img"><img src="/images/m_icon10.jpg" alt="资信通认证会员" /></div>
 			<div class="zxt_left_rt">
 				<h6>不限次使用专业评估工具</h6>
 				<p>中国资金网提供会为资信通VIP会员提供完整的资信评估、财务分析、融资预测等专业分析工具，并且不限次数，您可随时随地进行评估与分析。通过分析让您认清自己的财务现状，知己知彼才能百贷百胜！</p>
 			</div>
 		</div>
 		<div class="zxt_left">
-			<div class="zxt_left_img"><img src="/images/m_icon07.jpg" alt="资信通认证会员" /></div>
+			<div class="zxt_left_img"><img src="/images/m_icon11.jpg" alt="资信通认证会员" /></div>
 			<div class="zxt_left_rt">
 				<h6>资金盾保护，安全有保障</h6>
 				<p>资信通认证会员将能以优惠的价格购买资金网推出的资金盾，只要通过简单的绑定，便能全方位保护您的帐户安全，并且资金盾用户只需通过数字签名方式即可以通过线上传递文件，保证了您的文件信息安全，同时也免去您线下传递文件的种种繁琐操作，鼠标一点，轻松申请。</p>
@@ -152,7 +161,7 @@ $(document).ready(function() {
 				<p>资信通 VIP会员在申请中国资金网上的第三方服务时，可享受特别的优惠，资金网替你省钱！并且中国资金网还会联合第三方推出一系列针对VIP会员的特惠活动，多种特惠服务助您迈向成功！</p>
 			</div>
 		</div>				
-		<div style="text-align:center; margin-bottom: 20px;"><input type="button" class="but_gray" value="立即申请"/></div>			
+		<div style="text-align:center; margin-bottom: 20px;"><input type="button" onclick="send(2);" class="but_gray" value="立即申请"/></div>			
 	</div>
 	<div class="clear"> &nbsp;</div>	
 </div>

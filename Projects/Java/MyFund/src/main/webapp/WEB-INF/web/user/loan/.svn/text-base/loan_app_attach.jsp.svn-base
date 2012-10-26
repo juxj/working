@@ -116,7 +116,6 @@
   <s:hidden name="loanData.id" id="upload_attach_id"></s:hidden>
   <s:hidden name="loanData.uploadStatus" id="uploadStatus"></s:hidden>
   <div class="hr_10"> &nbsp; </div> 
-  <div class="hr_10"> &nbsp;</div>
   <div class="container_950 ">
 	<div class="P_title box_4" style="border-bottom:5px solid #003961;">查看材料</div>
         <table class="box_4" border="0" cellspacing="0" class="ctl" cellpadding="0" style="width:100%">
@@ -137,12 +136,12 @@
 				</td>
 				<td><common:print valueId="#item.supplyWay"/></td>
 	   			<td><common:print valueId="#item.uploadStatus"/></td>
-	   			<td class="view_detail" align="right">
+	   			<td style="text-align:right;padding-right:20px">
 	   			<s:if test="viewAttachType == 1">
-		   			<input type="button" class="but_gray" value="上传" onclick="uploadFile('${item.id}',0);"/>
+		   			<input type="button" class="bgray" value="上传" onclick="uploadFile('${item.id}',0);"/>
 	   			</s:if>
 	   			<s:if test="#item.uploadStatus != 212">	   			
-	   				<input type="button" class="but_gray" value="下载" onclick="downloadAttach('${item.id}');"/>
+	   				<input type="button" class="bgray" value="下载" onclick="downloadAttach('${item.id}');"/>
 	   			</s:if>
 	   			<%
 	   			/*

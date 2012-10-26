@@ -34,7 +34,7 @@ function updatestatus(value){
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
   <div class="M_menu">
-  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
+  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/userApplyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
   </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950">
@@ -54,7 +54,7 @@ function updatestatus(value){
 	<div class="line" style="padding-top:10px; padding-bottom:10px; padding-left:30px; width:920px;">申请单号：${apply.applyNum }</div>
 </div>
 <div class="hr_10"> &nbsp; </div>
-<form action="/user/loan/financeApply!checkApply.act" id="loanForm"  cssClass="box_form" style="margin:0px;" method="post">
+<form action="/user/loan/userApplyManag!checkApply.act" id="loanForm"  cssClass="box_form" style="margin:0px;" method="post">
 <!-- 企业经营贷款快速申请类型=136 -->
 <s:hidden name="apply.id"></s:hidden>
 <s:hidden name="apply.applyStatus" id="apply_status"></s:hidden>

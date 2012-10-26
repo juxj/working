@@ -40,19 +40,19 @@
 				return;
 			}
 			
-			$('#financeManage').attr('action','/user/loan/financeApply!checkAndSearchApply.act');
+			$('#financeManage').attr('action','/user/loan/userApplyManag!checkAndSearchApply.act');
 			$('#financeManage').submit();
-			$('#financeManage').attr('action','/user/loan/financeApply!applyManag.act');
+			$('#financeManage').attr('action','/user/loan/userApplyManag.act');
     	}
 	}
 	function inputCheckView(cview){
 		$('#check_view').val(cview);
-		$('#financeManage').attr('action','/user/loan/financeApply!checkAndSearchApply.act');
+		$('#financeManage').attr('action','/user/loan/userApplyManag!checkAndSearchApply.act');
 		$('#financeManage').submit();
-		$('#financeManage').attr('action','/user/loan/financeApply!applyManag.act');
+		$('#financeManage').attr('action','/user/loan/userApplyManag.act');
 	}
 	function toPage(pageNum, pageSize){
-		var url = '/user/loan/financeApply!applyManag.act?pager.currentPage=' + pageNum + "&pager.pageCount=" + pageSize;
+		var url = '/user/loan/userApplyManag.act?pager.currentPage=' + pageNum + "&pager.pageCount=" + pageSize;
 		$('#financeManage').attr('action',url);
 		$('#financeManage').submit();
 	}
@@ -76,14 +76,12 @@
   <div class="hr_10"> &nbsp; </div>
   <div class="container_950 box_4">
 	<div class="P_title" style="border-bottom:5px solid #003961;">融资申请管理</div>
-</div>
-  <form id="financeManage" action="/user/loan/financeApply!applyManag.act" method="post">
+  <form id="financeManage" action="/user/loan/userApplyManag.act" method="post">
 	<s:hidden name="apply.id" id="check_apply_id"></s:hidden>
 	<s:hidden name="apply.applyStatus" id="apply_status"></s:hidden>
 	<s:hidden name="appCheck.checkView" id="check_view"></s:hidden>
 	<s:hidden name="userType" value="1"></s:hidden>
-  <div class="M_menu" style="margin-top:10px; height: 220px;">
-	<table style="margin-top: 20px; margin-left:0px; margin-left:25px;!important display:inline;">
+	<table class="container_950" style="margin:20px;!important display:inline;">
 		<tr>
 			<td  align="right">申请编号:</td>
 			<td style="padding:5px;"><s:textfield name="spModel.applyNum"/></td>
@@ -126,10 +124,10 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4"  align="center"><input type="submit" value="查询" class="but_gray"/> </td>
+			<td colspan="4" align="center"><input type="submit" value="查询" class="but_gray" style="width:100px;"/></td>
 		</tr>
 	</table>
-  </div>
+  </div> 
   <div class="hr_10"> &nbsp; </div> 
         <table class="container_950 box_4">
 	      <tr class="top_color">
@@ -141,8 +139,8 @@
             <td width="8%">申请金额</td>
             <td width="5%">期限</td>
             <td width="9%">状态</td>
-            <td width="8%">申贷资料</td>
-            <td width="20%">操作</td>
+            <td >申贷资料</td>
+            <td align="center">操作</td>
           </tr>
           	<s:if test="pager.data.size()>0">
 		 	<s:iterator id ="item" value="pager.data">
@@ -158,16 +156,12 @@
 	   			<td class="option_href">
 	   			<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=0&applyId=${item.id }" target="_blank">资料查看</a>
 	   			</td>   			
-	   			<td class="view_detail">
-		   			<table>
-			        	<tr>
-				   			<td class="view_detail" style="border:none;"><a href="/user/loan/financeApply!viewFinanceApply.act?apply.id=${item.id }">查看</a></td>
+	   			<td align="right" class="view_detail01" style="padding:5px 20px 5px 0;">
+							<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${item.id }" style="margin-bottom:5px;">查看</a>
 				   			<s:if test="applyStatus != 181 && applyStatus != 186 && applyStatus != 187 && applyStatus != 188">
-				   				<td class="view_detail" style="border:none;"><a href="javascript:supplyAttach('${item.id }');">补充资料</a></td>
+				   				<a href="javascript:supplyAttach('${item.id }');"style="margin-bottom:5px;">补充资料</a>
 				   			</s:if>
-			   			</tr>
-			   			<tr>
-				   			<td class="view_detail" style="border:none;">
+							<br/>
 				   			<s:if test="#item.applyStatus == 181"><!-- 待审核 -->
 				   				<a href="javascript:updatestatus(${item.id },187)">退回申请</a>
 				   				<a href="javascript:updatestatus(${item.id },182)">接受申请</a>
@@ -187,10 +181,7 @@
 							</s:elseif>
 							<s:elseif test="#item.applyStatus == 185"><!-- 待放款 -->
 								<a href="/user/loan/loanAfter!loanAfterAddUI.act?appId=${id}" target="_blank">放款</a>
-							</s:elseif>
-							</td>
-						</tr>
-			        </table>				
+							</s:elseif>			
 	   			</td>
 			</tr>
 			</s:iterator>
@@ -211,7 +202,7 @@
 			</s:else>
        </div> 
 <div id="add_attach" style="display:none;" title="补充材料">
-	<form id="uploadForm" action="/user/loan/financeApply!addAttach.act" method="post">
+	<form id="uploadForm" action="/user/loan/userApplyManag!addAttach.act" method="post">
 	<s:hidden name="apply.id" id="apply_id"></s:hidden>
 	<dl>
 		<dd>
@@ -241,7 +232,8 @@
 			<input type="button" value="确定" class="but_gray" onclick="if($('#checkViewInput').val().length > 0){inputCheckView($('#checkViewInput').val());$('#apply_check').dialog('close');}else{alert('请输入处理意见！');}"/>
 		</dd>
 	</dl>
-</div> 
+</div>
+
 <!--理财服务产品列表页面结束--> 
 <div class="clear"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>

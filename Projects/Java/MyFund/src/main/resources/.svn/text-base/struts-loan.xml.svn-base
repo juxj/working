@@ -42,8 +42,9 @@
 		<action name="unCheckRequest" class="com.zj198.action.loan.UnCheckLoanAction" >
 			<result name="loanRequestHome">/WEB-INF/web/user/common/loanTopThree.jsp</result>
 		</action>
-		<action name="financeApply" class="com.zj198.action.loan.FinanceApplyAction">
+		<action name="unCheckApply" class="com.zj198.action.loan.UnCheckApplyAction">
 			<result name="findApplyHome">/WEB-INF/web/user/common/financeApplyList.jsp</result>
+			<result name="applyCheckList">/WEB-INF/web/user/common/allLog.jsp</result>
 		</action>
 	</package>
 	<package name="user_loan" namespace="/user/loan" extends="base">
@@ -62,32 +63,27 @@
 		<action name="financeApply" class="com.zj198.action.loan.FinanceApplyAction">
 			<result name="busi_apply_first">/WEB-INF/web/user/loan/busifinance_apply_first.jsp</result>
 			<result name="apply_second">/WEB-INF/web/user/loan/finance_apply_second.jsp</result>
-			<result name="view_busi_apply">/WEB-INF/web/user/loan/apply_details_company.jsp</result>
-			<result name="view_perrun_apply">/WEB-INF/web/user/loan/apply_details_user.jsp</result>
-			
-			<result name="view_busi_apply_bybank">/WEB-INF/web/user/loan/apply_details_companyBank.jsp</result>
-			<result name="view_perrun_apply_bybank">/WEB-INF/web/user/loan/apply_details_userBank.jsp</result>
-			
 			<result name="view_percost_apply">/WEB-INF/web/user/loan/percostfinance_apply_view.jsp</result>
 			<result name="view_perhouse_apply">/WEB-INF/web/user/loan/perhousefinance_apply_view.jsp</result>
 			<result name="industryList">/public/common/industryList.jsp</result>
-			<result name="user_apply_mana">/WEB-INF/web/user/loan/user_apply_mana.jsp</result>
-			<result name="apply_mana_org">/WEB-INF/web/user/loan/apply_mana_org.jsp</result>
-			<result name="apply_upload_attach">/WEB-INF/web/user/loan/apply_upload_attach.jsp</result>
 			<result name="percostApplyFirst">/WEB-INF/web/user/loan/percostfinance_apply_first.jsp</result>
 			<result name="perrunApplyFirst">/WEB-INF/web/user/loan/perrunfinance_apply_first.jsp</result>
 			<result name="perhouseApplyFirst">/WEB-INF/web/user/loan/perhousefinance_apply_first.jsp</result>
-			<result name="industryList">/public/common/industryList.jsp</result>
 			<result name="applyFailure">/WEB-INF/web/user/loan/apply_failure.jsp</result>
-			<result name="findApplyHome">/WEB-INF/web/user/common/financeApplyList.jsp</result>
-			<result name="applyCheckList">/WEB-INF/web/user/common/allLog.jsp</result>
-			<result name="complementUserInfo" type="chain">
-	            <param name="actionName">Profile</param>
-	            <param name="namespace">/user</param>
-	            <param name="method">edit</param>
-	          </result>
 	        <result name="companyInfoEdit">/WEB-INF/web/user/loan/busifinance_apply_company.jsp</result>
 	        <result name="personInfo">/WEB-INF/web/user/loan/perrun_apply_person.jsp</result>
+		</action>
+		<action name="userApplyManag" class="com.zj198.action.loan.UserApplyManagAction">
+			<result name="view_busi_apply">/WEB-INF/web/user/loan/apply_details_company.jsp</result>
+			<result name="view_perrun_apply">/WEB-INF/web/user/loan/apply_details_user.jsp</result>
+			<result name="view_busi_apply_bybank">/WEB-INF/web/user/loan/apply_details_companyBank.jsp</result>
+			<result name="view_perrun_apply_bybank">/WEB-INF/web/user/loan/apply_details_userBank.jsp</result>
+			<result name="view_busi_apply_print">/WEB-INF/web/user/loan/apply_details_companyPrint.jsp</result>
+			<result name="view_perrun_apply_print">/WEB-INF/web/user/loan/apply_details_userPrint.jsp</result>
+			<result name="user_apply_mana">/WEB-INF/web/user/loan/user_apply_mana.jsp</result>
+			<result name="apply_mana_org">/WEB-INF/web/user/loan/apply_mana_org.jsp</result>
+			<result name="applyCheckList">/WEB-INF/web/user/common/allLog.jsp</result>
+			<result name="editOrdCompanyProfile">/WEB-INF/web/user/loan/edit_apply_details_company.jsp</result>
 		</action>
 		<action name="financeProduct" class="com.zj198.action.loan.UserFinanceProductAction">
 			<result name="new_finanace_page">/WEB-INF/web/user/loan/finance_product_new.jsp</result>
@@ -160,6 +156,12 @@
 			 	<param name="contentDisposition">attachment;filename="${fileName}"</param>
 			 	<param name="contentType">application/octet-stream;charset=UTF-8</param>
 			 	<param name="inputName">agreeTemplateStream</param>
+			 	<param name="bufferSize">4096</param>  
+			 </result>
+			 <result name="pdf" type="stream">
+			 	<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			 	<param name="contentType">application/pdf;charset=UTF-8</param>
+			 	<param name="inputName">agreePdfStream</param>
 			 	<param name="bufferSize">4096</param>  
 			 </result>
 		</action>

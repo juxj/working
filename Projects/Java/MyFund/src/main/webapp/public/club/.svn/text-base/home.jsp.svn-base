@@ -21,6 +21,52 @@
 		$("#sltInvestStyle").attr("value",investType);
 		$("#frmQuerySupplyInfo").submit();
 	}
+	
+	
+	function create_new_info(info_type) {
+		url1 = "/service/requestInfoAction4User!edit.act";
+		url2= "/service/supplyInfoAction4User!editFirstStep.act";
+		var user_type = '${session._user.userTypeGroup}';
+		
+		if (info_type ==1) {
+			url = url1
+		} else {
+			url = url2
+		}
+		
+		if (user_type=='') {
+			window.location.href= url;
+		} else {
+			var is_valid_user = false;
+			var user_status = "${session._user.auditstatus}";
+			if (user_status != "2") {
+				alert("您的注册资料尚未通过审核，暂不能发布此信息!");
+				return;
+			} 
+			if (info_type==1) {
+				if (user_type =='1' || user_type=='5') {
+					window.location.href= url;
+				} else {
+					alert('只有用户身份为企业或个人才可以发布项目信息！');
+				}
+				is_valid_user = true;
+			}
+			
+			if (info_type==2) {
+				if (user_type =='2' || user_type=='3') {
+					window.location.href=url;
+				} else {
+					alert('只有用户身份为银行或金融机构才可以发布资金信息！');
+				}
+				is_valid_user = true;
+			}
+			
+			if (!is_valid_user) {
+				alert("您当前身份不能发布任何相关信息...");
+			}
+			
+		}
+	}
 </script>
 </head>
 <body>
@@ -40,14 +86,14 @@
 			<a href="/club/clubAction!getSupplyInfoByAllType.act" class="fl"><img src="/images/zjj.jpg"/></a>
 			<div class="fund_m_connect">
 				<div><a href="/Register.act">注册会员</a></div>
-				<div><a href="/service/requestInfoAction4User!edit.act">发布项目信息</a></div>
+				<div><a href="javascript:create_new_info(1)">发布项目信息</a></div>
 			</div>
 		</div>
 		<div class="fund_o">
 			<a href="/club/clubAction!getRequestInfoByAllType.act" class="fl"><img src="/images/zxm.jpg"/></a>
 			<div class="fund_m_connect">
 				<div><a href="/Register.act">注册会员</a></div>
-				<div><a href="/service/supplyInfoAction4User!editFirstStep.act">发布投资信息</a></div>
+				<div><a href="javascript:create_new_info(2)">发布投资信息</a></div>
 			</div>			
 		</div>		
 	</div>

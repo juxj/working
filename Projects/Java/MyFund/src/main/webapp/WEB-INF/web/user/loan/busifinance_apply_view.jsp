@@ -50,7 +50,7 @@
 		$("#loanForm").submit();
 	}
 	function all() {
-		$.post('/user/loan/financeApply!applyCheckList.act', {
+		$.post('/user/loan/userApplyManag!applyCheckList.act', {
 			applyId : $('#applyid').val()
 		}, function(data) {
 			$("#all_log").html(data);
@@ -128,7 +128,7 @@
 	<!--主体部分开始-->
 	<div class="M_menu">
 		融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a
-			href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
+			href="/user/loan/userApplyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
 	</div>
 	<div class="hr_10">&nbsp;</div>
 	<div class="container_950">
@@ -541,6 +541,17 @@
            		<a href="/user/loan/downloadAttach!downAgreeTemplate.act" target="_blank" style="float:left;">模板下载</a>
            	</td>
            </tr>
+           
+           <s:iterator id ="item" value="attachList">
+	        <tr class="top_color01">
+	          <td style="padding-left:25px;"><input type="checkbox" name="ckbox" class="ckbox" value="${item.id }"/>&nbsp;${item.dataName }
+							${item.supplyName }</td>
+	          <td></td>
+	          <td>${item.dataSupply } ${item.supplyMemo }</td>
+	          <td><common:print valueId="#item.supplyWay"/><common:print valueId="#item.uploadStatus"/></td>
+	          <td align="right" class="view_detail01" style="padding-right:20px;"><a>查看 </a>&nbsp;<a>下载</a>&nbsp;<a>确认</a>&nbsp;<a>退回 </a>&nbsp;<a>导出</a>&nbsp;<a>取消</a></td>          
+	        </tr>
+	        </s:iterator>
           
 		 	<s:iterator id ="item" value="attachList">
 			<tr class="top_color01">
@@ -554,7 +565,7 @@
 				</td>
 				<td><common:print valueId="#item.supplyWay"/></td>
 	   			<td><common:print valueId="#item.uploadStatus"/></td>
-	   			<td class="view_detail">
+	   			<td align="right" class="view_detail01" style="padding-right:20px;">
 	   			<input type="button" class="but_gray" value="查看" onclick="downloadAttach('${item.id}');"/>
 	   			</td>
 			</tr>

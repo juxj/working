@@ -63,94 +63,98 @@ function LookRecPro(id){
   </div>
 	<!--主体部分开始-->
 	<div class="hr_10"> &nbsp; </div>
-	<div class="container_950 box_4" style="height:auto;">
-		<div class="P_title">意向单详情</div>
-		<div class="line">
-			<table style="font-size:13px;">
-				<tr>
-					<td align="right">状态：</td>
-					<td><common:print valueId="loan.applyStatus" /></td>
-					<td align="right" style="padding-left:15px;">操作：</td>
-					<td style="vertical-align:middle;" class="view_detail">
+	<div class="container_950 box_4">
+		<div class="P_title">融资意向单详情</div>
+		<div class="line" style="background:#f9f9f7; height:25px;" >
+			<div class="f_text01 fl">
+				<span>需求编号：<s:property value="loan.applyNum"/></span>
+				<span>状态：<font color="d5652c"><common:print valueId="loan.applyStatus" /></font></span>
+			</div>
+			<div class="view_detail fr" style="margin-right: 20px;">
 		  				<s:if test="groupType==2 || groupType==3">
 		  				<a href="#"  onclick="return Recommend(${loan.id },${loan.applyType });">推荐产品</a>
 		  				</s:if>
 		  				<s:else>
-		  				<a href="#" onclick="return LookRecPro(${loan.id });">查看推荐产品</a>
+		  				<a href="#" onclick="return LookRecPro(${loan.id });" >查看推荐产品</a>
 		  				</s:else>
-					</td>
-				</tr>
-			</table>	
+			</div>
 		</div>
 	</div>
-<div class="hr_10"> &nbsp; </div>
-<div class="apply_form">
-	<div class="apply_form_title">需求信息</div>
-	<div class="C_form" style="margin-top:20px;">
-		<table style="width:660px; font-size:13px;">
-			<tr>
-				<td width="25%" align="right">需求编号：</td>
-				<td width="25%" style="padding:15px;"><s:property value="loan.applyNum"/> </td>
-				<td width="25%" align="right">融资产品类型：</td>
-				<td width="25%" style="padding:15px;"><common:print valueId="loan.applyType" /> </td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">需求金额：</td>
-				<td width="25%" style="padding:15px;"><s:number name="loan.loanAmount" />万元</td>
-				<td width="25%" align="right">期限：</td>
-				<td width="25%" style="padding:15px;"><s:property value="loan.loanMonth" />个月 </td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">用途：</td>
-				<td width="25%" style="padding:15px;"><common:print valueId="loan.loanPurpose"/> </td>
-				<td width="25%" align="right">是否有抵押物：</td>
-				<td width="25%" style="padding:15px;">
-					<common:print valueId="loan.haveMortgage" valueSetMap="ZJ102" /> </td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">接受金融机构：</td>
-				<td width="25%" style="padding:15px;"><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
-				<td width="25%" align="right">接受利率：</td>
-				<td width="25%" style="padding:15px;"><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">发布时间：</td>
-				<td colspan="3" width="25%" style="padding:15px;"><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
-			</tr>
-		</table>
-	</div>
-</div>
-<div class="hr_10">&nbsp;</div>
-<div class="apply_form">
-	<div class="apply_form_title">需求方信息</div>
-	<div class="C_form" style="margin-top:20px;">
-		<table style="width:660px; font-size:13px;">
-			<tr>
-				<td width="25%" align="right">企业经营类型：</td>
-				<td width="25%" style="padding:15px;"><common:print valueId="loan.busiRunningType" valueSetMap="ZJ111"/></td>
-				<td width="25%" align="right">上年度销售额：</td>
-				<td width="25%" style="padding:15px;">${loan.lastyearVolume}万元</td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">上年度资产负债率：</td>
-				<td width="25%" style="padding:15px;">${loan.lastyearDebt} %</td>
-				<td width="25%" align="right">上年度销售成本：</td>
-				<td width="25%" style="padding:15px;">${loan.lastyearCost}万元</td>
-			</tr>
-			<tr>
-				<td width="25%" align="right">上年度净利润：</td>
-				<td width="25%" style="padding:15px;" colspan="3">${loan.lastyearProfit }万元</td>
-			</tr>
-		</table>
-	</div>
-</div>
+	<div class="hr_10"> &nbsp; </div>
+<div class="container_950 box_6">
+    <div class="menu_blue white"><h6>意向单详情</h6></div>
+      	<div class="f_box">
+			<div class="f_sqxx">
+	      		<span class="f_gz">需求信息</span>
+				<div>
+					<table style="width:660px; font-size:14px;line-height: 28px;">
+						<tr>
+							<td width="25%" align="right">需求编号：</td>
+							<td width="25%" ><s:property value="loan.applyNum"/> </td>
+							<td width="25%" align="right">融资产品类型：</td>
+							<td width="25%" ><common:print valueId="loan.applyType" /> </td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">需求金额：</td>
+							<td width="25%" ><s:number name="loan.loanAmount" />万元</td>
+							<td width="25%" align="right">期限：</td>
+							<td width="25%" ><s:property value="loan.loanMonth" />个月 </td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">用途：</td>
+							<td width="25%" ><common:print valueId="loan.loanPurpose"/> </td>
+							<td width="25%" align="right">是否有抵押物：</td>
+							<td width="25%" >
+								<common:print valueId="loan.haveMortgage" valueSetMap="ZJ102" /> </td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">接受金融机构：</td>
+							<td width="25%" ><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
+							<td width="25%" align="right">接受利率：</td>
+							<td width="25%" ><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">发布时间：</td>
+							<td colspan="3" width="25%" ><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
+						</tr>
+					</table>
+				</div>
+				<div class="hr_20"> &nbsp;</div>		      		
+	      	</div>
+	      	<div class="hr_20"> &nbsp;</div>	      	
+			<div>
+	      		<span class="f_gz">需求方信息</span>
+				<div >
+					<table style="width:660px; font-size:14px;line-height: 28px;">
+						<tr>
+							<td width="25%" align="right">企业经营类型：</td>
+							<td width="25%" ><common:print valueId="loan.busiRunningType" valueSetMap="ZJ111"/></td>
+							<td width="25%" align="right">上年度销售额：</td>
+							<td width="25%" >${loan.lastyearVolume}万元</td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">上年度资产负债率：</td>
+							<td width="25%" >${loan.lastyearDebt} %</td>
+							<td width="25%" align="right">上年度销售成本：</td>
+							<td width="25%" >${loan.lastyearCost}万元</td>
+						</tr>
+						<tr>
+							<td width="25%" align="right">上年度净利润：</td>
+							<td width="25%" colspan="3">${loan.lastyearProfit }万元</td>
+						</tr>
+					</table>
+				</div>      		
+	      		<div class="hr_20"> &nbsp;</div>		
+	      	</div>	      	
+	    </div>
+</div>	      	
 <!--弹出框内容推荐产品页面-->
 <div id="pro_recommend" style="display:none;" title="请选择推荐融资产品：">
     
 </div>
 <!--弹出框内容推荐产品页面-->
 	<!--主体部分结束-->
-	<div class="hr_10">&nbsp;</div>
+	<div class="hr_20">&nbsp;</div>
 	<!--尾部-->
 	<jsp:include page="/public/bottom.jsp" />
 </body>

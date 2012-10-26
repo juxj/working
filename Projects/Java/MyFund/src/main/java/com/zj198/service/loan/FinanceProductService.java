@@ -33,7 +33,7 @@ public interface FinanceProductService {
 	 * @return
 	 */
 	public Pager findProByCond(int pageNo, int pageSize, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience,
- String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId);
+ String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId, Integer selectArea);
 	
 	/**
 	 * 查询资料清单

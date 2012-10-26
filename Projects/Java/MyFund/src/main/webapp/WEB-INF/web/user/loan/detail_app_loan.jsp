@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.min.js"></script>
@@ -103,72 +104,65 @@ function onSubmit(){
 	<div class="hr_10"> &nbsp; </div>
 	<!--头部结束-->
 	<div class="M_menu">
-  		融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/loanAfter!loanAfterList.act">代后管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;放款详情
+  		融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/loanAfter!loanAfterList.act">贷后管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;放款详情
  	</div>
 	<!--主体部分开始-->
 	<div class="hr_10"> &nbsp; </div>
-	<div class="apply_form" >
-	<div class="box_form" >
-		<div class="C_title">放款详细信息</div>
-		<div class="C_form" style="margin-top:20px;">
-			<table style="width:660px; font-size:13px;">
-				<tr>
-					<td width="25%" align="right">合同编号：</td>
-					<td width="25%" style="padding:15px;"><s:property value="appLoan.contractNum" />
-					</td>
-					<td width="25%" align="right">借款方名称：</td>
-					<td width="25%" style="padding:15px;"><s:property value="appLoan.customerName" />
-					</td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">利息还款方式：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="appLoan.interestWay" /></td>
-					<td width="25%" align="right">类型：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="appLoan.financeType" /></td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">金额：</td>
-					<td width="25%" style="padding:15px;"><s:number name="appLoan.loanAmount" />万元
-					</td>
-					<td width="25%" align="right">期限：</td>
-					<td width="25%" style="padding:15px;"><s:property value="appLoan.loanMonth" />个月
-					</td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">执行利率：</td>
-					<td width="25%" style="padding:15px;"><s:property value="appLoan.interestRate" />%
-					</td>
-					<td width="25%" align="right">担保方式：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="appLoan.mortgageType" />
-					</td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">担保机构：</td>
-					<td width="25%" style="padding:15px;"><s:property value="appLoan.mortgageOrg" />
-					</td>
-					<td width="25%" align="right">保证金：</td>
-					<td width="25%" style="padding:15px;"><s:if test="appLoan.ensureRate==1">有</s:if><s:if test="appLoan.ensureRate==0">无</s:if>
-					</td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">贷款发放日期：</td>
-					<td width="25%" style="padding:15px;"><s:date name="appLoan.loanDate" />
-					</td>
-					<td width="25%" align="right">贷款到期日期：</td>
-					<td width="25%" style="padding:15px;"><s:date name="appLoan.loanEndDate" />
-					</td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">本金还款方式：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="appLoan.capitalWay" />
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>	
+  <div class="container_950  box_4">
+	<div class="P_title" style="border-bottom:5px solid #003961;">放款详细信息</div>
+		<div class="C_title">合同编号：<s:property value="appLoan.contractNum" />&nbsp;&nbsp;&nbsp;&nbsp;借款方名称：<s:property value="appLoan.customerName" /></div>
+		<div class="C_form">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size:14px; line-height: 28px;">
+			  <tr>
+			    <td width="100" align="right">类型：</td>
+			    <td><common:print valueId="appLoan.financeType" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">
+			    金额：</td>
+			    <td><s:number name="appLoan.loanAmount" />万元</td>
+			  </tr>
+			  <tr>
+			    <td align="right">期限：</td>
+			    <td><s:property value="appLoan.loanMonth" />个月</td>
+			  </tr>
+			  <tr>
+			    <td align="right">执行利率：</td>
+			    <td><s:property value="appLoan.interestRate" />%</td>
+			  </tr>
+			  <tr>
+			    <td align="right">利息还款方式：</td>
+			    <td><common:print valueId="appLoan.interestWay" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">本金还款方式：</td>
+			    <td><common:print valueId="appLoan.capitalWay" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">担保方式：</td>
+			    <td><common:print valueId="appLoan.mortgageType" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">担保机构：</td>
+			    <td><s:property value="appLoan.mortgageOrg" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">保证金：</td>
+			    <td><s:if test="appLoan.ensureRate==1">有</s:if><s:if test="appLoan.ensureRate==0">无</s:if></td>
+			  </tr>
+			  <tr>
+			    <td align="right">贷款发放日期：</td>
+			    <td><s:date name="appLoan.loanDate" /></td>
+			  </tr>
+			  <tr>
+			    <td align="right">贷款到期日期：</td>
+			    <td><s:date name="appLoan.loanEndDate" /></td>
+			  </tr>
+		</table>
+		<div class="hr_20"> &nbsp; </div>
 	</div>
+	</div>	
 	<!--主体部分结束-->
-	<div class="hr_10">&nbsp;</div>
 	<div class="hr_10">&nbsp;</div>
 	<!--尾部-->
 	<jsp:include page="/public/bottom.jsp" />

@@ -75,7 +75,18 @@ public class Constants{
 	public static final int USER_VIPTYPE_NONE = 0;		//未付费
 	public static final int USER_VIPTYPE_COMMON = 1;	//资信通认证会员
 	public static final int USER_VIPTYPE_VIP = 2;		//资信通vip会员
+	public static final Double USER_VIPTYPE_COMMON_COST = 365.0;	//资信通认证会员费用
+	public static final Double USER_VIPTYPE_VIP_COST = 5000.0;		//资信通vip会员费用
 	
+	//与用户付费相关
+	public static final int USER = 2;		//寄送方式
+	public static final int USER_VIPTYPE_PAYSTATUS_OFF = 0;		//付款装态——未付款
+	public static final int USER_VIPTYPE_PAYSTATUS_ON = 1;		//寄送方式——已付款
+	public static final int USER_VIPTYPE_ISCANCELLED_ON = 0;		//订单装态——正常
+	public static final int USER_VIPTYPE_ISCANCELLED_OFF = 1;		//订单装态——取消
+	public static final Integer USER_VIPTYPE_PEROID_STATUS_BEFORE = 2;		//会员信息状态---过期
+	public static final Integer USER_VIPTYPE_PEROID_STATUS_NOW = 1;		//会员信息状态---当前有效
+	public static final Integer USER_VIPTYPE_PEROID_STATUS_AFTER = 0;		//会员信息状态---未使用
 	//通知消息队列状态
 	public static final int NTYMESSAGEQUEUE_STATUS_NEW = 0;			//新消息
 	public static final int NTYMESSAGEQUEUE_STATUS_PROCESSING = 1;	//处理中
@@ -85,6 +96,9 @@ public class Constants{
 	public static final int NTYMESSAGEQUEUE_TYPE_EMAIL = 1;			//发送邮件
 	public static final int NTYMESSAGEQUEUE_TYPE_SMS = 2;			//发送短信
 	public static final int NTYMESSAGEQUEUE_TYPE_INSITE = 4;		//站内通知
+	public static final int NTYMESSAGEQUEUE_INSIDE = 0;				//发送内部短信
+	public static final int NTYMESSAGEQUEUE_OUTSIDE = 1;			//发送外部短信
+	
 	
 	//扩展属性分类
 	public static final Integer EXTENDS_PROPERTY_FINANCE = 1;  //融资产品
@@ -178,6 +192,26 @@ public class Constants{
 	public static final String LOAN_EMAIL = "shixl@zj198.com"; // "zeroleavebaoyang@gmail.com";//// 接受邮件地址
 
 	public static final String LOAN_BCC = "shenyd@zj198.com";// 暂时硬编码
+	
+	/**审核日志类型*/
+	public static final Integer ORD_CHECK_TYPE_REQUEST = 323;
+	public static final Integer ORD_CHECK_TYPE_APPLY = 324;
+	
+	/**
+	 * 融资申请单状态
+	 */
+	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECKING = 301;
+	public static final Integer ORD_FINANCE_STATUS_ZJW_WAIT_UPLOAD = 302;
+	public static final Integer ORD_FINANCE_STATUS_ZJW_WAIT_UPDATE = 303;
+	public static final Integer ORD_FINANCE_STATUS_ZJW_UPLOAD_CHECK = 304;
+	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECKPASS = 305;
+	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECK_FAILURE = 311;
+	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_CHECK = 306;
+	public static final Integer ORD_FINANCE_STATUS_ORG_CHECKING = 307;
+	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_UPLOAD = 308;
+	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_MONEY = 309;
+	public static final Integer ORD_FINANCE_STATUS_ORG_PUT_MONEY = 310;
+	public static final Integer ORD_FINANCE_STATUS_ORG_CHECK_FAILURE = 312;
 	
 //	//---begin 改用memecached缓存，以下变量将废弃--Patrick
 	//用户中心菜单,非final，第一次调用填充，同种用户共用,需要调整至DAO--patrick

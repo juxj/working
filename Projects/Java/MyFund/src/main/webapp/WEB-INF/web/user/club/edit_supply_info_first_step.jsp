@@ -82,7 +82,7 @@
 			<form id="frmFirstStep" action="" method="post">
 				<input type="hidden" id="investType" name="investType"/>
 			</form>
-			<input type="button" id="btnGotoNext" disabled="disabled"  onclick="gotoNext();"  value="确认进入下一步"/>
+			<input type="button" id="btnGotoNext" disabled="disabled"  onclick="gotoNext();"  value="确认进入下一步" class="but_gray"/>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
 	</div>

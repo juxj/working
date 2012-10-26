@@ -4,10 +4,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 
 //公用日期时间处理功能
@@ -65,6 +65,16 @@ public class DateUtil {
 		return getStringByDate(addDay(getDateByString(dtstring),days));
 	}
 	
+	//计算date1与date2相差天数
+	public static Integer differDays(Date date1,Date date2){
+		Integer days =0 ;
+		GregorianCalendar cal1 = new GregorianCalendar(); 
+        GregorianCalendar cal2 = new GregorianCalendar(); 
+		cal1.setTime(date1);
+		cal2.setTime(date2);
+		days=(int) ((cal2.getTimeInMillis()-cal1.getTimeInMillis())/(1000*3600*24));
+		return days;
+	}
 	//验证date1是否在date2之前，如果任何一个为null，返回false
 	public static boolean validDate(Date date1,Date date2){
 		if(date1==null || date2==null)return false;

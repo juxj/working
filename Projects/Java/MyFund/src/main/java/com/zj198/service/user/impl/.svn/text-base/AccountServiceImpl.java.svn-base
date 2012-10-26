@@ -236,7 +236,6 @@ public class AccountServiceImpl implements AccountService {
 		UsrUser user = usrUserDAO.get(userId);
 		user.setStatus(status);
 		usrUserDAO.update(user);
-		
 	}
 	//get  and  set
 	public void setUsrUserDAO(UsrUserDAO usrUserDAO) {
@@ -251,6 +250,14 @@ public class AccountServiceImpl implements AccountService {
 
 	public void setUsrContractDAO(UsrContractDAO usrContractDAO) {
 		this.usrContractDAO = usrContractDAO;
+	}
+
+
+	@Override
+	public void updateUserVip(Integer userId, Integer Type) {
+		UsrUser user = usrUserDAO.get(userId);
+		user.setViptype(Type);
+		usrUserDAO.update(user);
 	}
 
 

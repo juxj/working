@@ -44,7 +44,9 @@ public class UploadUtil {
 	 * @return
 	 */
 	public static InputStream getFileStream(String pathFile){
+		System.out.println("22222222222>>>>>>>>>>>>>>"+pathFile);
 		String realpath = ServletActionContext.getServletContext().getRealPath(pathFile).replace('\\', '/');
+		System.out.println(realpath);
 		File file = new File(realpath);
 		FileInputStream instream = null;
 		try {

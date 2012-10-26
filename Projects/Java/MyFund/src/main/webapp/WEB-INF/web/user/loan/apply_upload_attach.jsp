@@ -132,7 +132,7 @@
 <!--头部结束-->
   <!--理财服务产品列表页面开始-->
 	<div class="M_menu">
-	  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=${viewAttachType }&applyId=${applyId}">资料管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#97181d;">${msg }</span>
+	  	融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/userApplyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=${viewAttachType }&applyId=${applyId}">资料管理</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#97181d;">${msg }</span>
 	</div>
 	<div class="hr_10"> &nbsp; </div> 
 	<div class="container_950 box_4">

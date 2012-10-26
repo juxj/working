@@ -32,15 +32,14 @@
     <div class="hr_10"> &nbsp; </div>
 	<div class="container_950 box_4">
 		<div class="P_title" style="border-bottom:5px solid #003961;">服务申请管理</div>
-	</div>
+
 	<!-- 当取得的结果值大于０,才显示下面的表格 -->
 	<form id="frmQueryApplicantOrders" action="/service/serviceOrder!showSinOrdersByApplicant.act" method="post">
 		<input type="hidden" id="pageNo" name="pageNo" value="${pageNo }"/>
 	</form>
 	<!-- 表格 -->
-	<div class="hr_10"> &nbsp; </div> 
 	<div class="M_box">
-	   	<table border="0" cellspacing="0" cellpadding="0" style="width:100%"  >
+	   	<table border="0" cellspacing="0" cellpadding="0" style="width:100%" >
 	   		<tr class="top_color">
 	   			<th>申请编号</th>
 	   			<th>服务编号</th>
@@ -91,8 +90,7 @@
 		</table>
 </div>
 <s:if test="pager.data.size()<=0">
-<div class="hr_10">&nbsp;</div>
-     <div class="container_950 box_4">
+
 	<div class="l_out">
 		<s:if test="#session._user.userTypeGroup==5 || #session._user.userTypeGroup==1">
 		<h1 class="l_title">您还没有提交过服务申请</h1>
@@ -106,12 +104,13 @@
 		</p>
 		</s:elseif>
 	</div>
- </div> 
+
  </s:if>
- <div style="width:960px; margin:0 auto; text-align:right;">
+ <div style="margin:0 auto; text-align:right;">
       <div class="pages01">
       	<jsp:include page="/public/pagination.jsp" />
    </div>
+</div>
 </div>
 </div>
 <div class="hr_10"> &nbsp; </div>

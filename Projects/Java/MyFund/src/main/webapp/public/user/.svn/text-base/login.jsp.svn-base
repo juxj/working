@@ -75,7 +75,7 @@ function chgCaptcha(){
       </div>
       <div class="user_login_content">
         <div class="on" id="login-cont0">
-          <form id="loginform" class="box_form" action="/Account!login.act" method="post">
+          <form id="loginform" class="out_box_form" action="/Account!login.act" method="post">
             <dl>
               <dd><input type="hidden" name="loginType" value="1"/>
               <input type="hidden" name="rtnurl" value="${rtnurl}"/>
@@ -91,7 +91,7 @@ function chgCaptcha(){
         <div class="notification attention png_bg" style="display:none;" id="catip">
         	<div>请插入中国资金网USB证书。</div>
       	</div>
-          <form class="box_form" action="/Account!login.act" method="post">
+          <form class="out_box_form" action="/Account!login.act" method="post">
             <dl>
               <dd><input type="hidden" name="loginType" value="2"/>
               <h6>用户名：</h6><input id="username2" name="username" type=text value="" class="input-text" /></dd>

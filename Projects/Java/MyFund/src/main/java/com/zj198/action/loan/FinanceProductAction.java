@@ -63,10 +63,14 @@ public class FinanceProductAction extends BaseAction {
 	private String companyAllAsset;
 	private String operatIncome;
 	private Integer settingYear;
-	// 所属行业 (父行业&&子行业)
+	//二期 新增加一个地域条件筛选
+	private Integer selectArea;
+	private Integer selectArea2;
+	private Integer selectArea3;
 	
 	// 筛选菜单 收缩状态
 	private String shrink;
+	private String manyOrless;
 
 	// (个人经营性贷款152)条件筛选的隐藏域
 	private String needEnsure;
@@ -79,7 +83,18 @@ public class FinanceProductAction extends BaseAction {
 
 	public String execute() {
 		getMapSource();
-		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
+		//选择地域
+		Integer j = -1;
+		if (selectArea != null && selectArea2 != null && selectArea3 != null) {
+			if (selectArea != -1) {
+				j = selectArea;
+			} else if (selectArea2 != -1) {
+				j = selectArea;
+			} else if (selectArea3 != -1) {
+				j = selectArea;
+			}
+		}
+		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId, j);
 		return "financeSearchDetail";
 	}
 
@@ -112,9 +127,9 @@ public class FinanceProductAction extends BaseAction {
 	 * @since: 2012-7-10 | 11:04:12
 	 * @return
 	 */
-	public String financeSearchDetail() {
+	public String financeSearchDetail() { 
 		getMapSource();
-		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
+		pager = financeProductService.findProByCond(pager == null ? 1 : pager.getCurrentPage(), pager == null ? 20 : pager.getPageCount(), financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId, selectArea);
 		return "financeSearchDetail";
 	}
 
@@ -427,5 +442,39 @@ public class FinanceProductAction extends BaseAction {
 	public void setShrink(String shrink) {
 		this.shrink = shrink;
 	}
+
+	public Integer getSelectArea() {
+		return selectArea;
+	}
+
+	public void setSelectArea(Integer selectArea) {
+		this.selectArea = selectArea;
+	}
+
+
+	public String getManyOrless() {
+		return manyOrless;
+	}
+
+	public void setManyOrless(String manyOrless) {
+		this.manyOrless = manyOrless;
+	}
+
+	public Integer getSelectArea2() {
+		return selectArea2;
+	}
+
+	public void setSelectArea2(Integer selectArea2) {
+		this.selectArea2 = selectArea2;
+	}
+
+	public Integer getSelectArea3() {
+		return selectArea3;
+	}
+
+	public void setSelectArea3(Integer selectArea3) {
+		this.selectArea3 = selectArea3;
+	}
+	
 
 }

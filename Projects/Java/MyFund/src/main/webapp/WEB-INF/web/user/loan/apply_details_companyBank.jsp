@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 <title>用户中心-融资管理-融资申请详情页</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
@@ -28,6 +27,32 @@ $(document).ready(function() {
     });
     //} 
 });
+function applyCancel(){
+	//$("#loanForm").("action","/user/loan/financeAttach!selectCancel.act");
+	var arrChk=$("input[name='ckbox']:checked");
+	if(arrChk.length > 0){
+		$("#loanForm").submit();
+	}else{
+		alert("请您选择操作数据！");
+		return false;
+	}
+}
+function exportPdf(){
+	window.location.href = '/user/loan/downloadAttach!downPdf.act'
+}
+$(function() {
+	$("#selectall").toggle(function() {
+		$("#selectall").each(function() {
+			$("input[name='ckbox']").attr('checked', true);
+		});
+		$(this).attr("value","取消全选");
+	}, function() {
+		$("#selectall").each(function() {
+			$("input[name='ckbox']").attr('checked', false);
+		});
+		$(this).attr("value","全部选中");
+	});
+})
 $(function() {
 	var j = new Date();
 	var y = j.getFullYear() - 1;
@@ -36,17 +61,20 @@ $(function() {
 	$('.yearmoth').html(jm);
 })
 function all() {
-		$.post('/user/loan/financeApply!applyCheckList.act', {
+		$.post('/user/loan/userApplyManag!applyCheckList.act', {
 			applyId : $('#applyid').val()
 		}, function(data) {
 			$("#all_log").html(data);
 		})
 		$("#all_log").dialog({
-			width : 400,
+			width : 500,
 			height : 300,
 			modal : true
 		});
 	}
+function print(appId){
+	window.open('/user/loan/userApplyManag!print.act?print=1&apply.id='+appId)
+}
 </script>
 </head>
 
@@ -61,7 +89,7 @@ function all() {
 	<!--主体部分开始-->
 	<div class="M_menu">
 		融资管理&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;<a
-			href="/user/loan/financeApply!applyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
+			href="/user/loan/userApplyManag.act">融资申请管理</a>&nbsp;&nbsp;<b>></b>&nbsp;&nbsp;融资申请查看
 	</div>
 	<div class="hr_10">&nbsp;</div>
 	
@@ -73,25 +101,27 @@ function all() {
 			<span>申请单号：${apply.applyNum}</span>
 			<span>协议编号：<font color="d5652c"> ${apply.agreeNum}</font></span>
 			<span>申请状态：<font color="d5652c"><common:print valueId="apply.applyStatus" /></font></span>
-			<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" type="button" value="打印"></span>
+			<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" onclick="print(${apply.id})" type="button" value="打印"></span>
 			<span style="padding-right:0px; float:right;"><input class="btnsub blue1" type="button" value="操作"></span>
 		</div>
 		<div>尊敬的用户：您的融资申请已通过资金网预审，我们将会尽快将您的融资申请递交给资金方。</div>
 		<div class="hr_20"> &nbsp; </div>
 		<div class="center">
 			<div class="left_gray">&nbsp;</div>
-			<div class="m_gray">填写申请信息</div>
+			<div class="m_gray1">企业信息</div>
+			<div class="m_gray1">填写申请信息</div>
 			<div class="m_red">预审中</div>
 			<div class="m_gray">提交材料</div>
 			<div class="m_gray">资金网审核</div>
-			<div class="m_gray">金融机构审核</div>
 			<div class="m_gray">金融机构审核</div>
 			<div class="right_gray">&nbsp;</div>	
 		</div>
 		<div class="clear">&nbsp;</div>
 		<div class="hr_10"> &nbsp; </div>
 		<div>
-			<div class="f_gz"><span class="fl">申请单跟踪</span><a href="javascript:all();" style="float:right; margin-right: 40px; color: red;">更多..</a></div>
+			<div class="f_gz" style="margin-bottom:5px;"><span class="fl">申请单跟踪</span><a href="javascript:all();" style="float:right; margin-right: 40px; color: red;">更多..</a></div>
+			<div class="hr_10"></div>
+			<div class="clear">&nbsp;</div>
 			<div class="y_title">
 				<span class="y_title_01">操作时间</span>
 				<span class="y_title_01">操作人</span>
@@ -100,7 +130,7 @@ function all() {
 			<s:iterator value="applyCheckList">
 			<div class="y_connect">
 				<span class="y_title_01"><s:date name="createdt" format="yyyy-MM-dd hh:mm:ss"/></span>
-				<span class="y_title_01">${createUserId }</span>
+				<span class="y_title_01">${createUserName } &nbsp;</span>
 				<span class="y_title_01">${checkView }</span>
 			</div>
 			</s:iterator>
@@ -150,9 +180,8 @@ function all() {
 				      <span>注册地址：${ordCompany.regaddress }</span>
 				      <span>邮编：${ordCompany.regpostcode }</span>
 				      <span>所属园区：无</span>
-				      <span>企业类型：${ordCompany.enterprisetypeid }</span>
-				      <span>员工人数：${ordCompany.employeesid }</span>
-				      <span>所属行业：</span>
+				      <span>企业类型：<common:print valueId="ordCompany.enterprisetypeid" /></span>
+				      <span>员工人数：<common:print valueId="ordCompany.employeesid" /></span>
 				      <span>经营范围：${ordCompany.bizscope }</span>
 				      <span>企业经营地址：${ordCompany.bizaddress }</span>
 				      <span>邮编：${ordCompany.bizpostcode }</span>			      
@@ -248,14 +277,61 @@ function all() {
       </div>
     </div>  
 <!-- end -->
+<div class="hr_10"> &nbsp;</div>
+<div class="container_950 center box_6">
+		<form action="/user/loan/financeAttach!selectCancel.act" id="loanForm" class="box_form" style="margin:0px;" method="post">
+        <input type="hidden" id="applyid" name="applyId" value="${apply.id }">
+        <table width="100%" border="0" cellspacing="0">
+        <tr class="menu_blue white">
+        <td colspan="5"><h6>申贷资料</h6></td>
+        </tr>
+     	<tr class="top_color">
+     		<td width="30%" style="padding-left:25px;">资料名称</td>
+            <td width="5%">说明</td>
+            <td width="10%">递交方式</td>
+            <td >状态</td>
+            <td width="15%" align="center">操作</td>
+        </tr>
+        
+        <tr class="top_color01">
+          <td style="padding-left:25px;">中国资金网融资咨询服务协议加盖公章</td>
+          <td></td>
+          <td></td>
+          <td>
+			<s:if test="apply.agreeFileUpload == null || apply.agreeFileUpload == ''">
+           			未递交
+           		</s:if>
+           		<s:else>
+           			已上传
+           		</s:else>
+		 </td>
+          <td align="right" class="view_detail01" style="padding-right:20px;"><a href="/user/loan/downloadAttach!downAgreeTemplate.act" target="_blank" >模板下载</a></td>          
+        </tr>
+        
+        <s:iterator id ="item" value="attachList">
+        <tr class="top_color01">
+          <td style="padding-left:25px;"><input type="checkbox" name="ckbox" class="ckbox" value="${item.id }"/>&nbsp;${item.dataName }
+						${item.supplyName }</td>
+          <td></td>
+          <td>${item.dataSupply } ${item.supplyMemo }</td>
+          <td><common:print valueId="#item.supplyWay"/><common:print valueId="#item.uploadStatus"/></td>
+          <td align="right" class="view_detail01" style="padding-right:20px;"><a>查看 </a>&nbsp;<a>下载</a></td>          
+        </tr>
+        </s:iterator>
+        
+        <tr class="top_color01">
+          <td colspan="5" class="view_detail01" style="padding-left:25px;"><input type="button" class="but_gray" id="selectall" value="全部选中"/>&nbsp;<input type="button" class="but_gray" value="撤销" onclick="applyCancel()"/></td>     
+        </tr>                         
+		</table>
+		</form>
+</div>
 <div class="hr_20"> &nbsp;</div>
 <div align="center">
-	<input type="hidden" id="applyid" name="applyId" value="${apply.id }">
 	<input class="btnsub blue1" type="button" value="审核通过">&nbsp;&nbsp;&nbsp;
 	<input class="btnsub blue1" type="button" value="审核驳回">&nbsp;&nbsp;&nbsp;
 	<input class="btnsub blue1" type="button" value="退回修改">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input class="btnsub blue1" type="button" value="打印申请单">&nbsp;&nbsp;&nbsp;
-	<input class="btnsub blue1" type="button" value="到处申请单">&nbsp;&nbsp;&nbsp;
+	<input class="btnsub blue1" type="button" onclick="exportPdf()" value="导出申请单">&nbsp;&nbsp;&nbsp;
 	<input class="btnsub blue1" type="button" value="返回">
 </div>
 <!--尾部-->

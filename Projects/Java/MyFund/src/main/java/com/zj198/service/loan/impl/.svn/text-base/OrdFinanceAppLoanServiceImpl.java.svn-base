@@ -41,7 +41,8 @@ public class OrdFinanceAppLoanServiceImpl implements OrdFinanceAppLoanService {
 		o.setProductName(prdFinanceDAO.get(o.getProductId()).getFinanceName());
 		ordAppLoanDAO.save(o);
 		OrdFinanceApply apply = ordFinanceApplyDAO.get(o.getApplyId());
-		apply.setApplyStatus(new Integer(186));//已放款
+		//update finance status
+		apply.setApplyStatus(Constants.ORD_FINANCE_STATUS_ORG_PUT_MONEY);//已放款
 		ordFinanceApplyDAO.update(apply);
 	}
 	public void updateAppLoanStatus(OrdFinanceAppLoan o) {

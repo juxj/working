@@ -23,6 +23,7 @@
     <bean name="serviceInfoService" class="com.zj198.service.sin.impl.ServiceInfoServiceImpl"/>
     <!-- 会员付费 -->
 	<bean name="memberChargeService" class="com.zj198.service.mch.impl.MemberChargeServiceImpl"/>
+	<bean name="memberService" class="com.zj198.service.user.impl.MemberServiceImpl"/>
     <!-- 融资 -->
 	<bean name="loanRequestService" class="com.zj198.service.loan.impl.LoanRequestServiceImpl"/>
 	<bean id="financeApplyService" class="com.zj198.service.loan.impl.FinanceApplyServiceImpl"/>

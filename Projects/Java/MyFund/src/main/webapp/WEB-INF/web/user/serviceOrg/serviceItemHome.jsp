@@ -74,7 +74,7 @@
 				<td class="capital_table_z2">${item.regionName }</td>
 				<td class="capital_table_z2"><s:date name="#item.issuedDate"/></td>
 				<td class="capital_table_z2"><s:date name="#item.expiredDate"/></td>
-				<td class="view_detail capital_table_z2"  style="padding-right:20px;"><a href="/service/serviceItem!showSinItemDetail.act?itemId=${item.id}" >查看</a></td>
+				<td class="capital_table_z2"><a href="/service/serviceItem!showSinItemDetail.act?itemId=${item.id}" class="btn_s blue2" target="_blank">查看</a></td>
 		      </tr>
 		      </s:iterator>
 		      <tr class="top_color">

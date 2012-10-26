@@ -82,7 +82,7 @@ public class OrdFinanceApplyDAOImpl extends HibernateDAO<OrdFinanceApply, Intege
 		StringBuffer hql = new StringBuffer();
 		hql.append("select new com.zj198.model.OrdFinanceApply(t1.id,t1.applyNum,t1.applyType,t1.applyStatus,t1.createdt,t1.loanAmount,t1.loanMonth,t1.applyUserName,t2.financeName,t1.userId, t2.userId, t1.agreeNum) ")
 			.append(" from OrdFinanceApply t1, PrdFinance t2")
-			.append(" where t1.financeId=t2.id and t1.applyStatus in (181,182,183,184,185,186,187) ")
+			.append(" where t1.financeId=t2.id and t1.applyStatus in (306,307,308,309,310,312) ")
 			.append(" and t2.userId=:user_id");
 		params.put("user_id", spModel.getUserId());
 		
@@ -162,7 +162,7 @@ public class OrdFinanceApplyDAOImpl extends HibernateDAO<OrdFinanceApply, Intege
 		StringBuffer hql = new StringBuffer();
 		hql.append("select new com.zj198.model.OrdFinanceApply(t1.id,t1.applyNum,t1.applyType,t1.applyStatus,t1.createdt,t1.loanAmount,t1.loanMonth,t1.applyUserName,t2.financeName, t3.realname, t1.userId, t2.userId, t1.agreeNum) ")
 			.append(" from OrdFinanceApply t1, PrdFinance t2, UsrUser t3 ")
-			.append(" where t1.financeId=t2.id and t1.applyStatus in (181,182,183,184,185,186)")
+			.append(" where t1.financeId=t2.id and t1.applyStatus in (306,307,308,309,310)")
 			.append(" and t2.userId=t3.id and t2.userId=:user_id");
 		hql.append(" order by t1.id desc limit 0, " + number);
 		Hashtable<String, Object> params = new Hashtable<String, Object>();

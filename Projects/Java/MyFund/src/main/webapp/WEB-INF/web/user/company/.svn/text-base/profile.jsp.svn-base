@@ -59,7 +59,7 @@ $(document).ready(function(){
         </ul>
       </div>
 	<form class="box_form">
-         <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
+         <table border="0" cellpadding="0" cellspacing="0" class="special_psfs_tb">
 	      <s:if test="msg!=null">
 		    <tr>
 	           <td colspan="4"><div class="notification success png_bg"><div>${msg }</div></div></td>

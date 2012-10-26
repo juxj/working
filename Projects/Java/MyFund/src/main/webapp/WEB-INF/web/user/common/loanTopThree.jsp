@@ -38,7 +38,7 @@
 		<td>${loanMonth}月</td>
    		<td><common:print valueId="applyStatus"/></td>
    		<td class="view_detail">
-   		<a target="_blank" href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${id }">查看</a>
+   		<a target="_blank" href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>
   </s:iterator>

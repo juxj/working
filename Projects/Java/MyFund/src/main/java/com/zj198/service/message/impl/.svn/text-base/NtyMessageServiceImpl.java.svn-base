@@ -1,18 +1,27 @@
 package com.zj198.service.message.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import com.zj198.dao.NtyMessageDAO;
+import com.zj198.dao.NtyMessageQueueDAO;
 import com.zj198.dao.NtyReceiverDAO;
 import com.zj198.model.NtyMessage;
+import com.zj198.model.NtyMessageQueue;
 import com.zj198.model.NtyReceiver;
 import com.zj198.service.message.NtyMessageService;
 import com.zj198.service.message.model.AddMessageSpModel;
+import com.zj198.service.message.model.SendMobileMspSpModel;
+import com.zj198.service.message.model.SendEmailMsgSpModel;
+import com.zj198.service.message.model.SendWebMsgSpModel;
+import com.zj198.util.Constants;
 import com.zj198.util.Pager;
+import com.zj198.util.PropertiesUtil;
 
 public class NtyMessageServiceImpl implements NtyMessageService {
 	private NtyMessageDAO ntyMessageDAO;
+	private NtyMessageQueueDAO NtyMessageQueueDAO; 
 	private NtyReceiverDAO ntyReceiverDAO;
 
 	/**
@@ -42,6 +51,10 @@ public class NtyMessageServiceImpl implements NtyMessageService {
 
 	public void setNtyMessageDAO(NtyMessageDAO ntyMessageDAO) {
 		this.ntyMessageDAO = ntyMessageDAO;
+	}
+
+	public void setNtyMessageQueueDAO(NtyMessageQueueDAO ntyMessageQueueDAO) {
+		NtyMessageQueueDAO = ntyMessageQueueDAO;
 	}
 
 	public void setNtyReceiverDAO(NtyReceiverDAO ntyReceiverDAO) {
@@ -87,5 +100,37 @@ public class NtyMessageServiceImpl implements NtyMessageService {
 	@Override
 	public Integer getMsgNo(Integer uid) {
 		return ntyMessageDAO.getMsgNo(uid);
+	}
+
+	/*-----------------------------------------第二期--------------------------------------------------*/
+	
+	public void sendMobileMsg(SendMobileMspSpModel mobileBean) {
+		NtyMessageQueue j = new NtyMessageQueue();
+		j.setContent(mobileBean.getContent());
+		j.setReceiver(mobileBean.getMobile());
+		j.setType(Constants.NTYMESSAGEQUEUE_TYPE_SMS);//短信
+		j.setStatus(Constants.NTYMESSAGEQUEUE_STATUS_NEW);
+		j.setCreatedt(Calendar.getInstance().getTime());
+		NtyMessageQueueDAO.save(j);
+	}
+
+	public void sendEmailMsg(SendEmailMsgSpModel emailBean) {
+		NtyMessageQueue j = new NtyMessageQueue();
+		j.setTitle(emailBean.getTitle());
+		j.setContent(emailBean.getContent());
+		if(emailBean.getSendType()==0){
+			j.setReceiver(emailBean.getReceiver());//外部邮件
+		}else{
+			j.setReceiver(PropertiesUtil.getByKey("loan.servicer.shixl"));
+		}
+		j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);//邮件
+		j.setStatus(Constants.NTYMESSAGEQUEUE_STATUS_NEW);
+		j.setCreatedt(Calendar.getInstance().getTime());
+		NtyMessageQueueDAO.save(j);
+		
+	}
+
+	public void sendWebMsg(SendWebMsgSpModel webBean) {
+		
 	}
 }

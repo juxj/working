@@ -1,15 +1,15 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/service/user/impl
 svn://192.168.1.8
 
 
 
-2012-10-15T05:00:53.744557Z
-3857
-Patrick
+2012-10-24T09:38:53.315471Z
+4019
+linm
 
 
 
@@ -26,16 +26,16 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
-AccountServiceImpl.java
+MemberServiceImpl.java
 file
 
 
 
 
-2012-10-12T06:32:11.421622Z
-1b5535dd3b65aa69d3605ac19a761c7e
-2012-09-07T08:49:45.397926Z
-3305
+2012-10-26T07:35:59.152410Z
+6f8e125d351206d29dd0b110c5f8e2cd
+2012-10-24T09:38:53.315471Z
+4019
 linm
 
 
@@ -58,7 +58,41 @@ linm
 
 
 
-8372
+2811
+
+AccountServiceImpl.java
+file
+
+
+
+
+2012-10-26T07:35:59.152410Z
+1eb25187cbe640415d36f3b9c4ee873e
+2012-10-22T08:11:42.000807Z
+3956
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8544
 
 ProfileServiceImpl.java
 file
@@ -66,14 +100,14 @@ file
 
 
 
-2012-10-16T09:07:30.000000Z
+2012-10-26T07:35:59.152410Z
 a33e0923c4ad7626e973072ebefd24b6
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -100,14 +134,14 @@ file
 
 
 
-2012-10-16T09:07:30.000000Z
+2012-10-26T07:35:59.152410Z
 f9e2f834cab0981191bd0457168fdce4
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 

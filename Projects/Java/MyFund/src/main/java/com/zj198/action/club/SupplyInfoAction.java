@@ -240,6 +240,14 @@ public class SupplyInfoAction extends BaseClubAction {
 	
 	
 	public String editFirstStep(){
+		
+		int group = this.getUserGroup(this.getUser());
+		
+		if (group != Constants.USERTYPE_GROUP_BANK && group != Constants.USERTYPE_GROUP_FINANCEORG) {
+			this.msg = "只有金融机构才能发布此类信息！";
+			return ERROR;
+		}
+		
 		this.investStyleList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_INVEST_STYLE);
 		return "editFirstStep";
 	}

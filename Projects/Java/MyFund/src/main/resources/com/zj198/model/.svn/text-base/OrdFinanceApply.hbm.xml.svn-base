@@ -275,5 +275,9 @@
                 <comment>近一年的销售额</comment>
             </column>
         </property>
+        <property name="baseCheckStatus" type="java.lang.String">
+            <column name="base_check_status" length="5">
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

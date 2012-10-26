@@ -4,6 +4,9 @@ import java.util.List;
 
 import com.zj198.model.NtyMessage;
 import com.zj198.service.message.model.AddMessageSpModel;
+import com.zj198.service.message.model.SendMobileMspSpModel;
+import com.zj198.service.message.model.SendEmailMsgSpModel;
+import com.zj198.service.message.model.SendWebMsgSpModel;
 import com.zj198.util.Pager;
 
 public interface NtyMessageService {
@@ -22,4 +25,28 @@ public interface NtyMessageService {
 	public void updateIsRead(Long mid);
 
 	public Integer getMsgNo(Integer uid);
+	
+	/*-----------------------------------------------第二期-----------------------------------------------*/
+	
+	/**
+	 * 发送短信
+	 * @author:zeroleavebaoyang@gmail.com
+	 * @param mobileBean 
+	 */
+	void sendMobileMsg(SendMobileMspSpModel mobileBean);
+	
+	/**
+	 * 发送邮件
+	 * @author:zeroleavebaoyang@gmail.com
+	 * @param emailBean 
+	 */
+	void sendEmailMsg(SendEmailMsgSpModel emailBean);
+	
+	/**
+	 * 发送站点消息
+	 * @author:zeroleavebaoyang@gmail.com
+	 * @param webBean 
+	 */
+	void sendWebMsg(SendWebMsgSpModel webBean);
+	
 }

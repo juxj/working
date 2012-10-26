@@ -1,15 +1,15 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/admin
 svn://192.168.1.8
 
 
 
-2012-10-11T03:34:01.974904Z
-3789
-Patrick
+2012-10-26T06:56:40.078691Z
+4057
+yangb
 
 
 
@@ -26,13 +26,22 @@ Patrick
 
 2010e742-a0c2-11e1-ab5a-b1e7f730e067
 
+system
+dir
+
+loan
+dir
+
+authorize
+dir
+
 AccountAction.java
 file
 
 
 
 
-2012-10-12T06:32:11.145484Z
+2012-10-26T07:36:00.600410Z
 43ec35208521e57866d9f2369d69c9e6
 2012-07-31T08:24:55.607186Z
 1827
@@ -60,16 +69,7 @@ Patrick
 
 1908
 
-authorize
-dir
-
-loan
-dir
-
 news
-dir
-
-system
 dir
 
 user

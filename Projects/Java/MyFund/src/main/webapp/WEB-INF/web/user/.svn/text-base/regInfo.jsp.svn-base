@@ -200,8 +200,8 @@ function uploadImg(){
 </div>
 <div class="hr_10"> &nbsp; </div> 
 <!--改动的部分-->
-	<div class="container_950 box_4">
-		<div class="P_title">注册信息</div>
+	<div class="container_950">
+		<div class="P_title  box_4">注册信息</div>
 		<div class="line">&nbsp;</div>
 		<div class="P_connect">
 		    <span id="ps" class="no_ok" ><s:if test="msg!=null">${msg }</s:if></span>
@@ -210,27 +210,27 @@ function uploadImg(){
 	<div class="hr_10"> &nbsp; </div>
     <div class="box_4 center container_950">
 	    <div class="hr_20"> &nbsp; </div>
-	 		<div class="fl" style="width:150px; text-align: right; padding-right:20px; height:100px">用户头像：</div>
-	 			<div class="fl" style="width:150px"><img title="点击更换" onclick="upChange();" src="<s:if test="#session._user.avatar!=null">${session._user.avatar}</s:if><s:else>/images/add_head_img.png</s:else>" width="80px;" height="80px;"/></div>
-			<div class="fl" style="width:60%; height:100px"><div style="display:none;"></div></div>
+	 		<div class="fl" style="width:150px; text-align: right; padding-right:10px; height:100px; font-size:14px;">用户头像：</div>
+	 			<div class="fl" style="width:150px;"><img title="点击更换" onclick="upChange();" src="<s:if test="#session._user.avatar!=null">${session._user.avatar}</s:if><s:else>/images/add_head_img.png</s:else>" width="80px;" height="80px;"/></div>
+			<div class="fl" style="width:60%; height:100px;"><div style="display:none;"></div></div>
 	              
-	   			<div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">用户名称：</div>
-	              <div class="fl" style="width:150px; height:30px">${usrUser.username }</div>
+	   			<div class="fl" style="width:150px; text-align: right; padding-right:10px; height:30px; vertical-align:middle; font-size:14px;">用户名称：</div>
+	              <div class="fl" style="width:150px; height:30px; font-size:14px;">${usrUser.username }</div>
 	 	  			<div class="fl" style="width:60%; height:30px">&nbsp;</div>
 	
-	              <div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">姓名：</div>
-	              <div class="fl" style="width:150px; height:30px">${usrUser.realname } <s:if test="usrUser.gender==1">先生</s:if><s:else>女士</s:else></div>
+	              <div class="fl" style="width:150px; text-align: right; padding-right:10px; height:30px; vertical-align:middle; font-size:14px;">姓名：</div>
+	              <div class="fl" style="width:150px; height:30px; font-size:14px;">${usrUser.realname } <s:if test="usrUser.gender==1">先生</s:if><s:else>女士</s:else></div>
 	    	<div class="fl" style="width:60%; height:30px">&nbsp;</div>
 	
-	              <div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">手机号码：</div>
-	              <div class="fl" style="width:150px; height:30px">${usrUser.mobile }</div>
-	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype ==0 || #session._user.activetype ==1"><input  name="upload_img" value="验证" type="button" onclick="vershow();" class="but_gray"/></s:if><s:else>已验证</s:else>&nbsp;</div>
+	              <div class="fl" style="width:150px; text-align: right; padding-right:10px; height:30px; vertical-align:middle; font-size:14px;">手机号码：</div>
+	              <div class="fl" style="width:150px; height:30px; font-size:14px;">${usrUser.mobile }</div>
+	    	<div class="fl red" style="width:60%; height:30px; font-size:14px;"><s:if test="#session._user.activetype ==0 || #session._user.activetype ==1"><input  name="upload_img" value="验证" type="button" onclick="vershow();" class="bgray"/></s:if><s:else>已验证</s:else>&nbsp;</div>
 	
-	              <div class="fl" style="width:150px; text-align: right; padding-right:20px; height:30px; vertical-align:middle">注册邮箱：</div>
-	              <div class="fl" style="width:150px; height:30px">${usrUser.email }</div>
-	    	<div class="fl" style="width:60%; height:30px"><s:if test="#session._user.activetype==0 || #session._user.activetype==2">&nbsp;</s:if><s:else>已验证</s:else>&nbsp;</div>
-	    <div class="hr_20"> &nbsp; </div>
-	    <div class="hr_20"> &nbsp; </div>
+	              <div class="fl" style="width:150px; text-align: right; padding-right:10px; height:30px; vertical-align:middle; font-size:14px;">注册邮箱：</div>
+	              <div class="fl" style="width:150px; height:30px; font-size:14px;">${usrUser.email }</div>
+	    	<div class="fl red" style="width:60%; height:30px; font-size:14px;"><s:if test="#session._user.activetype==0 || #session._user.activetype==2">&nbsp;</s:if><s:else>已验证</s:else>&nbsp;</div>
+	    <div class="hr_10"> &nbsp; </div>
+	    <div class="hr_10"> &nbsp; </div>
 		<div align="center">
 			<input name="upload_img" value="修改注册信息" type="button" onclick="regshow();" class="btnsub blue1"/>&nbsp;&nbsp;
 			<input name="upload_img" value="修改登录密码" type="button" onclick="rpshow();"  class="btnsub blue1"/>
@@ -257,7 +257,8 @@ function uploadImg(){
               	<span id="rpass_error" class="txt-info">请再次输入密码。</span>
               </td></tr>
 			  <tr><td><h6>提示：为了您的帐号安全，中国资金网建议您每隔一段时间就更改一次密码</h6></td></tr>
-              <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:recoveryPwd();" class="but_gray" style="width:90px;" value="确定" /></td></tr>
+              <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:recoveryPwd();" class="btnsub blue1" style="width:90px;" value="确定" /></td></tr>
+              <tr><td>&nbsp; </td></tr>
            </table>
         </div>
 	  </div>
@@ -293,7 +294,7 @@ function uploadImg(){
 	</table>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="center">
-	  <input type="button" onclick="recoveryReg();" class="but_gray" style="width:100px;" value="确定" />
+	  <input type="button" onclick="recoveryReg();" class="btnsub blue1" style="width:100px;" value="确定" />
 	</div>
 	<div class="hr_10"> &nbsp; </div>
 </div>
@@ -305,10 +306,10 @@ function uploadImg(){
         <div class="on">
             <table>
               <tr><td><h6>验证码：</h6><input id="verifycode" type="text" name="verifycode" class="input-text" size="20" />
-            	<input id="sendmobile" type="button" class="but_gray" onclick="sendMobileMsg();" value="点击发送验证码（1分钟内只能发送一次）"/>
+            	<input id="sendmobile" type="button" style="width:300px;" class="bgray" onclick="sendMobileMsg();" value="点击发送验证码（1分钟内只能发送一次）"/>
               </td></tr>
 	    	  <tr><td><span id="mobileMsg" style="color: red">提示：验证手机可以使您用中国资金网的各项功能</span></td></tr>
-              <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:verMobile();" class="but_gray" style="width:90px;" value="确定" /></td></tr>
+              <tr><td><h6>&nbsp;</h6><input type="button" onclick="javascript:verMobile();" class="btnsub blue1" style="width:90px;" value="确定" /></td></tr>
             </table>
         </div>
 	  </div>

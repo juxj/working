@@ -73,7 +73,7 @@
 			</s:if>
    		</td>
    		<td class="view_detail">
-   		<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${id }">查看</a>
+   		<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>
   </s:iterator>

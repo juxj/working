@@ -80,6 +80,7 @@
 			<result name="view_busi_apply">/WEB-INF/web/admin/loan/busifinance_apply_view.jsp</result>
 			<result name="finance_apply_admin">/WEB-INF/web/admin/loan/finance_apply_admin.jsp</result>
 			<result name="view_person_apply">/WEB-INF/web/admin/loan/perrunfinance_apply_view.jsp</result>
+			<result name="applyCheckList">/WEB-INF/web/user/common/allLog.jsp</result>
 		</action>
 		<action name="financeAttach" class="com.zj198.action.admin.loan.FinanceAttachAdminAction">
 			<result name="apply_upload_attach_admin">/WEB-INF/web/admin/loan/apply_upload_attach.jsp</result>
@@ -142,5 +143,18 @@
 		 </result>
 		</action>
 	</package>
-	
+	<!-- 付款管理 -->
+	<package name="payment_admin" namespace="/admin/payment" extends="base">
+		<default-interceptor-ref name="adminInterceptor"/>
+		<global-results>
+			<result name="login">/WEB-INF/web/admin/login.jsp</result>
+			<result name="ajax">/WEB-INF/web/admin/ajax.jsp</result>
+		</global-results>
+		<action name="manage" class="com.zj198.action.admin.user.PayManagementAction">
+			<result name="payDetails">/WEB-INF/web/admin/user/paymentManagement.jsp</result>
+		</action>
+		<action name="member" class="com.zj198.action.admin.user.PayManagementAction" method="showMember">
+			<result name="memberDetails">/WEB-INF/web/admin/user/memberInfo.jsp</result>
+		</action>
+	</package>
 </struts>

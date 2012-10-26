@@ -43,11 +43,9 @@ function supplyAttach(apploanid){
   <div class="hr_10"> &nbsp; </div>
 <div class="container_950 box_4">
 	<div class="P_title" style="border-bottom:5px solid #003961;">贷后管理</div>
-</div>
-<div class="hr_10"> &nbsp;</div>
 <!--主体部分开始-->
 			<form action="" method="post" id="afterLoan">
-				 <table class="container_950 box_4">
+				 <table class="container_950">
 	     			 <tr class="top_color">
 						<td style="padding-left:10px;">合同编号</td>
 						<td>融资渠道/项目</td>
@@ -83,8 +81,8 @@ function supplyAttach(apploanid){
 					</s:if>
 				</table>
 			</form>
-	       <div class="hr_10">&nbsp;</div>
-	       <div class="container_950 box_4">
+
+	       <div>
 				<s:else>
 				<div class="l_out">
 						<h1 class="l_title">暂无贷后记录</h1>
@@ -103,7 +101,8 @@ function supplyAttach(apploanid){
 						</p>
 						</div>
 				</s:else>
-	       </div>			
+	       </div>	
+</div>		
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->

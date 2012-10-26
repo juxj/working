@@ -33,10 +33,8 @@
   <div class="hr_10"> &nbsp; </div>
 <div class="container_950 box_4">
 	<div class="P_title" style="border-bottom:5px solid #003961;">融资申请管理</div>
-</div>
-  <form id="financeManage" action="/user/loan/financeApply!applyManag.act" method="post">
-  <div class="hr_10"> &nbsp;</div>
-       <table class="container_950 center box_4">
+  <form id="financeManage" action="/user/loan/userApplyManag.act" method="post">
+       <table class="container_950 center">
 	      <tr class="top_color">
             <td style="padding-left:25px;">申请编号</td>
             <td>申请时间</td>
@@ -68,15 +66,14 @@
 					</s:if>
 	   			</td>
 	   			<td class="view_detail01">
-	   				<a href="/user/loan/financeApply!viewFinanceApply.act?apply.id=${item.id }">查看</a>
+	   				<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${item.id }">查看</a>
 	   			</td>
 			</tr>
 			</s:iterator>
 			</s:if>
         </table>
     </form>
-       <div class="hr_10">&nbsp;</div>
-       <div class="container_950 box_4">
+       <div>
 			<s:else>
 			<div class="l_out">
 					<h1 class="l_title">您还未提交过融资申请</h1>
@@ -93,6 +90,7 @@
 					</div>
 			</s:else>
        </div>
+</div>
   <!--结束--> 
 <div class="clear"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>

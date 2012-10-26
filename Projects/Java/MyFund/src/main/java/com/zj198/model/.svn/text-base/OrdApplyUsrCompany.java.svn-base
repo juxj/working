@@ -141,6 +141,41 @@ public class OrdApplyUsrCompany implements java.io.Serializable {
 		this.linktelephone = linktelephone;
 		this.industryparentid = industryparentid;
 	}
+	/**融资申请字段** @param this* @param usrCompany*/
+	public void setLoanFields(OrdApplyUsrCompany ordApplyUsrCompany) {
+		this.faxcode = ordApplyUsrCompany.faxcode;
+		this.bankpermitcode = ordApplyUsrCompany.bankpermitcode;
+		this.loancard = ordApplyUsrCompany.loancard;
+		this.legalperson = ordApplyUsrCompany.legalperson;
+		this.regprovinceid = ordApplyUsrCompany.regprovinceid;
+		this.regcityid = ordApplyUsrCompany.regcityid;
+		this.regdistrictid = ordApplyUsrCompany.regdistrictid;
+		this.regaddress = ordApplyUsrCompany.regaddress;
+		this.regpostcode = ordApplyUsrCompany.regpostcode;
+		this.registerdate = ordApplyUsrCompany.registerdate;
+		this.registeredcapital = ordApplyUsrCompany.registeredcapital;
+		this.enterprisetypeid = ordApplyUsrCompany.enterprisetypeid;
+		this.employeesid = ordApplyUsrCompany.employeesid;
+		this.bizscope = ordApplyUsrCompany.bizscope;
+		this.department = ordApplyUsrCompany.department;
+		this.position = ordApplyUsrCompany.position;
+		this.lpeducation = ordApplyUsrCompany.lpeducation;
+		this.lpmarry = ordApplyUsrCompany.lpmarry;
+		this.lpindustryyears = ordApplyUsrCompany.lpindustryyears;
+		this.lpcid = ordApplyUsrCompany.lpcid;
+		this.lpmobile = ordApplyUsrCompany.lpmobile;
+		this.lphometel = ordApplyUsrCompany.lphometel;
+		this.lpliveprovinceid = ordApplyUsrCompany.lpliveprovinceid;
+		this.lplivecityid = ordApplyUsrCompany.lplivecityid;
+		this.lplivedistrictid = ordApplyUsrCompany.lplivedistrictid;
+		this.lpliveaddress = ordApplyUsrCompany.lpliveaddress;
+		this.lplivepostcode = ordApplyUsrCompany.lplivepostcode;
+		this.lphkprovinceid = ordApplyUsrCompany.lphkprovinceid;
+		this.lphkcityid = ordApplyUsrCompany.lphkcityid;
+		this.lphkdistrictid = ordApplyUsrCompany.lphkdistrictid;
+		this.lphkaddress = ordApplyUsrCompany.lphkaddress;
+		this.lphkpostcode = ordApplyUsrCompany.lphkpostcode;
+	}
 
 	// Property accessors
 

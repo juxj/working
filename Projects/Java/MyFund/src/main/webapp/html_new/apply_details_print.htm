@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>用户中心-融资管理-融资申请详情页</title>
+<link rel="stylesheet" href="/css/public.css" type="text/css" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" />
+<link rel="stylesheet" href="/css/module.css" type="text/css" />
+<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" />
+<script type="text/javascript" src="/script/jquery-1.7.2.min.js" ></script>
+<script type="text/javascript" src="/script/jquery.ui.min.js"></script>
+<script type="text/javascript" src="/script/jquery.ui.dialog.min.js">
+<script type="text/javascript" src="/script/jquery.ui.datepicker.min.js"></script>
+</head>
+<body>
+	<!--头部-->
+<!-- start -->
+	<div class="container_950">
+      <div align="center" style="line-height: 25px;"><h3>申请单详情</h3></div>
+      <div class="f_box">
+      	<div class="f_sqxx">
+      		<h5>申请信息</h5>
+			<div class="y_connect">
+				<span class="y_title_02">融资用途：<font color="d5652c"> <common:print valueId="apply.loanPurpose" /> &nbsp;${apply.loanPurposeOther }</font></span>
+				<span class="y_title_02">金额：<font color="d5652c"><s:number name="apply.loanAmount" />万元</font></span>
+				<span class="y_title_02">期限：<font color="d5652c">${apply.loanMonth}个月</font></span>
+				<span>是否有抵押物：<font color="d5652c"><common:print valueId="apply.haveMortgage" valueSetMap="ZJ102" /></font></span>
+			</div>
+			<div class="hr_10"> &nbsp;</div>
+      	</div>
+      	<div class="f_sqxx">
+      		<h5 style="margin-top:15px;">联系人信息</h5>
+			<div class="y_connect">
+				<span class="y_title_02">联系人姓名：${ordCompany.linkname}</span>
+				<span class="y_title_02">邮箱：${ordCompany.linkemail }</span>
+				<span class="y_title_02">电话：${ordCompany.linktelephone }</span>
+				<span class="y_title_02">所属部门：${ordCompany.department }</span>
+				<span>职务：${ordCompany.position }</span>
+			</div>
+			<div class="hr_20"> &nbsp;</div>
+      	</div> 
+      	<div class="m_20 f_sqxx" >
+      		<h5 style="margin-top:15px;">申请方信息</h5>
+			<div>
+				<div class="fl f_qyxx">
+				    <div class="menu_out">
+				      <div class="menu_nobg">企业信息</div>
+				      <span>企业名称：${ordCompany.companyname }</span>
+				      <span>营业执照号码：${ordCompany.licensecode }</span>
+				      <span>组织机构代码证号码：${ordCompany.organizationcode }</span>
+				      <span>税务登记证号码：${ordCompany.faxcode }</span>
+				      <span>开户许可证号码：${ordCompany.bankpermitcode }</span>
+				      <span>贷款卡号：${ordCompany.loancard }</span>
+				      <span>注册地址：${ordCompany.regaddress }</span>
+				      <span>邮编：${ordCompany.regpostcode }</span>
+				      <span>所属园区：无</span>
+				      <span>企业类型：${ordCompany.enterprisetypeid }</span>
+				      <span>员工人数：${ordCompany.employeesid }</span>
+				      <span>所属行业：</span>
+				      <span>经营范围：${ordCompany.bizscope }</span>
+				      <span>企业经营地址：${ordCompany.bizaddress }</span>
+				      <span>邮编：${ordCompany.bizpostcode }</span>			      
+				    </div>					
+				</div>
+				<div class="fr f_qyxx">
+				    <div class="menu_out">
+				      <div class="menu_nobg">法人信息</div>
+				      <span>法定代表人：${ordCompany.legalperson }</span>
+				      <span>学历：<common:print valueId="ordCompany.lpeducation" /></span>
+				      <span>婚姻状况：<common:print valueId="ordCompany.lpmarry" /></span>
+				      <span>从事所属行业年限：<common:print valueId="ordCompany.lpindustryyears" /></span>
+				      <span>身份证号码：${ordCompany.lpcid }</span>
+				      <span>手机：${ordCompany.lpmobile}</span>
+				      <span>家庭电话：${ordCompany.lphometel }</span>
+				      <span>常住地址：${ordCompany.lpliveaddress }</span>
+				      <span>邮编：${ordCompany.lplivepostcode }</span>
+				      <span>户籍所在地：${profileMap['address'] }</span>
+				      <span>邮编：${ordCompany.lplivepostcode }</span>
+				    </div>
+				</div>				
+			</div>
+			<div class="clear">&nbsp;</div>
+      	</div>
+		<div  class="f_sqxx">
+		    <div >
+		      <h5>企业经营信息</h5>
+		      <span>企业<font class="year">年销售额约为：<s:number name="apply.lastyearSaleVolume" />&nbsp;&nbsp;万元</span><br/>
+		      <span>企业<font class="year">年经营成本约为：<s:number name="apply.lastyearCost" />&nbsp;&nbsp;万元</span><br/>
+		      <span>企业<font class="year"></font>年净利润率约为：<font>${apply.lastyearProfit }&nbsp;&nbsp;%</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业应收账款约为：<font><s:number name="apply.receivable" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总库存约为：<font><s:number name="apply.stockSum" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总资产约为：<font><s:number name="apply.assetSum" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总负债约为：<font><s:number name="apply.debtSum" />&nbsp;&nbsp;万元</font></span><br/>			      
+		    </div>	
+		    <br/>
+		</div>	
+		<div class="f_sqxx" >
+		      <h5 style="margin-top:15px;">其它信息</h5>
+		      <span >asdf</span>
+		</div>
+		<div class="fl">
+		    <div class="menu_out">
+			<h5 style="margin-top:15px;margin-bottom:15px;">申请融资产品</h5>
+				<table border="0" cellspacing="0" cellpadding="0" class="sq_table">
+				  <tr>
+				    <td colspan="8">
+				    	<s:if test="logo == null">
+							<img src="/images/banklogo/b/zj198.jpg" class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+						</s:if> 
+						<s:else>
+							<img src="/images/banklogo/b/${product.logo }"  class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+						</s:else>
+					</td>
+				  </tr>
+				  <tr class="sq_connect">
+				    <td>类型</td>
+				    <td>金额</td>
+				    <td>年利率</td>
+				    <td>期限</td>
+				    <td>还款方式</td>
+				    <td>担保方式</td>
+				    <td>放款时间</td>
+				    <td>面向区域</td>
+				  </tr>
+				  <tr class="sq_connect">
+				    <td><common:print valueId="product.financeType" /></td>
+				    <td><s:number name="product.financeLittleamount" />-<s:number name="product.financeBigamount" />万元</td>
+				    <td><common:print valueId="apply.loanMonth"
+							type="rate" />% <s:if
+							test="product.serviceCost != null && product.serviceCost > 0">
+							<br />另收${product.serviceCost }%服务费
+		        	</s:if></td>
+				    <td>${product.financeLittledt }-${product.financeMostdt }月</td>
+				    <td><common:print valueId="product.repaymentType" /></td>
+				    <td><common:print valueId="product.mortgageType" /></td>
+				    <td>${product.checkTime }个工作日</td>
+				    <td><s:if
+							test="productAreaList.size()==0">
+                	全国
+                	</s:if> <s:else>
+							<s:iterator value="productAreaList" id="item">
+	                			${item.name }&nbsp;&nbsp;
+	                		</s:iterator>
+						</s:else></td>
+				  </tr>
+				</table>		      			      
+		    </div>					
+		</div> 
+		<div class="clear"> &nbsp;</div>		     	     	
+      </div>
+    </div>  
+<!-- end -->
+</body>
+</html>

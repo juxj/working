@@ -12,6 +12,7 @@ import com.zj198.model.UsrUser;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.OrdFinanceAppLoanService;
 import com.zj198.util.Constants;
+import com.zj198.util.PdfUtil;
 import com.zj198.util.UploadUtil;
 
 public class FileDownloadAction extends BaseAction{
@@ -97,11 +98,23 @@ public class FileDownloadAction extends BaseAction{
 	public String downAgreeTemplate(){
 		return "template";
 	}
+	public String downPdf(){
+		return "pdf";
+	}
 	public InputStream getAgreeTemplateStream(){
 		String downloadFileName = Constants.FILE_NAME_ZJ198_FINANCE_AGREE;
 		try {			
 //			fileName = new String(Constants.SHOW_NAME_ZJ198_FINANCE_AGREE.getBytes(), "ISO8859-1");
 			fileName = java.net.URLEncoder.encode(Constants.SHOW_NAME_ZJ198_FINANCE_AGREE, "UTF-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return UploadUtil.getFileStream(downloadFileName);
+	}
+	public InputStream getAgreePdfStream(){
+		String downloadFileName = PdfUtil.generatePdf();
+		try {			
+			fileName = java.net.URLEncoder.encode("订单详情.pdf", "UTF-8");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

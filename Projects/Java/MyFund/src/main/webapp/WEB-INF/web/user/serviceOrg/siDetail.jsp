@@ -171,14 +171,10 @@ function quickRegist(){
   	<div class="M_out_L">
 		<input type="hidden" id="prdServiceItemId" value="${prdServiceItem.id}"/>
 		<!--表格部分开始-->
-        <div class="box_4">
-				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-			      <tr>
-			        <td class="Search_t_title red">${prdServiceItem.title}</td>
-			      </tr>
-			    </table>
-		</div>
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+		  <tr >
+		    <td colspan="4" class="Search_t_title red">${prdServiceItem.title}</td>
+		  </tr>        
           <tr>
             <td class="Search_t_connect">服务类型</td>
             <td class="Search_t_connect01">${prdServiceItem.typeName}</td>

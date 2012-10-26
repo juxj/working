@@ -3,7 +3,7 @@
 <%@taglib prefix="common" uri="/Common"%>
 <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
   <caption>
-  <span class="fr view_all"><a href="/user/loan/financeApply!applyManag.act?mparamid=14">查看全部»</a></span>
+  <span class="fr view_all"><a href="/user/loan/userApplyManag.act?mparamid=14">查看全部»</a></span>
   <h6>融资申请</h6>
   <!-- 企业 -->
   <s:if test="#session._user.userTypeGroup == 1">
@@ -39,7 +39,7 @@
 		<td>${loanMonth}月</td>
    		<td><common:print valueId="applyStatus"/></td>
    		<td class="view_detail">
-   		<a href="/user/loan/financeApply!viewFinanceApply.act?apply.id=${id }">查看</a>
+   		<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>
   </s:iterator>

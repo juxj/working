@@ -58,15 +58,12 @@ function addMessage(appId){
  <div class="hr_10"> &nbsp; </div>
 <div class="container_950 box_4">
 	<div class="P_title" style="border-bottom:5px solid #003961;">贷后管理</div>
-</div>
 <!--主体部分开始-->
-			<div class="hr_10"> &nbsp;</div>
-			<div>
 			<form action="/user/loan/loanAfter!loanAfterList.act" method="post" id="afterLoan">
 				<s:hidden name="currentPage" id="currentPage"></s:hidden>
 				<s:hidden name="pageCount" id="pageCount"></s:hidden>
-				 <table class="container_950 box_4">
-	      			<tr class="top_color">
+				 <table class="container_950 ">
+	      			<tr class="top_color" align="center">
 						<td width="8%" style="padding-left:10px;">合同编号</td>
 						<td width="10%">融资产品名称</td>
 						<td width="12%">类型</td>
@@ -75,13 +72,13 @@ function addMessage(appId){
 						<td width="9%">金额</td>
 						<td width="10%">融资到期时间</td>
 						<td width="10%">融资材料</td>
-						<td width="11%">状态</td>
-						<td width="10%">操作</td>
+						<td >状态</td>
+						<td width="12%" >操作</td>
 
 					</tr>
 					<s:if test="pager.data.size()>0">
 					<s:iterator id="appLoan" value="pager.data">
-						<tr  class="gold_connect">
+						<tr class="gold_connect">
 							<td style="padding-left:10px;">${appLoan.contractNum}</td>
 							<td>${appLoan.productName}</td>
 							<td><common:print valueId="#appLoan.financeType" /> </td>
@@ -91,12 +88,12 @@ function addMessage(appId){
 							<td><s:date name="#appLoan.loanEndDate" /></td>
 							<td class="option_href"><a	href="/user/loan/appLoanAttach!attachManag.act?viewAttachType=0&appLoanId=${appLoan.id}">材料查看</a></td>
 							<td><common:print valueId="loanStatus"/></td>
-							<td class="view_detail" >
-								<a href="javascript:supplyAttach('${appLoan.id }');">补充资料</a><br/>
-								<a href="/user/loan/loanAfter!loanAfterDetail.act?id=${appLoan.id}">放款详情</a><br/>
-								<a href="javascript:addMessage('${appLoan.applyId }');">检查通知</a>
+							<td align="right" class="view_detail" style="padding-right:20px;margin-top:5px;" >
+								<a href="javascript:supplyAttach('${appLoan.id }');" style="margin-bottom:5px;" >补充资料</a><br/>
+								<a href="/user/loan/loanAfter!loanAfterDetail.act?id=${appLoan.id}" style="margin-bottom:5px;">放款详情</a><br/>
+								<a href="javascript:addMessage('${appLoan.applyId }');" style="margin-bottom:5px;">检查通知</a><br/>
 								<s:if test="loanStatus == 222">
-									<br/><a	href="javascript:updateStatus('${appLoan.id }');">补充完成</a>
+									<a	href="javascript:updateStatus('${appLoan.id }');">补充完成</a>
 								</s:if>	
 							</td>
 						</tr>

@@ -1,7 +1,7 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/user/message
 svn://192.168.1.8
 
@@ -32,14 +32,14 @@ file
 
 
 
-2012-10-16T09:07:29.000000Z
+2012-10-26T07:35:49.420410Z
 c6ec9c56d0f6e94bbd0b4fd1bf759be7
 2012-10-15T05:09:59.693152Z
 3858
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 

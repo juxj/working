@@ -34,6 +34,7 @@ public class NtyMessageAction extends BaseAction {
 		return null;
 	}
 
+	//哪里还在调用此方法，需要逐步改到需要的地方直接调用service，此方法将被删除
 	public String sendMessage() {
 		ActionContext context = ActionContext.getContext();
 		UsrUser user = (UsrUser) context.getSession().get("_user");

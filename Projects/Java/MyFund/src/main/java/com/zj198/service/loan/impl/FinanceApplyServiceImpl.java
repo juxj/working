@@ -11,9 +11,9 @@ import java.util.Set;
 import com.zj198.action.fund.model.FundIntention;
 import com.zj198.action.loan.model.FinanceApplySpModel;
 import com.zj198.dao.DicCommonDAO;
+import com.zj198.dao.OrdCheckLogDAO;
 import com.zj198.dao.OrdFaAttachListDAO;
 import com.zj198.dao.OrdFinanceApplyAttachDAO;
-import com.zj198.dao.OrdFinanceApplyCheckDAO;
 import com.zj198.dao.OrdFinanceApplyDAO;
 import com.zj198.dao.PrdExtendsPropertyDAO;
 import com.zj198.dao.PrdExtendsValueDAO;
@@ -22,10 +22,10 @@ import com.zj198.dao.PrdPropertyDicDAO;
 import com.zj198.dao.UsrCompanyDAO;
 import com.zj198.dao.UsrUserDAO;
 import com.zj198.model.NtyMessageQueue;
+import com.zj198.model.OrdCheckLog;
 import com.zj198.model.OrdFaAttachList;
 import com.zj198.model.OrdFinanceApply;
 import com.zj198.model.OrdFinanceApplyAttach;
-import com.zj198.model.OrdFinanceApplyCheck;
 import com.zj198.model.PrdExtendsProperty;
 import com.zj198.model.PrdExtendsValue;
 import com.zj198.model.PrdFinance;
@@ -37,11 +37,14 @@ import com.zj198.model.vo.FinanceApplyAttachModel;
 import com.zj198.service.common.NotifyQueueService;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.model.FindFinanceApplySpModel;
+import com.zj198.service.message.NtyMessageService;
+import com.zj198.service.message.model.SendEmailMsgSpModel;
 import com.zj198.service.user.ProfileService;
 import com.zj198.util.Constants;
 import com.zj198.util.FreemarkerUtil;
 import com.zj198.util.OrderNOCreator;
 import com.zj198.util.Pager;
+import com.zj198.util.PropertiesUtil;
 import com.zj198.util.UploadUtil;
 
 /**
@@ -52,7 +55,7 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	private OrdFinanceApplyDAO ordFinanceApplyDAO;
 	private OrdFinanceApplyAttachDAO ordFinanceApplyAttachDAO;
 	private OrdFaAttachListDAO ordFaAttachListDAO;
-	private OrdFinanceApplyCheckDAO ordFinanceApplyCheckDAO;
+	private OrdCheckLogDAO ordCheckLogDAO;
 	private UsrCompanyDAO usrCompanyDAO;
 	private DicCommonDAO dicCommonDAO;
 	private PrdExtendsPropertyDAO prdExtendsPropertyDAO;
@@ -60,6 +63,7 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	private PrdExtendsValueDAO prdExtendsValueDAO;
 	private UsrUserDAO usrUserDAO;
 	private ProfileService profileService;
+	private NtyMessageService ntyMessageService;
 
 	/**
 	 * @author 岳龙 Description: CreateAuthor:岳龙 CreateDate:2012-7-05 15:09:58
@@ -136,13 +140,13 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		PrdFinance product = prdFinanceDAO.get(productId);
 		apply.setFinanceId(productId);
 		apply.setApplyType(product.getFinanceType());
-		apply.setApplyStatus(Integer.valueOf(177));//待审核
+		apply.setApplyStatus(Integer.valueOf(301));// 待审核
 		apply.setCreatedt(new Date());
 		apply.setUserId(user.getId());
 		apply.setIsdeleted(Integer.valueOf(0));
 		if (user.getUserTypeGroup().intValue() == 1) {
 			UsrCompany company = usrCompanyDAO.get(user.getId());
-			if(company != null){				
+			if (company != null) {
 				apply.setApplyUserName(company.getCompanyname());
 			}
 		} else {
@@ -153,13 +157,14 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		String applyNum = OrderNOCreator.rapidFinanceApplyOrderNO(apply.getId().intValue());// 申请编号
 		apply.setApplyNum(applyNum);
 		ordFinanceApplyDAO.update(apply);
-		
-		OrdFinanceApplyCheck check = new OrdFinanceApplyCheck();
-		check.setFinanceApplyId(apply.getId());
-		check.setCheckStatus(177);//待审核
+
+		OrdCheckLog check = new OrdCheckLog();
+		check.setOrdId(apply.getId());
+		check.setCheckStatus(301);// 待审核
 		check.setCreatedt(new Date());
 		check.setCheckView("提交申请");
-		ordFinanceApplyCheckDAO.save(check);
+		check.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(check);
 
 		Set<PrdFinanceDatafile> dfs = product.getDataFiles();
 		for (PrdFinanceDatafile df : dfs) {
@@ -173,37 +178,51 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 			ofaa.setAttachType(Integer.valueOf(0));
 			ordFinanceApplyAttachDAO.save(ofaa);
 		}
-		// 发送Email
+		// 发送Email给客服人员和客户
 		Map<String, Object> m = new HashMap<String, Object>();
+		Map<String, Object> n = new HashMap<String, Object>();
 		String body;
+		String since = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date());
 		try {
-			m.put("currentTime", new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date()));
+			m.put("currentTime", since);
 			m.put("applyNum", applyNum);
 			body = FreemarkerUtil.getContent("applyFinanceTemplate.htm", m, false, null, null);
-			NtyMessageQueue j = new NtyMessageQueue();
+			SendEmailMsgSpModel j = new SendEmailMsgSpModel();
 			j.setTitle("融资产品申请 - 中国资金网");
+			j.setSendType(1);// 内部邮件
 			j.setContent(body);
-			j.setReceiver(Constants.LOAN_EMAIL);
-			j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
-			notifyQueueService.addNewMessage(j);
-
+			j.setReceiver(PropertiesUtil.getByKey("loan.servicer.shixl"));
+			ntyMessageService.sendEmailMsg(j);
+			n.put("userName", user.getRealname());
+			n.put("applyTime", since);
+			n.put("productName", product.getFinanceName());
+			n.put("checkInfo", PropertiesUtil.getByKey("apply.msg.check.applyinfo"));
+			n.put("applyNum", applyNum);
+			n.put("pointContent", PropertiesUtil.getByKey("apply.msg.check.customer"));
+			body = FreemarkerUtil.getContent("financeApplyCheck.htm", n, false, null, null);
+			SendEmailMsgSpModel sp = new SendEmailMsgSpModel();
+			sp.setTitle("融资产品申请 - 中国资金网");
+			sp.setSendType(0);// 外部邮件
+			sp.setContent(body);
+			sp.setReceiver(PropertiesUtil.getByKey("loan.servicer.shixl"));
+			ntyMessageService.sendEmailMsg(sp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		/**
 		 * 保存扩展属性
 		 */
 		this.saveExtendsParamater(apply.getId(), productId, spModel.getParamap());
 		return applyNum;
 	}
-	
-	public void saveExtendsParamater(Integer applyId, Integer productId, Map param){
+
+	public void saveExtendsParamater(Integer applyId, Integer productId, Map<?,?> param) {
 		List<PrdExtendsProperty> extendsPropertyList = prdExtendsPropertyDAO.getFinancePropertys(productId);
-		
-		if(extendsPropertyList != null && extendsPropertyList.size() > 0){
+
+		if (extendsPropertyList != null && extendsPropertyList.size() > 0) {
 			String valueName = "epValue";
-			for(PrdExtendsProperty p : extendsPropertyList){
+			for (PrdExtendsProperty p : extendsPropertyList) {
 				String[] values = (String[]) param.get(valueName + p.getId());
 				PrdExtendsValue value = new PrdExtendsValue();
 				value.setExtendsType(p.getExtendsType());
@@ -212,25 +231,25 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 				value.setFieldCode(p.getFieldCode());
 				value.setFieldName(p.getFieldName());
 				value.setCreateDt(new Date());
-				if(p.getFieldType() == 1 || p.getFieldType() == 2){
-					if(values.length > 0){
+				if (p.getFieldType() == 1 || p.getFieldType() == 2) {
+					if (values.length > 0) {
 						value.setEntityValue(values[0]);
 					}
-				}else{
-					if(values.length > 0){
+				} else {
+					if (values.length > 0) {
 						String vstr = "";
-						for(String v : values){
+						for (String v : values) {
 							vstr += v + ",";
 						}
-						vstr = vstr.substring(0,vstr.length() -1);
-						if(vstr.length() > 0){
+						vstr = vstr.substring(0, vstr.length() - 1);
+						if (vstr.length() > 0) {
 							value.setDicValue(vstr);
-							List<PrdPropertyDic> diclist= prdPropertyDicDAO.findPropertyDic(p.getId(), vstr);
+							List<PrdPropertyDic> diclist = prdPropertyDicDAO.findPropertyDic(p.getId(), vstr);
 							String vcn = "";
-							for(PrdPropertyDic dic : diclist){
+							for (PrdPropertyDic dic : diclist) {
 								vcn += dic.getDicName() + ",";
 							}
-							vcn = vcn.substring(0,vcn.length()-1);
+							vcn = vcn.substring(0, vcn.length() - 1);
 							value.setEntityValue(vcn);
 						}
 					}
@@ -291,7 +310,7 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	/**
 	 * 融资申请审核
 	 */
-	public void saveApplyStatus(OrdFinanceApply apply, OrdFinanceApplyCheck check) {
+	public void saveApplyStatus(OrdFinanceApply apply, OrdCheckLog check) {
 		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
 		ofa.setApplyStatus(apply.getApplyStatus());
 		if (apply.getAgreeNum() != null && apply.getAgreeNum().trim().length() > 0) {
@@ -300,76 +319,167 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		ordFinanceApplyDAO.saveOrUpdate(ofa);
 
 		if (check == null) {
-			check = new OrdFinanceApplyCheck();
+			check = new OrdCheckLog();
 		}
-		check.setFinanceApplyId(apply.getId());
+		check.setOrdId(apply.getId());
 		check.setCheckStatus(apply.getApplyStatus());
 		check.setCreatedt(new Date());
-		if(check.getCheckView() == null || check.getCheckView().trim().equals("")){
+		if (check.getCheckView() == null || check.getCheckView().trim().equals("")) {
 			check.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
 		}
-		ordFinanceApplyCheckDAO.save(check);
+		check.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(check);
 	}
-	/**
-	 * 发送邮件
-	 * @param apply  申请单
-	 * @param check  审核单
-	 */
-	private void sendCheckEmail(OrdFinanceApply apply, OrdFinanceApplyCheck check){
-		try {
-			Map<String,Object> pm = new HashMap<String,Object>();
-			UsrUser user = usrUserDAO.get(apply.getUserId());
-			int groupid = profileService.getGroupidByUserType(user.getType());
-			if(groupid == Constants.USERTYPE_GROUP_COMPANY){
-				UsrCompany usrCompany= (UsrCompany) profileService.getProfiles(user.getId());
-				pm.put("userName", usrCompany.getCompanyname());
-			}else if(groupid == Constants.USERTYPE_GROUP_PERSONAL){
-				pm.put("userName", user.getRealname());
-			}
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			String applyTime = sdf.format(apply.getCreatedt());
-			pm.put("applyTime", applyTime);//申请时间
-			//apply.getApplyStatus();//申请状态
-			String checkInfo="";
-			if(apply.getApplyStatus() == 180){
-				checkInfo="通过资金网预审";
-			}else if(apply.getApplyStatus() == 188){
-				checkInfo="未通过资金网预审";
-			}else if(apply.getApplyStatus() == 182){
-				checkInfo="资金方已接受申请";
-			}else if(apply.getApplyStatus() == 187){
-				checkInfo="未能被资金方受理";
-			}else if(apply.getApplyStatus() == 183){
-				checkInfo="需补充资料";
-			}else if(apply.getApplyStatus() == 185){
-				checkInfo="通过资金方审核";
-			}else if(apply.getApplyStatus() == 186){
-				checkInfo="资金方已放款";
-			}
-			pm.put("applyNum", apply.getApplyNum());
-			pm.put("checkInfo", checkInfo);
-			String body = FreemarkerUtil.getContent("financeApplyCheck.htm", pm, false, null, null);
-			NtyMessageQueue j = new NtyMessageQueue();
-			j.setTitle("融资申请 "+checkInfo+"- 中国资金网");
-			j.setContent(body);
-			j.setReceiver(user.getEmail());
-			j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
-			notifyQueueService.addNewMessage(j);
-		} catch (Exception e) {
-			e.printStackTrace();
+	
+	public void updateChuShen(OrdFinanceApply apply, OrdCheckLog log, String left, String right, String realName) {
+		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
+		ofa.setBaseCheckStatus(left + right);
+		ordFinanceApplyDAO.saveOrUpdate(ofa);
+		if (log == null) {
+			log = new OrdCheckLog();
 		}
+		log.setOrdId(apply.getId());
+		log.setCreateUserName(realName);
+		log.setCheckLogType("00");
+		log.setCreateUserType(0);
+		log.setCheckStatus(apply.getApplyStatus());
+		log.setCreatedt(new Date());
+		if (log.getCheckView() == null || log.getCheckView().trim().equals("")) {
+			log.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
+		}
+		log.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(log);
 	}
-	/**
-	 * 
-	 */
-	private void sendCheckMsg(){
-		NtyMessageQueue message = new NtyMessageQueue();
-		message.setType(Constants.NTYMESSAGEQUEUE_TYPE_SMS);
-		message.setTitle("");
-		message.setContent("");
-		message.setReceiver("");
-		notifyQueueService.addNewMessage(message);
+	
+
+	public void updateFuShen(OrdFinanceApply apply, OrdCheckLog log, String realName) {
+		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
+		Integer j = apply.getApplyStatus();
+		if(j == 302){
+			ofa.setBaseCheckStatus("11");
+		}
+		ofa.setApplyStatus(apply.getApplyStatus());
+		ordFinanceApplyDAO.saveOrUpdate(ofa);
+		if (log == null) {
+			log = new OrdCheckLog();
+		}
+		log.setCreateUserName(realName);
+		log.setOrdId(apply.getId());
+		log.setCheckLogType("10");
+		log.setCreateUserType(0);//0：admin   1：金融机构
+		log.setCheckStatus(apply.getApplyStatus());
+		log.setCreatedt(new Date());
+		if (log.getCheckView() == null || log.getCheckView().trim().equals("")) {
+			log.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
+		}
+		log.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(log);
 	}
+	
+	public void updateTuiHui(OrdFinanceApply apply, OrdCheckLog log, String left, String right, String realName) {
+		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
+		ofa.setBaseCheckStatus(left+right);
+		ofa.setApplyStatus(apply.getApplyStatus());
+		ordFinanceApplyDAO.saveOrUpdate(ofa);
+		if (log == null) {
+			log = new OrdCheckLog();
+		}
+		log.setCreateUserName(realName);
+		log.setOrdId(apply.getId());
+		log.setCheckLogType("10");
+		log.setCreateUserType(0);//0：admin   1：金融机构
+		log.setCheckStatus(apply.getApplyStatus());
+		log.setCreatedt(new Date());
+		if (log.getCheckView() == null || log.getCheckView().trim().equals("")) {
+			log.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
+		}
+		log.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(log);
+	}
+	
+	public void updateFinalCheck(OrdFinanceApply apply, OrdCheckLog log, String realName){
+		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
+		ofa.setApplyStatus(apply.getApplyStatus());
+		ordFinanceApplyDAO.saveOrUpdate(ofa);
+		if (log == null) {
+			log = new OrdCheckLog();
+		}
+		log.setCreateUserName(realName);
+		log.setOrdId(apply.getId());
+		log.setCheckLogType("11");
+		log.setCreateUserType(0);//0：admin   1：金融机构
+		log.setCheckStatus(apply.getApplyStatus());
+		log.setCreatedt(new Date());
+		if (log.getCheckView() == null || log.getCheckView().trim().equals("")) {
+			log.setCheckView(dicCommonDAO.get(apply.getApplyStatus()).getName());
+		}
+		log.setOrdType(Constants.ORD_CHECK_TYPE_APPLY);
+		ordCheckLogDAO.save(log);
+	}
+	
+	public void updateAppInfo(OrdFinanceApply apply, String left, String right) {
+		OrdFinanceApply ofa = ordFinanceApplyDAO.get(apply.getId());
+		if("2".equals(left)){
+			left = "0";
+		}
+		if("2".equals(right)){
+			right = "0";
+		}
+		ofa.setBaseCheckStatus(left+right);
+		ofa.setApplyStatus(301);
+		ordFinanceApplyDAO.saveOrUpdate(ofa);
+	}
+//
+//	/**
+//	 * 发送邮件
+//	 * 
+//	 * @param apply 申请单
+//	 * @param check 审核单
+//	 */
+//	private void sendCheckEmail(OrdFinanceApply apply, OrdCheckLog check) {
+//		try {
+//			Map<String, Object> pm = new HashMap<String, Object>();
+//			UsrUser user = usrUserDAO.get(apply.getUserId());
+//			int groupid = profileService.getGroupidByUserType(user.getType());
+//			if (groupid == Constants.USERTYPE_GROUP_COMPANY) {
+//				UsrCompany usrCompany = (UsrCompany) profileService.getProfiles(user.getId());
+//				pm.put("userName", usrCompany.getCompanyname());
+//			} else if (groupid == Constants.USERTYPE_GROUP_PERSONAL) {
+//				pm.put("userName", user.getRealname());
+//			}
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+//			String applyTime = sdf.format(apply.getCreatedt());
+//			pm.put("applyTime", applyTime);// 申请时间
+//			// apply.getApplyStatus();//申请状态
+//			String checkInfo = "";
+//			if (apply.getApplyStatus() == 180) {
+//				checkInfo = "通过资金网预审";
+//			} else if (apply.getApplyStatus() == 188) {
+//				checkInfo = "未通过资金网预审";
+//			} else if (apply.getApplyStatus() == 182) {
+//				checkInfo = "资金方已接受申请";
+//			} else if (apply.getApplyStatus() == 187) {
+//				checkInfo = "未能被资金方受理";
+//			} else if (apply.getApplyStatus() == 183) {
+//				checkInfo = "需补充资料";
+//			} else if (apply.getApplyStatus() == 185) {
+//				checkInfo = "通过资金方审核";
+//			} else if (apply.getApplyStatus() == 186) {
+//				checkInfo = "资金方已放款";
+//			}
+//			pm.put("applyNum", apply.getApplyNum());
+//			pm.put("checkInfo", checkInfo);
+//			String body = FreemarkerUtil.getContent("financeApplyCheck.htm", pm, false, null, null);
+//			NtyMessageQueue j = new NtyMessageQueue();
+//			j.setTitle("融资申请 " + checkInfo + "- 中国资金网");
+//			j.setContent(body);
+//			j.setReceiver(user.getEmail());
+//			j.setType(Constants.NTYMESSAGEQUEUE_TYPE_EMAIL);
+//			notifyQueueService.addNewMessage(j);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	public void saveNewAttach(OrdFinanceApplyAttach attach) {
 		attach.setAttachType(Integer.valueOf(1));
@@ -379,7 +489,8 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		ordFinanceApplyAttachDAO.save(attach);
 
 		OrdFinanceApply apply = ordFinanceApplyDAO.get(attach.getApplyId());
-		apply.setApplyStatus(Integer.valueOf(183));
+		//update finance status
+		apply.setApplyStatus(Constants.ORD_FINANCE_STATUS_ORG_WAIT_UPLOAD);
 		ordFinanceApplyDAO.saveOrUpdate(apply);
 	}
 
@@ -393,34 +504,36 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		}
 		return applyList;
 	}
-	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId){
-		return ordFinanceApplyCheckDAO.findApplyCheck(applyId);
+
+	public List<OrdCheckLog> findApplyCheck(Integer applyId) {
+		return ordCheckLogDAO.findApplyCheck(applyId);
 	}
-	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId){
+
+	public List<PrdExtendsValue> getFinanceApplyExtendsValue(Integer applyId) {
 		return prdExtendsValueDAO.getFinanceApplyExtendsValue(applyId);
 	}
-	
-	public void saveFundIntention(FundIntention fi){
+
+	public void saveFundIntention(FundIntention fi) {
 		try {
 			Map<String, Object> m = new HashMap<String, Object>();
 			m.put("userName", fi.getUserName());
-			if(fi.getGender() != null){
-				if(fi.getGender() == 0){					
+			if (fi.getGender() != null) {
+				if (fi.getGender() == 0) {
 					m.put("gender", "先生");
-				}else{
+				} else {
 					m.put("gender", "女士");
 				}
 			}
 			m.put("mobile", fi.getMobile());
 			m.put("email", fi.getEmail());
-			if(fi.getServiceTime() != null){
-				if(fi.getServiceTime() == 1){					
+			if (fi.getServiceTime() != null) {
+				if (fi.getServiceTime() == 1) {
 					m.put("serviceTime", "双休日白天");
-				}else if(fi.getServiceTime() == 2){					
+				} else if (fi.getServiceTime() == 2) {
 					m.put("serviceTime", "工作日上午");
-				}else if(fi.getServiceTime() == 3){					
+				} else if (fi.getServiceTime() == 3) {
 					m.put("serviceTime", "工作日中午");
-				}else if(fi.getServiceTime() == 4){					
+				} else if (fi.getServiceTime() == 4) {
 					m.put("serviceTime", "工作日晚间");
 				}
 			}
@@ -450,23 +563,23 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 			e.printStackTrace();
 		}
 	}
-	
-	public OrdFinanceApply countAttachApply(OrdFinanceApply apply){
+
+	public OrdFinanceApply countAttachApply(OrdFinanceApply apply) {
 		List<FinanceApplyAttachModel> attachList = this.findApplyAttach(apply.getId());
-		
+
 		int uploadNum = attachList.size();
 		int needNum = 0;
-		for(FinanceApplyAttachModel m : attachList){
-			if(m.getUploadStatus().intValue() == 1){
-				needNum ++;
+		for (FinanceApplyAttachModel m : attachList) {
+			if (m.getUploadStatus().intValue() == 1) {
+				needNum++;
 			}
 		}
 		apply.setUploadAttachNum(uploadNum);
 		apply.setNeedAttachNum(needNum);
-		
+
 		return apply;
 	}
-	
+
 	// setter and getter
 	public void setPrdFinanceDAO(PrdFinanceDAO prdFinanceDAO) {
 		this.prdFinanceDAO = prdFinanceDAO;
@@ -482,10 +595,6 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 
 	public void setOrdFaAttachListDAO(OrdFaAttachListDAO ordFaAttachListDAO) {
 		this.ordFaAttachListDAO = ordFaAttachListDAO;
-	}
-
-	public void setOrdFinanceApplyCheckDAO(OrdFinanceApplyCheckDAO ordFinanceApplyCheckDAO) {
-		this.ordFinanceApplyCheckDAO = ordFinanceApplyCheckDAO;
 	}
 
 	public void setUsrCompanyDAO(UsrCompanyDAO usrCompanyDAO) {
@@ -506,6 +615,10 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		this.dicCommonDAO = dicCommonDAO;
 	}
 
+	public void setNtyMessageService(NtyMessageService ntyMessageService) {
+		this.ntyMessageService = ntyMessageService;
+	}
+
 	public void setPrdExtendsPropertyDAO(PrdExtendsPropertyDAO prdExtendsPropertyDAO) {
 		this.prdExtendsPropertyDAO = prdExtendsPropertyDAO;
 	}
@@ -518,8 +631,8 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 		this.prdExtendsValueDAO = prdExtendsValueDAO;
 	}
 
-	public List<OrdFinanceApplyCheck> findApplyCheck(Integer applyId, Integer num) {
-		return ordFinanceApplyCheckDAO.findApplyCheck(applyId,num);
+	public List<OrdCheckLog> findApplyCheck(Integer applyId, Integer num) {
+		return ordCheckLogDAO.findApplyCheck(applyId, num);
 	}
 
 	public void setUsrUserDAO(UsrUserDAO usrUserDAO) {
@@ -533,5 +646,13 @@ public class FinanceApplyServiceImpl implements FinanceApplyService {
 	public void deleteAttach(Integer[] ids) {
 		ordFinanceApplyAttachDAO.deleteAttach(ids);
 	}
-	 
+
+	public void setOrdCheckLogDAO(OrdCheckLogDAO ordCheckLogDAO) {
+		this.ordCheckLogDAO = ordCheckLogDAO;
+	}
+
+
+
+	
+
 }

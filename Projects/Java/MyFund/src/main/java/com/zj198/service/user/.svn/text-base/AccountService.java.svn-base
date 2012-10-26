@@ -40,6 +40,8 @@ public interface AccountService {
 	public void updateUserAudit(Integer userId, Short audit);
 	/*** 管理员管理用户状态* @param userId* @param status*/
 	public void updateUserStatus(Integer userId, Short status);
+	/*** 管理员管理会员状态* @param userId* @param vipType*/
+	public void updateUserVip(Integer userId, Integer Type);
 	/**用户更改邮箱时 查看是否已被注册     true 已被使用   false可以使用*/
 	public boolean isUserEmail(String email);
 	/**用户更改moble时 查看是否已被注册     true 已被使用   false可以使用*/

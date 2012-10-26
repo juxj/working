@@ -46,22 +46,24 @@
 <div class="hr_10"> &nbsp; </div> 
 <div class="box_4">
 	<div class="P_title">资金信息</div>
-	<div class="line" style="height:30px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
+	<div class="line" style="height:30px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:20px;"/></div>
 	</div>
 	<div class="hr_10"> &nbsp; </div> 
 	<!-- 表格 -->	
-	<table class="gold-table">
-		<th>资金标题</th>
-		<th>发布时间</th>
-		<th>项目分类</th>
-		<th>资金数额</th>
-		<th>投资方式</th>
-		<th>状态</th>
-		<th width="15%">操作</th>
+	<table class="container_950 box_4">
+		<tr class="top_color">
+		<td width="35%" style="padding-left:20px;">资金标题</td>
+		<td>发布时间</td>
+		<td width="8%">项目分类</td>
+		<td>资金数额</td>
+		<td width="12%">投资方式</td>
+		<td >状态</td>
+		<td align="center">操作</td> 
+		</tr>
 		<s:if test="pager.data != null || pager.data.size>0">
 			<s:iterator id="item" value="pager.data" status="st">
-				<tr style="padding-left:8px;">
-				<td title="${item.title}">
+				<tr class="top_color01" >
+				<td style="padding-left:20px;" title="${item.title}">
 					<s:if test="#item.title.length()>10">
    						<s:property value="#item.title.substring(0,10)"></s:property>...
    					</s:if><s:else>
@@ -107,15 +109,15 @@
 						已阻止
 					</s:if>
 				</td>
-				<td class="red">
-					<a class="view_detail" href="/service/supplyInfoAction!detail.act?clbSupplyInfoId=${item.id }">查看</a>
+				<td align="right" class="view_detail01" style="padding-right:20px;">
+					<span><a class="view_detail" href="/service/supplyInfoAction!detail.act?clbSupplyInfoId=${item.id }">查看</a></span>
 					<s:if test="#item.rank==0 || #item.rank==9">
-						<a href="/service/supplyInfoAction4User!edit.act?clbSupplyInfoId=${item.id }">编辑</a>
-						<a href="/service/supplyInfoAction4User!delete.act?clbSupplyInfoId=${item.id }">删除</a>
+						<span><a href="/service/supplyInfoAction4User!edit.act?clbSupplyInfoId=${item.id }">编辑</a></span>
+						<span><a href="/service/supplyInfoAction4User!delete.act?clbSupplyInfoId=${item.id }">删除</a></span>
 					</s:if>
 				
 					<s:if test="#item.rank==-1">
-						<a href="/service/supplyInfoAction4User!delete.act?clbSupplyInfoId=${item.id }">删除</a>
+						<span><a href="/service/supplyInfoAction4User!delete.act?clbSupplyInfoId=${item.id }">删除</a></span>
 					</s:if>								
 				</td>
 				</tr>

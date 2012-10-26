@@ -47,6 +47,38 @@
     		$('#child').hide();
     	}
     }
+    $(function() {
+    	var j = $('#manyOrless').val();
+    	if(j=='more'){
+    		$('.m').show();
+    		$("#moreOrLess").attr('value','隐藏');
+    	}else{
+    		$('.m').hide();
+    		$("#moreOrLess").attr('value','更多');
+    	}
+    	var mb = $("#moreOrLess").val();
+    	if(mb=='隐藏'){
+    		$("#moreOrLess").toggle(function(){
+    			$(this).attr('value','更多');
+	    		$('.m').hide();
+	    		$('#manyOrless').attr('value','less');
+	    	},function(){
+	    		$(this).attr('value','隐藏');
+	    		$('.m').show();
+	    		$('#manyOrless').attr('value','more');
+	    	});
+    	}else {
+	    	$("#moreOrLess").toggle(function(){
+	    		$(this).attr('value','隐藏');
+	    		$('.m').show();
+	    		$('#manyOrless').attr('value','more');
+	    	},function(){
+	    		$(this).attr('value','更多');
+	    		$('.m').hide();
+	    		$('#manyOrless').attr('value','less');
+	    	});
+    	}
+    })
 </script>
 <style>
 .ctl {
@@ -62,6 +94,7 @@
 
 .qy_jians{width:810px; height:104px;}
 .qy_left{width:105px; height:84px; float:left; background:#97181d; font-size:30px; color:#fff; line-height:30px; text-align:center; padding-top:20px;}
+.more_input{border:1px solid #ccc; width:48px; height:25px; line-height:25px; text-align:center; background:url('/images/up_jiant.jpg') 3px 10px no-repeat; padding-left:13px;}
 </style>
 </head>
 
@@ -84,6 +117,7 @@
 <div class="center box_6_gray" style="width:942px; height:auto; padding:0px; border: #d6d6d6 solid 4px;">
 	<form id="searchForm" action="/loan/financeProduct.act"  method="post">
 	<input type="hidden" value="<s:property value="childId"/>" id="sel"/>
+	<input type="hidden" value="<s:property value="manyOrless"/>" name="manyOrless" id="manyOrless"/>
 	<!-- 收缩状态 -->
 	<input id="shrink" type="hidden" name="shrink" value="<s:if test="shrink=='' || shrink == null">filter</s:if><s:else><s:property value="shrink"/></s:else>"/>
 	<s:if test="financeType==151">
@@ -318,13 +352,56 @@
             </s:iterator>
         </dl>
         <dl>
+        	<dt id="selectArea">选择地域：<input name="selectArea" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>
+            <dd><div><a name="selectArea" id="-1">不限</a></div></dd>
+            <dd><div><a name="selectArea"  id="9">上海</a></div></dd>
+            <dd><div><a name="selectArea"  id="10">江苏</a></div></dd>
+            <dd><div><a name="selectArea"  id="11">浙江</a></div></dd>
+            <dd><div><a name="selectArea"  id="1">北京</a></div></dd>
+            <dd><div><a name="selectArea"  id="19">广东</a></div></dd>
+            <dd><div><a name="selectArea"  id="15">山东</a></div></dd>
+            <dd><div><a name="selectArea"  id="2">天津</a></div></dd>
+            <dd><div><a name="selectArea"  id="22">重庆</a></div></dd>
+            <dd><div><a name="selectArea" id="23">四川</a></div></dd>
+            <dd><div><a name="selectArea"  id="13">福建</a></div></dd>
+            <dd><div><a name="selectArea"  id="18">湖南</a></div></dd>
+            <dd><div><a name="selectArea"  id="17">湖北</a></div></dd>
+            <dd><div><a name="selectArea"  id="16">河南</a></div></dd>
+            <dd><div><a name="selectArea"  id="3">河北</a></div></dd>
+            <dd style="float:right; margin-right:38px;"><div><input type="button" value="" id="moreOrLess" class="more_input"/></div></dd>
+        </dl>
+        <dl style="display: none;" class="m">
+			<dt id="selectArea"><input name="selectArea2" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>        
+            <dd><div><a name="selectArea"  id="4">山西</a></div></dd>
+            <dd><div><a name="selectArea"  id="14">江西</a></div></dd>
+            <dd><div><a name="selectArea"  id="12">安徽</a></div></dd>
+            <dd><div><a name="selectArea"  id="27">陕西</a></div></dd>
+            <dd><div><a name="selectArea"  id="25">云南</a></div></dd>
+            <dd><div><a name="selectArea"  id="5">内蒙古</a></div></dd>
+            <dd><div><a name="selectArea"  id="8">黑龙江</a></div></dd>
+            <dd><div><a name="selectArea"  id="6">辽宁</a></div></dd>
+            <dd><div><a name="selectArea"  id="7">吉林</a></div></dd>
+            <dd><div><a name="selectArea"  id="20">广西</a></div></dd>
+            <dd><div><a name="selectArea"  id="24">贵州</a></div></dd>
+            <dd><div><a name="selectArea"  id="31">新疆</a></div></dd>
+            <dd><div><a name="selectArea"  id="28">甘肃</a></div></dd>
+            <dd><div><a name="selectArea"  id="21">海南</a></div></dd>
+            <dd><div><a name="selectArea"  id="30">宁夏</a></div></dd>
+       	</dl>
+       	<dl style="display: none;"  class="m">
+			<dt id="selectArea"><input name="selectArea3" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>       	
+            <dd><div><a name="selectArea"  id="29">青海</a></div></dd>
+            <dd><div><a name="selectArea"  id="26">西藏</a></div></dd>
+            <dd><div><a name="selectArea"  id="33">香港</a></div></dd>
+            <dd><div><a name="selectArea"  id="34">澳门</a></div></dd>
+         </dl>
+        <dl>
             <dt id="mortgageType">担保方式：<input name="mortgageType" type="hidden" value="<s:if test="mortgageType==null">-1</s:if><s:else><s:property value="mortgageType"/></s:else>"/></dt>
             <dd><div><a name="mortgageType" id="-1">不限</a></div></dd>
             <s:iterator value="dataMap['mortgageType']" >
             <dd><div><a name="mortgageType" id="<s:property value="id"/>"><s:property value="name"/></a></div></dd>
             </s:iterator>
         </dl>
-              
     </div>
 	<div class="clear">&nbsp;</div>
     <div id="filter"  class="filter" style="width:933px; padding:0 0 30px 25px;">
@@ -347,7 +424,7 @@
             <dt id="companyAllAsset">企业总资产：<input name="companyAllAsset" type="hidden" value="<s:if test="companyAllAsset==null">-1</s:if><s:else><s:property value="companyAllAsset"/></s:else>"/></dt>
             <dd><div><a name="companyAllAsset" id="-1">不限</a></div></dd>
             <dd><div><a name="companyAllAsset" id="0,100">不足100万</a></div></dd>
-            <dd><div><a name="companyAllAsset" id="100,300">100-300万</a></div></dd>
+            <dd><div><a name="companyAllAsset" selectArea2id="100,300">100-300万</a></div></dd>
             <dd><div><a name="companyAllAsset" id="300,500">300-500万</a></div></dd>
             <dd><div><a name="companyAllAsset" id="500,1000">500-1000万</a></div></dd>
             <dd><div><a name="companyAllAsset" id="1000,5000">1000-5000万</a></div></dd>
@@ -390,6 +467,50 @@
             </s:iterator>
         </dl>
         <dl>
+        	<dt id="selectArea">选择地域：<input name="selectArea" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>
+            <dd><div><a name="selectArea" id="-1">不限</a></div></dd>
+            <dd><div><a name="selectArea"  id="9">上海</a></div></dd>
+            <dd><div><a name="selectArea"  id="10">江苏</a></div></dd>
+            <dd><div><a name="selectArea"  id="11">浙江</a></div></dd>
+            <dd><div><a name="selectArea"  id="1">北京</a></div></dd>
+            <dd><div><a name="selectArea"  id="19">广东</a></div></dd>
+            <dd><div><a name="selectArea"  id="15">山东</a></div></dd>
+            <dd><div><a name="selectArea"  id="2">天津</a></div></dd>
+            <dd><div><a name="selectArea"  id="22">重庆</a></div></dd>
+            <dd><div><a name="selectArea" id="23">四川</a></div></dd>
+            <dd><div><a name="selectArea"  id="13">福建</a></div></dd>
+            <dd><div><a name="selectArea"  id="18">湖南</a></div></dd>
+            <dd><div><a name="selectArea"  id="17">湖北</a></div></dd>
+            <dd><div><a name="selectArea"  id="16">河南</a></div></dd>
+            <dd><div><a name="selectArea"  id="3">河北</a></div></dd>
+            <dd style="float:right; margin-right:38px;"><div><input type="button" value="更多" id="moreOrLess" class="more_input"/> </dd>
+        </dl>
+        <dl style="display: none;"  class="m">
+        	<dt id="selectArea"><input name="selectArea2" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>        
+            <dd><div><a name="selectArea"  id="4">山西</a></div></dd>
+            <dd><div><a name="selectArea"  id="14">江西</a></div></dd>
+            <dd><div><a name="selectArea"  id="12">安徽</a></div></dd>
+            <dd><div><a name="selectArea"  id="27">陕西</a></div></dd>
+            <dd><div><a name="selectArea"  id="25">云南</a></div></dd>
+            <dd><div><a name="selectArea"  id="5">内蒙古</a></div></dd>
+            <dd><div><a name="selectArea"  id="8">黑龙江</a></div></dd>
+            <dd><div><a name="selectArea"  id="6">辽宁</a></div></dd>
+            <dd><div><a name="selectArea"  id="7">吉林</a></div></dd>
+            <dd><div><a name="selectArea"  id="20">广西</a></div></dd>
+            <dd><div><a name="selectArea"  id="24">贵州</a></div></dd>
+            <dd><div><a name="selectArea"  id="31">新疆</a></div></dd>
+            <dd><div><a name="selectArea"  id="28">甘肃</a></div></dd>
+            <dd><div><a name="selectArea"  id="21">海南</a></div></dd>
+            <dd><div><a name="selectArea"  id="30">宁夏</a></div></dd>
+         </dl>
+         <dl style="display: none;" class="m">
+        	<dt id="selectArea"><input name="selectArea3" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>         
+            <dd><div><a name="selectArea"  id="29">青海</a></div></dd>
+            <dd><div><a name="selectArea"  id="26">西藏</a></div></dd>
+            <dd><div><a name="selectArea"  id="33">香港</a></div></dd>
+            <dd><div><a name="selectArea"  id="34">澳门</a></div></dd>
+         </dl>
+         <dl>
             <dt id="mortgageType">担保方式：<input name="mortgageType" type="hidden" value="<s:if test="mortgageType==null">-1</s:if><s:else><s:property value="mortgageType"/></s:else>"/></dt>
             <dd><div><a name="mortgageType" id="-1">不限</a></div></dd>
             <s:iterator value="dataMap['mortgageType']" >
@@ -467,8 +588,8 @@
 <div class="hr_10"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main3-->
-<table class="container_950 center"> 
-      <tr class="top_color box_4">
+<table class="container_950 center box_4"> 
+      <tr class="top_color">
         <td class="capital_table_a1" style="padding-left:20px; border-bottom:3px solid #97181d;">融资渠道/项目</td>
         <td class="capital_table_a3" style="border-bottom:3px solid #97181d;">金额</td>
         <td class="capital_table_a2" style="border-bottom:3px solid #97181d;">期限</td>

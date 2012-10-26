@@ -20,15 +20,14 @@
 		var url = "/service/supplyInfoAction!detail.act?clbSupplyInfoId="+clbSupplyInfoId;
 		window.location.href=url;
 	}
+	
 	function edit(){
 		var url = "/service/supplyInfoAction4User!editFirstStep.act";
 		var _user = "${session._user}";
 		var user_type = '${session._user.userTypeGroup}';
 		if (_user==null || _user=="") {
-			alert("您还未的登录，暂不能发布信息!");
-			return ;
+			window.location.href = url;
 		} else {
-		
 			var user_status = "${session._user.auditstatus}";
 			if (user_status != "2") {
 				alert("您的注册资料尚未通过审核，暂不能发布此信息!");
@@ -39,13 +38,15 @@
 				alert("只有用户身份为银行或金融机构才可以发布资金信息！");
 				return ;
 			}
+			
+			var user_status = "${session._user.auditstatus}";
+			if (user_status != "2") {
+				alert("您的注册资料尚未通过审核，暂不能发布此信息!");
+			} else {
+				window.location.href = url;
+			}
 		}
-		var user_status = "${session._user.auditstatus}";
-		if (user_status != "2") {
-			alert("您的注册资料尚未通过审核，暂不能发布此信息!");
-		} else {
-			window.location.href = url;
-		}
+		
 	}
 </script>
 </head>
@@ -63,7 +64,7 @@
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main1-->
-<div class="center container_950"><a href="/service/supplyInfoAction4User!editFirstStep.act"><img src="/images/img_club_pub_fund.jpg" width="950" height="56"/></a>
+<div class="center container_950"><a href="javascript:edit()"><img src="/images/img_club_pub_fund.jpg" width="950" height="56"/></a>
 	<div class="box_5" style="background:#edf0ff;">
 	<form id="searchForm" action="/service/supplyInfoAction!home.act" method="post">
 		<div class="fl">
@@ -73,7 +74,7 @@
 			    	<option value="">不限</option>
 			    	<s:iterator id="item" value="industryList">
 						<s:if test="#item.parentid==0">
-							<option value="${item.name }" <s:if test="query[1] == name">selected</s:if>>${item.name}</option>
+							<option value="${item.name }" <s:if test="query[0] == name">selected</s:if>>${item.name}</option>
 						</s:if>
 			    	</s:iterator>
 			    	<option value="其他行业" <s:if test="query[1] == '其他行业'">selected</s:if>>其他行业</option>
@@ -85,18 +86,19 @@
 						<option value="">不限</option>
 						<s:iterator id="item" value="investStyleList">
 							<s:if test="#item.parentId==0" >
-								<option value="${item.name }" <s:if test="query[2] == name">selected</s:if>> ${item.name }</option>
+								<option value="${item.name }" <s:if test="query[1] == name">selected</s:if>> ${item.name }</option>
 							</s:if>
 						</s:iterator>
 						<s:iterator id="item" value="investStyleList">
 							<s:if test="#item.parentId !=0" >
-								<option value="${item.code }" <s:if test="query[2] == code">selected</s:if>> ${item.name }</option>
+								<option value="${item.code }" <s:if test="query[1] == code">selected</s:if>> ${item.name }</option>
 							</s:if>
 						</s:iterator>
 					</select>&nbsp;&nbsp;&nbsp;&nbsp;
 			</span>
 			<span>地区：&nbsp;&nbsp;</span>
-			<span style="padding-right:20px;"><s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name"  style="width:100px;"></s:select>&nbsp;&nbsp;</span>
+			<span style="padding-right:20px;">
+				<s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name"  style="width:100px;"></s:select>&nbsp;&nbsp;</span>
 			<span>关键字：&nbsp;&nbsp;</span>
 			<span class="input-text" style="padding-right:20px;"><input type="text"  style="width:100px;" name="query" value="${query[3] }"/>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>

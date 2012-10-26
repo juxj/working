@@ -43,6 +43,7 @@ $(function(){
 	<div class="apply_form_title">第一步&nbsp;&nbsp;填写意向信息</div>
 	<div class="C_title">融资意向信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
 	</div>
+	<div class="hr_20"> &nbsp; </div>
 	<div class="C_form">
             <dl>
               <dd>
@@ -66,6 +67,7 @@ $(function(){
 	</div>
 	<div class="clear"></div>
 	<div class="C_title">企业信息</div>
+	<div class="hr_20"> &nbsp; </div>
 	<div class="C_form">
 		<dl>
 			<dd>

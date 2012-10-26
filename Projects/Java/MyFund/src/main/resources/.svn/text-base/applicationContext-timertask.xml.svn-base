@@ -8,7 +8,6 @@
     http://www.springframework.org/schema/task/spring-task-3.1.xsd"
     default-autowire="byName">
     
-    <!-- 
 	<bean id="mailSendTask" class="com.zj198.task.MailSendTask"/>
 	
 	<task:scheduled-tasks>
@@ -20,5 +19,6 @@
 	<task:scheduled-tasks>
 		<task:scheduled ref="smsSendTask" method="run" cron="30 0/1 * * * ?" />
 	</task:scheduled-tasks>
+    <!-- 
 	-->
 </beans>

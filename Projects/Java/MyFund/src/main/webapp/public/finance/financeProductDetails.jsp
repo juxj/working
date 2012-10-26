@@ -33,9 +33,7 @@
         <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
             <td colspan="4" class="Search_t_title red">${prdBankfinance.name}</td>
-          </tr>
-        </table>
-        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+          </tr>        
           <tr>
             <td class="Search_t_connect">产品名称</td>
             <td colspan="3" class="Search_t_connect01">${prdBankfinance.name}</td>

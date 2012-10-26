@@ -57,7 +57,7 @@ function update(num) {
 	 }
 }
 function verMobile(pid){
-	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	var url = '/user/loan/financeApply.act?product.id=' + pid;
 	$.post("/user/Profile!validMoblie.act",{verifycode:$('#verifycode').val()},function(a){
 		if(a=='success'){
 			$("#mobileMsg").html("手机验证成功");
@@ -89,7 +89,7 @@ function vershow(){
 	$("#isPhoneCheck").dialog('close');
 }
 function applyRN(pid){
-	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	var url = '/user/loan/financeApply.act?product.id=' + pid;
 	if('${session._user}'=='' || '${session._user}'== null){
 		window.location= url;
 	}else{
@@ -114,7 +114,7 @@ function applyRN(pid){
 }
 
 function cancelCheck(pid){
-	var url = '/user/loan/financeApply!financeApply.act?product.id=' + pid;
+	var url = '/user/loan/financeApply.act?product.id=' + pid;
 	window.location= url;
 }
 </script>
@@ -130,9 +130,9 @@ function cancelCheck(pid){
        <div class="on">
           <table>
    	  		<tr>
-   	  			<td>
+   	  			<td class="box_2">
 					尊敬的用户：<br/>
-			     &nbsp;&nbsp;&nbsp;&nbsp;建议您在提交融资申请前验证您的注册手机号，以便资金网工作人员及时和您联系！验证成功后，您的融资申请将被优先处理！
+			     建议您在提交融资申请前验证您的注册手机号，以便资金网工作人员及时和您联系！验证成功后，您的融资申请将被优先处理！
 				</td>
 			</tr>
             <tr><td align="center"><input type="button" onclick="javascript:vershow();" class="but_gray" style="width:90px;" value="立即验证  " />
@@ -180,22 +180,19 @@ function cancelCheck(pid){
 <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
-        <div class="box_4">
-				<table width="100%" border="0" cellspacing="0" cellpadding="0">
-			      <tr>
-			        <td class="Search_t_title_bank">
-			        	<s:if test="product.logo == null">
-					        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
+        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+          <tr>
+          <td colspan="4" style="padding:20px 0 10px 20px;">
+          <div class="fl">	
+						<s:if test="product.logo == null">
+					        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;" />
 				        </s:if>
 				        <s:else>
-				        	<img src="/images/banklogo/b/${product.logo }"/>
-				        </s:else>
-			        </td>
-			        <td class="Search_t_title red">${product.financeName }</td>
-			      </tr>
-			    </table>
-		</div>
-        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+				        	<img src="/images/banklogo/b/${product.logo }" />
+				        </s:else></div>
+		  <div class="Search_t_title red">&nbsp; ${product.financeName }</div>
+		  </td>
+          </tr>
           <tr>
             <td class="Search_t_connect">类型</td>
             <td class="Search_t_connect01"><common:print valueId="product.financeType" /></td>

@@ -30,7 +30,7 @@
         </span>
         <span id="ca"><a class="ca_off" title="CA证书未认证"></a></span>
         <span id="vip">
-        <s:if test="#session._user.viptype==2"><a class="vip_on" title="资信通vip会员"></a></s:if><s:elseif test="#session._user.viptype==1"><a class="vip_com_on" title="资信通认证会员"></a></s:elseif><s:else><a class="vip_off" title="非VIP会员"></a></s:else>
+        <s:if test="#session._user.viptype==2"><a class="vip_on" title="资信通vip会员"></a></s:if><s:elseif test="#session._user.viptype==1"><a class="vip_on" title="资信通认证会员"></a></s:elseif><s:else><a class="vip_off" title="非资信通会员"></a></s:else>
         </span>
       <div class="hr_10"> &nbsp; </div>
       <h6>${userTypeName }</h6>

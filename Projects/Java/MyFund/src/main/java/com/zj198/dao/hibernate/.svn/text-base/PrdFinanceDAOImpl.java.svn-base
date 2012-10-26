@@ -145,7 +145,7 @@ public class PrdFinanceDAOImpl extends HibernateDAO<PrdFinance, Integer> impleme
 		return list(hql, params);
 	}
 
-	public Pager findProByCond(int pageNo, int pageSize, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience, String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId) {
+	public Pager findProByCond(int pageNo, int pageSize, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience, String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId, Integer selectArea) {
 		Hashtable<String, Object> params = new Hashtable<String, Object>();
 		String hql = "from PrdFinance as o where o.proStatus = 198";
 		// 贷款类型
@@ -287,6 +287,11 @@ public class PrdFinanceDAOImpl extends HibernateDAO<PrdFinance, Integer> impleme
 		if (industryId != null && industryId > 0 && childId != null && childId > 0) {
 			hql = hql + " and exists (select id from PrdFinanceInducty t2 where o.id = t2.financeId and (t2.industryChildid = :industryChildid or t2.industryChildid = 0))";
 			params.put("industryChildid", childId);
+		}
+		//二期新增一个地域筛选条件
+		if(selectArea != null && selectArea >0){
+			hql = hql + " and exists (select id from PrdFinanceArea t3 where ((t3.provinceId = 0 and t3.cityId = 0) or (t3.provinceId =:selectArea and t3.cityId=0) or (t3.provinceId=0 and t3.cityId in (select t4.id from PrdFinanceArea t4 where t4.provinceId =:selectArea))) and t3.financeId = o.id))";
+			params.put("selectArea", selectArea);
 		}
 		hql = hql + " order by o.id desc";
 

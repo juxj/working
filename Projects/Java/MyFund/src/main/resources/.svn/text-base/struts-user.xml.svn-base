@@ -35,9 +35,6 @@
 		<action name="regInfo" class="com.zj198.action.user.ProfileAction" method="regInfo">
 		    <result name="regInfo">/WEB-INF/web/user/regInfo.jsp</result>
 		</action>
-		<action name="capital" class="com.zj198.action.user.UserAction" method="capitalLetter">
-			<result name="capital">/WEB-INF/web/user/capitalLetter.jsp</result>
-		</action>
 		<action name="uploadImg" class="com.zj198.action.user.UploadImgAction" method="uploadImg">
 			<interceptor-ref name ="defaultStack" />
 			<interceptor-ref name ="fileUpload" > 
@@ -71,10 +68,15 @@
             <result name="delAll" type="redirect">/news/ntyMessage!viewMsg.act</result>
         </action>
         
+		<action name="details" class="com.zj198.action.user.MemberAction">
+			<result name="capital">/WEB-INF/web/user/capitalLetter.jsp</result>
+		</action>
         <!-- 会员及付费 -->
-        <action name="memberType" class="com.zj198.action.members.memberServiceAction">
-		    <result name="typeList">/WEB-INF/web/user/members/chargeType.jsp</result>
-		    <result name="addType">/WEB-INF/web/user/members/addChargeType.jsp</result>
+        <action name="memberType" class="com.zj198.action.user.MemberAction" method="memberType">
+		    <result name="payment">/WEB-INF/web/user/members/payment.jsp</result>
+		    <result name="next">/WEB-INF/web/user/members/pendingPayment.jsp</result>
+		    <result name="details">/WEB-INF/web/user/members/paymentManagement.jsp</result>
+		    <result name="payCost" type="redirect">/user/memberType!details.act</result>
 		    <result name="success" type="redirect">/user/memberType.act</result>
 		</action>
 	</package>

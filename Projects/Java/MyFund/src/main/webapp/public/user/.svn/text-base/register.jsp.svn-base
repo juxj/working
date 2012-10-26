@@ -44,9 +44,8 @@ $(function() {
       </div>
       </s:if>
     <div class="hr_10"> &nbsp; </div>
-    <p class="notice fr" style="font-size:14px;">已有资金网账号？可以<a class="red" href="/Account.act">直接登录</a></p>
-    <div class="clear"> &nbsp; </div>
-    <form id="regform" class="box_form" action="/Register!register.act" method="post">
+    <div class="fl" style="width:650px">
+    <form id="regform" class="out_box_form" action="/Register!register.act" method="post">
       <dl>
         <dd>
           <h6><span class="txt-impt">*</span>用户名：</h6>
@@ -137,6 +136,8 @@ $(function() {
 因本网站提供服务所产生的争议均适用中华人民共和国法律，并由鼎辉信息技术（上海）有限公司住所地人民法院管辖。 
 </textarea>
     </form>
+    </div>
+    <div class="notice fr" style="font-size:14px;"><p>已有中国资金网账号,请直接登录</p><p><a class="btn blue1" href="/Account.act">直接登录</a></p></div>
     <div class="hr_10"> &nbsp; </div>
     <div class="hr_10"> &nbsp; </div>
   </div>

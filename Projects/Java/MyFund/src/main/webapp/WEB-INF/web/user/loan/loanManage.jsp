@@ -221,14 +221,15 @@
   	</div>
   </div>
   <div class="hr_10"> &nbsp; </div>
-	<div class="container_950 box_4" style="height:90px;">	
+  <div class="container_950" >
+	<div class="box_4" style="height:90px;">	
 		<s:if test="groupType==5">
 			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=138'"/></div>
+			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=138'"/></div>
 		</s:if>
 		<s:elseif test="groupType==1">
 			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:10px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=136'"/></div>
+			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=136'"/></div>
 		</s:elseif>
 		<s:else>
 		<div class="container_950">
@@ -284,8 +285,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="right"><input type="button" onclick="onSubmit();"  class="but_gray" value="查询" /> </td>
-			
+			<td colspan="4" align="center"><input type="button" onclick="onSubmit();"  class="but_gray"  style="width:100px;" value="查询" /> </td>			
 		</tr>
 	</table>
   </div>
@@ -294,7 +294,7 @@
   <div class="hr_10"> &nbsp;</div>
        <table class="container_950 box_4 ctl">
 	      <tr class="top_color">
-	        <td width="15%" style="padding-left:25px;">融资意向编号</td>
+	        <td width="10%" style="padding-left:20px;">融资意向编号</td>
 	        <td width="10%">发布时间</td>
 	        <td width="9%">需求金额</td>	        	        
 	        <td width="10%">用途</td>
@@ -302,12 +302,12 @@
 	        <td width="10%">可接受年利率</td>	                
 	        <td width="10%">有效期截止</td>
 	        <td width="8%">状态</td>
-	        <td width="20%">操作</td>
+	        <td align="center">操作</td>
 	      </tr>
             <s:if test="pager.data.size()>0">
 		 	<s:iterator id ="item" value="pager.data">
 			<tr class="gold_connect">
-				<td style="padding-left:25px;">&nbsp;&nbsp;${item.applyNum}</td>
+				<td style="padding-left:20px;">${item.applyNum}</td>
 	   			<td><s:date name="#item.createdt" format="yyyy-MM-dd"/></td>
 	   			<td><s:number name="loanAmount" />万元</td>
 	   			<td>
@@ -317,20 +317,18 @@
 	   			<td>${item.rateLowerLimit}~${item.rateUpperLimit}%</td>
 	   			<td>${item.effectiveDateend}</td>
 	   			<td><common:print valueId="#item.applyStatus"/></td>
-	   			<td class="view_detail">
-		   			<table>
-			   			<tr>
-			   				<td style="border:none;"><a href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${item.id }">查看</a></td>
-			   				<td style="border:none;">
+	   			<td align="right">
+		   			<div class="view_detail" style="padding:5px 20px 5px 0;">
+			   				<span ><a href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${item.id }">查看</a></span>
+			   				<span >
 				   				<s:if test="groupType==2 || groupType==3">
 				   				<a href="#" onclick="return Recommend(${item.id },${item.applyType });">推荐产品</a>
 				   				</s:if>	
 				   				<s:else>
 								<a href="#" onclick="return LookRecPro(${item.id });">查看推荐产品</a>
 								</s:else>	   				
-			   				</td>
-			   			</tr>		   			
-		   			</table>     
+			   				</span>	   			
+		   			</div>     
 	   				<!--  <a href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${item.id }">查看</a><br/>
 	   				<s:if test="groupType==2 || groupType==3">
 	   				<a href="#" onclick="return Recommend(${item.id },${item.applyType });">推荐产品</a>
@@ -378,6 +376,7 @@
 			</div>
        </div>     
        </s:else>
+</div>      
 <!--结束--> 
 <div class="clear"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>

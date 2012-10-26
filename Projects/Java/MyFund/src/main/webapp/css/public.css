@@ -56,7 +56,7 @@ body { min-width: 960px; }
 .fr { float : right; }
 .margin_lr_40 { margin:0 40px; }
 .margin_lr_40 h6{font-weight:normal; line-height:25px;}
-.center { margin:0 auto; }
+.center { margin:0px auto;}
 .hr_5, .hr_10 { font-size : 1px; line-height : 1px; clear : both; }
 .hr_5 { height : 5px; }
 .hr_10 { height : 10px; }
@@ -72,9 +72,13 @@ button { border:none; }
 .v-align{vertical-align: middle;}
 
 /*按钮样式*/
-.but_gray { background : url(/images/btn_bg.gif) repeat-x; height:26px; border:1px solid #aeadad; font-weight:bold; cursor:pointer; padding:1px 15px 0 15px;}
+.but_gray { border:0px solid #aeadad; cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;line-height:28px;color: #fff;background : url(/images/bg_btn_blue.gif) repeat-x;/* Old browsers */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;}
+.but_gray:hover {text-decoration: none;	color: #FFF;background: #0089bf;}	
 .btnsub { 
-	text-decoration: none;border:0px solid #aeadad; cursor:pointer; padding:0px 15px 0 15px;font:14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:30px;
+	text-decoration: none;border:0px solid #aeadad; cursor:pointer; padding:0px 15px 0 15px;font:14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -86,7 +90,7 @@ button { border:none; }
 	transition: all 0.15s ease;	
 	}
 .btn {
-	vertical-align:middle;display: inline-block;position: relative;padding: 2px 15px 0 15px;text-align: center;text-decoration: none;font: 14px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;
+	vertical-align:middle;display: inline-block;position: relative;padding: 2px 15px 0 15px;text-align: center;text-decoration: none;font: 14px/25px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:28px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -99,7 +103,7 @@ button { border:none; }
 	}
 
 .btn_s {
-	vertical-align:middle;display: inline-block;position: relative;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:26px;
+	vertical-align:middle;display: inline-block;position: relative;padding: 0 15px 0 15px;text-align: center;text-decoration: none;cursor:pointer;border:0px solid #aeadad;font: 12px/25px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:26px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -110,19 +114,11 @@ button { border:none; }
 	-ms-transition: all 0.15s ease;
 	transition: all 0.15s ease;
 	}
-.btn_s:visited {
-	color: #FFF;
-}
 .btn_s:hover {text-decoration: none;
 	color: #FFF;
 	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	/* box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);*/
-	}
-.btn_s:active {text-decoration: none;
-	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	box-shadow: inset 0px 0px 10px rgba(0,0,0, .8);
 	}
 
 .bred {color: #fff;
@@ -134,19 +130,11 @@ button { border:none; }
 	background: -ms-linear-gradient(top,  #AF3523 0%,#9E221E 100%); /* IE10+ */
 	background: linear-gradient(top,  #AF3523 0%,#9E221E 100%); /* W3C */
 	}
-.bred:visited {
-	color: #FFF;
-}
 .bred:hover {text-decoration: none;
 	color: #FFF;background: #cc3300;
 	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	/* box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);*/
-	}
-.bred:active {text-decoration: none;
-	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	box-shadow: inset 0px 0px 10px rgba(0,0,0, .8);
 	}
 .blue1 {color: #fff;
 	background : url(/images/bg_btn_blue.gif) repeat-x;/* Old browsers */
@@ -157,19 +145,11 @@ button { border:none; }
 	background: -ms-linear-gradient(top,  #0176A1 0%,#005B7E 100%); /* IE10+ */
 	background: linear-gradient(top,  #0176A1 0%,#005B7E 100%); /* W3C */
 	}
-.blue1:visited {
-	color: #FFF;
-}
 .blue1:hover {text-decoration: none;
 	color: #FFF;background: #0089bf;
 	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	/* box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);*/
-	}
-.blue1:active {text-decoration: none;
-	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	box-shadow: inset 0px 0px 10px rgba(0,0,0, .8);
 	}
 .blue2 {color: #fff;
 	background: #005B7E;/* Old browsers */
@@ -180,24 +160,18 @@ button { border:none; }
 	background: -ms-linear-gradient(top,  #0176A1 0%,#005B7E 100%); /* IE10+ */
 	background: linear-gradient(top,  #0176A1 0%,#005B7E 100%); /* W3C */
 	}
-.blue2:visited {
-	color: #FFF;
-}
 .blue2:hover {text-decoration: none;
 	color: #FFF;background: #0089bf;
 	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);
 	/* box-shadow: 1px 1px 1px rgba(0,0,0,.60), inset 0px 0px 2px rgba(255,255,255, .5);*/
 	}
-.blue2:active {text-decoration: none;
-	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,.8);
-	box-shadow: inset 0px 0px 10px rgba(0,0,0, .8);
-	}	
-.bgray {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:24px;border:1px solid #d6d6d6;color: #000;background: #e1e1e1;/* Old browsers */}
-.bgray:visited {color: #000;border:1px solid #7accc8;}
-.bgray:hover {text-decoration: none;color: #000;background: #7accc8;border:1px solid #7accc8;}
-.bgray:active {text-decoration: none;none;color: #000;background: #7accc8;border:1px solid #7accc8;}		
+.bgray {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:24px;border:1px solid #DCDCDC;color: #000;background : #e1e1e1;/* Old browsers */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+.bgray:hover {text-decoration: none;color: #000;background: #bee7f7;border:1px solid #B1E1F2;}	
 
 /*常用样式*/
 .box_3 { border : #d6d6d6 solid; border-width : 0 1px 1px 1px; overflow:hidden;}
@@ -209,11 +183,12 @@ button { border:none; }
 .notice{ line-height:28px; height:28px; background:url(/images/notice.png) 0 7px no-repeat; padding:0 25px; }
 
 /* 表单一行通用 */
-.box_form {margin:10px; }
+.box_form {margin:25px; }
 .box_form dt{ border-bottom:1px solid #CCC; color:#97181d; margin:20px 20px 40px; padding:10px;}
-.box_form dd{overflow : hidden; padding-bottom:15px;display:inline-block; width:100%;}
+.box_form dd{overflow : hidden; padding-bottom:10px; display:inline-block; width:100%;}
 .box_form dd:after { content:'.'; clear:both; display:block; height:0; visibility:hidden; line-height:0 }
 .box_form dd{ zoom:1 }
+
 
 /*表单一行(注册页面-激活账户)*/
 .box_form01 .input-text{width:100px; height:20px; line-height:20px; font-size:16px; background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; padding-left:5px; font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;  font-size:12px;}
@@ -221,7 +196,7 @@ button { border:none; }
 
 /* 表单一行 */
 .box_form .txt-impt {color:#97181d;position:relative;right:5px; font-family:"宋体", Helvetica Neue, Helvetica, Arial, sans-serif; }
-.box_form dd h6 { float:left; width:160px; text-align:right; display:inline; font-weight:normal;}
+.box_form dd h6 { float:left; width:160px; text-align:right; display:inline; font-weight:normal; padding-top:3px;}
 .box_form .input-text { float:left; width:150px; height:20px; line-height:20px; font-size:16px; background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; padding-left:5px; font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;  font-size:12px;}
 .box_form .text { float:left; width:192px; height:20px; line-height:20px; font-size:12px; padding-left:5px; padding-right:50px;  font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;}
 .box_form .input-text1 
@@ -335,3 +310,36 @@ label.error {color: #97181d;display: none;}
 
 .zj_href { display:inline-block; height:21px; text-align:center; line-height:21px; color : #97181d; }
 .zj_href :hover { text-decoration:none; color : #424240; }
+
+
+
+
+/* 表单一行通用 */
+.out_box_form {margin:10px; }
+.out_box_form dt{ border-bottom:1px solid #CCC; color:#97181d; margin:20px 20px 40px; padding:10px;}
+.out_box_form dd{overflow : hidden; padding-bottom:15px;display:inline-block; width:100%;}
+.out_box_form dd:after { content:'.'; clear:both; display:block; height:0; visibility:hidden; line-height:0 }
+.out_box_form dd{ zoom:1 }
+
+/* 表单一行 */
+.out_box_form .txt-impt {color:#97181d;position:relative;right:5px; font-family:"宋体", Helvetica Neue, Helvetica, Arial, sans-serif; }
+.out_box_form dd h6 { float:left; width:160px; text-align:right; display:inline; font-weight:normal; padding-top:3px;}
+.out_box_form .input-text { float:left; width:150px; height:20px; line-height:20px; font-size:16px; background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; padding-left:5px; font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;  font-size:12px;}
+.out_box_form .text { float:left; width:192px; height:20px; line-height:20px; font-size:12px; padding-left:5px; padding-right:50px;  font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;}
+.out_box_form .input-text1 
+	{ 
+	float:left; width:108px; height:20px; line-height:20px; font-size:16px;
+	background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; 
+	padding-left:5px;  
+	font-family:"微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;  font-size:12px;
+	}
+.out_box_form .input-focus { background:#FFFFCC; border:1px solid #97181d; }
+.out_box_form .txt-info { color:#bbb; padding-left:15px; font-size:12px; }
+.out_box_form select {float: left; margin:5px 5px 0 0; height: 22px; line-height: 14px }
+.out_box_form input { margin:5px 5px 0 0; line-height: 14px}
+.out_box_form label{ cursor:pointer;}
+
+.out_box_form .txt-err { color:#97181d;padding-left:15px;}
+.out_box_form .txt-succ { color:#0E931C; padding-left:15px; }
+
+.txt_tiaokuan { width:618px; height:96px; border:1px solid #ccc; overflow-y:auto; margin:0 0 0 100px; font-size:12px; padding:10px; line-height:25px;}

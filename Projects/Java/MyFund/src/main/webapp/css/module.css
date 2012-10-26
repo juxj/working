@@ -7,12 +7,20 @@
 /*通用文字样式*/
 
 /*超链按钮*/
-.view_detail a { display:inline-block; width:78px; height:21px; background:url(/images/btn_grap.png) 0 0 no-repeat; text-align:center; line-height:21px; color : #97181d; margin-right: 5px;float:right;}
-.view_detail a:hover { background:url(/images/btn_grap.png) 0 -21px no-repeat; text-decoration:none; color : #424240; }
+.view_detail a {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:21px;line-height:21px; border:1px solid #DCDCDC;color: #000;background : #e1e1e1;/* Old browsers */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+.view_detail a:hover {text-decoration: none;color: #003961;background: #bee7f7;border:1px solid #B1E1F2;}	
 
 /*融资申请管理(企业/个人)*/
-.view_detail01 a { display:inline-block; width:78px; height:21px; background:url(/images/btn_grap.png) 0 0 no-repeat; text-align:center; line-height:21px; color : #97181d;}
-.view_detail01 a:hover { background:url(/images/btn_grap.png) 0 -21px no-repeat; text-decoration:none; color : #424240; }
+.view_detail01 a {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:21px;line-height:21px; border:1px solid #DCDCDC;color: #000;background : #e1e1e1;/* Old browsers */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+.view_detail01 a:hover {text-decoration: none;color: #003961;background: #bee7f7;border:1px solid #B1E1F2;}	
 /*融资申请管理(企业/个人)*/
 
 /*超链按钮*/
@@ -105,13 +113,13 @@ div.indiv{display:block;}
 /*理财服务搜索结果详情页*/
 
 /*融资服务企业申请页面第一步*/ 
-.apply_title{width:950px; height:110px; margin :0 auto;  border:1px solid #c0c0c0; background:#f9f9f7;}
+.apply_title{width:948px; height:110px; margin :0 auto;  border:1px solid #d6d6d6; background:#f9f9f7;}
 .apply_title p{font-size:16px; font-weight:bolder; text-align:center; line-height:50px;}
 .apply_menu{width:930px; margin:0 auto; margin-right:6px;}
 .apply_form{width:950px; margin :0 auto; border:1px solid #d6d6d6; height:auto; position:relative;}
 .apply_form_title{width:920px; height:34px;  background:#f9f9f7; border-bottom:1px solid #c0c0c0; font-size:14px; line-height:34px; padding-left:30px; font-weight:bolder;}
 .C_title{width:900px; height:34px; margin :0 auto; margin-left:30px; margin-top:20px; font-size:14px; border-bottom:1px solid #c0c0c0; color:#97181d; font-weight:bolder;}
-.C_form{width:850px; height:auto; margin-left:35px; margin-top:45px;}
+.C_form{width:850px; height:auto;}
 .S_width{float:left; width:192px; height:28px; line-height:28px; background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; padding-left:5px; font-size:12px;}
 .S_width01{float:left; width:120px; height:28px; line-height:28px; background:url(/images/input_bg.png) 0 0 no-repeat; border:1px solid #d3d3d3; padding-left:5px; font-size:12px;}
 .apply_menu_text01{width:309px; height:35px; background:url(/images/bg01_red.jpg) no-repeat; float:left; font-size:14px; text-align:center; line-height:28px; color:#FFF; cursor:pointer; font-weight:bolder;}

@@ -1,7 +1,7 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198/action/fund/model
 svn://192.168.1.8
 
@@ -32,14 +32,14 @@ file
 
 
 
-2012-10-15T03:47:58.000000Z
+2012-10-26T07:36:00.856410Z
 6427982f00744b703b2a7d8639bb0ca0
 2012-10-12T09:13:10.137004Z
 3843
 yangb
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 

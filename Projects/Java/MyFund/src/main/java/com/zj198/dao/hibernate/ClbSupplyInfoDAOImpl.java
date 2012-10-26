@@ -99,9 +99,9 @@ public class ClbSupplyInfoDAOImpl extends HibernateDAO<ClbSupplyInfo, Integer> i
 		String hql = "from ClbSupplyInfo where 1=1 ";
 		Hashtable<String, Object> params = new Hashtable<String, Object>();
 
-		String q0 = query[0];
-		String q1 = query[1];
-		String q2 = query[2];
+		String q0 = query[2];
+		String q1 = query[0];
+		String q2 = query[1];
 		String q3 = query[3];
 		//地区
 		if (StringUtils.isNotBlank(q0.trim())) {

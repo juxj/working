@@ -27,9 +27,9 @@ public class ClbRequestInfoDAOImpl extends HibernateDAO<ClbRequestInfo, Integer>
 		String hql = "from ClbRequestInfo where (rank=1 or rank=10) ";
 		Hashtable<String,Object> params = new Hashtable<String, Object>();
 		
-		String q0 = query[0];
-		String q1 = query[1];
-		String q2 = query[2];
+		String q0 = query[2];
+		String q1 = query[0];
+		String q2 = query[1];
 		String q3 = query[3];
 		if (StringUtils.isNotBlank(q0)) {
 			hql = hql + " and (area like :area or area like '%全国%')";

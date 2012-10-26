@@ -1,6 +1,6 @@
 package com.zj198.model;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * OrdMembership entity. @author MyEclipse Persistence Tools
@@ -10,6 +10,10 @@ public class OrdMembership implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer userId;
 	private Double payAmount;
@@ -28,54 +32,34 @@ public class OrdMembership implements java.io.Serializable {
 	private Integer payStatus;
 	private Integer payWay;
 	private String payAccountNo;
-	private Timestamp payTime;
-	private Timestamp createTime;
+	private Date payTime;
+	private Date createTime;
 	private String paySerialNo;
-
+	private Integer iscancelled;
+	
+	private String username;
 	// Constructors
 
 	/** default constructor */
 	public OrdMembership() {
 	}
-
-	/** minimal constructor */
-	public OrdMembership(Integer userId, Double payAmount, Integer memberType,
-			Integer payStatus, Integer payWay) {
-		this.userId = userId;
-		this.payAmount = payAmount;
-		this.memberType = memberType;
-		this.payStatus = payStatus;
-		this.payWay = payWay;
-	}
-
-	/** full constructor */
-	public OrdMembership(Integer userId, Double payAmount, Integer memberType,
-			Integer invoiceType, String invoiceTitle, Integer invoiceContent,
-			Integer invoiceSendway, String invoiceReceiver, Integer provinceid,
-			Integer cityid, Integer districtid, String address,
-			String postcode, String telphone, Integer payStatus,
-			Integer payWay, String payAccountNo, Timestamp payTime,
-			Timestamp createTime, String paySerialNo) {
+	/** 复合查询 constructor */
+	public OrdMembership(Integer id, Integer userId, Double payAmount,
+			Integer memberType, Integer invoiceType, Integer invoiceSendway,
+			Integer payStatus, Integer payWay, Date payTime, Date createTime,
+			Integer iscancelled, String username) {
+		this.id = id;
 		this.userId = userId;
 		this.payAmount = payAmount;
 		this.memberType = memberType;
 		this.invoiceType = invoiceType;
-		this.invoiceTitle = invoiceTitle;
-		this.invoiceContent = invoiceContent;
 		this.invoiceSendway = invoiceSendway;
-		this.invoiceReceiver = invoiceReceiver;
-		this.provinceid = provinceid;
-		this.cityid = cityid;
-		this.districtid = districtid;
-		this.address = address;
-		this.postcode = postcode;
-		this.telphone = telphone;
 		this.payStatus = payStatus;
 		this.payWay = payWay;
-		this.payAccountNo = payAccountNo;
 		this.payTime = payTime;
 		this.createTime = createTime;
-		this.paySerialNo = paySerialNo;
+		this.iscancelled = iscancelled;
+		this.username = username;
 	}
 
 	// Property accessors
@@ -224,19 +208,19 @@ public class OrdMembership implements java.io.Serializable {
 		this.payAccountNo = payAccountNo;
 	}
 
-	public Timestamp getPayTime() {
+	public Date getPayTime() {
 		return this.payTime;
 	}
 
-	public void setPayTime(Timestamp payTime) {
+	public void setPayTime(Date payTime) {
 		this.payTime = payTime;
 	}
 
-	public Timestamp getCreateTime() {
+	public Date getCreateTime() {
 		return this.createTime;
 	}
 
-	public void setCreateTime(Timestamp createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 
@@ -246,6 +230,20 @@ public class OrdMembership implements java.io.Serializable {
 
 	public void setPaySerialNo(String paySerialNo) {
 		this.paySerialNo = paySerialNo;
+	}
+
+	public Integer getIscancelled() {
+		return iscancelled;
+	}
+
+	public void setIscancelled(Integer iscancelled) {
+		this.iscancelled = iscancelled;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

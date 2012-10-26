@@ -49,7 +49,7 @@ public interface PrdFinanceDAO extends BaseDAO<PrdFinance, Integer> {
 	 */
 	public List<PrdFinance> recomPro(Integer financeType, Long loanAmount, Integer loanMonth, String orgId);
 
-	public Pager findProByCond(int pageNo, int pageSize, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience, String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId);
+	public Pager findProByCond(int pageNo, int pageSize, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience, String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId, Integer selectArea);
 	public List<PrdFinance> findFinanceImportent(Integer number);
 
 }

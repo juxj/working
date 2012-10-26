@@ -69,6 +69,7 @@ public class OrdFinanceApply implements java.io.Serializable {
 	
 	private Integer uploadAttachNum;
 	private Integer needAttachNum;
+	private String baseCheckStatus;
 	
 	public OrdFinanceApply(Integer id,String applyNum,Integer applyType,Integer applyStatus,
 			Date createdt,Long loanAmount,Integer loanMonth,String applyUserName,String productName, 
@@ -580,6 +581,14 @@ public class OrdFinanceApply implements java.io.Serializable {
 
 	public void setNeedAttachNum(Integer needAttachNum) {
 		this.needAttachNum = needAttachNum;
+	}
+
+	public String getBaseCheckStatus() {
+		return baseCheckStatus;
+	}
+
+	public void setBaseCheckStatus(String baseCheckStatus) {
+		this.baseCheckStatus = baseCheckStatus;
 	}
 
 }

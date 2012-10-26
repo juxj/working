@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/member.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
 <script type="text/javascript" src="/script/profile.js" > </script>
@@ -95,9 +96,13 @@ $(document).ready(function(){
 	  <div class="clear"> &nbsp; </div>
 	</div>
 	<div class="hr_10"> &nbsp; </div>
-    <div class="container_960">
-	    <div class="box_948"> <span class="yourposition">发布服务信息</span>
-	    <div class="clear"> &nbsp; </div>
+	<div class="M_menu">
+	服务管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;服务产品管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;发布服务信息
+	</div>
+	<div class="hr_10"> &nbsp; </div>
+<div class="container_950">
+	<div class="P_title box_4" style="border-bottom:5px solid #003961;">发布服务信息</div>
+	<div class="box_3">
 	    <form id="frmSinItem" action="/service/saveServiceItem.act" class="box_form"  method="post">
 		    <s:hidden id="typeName" name="prdServiceItem.typeName"></s:hidden>
 		    <s:hidden name="prdServiceItem.id"></s:hidden>

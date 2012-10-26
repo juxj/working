@@ -47,9 +47,9 @@
   	<div style="float: left;">融资管理&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;融资产品管理</div> 	
   </div>
   <div class="hr_10"> &nbsp;</div>
-  <div class="container_950 box_4" style="padding-bottom:25px;">
+  <div class="container_950 box_4">
 	<div class="P_title">融资产品管理</div>
-	<div class="line"><input name="" type="button" value="发布新产品"  class="but_gray" style="float: right; margin-right: 10px;" onclick="add()"/></div>  		
+	<div class="line" style="height:25px;"><input name="" type="button" value="发布新产品"  class="but_gray" style="float: right; margin-right: 20px;" onclick="add()"/></div>  		
   </div>
   <div class="hr_10"> &nbsp;</div>
   <form id="financeManage" action="/user/loan/financeProduct.act">
@@ -57,14 +57,14 @@
         <table class="container_950 center box_4">
      		<tr class="top_color">
      		<td width="12%" style="padding-left:25px;">产品编号</td>
-            <td width="15%">产品名称</td>
+            <td width="20%">产品名称</td>
             <td width="10%">类别</td>
             <td width="10%">年利率</td>
             <td width="10%">发布时间</td>
             <td width="12%">额度范围</td>
             <td width="10%">期限</td>
-            <td width="8%">状态</td>
-            <td width="13%">操作</td>
+            <td >状态</td>
+            <td width="10%" align="center">操作</td>
           </tr>
           <s:if test="productList.size()>0">
           <tbody>
@@ -80,7 +80,7 @@
 	   			<td><s:number name="financeLittleamount" />-<s:number name="financeBigamount" />万元</td>
 	   			<td>${item.financeLittledt}-${item.financeMostdt}个月</td>
 	   			<td><common:print valueId="#item.proStatus"/></td>
-	   			<td class="view_detail01" >
+	   			<td align="right" class="view_detail01" style="padding-right:20px;">
 	   				<a href="/user/loan/financeProduct!viewFinance.act?productId=${item.id }" >查看</a>
 	   				
 	   			</td>

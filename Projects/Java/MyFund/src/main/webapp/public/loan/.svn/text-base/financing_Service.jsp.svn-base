@@ -82,7 +82,7 @@ function PersonSubmit(){
           <div >
             <div class="xxkbox3 first3" >
             <div class="fl" style="width:320px;">
-              <form class="box_form" id="searchForm1" action="/loan/financeProduct.act" method="post">
+              <form class="out_box_form" id="searchForm1" action="/loan/financeProduct.act" method="post">
                 <dl>
                   <dd>
                     <h6 style="width:80px;"><span class="txt-impt"></span>类别：</h6>
@@ -115,7 +115,7 @@ function PersonSubmit(){
             </div>
             <div class="xxkbox3">
             <div class="fl" style="width:320px;">
-              <form class="box_form" id="searchForm2" action="/loan/financeProduct.act" method="post">
+              <form class="out_box_form" id="searchForm2" action="/loan/financeProduct.act" method="post">
                 <input id="poseId" type="hidden" name="poseId" value=""/>
                 <dl>
                   <dd>

@@ -60,7 +60,7 @@
 	           	  	  	${msg }
 	           	  	  	<s:if test="#session._user.auditstatus==2 && #session.APPLY_LOAN_PRODUCT_ID != null && #session.APPLY_LOAN_PRODUCT_ID != ''">
 	           	  	  	您有未完成的融资产品申请，您可以
-	           	  	  	<a href="/user/loan/financeApply!financeApply.act?product.id=${session.APPLY_LOAN_PRODUCT_ID}" class="zj_href">继续申请</a>
+	           	  	  	<a href="/user/loan/financeApply.act?product.id=${session.APPLY_LOAN_PRODUCT_ID}" class="zj_href">继续申请</a>
 
 	           	  	  	</s:if>
 	           	  	  </div>

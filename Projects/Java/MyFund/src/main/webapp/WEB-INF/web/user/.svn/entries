@@ -1,14 +1,14 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/webapp/WEB-INF/web/user
 svn://192.168.1.8
 
 
 
-2012-10-16T08:34:37.073654Z
-3878
+2012-10-26T06:56:40.078691Z
+4057
 yangb
 has-props
 
@@ -32,14 +32,14 @@ file
 
 
 
-2012-10-16T09:07:29.000000Z
+2012-10-26T07:35:49.900410Z
 85e36e083a915e7913a64b6c9a1115d6
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -60,8 +60,39 @@ svn:special svn:externals svn:needs-lock
 
 4034
 
-bank
-dir
+uploadOrgError.jsp
+file
+
+
+
+
+2012-10-26T07:35:49.900410Z
+7d7c73f891f1553e47569b1305f88e84
+2012-09-14T04:05:22.013359Z
+3444
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+172
 
 caCertificateActivate.jsp
 file
@@ -69,7 +100,7 @@ file
 
 
 
-2012-10-12T06:32:09.692759Z
+2012-10-26T07:35:49.900410Z
 622126558ec70836a1feb336724261b4
 2012-09-07T01:36:08.469106Z
 3265
@@ -97,13 +128,170 @@ Patrick
 
 2990
 
+infoConfirm.jsp
+file
+
+
+
+
+2012-10-26T07:35:49.900410Z
+bb899826cc722e91cda9f861485e9e8f
+2012-10-11T03:12:16.177357Z
+3788
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12978
+
+company
+dir
+
+person
+dir
+
+serviceOrg
+dir
+
+financeOrg
+dir
+
+bank
+dir
+
+chooseType.jsp
+file
+
+
+
+
+2012-10-26T07:35:49.900410Z
+90397b0182da227c65dcdf279bd8d38b
+2012-09-25T09:12:27.298570Z
+3592
+wanst
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6304
+
+org_upload_result.jsp
+file
+
+
+
+
+2012-10-26T07:35:49.900410Z
+d34ba70d8ea97f8fd052ae6c47a05924
+2012-09-06T03:03:44.962478Z
+3213
+linm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+239
+
+regInfo.jsp
+file
+
+
+
+
+2012-10-26T07:35:49.900410Z
+096a6bf4e0b54fbfc0aeb4be5282c40f
+2012-10-26T06:26:27.511666Z
+4055
+wanst
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+15365
+
+message
+dir
+
+club
+dir
+
 caCertificateRegister.jsp
 file
 
 
 
 
-2012-10-12T06:32:09.692759Z
+2012-10-26T07:35:49.900410Z
 54b84aee2cc3d88d0d1595721cbad463
 2012-09-07T01:36:08.469106Z
 3265
@@ -137,11 +325,11 @@ file
 
 
 
-2012-10-12T06:32:09.692759Z
-e8ced626d16f0da47c5992b1c9e72f73
-2012-09-11T10:04:28.077090Z
-3357
-linm
+2012-10-26T07:35:49.900410Z
+492ae563c10ece58e38dca958ed2bc12
+2012-10-25T05:50:56.654363Z
+4034
+xusj
 
 
 
@@ -163,52 +351,15 @@ linm
 
 
 
-9200
-
-chooseType.jsp
-file
-
-
-
-
-2012-10-12T06:32:09.692759Z
-90397b0182da227c65dcdf279bd8d38b
-2012-09-25T09:12:27.298570Z
-3592
-wanst
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6304
-
-club
-dir
+9505
 
 common
 dir
 
-company
+loan
 dir
 
-financeOrg
+members
 dir
 
 head.jsp
@@ -217,14 +368,14 @@ file
 
 
 
-2012-10-16T09:07:29.000000Z
+2012-10-26T07:35:49.900410Z
 118355b3426c43b5f101fba7b4405458
 2012-10-15T05:00:53.744557Z
 3857
 Patrick
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -244,155 +395,4 @@ svn:special svn:externals svn:needs-lock
 
 
 1555
-
-infoConfirm.jsp
-file
-
-
-
-
-2012-10-12T06:32:09.692759Z
-bb899826cc722e91cda9f861485e9e8f
-2012-10-11T03:12:16.177357Z
-3788
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12978
-
-loan
-dir
-
-members
-dir
-
-message
-dir
-
-org_upload_result.jsp
-file
-
-
-
-
-2012-10-12T06:32:09.692759Z
-d34ba70d8ea97f8fd052ae6c47a05924
-2012-09-06T03:03:44.962478Z
-3213
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-239
-
-person
-dir
-
-regInfo.jsp
-file
-
-
-
-
-2012-10-15T03:47:58.000000Z
-be1ac6700c9a434583176f89a07379fb
-2012-10-12T10:23:16.720976Z
-3851
-xusj
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-15099
-
-serviceOrg
-dir
-
-uploadOrgError.jsp
-file
-
-
-
-
-2012-10-12T06:32:09.692759Z
-7d7c73f891f1553e47569b1305f88e84
-2012-09-14T04:05:22.013359Z
-3444
-linm
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-172
 

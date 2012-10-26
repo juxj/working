@@ -62,7 +62,7 @@
 <div class="hr_10"> &nbsp; </div>
 <div class="container_950 box_4" style="height:90px;">
 	<div class="P_title">服务产品管理</div>
-	<div class="line"><input name="" type="button" value="发布新服务"  class="but_gray" style="float: right; margin-right: 10px;" onclick="edit();"/></div>
+	<div class="line"><input name="" type="button" value="发布新服务"  class="but_gray" style="float: right; margin-right: 20px;" onclick="edit();"/></div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--服务产品管理-->
@@ -74,7 +74,7 @@
 		</form>
 	   	<table class="container_950 center box_4">
 	   		<tr class="top_color">
-	   			<td style="padding-left:25px;">服务标题</td>
+	   			<td style="padding-left:20px;">服务标题</td>
 				<td>服务编号</td>
 	   			<td>服务类型</td>
 	   			<td>费用范围</td>
@@ -83,12 +83,12 @@
 	   			<td>发布日期</td>
 	   			<td>截止日期</td>
 	   			<td>状态</td>
-	   			<td>操作</td>
+	   			<td style="padding-right:20px;">操作</td>
 	   		</tr>
 	   		<s:if test="pager.data.size()>0">
 		   		<s:iterator id="item" value="pager.data">
 	  			<tr class="top_color01">
-	  				<td title="${item.title }">
+	  				<td style="padding-left:20px;" title="${item.title }">
 	  					<div style="width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
 	  					${item.title }
 	  					</div>
@@ -136,7 +136,7 @@
 	  						已启用
 	  					</s:if> 
 	  				</td>
-	  				<td id="cancel_${item.id}">
+	  				<td class="view_detail" id="cancel_${item.id}">
 	  					<s:if test="#item.isAuthenticated==0 and #item.isCancelled==0">
 	  						<a href="javascript:changeSinItemStatus(${item.id},1)">取消</a>
 	  					</s:if> <s:else>

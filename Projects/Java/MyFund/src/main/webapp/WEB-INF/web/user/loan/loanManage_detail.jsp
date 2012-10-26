@@ -67,117 +67,120 @@ function LookRecPro(id){
   </div>
 	<!--主体部分开始-->
 	<div class="hr_10"> &nbsp; </div>
-<div class="apply_form">
-		<div class="apply_form_title">状态详情</div>
-		<div class="C_form" style="margin-top:20px;">
-			<table style="width:660px; font-size:13px;">
-				<tr>
-					<td width="25%" align="right">状态：</td>
-					<td style="padding:15px;"><common:print valueId="loan.applyStatus" /> </td>
-					<td width="25%" align="right">操作：</td>
-					<td width="25%" style="padding:15px;" class="view_detail">
-	   				<s:if test="groupType==2 || groupType==3">
-	   				<a href="javascript:void(0);" onclick="return Recommend(${loan.id },${loan.applyType });">推荐产品</a>
-	   				</s:if>
-	   				<s:else>
-	   				<a href="javascript:void(0);" onclick="return LookRecPro(${loan.id });">查看推荐产品</a>
-	   				</s:else>
-					</td>
-				</tr>
-			</table>
-		</div>
-</div>
-
-<div class="hr_10">&nbsp;</div>	
-<div class="apply_form">
-		<div class="apply_form_title">需求信息</div>
-		<div class="C_form" style="margin-top:20px;">
-			<table style="width:660px; font-size:13px;">
-				<tr>
-					<td width="25%" align="right">需求编号：</td>
-					<td width="25%" style="padding:15px;"><s:property value="loan.applyNum"/> </td>
-					<td width="25%" align="right">融资产品类型：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.applyType" /> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">需求金额：</td>
-					<td width="25%" style="padding:15px;"><s:number name="loan.loanAmount" />万元 </td>
-					<td width="25%" align="right">期限：</td>
-					<td width="25%" style="padding:15px;"><s:property value="loan.loanMonth" />个月 </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">用途：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.loanPurpose"/> </td>
-					<td width="25%" align="right">是否有抵押物：</td>
-					<td width="25%" style="padding:15px;"><s:if test="loan.haveMortgage==1">有</s:if><s:else>无</s:else> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">接受金融机构：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
-					<td width="25%" align="right">接受利率：</td>
-					<td width="25%" style="padding:15px;"><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">发布时间：</td>
-					<td width="25%" style="padding:15px;"><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
-					<td width="25%" align="right">有效截止日期：</td>
-					<td width="25%" style="padding:15px;"><s:date name="loan.effectiveDateend" format="yyyy-MM-dd"/> </td>
-				</tr>
-			</table>
-		</div>
-</div>
-<div class="hr_10">&nbsp;</div>
-<div class="apply_form">
-	<div class="apply_form_title">需求方信息</div>
-		<div class="C_form" style="margin-top:20px;">
-			<table style="width:660px; font-size:13px;">
-			<!-- 
-				<tr>
-					<td width="25%" align="right">姓名：</td>
-					<td width="25%" style="padding:15px;"><s:property value="user.username" /> </td>
-					<td width="25%" align="right">出生年月：</td>
-					<td width="25%" style="padding:15px;"><s:date name="loan.birthday" format="yyyy-MM-dd"/> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">教育程度：</td>
-					<td width="25%" style="padding:15px;"><s:property value="loan.teachLevel"/> </td>
-					<td width="25%" align="right">现单位性质：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.companyType" /></td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">现单位工作时长：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.workTime"/> </td>
-					<td width="25%" align="right">税后月收入：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.salaryLevel" /> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">发薪形式：</td>
-					<td width="25%" style="padding:15px;"><common:print valueId="loan.putSalaryType"/> </td>
-					<td width="25%" align="right">自有房产：</td>
-					<td width="25%" style="padding:15px;"><s:if test="loan.haveHouse==1">有</s:if><s:else>无</s:else> </td> 
-				</tr>
-			 -->
-				<tr>
-					<td width="25%" align="right">银行借款经历：</td>
-					<td width="25%" style="padding:15px;"><s:if test="loan.hostoryLoan==1">有</s:if><s:else>无</s:else></td>
-					<td width="25%" align="right">使用信用卡经历：</td>
-					<td width="25%" style="padding:15px;"><s:if test="loan.userCreditCard==1">有</s:if><s:else>无</s:else> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">银行流水：</td>
-					<td style="padding:15px;"><s:if test="loan.bankSalaryList==1">有</s:if><s:else>无</s:else> </td>
-					<td width="25%" align="right">经营场所：</td>
-					<td style="padding:15px;"><s:if test="loan.runningArea==1">有</s:if><s:else>无</s:else> </td>
-				</tr>
-				<tr>
-					<td width="25%" align="right">行业经验：</td>
-					<td style="padding:15px;">${loan.experience }年 </td>
-					<td width="25%" align="right">年营业额：</td>
-					<td style="padding:15px;"><common:print valueId="loan.allyearVolume"/> </td>
-				</tr>
-			</table>
-		</div>
-	</div>	
+	<div class="container_950 box_4" >
+			<div class="P_title">融资意向单详情</div>
+			<div class="line" style="background:#f9f9f7; height:25px;">
+				<div class="f_text01 fl">
+					<span>需求编号：<s:property value="loan.applyNum"/></span>
+					<span>状态：<font color="d5652c"><common:print valueId="loan.applyStatus" /></font></span>
+				</div>
+				<div class="view_detail fr" style="margin-right: 20px;">
+		   				<s:if test="groupType==2 || groupType==3">
+		   				<a href="javascript:void(0);" onclick="return Recommend(${loan.id },${loan.applyType });">推荐产品</a>
+		   				</s:if>
+		   				<s:else>
+		   				<a href="javascript:void(0);" onclick="return LookRecPro(${loan.id });">查看推荐产品</a>
+		   				</s:else>	
+				</div>
+			</div>
+	</div>
+	<div class="hr_10">&nbsp;</div>	
+	<div class="container_950 box_6">
+	    <div class="menu_blue white"><h6>意向单详情</h6></div>
+	      	<div class="f_box">
+				<div class="f_sqxx">
+		      		<span class="f_gz">需求信息</span>
+		      		<div>
+					<table class="special_psfs_tb">
+						<tr>
+							<td class="a_right">需求编号：</td>
+							<td width="20%" ><s:property value="loan.applyNum"/> </td>
+							<td class="a_right">融资产品类型：</td>
+							<td ><common:print valueId="loan.applyType" /> </td>
+						</tr>
+						<tr>
+							<td class="a_right">需求金额：</td>
+							<td ><s:number name="loan.loanAmount" />万元 </td>
+							<td class="a_right">期限：</td>
+							<td ><s:property value="loan.loanMonth" />个月 </td>
+						</tr>
+						<tr>
+							<td class="a_right">用途：</td>
+							<td ><common:print valueId="loan.loanPurpose"/> </td>
+							<td class="a_right">是否有抵押物：</td>
+							<td ><s:if test="loan.haveMortgage==1">有</s:if><s:else>无</s:else> </td>
+						</tr>
+						<tr>
+							<td class="a_right">接受金融机构：</td>
+							<td ><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
+							<td class="a_right">接受利率：</td>
+							<td ><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
+						</tr>
+						<tr>
+							<td class="a_right">发布时间：</td>
+							<td ><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
+							<td class="a_right">有效截止日期：</td>
+							<td ><s:date name="loan.effectiveDateend" format="yyyy-MM-dd"/> </td>
+						</tr>
+					</table>
+					</div>
+					<div class="hr_20"> &nbsp;</div>			      			
+		      	</div>
+				<div class="hr_20"> &nbsp;</div>		
+				<div >
+		      		<span class="f_gz">需求方信息</span>
+					<div>
+						<table class="special_psfs_tb">
+						<!-- 
+							<tr>
+								<td class="a_right">姓名：</td>
+								<td width="25%" ><s:property value="user.username" /> </td>
+								<td class="a_right">出生年月：</td>
+								<td ><s:date name="loan.birthday" format="yyyy-MM-dd"/> </td>
+							</tr>
+							<tr>
+								<td class="a_right">教育程度：</td>
+								<td ><s:property value="loan.teachLevel"/> </td>
+								<td class="a_right">现单位性质：</td>
+								<td ><common:print valueId="loan.companyType" /></td>
+							</tr>
+							<tr>
+								<td class="a_right">现单位工作时长：</td>
+								<td ><common:print valueId="loan.workTime"/> </td>
+								<td class="a_right">税后月收入：</td>
+								<td ><common:print valueId="loan.salaryLevel" /> </td>
+							</tr>
+							<tr>
+								<td class="a_right">发薪形式：</td>
+								<td ><common:print valueId="loan.putSalaryType"/> </td>
+								<td class="a_right">自有房产：</td>
+								<td ><s:if test="loan.haveHouse==1">有</s:if><s:else>无</s:else> </td> 
+							</tr>
+						 -->
+							<tr>
+								<td class="a_right">银行借款经历：</td>
+								<td width="20%" ><s:if test="loan.hostoryLoan==1">有</s:if><s:else>无</s:else></td>
+								<td class="a_right">使用信用卡经历：</td>
+								<td ><s:if test="loan.userCreditCard==1">有</s:if><s:else>无</s:else> </td>
+							</tr>
+							<tr>
+								<td class="a_right">银行流水：</td>
+								<td ><s:if test="loan.bankSalaryList==1">有</s:if><s:else>无</s:else> </td>
+								<td class="a_right">经营场所：</td>
+								<td ><s:if test="loan.runningArea==1">有</s:if><s:else>无</s:else> </td>
+							</tr>
+							<tr>
+								<td class="a_right">行业经验：</td>
+								<td >${loan.experience }年 </td>
+								<td class="a_right">年营业额：</td>
+								<td ><common:print valueId="loan.allyearVolume"/> </td>
+							</tr>
+						</table>
+					</div>		      			
+		      	</div>
+				<div class="hr_20"> &nbsp;</div>						      			      	
+		    </div>			    	    
+	</div>
 	<!--弹出框内容推荐产品页面-->
 <div id="pro_recommend" style="display:none;" title="请选择推荐融资产品：">
     

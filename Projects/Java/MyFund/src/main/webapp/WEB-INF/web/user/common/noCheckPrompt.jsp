@@ -23,17 +23,15 @@
   <div class="clear"> &nbsp; </div>
 </div>
 <div class="hr_10"> &nbsp; </div>
-<!--主体部分开始-->
-
 <div class="hr_10">&nbsp;</div>
-<div class="container_960">
-  		<div class="box_948">
-          <div class="fl" style="padding-top:20px;padding-left:60px;padding-right:20px;padding-bottom:40px;"><img src="/images/wrong_ico.png"/></div>
-          <div class="txt_content" >  		
-		  <h5>对不起，你的帐户尚未通过审核，无法执行该操作 ! 请您完善您的详细信息</h5><span>
-		  </div>
-		  <input type="button" onclick="tiaoz()" value="完善信息">
-		</div>
+<!--主体部分开始-->
+<div class="container_950">	
+	<div class="box_4 txt_content ">
+          <div class="fl" style="margin:0px 20px 0px 0px;"><img src="/images/wrong_ico.png"/></div>
+          <div style="margin:0px 0px 20px 0px;">  		
+		  <h5>对不起，你的帐户尚未通过审核，无法执行该操作 ! 请您完善您的详细信息</h5>
+		  <input type="button" onclick="tiaoz()" value="完善信息" Class="but_gray"></div>
+	</div>
 </div>
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>

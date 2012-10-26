@@ -1168,9 +1168,9 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 	}
 
 	public Pager findProByCond(int currentPage, int pageCount, Integer financeType, String purposeType, Long financeAmount, Integer financeDate, String mortgageType, String userType, String checkTime, String companyAllAsset, String creditAcount, String experience,
- String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId) {
+ String needEnsure, String operatIncome, Integer settingYear, String bankSalaryList, String repaymentType, Integer runningArea, Integer industryId, Integer childId, Integer selectArea) {
 		
-		Pager page = prdFinanceDAO.findProByCond(currentPage, pageCount, financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId);
+		Pager page = prdFinanceDAO.findProByCond(currentPage, pageCount, financeType, purposeType, financeAmount, financeDate, mortgageType, userType, checkTime, companyAllAsset, creditAcount, experience, needEnsure, operatIncome, settingYear, bankSalaryList, repaymentType, runningArea, industryId, childId, selectArea);
 		if(page.getData() != null && page.getData().size() > 0){
 			for(Object obj : page.getData()){
 				PrdFinance p = (PrdFinance) obj;
@@ -1212,7 +1212,6 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 	public void setDicCityDAO(DicCityDAO dicCityDAO) {
 		this.dicCityDAO = dicCityDAO;
 	}
-
 	public void setDicIndustryDAO(DicIndustryDAO dicIndustryDAO) {
 		this.dicIndustryDAO = dicIndustryDAO;
 	}

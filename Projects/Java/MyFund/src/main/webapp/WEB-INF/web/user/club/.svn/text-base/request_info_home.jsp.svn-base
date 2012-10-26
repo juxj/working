@@ -45,17 +45,20 @@
 	<div class="clear"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div> 
 <div class="container_950">
-		<div class="P_title box_4">项目信息</div>
-		<div class="line"  style="height:28px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:10px;"/></div>
+	<div class="box_4" style="height:90px;">	
+		<div class="P_title">项目信息</div>
+		<div class="line"  style="height:28px;"><input name="" type="button" value="发布信息"  onclick="edit();" class="but_gray" style="float: right; margin-right:20px;"/></div>
+	</div>
+	<div class="hr_10"> &nbsp; </div> 
 	<!-- 表格 -->
-	<table class="gold-table">
-	<th>资金标题</th>
-	<th>发布时间</th>
-	<th>项目分类</th>
-	<th>所需资金</th>
-	<th>融资方式</th>
-	<th>状态</th>
-	<th width="12%">操作</th>
+	<table class="gold-table" >
+	<th style="text-align:left;">资金标题</th>
+	<th style="text-align:left;">发布时间</th>
+	<th style="text-align:left;">项目分类</th>
+	<th style="text-align:left;">所需资金</th>
+	<th style="text-align:left;">融资方式</th>
+	<th style="text-align:left;">状态</th>
+	<th style="text-align:center;">操作</th>
 	<s:if test="pager.data != null || pager.data.size>0">
 		<s:iterator id="item" value="pager.data" status="st">
 			<tr style="padding-left:8px;">
@@ -101,7 +104,7 @@
 					已阻止
 				</s:if>
 			</td>
-			<td class="view_detail01"> 
+			<td class="view_detail01" style="text-align:right;padding-right:20px"> 
 				<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">查看</a>
 				<s:if test="#item.rank==0 || #item.rank==9">
 					<a href="/service/requestInfoAction4User!edit.act?clbRequestInfoId=${item.id }">编辑</a>

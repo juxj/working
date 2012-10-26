@@ -1,15 +1,15 @@
 10
 
 dir
-3878
+4060
 svn://192.168.1.8/MyFund/src/main/java/com/zj198
 svn://192.168.1.8
 
 
 
-2012-10-16T08:34:37.073654Z
-3878
-yangb
+2012-10-26T07:26:17.072363Z
+4060
+yuel
 
 
 
@@ -29,13 +29,10 @@ yangb
 action
 dir
 
-dao
+util
 dir
 
 exception
-dir
-
-filter
 dir
 
 interceptor
@@ -50,6 +47,9 @@ dir
 task
 dir
 
-util
+dao
+dir
+
+filter
 dir
 

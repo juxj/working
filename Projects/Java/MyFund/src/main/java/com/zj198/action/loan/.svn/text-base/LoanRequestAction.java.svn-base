@@ -1,14 +1,8 @@
 package com.zj198.action.loan;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
@@ -35,11 +29,8 @@ import com.zj198.util.Constants;
  * @modifytime: 2012-6-28 13:21:23
  */
 public class LoanRequestAction extends BaseAction {
-//	private ServiceInfoService serviceInfoService;
-//	private FinanceProductService financeProductService;
 	private DictoryDataService dictoryDataService;
 	private LoanRequestService loanRequestService;
-//	private SupplyRequestService supplyRequestService;
 	private String applyNum;
 	private Map<String, List<DicCommon>> dataMap;
 	private Integer industryId;
@@ -49,7 +40,6 @@ public class LoanRequestAction extends BaseAction {
 	private String[] loanObjects;
 	private LoanOrgCountModel loanOrgCountModel;// 贷款机构汇总
 	private AccountService accountService;
-//	private NewsService newsService;
 	private Integer maxBound;
 	private Integer minBound;
 	private List<DicUsertype> userTypeList;
@@ -57,7 +47,6 @@ public class LoanRequestAction extends BaseAction {
 	 * -------------如果用户申请融资未审核 为企业或个人用户 显示编辑信息  （林明）
 	 */
 	private UsrPerson usrPerson;
-//	private Map<String,String> profileMap;
 	private Map<String,List<DicCity>> cityMap;
 	private Map<String,List<DicDistrict>> districtMap;
 	private ProfileService profileService;
@@ -72,11 +61,6 @@ public class LoanRequestAction extends BaseAction {
 	private Integer groupType;
 	private Integer typeId;
 	private List<DicCommon> purposeTypeList;
-//	private List<PrdFinance> prdFinanceList;
-//	private List<KnwTitle> finacialNewsList;
-//	private List<KnwTitle> financingGuideList;
-//	private List<ClbRequestInfo> requestInfoList;
-//	private List<ClbSupplyInfo> supplyInfoList;
 	/**
 	 * 企业快速申请融资第一步
 	 * 
@@ -122,42 +106,6 @@ public class LoanRequestAction extends BaseAction {
 		return busiFirst();
 	}
 
-	// public void validateLoanSecond() {
-	// if (loan.getApplyType().intValue() == 136) {
-	// if (loan.getLoanAmount() == null) {
-	// addFieldError("loan.applyType", "请输入贷款金额！");
-	// }
-	// }
-	// }
-//	/**
-//	 * 
-//	 * @Author zeroleavebaoyang@gmail.com
-//	 * @Description 行业异步级联显示
-//	 * @return
-//	 */
-//	public String Industry() {//TODO:方法名要小写，此类公用方法不应在此类中；execute()方法要利用起来
-//		HttpServletResponse response = ServletActionContext.getResponse();
-//		response.setContentType("text/xml; charset=UTF-8");
-//		response.setHeader("Cache-Control", "no-cache"); // 取消浏览器缓存
-//
-//		PrintWriter out;
-//		try {
-//			industryList = dictoryDataService.findIndustryByParentid(industryId);
-//			out = response.getWriter();
-//			out.println("<response>");
-//			for (DicIndustry ind : industryList) {
-//				out.println("<inds>" + ind.getId() + "</inds><inds>" + ind.getName() + "</inds>");
-//			}
-//			out.println("</response>");
-//			out.flush();
-//			out.close();
-//			return null;
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		return null;
-//	}
-
 	public String loanRequest_bak() {
 		ActionContext context = ActionContext.getContext();
 		UsrUser user = (UsrUser) context.getSession().get("_user");
@@ -187,17 +135,6 @@ public class LoanRequestAction extends BaseAction {
 		}
 		return busiFirst();
 	}
-
-//	public String loanRequestHome(){
-//		ActionContext context = ActionContext.getContext();
-//		UsrUser user = (UsrUser) context.getSession().get("_user");
-//		if (user.getUserTypeGroup().intValue() == 2 || user.getUserTypeGroup().intValue() == 3) {// 银行或其它贷款机构
-//			topThree = loanRequestService.getTopThree();
-//		}else{
-//			topThree = loanRequestService.getTopThree(user.getId());
-//		}
-//		return "loanRequestHome";
-//	}
 	
 	/**
 	 * 企业快速申请融资第二步 统计各种贷款机构的数量
@@ -426,20 +363,6 @@ public class LoanRequestAction extends BaseAction {
 		return "perrunFirst";
 	}
 
-	// 融资服务
-//	public String financingService() {
-//		this.finacialNewsList =  this.newsService.findLastestByType(Constants.FINANCING_NEWS, 5);
-//		this.financingGuideList =  this.newsService.findLastestByType(Constants.FINANCING_GUIDE, 5);
-//		industryList = dictoryDataService.findIndustryByParentid(0);
-//		this.serviceItemList = this.serviceInfoService.findPrdServiceItemByRecentN(5);
-//		prdFinanceList = financeProductService.findFinanceImportent(new Integer(5));
-//		
-//		requestInfoList = supplyRequestService.findLastRequestInfo(10);
-//		supplyInfoList = supplyRequestService.findLastSupplyInfo(10);
-//		
-//		return "financing";
-//	}
-
 	public String loanPurposeByTypeId() {
 		if (typeId > 0) {
 			purposeTypeList = dictoryDataService.findCommonDataByGroupId(typeId);
@@ -632,268 +555,4 @@ public class LoanRequestAction extends BaseAction {
 	}
 
 	
-//
-//	public List<OrdLoanRequest> getLoans() {
-//		return loans;
-//	}
-//
-//	public void setApplyNum(String applyNum) {
-//		this.applyNum = applyNum;
-//	}
-//
-//	public void setDataMap(Map<String, List<DicCommon>> dataMap) {
-//		this.dataMap = dataMap;
-//	}
-//
-//	public void setDictoryDataService(DictoryDataService dictoryDataService) {
-//		this.dictoryDataService = dictoryDataService;
-//	}
-//
-//	public void setIndustryId(Integer industryId) {
-//		this.industryId = industryId;
-//	}
-//
-//	public void setIndustryList(List<DicIndustry> industryList) {
-//		this.industryList = industryList;
-//	}
-//
-//	public void setListProvince(List<DicProvince> listProvince) {
-//		this.listProvince = listProvince;
-//	}
-//
-//	public void setLoan(OrdLoanRequest loan) {
-//		this.loan = loan;
-//	}
-//
-//	public void setLoanObjects(String[] loanObjects) {
-//		this.loanObjects = loanObjects;
-//	}
-//
-//	public void setLoanOrgCountModel(LoanOrgCountModel loanOrgCountModel) {
-//		this.loanOrgCountModel = loanOrgCountModel;
-//	}
-//
-//	public void setLoanRequestService(LoanRequestService loanRequestService) {
-//		this.loanRequestService = loanRequestService;
-//	}
-//
-//	public void setMaxBound(Integer maxBound) {
-//		this.maxBound = maxBound;
-//	}
-//
-//	public void setMinBound(Integer minBound) {
-//		this.minBound = minBound;
-//	}
-//
-//	public void setUserTypeList(List<DicUsertype> userTypeList) {
-//		this.userTypeList = userTypeList;
-//	}
-//
-//	public String getApplyNum() {
-//		return applyNum;
-//	}
-//
-//	public Map<String, List<DicCommon>> getDataMap() {
-//		return dataMap;
-//	}
-//
-//	public Integer getIndustryId() {
-//		return industryId;
-//	}
-//
-//	public List<DicIndustry> getIndustryList() {
-//		return industryList;
-//	}
-//
-//	public List<DicProvince> getListProvince() {
-//		return listProvince;
-//	}
-//
-//	public OrdLoanRequest getLoan() {
-//		return loan;
-//	}
-//
-//	public String[] getLoanObjects() {
-//		return loanObjects;
-//	}
-//
-//	public LoanOrgCountModel getLoanOrgCountModel() {
-//		return loanOrgCountModel;
-//	}
-//
-//	public Integer getMaxBound() {
-//		return maxBound;
-//	}
-//
-//	public Integer getMinBound() {
-//		return minBound;
-//	}
-//
-//	public List<DicUsertype> getUserTypeList() {
-//		return userTypeList;
-//	}
-//
-//	public Double getBaseRate() {
-//		return baseRate;
-//	}
-//
-//	public void setBaseRate(Double baseRate) {
-//		this.baseRate = baseRate;
-//	}
-//
-//	public void setLoans(List<OrdLoanRequest> loans) {
-//		this.loans = loans;
-//	}
-//
-//	public void setUserType(Short userType) {
-//		this.userType = userType;
-//	}
-//
-//	public Short getUserType() {
-//		return userType;
-//	}
-//
-//	public LoanRequestService getLoanRequestService() {
-//		return loanRequestService;
-//	}
-//
-//	public RequestSearch getRequestSearch() {
-//		return requestSearch;
-//	}
-//
-//	public void setRequestSearch(RequestSearch requestSearch) {
-//		this.requestSearch = requestSearch;
-//	}
-//
-//	public Integer getGroupType() {
-//		return groupType;
-//	}
-//
-//	public void setGroupType(Integer groupType) {
-//		this.groupType = groupType;
-//	}
-//
-//	public Integer getTypeId() {
-//		return typeId;
-//	}
-//
-//	public void setTypeId(Integer typeId) {
-//		this.typeId = typeId;
-//	}
-//
-//	public List<DicCommon> getPurposeTypeList() {
-//		return purposeTypeList;
-//	}
-//
-//	public void setPurposeTypeList(List<DicCommon> purposeTypeList) {
-//		this.purposeTypeList = purposeTypeList;
-//	}
-//
-//	public Integer getSelected() {
-//		return selected;
-//	}
-//
-//	public void setSelected(Integer selected) {
-//		this.selected = selected;
-//	}
-//
-//	public UsrUser getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(UsrUser user) {
-//		this.user = user;
-//	}
-//
-//	public void setAccountService(AccountService accountService) {
-//		this.accountService = accountService;
-//	}
-//
-//	public List<PrdServiceItem> getServiceItemList() {
-//		return serviceItemList;
-//	}
-//
-//	public void setServiceItemList(List<PrdServiceItem> serviceItemList) {
-//		this.serviceItemList = serviceItemList;
-//	}
-//
-////	public void setServiceInfoService(ServiceInfoService serviceInfoService) {
-////		this.serviceInfoService = serviceInfoService;
-////	}
-//
-////	public void setNewsService(NewsService newsService) {
-////		this.newsService = newsService;
-////	}
-//
-////	public List<PrdFinance> getPrdFinanceList() {
-////		return prdFinanceList;
-////	}
-////
-////	public void setPrdFinanceList(List<PrdFinance> prdFinanceList) {
-////		this.prdFinanceList = prdFinanceList;
-////	}
-////
-////	public void setFinanceProductService(FinanceProductService financeProductService) {
-////		this.financeProductService = financeProductService;
-////	}
-////
-////	public List<KnwTitle> getFinacialNewsList() {
-////		return finacialNewsList;
-////	}
-////
-////	public List<KnwTitle> getFinancingGuideList() {
-////		return financingGuideList;
-////	}
-////
-////	public List<ClbRequestInfo> getRequestInfoList() {
-////		return requestInfoList;
-////	}
-////
-////	public void setRequestInfoList(List<ClbRequestInfo> requestInfoList) {
-////		this.requestInfoList = requestInfoList;
-////	}
-////
-////	public List<ClbSupplyInfo> getSupplyInfoList() {
-////		return supplyInfoList;
-////	}
-////
-////	public void setSupplyInfoList(List<ClbSupplyInfo> supplyInfoList) {
-////		this.supplyInfoList = supplyInfoList;
-////	}
-//
-////	public void setSupplyRequestService(SupplyRequestService supplyRequestService) {
-////		this.supplyRequestService = supplyRequestService;
-////	}
-//
-//	public List<OrdLoanRequest> getTopThree() {
-//		return topThree;
-//	}
-//
-//	public void setTopThree(List<OrdLoanRequest> topThree) {
-//		this.topThree = topThree;
-//	}
-//	public UsrPerson getUsrPerson() {
-//		return usrPerson;
-//	}
-//	public void setUsrPerson(UsrPerson usrPerson) {
-//		this.usrPerson = usrPerson;
-//	}
-//	public UsrCompany getUsrCompany() {
-//		return usrCompany;
-//	}
-//	public void setUsrCompany(UsrCompany usrCompany) {
-//		this.usrCompany = usrCompany;
-//	}
-//	public Map<String, List<DicCity>> getCityMap() {
-//		return cityMap;
-//	}
-//	public Map<String, List<DicDistrict>> getDistrictMap() {
-//		return districtMap;
-//	}
-//	public void setProfileService(ProfileService profileService) {
-//		this.profileService = profileService;
-//	}
-//	public List<DicIndustry> getIndustry() {
-//		return industry;
-//	}
 }

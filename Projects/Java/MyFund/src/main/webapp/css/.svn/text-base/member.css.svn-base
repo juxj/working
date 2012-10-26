@@ -14,12 +14,13 @@
 .mail_off { background:url(/images/mail_off.gif) 0 0 no-repeat; }
 .vip_on { background:url(/images/vip_on.gif) 0 0 no-repeat; }
 .vip_off { background:url(/images/vip_off.gif) 0 0 no-repeat; }
-.vip_com_on { background:url(/images/user_ico_common_on.gif) 0 0 no-repeat; }
 
 .user_real { width:607px; margin:20px; }
 .user_real .notice { line-height:30px; height:30px; background:url(/images/notice.png) 0 7px no-repeat; padding:0 0 0 25px; }
 .user_real .mail { line-height:30px; height:30px; background:url(/images/mail_ico.png) 0 0 no-repeat; padding:0 20px 0 25px; }
 .user_real .msg { line-height:30px; height:30px; background:url(/images/msg_ico.png) 0 0 no-repeat; padding:0 0 0 25px; }
+.user_real .cert { line-height:30px; height:30px; background:url(/images/cert_ico.gif) 0 7px no-repeat; padding:0 0 0 25px;}
+.user_real .mobile { line-height:30px; height:30px; background:url(/images/mobile_ico.gif) 0 7px no-repeat; padding:0 0 0 25px;}
 .gold-table { width : 100%; margin :0 auto; text-align:left; border-collapse:collapse; border:solid #d3d3d3; border-width:0 1px 1px; }
 .gold-table th { color : #484848; font-weight:bold; height:30px; line-height:30px; padding-left:20px; border-bottom:1px solid #d3d3d3; }
 .gold-table td { padding:5px 0 5px 20px; vertical-align:middle; border-bottom:1px solid #d3d3d3; }

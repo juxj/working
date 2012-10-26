@@ -42,7 +42,7 @@ $(function(){
 			<tr>
 				<td class="form_table field_name" width="18%">标题</td>
 				<td> 
-					<s:textfield name="clbRequestInfo.title" cssClass="required"></s:textfield>
+					<s:textfield name="clbRequestInfo.title" maxlength="100" cssClass="required"></s:textfield>
 				</td>
 			</tr>
 			<tr>
@@ -68,19 +68,19 @@ $(function(){
 			</tr>
 			<tr>
 				<td class="form_table field_name" >投资总额</td>
-				<td><s:textfield name="clbRequestInfo.totalMoney" length="6"  cssClass="required number"/>(万元)
+				<td><s:textfield name="clbRequestInfo.totalMoney" maxlength="6"  cssClass="required number"/>(万元)
 				<label for="clbRequestInfo.totalMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
 				<td class="form_table field_name" >尚缺资金</td>
-				<td><s:textfield name="clbRequestInfo.lackMoney"  cssClass="required number"/> 
+				<td><s:textfield name="clbRequestInfo.lackMoney" maxlength="6" cssClass="required number"/> 
 				<label for="clbRequestInfo.lackMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
 				<td class="form_table field_name" >所需资金</td>
-				<td><s:textfield name="clbRequestInfo.needMoney"  cssClass="required number"/>
+				<td><s:textfield name="clbRequestInfo.needMoney" maxlength="6" cssClass="required number"/>
 				<label for="clbRequestInfo.needMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
