@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from bs4 import BeautifulSoup
 from utils.app_util import print_list,divide_by_record
-from utils.page_info_parser import PageInfoParser
 import os, string, json, re, urllib
 
 class DataHandler:
@@ -16,13 +15,7 @@ class DataHandler:
 
 	def get_html_data(self, config, node, data, multi):
 		# get settings.
-		selected_tags = config.get(node, 'selected_tags').strip().split(',')
-		data_list_tags = config.get(node, 'data_list_tags').strip().split(',')
 		data_index = config.get(node, 'data_index').strip().split(',')
-		# parser html data.
-		parser = PageInfoParser(selected_tags, data_list_tags)
-		data = parser.read(data)
-		# refine the data user selected
 		start_index = int(config.get(node, 'start_index'))
 		tmp = []
 		m = 1
@@ -31,8 +24,6 @@ class DataHandler:
 				tmp.append(item)
 			m = m + 1
 		data = tmp
-
-
 		if multi:
 			field_count = int(config.get(node, 'field_count'))
 			data = self.get_collections(data, field_count, data_index)
@@ -58,7 +49,6 @@ class DataHandler:
 		data = divide_by_record(data, field_count)	
 		records = []
 		for item in data:
-			#print item
 			record = []
 			length = len(item)
 			for index in data_index:
@@ -96,18 +86,43 @@ class DataHandler:
 				data = soup(data_tag, attrs = attrs_value)
 			else:
 				data = soup(data_tag)
-	
 
 		length = len(data)
 		tmp = []
+		selected_tag = config.get(node, 'selected_tag')
+		ignore_tag = config.get(node, 'ignore_tag')
+		entired_text = config.get(node, 'entired_text')
 		for index in soup_index:
 			index = int(index)
 			if index < length:
 				item = data[index].prettify()
-				tmp.append(item)			
+				n = 0
+				for td in data[index].find_all(selected_tag):
+					if entired_text:
+						tmp.append(td)
+					else:
+
+						get_text = True
+
+						if len(ignore_tag.strip())>0:
+							if td.find(ignore_tag) is not None:
+								get_text = False
+
+						if get_text:
+							n = n + 1
+							text = td.get_text()
+							value = ''
+							for line in text:
+								value = value + line.strip().replace('\n','') 
+							tmp.append(value)			
 		data = tmp
 
 		if int(self.debug[0]):
 			print_list(data)
-	
-		return data
+
+		return self.parser(config, node, data)
+
+	def parser(self, config, node, data):
+		multi = int(config.get(node, 'multi'))
+		tmp = self.get_html_data(config, node, data, multi)
+		return tmp
