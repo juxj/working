@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import time
 from bs4 import BeautifulSoup
 from env import read, save, handler,debug
 from utils.app_util import * 
@@ -21,6 +22,7 @@ class GenericHandler:
 		self.node = node
 		self.code = code
 		self.data = data		
+		self.add = int(debug[3])
 
 	def handle_data(self):
 		actions = {
@@ -38,30 +40,27 @@ class GenericHandler:
 		return actions[self.node]()
 		
 	def get_roi(self):
-		tables = handler.get_soup_data(self.config, self.node, self.data)
-		data = handler.get_html_data(self.config, self.node,tables[0], 0)
-		fund = self.get_fund()	
-		roi = FundROI(fund, data)
-		dao = fund_roi_dao
-		dao.save_fund_roi(roi)
+		data = handler.get_soup_data(self.config, self.node, self.data)
+		if self.add:
+			fund = self.get_fund()	
+			roi = FundROI(fund, data)
+			dao = fund_roi_dao
+			dao.save_fund_roi(roi)
 		
 	def get_info(self):
-		data = handler.get_html_data(self.config, self.node, self.data, 0)
-		fund_dao.save_fund(self.company, self.code, data)
+		data = handler.get_soup_data(self.config, self.node, self.data)
+		if self.add:
+			fund_dao.save_fund(self.company, self.code, data)
 	
 	def get_manager(self):
 		data = handler.get_soup_data(self.config, self.node, self.data)
-		table = data[0]
-		data = handler.get_html_data(self.config, self.node,table,1)
 		fund = self.get_fund()
 		if fund != None:
 			for item in data:
-				if int(debug[2]):
-					print_list(item)
-				
 				if int(debug[3]):
 					manager = FundManager(self.company, fund, item) 
-					fund_manager_dao.save_fund_manager(manager)
+					if self.add:
+						fund_manager_dao.save_fund_manager(manager)
 
 	def get_nav(self):
 		fund = self.get_fund() 
@@ -77,49 +76,38 @@ class GenericHandler:
 					record = []
 					for field in source_fields:
 						record.append(item[field])
-					self.add_nav(dao, fund, record)			
+					if self.add:
+						self.add_nav(dao, fund, record)			
 
 		if data_type == 'html':
 			data = handler.get_soup_data(self.config, self.node, self.data)
-			data = handler.get_html_data(self.config, self.node, data[0], 1 )
 			for item in data:
 				self.add_nav(dao, fund, item)
 
 	def get_invest(self):
 		data = handler.get_soup_data(self.config, self.node, self.data)
-		fund = self.get_fund()
-		invest = FundInvest(fund, data)	
-		dao = fund_invest_dao
-		dao.save_fund_invest(invest)
+		if self.add:
+			fund = self.get_fund()
+			invest = FundInvest(fund, data)	
+			dao = fund_invest_dao
+			dao.save_fund_invest(invest)
 
 	def get_charge(self):
 		data = handler.get_soup_data(self.config, self.node, self.data)
-
-		if int(debug[2]):
-			print_list(data)	
-
-		if int(debug[3]):
+		if self.add:
 			fund = self.get_fund()
 			charge = FundCharge(fund, data)	
 			dao = fund_charge_dao
 			dao.save_fund_charge(charge)
 
 	def get_dividend(self):
-		config = self.config
-		node = self.node
-		data = self.data
-
-		data = handler.get_soup_data(config, node, data)
-		index = config.get(node, 'soup_index')
-
-		data = data[int(index)]
-
-		data = handler.get_html_data(config, node, data, 1)
-		dao = fund_dividend_dao
-		fund = self.get_fund()
-		for item in data:
-			dividend = FundDividend(fund, item)
-			dao.add(dividend)
+		data = handler.get_soup_data(self.config, self.node, self.data)
+		if self.add:
+			dao = fund_dividend_dao
+			fund = self.get_fund()
+			for item in data:
+				dividend = FundDividend(fund, item)
+				dao.add(dividend)
 
 	def get_files(self):
 		data_type = self.config.get(self.node, 'data_type')
@@ -204,7 +192,7 @@ class GenericHandler:
 		if int(debug[2]):
 			print_list(record)
 
-		if int(debug[3]):
+		if self.add:
 			fund_file = FundFile(fund, record)
 			dao.add(fund_file)
 
@@ -213,15 +201,17 @@ class GenericHandler:
 		if int(debug[2]):
 			print_list(record)
 
-		if int(debug[3]):
+		if self.add:
 			announcement = FundAnnouncement(fund, record)
 			dao.add(announcement)
 
 	def get_sales(self):
 		data = handler.get_soup_data(self.config, self.node, self.data)
+
 		if int(debug[2]):
 			print_list(data)	
-		if int(debug[3]):
+
+		if self.add:
 			fund = self.get_fund()
 			sales = FundSales(fund, data[0])	
 			dao = fund_sales_dao

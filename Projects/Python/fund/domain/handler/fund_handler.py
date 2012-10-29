@@ -18,19 +18,20 @@ class FundHandler:
 		return sites
 
 	def get_home(self, config, fetcher):
+
 		node = 'home'
 		url = config.get(node, 'url')
 		data = fetcher.get(url)
 		data = handler.get_soup_data(config, node, data)
 		codes = []
 		for item in data:
-			soup = BeautifulSoup(item)
-			for link in soup.find_all('a'):
-				code =  link.get('href')
-				code = re.search('[\d]{6}', code)
-				if code != None:
-					codes.append(code.group(0))
+			print item
+			link =  str(item[0])
+			code = re.search('[\d]{6}',link)
+			if code != None:
+				codes.append(code.group(0))
 		codes = set(codes)
+		print codes
 		return codes
 	
 	def get_site_data(self, site):

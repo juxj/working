@@ -102,7 +102,7 @@ def encode_data(data):
 
 def is_null(value):
 	result = 1
-	if len(value.strip())>1:
+	if len(value.strip())>0:
 		result = 0
 	return result
 

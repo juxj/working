@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_now, get_value
 
 Base = declarative_base()
 
@@ -32,17 +32,17 @@ class FundROI(Base):
 	
 		count = len(html_data)
 		
-		self.day_1= html_data[0]
-		self.week_1 = html_data[1]
-		self.month_1 = html_data[2]
-		self.month_3 = html_data[3]
-		self.month_6 = html_data[4]
+		self.day_1= get_value(html_data[0])
+		self.week_1 = get_value(html_data[1])
+		self.month_1 = get_value(html_data[2])
+		self.month_3 = get_value(html_data[3])
+		self.month_6 = get_value(html_data[4])
 
-		self.year_0 = html_data[5]
-		self.year_1 = html_data[6]
-		self.year_2 = html_data[7]
-		self.year_3 = html_data[8]
-		self.accumulated = html_data[9]
+		self.year_0 = get_value(html_data[5])
+		self.year_1 = get_value(html_data[6])
+		self.year_2 = get_value(html_data[7])
+		self.year_3 = get_value(html_data[8])
+		self.accumulated = get_value(html_data[9])
 
 		self.fund_id = fund.id
 		self.fund_code = fund.code
