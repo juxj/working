@@ -102,7 +102,7 @@ class DataHandler:
 
 		selected_tag = config.get(node, 'selected_tag')
 		ignore_tag = config.get(node, 'ignore_tag')
-		entired_text = int(config.get(node, 'entired_text'))
+		attr_tag = config.get(node, 'attr_tag').split(',')
 
 		for index in soup_index:
 			index = int(index)
@@ -112,24 +112,22 @@ class DataHandler:
 					tmp.append(item)	
 				else:
 					for td in data[index].find_all(selected_tag):
-						if entired_text:
-							link = td.find('a')
-							if link != None:
-								url = link.get('href')
-								print url
-							
-							tmp.append(td)
-						else:
-							get_text = True
-							if len(ignore_tag.strip())>0:
-								if td.find(ignore_tag) is not None:
-									get_text = False
-							if get_text:
-								text = td.get_text()
-								value = ''
-								for line in text:
-									value = value + line.strip().replace('\n','') 
-								tmp.append(value)			
+						get_text = True
+						if len(ignore_tag.strip())>0:
+							if td.find(ignore_tag) is not None:
+								get_text = False
+						if get_text:
+							text = td.get_text()
+							value = ''
+							for line in text:
+								value = value + line.strip().replace('\n','') 
+							tmp.append(value)			
+						attr_len = len(attr_tag)
+						if attr_len == 2:
+							tag = td.find(attr_tag[0])
+							if not tag is None:
+								attr = tag.get(attr_tag[1])				
+								tmp.append(attr)
 		data = tmp
 		if int(self.debug[0]):
 			print_list(data)

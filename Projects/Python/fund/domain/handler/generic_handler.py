@@ -130,13 +130,9 @@ class GenericHandler:
 					self.add_files(dao, fund, record)
 		else:
 			data = handler.get_soup_data(self.config, self.node, self.data)
-			url_list = self.get_url_list(data[0])
-			data = handler.get_html_data(self.config, self.node, data[0], 1) 
-			m = 0
 			for record in data:
-				record.insert(1, domain + url_list[m])
-				self.add_files(dao, fund, record)
-				m = m + 1
+				tmp = [record[0], domain+record[1], record[2]]
+				self.add_files(dao, fund, tmp)
 
 	def get_announcement(self):
 		data_type = self.config.get(self.node, 'data_type')
@@ -159,13 +155,9 @@ class GenericHandler:
 	 				self.add_announcement(dao, fund, record)
 		else:
 			data = handler.get_soup_data(self.config, self.node, self.data)
-			url_list = self.get_url_list(data[0])
-			data = handler.get_html_data(self.config, self.node, data[0], 1) 
-			m = 0
 			for record in data:
-				record.insert(1, domain + url_list[m])
-				self.add_announcement(dao, fund, record)
-				m = m + 1
+				tmp = [record[0], domain+record[1], record[2]]
+				self.add_announcement(dao, fund, tmp)
 
 	def add_nav(self,dao, fund, record):
 		if int(debug[2]):
