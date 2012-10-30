@@ -139,6 +139,7 @@ class GenericHandler:
 		domain = self.company.web_site 
 		dao = fund_announcement_dao
 		fund = self.get_fund() 
+		print fund
 		data = ''
 		if data_type == 'json':
 			node = self.node+'_json'
@@ -198,8 +199,8 @@ class GenericHandler:
 			dao.add(announcement)
 
 	def get_sales(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
 
+		data = handler.get_soup_data(self.config, self.node, self.data)
 		if int(debug[2]):
 			print_list(data)	
 
