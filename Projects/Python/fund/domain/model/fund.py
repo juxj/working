@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_value, get_now 
 
 Base = declarative_base()
 
@@ -39,22 +39,22 @@ class Fund(Base):
 
 		self.code = code
 
-		self.short_name = html_data[0]
-		self.full_name = html_data[1]
-		self.issued_date = html_data[2]
-		self.catelog_name = html_data[3]
-		self.manager = html_data[4]
+		self.short_name = get_value(html_data[0])
+		self.full_name = get_value(html_data[1])
+		self.issued_date = get_value(html_data[2])
+		self.catelog_name = get_value(html_data[3])
+		self.manager = get_value(html_data[4])
 
-		self.administrator = html_data[5]
-		self.custodian = html_data[6]
-		self.investment_goal = html_data[7]
-		self.investment_vision = html_data[8]
-		self.investment_scale = html_data[9]
+		self.administrator = get_value(html_data[5])
+		self.custodian = get_value(html_data[6])
+		self.investment_goal = get_value(html_data[7])
+		self.investment_vision = get_value(html_data[8])
+		self.investment_scale = get_value(html_data[9])
 
-		self.investment_strategy = html_data[10]
-		self.characteristics = html_data[11]
-		self.benchmark = html_data[12]
-		self.operation_mode = html_data[13]
+		self.investment_strategy = get_value(html_data[10])
+		self.characteristics = get_value(html_data[11])
+		self.benchmark = get_value(html_data[12])
+		self.operation_mode = get_value(html_data[13])
 
 		self.fund_company_id = company.id
 		self.fund_company_name = company.full_name

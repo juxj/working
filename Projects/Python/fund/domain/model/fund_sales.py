@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_now, get_value 
 
 Base = declarative_base()
 
@@ -21,7 +21,7 @@ class FundSales(Base):
 
 	def __init__(self, fund, sales_agent):
 
-		self.sales_agent = sales_agent 
+		self.sales_agent = get_value(sales_agent)
 
 		self.fund_id = fund.id
 		self.fund_code = fund.code

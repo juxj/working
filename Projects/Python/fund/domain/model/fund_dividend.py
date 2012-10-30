@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_now, get_value 
 
 Base = declarative_base()
 
@@ -29,8 +29,8 @@ class FundDividend(Base):
 	
 		count = len(html_data)
 		
-		self.year= html_data[0]
-		self.register_date = html_data[1]
+		self.year= get_value(html_data[0])
+		self.register_date = get_value(html_data[1])
 		self.ex_dividend_date = get_value(html_data[2])
 		self.delivered_date = get_value(html_data[3])
 		self.unit = get_value(html_data[4])

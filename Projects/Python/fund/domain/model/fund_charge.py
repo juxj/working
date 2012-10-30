@@ -25,22 +25,11 @@ class FundCharge(Base):
 
 	def __init__(self, fund, html_data):
 	
-		count = len(html_data)
-		
-		if count>0:	
-			self.buy = html_data[0]
-
-		if count>1:		
-			self.application = html_data[1]
-
-		if count>2:
-			self.redemption = html_data[2]
-
-		if count>3:
-			self.management = html_data[3]
-		
-		if count>4:
-			self.extra = html_data[4]
+		self.buy = get_value(html_data[0])
+		self.application = get_value(html_data[1])
+		self.redemption = get_value(html_data[2])
+		self.management = get_value(html_data[3])
+		self.extra = get_value(html_data[4])
 
 		self.fund_id = fund.id
 		self.fund_code = fund.code

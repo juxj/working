@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_now, get_value
 
 Base = declarative_base()
 
@@ -25,22 +25,11 @@ class FundInvest(Base):
 
 	def __init__(self, fund, html_data):
 	
-		count = len(html_data)
-		
-		if count>0:	
-			self.overall = html_data[0]
-
-		if count>1:		
-			self.stock_industry = html_data[1]
-
-		if count>2:
-			self.stock_top = html_data[2]
-
-		if count>3:
-			self.bond_catelog = html_data[3]
-		
-		if count>4:
-			self.bond_top = html_data[4]
+		self.overall = get_value(html_data[0])
+		self.stock_industry = get_value(html_data[1])
+		self.stock_top = get_value(html_data[2])
+		self.bond_catelog = get_value(html_data[3])
+		self.bond_top = get_value(html_data[4])
 
 		self.fund_id = fund.id
 		self.fund_code = fund.code

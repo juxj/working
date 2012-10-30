@@ -2,6 +2,8 @@ from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
+from utils.app_util import get_value
+
 Base = declarative_base()
 
 class FundNAV(Base):
@@ -19,9 +21,9 @@ class FundNAV(Base):
 
 	def __init__(self, fund, html_data):
 
-		self.nav_date = html_data[0]
-		self.nav = html_data[1]
-		self.accumulated_nav = html_data[2]
+		self.nav_date = get_value(html_data[0])
+		self.nav = get_value(html_data[1])
+		self.accumulated_nav = get_value(html_data[2])
 		
 		self.fund_id = fund.id
 		self.fund_code = fund.code

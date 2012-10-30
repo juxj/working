@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Float, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from utils.app_util import *
+from utils.app_util import get_now, get_value 
 
 Base = declarative_base()
 
@@ -23,9 +23,9 @@ class FundFile(Base):
 
 	def __init__(self, fund, html_data):
 	
-		self.title= html_data[0]
-		self.url = html_data[1]
-		self.issued_date = html_data[2]
+		self.title= get_value(html_data[0])
+		self.url = get_value(html_data[1])
+		self.issued_date = get_value(html_data[2])
 
 		self.fund_id = fund.id
 		self.fund_code = fund.code
