@@ -1,1 +1,5 @@
-target
+*.pyc
+*.class
+*.pm
+.svn/
+.gitignore
