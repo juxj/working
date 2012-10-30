@@ -25,13 +25,12 @@ class FundHandler:
 		data = handler.get_soup_data(config, node, data)
 		codes = []
 		for item in data:
-			print item
-			link =  str(item[0])
-			code = re.search('[\d]{6}',link)
-			if code != None:
-				codes.append(code.group(0))
+			for link in item:
+				if not is_null(link):
+					code = re.search('[\d]{6}',link)
+					if code != None:
+						codes.append(code.group(0))
 		codes = set(codes)
-		print codes
 		return codes
 	
 	def get_site_data(self, site):
@@ -47,7 +46,6 @@ class FundHandler:
 		codes = [sample_code]
 		if is_null(sample_code):
 			codes = self.get_home(config,fetcher)
-
 		for node in nodes:
 			encode = int(config.get(node, 'encode'))
 			for code in codes:

@@ -100,7 +100,7 @@ class DataHandler:
 		length = len(data)
 		tmp = []
 
-		selected_tag = config.get(node, 'selected_tag')
+		selected_tags = config.get(node, 'selected_tags')
 		ignore_tag = config.get(node, 'ignore_tag')
 		attr_tag = config.get(node, 'attr_tag').split(',')
 
@@ -108,30 +108,40 @@ class DataHandler:
 			index = int(index)
 			if index < length:
 				item = data[index].prettify()
-				if is_null(selected_tag):
+				if is_null(selected_tags):
 					tmp.append(item)	
 				else:
-					for td in data[index].find_all(selected_tag):
-						get_text = True
-						if len(ignore_tag.strip())>0:
-							if td.find(ignore_tag) is not None:
-								get_text = False
-						if get_text:
-							text = td.get_text()
-							value = ''
-							for line in text:
-								value = value + line.strip().replace('\n','') 
-							tmp.append(value)			
-						attr_len = len(attr_tag)
-						if attr_len == 2:
-							tag = td.find(attr_tag[0])
-							if not tag is None:
-								attr = tag.get(attr_tag[1])				
-								tmp.append(attr)
+					selected_tags = selected_tags.split(',')
+					for selected_tag in selected_tags:
+						for td in data[index].find_all(selected_tag):
+							get_text = True
+							if len(ignore_tag.strip())>0:
+								if td.find(ignore_tag) is not None:
+									get_text = False
+							if get_text:
+								text = td.get_text()
+								value = ''
+								for line in text:
+									value = value + line.strip().replace('\n','') 
+								tmp.append(value)			
+
+							value = self.get_attr_value(attr_tag, td)
+							if value is not None:
+								tmp.append(value)
+										
 		data = tmp
 		if int(self.debug[0]):
 			print_list(data)
 		return self.parser(config, node, data)
+
+
+	def get_attr_value(self, attr_tag, tag):
+		attr = None
+		if len(attr_tag) == 2:
+			tag = tag.find(attr_tag[0])
+			if not tag is None:
+				attr = tag.get(attr_tag[1])	
+		return attr
 
 	def parser(self, config, node, data):
 		multi = int(config.get(node, 'multi'))

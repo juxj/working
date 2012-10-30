@@ -25,18 +25,13 @@ class FundManager(Base):
 
 	def __init__(self, company, fund, html_data):
 
-		self.manager = html_data[0]
-		self.gender= html_data[1]
-		self.resume = html_data[2]
-		self.pic = html_data[3]
-		self.start_date = html_data[4]
-		self.end_date = html_data[5]
+		self.manager = get_value(html_data[0])
+		self.gender= get_value(html_data[1])
+		self.resume = get_value(html_data[2])
+		self.pic = get_value(html_data[3])
+		self.start_date = get_value(html_data[4])
+		self.end_date = get_value(html_data[5])
 		
-		if is_null(self.start_date):
-			self.start_date = None
-		
-		if is_null(self.end_date):
-			self.end_date = None
 		
 		self.fund_company_id = company.id
 		self.fund_company_name = company.full_name

@@ -1,0 +1,4 @@
+ENDORSED_DIRS="/home/tju/Public/MyEclipse/Common/plugins/com.genuitec.eclipse.easie.tomcat.myeclipse_9.0.0.me201109141806/tomcat/common/endorsed"
+JDK_HOME=/home/tju/Public/MyEclipse/Common/binary/com.sun.java.jdk.linux.x86_64_1.6.0.013
+LIBRARY_PATH="/home/tju/Public/MyEclipse/Common/binary/com.sun.java.jdk.linux.x86_64_1.6.0.013/bin\:/home/tju/Public/MyEclipse/Common/plugins/com.genuitec.eclipse.easie.tomcat.myeclipse_9.0.0.me201109141806/tomcat/bin"
+eclipse.preferences.version=1

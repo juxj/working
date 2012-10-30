@@ -1,0 +1,7 @@
+INDEX VERSION 1.122+/home/tju/Workspaces/MyEclipse 10/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3195618101.index
+3233595320.index
+4210805723.index
+4159583922.index
+867269216.index
+719401280.index
