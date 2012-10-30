@@ -1,5 +1,6 @@
 *.pyc
 *.class
 *.pm
+*.swp
 .svn/
 .gitignore
