@@ -1,6 +1,0 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<li><a target="_blank" href="http://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/%E8%AF%81%E5%88%B8%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/default.htm"> 证券理财计算器</a></li>
-<li><a target="_blank" href="http://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/%E8%82%A1%E7%A5%A8%E6%8A%95%E8%B5%84%E8%AE%A1%E7%AE%97%E5%99%A8/default.htm"> 股票投资计算器</a></li>
-<li><a target="_blank" href="http://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/%E5%9B%BD%E5%80%BA%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/default.htm"> 国债理财计算器</a></li>
-<li><a target="_blank" href="http://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/%E5%80%BA%E5%88%B8%E4%B9%B0%E5%8D%96%E8%AE%A1%E7%AE%97%E5%99%A8/default.htm"> 债券买卖计算器</a></li>
-<li><a target="_blank" href="http://www.icbc.com.cn/ICBC/%E9%87%91%E8%9E%8D%E4%BF%A1%E6%81%AF/%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/%E9%BB%84%E9%87%91%E7%90%86%E8%B4%A2%E8%AE%A1%E7%AE%97%E5%99%A8/default.htm"> 黄金理财计算器</a></li>
