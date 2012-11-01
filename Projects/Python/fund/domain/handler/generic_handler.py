@@ -40,7 +40,7 @@ class GenericHandler:
 		return actions[self.node]()
 		
 	def get_roi(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if self.add:
 			fund = self.get_fund()	
 			roi = FundROI(fund, data)
@@ -48,12 +48,12 @@ class GenericHandler:
 			dao.save_fund_roi(roi)
 		
 	def get_info(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if self.add:
 			fund_dao.save_fund(self.company, self.code, data)
 	
 	def get_manager(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		fund = self.get_fund()
 		if fund != None:
 			for item in data:
@@ -80,12 +80,12 @@ class GenericHandler:
 						self.add_nav(dao, fund, record)			
 
 		if data_type == 'html':
-			data = handler.get_soup_data(self.config, self.node, self.data)
+			data = handler.get_records(self.config, self.node, self.data)
 			for item in data:
 				self.add_nav(dao, fund, item)
 
 	def get_invest(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if self.add:
 			fund = self.get_fund()
 			invest = FundInvest(fund, data)	
@@ -93,7 +93,7 @@ class GenericHandler:
 			dao.save_fund_invest(invest)
 
 	def get_charge(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if self.add:
 			fund = self.get_fund()
 			charge = FundCharge(fund, data)	
@@ -101,7 +101,7 @@ class GenericHandler:
 			dao.save_fund_charge(charge)
 
 	def get_dividend(self):
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if self.add:
 			dao = fund_dividend_dao
 			fund = self.get_fund()
@@ -129,7 +129,7 @@ class GenericHandler:
 						record.append(value)
 					self.add_files(dao, fund, record)
 		else:
-			data = handler.get_soup_data(self.config, self.node, self.data)
+			data = handler.get_records(self.config, self.node, self.data)
 			for record in data:
 				tmp = [record[0], domain+record[1], record[2]]
 				self.add_files(dao, fund, tmp)
@@ -155,7 +155,7 @@ class GenericHandler:
 						record.append(value)
 	 				self.add_announcement(dao, fund, record)
 		else:
-			data = handler.get_soup_data(self.config, self.node, self.data)
+			data = handler.get_records(self.config, self.node, self.data)
 			for record in data:
 				tmp = [record[0], domain+record[1], record[2]]
 				self.add_announcement(dao, fund, tmp)
@@ -200,7 +200,7 @@ class GenericHandler:
 
 	def get_sales(self):
 
-		data = handler.get_soup_data(self.config, self.node, self.data)
+		data = handler.get_records(self.config, self.node, self.data)
 		if int(debug[2]):
 			print_list(data)	
 

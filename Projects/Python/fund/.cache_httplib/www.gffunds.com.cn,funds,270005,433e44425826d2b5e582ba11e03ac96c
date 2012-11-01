@@ -1,0 +1,16 @@
+status: 301
+content-length: 247
+content-location: http://www.gffunds.com.cn/funds?270005
+server: Apache/2.2.21 (Win32) mod_jk/1.2.32
+location: http://www.gffunds.com.cn/funds/?270005
+date: Wed, 31 Oct 2012 07:32:36 GMT
+-x-permanent-redirect-url: http://www.gffunds.com.cn/funds/?270005
+content-type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.gffunds.com.cn/funds/?270005">here</a>.</p>
+</body></html>

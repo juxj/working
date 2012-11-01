@@ -67,7 +67,8 @@ class FundHandler:
 					else:
 						raise	
 			Session.commit()
-		save('log/'+get_now(3)+'_'+site.id+'.error', error.encode('utf8'))
+		file_name = 'log/'+get_now(3)+'_'+'.error'
+		save(file_name, error.encode('utf8'))
 
 	def get_data(self):
 		sites = self.get_sites()
