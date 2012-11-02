@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from bs4 import BeautifulSoup
 from utils.app_util import print_list,divide_by_record, is_null
+from utils.page_parser import PageParser
 import os, string, json, re, urllib
 
 class DataHandler:
@@ -10,7 +11,12 @@ class DataHandler:
 
 	def get_records (self, config, node, data):
 		data = self.do_first_step(config, node, data)
-		data = self.do_second_step(config, node, data)
+		parser_type = config.get(node, 'parser_type')
+		if parser_type == 'soup':
+			data = self.do_second_step(config, node, data)
+		else:
+			data = self.do_html_parser(config, node, data)
+
 		data = self.do_third_step(config, node, data)
 		return  data
 
@@ -20,15 +26,41 @@ class DataHandler:
 		attrs = self.build_attrs(keys, values)
 		data_tag  = config.get(node, 'data_tag').strip()
 		soup = BeautifulSoup(data)
+
 		if data_tag.strip() != '':
 			if len(attrs)>0:
 				data = soup(data_tag, attrs = attrs)
 			else:
 				data = soup(data_tag)
+
 		if int(self.debug[0]):
 			print_list(data)
+
 		return data
 
+	def do_html_parser(self, config, node, data):
+		result = []
+		selected_tags = config.get(node, 'selected_tags').split(',')
+		data_list_tags = config.get(node, 'data_list_tags').split(',')
+		soup_index = config.get(node, 'soup_index').split(',')
+		parser = PageParser(selected_tags, data_list_tags)
+	
+		size = len(data)
+		
+		for index in soup_index:
+			index = int(index)
+			if index>-1 and index<size:
+				item = data[index]
+				item = item.prettify()
+				tmp = parser.read(item)
+				for item in tmp:
+					result.append(item)
+
+		if self.debug[1]:
+			print_list(result)	
+
+		return result
+		
 	def do_second_step(self, config, node, data):	
 		soup_index = config.get(node, 'soup_index').split(',')
 		selected_tags = config.get(node, 'selected_tags')
