@@ -42,8 +42,14 @@ class DataHandler:
 		result = []
 		selected_tags = config.get(node, 'selected_tags').split(',')
 		data_list_tags = config.get(node, 'data_list_tags').split(',')
+		attr_tag = config.get(node, 'attr_tag')
+		if is_null(attr_tag):
+			attr_tag = None
+		else:
+			attr_tag = attr_tag.split(',')
+
 		soup_index = config.get(node, 'soup_index').split(',')
-		parser = PageParser(selected_tags, data_list_tags)
+		parser = PageParser(selected_tags, data_list_tags, attr_tag)
 	
 		size = len(data)
 		
