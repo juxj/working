@@ -54,6 +54,7 @@ class GenericHandler:
 	
 	def get_manager(self):
 		data = handler.get_records(self.config, self.node, self.data)
+
 		domain = self.company.web_site
 		fund = self.get_fund()
 		if fund != None:
@@ -142,7 +143,6 @@ class GenericHandler:
 		domain = self.company.web_site 
 		dao = fund_announcement_dao
 		fund = self.get_fund() 
-		print fund
 		data = ''
 		if data_type == 'json':
 			node = self.node+'_json'
