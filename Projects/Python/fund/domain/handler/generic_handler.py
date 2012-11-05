@@ -54,10 +54,13 @@ class GenericHandler:
 	
 	def get_manager(self):
 		data = handler.get_records(self.config, self.node, self.data)
+		domain = self.company.web_site
 		fund = self.get_fund()
 		if fund != None:
 			for item in data:
 				if int(debug[3]):
+					if not is_null(item[3]):
+						item[3] = domain + item[3]
 					manager = FundManager(self.company, fund, item) 
 					if self.add:
 						fund_manager_dao.save_fund_manager(manager)

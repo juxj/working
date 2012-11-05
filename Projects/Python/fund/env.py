@@ -4,7 +4,7 @@ from domain.handler.data_handler import DataHandler
 from utils.db_engine import DBEngine
 
 app_config = AppConfig().load('config/config.ini')
-skipped_error = int(app_config.get('app', 'skipped_error'))
+skipped_errors = int(app_config.get('app', 'skipped_errors'))
 debug = app_config.get('app', 'debug').split(',')
 
 handler = DataHandler(debug)

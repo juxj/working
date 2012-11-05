@@ -2,7 +2,7 @@
 import os, string, json, re, urllib
 from bs4 import BeautifulSoup
 
-from env import read, save, handler, Session, skipped_error
+from env import read, save, handler, Session, skipped_errors
 from utils.app_util import *
 from domain.dao import  fund_company_dao
 
@@ -18,18 +18,22 @@ class FundHandler:
 		return sites
 
 	def get_home(self, config, fetcher):
-
 		node = 'home'
 		url = config.get(node, 'url')
 		data = fetcher.get(url)
-		data = handler.get_soup_data(config, node, data)
+		data_type = config.get(node, 'data_type')
 		codes = []
-		for item in data:
-			for link in item:
-				if not is_null(link):
-					code = re.search('[\d]{6}',link)
-					if code != None:
-						codes.append(code.group(0))
+		if data_type != 'str':
+			data = handler.get_records(config, node, data)
+			for item in data:
+				for link in item:
+					if not is_null(link):
+						tmp = re.search('[\d]{6}',link)
+						if tmp != None:
+							codes.append(tmp.group(0))
+		else:
+			codes = re.findall('[\d]{6}',data)
+		
 		codes = set(codes)
 		return codes
 	
@@ -47,6 +51,8 @@ class FundHandler:
 		if is_null(sample_code):
 			codes = self.get_home(config,fetcher)
 		for node in nodes:
+			if is_null(node):
+				break
 			encode = int(config.get(node, 'encode'))
 			for code in codes:
 				url = config.get(node, 'url')
@@ -62,15 +68,16 @@ class FundHandler:
 					error = error + '/'+site.full_name + '/'+ code + '/' + node
 					error = error + '\n'
 					error = error + 'url: '+ domain + url + '\n'
-					if skipped_error:
+					if skipped_errors:
 						pass	
 					else:
 						raise	
-			Session.commit()
-		file_name = 'log/'+get_now(3)+'_'+'.error'
-		save(file_name, error.encode('utf8'))
+		if not is_null(error):
+			file_name = 'log/'+get_now(3)+'_'+'.error'
+			save(file_name, error.encode('utf8'))
 
 	def get_data(self):
 		sites = self.get_sites()
 		for site in sites:
 			self.get_site_data(site)
+			Session.commit()
