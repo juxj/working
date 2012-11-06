@@ -1,7 +1,8 @@
 import os, os.path, sys, string, time, json, shutil, datetime
 from datetime import timedelta
 
-def getDayByOffset(offset):
+def get_offset_day(offset):
+
 	now = datetime.datetime.now()
 	delta = datetime.timedelta(days=offset)
 	yesterday = now + delta

@@ -10,6 +10,12 @@ class DataHandler:
 		self.debug = debug
 
 	def get_records (self, config, node, data):
+
+		data_type = config.get(node, 'data_type')
+		
+		if data_type == 'json':
+			return self.get_json_data(config, node, data)
+
 		data = self.do_first_step(config, node, data)
 		parser_type = config.get(node, 'parser_type')
 		if parser_type == 'soup':
@@ -18,7 +24,9 @@ class DataHandler:
 			data = self.do_html_parser(config, node, data)
 
 		data = self.do_third_step(config, node, data)
+
 		return  data
+
 
 	def do_first_step(self, config, node, data):
 		keys = config.get(node, 'property_name').split(',')	
@@ -180,9 +188,18 @@ class DataHandler:
 		return attr
 
 	def get_json_data(self, config, node, data):
+		node = node + '_json'
 		data_node = config.get(node, 'data_node')
 		data = json.loads(data)
-		return data[data_node]
+		data = data[data_node]
+		source_fields = config.get(node, 'source_fields').split(',')
+		records = []
+		for item in data:
+			record = []
+			for field in source_fields:
+				record.append(item[field])
+			records.append(record)
+		return records
 
 	def get_parents(self, tag):
 		parents = ''

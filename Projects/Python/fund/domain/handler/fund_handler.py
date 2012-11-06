@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from env import read, save, handler, Session, skipped_errors
 from utils.app_util import *
 from domain.dao import  fund_company_dao
+from domain.dao import fund_dao
 
 from utils.app_config import AppConfig
 from utils.web_fetcher import WebFetcher
@@ -17,7 +18,7 @@ class FundHandler:
 		sites = fund_company_dao.get_fund_company_by_status('1')	
 		return sites
 
-	def get_home(self, config, fetcher):
+	def get_home(self, config, fetcher, site):
 		node = 'home'
 		url = config.get(node, 'url')
 		data = fetcher.get(url)
@@ -34,12 +35,22 @@ class FundHandler:
 		else:
 			codes = re.findall('[\d]{6}',data)
 		
+		funds = fund_dao.get_fund_list_by_company(site.id)
+		tmp = []
 		codes = set(codes)
+		for code in codes:
+			new = 1
+			for fund in funds:
+				if code == fund.code:
+					new = 0
+			if new:
+				tmp.append(code)
+		codes = tmp
 		return codes
 	
 	def get_site_data(self, site):
 		error = ''
-		config_file = 'config/'+site.config_file
+		config_file = 'config/data/'+site.config_file
 		config = AppConfig().load(config_file)
 		domain = config.get('server', 'domain')
 		nodes = config.get('server', 'nodes').split(',')
@@ -48,8 +59,9 @@ class FundHandler:
 		# else sample code will be applied for all nodes.
 		sample_code = config.get('server', 'sample_code')
 		codes = [sample_code]
+
 		if is_null(sample_code):
-			codes = self.get_home(config,fetcher)
+			codes = self.get_home(config,fetcher,site)
 		for node in nodes:
 			if is_null(node):
 				break

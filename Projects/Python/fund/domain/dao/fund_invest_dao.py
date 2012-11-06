@@ -9,5 +9,5 @@ class FundInvestDAO:
 	def get_fund_invest_by_code(self, value):
 		return Session.query(FundInvest).filter_by(fund_code=value).first()
 
-	def save_fund_invest(self, fund_invest):
+	def add(self, fund_invest):
 		Session.add(fund_invest)

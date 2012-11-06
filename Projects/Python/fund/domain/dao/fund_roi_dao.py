@@ -9,5 +9,5 @@ class FundROIDAO:
 	def get_fund_roi_by_code(self, value):
 		return Session.query(FundROI).filter_by(fund_code=value).first()
 
-	def save_fund_roi(self, fund_roi):
+	def add(self, fund_roi):
 		Session.add(fund_roi)

@@ -30,8 +30,13 @@ class FundROI(Base):
 
 	def __init__(self, fund, html_data):
 	
-		count = len(html_data)
-		
+		self.fund_id = fund.id
+		self.fund_code = fund.code
+		self.fund_name = fund.full_name
+		self.created_time = get_now(0)
+		self.set_values(html_data)
+
+	def set_values(self, html_data):
 		self.day_1= get_value(html_data[0])
 		self.week_1 = get_value(html_data[1])
 		self.month_1 = get_value(html_data[2])
@@ -44,8 +49,6 @@ class FundROI(Base):
 		self.year_3 = get_value(html_data[8])
 		self.accumulated = get_value(html_data[9])
 
-		self.fund_id = fund.id
-		self.fund_code = fund.code
-		self.fund_name = fund.full_name
-		self.created_time = get_now(0)
 		self.last_updated_time = get_now(0)
+
+

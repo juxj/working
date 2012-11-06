@@ -45,7 +45,7 @@ class GenericHandler:
 			fund = self.get_fund()	
 			roi = FundROI(fund, data)
 			dao = fund_roi_dao
-			dao.save_fund_roi(roi)
+			dao.add(roi)
 		
 	def get_info(self):
 		data = handler.get_records(self.config, self.node, self.data)
@@ -70,20 +70,7 @@ class GenericHandler:
 		fund = self.get_fund() 
 		data_type = self.config.get(self.node, 'data_type')
 		dao = fund_nav_dao
-		data = ''
-		if data_type == 'json':
-			node = self.node+'_json'
-			data = handler.get_json_data(self.config, node , self.data)
-			source_fields = self.config.get(node, 'source_fields').split(',')
-			if fund != None:
-				for item in data:
-					record = []
-					for field in source_fields:
-						record.append(item[field])
-					if self.add:
-						self.add_nav(dao, fund, record)			
-
-		if data_type == 'html':
+		if self.add:
 			data = handler.get_records(self.config, self.node, self.data)
 			for item in data:
 				self.add_nav(dao, fund, item)
@@ -94,7 +81,7 @@ class GenericHandler:
 			fund = self.get_fund()
 			invest = FundInvest(fund, data)	
 			dao = fund_invest_dao
-			dao.save_fund_invest(invest)
+			dao.add(invest)
 
 	def get_charge(self):
 		data = handler.get_records(self.config, self.node, self.data)
@@ -118,50 +105,20 @@ class GenericHandler:
 		domain = self.company.web_site 
 		fund = self.get_fund() 
 		dao = fund_file_dao
-		data = ''
-		if data_type == 'json':
-			node = self.node+'_json'
-			data = handler.get_json_data(self.config, node , self.data)
-			source_fields = self.config.get(node, 'source_fields').split(',')
-			if fund != None:
-				for item in data:
-					record = []
-					for field in source_fields:
-						value = item[field]
-						if field == 'url':
-							value = domain + value
-						record.append(value)
-					self.add_files(dao, fund, record)
-		else:
-			data = handler.get_records(self.config, self.node, self.data)
-			for record in data:
-				tmp = [record[0], domain+record[1], record[2]]
-				self.add_files(dao, fund, tmp)
+		data = handler.get_records(self.config, self.node, self.data)
+		for record in data:
+			record[1] = domain+record[1]
+			self.add_files(dao, fund, tmp)
 
 	def get_announcement(self):
 		data_type = self.config.get(self.node, 'data_type')
 		domain = self.company.web_site 
 		dao = fund_announcement_dao
 		fund = self.get_fund() 
-		data = ''
-		if data_type == 'json':
-			node = self.node+'_json'
-			data = handler.get_json_data(self.config, node , self.data)
-			source_fields = self.config.get(node, 'source_fields').split(',')
-			if fund != None:
-				for item in data:
-					record = []
-					for field in source_fields:
-						value = item[field]
-						if field == 'url':
-							value = domain + value
-						record.append(value)
-	 				self.add_announcement(dao, fund, record)
-		else:
-			data = handler.get_records(self.config, self.node, self.data)
-			for record in data:
-				tmp = [record[0], domain+record[1], record[2]]
-				self.add_announcement(dao, fund, tmp)
+		data = handler.get_records(self.config, self.node, self.data)
+		for record in data:
+			record[1] = domain+record[1]
+			self.add_announcement(dao, fund, tmp)
 
 	def add_nav(self,dao, fund, record):
 		if int(debug[2]):
