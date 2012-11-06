@@ -108,7 +108,7 @@ class GenericHandler:
 		data = handler.get_records(self.config, self.node, self.data)
 		for record in data:
 			record[1] = domain+record[1]
-			self.add_files(dao, fund, tmp)
+			self.add_files(dao, fund, record)
 
 	def get_announcement(self):
 		data_type = self.config.get(self.node, 'data_type')
@@ -118,7 +118,7 @@ class GenericHandler:
 		data = handler.get_records(self.config, self.node, self.data)
 		for record in data:
 			record[1] = domain+record[1]
-			self.add_announcement(dao, fund, tmp)
+			self.add_announcement(dao, fund, record)
 
 	def add_nav(self,dao, fund, record):
 		if int(debug[2]):

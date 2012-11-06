@@ -1,5 +1,17 @@
 import os, os.path, sys, string, time, json, shutil, datetime
 from datetime import timedelta
+from utils.attrs_remover import AttrsRemover
+
+
+def remove_html_attrs(data):
+	if data is None:
+		return None
+	remover = AttrsRemover()
+	data = remover.read(data)
+	tmp = ''
+	for item in data:
+		tmp = tmp + item.strip()
+	return tmp
 
 def get_offset_day(offset):
 
