@@ -1,0 +1,2915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Keywords" content="汇添富,网上交易,基金,优惠" />
+<meta name="Description" content="汇添富基金管理有限公司是一家高起点、国际化、充满活力的基金公司，由东方证券股份有限公司、文汇新民联合报业集团、东方航空集团三家实力雄厚、声誉卓越的集团联合发起设立。公司总部设在上海陆家嘴金融贸易区。" />
+<title>基金网上交易-汇添富基金</title>
+<script type="text/javascript" src="/web/script/jquery.js"></script>
+<script type="text/javascript" src="/web/script/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="/web/script/newsindex.js"></script>
+<script type="text/javascript" src="/web/script/util/articleUtil.js"></script>
+<script type="text/javascript" src="/web/script/util/syncReqJs.js"></script>
+
+</head>
+
+<body>
+ 
+<link rel="stylesheet" type="text/css" href="/web/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="/web/css/pofund.css"/>
+<link rel="stylesheet" type="text/css" href="/web/css/fund.css"/>
+<script type="text/javascript" src="/web/script/jquery.js"></script>
+<script type="text/javascript" src="/web/script/common.js"></script>
+<script type="text/javascript" src="/web/script/fund.js"></script>
+<!--top-->
+<div id="top">
+	<div class="top_wrapper">
+    	<div class="top_l">
+        	<ul>
+            	<li class="lifirst"><a href="/" class="icon_home">首页</a></li>
+                <li><a href="https://trade.99fund.com/cash/index.jsp" class="icon_down" target="_blank">网上交易</a>
+                    <ul class="topl_ul01">
+                        <li><a href="https://trade.99fund.com/cash/index.jsp" target="_blank">现金宝交易</a></li>  
+                        <li><a href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">基金交易</a></li>  
+                        <li><a href="https://trade.99fund.com/mip/addInvestQuery.jsp" target="_blank">基金定投</a></li> 
+                        <li><a href="https://trade.99fund.com/joint/index.jsp" target="_blank">信用卡还款</a></li>  
+                        <li><a href="http://www.99fund.com/main/finainvt/index.shtml" target="_blank">添富牛专户</a></li>
+                    </ul>
+            	</li>
+                <li><a href="https://trade.99fund.com/account/index.jsp" class="icon_down" target="_blank">账户查询</a>
+                    <ul class="topl_ul02">
+                        <li><a href="https://trade.99fund.com/account/index.jsp" target="_blank">我的现金宝</a></li>  
+                        <li><a href="https://trade.99fund.com/account/index.jsp" target="_blank">我的基金</a></li>  
+                        <li><a href="https://trade.99fund.com/mip/index.jsp" target="_blank">我的定投</a></li>   
+                        <li><a href="https://trade.99fund.com/joint/index.jsp" target="_blank">我的信用卡</a></li>  
+                        <li><a href="http://sns.99fund.com/space.php?utm_source=n110601005" target="_blank">我的空间</a></li> 
+                    </ul>
+                </li>
+                <li><a href="/main/products/index.shtml" class="icon_down" target="_blank">投资研究</a>
+                    <ul class="topl_ul03">
+                        <li><a href="/main/products/pofund/index.shtml" target="_blank">基金净值</a></li>   
+                        <!--<li><a href="/main/products/investAdviser/index.shtml" target="_blank">添富投顾</a></li>   -->
+                        <li><a href="/main/news/tfsd/index.shtml" target="_blank">添富视点</a></li>   
+                        <li><a href="/main/news/tzdc/index.shtml" target="_blank">投资洞察</a></li> 
+                    </ul> 
+                </li>
+                <li><a href="/main/gywm/gsxw/index.shtml" class="icon_down" target="_blank">添富动态</a>
+                    <ul class="topl_ul04">
+                        <li><a href="/main/gywm/gsxw/index.shtml" target="_blank">公司新闻</a></li>  
+                        <li><a href="/main/gywm/xxpl/index.shtml" target="_blank">信息披露</a></li>  
+                        <li><a href="/main/gywm/gsjs/index.shtml" target="_blank">关于我们</a></li> 
+                    </ul>
+                </li>
+<li><a href="http://www.chinauniversalasset.com/" class="icon_down" target="_blank">English</a>
+  </li>
+
+            </ul>            
+        </div>
+        <div class="top_r">
+        	<ul class="rlink">
+                <li><a href="https://passport.99fund.com/login/passportLogin.jsp" target="_blank">登录</a></li>
+            	<li><a href="https://passport.99fund.com/register/register.jsp?SystemType=00" target="_blank">开户</a></li>
+                <li><a href="http://www.99fund.com/main/home/activity/index.shtml?utm_source=n100821015" target="_blank">活动中心
+
+</a></li>
+                <li><a href="/cgi-bin/service/help?utm_source=n100821016" target="_blank">帮助中心</a></li>
+                <li class="lilast">客服电话400-888-9918</li>
+            </ul>
+         </div> 
+    </div>
+</div>
+<!--END top-->
+
+<script type="text/javascript" language="javascript">
+$(function(){
+	$(".top_wrapper ul li:has(ul)").hover(function(){
+		$(this).addClass("on");
+		$(this).children("ul").show();
+	},function(){
+		$(this).removeClass("on");
+		$(this).children("ul").hide();
+	});	
+});
+
+jQuery.ajax({
+   type: "POST",
+   url: "/cgi-bin/sso/User?function=ajaxLoginStatus",
+   data: "",
+   cache: false,
+   success: function(msg){
+     if(msg==null || msg==""){
+			
+     }else{
+		 jQuery(".rlink").find("li:first").remove();
+		 jQuery(".rlink").prepend(msg);
+     }
+   }
+}); 
+
+jQuery.ajax({
+   type: "POST",
+   url: "/cgi-bin/sso/User?function=AjaxLoginDiv",
+   data: "",
+   cache: false,
+   success: function(msg){
+     if(msg!=''){
+	        jQuery(".top_r").append(msg);
+
+		$(".top_wrapper ul li:has(ul)").hover(function(){
+			$(this).addClass("on");
+			$(this).children("ul").show();
+		},function(){
+			$(this).removeClass("on");
+			$(this).children("ul").hide();
+		});	
+
+	       $(".welcomebox .mytxt li").hover(function(){
+			$(this).addClass("on");
+		},function(){
+			$(this).removeClass("on");
+		}); 
+     }
+   }
+}); 
+</script>
+<!--header-->
+<div id="header">
+	<div class="header_wrapper">
+	    	    	<div class="logo">
+	    		<a href="/">
+	    			<img src="/upload/20121008/201210081349657282460.jpg" alt=""/>
+	    		</a>
+	    	</div>
+
+
+<!--nav-->
+<ul class="nav clearfix">
+  	  <li >
+  	  		<a href="/main/index.shtml" class="navtxt01">首页</a>
+  	  </li>
+      <li >
+      		<a href="/main/cash/index.shtml" class="navtxt02">现金宝</a>
+      		<span>
+      					[+3.283%] 
+
+			</span>
+      </li>
+      <li >
+      		<a href="/main/financial/index.shtml" class="navtxt04">理财产品</a>
+      </li>
+      <li class="on">
+      		<a href="/main/products/index.shtml" class="navtxt03">基金产品</a>
+      </li>
+      <li >
+      		<a href="/main/finainvt/index.shtml" class="navtxt07">专户</a>
+      </li>
+      <li >
+      		<a href="/main/scheduled/index.shtml" class="navtxt05">定投</a>
+      </li>
+      <li >
+      		 <a href="/main/creditcard/index.shtml" class="navtxt06">信用卡</a> 
+      </li>
+
+</ul>
+<!--nav end-->
+</div>
+</div>
+<!--END header-->
+
+
+<div id="tooltip" style="background-color: #FFFFFF;border: 3px solid #EFE5CC;display: none;left: 0;padding: 5px 10px;position: absolute;top: 0;width: 300px;"></div>
+<script type="text/javascript">
+function fundcompare(){
+	var funds = "";
+	var obj = document.getElementsByName('fund');
+	var flag;
+	for(var i=0; i<obj.length; i++){
+		var fund = null;
+		if(obj[i].checked){
+			fund = obj[i].value;
+			funds+=fund+",";
+			flag = true;
+		}
+	}
+	if(!flag){
+		alert("请选择需要比较的基金产品!");
+	}else{
+		funds = funds.substring(0,funds.lastIndexOf(','));
+		window.open("/main/planning/jjgjx/jjbj/index.shtml?fundurl="+funds);
+	}
+}
+
+
+</script>
+<div class="clearfix" id="content">
+	<!--side-->
+    <script language="javascript">
+	 //新基金窗口  
+	function windowopen(url){
+	    var isexists=url.split("/");
+		if(isexists.length<=1) {
+		  url= "http://"+url;
+		}
+		window.open(url);
+	}
+  </script>
+
+<div class="side">
+	<div class="sidebar">
+		<h3 class="first shrinktitle addition subtraction">
+			<span>投资研究</span>
+		</h3>
+		<div class="shrink">
+			<ul>
+					<li>
+					<a href="/main/planning/index.shtml" target="_blank">理财规划</a>
+				</li>
+				<li>
+					<a href="/main/planning/lcal/index.shtml" target="_blank">理财案例</a>
+				</li>
+				<li>
+					<a href="/main/planning/tfxy/index.shtml" target="_blank">理财学院</a>
+				</li>
+				<li>
+					<a href="/main/planning/jjgjx/dbtz/index.shtml" target="_blank">基金工具</a>
+				</li>
+			</ul>
+		</div>
+
+		<h3 class="shrinktitle addition subtraction">
+			<span>添富资讯</span>
+		</h3>
+		<div class="shrink">
+			<ul>
+				<li>
+					<a href="/main/news/index.shtml" target="_blank">添富资讯首页</a>
+				</li>
+				<li>
+					<a href="/main/news/tzdc/index.shtml" target="_blank">投资洞察</a>
+				</li>
+				<li>
+					<a href="/main/news/tfsd/index.shtml" target="_blank">添富视点</a>
+				</li>
+				<li>
+					<a href="/main/news/tfkw/index.shtml" target="_blank">添富刊物</a>
+				</li>
+				<li>
+					<a href="/main/news/fundmanagernose/index.shtml" target="_blank">添富面对面</a>
+				</li>
+			</ul>
+		</div>
+
+		<h3 class="shrinktitle addition subtraction">
+			<span>基金交易</span>
+		</h3>
+		<div class="shrink">
+			<ul>
+										<li>
+							<a href="/main/products/fundTrade/fundSubscribe/index.shtml">基金申购/认购</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/fundRedeem/index.shtml">基金赎回</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/fundFixedInvestment/index.shtml">基金定投</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/fundConvert/index.shtml">基金转换</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/setDividend/index.shtml">设置基金分红方式</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/detailQuery/index.shtml">持有基金明细</a>
+						</li>
+						<li>
+							<a href="/main/products/fundTrade/tardeQuery/index.shtml">基金交易查询</a>
+						</li>
+
+			</ul>
+		</div>
+		<h3 class="shrinktitle addition subtraction">
+			<span>添富产品</span>
+		</h3>
+		<div class="shrink">
+			<ul>
+				<li class="incont">
+					<h4>
+						混合型基金
+					</h4>
+					<ul>
+					 								<li id="519008">
+								 <a href="/main/products/pofund/519008/fundgk.shtml" target="_blank">汇添富优势精选混合</a>
+							</li>
+							<li id="519066">
+								 <a href="/main/products/pofund/519066/fundgk.shtml" target="_blank">汇添富蓝筹稳健混合</a>
+							</li>
+					</ul> 
+				</li>
+				<li class="incont">
+					<h4>
+						股票型基金
+					</h4>
+					<h5>
+						风格类
+					</h5>
+					<ul>
+													<li id="519068">
+								 <a href="/main/products/pofund/519068/fundgk.shtml" target="_blank">汇添富成长焦点股票</a>
+							</li>
+							<li id="519069">
+								 <a href="/main/products/pofund/519069/fundgk.shtml" target="_blank">汇添富价值精选股票</a>
+							</li>
+					</ul> 
+					<h5>
+						主题类
+					</h5>
+					<ul>
+													<li id="470008">
+								 <a href="/main/products/pofund/470008/fundgk.shtml" target="_blank">汇添富策略回报股票</a>
+							</li>
+							<li id="470009">
+								 <a href="/main/products/pofund/470009/fundgk.shtml" target="_blank">汇添富民营活力股票</a>
+							</li>
+							<li id="470028">
+								 <a href="/main/products/pofund/470028/fundgk.shtml" target="_blank">汇添富社会责任股票</a>
+							</li>
+							<li id="470098">
+								 <a href="/main/products/pofund/470098/fundgk.shtml" target="_blank">汇添富逆向投资股票</a>
+							</li>
+					</ul>   
+					<h5>
+						行业类
+					</h5>
+					<ul>
+													<li id="470006">
+								 <a href="/main/products/pofund/470006/fundgk.shtml" target="_blank">汇添富医药保健股票</a>
+							</li>
+					</ul>  
+					<h5>
+						普通类
+					</h5>
+					<ul>
+													<li id="519018">
+								 <a href="/main/products/pofund/519018/fundgk.shtml" target="_blank">汇添富均衡增长股票</a>
+							</li>
+					</ul>  
+				</li>
+				<li class="incont">
+					<h4>
+						海外基金
+					</h4>
+					<ul>
+					    							<li id="470888">
+								 <a href="/main/products/pofund/470888/fundgk.shtml" target="_blank">汇添富亚澳成熟优选股票(QDII)</a>
+							</li>
+							<li id="164701">
+								 <a href="/main/products/pofund/164701/fundgk.shtml" target="_blank">汇添富黄金及贵金属（QDII-LOF-FOF）</a>
+							</li>
+					</ul>  
+				</li>
+
+				<li class="incont">
+					<h4>
+						指数型基金
+					</h4>
+					<ul>
+													<li id="470007">
+								 <a href="/main/products/pofund/470007/fundgk.shtml" target="_blank">汇添富上证综合指数</a>
+							</li>
+							<li id="159912">
+								 <a href="/main/products/pofund/159912/fundgk.shtml" target="_blank">汇添富深证300ETF</a>
+							</li>
+							<li id="470068">
+								 <a href="/main/products/pofund/470068/fundgk.shtml" target="_blank">汇添富深证300ETF联接</a>
+							</li>
+					</ul>    
+				</li>
+
+				<li class="incont">
+					<h4>
+						保本型基金
+					</h4>
+					<ul>
+													<li id="470018">
+								 <a href="/main/products/pofund/470018/fundgk.shtml" target="_blank">汇添富保本混合</a>
+							</li>
+					</ul>	
+				</li>
+
+
+				<li class="incont">
+					<h4>
+						债券型基金
+					</h4>
+					<ul>
+													<li id="519078">
+								 <a href="/main/products/pofund/519078/fundgk.shtml" target="_blank">汇添富增强收益债券A</a>
+							</li>
+							<li id="470078">
+								 <a href="/main/products/pofund/470078/fundgk.shtml" target="_blank">汇添富增强收益债券C</a>
+							</li>
+							<li id="470058">
+								 <a href="/main/products/pofund/470058/fundgk.shtml" target="_blank">汇添富可转换债券A</a>
+							</li>
+							<li id="470059">
+								 <a href="/main/products/pofund/470059/fundgk.shtml" target="_blank">汇添富可转换债券C</a>
+							</li>
+							<li id="470088">
+								 <a href="/main/products/pofund/470088/fundgk.shtml" target="_blank">汇添富信用债债券A</a>
+							</li>
+							<li id="470089">
+								 <a href="/main/products/pofund/470089/fundgk.shtml" target="_blank">汇添富信用债债券C</a>
+							</li>
+							<li id="164702">
+								 <a href="/main/products/pofund/164702/fundgk.shtml" target="_blank">汇添富季季红定期开放债券</a>
+							</li>
+							<li id="470010">
+								 <a href="/main/products/pofund/470010/fundgk.shtml" target="_blank">汇添富多元收益债券A</a>
+							</li>
+							<li id="470011">
+								 <a href="/main/products/pofund/470011/fundgk.shtml" target="_blank">汇添富多元收益债券C</a>
+							</li>
+					</ul>    
+				</li>
+				<li class="incont">
+					<h4>
+						理财产品
+					</h4>
+					<ul>
+													<li id="470030">
+								 <a href="/main/products/pofund/470030/fundgk.shtml" target="_blank">汇添富理财30天A</a>
+							</li>
+							<li id="471030">
+								 <a href="/main/products/pofund/471030/fundgk.shtml" target="_blank">汇添富理财30天B</a>
+							</li>
+							<li id="470060">
+								 <a href="/main/products/pofund/470060/fundgk.shtml" target="_blank">汇添富理财60天A</a>
+							</li>
+							<li id="471060">
+								 <a href="/main/products/pofund/471060/fundgk.shtml" target="_blank">汇添富理财60天B</a>
+							</li>
+							<li id="470014">
+								 <a href="/main/products/pofund/470014/fundgk.shtml" target="_blank">汇添富理财14天A</a>
+							</li>
+							<li id="471014">
+								 <a href="/main/products/pofund/471014/fundgk.shtml" target="_blank">汇添富理财14天B</a>
+							</li>
+							<li id="471028">
+								 <a href="/main/products/pofund/471028/fundgk.shtml" target="_blank">汇添富理财28天A</a>
+							</li>
+							<li id="472028">
+								 <a href="/main/products/pofund/472028/fundgk.shtml" target="_blank">汇添富理财28天B</a>
+							</li>
+					</ul>
+				</li>
+				<li class="incont">
+					<h4>
+						货币型基金
+					</h4>
+					<ul>
+													<li id="519518">
+								 <a href="/main/products/pofund/519518/fundgk.shtml" target="_blank">汇添富货币A</a>
+							</li>
+							<li id="519517">
+								 <a href="/main/products/pofund/519517/fundgk.shtml" target="_blank">汇添富货币B</a>
+							</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<h3>
+			<span>
+				<a href="http://99fund.com/service/help_list_p/3340.html" target="_blank">添富基金使用帮助</a>
+			</span>
+		</h3>
+
+		<h3>
+			<span>
+				<a href="http://sns.99fund.com/space.php?do=mtag&tagid=232" target="_blank">添富基金交流区</a>
+			</span>
+		</h3>
+
+		<h3 class="last">
+			<span>
+				<a href="http://99fund.com/ask/list/43.html" target="_blank">添富爱问</a>
+			</span>
+		</h3>
+	</div>
+</div>
+
+    <!--main-->
+<!-- ainm -->
+<div class="main">
+	<div class="kv">
+	    <div class="kvimg">
+			  						  							 <img alt="背景图片广告" src="/upload/20120526/201205261338007727955.jpg" />
+			</div>
+					<!-- 取4只热门基金 -->
+		<p class="kvtxt01">
+		<b>2012年10月18日<span>热门基金</span> </b>
+		<br>
+		汇添富信用债债券C 
+
+
+
+
+				</p>
+					<div class="btnposition" id="btnposition1" style="display:none;">
+						<div class="fl">
+							<span class="kvbtn">
+									<a href="https://passport.99fund.com/register/register.jsp?SystemType=00" target="_blank">开&nbsp;&nbsp;&nbsp;户</a>
+							</span>
+						</div>
+						<span class="kvbtn2">
+								<a href="https://passport.99fund.com/login/passportLogin.jsp" target="_blank">登录</a> | 
+								<a href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申购</a>
+						</span>
+				   </div>
+				   <div class="btnposition" id="btnposition2" style="display:none;">
+						<div class="fl">
+							<span class="kvbtn">
+									<a href="https://trade.99fund.com/account/index.jsp" target="_blank">进入我的基金</a>
+							</span>
+						</div>
+				   </div>
+				   <script type="text/javascript" src="/web/script/loginStatus.js"></script>
+			<div class="kvtab clearfix">
+				<div id="tabsC_2" class="kvtab_box tabsC">
+					<div class="tabcont">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tbody>
+								<tr>
+									<th colspan="2">
+										<span class="of01">汇添富信用债债券C</span>
+									</th>
+									<th class="textright">
+												 
+												债券型 
+												 
+												 
+												 
+												 
+												 
+												 
+									</th>
+								</tr>
+								<tr>
+									<td width="50%">
+										近一月收益
+									</td>
+									<td width="20%">
+										基金净值
+									</td>
+									<td width="30%" class="textright">
+												1.057
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2">
+												<span class="of02">+0.763%</span> 
+									</td>
+									<td>
+										日增长率
+									</td>
+									<td class="textright">
+												<span>+0.00%</span> 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										申购费率
+									</td>
+									<td class="textright">
+											<span style="text-decoration:line-through;">0%</span> 
+												0% 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="ktxt clearfix">
+							<p>
+								政策利好中低评级信用债
+							</p>
+							<a class="buybtn fr" href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申 购</a>
+						</div>
+					</div>
+					<div class="tabcont">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tbody>
+								<tr>
+									<th colspan="2">
+										<span class="of01">汇添富民营活力股票</span>
+									</th>
+									<th class="textright">
+												股票型 
+												 
+												 
+												 
+												 
+												 
+												 
+												 
+									</th>
+								</tr>
+								<tr>
+									<td width="50%">
+										近一月收益
+									</td>
+									<td width="20%">
+										基金净值
+									</td>
+									<td width="30%" class="textright">
+												1.055
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2">
+												<span class="of02">+3.229%</span> 
+									</td>
+									<td>
+										日增长率
+									</td>
+									<td class="textright">
+												<span>+0.67%</span> 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										申购费率
+									</td>
+									<td class="textright">
+											<span style="text-decoration:line-through;">1.5%</span> 
+												0.6% 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="ktxt clearfix">
+							<p>
+								分享民营企业成长
+							</p>
+							<a class="buybtn fr" href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申 购</a>
+						</div>
+					</div>
+					<div class="tabcont">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tbody>
+								<tr>
+									<th colspan="2">
+										<span class="of01">汇添富货币A</span>
+									</th>
+									<th class="textright">
+												 
+												 
+												货币型 
+												 
+												 
+												 
+												 
+												 
+									</th>
+								</tr>
+								<tr>
+									<td width="50%">
+										近一月收益
+									</td>
+									<td width="20%">
+										基金净值
+									</td>
+									<td width="30%" class="textright">
+												1.0000
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2">
+												<span class="of02">+0.29%</span> 
+									</td>
+									<td>
+										日增长率
+									</td>
+									<td class="textright">
+												<span>+0.01%</span> 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										申购费率
+									</td>
+									<td class="textright">
+											<span style="text-decoration:line-through;">0%</span> 
+												0% 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="ktxt clearfix">
+							<p>
+								现金管理好工具 
+							</p>
+							<a class="buybtn fr" href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申 购</a>
+						</div>
+					</div>
+					<div class="tabcont">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
+							<tbody>
+								<tr>
+									<th colspan="2">
+										<span class="of01">汇添富逆向投资股票</span>
+									</th>
+									<th class="textright">
+												股票型 
+												 
+												 
+												 
+												 
+												 
+												 
+												 
+									</th>
+								</tr>
+								<tr>
+									<td width="50%">
+										近一月收益
+									</td>
+									<td width="20%">
+										基金净值
+									</td>
+									<td width="30%" class="textright">
+												1.010
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="2">
+												<span class="of02">+2.956%</span> 
+									</td>
+									<td>
+										日增长率
+									</td>
+									<td class="textright">
+												<span>+0.70%</span> 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										申购费率
+									</td>
+									<td class="textright">
+											<span style="text-decoration:line-through;">1.5%</span> 
+												0.6% 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="ktxt clearfix">
+							<p>
+								国内首只逆向投资股票基金
+							</p>
+							<a class="buybtn fr" href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申 购</a>
+						</div>
+					</div>
+				</div>
+				<div class="kvtab_menu">
+					<ul target="#tabsC_2" class="tabs clearfix">
+							<li class="on">
+								<a href="javascript:void(0);">信用债债券C</a>
+	                    	</li>
+							<li >
+								<a href="javascript:void(0);">民营活力股票</a>
+	                    	</li>
+							<li >
+								<a href="javascript:void(0);">货币A</a>
+	                    	</li>
+							<li >
+								<a href="javascript:void(0);">逆向投资股票</a>
+	                    	</li>
+					</ul>
+				</div>
+			</div>
+
+	</div>
+
+	<!--基金投资6大攻略-->
+	<div class="samebox">
+		<h3>
+			基金投资6大攻略
+		</h3>
+		<div class="samebox_b">
+			<ul class="linkul clearfix">
+									<li>
+						<a href="/main/gywm/tzln/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="坚持长期投资致胜的选择" src="/upload/20120526/201205261338008029403.gif"> </span>
+							<p><strong>坚持长期投资致胜的选择</strong>把握市场脉络，作中长期投资布局，以获得持续稳定增长的较高长期投资收益</p> 
+						</a>
+					</li>
+					<li>
+						<a href="/main/planning/jjgjx/fxzc/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="选择适合自己的基金！" src="/upload/20120526/201205261338007982950.gif"> </span>
+							<p><strong>选择适合自己的基金！</strong>在基金购买过程中应该注意对自己的风险承受能力和基金产品风险的匹配状况，选择适合自己的基金</p> 
+						</a>
+					</li>
+					<li>
+						<a href="/main/products/fundTrade/fundSubscribe/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="基金申购：用现金宝申购费率打4折！" src="/upload/20120526/201205261338007927929.gif"> </span>
+							<p><strong>基金申购：用现金宝申购费率打4折！</strong>使用现金宝申购基金，不再受银行卡限制，享受费率低至4折优惠，帮您更省钱</p> 
+						</a>
+					</li>
+					<li>
+						<a href="/main/products/fundTrade/fundRedeem/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="基金赎回：赎回到现金宝还有收益！" src="/upload/20120526/201205261338007896552.gif"> </span>
+							<p><strong>基金赎回：赎回到现金宝还有收益！</strong>将基金赎回至现金宝，还可以享受远高于活期存款的收益，取现到账只需1个工作日</p> 
+						</a>
+					</li>
+					<li>
+						<a href="/main/scheduled/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="基金定投：100%跑赢普通定投模式！" src="/upload/20120526/201205261338007850387.gif"> </span>
+							<p><strong>基金定投：100%跑赢普通定投模式！</strong>定期不定额，强调“逢高少买、逢低多买”的弹性投资特色，历史收益，是普通定投收益率的2.6倍</p> 
+						</a>
+					</li>
+					<li>
+						<a href="/main/cash/index.shtml" target="_blank"> 
+							<span class="iconimg"><img alt="闲置资金：比活期存款更合适的方式！" src="/upload/20120526/201205261338007816083.gif"> </span>
+							<p><strong>闲置资金：比活期存款更合适的方式！</strong>现金宝可以帮您轻松管理闲散资金，并享受货币基金收益，充值取现0手续费，7*24小时均可申请取现</p> 
+						</a>
+					</li>
+
+			</ul>
+		</div>
+	</div>
+	<!--END 基金投资6大攻略-->
+
+	<div class="functalbebox">
+		<table id="tabFundData" class="sharetable tablebt intervalbg"
+			style="margin-bottom: 5px;" width="100%" border="0" cellpadding="0"
+			cellspacing="0">
+			<tbody>
+				<tr>
+					<th width="9%" class="borderb">基金<br>类型</th>
+					<th width="9%" class="borderb">基金<br>代码</th>
+					<th width="18%" class="borderb">基金<br>名称</th>
+					<th width="10%" class="borderb">更新<br>日期</th>
+					<th width="7%" class="borderb">单位<br>净值</th>
+					<th width="7%" class="borderb">累计<br>净值</th>
+					<th width="7%" class="borderb">最近<br>一天</th>
+					<th width="8%" class="borderb">最近<br>三月</th>
+					<th width="7%" class="borderb">最近<br>一年</th>
+					<th width="7%" class="borderb">成立以来<br>增长率</th>
+					<th width="7%" class="borderb">状态</th>
+					<th width="5%" class="borderb">比较</th>
+				</tr>
+				<!-- tr  -->
+    <tr id="519008">
+		   <th width="8%" rowspan="2">
+					<div class="sn_name">
+						<a href="###">混合型</a>
+						<div class="sn_tip">
+							<p>
+								<strong>混合型基金：</strong>指投资于股票、债券和货币市场工具等有价证券，
+
+股票资产占基金资产比例的下限低于60%的基金。预期风险收益水平低于股票基金，高于债券基金。
+							</p>
+						</div>
+					</div>
+			</th>
+			<td width="9%">
+					<a href="/main/products/pofund/519008/fundgk.shtml"
+						target="_blank" title="本基金重点投资于具有持续竞争优势的企业，分享其在中国经济持续成长背景下的长期优异业绩。荣获第四、五、六届中国基金业金牛奖。">519008</a>
+				</td>
+				<td class="left2" width="18%">
+					<div class="sn_namelist">
+						<a href="/main/products/pofund/519008/fundgk.shtml"
+							target="_blank">汇添富优势精选混合</a>
+						<div class="sn_tip">
+							<p>
+								本基金重点投资于具有持续竞争优势的企业，分享其在中国经济持续成长背景下的长期优异业绩。荣获第四、五、六届中国基金业金牛奖。
+							</p>
+						</div>
+					 </div>
+			 </td>
+			  <td width="10%">
+							2012-10-18 
+			  </td>
+			  <td width="7%">
+								 2.1363
+			   </td>
+			   <td width="7%">
+								4.3163 
+				</td>
+				<td width="7%">
+									<span class="red">+1.13%</span> 
+				 </td>
+				 <td width="8%">
+									<span class="red">+2.94%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="red">+3.21%</span> 
+				 </td>
+				 <td width="7%">
+										<span class="red">+367.03%</span> 
+				 </td>
+				 <td width="7%">
+						 正常 
+											 </td>
+				 <td width="5%">
+							<input type="checkbox" name="fund" value="519008" />
+				 </td>
+	</tr>
+    <tr id="519066">
+			<td width="9%">
+					<a href="/main/products/pofund/519066/fundgk.shtml"
+						target="_blank" title="本基金将把握中国经济成长脉搏，优选受益于中国经济成长且价值相对低估的蓝筹公司。">519066</a>
+				</td>
+				<td class="left2" width="18%">
+					<div class="sn_namelist">
+						<a href="/main/products/pofund/519066/fundgk.shtml"
+							target="_blank">汇添富蓝筹稳健混合</a>
+						<div class="sn_tip">
+							<p>
+								本基金将把握中国经济成长脉搏，优选受益于中国经济成长且价值相对低估的蓝筹公司。
+							</p>
+						</div>
+					 </div>
+			 </td>
+			  <td width="10%">
+							2012-10-18 
+			  </td>
+			  <td width="7%">
+								 1.164
+			   </td>
+			   <td width="7%">
+								1.484 
+				</td>
+				<td width="7%">
+									<span class="red">+1.04%</span> 
+				 </td>
+				 <td width="8%">
+									<span class="red">+1.57%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="green">-0.09%</span> 
+				 </td>
+				 <td width="7%">
+										<span class="red">+46.03%</span> 
+				 </td>
+				 <td width="7%">
+						 正常 
+											 </td>
+				 <td width="5%">
+							<input type="checkbox" name="fund" value="519066" />
+				 </td>
+	</tr>
+
+				<!-- end tr -->
+				<tr class="even">
+					<th width="8%" class="leftbg " rowspan="12">
+						<div class="sn_name">
+							<a href="###">股票型</a>
+							<div class="sn_tip">
+								<p>
+									<strong>股票型基金：</strong>指以股票为主要投资对象，股票资产占基
+
+金资产比例超过60%的基金。预期收益较高，预期风险也较高。
+								</p>
+							</div>
+						</div>
+					</th>
+					<td colspan="11" class="sn_subth">
+						<div class="sn_name">
+							<a href="###">风格类</a>
+							<div class="sn_tip">
+								<p>
+									<strong>风格类股票型基金：</strong>指重点投资特定风格类资产的基金
+
+。
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+	<tr class="sn_bggray" id="519068">
+				<td width="9%">
+					<a href="/main/products/pofund/519068/fundgk.shtml"
+						target="_blank" title="本基金精选成长性较高，且估值有吸引力的股票进行布局。">519068</a>
+				</td>
+				<td class="left2" width="18%">
+					<div class="sn_namelist">
+						<a href="/main/products/pofund/519068/fundgk.shtml"
+							target="_blank">汇添富成长焦点股票</a>
+						<div class="sn_tip">
+							<p>
+								本基金精选成长性较高，且估值有吸引力的股票进行布局。
+							</p>
+						</div>
+					 </div>
+				 </td>
+				<td width="10%">
+					 2012-10-18 
+				</td>
+				<td width="7%">
+					 1.0758 
+				</td>
+				<td width="7%">
+						1.3158 				</td>
+				<td width="7%">
+							<span class="red">+0.76%</span> 
+				 </td>
+				 <td width="8%">
+									<span class="red">+1.60%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="red">+1.04%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="red">+27.00%</span> 
+				  </td>
+				  <td width="7%">
+						 正常 
+										  </td>
+				  <td width="5%">
+							<input type="checkbox" name="fund" value="519068" />
+				  </td>
+	</tr>
+	<tr class="sn_bggray" id="519069">
+				<td width="9%">
+					<a href="/main/products/pofund/519069/fundgk.shtml"
+						target="_blank" title="本基金采用“自下而上”的公司基本面分析方法，精选价值相对低估的优质公司进行投资布局。">519069</a>
+				</td>
+				<td class="left2" width="18%">
+					<div class="sn_namelist">
+						<a href="/main/products/pofund/519069/fundgk.shtml"
+							target="_blank">汇添富价值精选股票</a>
+						<div class="sn_tip">
+							<p>
+								本基金采用“自下而上”的公司基本面分析方法，精选价值相对低估的优质公司进行投资布局。
+							</p>
+						</div>
+					 </div>
+				 </td>
+				<td width="10%">
+					 2012-10-18 
+				</td>
+				<td width="7%">
+					 1.091 
+				</td>
+				<td width="7%">
+						1.561 				</td>
+				<td width="7%">
+							<span class="red">+1.39%</span> 
+				 </td>
+				 <td width="8%">
+									<span class="red">+1.68%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="red">+4.32%</span> 
+				 </td>
+				 <td width="7%">
+									<span class="red">+55.27%</span> 
+				  </td>
+				  <td width="7%">
+						 正常 
+										  </td>
+				  <td width="5%">
+							<input type="checkbox" name="fund" value="519069" />
+				  </td>
+	</tr>
+
+		<tr class="sn_bg">
+					<td colspan="11" class="sn_subth">
+						<div class="sn_name">
+							<a href="###">主题类</a>
+							<div class="sn_tip">
+								<p>
+									<strong>主题类股票型基金：</strong>指根据不同主题投资策略重点投资
+
+相应主题资产的基金。
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+			  <tr class="sn_bggray" id="470008">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/470008/fundgk.shtml"
+								target="_blank" title="本基金采用“自上而下”的投资方式，灵活运用资产配置策略、行业轮动策略和个股精选策略，构建有效的投资组合。">470008</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470008/fundgk.shtml"
+									target="_blank">汇添富策略回报股票</a>
+								<div class="sn_tip">
+									<p>
+										本基金采用“自上而下”的投资方式，灵活运用资产配置策略、行业轮动策略和个股精选策略，构建有效的投资组合。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.940 
+						</td>
+						<td width="7%">
+							0.960 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.08%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+0.43%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-2.39%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-4.33%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470008" />
+						</td>
+					</tr>
+			
+			  <tr class="sn_bggray" id="470009">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/470009/fundgk.shtml"
+								target="_blank" title="本基金采用自下而上的方法，重点投资与中国经济发展密切相关的优秀民营企业上市公司股票。">470009</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470009/fundgk.shtml"
+									target="_blank">汇添富民营活力股票</a>
+								<div class="sn_tip">
+									<p>
+										本基金采用自下而上的方法，重点投资与中国经济发展密切相关的优秀民营企业上市公司股票。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.055 
+						</td>
+						<td width="7%">
+							1.055 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.67%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+4.35%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+9.90%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+5.50%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470009" />
+						</td>
+					</tr>
+			
+			  <tr class="sn_bggray" id="470028">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/470028/fundgk.shtml"
+								target="_blank" title="在长期价值投资理念的基础上，本基金坚持社会责任投资，重点考察企业社会责任的履行，立足企业基本面，自下而上精选个股，努力实现本基金的投资目标。">470028</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470028/fundgk.shtml"
+									target="_blank">汇添富社会责任股票</a>
+								<div class="sn_tip">
+									<p>
+										在长期价值投资理念的基础上，本基金坚持社会责任投资，重点考察企业社会责任的履行，立足企业基本面，自下而上精选个股，努力实现本基金的投资目标。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.886 
+						</td>
+						<td width="7%">
+							0.886 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.26%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+1.37%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-3.28%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-11.40%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470028" />
+						</td>
+					</tr>
+			
+			  <tr class="sn_bggray" id="470098">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/470098/fundgk.shtml"
+								target="_blank" title="　本基金主要采用逆向投资策略进行主动投资管理，在科学严格的投资风险管理前提下，谋求基金资产长期稳健回报。">470098</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470098/fundgk.shtml"
+									target="_blank">汇添富逆向投资股票</a>
+								<div class="sn_tip">
+									<p>
+										　本基金主要采用逆向投资策略进行主动投资管理，在科学严格的投资风险管理前提下，谋求基金资产长期稳健回报。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.010 
+						</td>
+						<td width="7%">
+							1.010 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.70%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-1.85%</span>  
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+1.00%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470098" />
+						</td>
+					</tr>
+			
+
+
+
+				<tr class="sn_bg">
+
+
+					<td colspan="11" class="sn_subth">
+						<div class="sn_name">
+							<a href="###">行业类</a>
+							<div class="sn_tip">
+								<p>
+									<strong>行业类股票型基金：</strong>指重点投资某一行业或板块的基金
+
+。
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+							  <tr class="sn_bggray" id="470006">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/470006/fundgk.shtml"
+								target="_blank" title="国内首只医药行业投资基金，精选医药保健行业的优质上市公司。">470006</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470006/fundgk.shtml"
+									target="_blank">汇添富医药保健股票</a>
+								<div class="sn_tip">
+									<p>
+										国内首只医药行业投资基金，精选医药保健行业的优质上市公司。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.915 
+						</td>
+						<td width="7%">
+							0.915 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.66%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+6.64%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+10.37%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-8.50%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470006" />
+						</td>
+					</tr>
+			
+
+				<tr class="sn_bg">
+					<td colspan="11" class="sn_subth">
+						<div class="sn_name">
+							<a href="###">普通类</a>
+							<div class="sn_tip">
+								<p>
+									<strong>普通类股票型基金：</strong>指在风格类资产、主题类资产、行
+
+业类资产等相对均衡配置的股票型基金。
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+							  <tr class="sn_bggray" id="519018">
+
+
+						<td width="9%">
+							<a href="/main/products/pofund/519018/fundgk.shtml"
+								target="_blank" title="本基金应用“由上而下”和“自下而上”相结合的投资策略，通过行业的相对均衡配置和投资布局于具有持续增长潜质的企业。荣获第六届中国基金业金牛奖。">519018</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/519018/fundgk.shtml"
+									target="_blank">汇添富均衡增长股票</a>
+								<div class="sn_tip">
+									<p>
+										本基金应用“由上而下”和“自下而上”相结合的投资策略，通过行业的相对均衡配置和投资布局于具有持续增长潜质的企业。荣获第六届中国基金业金牛奖。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.6347 
+						</td>
+						<td width="7%">
+							2.2383 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.13%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+1.89%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-0.16%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+120.39%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="519018" />
+						</td>
+					</tr>
+			
+
+					<tr id="470888">
+						<th width="8%" rowspan="2">
+							<div class="sn_name">
+								<a href="###">海外基金</a>
+								<div class="sn_tip">
+									<p>
+										<strong>海外基金：</strong>指在中国大陆募集投资于境外市场
+
+有价证券的基金。有利于帮助投资者把握海外市场投资机会。预期风险收益水平高。
+									</p>
+								</div>
+							</div>
+						</th>
+						 						<td width="9%">
+							<a href="/main/products/pofund/470888/fundgk.shtml"
+								target="_blank" title="本基金主要投资亚洲澳洲成熟证券市场（除日本外），精选具有持续竞争优势且估值有吸引力的公司股票等证券，是首只重点投资澳洲市场的基金。">470888</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470888/fundgk.shtml"
+									target="_blank">汇添富亚澳成熟优选股票(QDII)</a>
+								<div class="sn_tip">
+									<p>
+										本基金主要投资亚洲澳洲成熟证券市场（除日本外），精选具有持续竞争优势且估值有吸引力的公司股票等证券，是首只重点投资澳洲市场的基金。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-17 
+						</td>
+						<td width="7%">
+							 0.918 
+						</td>
+						<td width="7%">
+							0.938 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.66%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+6.99%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+3.85%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-6.52%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470888" />
+						</td>
+					</tr>
+			
+			<tr id="164701">
+ 						<td width="9%">
+							<a href="/main/products/pofund/164701/fundgk.shtml"
+								target="_blank" title="本基金主要投资于境外有实物黄金或其他实物贵金属支持的交易所交易基金(ETF)，力争基金收益率超越同期黄金价格走势。是国内首只贵金属基金。">164701</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/164701/fundgk.shtml"
+									target="_blank">汇添富黄金及贵金属（QDII-LOF-FOF）</a>
+								<div class="sn_tip">
+									<p>
+										本基金主要投资于境外有实物黄金或其他实物贵金属支持的交易所交易基金(ETF)，力争基金收益率超越同期黄金价格走势。是国内首只贵金属基金。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-17 
+						</td>
+						<td width="7%">
+							 0.946 
+						</td>
+						<td width="7%">
+							0.946 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.11%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="red">+10.90%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+0.42%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-5.40%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="164701" />
+						</td>
+					</tr>
+			
+
+							<tr class="sn_bg" id="470007">
+						<th width="8%" class="leftbg" rowspan="3">
+							<div class="sn_name">
+								<a href="###">指数型</a>
+								<div class="sn_tip">
+									<p>
+										<strong>指数型基金：</strong>指以标的股票指数为主要跟踪对
+
+象进行指数化投资运作的基金。预期风险收益水平低于股票基金，高于混合基金。
+									</p>
+								</div>
+							</div>
+						</th>
+						 						<td width="9%">
+							<a href="/main/products/pofund/470007/fundgk.shtml"
+								target="_blank" title="本基金以上证综合指数为跟踪对象，进行指数化投资运作，是中国首只上证综合指数基金。">470007</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470007/fundgk.shtml"
+									target="_blank">汇添富上证综合指数</a>
+								<div class="sn_tip">
+									<p>
+										本基金以上证综合指数为跟踪对象，进行指数化投资运作，是中国首只上证综合指数基金。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.711 
+						</td>
+						<td width="7%">
+							0.711 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.14%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-1.25%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-7.54%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-28.90%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470007" />
+						</td>
+					</tr>
+			
+			<tr class="sn_bg" id="159912">
+ 						<td width="9%">
+							<a href="/main/products/pofund/159912/fundgk.shtml"
+								target="_blank" title="本基金以深证300指数为投资对象，进行指数化投资运作，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。">159912</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/159912/fundgk.shtml"
+									target="_blank">汇添富深证300ETF</a>
+								<div class="sn_tip">
+									<p>
+										本基金以深证300指数为投资对象，进行指数化投资运作，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.8439 
+						</td>
+						<td width="7%">
+							0.8439 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.79%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-4.23%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-15.54%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-15.59%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="159912" />
+						</td>
+					</tr>
+			
+			<tr class="sn_bg" id="470068">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470068/fundgk.shtml"
+								target="_blank" title="本基金以汇添富深证300ETF为投资对象，通过投资于目标ETF，紧密跟踪深证300指数，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。">470068</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470068/fundgk.shtml"
+									target="_blank">汇添富深证300ETF联接</a>
+								<div class="sn_tip">
+									<p>
+										本基金以汇添富深证300ETF为投资对象，通过投资于目标ETF，紧密跟踪深证300指数，深证300指数具有成长性突出、结构均衡两大特点，自发布以来，收益显著领先于市场其他主流指数。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.9193 
+						</td>
+						<td width="7%">
+							0.9193 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+1.68%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-3.93%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-8.07%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-8.07%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470068" />
+						</td>
+					</tr>
+			
+
+
+							<tr id="470018">
+						<th width="8%" rowspan="1">
+							<div class="sn_name">
+								<a href="###">保本型</a>
+								<div class="sn_tip">
+									<p>
+										<strong>保本型基金：</strong>指投资人在投资契约到期时，可
+
+以收回投资本金至少某一约定百分比的基金。预期风险收益水平低于债券基金，高于货币基金。
+									</p>
+								</div>
+							</div>
+						</th>
+						 						<td width="9%">
+							<a href="/main/products/pofund/470018/fundgk.shtml"
+								target="_blank" title="本基金主要通过投资组合保险技术来运作，在保证本金安全的前提下，力争在保本周期内实现基金财产的稳健增值。">470018</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470018/fundgk.shtml"
+									target="_blank">汇添富保本混合</a>
+								<div class="sn_tip">
+									<p>
+										本基金主要通过投资组合保险技术来运作，在保证本金安全的前提下，力争在保本周期内实现基金财产的稳健增值。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.043 
+						</td>
+						<td width="7%">
+							1.043 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.10%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-0.38%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+4.30%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+4.30%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470018" />
+						</td>
+					</tr>
+			
+
+
+
+
+
+
+							<tr id="519078" class="even">
+						<th width="8%" rowspan="9">
+							<div class="sn_name">
+								<a href="###">债券型</a>
+								<div class="sn_tip">
+									<p>
+										<strong>债券型基金：</strong>指以债券为主要投资对象，债券
+
+资产占基金资产比例超过80%的基金。预期风险收益水平低于混合基金，高于货币基金。
+									</p>
+								</div>
+							</div>
+						</th>
+						 						<td width="9%">
+							<a href="/main/products/pofund/519078/fundgk.shtml"
+								target="_blank" title="本基金主要投资于债券等固定收益类品种和其他低风险品种。A类收取前端认申购费和赎回费。">519078</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/519078/fundgk.shtml"
+									target="_blank">汇添富增强收益债券A</a>
+								<div class="sn_tip">
+									<p>
+										本基金主要投资于债券等固定收益类品种和其他低风险品种。A类收取前端认申购费和赎回费。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.033 
+						</td>
+						<td width="7%">
+							1.233 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.19%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-0.39%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+7.48%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+24.76%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="519078" />
+						</td>
+					</tr>
+			<tr id="470078" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470078/fundgk.shtml"
+								target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470078</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470078/fundgk.shtml"
+									target="_blank">汇添富增强收益债券C</a>
+								<div class="sn_tip">
+									<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.023 
+						</td>
+						<td width="7%">
+							1.223 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.10%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-0.49%</span>  
+						</td>
+						<td width="7%">
+
+							<span class="red">+7.12%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+12.52%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470078" />
+						</td>
+					</tr>
+			<tr id="470058" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470058/fundgk.shtml"
+								target="_blank" title="本基金重点投资于可转换债券(含可分离交易可转债)，努力在控制投资组合下方风险的基础上实现基金资产的长期稳健增值。">470058</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470058/fundgk.shtml"
+									target="_blank">汇添富可转换债券A</a>
+								<div class="sn_tip">
+									<p>
+										本基金重点投资于可转换债券(含可分离交易可转债)，努力在控制投资组合下方风险的基础上实现基金资产的长期稳健增值。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.960 
+						</td>
+						<td width="7%">
+							0.960 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.52%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-3.90%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-0.41%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-4.00%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470058" />
+						</td>
+					</tr>
+			<tr id="470059" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470059/fundgk.shtml"
+								target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470059</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470059/fundgk.shtml"
+									target="_blank">汇添富可转换债券C</a>
+								<div class="sn_tip">
+									<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 0.955 
+						</td>
+						<td width="7%">
+							0.955 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.53%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-3.92%</span>  
+						</td>
+						<td width="7%">
+							<span class="green">-0.73%</span>  
+						</td>
+						<td width="7%">
+ 
+							<span class="green">-4.50%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470059" />
+						</td>
+					</tr>
+			<tr id="470088" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470088/fundgk.shtml"
+								target="_blank" title="本基金主要投资于信用债券类固定收益品种，在严格管理投资风险、保持资产流动性的基础上，为基金份额持有人追求资产的长期稳定增值。 ">470088</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470088/fundgk.shtml"
+									target="_blank">汇添富信用债债券A</a>
+								<div class="sn_tip">
+									<p>
+										本基金主要投资于信用债券类固定收益品种，在严格管理投资风险、保持资产流动性的基础上，为基金份额持有人追求资产的长期稳定增值。 
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.061 
+						</td>
+						<td width="7%">
+							1.061 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.00%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-0.28%</span>  
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+6.10%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470088" />
+						</td>
+					</tr>
+			<tr id="470089" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470089/fundgk.shtml"
+								target="_blank" title="同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。">470089</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470089/fundgk.shtml"
+									target="_blank">汇添富信用债债券C</a>
+								<div class="sn_tip">
+									<p>
+										同A类相比，C类不收取认申购费，而是从本类别基金资产中计提销售服务费。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-18 
+						</td>
+						<td width="7%">
+							 1.057 
+						</td>
+						<td width="7%">
+							1.057 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.00%</span>  
+						</td>
+						<td width="8%">
+ 
+							<span class="green">-0.38%</span>  
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+5.70%</span> 
+
+						</td>
+						<td width="7%">
+							 正常 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" value="470089" />
+						</td>
+					</tr>
+			<tr id="164702" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/164702/fundgk.shtml"
+								target="_blank" title="<P class=indent>本基金主要投资于债券类固定收益品种，在严格管理投资风险的基础上，追求资产的长期稳定增值。</P>">164702</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/164702/fundgk.shtml"
+									target="_blank">汇添富季季红定期开放债券</a>
+								<div class="sn_tip">
+									<p>
+										<P class=indent>本基金主要投资于债券类固定收益品种，在严格管理投资风险的基础上，追求资产的长期稳定增值。</P>
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-12 
+						</td>
+						<td width="7%">
+							 1.004 
+						</td>
+						<td width="7%">
+							1.004 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.10%</span>  
+						</td>
+						<td width="8%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+0.30%</span> 
+
+						</td>
+						<td width="7%">
+							
+							<span class="yellow">封闭期</span> 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" disabled
+								value="164702" />
+						</td>
+					</tr>
+			<tr id="470010" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470010/fundgk.shtml"
+								target="_blank" title="本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。">470010</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470010/fundgk.shtml"
+									target="_blank">汇添富多元收益债券A</a>
+								<div class="sn_tip">
+									<p>
+										本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-12 
+						</td>
+						<td width="7%">
+							 1.002 
+						</td>
+						<td width="7%">
+							1.002 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.20%</span>  
+						</td>
+						<td width="8%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+0.30%</span> 
+
+						</td>
+						<td width="7%">
+							
+							<span class="yellow">封闭期</span> 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" disabled
+								value="470010" />
+						</td>
+					</tr>
+			<tr id="470011" class="even">
+ 						<td width="9%">
+							<a href="/main/products/pofund/470011/fundgk.shtml"
+								target="_blank" title="本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。">470011</a>
+						</td>
+						<td class="left2" width="18%">
+							<div class="sn_namelist">
+								<a href="/main/products/pofund/470011/fundgk.shtml"
+									target="_blank">汇添富多元收益债券C</a>
+								<div class="sn_tip">
+									<p>
+										本基金以宏观经济和货币政策分析为基础，根据经济发展和证券市场不同阶段的特点，以固定收益投资为基础，同时关注权益类资产相对确定的投资机会，做好大类资产配置，努力平衡风险与收益，以期获得高于业绩基准的收益。
+									</p>
+								</div>
+							</div>
+						</td>
+						 
+						<td width="10%">
+							 2012-10-12 
+						</td>
+						<td width="7%">
+							 1.002 
+						</td>
+						<td width="7%">
+							1.002 
+						</td>
+						<td width="7%">
+							 
+							<span class="red">+0.20%</span>  
+						</td>
+						<td width="8%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+
+							<span>--</span> 
+						</td>
+						<td width="7%">
+ 
+							<span class="red">+0.30%</span> 
+
+						</td>
+						<td width="7%">
+							
+							<span class="yellow">封闭期</span> 
+						</td>
+						<td width="5%">
+							<input type="checkbox" name="fund" disabled
+								value="470011" />
+						</td>
+					</tr>
+
+		</tbody></table>
+      </table>
+<!--理财产品开始-->
+  <table width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 5px;" class="sharetable tablebt intervalbg">
+        <tbody><tr>
+          <th width="9%" class="borderb">基金<br>
+          类型</th>
+          <th width="9%" class="borderb">基金<br>
+          代码</th>
+          <th width="18%" class="borderb">基金<br>
+          名称</th>
+          <th width="10%" class="borderb">更新<br>
+          日期</th>
+          <th width="14%" class="borderb">日每万<br>份净收益</th>
+	  <th width="7%" class="borderb">七日年<br>化收益率</th>
+	  <th class="borderb">最近运作期年化收益率</th>
+          <th width="7%" class="borderb">状态</th>
+          <th width="5%" class="borderb">比较</th>
+        </tr>
+		 			 
+			                 	  <tr >
+					  
+	          <th  rowspan="8">
+			  <div class="sn_name"><a href="###">理财产品</a>
+					<div class="sn_tip">
+						<p><strong>理财产品：</strong>理财产品。</p>
+					 </div>
+				</div>
+			  </th>
+			  <td><a href="/main/products/pofund/470030/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">470030</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/470030/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">汇添富理财30天A</a>
+			  <div class="sn_tip">
+               	  <p><P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  0.9901
+		</td>
+		<td>
+							<span class="red">3.428%</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.224%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="470030" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/471030/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">471030</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/471030/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">汇添富理财30天B</a>
+			  <div class="sn_tip">
+               	  <p><P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  1.0699
+		</td>
+		<td>
+							<span class="red">3.719%</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.516%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="471030" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/470060/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">470060</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/470060/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">汇添富理财60天A</a>
+			  <div class="sn_tip">
+               	  <p><P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  0.8240
+		</td>
+		<td>
+							<span class="red">3.392%</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.150%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="470060" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/471060/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">471060</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/471060/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">汇添富理财60天B</a>
+			  <div class="sn_tip">
+               	  <p><P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  0.9034
+		</td>
+		<td>
+							<span class="red">3.705%</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.442%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="471060" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/470014/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">470014</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/470014/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">汇添富理财14天A</a>
+			  <div class="sn_tip">
+               	  <p><P>本基金在追求本金安全、保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  0.8333
+		</td>
+		<td>
+				<span>--</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.128%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="470014" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/471014/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">471014</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/471014/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">汇添富理财14天B</a>
+			  <div class="sn_tip">
+               	  <p><P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+		   <td>
+			  0.9119
+		</td>
+		<td>
+				<span>--</span>
+		</td>
+		  <td>
+								<span class="font11px red">+3.437%</span>
+		  </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="471014" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/471028/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全，保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">471028</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/471028/fundgk.shtml" target="_blank" title="<P>本基金在追求本金安全，保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P>">汇添富理财28天A</a>
+			  <div class="sn_tip">
+               	  <p><P>本基金在追求本金安全，保持资产流动性的基础上，努力追求绝对收益，为基金份额持有人谋求资产的稳定增值。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	           --
+	          </td>
+		   <td>
+			  <span>--</span>
+		</td>
+		<td>
+			      <span>--</span>
+		</td>
+		  <td>
+					--
+		  </td>
+	          <td>
+			  <span class="yellow">封闭期</span>
+</td>
+	          <td>			  <input type="checkbox" name="fund" disabled  value="471028" />
+</td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/472028/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">472028</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/472028/fundgk.shtml" target="_blank" title="<P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P>">汇添富理财28天B</a>
+			  <div class="sn_tip">
+               	  <p><P>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.3%相比，B类销售服务费为0.01%。</P></p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	           --
+	          </td>
+		   <td>
+			  <span>--</span>
+		</td>
+		<td>
+			      <span>--</span>
+		</td>
+		  <td>
+					--
+		  </td>
+	          <td>
+			  <span class="yellow">封闭期</span>
+</td>
+	          <td>			  <input type="checkbox" name="fund" disabled  value="472028" />
+</td>
+	        </tr>
+
+      </tbody></table>
+<!--理财产品结束-->
+	   <table width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 5px;" class="sharetable tablebt 
+
+intervalbg">
+        <tbody><tr>
+          <th width="9%" class="borderb">基金<br>
+          类型</th>
+          <th width="9%" class="borderb">基金<br>
+          代码</th>
+          <th width="18%" class="borderb">基金<br>
+          名称</th>
+          <th width="10%" class="borderb">更新<br>
+          日期</th>
+          <th width="7%" class="borderb">日每万<br>份净收益</th>
+          <th width="7%" class="borderb">七日年<br>化收益率</th>
+          <th class="borderb">货币基金业务指南</th>
+          <th width="7%" class="borderb">状态</th>
+          <th width="5%" class="borderb">比较</th>
+        </tr>
+		 			 
+			                 	  <tr >
+					  
+	          <th  rowspan="2">
+			  <div class="sn_name"><a href="###">货币型</a>
+					<div class="sn_tip">
+						<p><strong>货币型基金：</strong>指仅投资于货币市场工具的基金，具有风险低、流动性好的特点
+
+，是投资者理想的现金管理工具。风险低，预期收益高于活期利率。</p>
+					 </div>
+				</div>
+			  </th>
+			  <td><a href="/main/products/pofund/519518/fundgk.shtml" target="_blank" 
+
+title="本基金主要投资货币市场工具，包括现金、通知存款、剩余期限在397天以内（含397天）的债券、期限在一年以内（含一年）的债券回购和央行票据、短期融资券等。">519518</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/519518/fundgk.shtml" target="_blank" title="本基金主要投资货币市场工具，包括现金、通知存款、剩余期限在397天以内（含397天）的债券、期限在一年以内（含一年）的债券回购和央行票据、短期融资券等。">汇添富货币A</a>
+			  <div class="sn_tip">
+               	  <p>本基金主要投资货币市场工具，包括现金、通知存款、剩余期限在397天以内（含397天）的债券、期限在一年以内（含一年）的债券回购和央行票据、短期融资券等。</p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+	          <td>
+			  0.8604
+			  </td>
+	          <td>
+				  <span class="red">+3.283%</span>
+</td>
+	          <td>
+			   <a href="http://www.99fund.com/xjb" target="_blank" >添富现金宝:聪明的攒钱办法！</a>
+	          </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="519518" />
+	          </td>
+	        </tr>
+                 	  <tr >
+					  
+			  <td><a href="/main/products/pofund/519517/fundgk.shtml" target="_blank" 
+
+title="同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.25%相比，B类销售服务费为0.01%。">519517</a></td>
+	          
+			  <td>
+			  <div class="sn_namelist">
+			    <a href="/main/products/pofund/519517/fundgk.shtml" target="_blank" title="同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.25%相比，B类销售服务费为0.01%。">汇添富货币B</a>
+			  <div class="sn_tip">
+               	  <p>同A类相比，B类首次申购最低金额为500万元，同A类销售服务费0.25%相比，B类销售服务费为0.01%。</p>
+                </div>
+			  </div>
+			</td>
+			  
+			  
+
+
+	         <td>
+	          2012-10-18
+	          </td>
+	          <td>
+			  0.9262
+			  </td>
+	          <td>
+				  <span class="red">+3.531%</span>
+</td>
+	          <td>
+			   <a href="http://www.99fund.com/main/a/20071031/10084045.shtml" target="_blank" >关于货币基金收益说明</a>
+	          </td>
+	          <td>
+	            正常
+</td>
+	          <td>			  <input type="checkbox" name="fund"  disabled value="519517" />
+	          </td>
+	        </tr>
+
+      </tbody></table>   
+      <div id="btnCompare"><a href="#" onClick="fundcompare();"><img src="/web/images/pofund/btnCompare.png" alt="收益比较"/></a></div>  
+	</div>
+	<!-- 新闻开始 -->
+	<div class="samebox2cont clearfix">
+		<div class="samebox2">
+			<div class="h3title"><h3>
+				新闻资讯
+			</h3><a href="/main/products/pofund/470030/fundgk.shtml" class="more fr" target="_blank">更多</a></div>
+			<div class="samebox2_b newslist">
+				<ul>
+										<li>
+							<span>
+								[2012-10
+
+-15]
+							</span>
+							<a href="/main/a/20121015/10740347.shtml" target="_blank">
+										汇添富开通货基网上直销T+0赎回
+							</a>
+						</li>
+						<li>
+							<span>
+								[2012-10
+
+-15]
+							</span>
+							<a href="/main/a/20121015/10740394.shtml" target="_blank">
+										新发基金投资攻略-理财28天
+							</a>
+						</li>
+						<li>
+							<span>
+								[2012-10
+
+-15]
+							</span>
+							<a href="/main/a/20121015/10740393.shtml" target="_blank">
+										均衡风格配置 立足业绩持续性
+							</a>
+						</li>
+						<li>
+							<span>
+								[2012-10
+
+-11]
+							</span>
+							<a href="/main/a/20121011/10738143.shtml" target="_blank">
+										弱市考验公募 汇添富三季度投资能力夺冠
+							</a>
+						</li>
+						<li>
+							<span>
+								[2012-10
+
+-08]
+							</span>
+							<a href="/main/a/20121008/10735316.shtml" target="_blank">
+										汇添富现金宝：跨行无费率 还款有收益
+							</a>
+						</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="samebox2">
+			<div class="h3title"><h3>
+				基金论坛
+			</h3><a href="http://sns.99fund.com/space.php?do=mtag&tagid=232" class="more fr" target="_blank">更多</a></div>
+			<div class="samebox2_b newslist">
+			<ul>
+									<li><span>点击：36 </span><a href="http://sns.99fund.com/space.php?do=thread&id=125745" target="_blank">持有汇添富亚澳成熟优选股票(QDII)的朋.....</a>   </li>
+					<li><span>点击：20 </span><a href="http://sns.99fund.com/space.php?do=thread&id=126863" target="_blank">把握低净值基金投资的五个要点</a>   </li>
+					<li><span>点击：147 </span><a href="http://sns.99fund.com/space.php?do=thread&id=126879" target="_blank">工薪族基金投资宝典</a>   </li>
+					<li><span>点击：40 </span><a href="http://sns.99fund.com/space.php?do=thread&id=126591" target="_blank">三招巧投货币市场基金</a>   </li>
+					<li><span>点击：70 </span><a href="http://sns.99fund.com/space.php?do=thread&id=126735" target="_blank">[添富投顾]每周投资实战策略（10月15日.....</a>   </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--END main-->    
+</div>
+<!--END content-->
+<!--servicebox-->
+<div id="servicebox" class="clearfix">
+  <h3 style=" margin-left: 28px;overflow: hidden;width: 870px;">希望以下内容能够帮到您：</h3>
+  <div class="servicedl" style="padding-left:20px;">
+    <dl>
+        <dt>账户管理</dt>
+        <dd><a href="http://www.99fund.com/service/help_detail/10628794.html" target="_blank">开户</a>&nbsp;<a href="http://www.99fund.com/service/help_detail/10628804.html" target="_blank">登录</a>&nbsp;<a href="http://www.99fund.com/service/help_detail/10628808.html" target="_blank">手机</a>&nbsp;<a href="http://www.99fund.com/service/help_detail/10628809.html" target="_blank">邮箱</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10177322.html" target="_blank">账户查询</a>&nbsp;&nbsp;&nbsp;<a href="http://www.99fund.com/service/help_detail/10628816.html" target="_blank">对账单</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10628818.html" target="_blank">登录密码</a>&nbsp;&nbsp;&nbsp;<a href="http://www.99fund.com/service/help_detail/10628819.html" target="_blank">交易密码</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10628828.html" target="_blank">基金客户</a>&nbsp;&nbsp;&nbsp;<a href="http://www.99fund.com/service/help_detail/10628839.html" target="_blank">信用卡客户</a></dd>
+        <dd><a href="/main/finainvt/index.shtml" target="_blank">添富牛专户</a> </dd>
+    </dl>
+    <dl>
+        <dt>支付方式</dt>
+        <dd><a href="http://www.99fund.com/service/help_detail/10534749.html " target="_blank">银行卡支付</a></dd>
+        <dd><a href="http://www.99fund.com/main/cash/suitable/rate/index.shtml" target="_blank">现金宝支付</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10534749.html" target="_blank">第三方支付</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10534749.html" target="_blank">支付限额</a></dd>
+        <dd><a href="http://www.99fund.com/service/help_detail/10534749.html" target="_blank">支付费率</a></dd>
+        <dd><a href="http://www.99fund.com/main/service/xssl/flow/bdyhk/index.shtml" target="_blank">关联流程</a></dd>
+    </dl>
+    <dl>
+        <dt>网上交易</dt>
+        <dd><a href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">认购</a>&nbsp;&nbsp;<a href="https://trade.99fund.com/trade/fundsInfo.jsp" target="_blank">申购</a>&nbsp;&nbsp;<a href="https://trade.99fund.com/trade/redeem_choose.jsp
+" target="_blank">赎回</a> </dd> 
+        <dd><a href="https://trade.99fund.com/mip/addInvestQuery.jsp" target="_blank">定投</a>&nbsp;&nbsp;<a href="https://trade.99fund.com/trade/convert_choose.jsp" target="_blank">转换</a>&nbsp;&nbsp;<a href="https://trade.99fund.com/trade/innerTrust.jsp" target="_blank">转托管</a></dd>  
+        <dd><a href="https://trade.99fund.com/trade/setMelon_choose.jsp" target="_blank">分红</a>&nbsp;&nbsp;<a href="https://trade.99fund.com/trade/withdrawals_choose.jsp" target="_blank">撤单</a></dd>
+        <dd><a href="https://trade.99fund.com/query/fundApplyQry.jsp" target="_blank">交易申请查询</a></dd>
+        <dd><a href="https://trade.99fund.com/query/fundAckQry.jsp" target="_blank">交易确认查询</a></dd>
+        <dd><a href="https://trade.99fund.com/cash/index.jsp" target="_blank">现金宝交易</a></dd>
+    </dl>
+    <dl>
+        <dt>基金产品/理财产品</dt>
+        <dd><a href="/main/products/pofund/519518/fundgk.shtml" target="_blank">货币基金</a>&nbsp;<a href="/main/products/pofund/470030/fundgk.shtml" target="_blank">理财产品</a></dd>
+        <dd><a href="/main/products/pofund/519068/fundgk.shtml" target="_blank">股票型</a>&nbsp;&nbsp;&nbsp;<a href="/main/products/pofund/519008/fundgk.shtml" target="_blank">混合型</a></dd>
+        <dd><a href="/main/products/pofund/470007/fundgk.shtml" target="_blank">指数型</a>&nbsp;&nbsp;&nbsp;<a href="/main/products/pofund/519078/fundgk.shtml" target="_blank">债券型</a></dd>
+        <dd><a href="/main/products/pofund/470888/fundgk.shtml" target="_blank">QDII基金</a>&nbsp;<a href="/main/products/pofund/164701/fundgk.shtml" target="_blank">LOF基金</a></dd>
+        <dd><a href="/main/products/pofund/159912/fundgk.shtml" target="_blank">ETF基金</a>&nbsp;&nbsp;<a href="/main/products/pofund/470018/fundgk.shtml" target="_blank">保本型基金</a></dd>
+    </dl>
+    <dl>
+        <dt>添富信用卡</dt>
+        <dd><a href="/main/creditcard/apply/online/index.shtml" target="_blank">申请信用卡</a></dd>
+        <dd><a href="https://passport.99fund.com/login/passportLogin.jsp?utm_source=n120314003" target="_blank">信用卡客户登录</a></dd>
+        <dd><a href="https://passport.99fund.com/login/passportLogin.jsp?utm_source=n120314003" target="_blank">信用卡还款服务</a></dd>
+        <dd><a href="https://trade.99fund.com/joint/billQry_yet.jsp" target="_blank">账单查询</a></dd>
+        <dd><a href="https://trade.99fund.com/joint/repaymentQry.jsp" target="_blank">还款记录</a></dd>
+    </dl>
+    <dl>
+        <dt>客服中心</dt>
+        <dd><a href="/main/service/index.shtml" target="_blank">客服中心</a>&nbsp;&nbsp;<a href="/cgi-bin/service/help?utm_source=n100821016" target="_blank">帮助中心</a></dd>
+        <dd><a href="/main/service/xssl/index.shtml" target="_blank">新手上路</a>&nbsp;&nbsp;<a href="/main/service/selfService/index.shtml" target="_blank">自助大厅</a></dd>
+        <dd><a href="/ask/index.html" target="_blank">添富爱问</a>&nbsp;<a href="/main/service/education/jjtzrqyxz/index.shtml" target="_blank">投资者教育</a></dd>
+        <dd><a href="/main/service/serviceIntroduce/index.shtml" target="_blank">服务介绍</a>&nbsp;<a href="http://abc.99fund.com/?utm_source=n100821017" target="_blank">理财网址</a></dd>
+    </dl>
+    <dl>
+        <dt>汇添富公司</dt>
+        <dd><a href="/main/gywm/gsjs/index.shtml" target="_blank">关于我们</a>&nbsp;&nbsp;<a href="/main/gywm/qywh/index.shtml" target="_blank">企业文化</a></dd>
+        <dd><a href="/main/gywm/tzln/index.shtml" target="_blank">投资理念</a>&nbsp;&nbsp;<a href="/main/gywm/fxgl/index.shtml" target="_blank">风险管理</a></dd>
+        <dd><a href="/main/gywm/gsxw/index.shtml" target="_blank">公司新闻</a>&nbsp;&nbsp;<a href="/main/gywm/xxpl/index.shtml" target="_blank">信息披露</a></dd>
+        <dd><a href="/main/gywm/gsdsj/index.shtml" target="_blank">公司大事记</a>&nbsp;<a href="/main/gywm/cyjm/shzp/index.shtml" target="_blank">诚邀加盟</a></dd>
+        <dd><a href="/main/gywm/shzr/index.shtml" target="_blank">社会责任</a>&nbsp;&nbsp;<a href="/main/gywm/lxwm/index.shtml" target="_blank">联系我们</a></dd>
+        <dd><a href="http://www.chinauniversalasset.com" target="_blank">English版</a>&nbsp;&nbsp;<a href="http://www.99fund.com/xjb/phone.html?utm_source=n111201003" target="_blank">手机版</a></dd>
+    </dl>
+  </div>
+</div>
+<!--END servicebox-->
+<div id="footer">
+	<p class="pmargin">
+		<a href="/main/service/education/jjtzrqyxz/index.shtml"
+			target="_blank">投资人权益须知</a>|
+		<a href="/main/service/education/rule/fxq/index.shtml" target="_blank">反洗钱</a>|
+		<a href="/main/service/education/rule/zlsyhl/index.shtml"
+			target="_blank">治理商业贿赂</a>|
+		<a href="/main/service/education/fxts/index.shtml" target="_blank">风险提示</a>|
+		<a href="/main/service/education/privacy/index.shtml" target="_blank">隐私声明</a>|
+		<a href="/main/home/sitemap/index.shtml" target="_blank">网站地图</a>|
+		<a href="/main/home/links/index.shtml" target="_blank">友情链接</a>|
+		<a href="/main/home/comments/index.shtml" target="_blank">意见与建议</a>|
+		<a href="/main/gywm/lxwm/index.shtml" target="_blank">联系我们</a>|
+		<a href="http://en.99fund.com/contentpage.do?subsectionkey=aboutus"
+			target="_blank">ABOUT CUAM</a>
+	</p>
+	<p>
+		客服电话：400-888-9918(免长途话费)
+		<span class="span_m01">客服邮箱：service@99fund.com</span>人工服务时间：工作日早8:30-晚21:00
+	</p>
+	<p>
+		公司地址：上海市富城路99号震旦大厦22楼
+		<span class="span_m02">邮编：200120</span><span class="span_m03">联系电话：(86)021-28932888</span>传真：(86)
+		021-28932998
+	</p>
+	<p>
+		汇添富旗下网站：
+		<a href="http://www.chinauniversalasset.com/" target="_blank">China Universal
+			Asset Management</a>&nbsp;&nbsp;
+		<a href="http://www.99fund.org/" target="_blank">上海汇添富公益基金会</a>&nbsp;&nbsp;&nbsp;&nbsp;股东机构：
+		<a href="http://www.dfzq.com.cn/" target="_blank">东方证券</a>&nbsp;&nbsp;
+		<a href="http://www.ce-air.com/" target="_blank">东方航空</a>&nbsp;&nbsp;
+		<a href="http://www.news365.com.cn/" target="_blank">文新传媒</a>&nbsp;&nbsp;
+	</p>
+	<p class="pimg">
+	Copyright 2005-2011 汇添富基金管理有限公司
+	<a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备05008079号</a>
+	<p id="scriptpend" style="float: right; position: relative; left: -100px;">
+	<script type="text/javascript">
+	//	$(function(){
+			function RndNum_CNNIC(k){
+				for (var rnd = "", i = k; i--; ) 
+					rnd += Math.floor( Math.random() * 10 );
+				return rnd;
+			}
+			var KX_cfg_data = { cnnic_dn : '', cnnic_lang : 'zh_cn' };
+
+			KX_cfg_data.cnnic_sn = "2010110100100002743";
+			KX_cfg_data.cnnic_u1 = "https://ss.cnnic.cn/verifyseal.dll" + "?sn=" + KX_cfg_data.cnnic_sn + "&ct=df" + "&pa=" + RndNum_CNNIC(6);
+			KX_cfg_data.cnnic_u2 = "https://ss.cnnic.cn/seallogo.dll?kind=pic" + "&sn=" + KX_cfg_data.cnnic_sn + "&ct=df" ;
+			function starLevel(obj){
+				var star = obj.parentNode.parentNode.getElementsByTagName('i')[0];
+				star.style.display = star.style.display == 'none' ? 'inline-block' : 'none'; 
+			}
+			document.write(
+				['<span style="display:inline-block;position:relative;width:auto;">',
+					'<a href="' + KX_cfg_data.cnnic_u1 + '" id="kx_verify" tabindex="-1" target="_blank" kx_type="图标式"',
+						'style="display:inline-block;">',
+						'<img src="' + KX_cfg_data.cnnic_u2 + '"  style="border:none;"',
+							'oncontextmenu="return false;"  alt="&#x53EF;&#x4FE1;&#x7F51;&#x7AD9;"',
+						'/>',
+					'</a>',
+				'</span>'].join(' ')
+			);		
+	//     });
+	</script>
+	</p>
+</p>
+
+<!-- 
+	<p class="pimg">
+		Copyright 2005-2011 汇添富基金管理有限公司
+		<a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备05008079号</a>
+		<p id="scriptpend" style="float: right; position: relative; left: -100px;">
+		     <script src="https://ss.cnnic.cn/seallogo.dll?sn=2010110100100002743&size=0&ct=df"></script>
+		</p>
+	</p>
+-->
+	<p>
+		本网站所有资讯与说明文字仅供参考，如有与本公司相关公告及基金法律文件不符，以相关公告及基金法律文件为准。
+	</p>
+</div>
+<script language=javascript>
+	var mouseon=false;
+	$('.sn_namelist_img').mouseover(function(e) {
+			var tip2 = $(this).next(".sn_tip");
+			mouseon=true;
+			$("#tooltip").html(tip2.html());
+			$('#tooltip').css({
+				top:e.pageY - 10,
+				left:e.pageX - ($("#tooltip").width()+60)
+			}).show();
+	}).mousemove(function(e) {
+		 $('#tooltip').css({
+				top:e.pageY - 10,
+				left:e.pageX - ($("#tooltip").width()+60)
+		});
+	}).mouseout(function() {
+		if(mouseon==true){
+			$('#tooltip').hide();
+			mouseon=false;
+		}
+	}); 
+</script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+
+
+
+
+
+
+
+
+
+
+<script>
+window.scroll(0,0);
+</script>
+
+<script type="text/javascript">
+function getDateOfSeason(year, s){
+	if(s=="1")
+		return year + "-03-31";
+	if(s=="2")
+		return year + "-06-30";
+	if(s=="3")
+		return year + "-09-30";
+	if(s=="4")
+		return year + "-12-31";
+}
+
+function showTZZH(){
+	var year = document.getElementById("year");
+	var season = document.getElementById("season");
+	var d = getDateOfSeason(year.value, season.value);
+	switchTZZHDate(d);
+}
+</script>
+
+
+
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+    <td colspan="2" align="center"><span class="sty_14 red bold">博时沪深300指数(050002) 2012-06-30</span></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left">&nbsp;</td>
+  </tr>
+  
+  <tr align="left" valign="middle">
+    <td valign="middle">
+    	<span>&nbsp;&nbsp;公布年份：</span>
+        <select name="year" id="year" style="font-family:Arial; font-size:12px; width:75px">
+
+			<option value="2012">2012</option>
+
+			<option value="2011">2011</option>
+
+			<option value="2010">2010</option>
+
+			<option value="2009">2009</option>
+
+			<option value="2008">2008</option>
+
+			<option value="2007">2007</option>
+
+			<option value="2006">2006</option>
+
+			<option value="2005">2005</option>
+
+			<option value="2004">2004</option>
+
+			<option value="2003">2003</option>
+        
+        </select>
+    	<span>&nbsp;&nbsp;季度：</span>
+        <select name="season" id="season" style="font-family:Arial; font-size:12px; width:75px">
+            <option value="1">第一季度</option>
+            <option value="2">第二季度</option>
+            <option value="3">第三季度</option>
+            <option value="4">第四季度</option>
+        </select>
+        <span>&nbsp;&nbsp;</span>
+       	<button  class="searchBu" type="button" onclick="showTZZH()"><img src="/images/search.gif" height="23" width="70"/></button>
+        
+    </td>
+  </tr>
+
+<script>
+	document.getElementById("year").value = 2012 ;
+	document.getElementById("season").value = 2 ;
+</script>
+ 
+  <tr>
+    <td colspan="2" align="left">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" valign="top">
+    	<table width="98%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="left" class="border_b_c3c3c3"><span class="sty_black14B">1.投资组合</span></td>
+      </tr>
+      <tr>
+        <td height="15"></td>
+      </tr>
+      <tr>
+        <td>
+        	<table width="100%" border="1" align="center" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" class="border_ccc_2">
+                   <tr>
+                     <td width="30%" align="right" bgcolor="#f2f2f2"><strong>资产净值:</strong></td>
+                     <td width="80%" align="left">
+9,335,939,644.04
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" bgcolor="#f2f2f2"><strong>份额净值:</strong></td>
+                      <td align="left">
+0.6823
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" bgcolor="#f2f2f2"><strong>股票投资:</strong></td>
+                      <td align="left">8,840,772,524.83</td>
+                    </tr>
+                    <tr>
+                      <td align="right" bgcolor="#f2f2f2"><strong>
+债券投资:
+                      	</strong></td>
+                      <td align="left">100,180,000.00</td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="20"></td>
+                </tr>
+                <tr>
+                  <td align="left" class="border_b_c3c3c3"><span class="sty_black14B">2.按行业分类的股票投资组合</span></td>
+                </tr>
+                <tr>
+                  <td height="15"></td>
+                </tr>
+                
+                <tr>
+                  <td><table width="100%" border="1" align="center" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" class="border_ccc_2">
+                    <tr align="middle">
+                      <td width="33%" align="center" bgcolor="#f2f2f2"><strong>分类</strong></td>
+                      <td width="33%" align="center" bgcolor="#f2f2f2"><strong>市值(元)</strong></td>
+                      <td width="34%" align="center" bgcolor="#f2f2f2"><strong>占净值比例(%)</strong></td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　A 农、林、牧、渔业</td>
+                      <td >54,817,484.14</td>
+                      <td >0.59</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　B 采掘业</td>
+                      <td >918,533,220.92</td>
+                      <td >9.84</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　C 制造业</td>
+                      <td >3,121,460,498.42</td>
+                      <td >33.43</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C0 食品、饮料</td>
+                      <td >674,589,379.96</td>
+                      <td >7.23</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C1 纺织、服装、皮毛</td>
+                      <td >30,332,753.19</td>
+                      <td >0.32</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C4 石油、化学、塑胶、塑料</td>
+                      <td >177,155,525.71</td>
+                      <td >1.90</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C5 电子</td>
+                      <td >106,352,865.17</td>
+                      <td >1.14</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C6 金属、非金属</td>
+                      <td >713,333,643.68</td>
+                      <td >7.64</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C7 机械、设备、仪表</td>
+                      <td >976,085,243.72</td>
+                      <td >10.46</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C8 医药、生物制品</td>
+                      <td >441,626,258.73</td>
+                      <td >4.73</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　　　C99 其他制造业</td>
+                      <td >1,984,828.26</td>
+                      <td >0.02</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　D 电力、煤气及水的生产和供应业</td>
+                      <td >209,255,579.81</td>
+                      <td >2.24</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　E 建筑业</td>
+                      <td >257,298,276.58</td>
+                      <td >2.76</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　F 交通运输、仓储业</td>
+                      <td >229,184,948.91</td>
+                      <td >2.45</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　G 信息技术业</td>
+                      <td >256,151,902.66</td>
+                      <td >2.74</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　H 批发和零售贸易</td>
+                      <td >236,891,482.04</td>
+                      <td >2.54</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　I 金融、保险业</td>
+                      <td >2,789,818,122.49</td>
+                      <td >29.88</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　J 房地产业</td>
+                      <td >520,869,139.52</td>
+                      <td >5.58</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　K 社会服务业</td>
+                      <td >73,466,059.16</td>
+                      <td >0.79</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　L 传播与文化产业</td>
+                      <td >21,850,171.37</td>
+                      <td >0.23</td>
+                    </tr>
+
+					<tr align="middle">
+                      <td align="left">　M 综合类</td>
+                      <td >151,175,638.81</td>
+                      <td >1.62</td>
+                    </tr>
+                    
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="20"></td>
+                </tr>
+                <tr>
+                  <td align="left" class="border_b_c3c3c3"><span class="sty_black14B">3.基金投资前十名股票明细</span></td>
+                </tr>
+                <tr>
+                  <td height="15"></td>
+                </tr>
+                <tr>
+                  <td><table width="100%" border="1" align="center" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" class="border_ccc_2">
+                    <tr align="center" bgcolor="#ededed">
+                      <td width="22%"><strong>股票代码</strong></td>
+                      <td width="22%"><strong>股票名称</strong></td>
+                      <td width="28%"><strong>市值(元)</strong></td>
+                      <td width="28%"><strong>占净值比例(%)</strong></td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>601318</td>
+                      <td>中国平安</td>
+                      <td>319,582,864.30</td>
+                      <td>3.42</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600036</td>
+                      <td>招商银行</td>
+                      <td>264,700,800.00</td>
+                      <td>2.84</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600016</td>
+                      <td>民生银行</td>
+                      <td>244,941,223.10</td>
+                      <td>2.62</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600519</td>
+                      <td>贵州茅台</td>
+                      <td>190,432,036.05</td>
+                      <td>2.04</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>601328</td>
+                      <td>交通银行</td>
+                      <td>189,494,624.16</td>
+                      <td>2.03</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>601166</td>
+                      <td>兴业银行</td>
+                      <td>178,402,948.02</td>
+                      <td>1.91</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600000</td>
+                      <td>浦发银行</td>
+                      <td>177,654,410.43</td>
+                      <td>1.90</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600837</td>
+                      <td>海通证券</td>
+                      <td>173,456,571.15</td>
+                      <td>1.86</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>000002</td>
+                      <td>万  科Ａ</td>
+                      <td>163,183,780.98</td>
+                      <td>1.75</td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>600030</td>
+                      <td>中信证券</td>
+                      <td>160,432,473.96</td>
+                      <td>1.72</td>
+                    </tr>
+
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="20"></td>
+                </tr>
+
+                <tr>
+                  <td align="left" class="border_b_c3c3c3"><span class="sty_black14B">4.按券种分类的债券投资组合</span></td>
+                </tr>
+                <tr>
+                  <td height="15"></td>
+                </tr>
+                <tr>
+                  <td><table width="100%" border="1" align="center" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" class="border_ccc_2">
+                    <tr align="center" bgcolor="#ededed">
+                      <td width="33%"><strong>名称</strong></td>
+                      <td width="33%"><strong>期末市值(元)</strong></td>
+                      <td width="34%"><strong>市值占基金资产净值比例(%)</strong></td>
+                    </tr>
+
+                    <tr align="center">
+                      <td>金融债券</td>
+                      <td>100,180,000.00</td>
+                      <td>1.07</td>
+                    </tr>
+
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="20"></td>
+                </tr>
+                <tr>
+                  <td align="left" class="border_b_c3c3c3"><span class="sty_black14B">5.按市值占基金资产净值比例大小排序的前五名债券明细</span></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td height="15"></td>
+                </tr>
+                <tr>
+                  <td><table width="100%" border="1" align="center" cellpadding="5" cellspacing="0" bordercolor="#CCCCCC" class="border_ccc_2">
+                      <tr align="center" bgcolor="#ededed">
+                        <td width="33%"><strong>债券名称</strong></td>
+                        <td width="33%"><strong>期末市值(元)</strong></td>
+                        <td width="34%"><strong>市值占基金资产净值比例(%)</strong></td>
+                      </tr>
+
+                      <tr align="center">
+                        <td>11农发14</td>
+                        <td>100,180,000.00</td>
+                        <td>1.07</td>
+                      </tr>
+
+                  </table></td>
+                </tr>
+                
+                <tr>
+                  <td>&nbsp;</td>
+                </tr>
+
+            <tr>
+              <td height="50" colspan="2"></td>
+            </tr>
+            </table>

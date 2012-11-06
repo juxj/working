@@ -31,27 +31,27 @@ if __name__ == '__main__':
 	main = Main()
 	args = sys.argv[1]
 
-	valid = 0
+	invalid = 1
 	
 	if  args == '0':
-		valid = 1
+		invalid = 0
 		main.do_first_run()
 
 
 	if  args == '1':
-		valid = 1
+		invalid = 0
 		main.do_daily_update()
 
 	if  args == '2':
-		valid = 1
+		invalid = 0
 		main.do_weekly_update()
 
 	if  args == '3':
-		valid = 1
+		invalid = 0
 		main.do_quarter_update()
 
 
 
 
-	if not valid:
+	if invalid:
 		print 'invalid parameters'
