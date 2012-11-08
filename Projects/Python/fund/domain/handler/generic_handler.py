@@ -54,7 +54,6 @@ class GenericHandler:
 	
 	def get_manager(self):
 		data = handler.get_records(self.config, self.node, self.data)
-
 		domain = self.company.web_site
 		fund = self.get_fund()
 		if fund != None:
@@ -85,11 +84,11 @@ class GenericHandler:
 
 	def get_charge(self):
 		data = handler.get_records(self.config, self.node, self.data)
-		if self.add:
-			fund = self.get_fund()
+		fund = self.get_fund()
+		if self.add and not fund is None:
 			charge = FundCharge(fund, data)	
 			dao = fund_charge_dao
-			dao.save_fund_charge(charge)
+			dao.add(charge)
 
 	def get_dividend(self):
 		data = handler.get_records(self.config, self.node, self.data)

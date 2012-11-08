@@ -22,6 +22,9 @@ class AttrsRemover(HTMLParser):
 
 	def handle_starttag(self, tag, attrs):
 		if not self.discard_tag(tag):
+			for name, value in attrs:
+				if name in ['style', 'bgcolor', 'border']:
+					tag = tag+ ' '+name + '=\''+ value + '\''
 			self._result.append('<'+tag+'>')
 
 	def handle_endtag(self, tag):

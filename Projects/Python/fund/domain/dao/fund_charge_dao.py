@@ -9,5 +9,5 @@ class FundChargeDAO:
 	def get_fund_charge_by_code(self, value):
 		return Session.query(FundCharge).filter_by(fund_code=value).first()
 
-	def save_fund_charge(self, fund_charge):
+	def add(self, fund_charge):
 		Session.add(fund_charge)
