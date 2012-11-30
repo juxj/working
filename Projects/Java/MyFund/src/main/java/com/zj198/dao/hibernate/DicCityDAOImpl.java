@@ -20,5 +20,17 @@ public class DicCityDAOImpl extends HibernateDAO<DicCity, Integer> implements Di
 			return (List<DicCity>)object;
 		}
 	}
+	
+	@Override
+	public DicCity get(Integer id){
+		Object object = CacheUtil.get("DicCity_"+id);
+		if(object==null){
+			DicCity dicCity = super.get(id);
+			CacheUtil.set("DicCity_"+id,dicCity);
+			return dicCity;
+		}else{
+			return (DicCity)object;
+		}
+	}
 
 }

@@ -1,20 +1,14 @@
 package com.zj198.action.message;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.ServletActionContext;
-
-import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.model.NtyMessage;
 import com.zj198.model.UsrUser;
 import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.message.NtyMessageService;
 import com.zj198.service.message.model.AddMessageSpModel;
+import com.zj198.util.Pager;
 
 public class NtyMessageAction extends BaseAction {
 	private NtyMessageService ntyMessageService;
@@ -34,10 +28,10 @@ public class NtyMessageAction extends BaseAction {
 		return null;
 	}
 
-	//哪里还在调用此方法，需要逐步改到需要的地方直接调用service，此方法将被删除
+	//TODO:哪里还在调用此方法，需要逐步改到需要的地方直接调用service，此方法将被删除
 	public String sendMessage() {
-		ActionContext context = ActionContext.getContext();
-		UsrUser user = (UsrUser) context.getSession().get("_user");
+		
+		UsrUser user = getSessionUser();
 		// AdmUser admin = (AdmUser) context.getSession().get("_admin");
 		if (user == null) {
 			return ERROR;
@@ -58,8 +52,8 @@ public class NtyMessageAction extends BaseAction {
 	 * @return
 	 */
 	public String viewMsg() {
-		ActionContext context = ActionContext.getContext();
-		UsrUser user = (UsrUser) context.getSession().get("_user");
+		
+		UsrUser user = getSessionUser();
 		if (user == null) {
 			return ERROR;
 		}
@@ -80,17 +74,8 @@ public class NtyMessageAction extends BaseAction {
 	 * @return
 	 */
 	public String upIsRead() {
-		HttpServletResponse response = ServletActionContext.getResponse();
 		ntyMessageService.updateIsRead(Long.parseLong(mid));
-		try {
-			PrintWriter out = response.getWriter();
-			out.write("[{success:true}]");
-			out.flush();
-			out.close();
-			return null;
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		writeJson("[{success:true}]");
 		return null;
 	}
 
@@ -102,8 +87,8 @@ public class NtyMessageAction extends BaseAction {
 	 * @return
 	 */
 	public String unRead() {
-		ActionContext context = ActionContext.getContext();
-		UsrUser user = (UsrUser) context.getSession().get("_user");
+		
+		UsrUser user = getSessionUser();
 		if (user == null) {
 			return ERROR;
 		}
@@ -124,8 +109,8 @@ public class NtyMessageAction extends BaseAction {
 	 * @return
 	 */
 	public String read() {
-		ActionContext context = ActionContext.getContext();
-		UsrUser user = (UsrUser) context.getSession().get("_user");
+		
+		UsrUser user = getSessionUser();
 		if (user == null) {
 			return ERROR;
 		}

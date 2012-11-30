@@ -18,7 +18,7 @@ public class AccountAction extends BaseAction {
 	private AdminAccountService adminAccountService;
 
 	public String execute(){
-		return LOGIN;
+		return "adminLogin";
 	}
 
 	public String login(){
@@ -34,18 +34,18 @@ public class AccountAction extends BaseAction {
 					return SUCCESS;
 				}else{
 					msg = "您被禁止登录。";
-					return LOGIN;
+					return "adminLogin";
 				}
 			}
 		}
 		msg = "用户名、密码或验证码输入错误，请重新输入。";
-		return LOGIN;
+		return "adminLogin";
 	}
 
 	public String logout() {
 		ActionContext ctx = ActionContext.getContext();
 		ctx.getSession().remove("_admin");
-		return LOGIN;
+		return "adminLogin";
 	}
 
 	// setter and getter

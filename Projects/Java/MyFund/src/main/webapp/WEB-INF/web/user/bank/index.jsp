@@ -85,54 +85,30 @@ function showApply(){
      -->
   </div>
   <div class="grid_230">
-    <div class="menu_blue white"><span class="fr white"><a href="/loan/LoanService.act">更多»</a></span>
-      <h6>推荐融资产品</h6>
+    <div class="menu_blue white"><span class="fr white"><a href="/service/requestInfoAction!home.act?pageNo=1">更多»</a></span>
+      <h6>最新项目信息</h6>
     </div>
     <div class="box_3">
-      <div class="qyrz-top">
-           <s:action name="financeProduct!findRecom" namespace="/loan" executeResult="true"></s:action>
-       </div>
+    <s:if test="newRequestInfo.size>0">
+        <ul class="new_li">
+		<s:iterator id="item" value="newRequestInfo" status="st">
+			<li title="${item.title}">
+			<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">
+				<s:if test="#item.title != null && #item.title.length()>15">
+					<s:property value="#item.title.substring(0,15)"></s:property>...
+				</s:if><s:else>
+					${item.title}
+				</s:else>
+			</a></li>
+		</s:iterator>
+	</ul>				  
+	</s:if>				
+	<s:else>
+		<li>暂无</li>
+	</s:else>
+      
     </div>
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="/finance/bankProduct!search.act">更多»</a></span>
-      <h6>推荐理财产品</h6>
-    </div>
-    <div class="box_3">
-	        	<div class="qyrz-top" style="width : 230px;">
-				    <table class="qyrz-top_table">
-					  <s:iterator value="bankFinanceRecommendationList" id="item" >
-					   <tr>
-					     <td style="vertical-align: middle;">
-							<s:if test="logo == null">
-						        <img src="/images/banklogo/zj198.jpg" class="td_img" style="white-space: nowrap;"/>
-					        </s:if>
-					        <s:else>
-					        	<img src="/images/banklogo/${item.logo}" class="td_img" style="white-space: nowrap;"/>
-					        </s:else>
-					     </td>
-					     <td class="hot_connect">
-					     	<a href="/finance/bankProduct!showDetails.act?id=${item.prodId}">
-					     		<s:if test="#item.title != null && #item.title.length()>15">
-									<s:property value="#item.title.substring(0,15)"></s:property>...
-								</s:if><s:else>
-									${item.title}
-								</s:else>
-					     	</a>
-					     </td>
-					   </tr>
-					  </s:iterator>
-					</table>
-			    </div>
-	        </div>
-    <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white">
-      <h6>实用工具</h6>
-    </div>
-    <div class="box_3">
-      <ul class="new_li">
-        <jsp:include page="/public/finance/_financing_tools.jsp" />
-      </ul>
-    </div>
   </div>
 </div>
 <div class="hr_10"> &nbsp; </div>

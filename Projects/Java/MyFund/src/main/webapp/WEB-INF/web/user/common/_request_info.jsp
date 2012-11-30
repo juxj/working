@@ -30,7 +30,7 @@
      <th>所需资金</th>
      <th>融资方式</th>
      <th>状态</th>
-     <th>操作</th>
+     <th style="text-align:right; padding-right:60px;">操作</th>
   </tr>
   </s:else>
   <s:iterator value="requestInfoList" id="item">
@@ -51,7 +51,7 @@
 	    	</s:iterator>
 		</td>
 		<td><s:number name="needMoney" />万元</td>
-		<td width="200px" title="${financeType}">
+		<td title="${financeType}">
 			<s:if test="financeType != null && financeType.length()>20">
 				<s:property value="financeType.substring(0,20)"></s:property>...
 			</s:if><s:else>
@@ -72,7 +72,7 @@
 				已阻止
 			</s:if>
    		</td>
-   		<td class="view_detail">
+   		<td class="view_detail"  style="text-align:right; padding-right:20px;">
    		<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>

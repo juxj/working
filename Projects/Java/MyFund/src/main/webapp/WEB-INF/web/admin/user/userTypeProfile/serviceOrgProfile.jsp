@@ -62,6 +62,7 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrServiceorg!=null">
+					<tr style="color:#97181d;font-weight: bold;"><td>用户类型 ：<s:if test="type==13">会计师事务所</s:if><s:elseif test="type==14">评估公司</s:elseif><s:elseif test="type==15">第三方监管公司</s:elseif><s:elseif test="type==16">律师事务所</s:elseif><s:elseif test="type==17">投资咨询公司</s:elseif><s:elseif test="type==18">经济园区</s:elseif></td><td>&nbsp;</td></tr>
 					<tr><td>企业名称 </td><td> ${ usrServiceorg.orgname}&nbsp;</td></tr>
 					<tr><td>营业执照号码  ${ usrServiceorg.licensecode}</td><td><s:if test="profileMap['business'] != ''">${profileMap['business']}&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['businessId'] }">下载</a></s:if>&nbsp;</td></tr>
 					<tr><td>组织机构代码证号码  ${ usrServiceorg.organizationcode}</td><td><s:if test="profileMap['orgAnization'] != ''">${profileMap['orgAnization'] }&nbsp;&nbsp;&nbsp;<a href="/admin/user/orgAttach.act?attachId=${profileMap['orgAnizationId'] }">下载</a></s:if>&nbsp;</td></tr>

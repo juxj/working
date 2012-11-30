@@ -7,10 +7,8 @@ import java.util.Map;
 import com.zj198.action.BaseAction;
 import com.zj198.model.KnwTitle;
 import com.zj198.model.KnwType;
-import com.zj198.model.PrdFinance;
 import com.zj198.model.PrdRecommendation;
 import com.zj198.service.finservice.FinanceProdService;
-import com.zj198.service.loan.FinanceProductService;
 import com.zj198.service.news.NewsService;
 import com.zj198.util.Constants;
 
@@ -23,7 +21,7 @@ public class InfoAction extends BaseAction {
 	private List<KnwType> knwTypeList;
 	
 	private NewsService newsService;
-	private FinanceProductService financeProductService;
+//	private FinanceProductService financeProductService;
 	private FinanceProdService financeProdService;
 	private KnwType knwType;
 
@@ -32,7 +30,7 @@ public class InfoAction extends BaseAction {
 	private List<PrdRecommendation> bankFinanceRecommendationList;
 
 //	/**热门融资产品*/
-	private List<PrdFinance> prdFinanceList;
+	private List<PrdRecommendation> prdFinanceList;
 	
 	private Integer id;
 	
@@ -65,7 +63,7 @@ public class InfoAction extends BaseAction {
 			return "knowledge";
 		}else{
 			bankFinanceRecommendationList = this.financeProdService.findRecommendationByTopNumber(1, 5);
-			prdFinanceList = financeProductService.findFinanceImportent(5);
+			prdFinanceList = financeProdService.findRecommendationByTopNumber(Constants.PRD_RECOMMEND_TYPE_LOAN, 5);
 			return "detail";
 		}
 	}
@@ -109,7 +107,7 @@ public class InfoAction extends BaseAction {
 	public List<PrdRecommendation> getBankFinanceRecommendationList() {
 		return bankFinanceRecommendationList;
 	}
-	public List<PrdFinance> getPrdFinanceList() {
+	public List<PrdRecommendation> getPrdFinanceList() {
 		return prdFinanceList;
 	}
 	public Map<String, List<KnwTitle>> getKnwTitleMap() {
@@ -121,9 +119,9 @@ public class InfoAction extends BaseAction {
 	public void setNewsService(NewsService newsService) {
 		this.newsService = newsService;
 	}
-	public void setFinanceProductService(FinanceProductService financeProductService) {
-		this.financeProductService = financeProductService;
-	}
+//	public void setFinanceProductService(FinanceProductService financeProductService) {
+//		this.financeProductService = financeProductService;
+//	}
 	public void setFinanceProdService(FinanceProdService financeProdService) {
 		this.financeProdService = financeProdService;
 	}

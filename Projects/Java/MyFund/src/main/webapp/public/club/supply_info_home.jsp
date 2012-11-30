@@ -110,17 +110,17 @@
 
 <div class="hr_10"> &nbsp;</div>
 <!-- gaidong -->
-<table class="container_950 center">
-	<tr class="top_color box_4">
+<table class="container_950 center  box_4">
+	<tr class="top_color">
 		<td style="padding-left:20px; border-bottom:3px solid #003961;">标题</td>
 		<td style="border-bottom:3px solid #003961;">地区</td>
-		<td style="border-bottom:3px solid #003961;">投资额度(万元)</td>
+		<td style="border-bottom:3px solid #003961;">投资额度</td>
 		<td style="border-bottom:3px solid #003961;">投资方式</td>
 		<td style="border-bottom:3px solid #003961;">投资行业</td>
 		<td style="border-bottom:3px solid #003961;">发布时间</td>
 		<td style="border-bottom:3px solid #003961;width:90px"></td>
 	</tr>
-	<s:set name="style" value="'border:1px solid #f0f0f0; background:#f9f9f7;'"></s:set>
+	<s:set name="style" value="'background:#f9f9f7;'"></s:set>
 	<s:if test="pager.data.size()>0">
 		<s:iterator id="item" value="pager.data" status="st">	
 		<tr <s:if test="#st.even"> style="${style}" </s:if>>
@@ -137,7 +137,7 @@
 		    		不限
 		    	</s:if>
 			</td>
-			<td>
+			<td class="red">
 				<s:iterator id="amt_item" value="amountRangeList">
 		    		<s:if test="#amt_item.code==#item.workTranche">
 		    			${amt_item.name }

@@ -61,6 +61,7 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrPerson!=null">
+					<tr class="odd" style="color:#97181d;font-weight: bold;"><td>用户类型  ：个人</td><td>&nbsp;</td></tr>
 					<tr><td>姓名 </td><td> ${profileMap['realname']}&nbsp;</td></tr>
 					<tr><td>出生年月  </td><td> <s:date name="usrPerson.birthday" />&nbsp;</td></tr>
 					<tr><td>教育程度 </td><td> ${profileMap['eduAtion'] }&nbsp;</td></tr>

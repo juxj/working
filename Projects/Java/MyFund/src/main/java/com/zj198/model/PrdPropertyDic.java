@@ -12,6 +12,7 @@ public class PrdPropertyDic implements java.io.Serializable {
 	private String dicName;
 	private Integer dicValue;
 	private Integer groupId;
+	private Integer selected;
 
 	// Constructors
 
@@ -58,6 +59,14 @@ public class PrdPropertyDic implements java.io.Serializable {
 
 	public void setGroupId(Integer groupId) {
 		this.groupId = groupId;
+	}
+
+	public Integer getSelected() {
+		return selected;
+	}
+
+	public void setSelected(Integer selected) {
+		this.selected = selected;
 	}
 
 }

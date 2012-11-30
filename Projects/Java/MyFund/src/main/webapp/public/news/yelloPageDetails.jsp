@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
-<script type="text/javascript" src=/script/public.js" > </script>
+<script type="text/javascript" src="/script/public.js" > </script>
 <script type="text/javascript" src="/script/load-news.js" > </script>
 <script language="javascript">
     //通用选项卡
@@ -32,9 +32,9 @@
     		$.post("/news/yellowPage!appendToIndex2.act",{type:this.value},function(data){
             	$("#table").html(data);
             	$("#titles").html(h);
-            })
-    	})
-    })
+            });
+    	});
+    });
 </script>
 <style>
 .sel {	background: #97181d; }
@@ -58,7 +58,7 @@
 			<div style="width:660px; margin: 0 auto; margin-top: 25px; margin-bottom: 25px;">
 				<h2 style="border-bottom:1px solid #d3d3d3; padding-bottom: 20px;" id="titles"><common:print valueId="type" /> </h2>
 				<div id="table" style="padding-top: 10px;">
-				<jsp:include page="/public/common/yelloPage.jsp" />
+				<jsp:include page="/public/news/yelloPage.jsp"/>
 				</div>
 			</div>
         </div>

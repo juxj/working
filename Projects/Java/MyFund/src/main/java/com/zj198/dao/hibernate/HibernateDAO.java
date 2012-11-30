@@ -3,11 +3,14 @@ package com.zj198.dao.hibernate;
 import java.lang.reflect.ParameterizedType;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -146,7 +149,7 @@ public abstract class HibernateDAO<T extends java.io.Serializable, PK extends ja
 		m.appendTail(sb);
 		return sb.toString();
 	}
-
+	
 	protected Query getQuery(final String hql, Object... params) {
 		Query query = getSession().createQuery(hql);
 		if(params!=null){
@@ -163,6 +166,92 @@ public abstract class HibernateDAO<T extends java.io.Serializable, PK extends ja
 				}
 			}else{
 				System.out.println("HibernateDAO调用错误:"+hql);
+				return null;
+			}
+		}
+		return query;
+		
+	}
+	
+	public Pager pagedComplexSqlQuery(String sql,Map<String,Class> entityClassMap, Integer pageNo, Integer pageSize, Object... values) {
+		if(pageSize == 0)pageSize = 10;
+		if(pageNo==null || pageNo<1)pageNo=1;
+		int totalRows = getSqlTotalRows(sql, values);
+		int start = (pageNo - 1) * pageSize;
+		Query query = getComplexSqlQueryEntity(sql,entityClassMap, values);
+		List<Object> list = query.setFirstResult(start).setMaxResults(pageSize).list();
+		return new Pager(totalRows, pageNo, pageSize, list);
+	}
+	
+	public Pager pagedSqlQuery(String sql,Class entityClass, Integer pageNo, Integer pageSize, Object... values) {
+		if(pageSize == 0)pageSize = 10;
+		if(pageNo==null || pageNo<1)pageNo=1;
+		int totalRows = getSqlTotalRows(sql, values);
+		int start = (pageNo - 1) * pageSize;
+		Query query = getSqlQueryEntity(sql,entityClass, values);
+		List<Object> list = query.setFirstResult(start).setMaxResults(pageSize).list();
+		return new Pager(totalRows, pageNo, pageSize, list);
+	}
+	protected Query getComplexSqlQueryEntity(final String sql,Map<String,Class> entityClassMap, Object... params){
+		SQLQuery query = getSession().createSQLQuery(sql); 
+		Iterator<String> i = entityClassMap.keySet().iterator();
+		while(i.hasNext()){
+			String key =i.next();
+			query.addEntity(key,entityClassMap.get(key));
+		}
+		
+		return this.getQueryParams(query, params);
+	}
+	protected Query getSqlQueryEntity(final String sql,Class entityClass, Object... params) {
+		Query query = getSession().createSQLQuery(sql).addEntity(entityClass);
+		return this.getQueryParams(query, params);
+	}
+	
+	protected int getSqlTotalRows(String sql, Object... values){
+		String altHql = " select count(*) " + removeSelect(removeOrders(sql));
+		List<Long> countlist = getSqlQuery(altHql,values).list();
+		if(countlist == null || countlist.isEmpty())return 0;
+		Object obj = countlist.get(0);
+		return Integer.parseInt(obj.toString());
+	}
+	
+	protected Query getQueryParams(Query query, Object... params) {
+		if(params!=null){
+			if(params.length==1 && params[0] instanceof Hashtable){
+				Hashtable<String, Object> map = (Hashtable<String, Object>)params[0];
+				Enumeration<String> keys = map.keys();
+				while (keys.hasMoreElements()) {
+					String key = keys.nextElement();
+					query.setParameter(key, map.get(key));
+				}
+			}else if(params.length%2==0){
+				for (int i = 0; i < params.length; i=i+2) {
+					query.setParameter(params[i].toString(), params[i+1]);
+				}
+			}else{
+				System.out.println("HibernateDAO调用错误:");
+				return null;
+			}
+		}
+		return query;
+		
+	}
+	protected Query getSqlQuery(final String sql,Object... params) {
+		Query query = getSession().createSQLQuery(sql);
+		if(params!=null){
+			if(params.length==1 && params[0] instanceof Hashtable){
+				Hashtable<String, Object> map = (Hashtable<String, Object>)params[0];
+				Enumeration<String> keys = map.keys();
+				while (keys.hasMoreElements()) {
+					String key = keys.nextElement();
+					query.setParameter(key, map.get(key));
+				}
+			}else if(params.length%2==0){
+				for (int i = 0; i < params.length; i=i+2) {
+					query.setParameter(params[i].toString(), params[i+1]);
+				}
+			}else{
+				System.out.println("HibernateDAO调用错误:"+sql);
 				return null;
 			}
 		}

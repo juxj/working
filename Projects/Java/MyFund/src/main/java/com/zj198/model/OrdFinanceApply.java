@@ -66,10 +66,14 @@ public class OrdFinanceApply implements java.io.Serializable {
 	private Integer productUserId;
 	private Double lastyearSaleVolume;
 	private String loanPurposeOther;
+	private Date agreeUploadTime;
+	private Integer agreeUploadWay;
+	private Integer agreeStatus;
+	private String agreeMemo;
 	
 	private Integer uploadAttachNum;
 	private Integer needAttachNum;
-	private String baseCheckStatus;
+	private String baseCheckStatus = "00";
 	
 	public OrdFinanceApply(Integer id,String applyNum,Integer applyType,Integer applyStatus,
 			Date createdt,Long loanAmount,Integer loanMonth,String applyUserName,String productName, 
@@ -589,6 +593,38 @@ public class OrdFinanceApply implements java.io.Serializable {
 
 	public void setBaseCheckStatus(String baseCheckStatus) {
 		this.baseCheckStatus = baseCheckStatus;
+	}
+
+	public Date getAgreeUploadTime() {
+		return agreeUploadTime;
+	}
+
+	public void setAgreeUploadTime(Date agreeUploadTime) {
+		this.agreeUploadTime = agreeUploadTime;
+	}
+
+	public Integer getAgreeUploadWay() {
+		return agreeUploadWay;
+	}
+
+	public void setAgreeUploadWay(Integer agreeUploadWay) {
+		this.agreeUploadWay = agreeUploadWay;
+	}
+
+	public Integer getAgreeStatus() {
+		return agreeStatus;
+	}
+
+	public void setAgreeStatus(Integer agreeStatus) {
+		this.agreeStatus = agreeStatus;
+	}
+
+	public String getAgreeMemo() {
+		return agreeMemo;
+	}
+
+	public void setAgreeMemo(String agreeMemo) {
+		this.agreeMemo = agreeMemo;
 	}
 
 }

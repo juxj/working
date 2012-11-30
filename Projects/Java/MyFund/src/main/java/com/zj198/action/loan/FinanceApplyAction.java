@@ -194,7 +194,7 @@ public class FinanceApplyAction extends BaseAction {
 			usrCompany.setAuditFields(oldUsrCompany);
 			if(copy != null && copy.equalsIgnoreCase("1")){
 				oldUsrCompany.setLoanFields(usrCompany);
-				profileService.saveorupdate(oldUsrCompany);
+				profileService.saveorupdate(oldUsrCompany,user.getId());
 			}
 			OrdApplyUsrCompany ucmo = new OrdApplyUsrCompany();
 			BeanUtils.copyProperties(usrCompany, ucmo);

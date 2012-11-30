@@ -14,11 +14,15 @@ import com.zj198.model.DicDistrict;
 import com.zj198.model.DicIndustry;
 import com.zj198.model.DicProvince;
 import com.zj198.model.OrdApplyUsrCompany;
+import com.zj198.model.OrdCheckLog;
 import com.zj198.model.OrdFinanceApply;
 import com.zj198.model.OrdFinanceApplyAttach;
-import com.zj198.model.OrdCheckLog;
+import com.zj198.model.PrdExtendsProperty;
 import com.zj198.model.PrdExtendsValue;
 import com.zj198.model.PrdFinance;
+import com.zj198.model.PrdPropertyDic;
+import com.zj198.model.UsrCompany;
+import com.zj198.model.UsrFinanceorg;
 import com.zj198.model.UsrPerson;
 import com.zj198.model.UsrUser;
 import com.zj198.model.vo.FinanceApplyAttachModel;
@@ -63,6 +67,8 @@ public class UserApplyManagAction extends BaseAction {
 	private Map<String,String> profileMap;
 	private Integer applyId;
 	private OrdApplyUsrCompany ordCompany;
+	private UsrFinanceorg usrFinanceorg;
+	private OrdApplyUsrCompany usrCompany; 
 	private Integer print;
 	private List<DicProvince> listProvince;
 	private Map<String,List<DicCommon>> dataMap;
@@ -70,9 +76,12 @@ public class UserApplyManagAction extends BaseAction {
 	private Map<String,List<DicDistrict>> districtMap;
 	private String left;
 	private String right;
+	private OrdCheckLog log;
+	private String loanOrgName;
+	
+	private List<PrdExtendsProperty> extendsPropertyList;
 	
 	public String execute() {
-		
 		UsrUser user = getSessionUser();
 		if(user.getUserTypeGroup().intValue() == 2 || user.getUserTypeGroup().intValue() == 3){
 			return this.applyOrgMana();
@@ -80,8 +89,19 @@ public class UserApplyManagAction extends BaseAction {
 			return this.userApplyMana();
 		}
 	}
-	public String applyCheckList(){
-		applyCheckList = financeApplyService.findApplyCheck(applyId);
+	/**
+	 * 企业查看日志
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-13|上午11:33:25
+	 * @return
+	 */
+	public String applyCheckListByCmy(){
+		applyCheckList = financeApplyService.findAllLogByComOrPle(applyId);
+		return "applyCheckList";
+	}
+	
+	public String applyCheckListByLoan(){
+		applyCheckList = financeApplyService.findAllLogByLoan(applyId);
 		return "applyCheckList";
 	}
 
@@ -95,17 +115,20 @@ public class UserApplyManagAction extends BaseAction {
 	}
 	
 	private String comMethod(){
-		String o = "";
-		UsrUser user = getSessionUser();
 		apply = financeApplyService.getFinanceApply(apply.getId());
 		product = financeProductService.getFinance(apply.getFinanceId());
+		if(!isLawful(apply,product)){
+			return ERROR;
+		}
+		String o = "";
+		UsrUser user = getSessionUser();
+		loanOrgName = dictoryDataService.getCompanyNameByUserId(product.getUserId());
 		productAreaList = financeProductService.findFiananceArea(product.getId());
-		applyCheckList = financeApplyService.findApplyCheck(apply.getId(),1);
 		
 		//申贷材料列表
 		attachList = financeApplyService.findApplyAttach(apply.getId());
 		apply = financeApplyService.findById(apply.getId());
-		reLoadStatus(apply);
+		refreshStatus(apply);
 		/**
 		 * 扩展属性
 		 */
@@ -118,8 +141,10 @@ public class UserApplyManagAction extends BaseAction {
 		}
 		if(user.getUserTypeGroup().intValue() == 2 || user.getUserTypeGroup().intValue() == 3){//银行或其它贷款机构
 			userCheckStatus = 1;
+			applyCheckList = financeApplyService.findTopLogByComOrPle(apply.getId(),3);
 		}else{
 			userCheckStatus = 0;
+			applyCheckList = financeApplyService.findTopLogByLoan(apply.getId(),3);
 		}
 		Integer j = 0; 
 		Integer k = 0;
@@ -127,11 +152,23 @@ public class UserApplyManagAction extends BaseAction {
 		k = apply.getApplyType().intValue();
 		if (j == 2 || j == 3) {//银行查看贷款
 			if(k == 151){
-				ordCompany = applyUserService.getByApplyId(apply.getId());
-				if(ordCompany != null){
-					profileMap=new HashMap<String,String>();
-					profileMap.put("address",dictoryDataService.getPCDNameByIds(ordCompany.getLphkprovinceid(), ordCompany.getLphkcityid(), ordCompany.getLphkdistrictid()));
+//				ordCompany = applyUserService.getByApplyId(apply.getId());
+				profileMap=new HashMap<String,String>();
+				usrCompany = applyUserService.getByApplyId(apply.getId());
+				String industry="";
+				if(usrCompany.getIndustryid()!=null && usrCompany.getIndustryid()!=0){
+					industry=dictoryDataService.getIndustryById(usrCompany.getIndustryid()).getName();
 				}
+				profileMap.put("industry", industry);
+				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
+				profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
+				profileMap.put("lpliveaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLpliveprovinceid(), usrCompany.getLplivecityid(), usrCompany.getLplivedistrictid()));
+				profileMap.put("lphkaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLphkprovinceid(), usrCompany.getLphkcityid(), usrCompany.getLphkdistrictid()));
+				profileMap.put("companyType", dictoryDataService.getValueNameById(usrCompany.getEnterprisetypeid()));
+				profileMap.put("companyTmployee", dictoryDataService.getValueNameById(usrCompany.getEmployeesid()));
+				profileMap.put("eduAtion", dictoryDataService.getValueNameById(usrCompany.getLpeducation()));
+				profileMap.put("marry", dictoryDataService.getValueNameById(usrCompany.getLpmarry()));
+				profileMap.put("workYears", dictoryDataService.getValueNameById(usrCompany.getLpindustryyears()));
 				if(print!=null && print==1){
 					o= "view_busi_apply_print";
 				}else{
@@ -154,11 +191,23 @@ public class UserApplyManagAction extends BaseAction {
 			}
 		} else if (k == 151) {// 企业经营贷款
 			//企业的详细信息和法人信息
-			ordCompany = applyUserService.getByApplyId(apply.getId());
-			if(ordCompany != null){
-				profileMap=new HashMap<String,String>();
-				profileMap.put("address",dictoryDataService.getPCDNameByIds(ordCompany.getLphkprovinceid(), ordCompany.getLphkcityid(), ordCompany.getLphkdistrictid()));
+//			ordCompany = applyUserService.getByApplyId(apply.getId());
+			profileMap=new HashMap<String,String>();
+			usrCompany = applyUserService.getByApplyId(apply.getId());
+			String industry="";
+			if(usrCompany.getIndustryid()!=null && usrCompany.getIndustryid()!=0){
+				industry=dictoryDataService.getIndustryById(usrCompany.getIndustryid()).getName();
 			}
+			profileMap.put("industry", industry);
+			profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
+			profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
+			profileMap.put("lpliveaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLpliveprovinceid(), usrCompany.getLplivecityid(), usrCompany.getLplivedistrictid()));
+			profileMap.put("lphkaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLphkprovinceid(), usrCompany.getLphkcityid(), usrCompany.getLphkdistrictid()));
+			profileMap.put("companyType", dictoryDataService.getValueNameById(usrCompany.getEnterprisetypeid()));
+			profileMap.put("companyTmployee", dictoryDataService.getValueNameById(usrCompany.getEmployeesid()));
+			profileMap.put("eduAtion", dictoryDataService.getValueNameById(usrCompany.getLpeducation()));
+			profileMap.put("marry", dictoryDataService.getValueNameById(usrCompany.getLpmarry()));
+			profileMap.put("workYears", dictoryDataService.getValueNameById(usrCompany.getLpindustryyears()));
 			if(print!=null && print==1){
 				o = "view_busi_apply_print";
 			}else{
@@ -189,8 +238,6 @@ public class UserApplyManagAction extends BaseAction {
 	 * @return
 	 */
 	private String userApplyMana() { 
-		// INIT
-		
 		UsrUser user = getSessionUser();
 		applyList = financeApplyService.findUserApply(user.getId());
 		groupType = user.getUserTypeGroup().intValue();
@@ -218,13 +265,74 @@ public class UserApplyManagAction extends BaseAction {
 		return pager;
 	}
 	
+	/**
+	 * 修改客户信息和申请信息后重新提交
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-26|下午3:59:07
+	 * @return
+	 */
 	public String updateApplyStatus(){
-		financeApplyService.updateAppInfo(apply, left, right);
-		return comMethod();
+		financeApplyService.updateAppInfo(apply, log, left, right, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()));
+		return "rtnRedirect";
+	}
+	
+	/**
+	 * 资金方接受到资金网审核通过的订单进行审核
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-26|下午4:00:05
+	 * @return
+	 */
+	public String updateAccept(){
+		financeApplyService.updateOrdStatus(apply, log, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()), Constants.ORD_ORG_CHECKING);
+		return "rtnRedirect";
+	}
+	
+	/**
+	 * 资金方要求客户补充材料或者退回材料修改
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-29|下午2:00:05
+	 * @return
+	 */
+	public String updateMaterial(){
+		financeApplyService.updateOrdStatus(apply, log, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()), Constants.ORD_ORG_WAIT_UPLOAD);
+		return "rtnRedirect";
+	}
+	
+	/**
+	 * 资金方审核通过
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-29|下午2:00:05
+	 * @return
+	 */
+	public String updateSucc(){
+		financeApplyService.updateOrdStatus(apply, log, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()), Constants.ORD_ORG_WAIT_MONEY);
+		return "rtnRedirect";
+	}
+	
+	/**
+	 * 资金方审核不通过
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-29|下午2:00:05
+	 * @return
+	 */
+	public String updateFail(){
+		financeApplyService.updateOrdStatus(apply, log, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()), Constants.ORD_ORG_CHECK_FAILURE);
+		return "rtnRedirect";
+	}
+	
+	/**
+	 * 资金方放款
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-29|下午2:00:05
+	 * @return
+	 */
+	public String updateFkuan(){
+		financeApplyService.updateOrdStatus(apply, log, dictoryDataService.getCompanyNameByUserId(getSessionUser().getId()), Constants.ORD_ORG_PUT_MONEY);
+		return "rtnRedirect";
 	}
 	
 	
-	private void reLoadStatus(OrdFinanceApply ofa) {
+	private void refreshStatus(OrdFinanceApply ofa) {
 		String j = ofa.getBaseCheckStatus();
 		if (StringUtils.isNotBlank(j)) {
 			left = j.substring(0, 1);
@@ -300,6 +408,48 @@ public class UserApplyManagAction extends BaseAction {
 		}
 		return comMethod();
 	}
+	
+	public String getApplyDetail(){
+		apply = financeApplyService.getFinanceApply(apply.getId());
+		product = financeProductService.getFinance(apply.getFinanceId());
+		extendsPropertyList = financeProductService.getFinancePropertys(apply.getFinanceId());
+		List<PrdExtendsValue> valueList = financeApplyService.getFinanceApplyExtendsValue(apply.getId());
+		for(PrdExtendsProperty p:extendsPropertyList){
+			for(PrdExtendsValue v:valueList){
+				if(p.getId().intValue() == v.getPropertyId()){
+					p.setEntityValue(v.getEntityValue());
+					if(p.getFieldType().intValue() == Constants.EXTENDS_PROPERTY_TYPE_SELECT || p.getFieldType() == Constants.EXTENDS_PROPERTY_TYPE_CHECKBOX){
+						for(PrdPropertyDic d : p.getPropertyDicSet()){
+							if((v.getDicValue()+",").indexOf((d.getDicValue()+",")) >= 0){
+								d.setSelected(1);
+							}else{
+								d.setSelected(0);
+							}
+						}
+					}
+					break;
+				}
+			}
+		}
+		if(apply.getApplyType().intValue() == Constants.ORD_TYPE_COMPANY){
+			return "busiApplyUpdate";
+		}else{
+			industryList = dictoryDataService.findIndustryByParentid(0);
+			return "perApplyUpdate";
+		}
+	}
+	
+	public String updateApply(){
+		ActionContext context = ActionContext.getContext();
+		UsrUser user = (UsrUser) context.getSession().get("_user");
+		spModel = new FinanceApplySpModel();
+		Map<?,?> param = context.getParameters();
+		spModel.setParamap(param);
+		
+		financeApplyService.updateFinanceApply(apply, user, spModel);
+		return viewFinanceApply();
+	}
+	
 	//setter and getter
 	public void setProfileService(ProfileService profileService) {
 		this.profileService = profileService;
@@ -427,12 +577,6 @@ public class UserApplyManagAction extends BaseAction {
 	public void setApplyId(Integer applyId) {
 		this.applyId = applyId;
 	}
-	public OrdApplyUsrCompany getOrdCompany() {
-		return ordCompany;
-	}
-	public void setOrdCompany(OrdApplyUsrCompany ordCompany) {
-		this.ordCompany = ordCompany;
-	}
 	public void setFinanceApplyService(FinanceApplyService financeApplyService) {
 		this.financeApplyService = financeApplyService;
 	}
@@ -472,6 +616,42 @@ public class UserApplyManagAction extends BaseAction {
 	public void setRight(String right) {
 		this.right = right;
 	}
-
+	public OrdCheckLog getLog() {
+		return log;
+	}
+	public void setLog(OrdCheckLog log) {
+		this.log = log;
+	}
+	public List<PrdExtendsProperty> getExtendsPropertyList() {
+		return extendsPropertyList;
+	}
+	public void setExtendsPropertyList(List<PrdExtendsProperty> extendsPropertyList) {
+		this.extendsPropertyList = extendsPropertyList;
+	}
+	public String getLoanOrgName() {
+		return loanOrgName;
+	}
+	public void setLoanOrgName(String loanOrgName) {
+		this.loanOrgName = loanOrgName;
+	}
+	public UsrFinanceorg getUsrFinanceorg() {
+		return usrFinanceorg;
+	}
+	public void setUsrFinanceorg(UsrFinanceorg usrFinanceorg) {
+		this.usrFinanceorg = usrFinanceorg;
+	}
+	public OrdApplyUsrCompany getOrdCompany() {
+		return ordCompany;
+	}
+	public void setOrdCompany(OrdApplyUsrCompany ordCompany) {
+		this.ordCompany = ordCompany;
+	}
+	public OrdApplyUsrCompany getUsrCompany() {
+		return usrCompany;
+	}
+	public void setUsrCompany(OrdApplyUsrCompany usrCompany) {
+		this.usrCompany = usrCompany;
+	}
+	
 	
 }

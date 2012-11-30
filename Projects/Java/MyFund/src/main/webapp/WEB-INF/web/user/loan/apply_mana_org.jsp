@@ -81,7 +81,7 @@
 	<s:hidden name="apply.applyStatus" id="apply_status"></s:hidden>
 	<s:hidden name="appCheck.checkView" id="check_view"></s:hidden>
 	<s:hidden name="userType" value="1"></s:hidden>
-	<table class="container_950" style="margin:20px;!important display:inline;">
+	<table style="width:100%;margin:20px;!important display:inline;">
 		<tr>
 			<td  align="right">申请编号:</td>
 			<td style="padding:5px;"><s:textfield name="spModel.applyNum"/></td>
@@ -120,11 +120,11 @@
 			</td>
 			<td  align="right">状态:</td>
 			<td  style="padding:5px;">
-				<common:select name="spModel.applyStatus" headerKey="" headerValue="--请选择类型--" valueSetId="38"></common:select>
+				<common:select name="spModel.applyStatus" headerKey="" headerValue="--请选择类型--" valueSetId="80"></common:select>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" align="center"><input type="submit" value="查询" class="but_gray" style="width:100px;"/></td>
+			<td colspan="4" ><input type="submit" value="查询" class="but_gray" style="width:100px;"/></td>
 		</tr>
 	</table>
   </div> 
@@ -132,15 +132,14 @@
         <table class="container_950 box_4">
 	      <tr class="top_color">
             <td width="10%" style="padding-left:25px;">申请编号</td>
-            <td width="10%">融资产品名称</td>
-            <td width="10%">类型</td>
-            <td width="10%">申请方名称</td>
+            <td width="15%">融资产品名称</td>
+            <td width="13%">类型</td>
+            <td width="13%">申请方名称</td>
             <td width="10%">申请时间</td>
             <td width="8%">申请金额</td>
-            <td width="5%">期限</td>
-            <td width="9%">状态</td>
-            <td >申贷资料</td>
-            <td align="center">操作</td>
+            <td width="8%">期限</td>
+            <td width="13%">状态</td>
+            <td width="10%"align="center">操作</td>
           </tr>
           	<s:if test="pager.data.size()>0">
 		 	<s:iterator id ="item" value="pager.data">
@@ -152,42 +151,14 @@
 	   			<td><s:date name="#item.createdt" format="yyyy-MM-dd"/></td>
 				<td><s:number name="loanAmount" />万元</td>
 	   			<td>${item.loanMonth}个月</td>
-	   			<td><common:print valueId="#item.applyStatus"/></td>
-	   			<td class="option_href">
-	   			<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=0&applyId=${item.id }" target="_blank">资料查看</a>
-	   			</td>   			
+	   			<td><common:print valueId="#item.applyStatus"/></td>			
 	   			<td align="right" class="view_detail01" style="padding:5px 20px 5px 0;">
-							<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${item.id }" style="margin-bottom:5px;">查看</a>
-				   			<s:if test="applyStatus != 181 && applyStatus != 186 && applyStatus != 187 && applyStatus != 188">
-				   				<a href="javascript:supplyAttach('${item.id }');"style="margin-bottom:5px;">补充资料</a>
-				   			</s:if>
-							<br/>
-				   			<s:if test="#item.applyStatus == 181"><!-- 待审核 -->
-				   				<a href="javascript:updatestatus(${item.id },187)">退回申请</a>
-				   				<a href="javascript:updatestatus(${item.id },182)">接受申请</a>
-							</s:if>
-							<s:elseif test="#item.applyStatus == 182">
-				   				<a href="javascript:updatestatus(${item.id },187)">退回申请</a>
-								<a href="javascript:updatestatus(${item.id },185)">审核通过</a>
-							</s:elseif>
-							<s:elseif test="#item.applyStatus == 183">
-								<a href="javascript:updatestatus(${item.id },182)">资料审核通过</a>
-				   				<a href="javascript:updatestatus(${item.id },187)">退回申请</a>
-								
-							</s:elseif>
-							<s:elseif test="#item.applyStatus == 184">
-				   				<a href="javascript:updatestatus(${item.id },187)">退回申请</a>
-								<a href="javascript:updatestatus(${item.id },185)">审核通过</a>
-							</s:elseif>
-							<s:elseif test="#item.applyStatus == 185"><!-- 待放款 -->
-								<a href="/user/loan/loanAfter!loanAfterAddUI.act?appId=${id}" target="_blank">放款</a>
-							</s:elseif>			
+					<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${item.id }" style="margin-bottom:5px;">查看</a>
 	   			</td>
 			</tr>
 			</s:iterator>
 			</s:if>
         </table>
-   <div class="hr_10"> &nbsp;</div>
     <div style="width:960px; margin:0 auto; text-align:right;">
        <s:include value="/public/pagination.jsp"/>
     </div>

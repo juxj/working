@@ -61,17 +61,17 @@
 				</td>
 			</tr>
 			<tr>
-				<td width="18%" class="form_table field_name">标题</td>
+				<td width="18%" class="form_table field_name">标题：</td>
 				<td><s:textfield id="clbSupplyInfo.title" name="clbSupplyInfo.title" cssClass="required"  maxlength="120"/></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">额度范围</td>
+				<td class="form_table field_name">额度范围：</td>
 				<td>
 					<s:include value="_supply_info_amount_range.jsp"></s:include>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">请选择担保范围</td>
+				<td class="form_table field_name">请选择担保范围：</td>
 				<td>
 				</td>
 			</tr>
@@ -101,17 +101,17 @@
 				</s:if>
 			</s:iterator>
 			<tr>
-				<td class="form_table field_name">担保期限</td>
+				<td class="form_table field_name">担保期限：</td>
 				<td>
 					<s:select list="timeIntervalList" listKey="code" listValue="name" cssClass="required" name="clbSupplyInfo.productCycle"></s:select>
 				</td>
 			</tr>	
 			<tr>
-				<td class="form_table field_name">信息时效</td>
+				<td class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">资金描述</td>
+				<td class="form_table field_name">资金描述：</td>
 				<td>
 					<s:textarea id="clbSupplyInfo.remark" rows="8" cols="80" name="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 				</td>

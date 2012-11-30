@@ -34,14 +34,12 @@ $(function(){
 </div>
 <!--主体部分开始-->
 <div class="hr_10"> &nbsp; </div>
-<div class="apply_title red" style="height:50px;">
-	<p>在线预约</p>
-</div>
-<div class="hr_10"> &nbsp; </div>
-<div class="apply_form">
+<div class="container_950 box_4" >
+<div class="yourposition" >填写预约服务申请</div>
+<div >
 <form action="/finance/fund!saveIntention.act" id="fundForm"  class="box_form" style="margin:0px;" method="post">
 <!-- 企业经营贷款快速申请类型=136 -->
-	<div class="apply_form_title">填写联系方式</div>
+	<div class="hr_20"> &nbsp; </div>
 	<div class="C_form">
             <dl>
               <dd>
@@ -69,13 +67,14 @@ $(function(){
 			 </dl>
 	
 		<div class="hr_10"> &nbsp; </div>
-		<div class="center" style="width:200px;">
-		<s:submit value="确定"  cssClass="btnsub bred" style="width:200px;"></s:submit>
+		<div class="center" style="width:100px;">
+		<s:submit value="提交预约申请"  cssClass="btnsub bred" style="width:200px;"></s:submit>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>
 	</div>
 </form>
+</div>
 </div>
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>

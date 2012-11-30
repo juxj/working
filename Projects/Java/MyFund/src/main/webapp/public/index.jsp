@@ -104,7 +104,7 @@
     <div class="fl"><a href="/user/UserAction.act"><img src="/images/cwfx.jpg" /></a></div>
     <div class="fr"><a href="/user/UserAction.act"><img src="/images/cwyc_index.jpg" /></a></div>
     <div class="hr_10"> &nbsp; </div>
-    <div ><a href="/club/clubAction.act"><img src="/images/img_index_loan_Club.jpg" width="230" height="225"/></a></div>  
+    <div ><a href="/club/clubAction.act"><img src="/images/img_index_loan_Club.jpg" width="230" height="283"/></a></div>  
     <div class="hr_10"> &nbsp; </div>   
     <div class="menu_red white">
       <h6>融资案例</h6>
@@ -164,7 +164,7 @@
               <s:iterator value="prdFinanceList">
 	              <tr>
 	                <td style="vertical-align: middle;">
-		                <s:if test="logo == null">
+		                <s:if test="logo == null || logo == ''">
 					        <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap;"/>
 				        </s:if>
 				        <s:else>
@@ -172,11 +172,11 @@
 				        </s:else>
 	                </td>
 	                <td class="hot_connect">
-	                	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}">
-	                		<s:if test="recommendName != null && recommendName.length()>22">
-								<s:property value="recommendName.substring(0,22)"></s:property>...
+	                	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${prodId}">
+	                		<s:if test="title != null && title.length()>22">
+								<s:property value="title.substring(0,22)"></s:property>...
 							</s:if><s:else>
-								${recommendName}
+								${title}
 							</s:else>
 	                	</a>
 	                </td>

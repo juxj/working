@@ -40,13 +40,13 @@ $(function(){
 		<table class="form_table">
 		
 			<tr>
-				<td class="form_table field_name" width="18%">标题</td>
+				<td class="field_name" width="18%">标题：</td>
 				<td> 
-					<s:textfield name="clbRequestInfo.title" maxlength="100" cssClass="required"></s:textfield>
+					<s:textfield name="clbRequestInfo.title" maxlength="100" cssClass="required input_text"></s:textfield>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >所属行业</td>
+				<td class="field_name" >所属行业：</td>
 				<td>
 				
 					<s:select list="industryList.{?#this.parentid==0}"  name="clbRequestInfo.industry" listKey="name" listValue="name"></s:select>
@@ -54,12 +54,12 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >所属区域</td>
+				<td class="field_name" >所属区域：</td>
 				<td><s:select list="provinceList" name="clbRequestInfo.area" 
 					listKey="name" listValue="name"></s:select> </td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >项目分类</td>
+				<td class="field_name" >项目分类：</td>
 				<td>
 					<s:radio list="projectTypeList" name="clbRequestInfo.projectType" listKey="code"
 						listValue="name" cssClass="required"></s:radio>
@@ -67,25 +67,25 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >投资总额</td>
-				<td><s:textfield name="clbRequestInfo.totalMoney" maxlength="6"  cssClass="required number"/>(万元)
+				<td class="field_name" >投资总额(万元)：</td>
+				<td><s:textfield name="clbRequestInfo.totalMoney" maxlength="6"  cssClass="required number input_text"/>(万元)
 				<label for="clbRequestInfo.totalMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >尚缺资金</td>
-				<td><s:textfield name="clbRequestInfo.lackMoney" maxlength="6" cssClass="required number"/> 
+				<td class="field_name" >尚缺资金(万元)：</td>
+				<td><s:textfield name="clbRequestInfo.lackMoney" maxlength="6" cssClass="required number input_text"/> 
 				<label for="clbRequestInfo.lackMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >所需资金</td>
-				<td><s:textfield name="clbRequestInfo.needMoney" maxlength="6" cssClass="required number"/>
+				<td class="field_name" >所需资金(万元)：</td>
+				<td><s:textfield name="clbRequestInfo.needMoney" maxlength="6" cssClass="required number input_text"/>
 				<label for="clbRequestInfo.needMoney" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >融资方式</td>
+				<td class="field_name" >融资方式：</td>
 				<td>
 					
 					<s:iterator id="item" value="financingTypeList">
@@ -105,13 +105,13 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >项目概述</td>
+				<td class="field_name" >项目概述：</td>
 				<td><s:textarea rows="10" cols="60"  cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="clbRequestInfo.introduction"/>
 				<label for="clbRequestInfo.introduction" class="error" generated="true" style="display:none;"></label>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" >前景预测</td>
+				<td class="field_name" >前景预测：</td>
 				<td><s:textarea rows="10" cols="60"  cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}" name="clbRequestInfo.forecast"/>
 				<label for="clbRequestInfo.forecast" class="error" generated="true" style="display:none;"></label>
 				</td>

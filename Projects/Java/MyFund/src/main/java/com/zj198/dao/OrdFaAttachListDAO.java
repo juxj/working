@@ -12,4 +12,5 @@ import com.zj198.model.OrdFaAttachList;
  */
 public interface OrdFaAttachListDAO extends BaseDAO<OrdFaAttachList, Integer>{
 	public List<OrdFaAttachList> findAttachList(Integer attachId);
+	public Integer countAttachList(Integer attachId);
 }

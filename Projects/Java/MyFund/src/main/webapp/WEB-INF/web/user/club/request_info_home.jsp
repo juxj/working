@@ -82,14 +82,14 @@
 				${item.needMoney }
 			</td>
 			<td title="${item.financeType }">
-				<s:if test="#item.financeType.length()>15">
-					<s:property value="#item.financeType.substring(0,15)"></s:property>...
-				</s:if><s:else>
-					${item.financeType}
-				</s:else>
 		    	<s:if test="#item.financeType==null or #item.financeType==''">
 		    		不限
 		    	</s:if>
+				<s:elseif test="#item.financeType.length()>15">
+					<s:property value="#item.financeType.substring(0,15)"></s:property>...
+				</s:elseif><s:else>
+					${item.financeType}
+				</s:else>
 			</td>
 			<td>
 				<s:if test="#item.rank==0 || #item.rank==9">

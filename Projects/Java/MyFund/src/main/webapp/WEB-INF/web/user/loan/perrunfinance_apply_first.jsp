@@ -87,7 +87,7 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 				      <tr>
 				        <td colspan="2" style="padding:20px 0 0 30px;">
 			        	<div class="fl">	
-				        	<s:if test="product.logo == null">
+				        	<s:if test="product.logo == null || product.logo == ''">
 						        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
 					        </s:if>
 					        <s:else>
@@ -113,22 +113,22 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 		</div>	
 		<div class="C_form">
 	             <dd>
-	                <h6>贷款用途：</h6>
+	                <h6><span class="txt-impt">*</span>贷款用途：</h6>
 	                <common:select id="other" name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:200px;" onchange="otherPurpose()"></common:select>
 	               	<div id="otherPurpose"></div>
 	             </dd>
 	              <dd>   
-	                <h6>贷款金额：</h6>
+	                <h6><span class="txt-impt">*</span>贷款金额：</h6>
 	                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="6"/>&nbsp;&nbsp;万元
 	                <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
 	              </dd>
 	              <dd>
-	                <h6>贷款期限：</h6>
+	                <h6><span class="txt-impt">*</span>贷款期限：</h6>
 	                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="2"/>&nbsp;&nbsp;个月
 	                <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 					</dd>
 					<dd>
-	                <h6>是否有抵押物：</h6>
+	                <h6><span class="txt-impt">*</span>是否有抵押物：</h6>
 					  <input id="radio1" type="radio" name="apply.haveMortgage" value="1" class="required" checked/><label for="radio1">能提供</label>
 					  <input id="radio2" type="radio" name="apply.haveMortgage" value="0" /><label for="radio2">无法提供</label>
 					</dd>
@@ -139,7 +139,7 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 		<div class="C_form">
 			<dl>
 				<dd>
-					<h6>行业：</h6>
+					<h6><span class="txt-impt">*</span>行业：</h6>
 					<select id="runningTrade"  name="apply.runningTrade" onchange="industryList(this.options[this.options.selectedIndex].value)"  class="required">
 						<option value="">--请选择--</option>
 	                	<s:iterator value="industryList">
@@ -150,34 +150,35 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 					<select id="runningTradeChild" name="apply.runningTradeChild">
 						<option>--请选择--</option>
 					</select>
+					<label for="runningTrade" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>行业经验：</h6>
+					<h6><span class="txt-impt">*</span>行业经验：</h6>
 					<s:textfield name="apply.experience" cssClass="input-text required" maxlength="3" id="apply.experience"></s:textfield>&nbsp;&nbsp;年
 					<label for="apply.experience" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>年营业额：</h6>
+					<h6><span class="txt-impt">*</span>年营业额：</h6>
 					<common:select name="apply.allyearVolume" valueSetId="24" cssClass="S_width"></common:select>
 					<label for="apply.allyearVolume" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>经营场所：</h6>
+					<h6><span class="txt-impt">*</span>经营场所：</h6>
 					<s:radio value="1" name="apply.runningArea" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 					<label for="apply.runningArea" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>银行借款经历：</h6>
+					<h6><span class="txt-impt">*</span>银行借款经历：</h6>
 					<s:radio value="1" name="apply.hostoryLoan" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 					<label for="apply.hostoryLoan" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>使用信用卡经历：</h6>
+					<h6><span class="txt-impt">*</span>使用信用卡经历：</h6>
 					<s:radio value="1" name="apply.useCreditcard" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 					<label for="apply.useCreditcard" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6>银行流水：</h6>
+					<h6><span class="txt-impt">*</span>银行流水：</h6>
 					<s:radio value="1" name="apply.bankSalaryList" list="%{#{1:'能提供',0:'无法提供'}}" cssClass="required"></s:radio>
 					<label for="apply.bankSalaryList" class="error" generated="true" style="display:none;"></label>
 				</dd>
@@ -190,7 +191,7 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 			<dl>
 				<s:iterator value="extendsPropertyList" id="epid">
 					<dd>
-						<h6 style="width:235px">${fieldName }：</h6>
+						<h6 style="width:235px"><span class="txt-impt">*</span>${fieldName }：</h6>
 						<s:if test="fieldType == 1">
 							<input type="text" name="epValue${id }" class="input-text required"/>
 						</s:if>
@@ -215,13 +216,13 @@ return this.optional(element) || (value >= param[0] && value <= param[1]);
 				
 			</dl>
 			<div class="hr_10"> &nbsp; </div>
-			<div class="center" style="width:260px;">
+			<div class="center" style="width:400px;">
 				<input type="checkbox" name="zjservice" id="zjservice" style="margin-bottom:8px;" onclick="servicedetail()"/>
 				<label for="zjservice">我已阅读并同意</label>
 				<a href="/news/Info.act?id=134" class="T_Service" target="_blank">中国资金网融资服务条款</a>
 			</div>
 			<div class="hr_10"> &nbsp; </div>
-			<div class="center" style="width:200px;">
+			<div class="center" style="width:400px;">
 				<s:submit value="下一步"  cssClass="but_gray" style="width:200px;" id="loanSubmit"></s:submit>
 			</div>
 			<div class="hr_10"> &nbsp; </div>

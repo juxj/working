@@ -1,6 +1,7 @@
 package com.zj198.service.user.impl;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.zj198.dao.OrdMemberShipDAO;
@@ -30,21 +31,29 @@ public class MemberServiceImpl implements MemberService {
 	}
 	@Override
 	public void saveOrdMP(OrdMembership ordMembership) {
-		ordMembership.setIscancelled(0);
-		ordMembership.setPayStatus(Constants.USER_VIPTYPE_PAYSTATUS_OFF);
-		ordMembership.setCreateTime(Calendar.getInstance().getTime());
-		ordMemberShipDAO.save(ordMembership);
+		if(ordMembership.getId() == null){
+			ordMembership.setIscancelled(0);
+			ordMembership.setPayStatus(Constants.USER_VIPTYPE_PAYSTATUS_OFF);
+			ordMembership.setCreateTime(Calendar.getInstance().getTime());
+			ordMemberShipDAO.save(ordMembership);
+		}else{
+			ordMembership.setIscancelled(0);
+			ordMembership.setPayStatus(Constants.USER_VIPTYPE_PAYSTATUS_OFF);
+			ordMembership.setCreateTime(Calendar.getInstance().getTime());
+			ordMemberShipDAO.update(ordMembership);
+		}
 	}
 	@Override
 	public void updateOrdMP(OrdMembership ordMembership) {
 		ordMemberShipDAO.update(ordMembership);
 	}
 	@Override
-	public void deleteOrdMPById(Integer id) {
-		OrdMembership ordMembership = ordMemberShipDAO.get(id);
-		ordMembership.setIscancelled(Constants.USER_VIPTYPE_ISCANCELLED_OFF);
-		ordMemberShipDAO.update(ordMembership);
-		
+	public void deleteOrdMPByIdUid(Integer id,Integer uid) {
+		OrdMembership order = ordMemberShipDAO.get(id);
+		if(order.getUserId()-uid==0){
+			order.setIscancelled(Constants.USER_VIPTYPE_ISCANCELLED_OFF);
+			ordMemberShipDAO.update(order);
+		}
 	}
 	@Override
 	public OrdMembership getOrdMPById(Integer id) {
@@ -59,13 +68,15 @@ public class MemberServiceImpl implements MemberService {
 		return ordMemberShipDAO.findAllOrdMS(id, userid, pageNo, pageSize);
 	}
 	@Override
-	public Pager findAllUsrMP(Integer id, Integer userid, Integer orderId,
-			Integer memberType, Integer pageNo, Integer pageSize) {
-		return usrMemberPeroidDAO.findAllUsrMP(id, userid, orderId, memberType, pageNo, pageSize);
+	public Pager findAllUsrMP(Integer ordId,String username,Integer status,Integer memberType,Date[] startdt,Date[] createdt,Integer pageNo, Integer pageSize) {
+		return usrMemberPeroidDAO.findAllUsrMP(ordId, username, status, memberType, startdt, createdt, pageNo, pageSize);
 	}
 	@Override
 	public void updateOrdMPStatus(Integer id, Integer status) {
 		OrdMembership ordMembership = ordMemberShipDAO.get(id);
+		if(ordMembership.getUserId().equals("")){
+			
+		}
 		ordMembership.setPayStatus(status);
 		ordMemberShipDAO.update(ordMembership);
 	}

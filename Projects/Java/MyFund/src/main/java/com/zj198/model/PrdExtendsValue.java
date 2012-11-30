@@ -21,6 +21,7 @@ public class PrdExtendsValue implements java.io.Serializable {
 	private String fieldName;
 	private Date createDt;
 	private Integer createUserId;
+	private Integer fieldType;
 
 	// Constructors
 
@@ -124,6 +125,14 @@ public class PrdExtendsValue implements java.io.Serializable {
 
 	public void setCreateUserId(Integer createUserId) {
 		this.createUserId = createUserId;
+	}
+
+	public Integer getFieldType() {
+		return fieldType;
+	}
+
+	public void setFieldType(Integer fieldType) {
+		this.fieldType = fieldType;
 	}
 
 }

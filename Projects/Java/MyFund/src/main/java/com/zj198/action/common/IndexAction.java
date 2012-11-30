@@ -6,7 +6,6 @@ import com.zj198.action.BaseAction;
 import com.zj198.model.KnwTitle;
 import com.zj198.model.KnwType;
 import com.zj198.model.PrdBankfinance;
-import com.zj198.model.PrdFinance;
 import com.zj198.model.PrdRecommendation;
 import com.zj198.model.PrdServiceItem;
 import com.zj198.service.finservice.FinanceProdService;
@@ -31,7 +30,7 @@ public class IndexAction extends BaseAction{
 	
 	private List<KnwType> newsTypeList;
 	private List<PrdServiceItem> serviceItemList;
-	private List<PrdFinance> prdFinanceList;
+	private List<PrdRecommendation> prdFinanceList;
 	
 	private FinanceProdService financeProdService;
 	private NewsService newsService;
@@ -47,7 +46,7 @@ public class IndexAction extends BaseAction{
 		return SUCCESS;
 	}
 	public void getImportentProduct(){
-		prdFinanceList = financeProductService.findFinanceImportent(new Integer(4));
+		prdFinanceList = financeProdService.findRecommendationByTopNumber(Constants.PRD_RECOMMEND_TYPE_LOAN, 4);
 		this.bankFinanceRecommendationList = this.financeProdService.findRecommendationByTopNumber(1,4);
 	}
 	//整站首页
@@ -100,10 +99,10 @@ public class IndexAction extends BaseAction{
 	public List<KnwTitle> getSiteNews() {
 		return siteNews;
 	}
-	public List<PrdFinance> getPrdFinanceList() {
+	public List<PrdRecommendation> getPrdFinanceList() {
 		return prdFinanceList;
 	}
-	public void setPrdFinanceList(List<PrdFinance> prdFinanceList) {
+	public void setPrdFinanceList(List<PrdRecommendation> prdFinanceList) {
 		this.prdFinanceList = prdFinanceList;
 	}
 	public void setFinanceProductService(FinanceProductService financeProductService) {

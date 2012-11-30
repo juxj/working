@@ -22,14 +22,18 @@
 .user_real .cert { line-height:30px; height:30px; background:url(/images/cert_ico.gif) 0 7px no-repeat; padding:0 0 0 25px;}
 .user_real .mobile { line-height:30px; height:30px; background:url(/images/mobile_ico.gif) 0 7px no-repeat; padding:0 0 0 25px;}
 .gold-table { width : 100%; margin :0 auto; text-align:left; border-collapse:collapse; border:solid #d3d3d3; border-width:0 1px 1px; }
-.gold-table th { color : #484848; font-weight:bold; height:30px; line-height:30px; padding-left:20px; border-bottom:1px solid #d3d3d3; }
+/*.gold-table th { color : #484848; font-weight:bold; height:30px; line-height:30px; padding-left:20px; border-bottom:1px solid #d3d3d3; }*/
 .gold-table td { padding:5px 0 5px 20px; vertical-align:middle; border-bottom:1px solid #d3d3d3; }
 .gold-table-altrow { background:#f9f9f7 }
 .gold-table caption { border-bottom:5px solid #003961; color:#FFF; font-weight:bold; height:30px; line-height:30px; }
-.gold-table caption h6 { background:#003961; width:120px; text-align:center; float:left }
+.gold-table caption h6 { background:#003961; width:100px; text-align:center; float:left;font-weight: normal; }
 .gold-table caption .view_all { margin-right:30px; font-weight:normal; }
-.view_detail a { display:inline-block; width:78px; height:21px; background:url(/images/btn_grap.png) 0 0 no-repeat; text-align:center; line-height:21px; color : #97181d; margin-right:20px; float:right; }
-.view_detail a:hover { background:url(/images/btn_grap.png) 0 -21px no-repeat; text-decoration:none; color : #424240; }
+.view_detail a {cursor:pointer;position: relative;display: inline-block;padding: 0 15px 0 15px;text-align: center;text-decoration: none;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;height:21px;line-height:21px; border:1px solid #DCDCDC;color: #000;background : #e1e1e1;/* Old browsers */
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	}
+.view_detail a:hover {text-decoration: none;color: #003961;background: #bee7f7;border:1px solid #B1E1F2;}	
 
 /******profile完成度进度条*********/
 .graph_red {position: relative; width: 200px; border: 1px solid #ff0000; padding: 1px;}

@@ -14,5 +14,13 @@ import com.zj198.model.vo.FinanceApplyAttachModel;
 public interface OrdFinanceApplyAttachDAO extends BaseDAO<OrdFinanceApplyAttach, Integer>{
 	public List<FinanceApplyAttachModel> findApplyAttach(Integer applyId);
 	public List<FinanceApplyAttachModel> findApplyAttachSupply(Integer applyId);
+	
+	/**
+	 * 批量删除申贷材料
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-31|下午1:36:55
+	 * @param ids
+	 */
 	public void deleteAttach(Integer[] ids);
+	
 }

@@ -5,16 +5,14 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.action.loan.model.FinanceApplySpModel;
-import com.zj198.model.DicIndustry;
 import com.zj198.model.OrdApplyUsrCompany;
 import com.zj198.model.OrdFinanceApply;
-import com.zj198.model.OrdFinanceApplyAttach;
 import com.zj198.model.OrdCheckLog;
 import com.zj198.model.PrdExtendsValue;
 import com.zj198.model.PrdFinance;
+import com.zj198.model.UsrCompany;
 import com.zj198.model.UsrPerson;
 import com.zj198.model.UsrUser;
 import com.zj198.model.vo.FinanceApplyAttachModel;
@@ -25,8 +23,8 @@ import com.zj198.service.loan.FinanceApplyService;
 import com.zj198.service.loan.FinanceProductService;
 import com.zj198.service.user.AccountService;
 import com.zj198.service.user.ProfileService;
+import com.zj198.util.Constants;
 import com.zj198.util.Pager;
-import com.zj198.util.StringUtil;
 
 /**
  * @author 岳龙 Description: CreateAuthor:岳龙 CreateDate:2012-7-05 15:09:58
@@ -46,15 +44,19 @@ public class FinanceApplyAdminAction extends BaseAction {
 	private List<PrdExtendsValue> extendsValueList;
 	private ApplyUserService applyUserService;
 	private OrdApplyUsrCompany ordCompany;
+	private OrdApplyUsrCompany usrCompany; 
 	private Map<String,String> profileMap;
 	private DictoryDataService dictoryDataService;
 	private List<FinanceApplyAttachModel> attachList;
 	private UsrPerson usrPerson;
 	private ProfileService profileService;
 	private Integer applyId;
-	
+	private String pindName;
+	private String cindName;
 	private String left;
 	private String right;
+	private String loanOrgName;
+	private UsrUser loanUsr;
 
 	public String execute() {
 		return null;
@@ -91,23 +93,42 @@ public class FinanceApplyAdminAction extends BaseAction {
 		apply = financeApplyService.getFinanceApply(apply.getId());
 		user = accountService.getUserById(apply.getUserId());
 		product = financeProductService.getFinance(apply.getFinanceId());
+		loanUsr = accountService.getUserById(product.getUserId());
+		loanOrgName = dictoryDataService.getCompanyNameByUserId(product.getUserId());
 		productAreaList = financeProductService.findFiananceArea(product.getId());
-		applyCheckList = financeApplyService.findApplyCheck(apply.getId(),1);
+		applyCheckList = financeApplyService.findApplyCheck(apply.getId(),3);
 		//申贷材料列表
 		attachList = financeApplyService.findApplyAttach(apply.getId());
 //		apply = financeApplyService.findById(apply.getId());
 		//根据状态显示按钮
-		reLoadStatus(apply);
+		refreshStatus(apply);
 		/**
 		 * 扩展属性
 		 */
 		extendsValueList = financeApplyService.getFinanceApplyExtendsValue(apply.getId());
+		if(apply.getRunningTrade()!=null){
+			pindName = dictoryDataService.getIndustryNameById(apply.getRunningTrade());
+		}
+		if(apply.getRunningTradeChild()!=null){
+			cindName = dictoryDataService.getIndustryNameById(apply.getRunningTradeChild());
+		}
 		if(apply.getApplyType().intValue() == 151){//企业经营贷款
-			ordCompany = applyUserService.getByApplyId(apply.getId());
-			if(ordCompany != null){
-				profileMap=new HashMap<String,String>();
-				profileMap.put("address",dictoryDataService.getPCDNameByIds(ordCompany.getLphkprovinceid(), ordCompany.getLphkcityid(), ordCompany.getLphkdistrictid()));
+			profileMap=new HashMap<String,String>();
+			usrCompany = applyUserService.getByApplyId(apply.getId());
+			String industry="";
+			if(usrCompany.getIndustryid()!=null && usrCompany.getIndustryid()!=0){
+				industry=dictoryDataService.getIndustryById(usrCompany.getIndustryid()).getName();
 			}
+			profileMap.put("industry", industry);
+			profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
+			profileMap.put("regaddress",dictoryDataService.getPCDNameByIds(usrCompany.getRegprovinceid(), usrCompany.getRegcityid(), usrCompany.getRegdistrictid()));
+			profileMap.put("lpliveaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLpliveprovinceid(), usrCompany.getLplivecityid(), usrCompany.getLplivedistrictid()));
+			profileMap.put("lphkaddress",dictoryDataService.getPCDNameByIds(usrCompany.getLphkprovinceid(), usrCompany.getLphkcityid(), usrCompany.getLphkdistrictid()));
+			profileMap.put("companyType", dictoryDataService.getValueNameById(usrCompany.getEnterprisetypeid()));
+			profileMap.put("companyTmployee", dictoryDataService.getValueNameById(usrCompany.getEmployeesid()));
+			profileMap.put("eduAtion", dictoryDataService.getValueNameById(usrCompany.getLpeducation()));
+			profileMap.put("marry", dictoryDataService.getValueNameById(usrCompany.getLpmarry()));
+			profileMap.put("workYears", dictoryDataService.getValueNameById(usrCompany.getLpindustryyears()));
 			return "view_busi_apply";
 		}else{
 			profileMap=new HashMap<String,String>();
@@ -140,19 +161,30 @@ public class FinanceApplyAdminAction extends BaseAction {
 	 * @return
 	 */
 	public String chuShen(){
-		financeApplyService.updateChuShen(apply, appCheck, left, right, getSessionAdm().getRealname());
-		return adminViewApply();
+		financeApplyService.updateChuShen(apply, appCheck, left, right, Constants.ZJW);
+		return "rtnUrl";
 	}
 	
 	/**
-	 * @description 资金网复审 修改订单状态
+	 * @description 资金网复审通过
 	 * @author zeroleavebaoyang@gmail.com
 	 * @since 2012-10-25|上午9:54:02
 	 * @return
 	 */
-	public String fuShen(){
-		financeApplyService.updateFuShen(apply, appCheck, getSessionAdm().getRealname());
-		return adminViewApply();
+	public String fuShenSucc(){
+		financeApplyService.updateOrdStatus(apply, appCheck, Constants.ZJW, Constants.ORD_ZJW_WAIT_UPLOAD);
+		return "rtnUrl";
+	}
+	
+	/**
+	 * @description 资金网复审不通过
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-25|上午9:54:02
+	 * @return
+	 */
+	public String fuShenBohui(){
+		financeApplyService.updateOrdStatus(apply, appCheck, Constants.ZJW, Constants.ORD_ZJW_CHECK_FAILURE);
+		return "rtnUrl";
 	}
 	
 	/**
@@ -162,28 +194,49 @@ public class FinanceApplyAdminAction extends BaseAction {
 	 * @return
 	 */
 	public String tuiHui(){
-		financeApplyService.updateTuiHui(apply, appCheck, left, right, getSessionAdm().getRealname());
-		return adminViewApply();
+		financeApplyService.updateTuiHui(apply, appCheck, left, right, Constants.ZJW, Constants.ORD_ZJW_WAIT_UPDATE);
+		return "rtnUrl";
 	}
 	
 	/**
-	 * 
+	 * 资金网审核通过
 	 * @author zeroleavebaoyang@gmail.com
 	 * @since 2012-10-26|下午1:35:52
 	 * @return
 	 */
-	public String finalCheck(){
-		financeApplyService.updateFinalCheck(apply, appCheck, getSessionAdm().getRealname());
-		return adminViewApply();
+	public String CheckSucc(){
+		financeApplyService.updateOrdStatus(apply, appCheck, Constants.ZJW, Constants.ORD_ZJW_CHECKPASS);
+		return "rtnUrl";
 	}
 	
+	/**
+	 * 提交给资金方
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-26|下午1:35:52
+	 * @return
+	 */
+	public String submitZjf(){
+		financeApplyService.updateOrdStatus(apply, appCheck, Constants.ZJW, Constants.ORD_ORG_WAIT_CHECK);
+		return "rtnUrl";
+	}
+	
+	/**
+	 * 申贷材料不符合，予以退回
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-26|下午1:35:52
+	 * @return
+	 */
+	public String backMertail(){
+		financeApplyService.updateOrdStatus(apply, appCheck, Constants.ZJW, Constants.ORD_ZJW_WAIT_UPLOAD);
+		return "rtnUrl";
+	}
 	/**
 	 * 拆分客户信息和申请信息的标识(复用)
 	 * @author zeroleavebaoyang@gmail.com
 	 * @since 2012-10-26|下午1:34:04
 	 * @param ofa
 	 */
-	private void reLoadStatus(OrdFinanceApply ofa) {
+	private void refreshStatus(OrdFinanceApply ofa) {
 		String j = ofa.getBaseCheckStatus();
 		if (StringUtils.isNotBlank(j)) {
 			left = j.substring(0, 1);
@@ -331,6 +384,37 @@ public class FinanceApplyAdminAction extends BaseAction {
 	public void setRight(String right) {
 		this.right = right;
 	}
+	public String getLoanOrgName() {
+		return loanOrgName;
+	}
+	public void setLoanOrgName(String loanOrgName) {
+		this.loanOrgName = loanOrgName;
+	}
+	public String getPindName() {
+		return pindName;
+	}
+	public void setPindName(String pindName) {
+		this.pindName = pindName;
+	}
+	public String getCindName() {
+		return cindName;
+	}
+	public void setCindName(String cindName) {
+		this.cindName = cindName;
+	}
+	public OrdApplyUsrCompany getUsrCompany() {
+		return usrCompany;
+	}
+	public void setUsrCompany(OrdApplyUsrCompany usrCompany) {
+		this.usrCompany = usrCompany;
+	}
+	public UsrUser getLoanUsr() {
+		return loanUsr;
+	}
+	public void setLoanUsr(UsrUser loanUsr) {
+		this.loanUsr = loanUsr;
+	}
+	
 
 
 }

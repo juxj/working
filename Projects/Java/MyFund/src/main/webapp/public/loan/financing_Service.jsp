@@ -13,6 +13,45 @@
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" ></script>
 <script type="text/javascript" src="/script/load-loan.js"></script>
 <script language="javascript">
+$(document).ready(function() {
+//通用选项卡2
+    $('.xxkbox2:gt(0)').hide(); //让从大于0开始的div都隐藏 
+    $('.first2').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
+    var ss = $('.tab_menu2 ul li');
+    ss.click(function() {
+        $(this).addClass('hover').siblings().removeClass();
+        var nb = ss.index(this);
+        $('.xxkbox2').eq(nb).show().siblings().hide();
+    });
+    
+    $('.xxkbox3:gt(0)').hide(); //让从大于0开始的div都隐藏 
+    $('.first3').show(); //让从第二个选项卡开始，选项卡中的第一个xxkbox显示出来，以便于页面多次使用； 
+    var sb = $('.tab_menu3 ul li');
+    sb.click(function() {
+        $(this).addClass('hover').siblings().removeClass();
+        var nb = sb.index(this);
+        $('.xxkbox3').eq(nb).show().siblings().hide();
+    });    
+    //} 
+    
+
+//$('.defaultvalue').css('color','#000000'); 
+    $('.defaultvalue').each(function(){   
+        $(this).data( "txt", $.trim($(this).val()) );   
+    }).focus(function(){   
+        // 获得焦点时判断域内的值是否和默认值相同，如果相同则清空   
+        //$(this).css('color','#333');   
+        if ( $.trim($(this).val()) === $(this).data("txt") ) {   
+            $(this).val("");   
+        }   
+    }).blur(function(){      
+        if ( $.trim($(this).val()) === "") {   
+            //$(this).css('color','#000000');   
+            $(this).val( $(this).data("txt") );   
+        }   
+    }   
+    );   
+}); 
 function CompanySubmit(){
 	var amount1 = $('#searchForm1 input[name=financeAmount]').val();
 	var date1 = $('#searchForm1 input[name=financeDate]').val();
@@ -108,7 +147,7 @@ function PersonSubmit(){
                 </dl>
               </form>
                </div> 
-                <div class="fr" style="padding-top: 18px;"><a href="/loan/financeProduct!financeSearchDetail.act?financeType=151&financeDate=12"><img src="/images/img_tab_loan1.gif" /></a></div>
+                <div class="fr" style="padding-top: 10px;padding-right:24px;"><a href="/loan/financeProduct!financeSearchDetail.act?financeType=151&financeDate=12"><img src="/images/img_tab_loan1.png" /></a></div>
                 <div style="position:absolute; top:258px; left:265px;">
                   <input type="button" onfocus="this.blur()" onclick="CompanySubmit();" class="btnsub bred" style="width:100px;" value="搜 索" />
                 </div>              
@@ -142,20 +181,28 @@ function PersonSubmit(){
                   </dl>
               </form>        
                 </div> 
-                <div class="fr" style="padding-top: 18px;"><a href="/loan/financeProduct.act?financeType=152&financeDate=12"><img src="/images/img_tab_loan2.gif" /></a></div>                  
+                <div class="fr" style="padding-top: 10px;padding-right:24px;"><a href="/loan/financeProduct.act?financeType=152&financeDate=12"><img src="/images/img_tab_loan2.png" /></a></div>                  
                  <div style="position:absolute; top:258px; left:265px;">
 	                <input type="button" onfocus="this.blur()" onclick="PersonSubmit();" class="btnsub bred" style="width:100px;" value="搜 索" />
 	             </div>	                  
             </div>        
           </div>
-        </div>         
+        </div>
+		<div class="clear"> &nbsp; </div>                 
         <div class="hr_10"> &nbsp; </div>
-        <div style="width:630px; height:107px;"><a href="/club/clubAction.act"><img src="/images/img_loan_Club.jpg" /></a></div>
+        <div style="width:630px; height:110px;"><a href="/loan/financeProduct!cusViewFinance.act?product.id=42"><img src="/images/ad_b2_1.jpg" /></a></div>
         <div class="hr_10"> &nbsp; </div>
-      	<!-- 投资俱乐部 -->         
-	  	<jsp:include page="../club/_query_panel.jsp" />
-        <!-- 投资俱乐部 -->
-        <div class="hr_10"> &nbsp;</div> 
+	    <div  >
+	    	<div style="width:150px; height:155px; float:left; margin-right:10px;margin-bottom: 10px;"><a href="/loan/financeProduct!cusViewFinance.act?product.id=77" ><img src="/images/ad_b2_2.jpg" /></a></div>
+	    	<div style="width:150px; height:73px; float:left; margin-right:10px;"><a href="/loan/financeProduct!cusViewFinance.act?product.id=14" ><img src="/images/ad_b2_2_1.jpg" class="b_div"/></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=80" ><img src="/images/ad_b2_2_2.jpg" class="b_div"/></a></div>
+	    	<div style="width:150px; height:155px; float:left; margin-right:10px;margin-bottom: 10px;"><a href="/loan/financeProduct!cusViewFinance.act?product.id=13" ><img src="/images/ad_b2_3.jpg" /></a></div>
+	    	<div style="width:150px; height:73px; float:left; "><a href="/loan/financeProduct!cusViewFinance.act?product.id=8" ><img src="/images/ad_b2_3_1.jpg" class="b_div"/></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=15" ><img src="/images/ad_b2_3_2.jpg" class="b_div"/></a></div>
+
+	    </div>
+		<div class="clear"> &nbsp; </div>
+        <div style="width:630px; height:110px;"><a href="/club/clubAction.act"><img src="/images/img_loan_Club.jpg" /></a></div>   
+        <div class="hr_10"> &nbsp; </div>
+
                
         <!-- 热门融资产品 <div class="grid_350">
           <div class="menu_red white"><span class="fr white"><a href="">更多»</a></span>
@@ -222,10 +269,6 @@ function PersonSubmit(){
     <div style="width:310px; float:right;">
         <div style="width:310px; height:315px;"><a href="/finance/financeProduct!cateringf.act"><img src="/images/shipin_img.jpg" /></a></div>
         <div class="hr_10"> &nbsp; </div>
-	    <div class="grid_350">
-	    	<div class="b_div"><a href="/loan/financeProduct!cusViewFinance.act?product.id=23" class="b_img"><img src="/images/b_img01.jpg" /></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=31"><img src="/images/b_img02.jpg" /></a></div>
-	    	<div class="b_div"><a href="/loan/financeProduct!cusViewFinance.act?product.id=33" class="b_img"><img src="/images/b_img03.jpg" /></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=40"><img src="/images/b_img04.jpg" /></a></div>
-	    </div>        
 	    <div class="grid_350 fr" style="width:310px; overflow:hidden;">
 	      <div class="menu_red white grid_350" >
 	      	<h6>热门融资产品</h6>
@@ -235,8 +278,8 @@ function PersonSubmit(){
 	        </div>
 	    </div>
         <div class="hr_10"> &nbsp; </div>
-	    <div class="grid_350 fr" style="width:308px; overflow:hidden;">
-	      <div class="menu_red white grid_350">
+	    <div class="grid_350 fr" style="width:310px; overflow:hidden;">
+	      <div class="menu_red white">
 	      	<h6 >热门服务</h6>
 	      </div>
 	      <div class="box_3 " style="padding-bottom:10px;">

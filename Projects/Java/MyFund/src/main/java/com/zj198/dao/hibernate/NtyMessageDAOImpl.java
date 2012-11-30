@@ -34,9 +34,9 @@ public class NtyMessageDAOImpl extends HibernateDAO<NtyMessage, Long> implements
 	 */
 	public Pager findComMsgs(Integer pageNo, Integer pageSize, Integer uid) {
 		Hashtable<String, Object> j = new Hashtable<String, Object>();
-		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver)";
+		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver) order by id desc";
 		j.put("receiver", uid);
-		return pagedQuery(hql, pageNo, pageSize, j);
+		return super.pagedQuery(hql, pageNo, pageSize, j);
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class NtyMessageDAOImpl extends HibernateDAO<NtyMessage, Long> implements
 	 */
 	public Pager findComMsgsNoRead(Integer pageNo, Integer pageSize, Integer uid) {
 		Hashtable<String, Object> j = new Hashtable<String, Object>();
-		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 0 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver)";
+		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 0 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver) order by id desc";
 		j.put("receiver", uid);
 		return pagedQuery(hql, pageNo, pageSize, j);
 	}
@@ -68,7 +68,7 @@ public class NtyMessageDAOImpl extends HibernateDAO<NtyMessage, Long> implements
 	 */
 	public Pager findComMsgsRead(Integer pageNo, Integer pageSize, Integer uid) {
 		Hashtable<String, Object> j = new Hashtable<String, Object>();
-		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 1 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver)";
+		String hql = "from NtyMessage o where o.type = 2 and o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 1 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver) order by id desc";
 		j.put("receiver", uid);
 		return pagedQuery(hql, pageNo, pageSize, j);
 	}
@@ -81,7 +81,7 @@ public class NtyMessageDAOImpl extends HibernateDAO<NtyMessage, Long> implements
 	 * @return
 	 */
 	public Integer getMsgNo(Integer uid) {
-		String hql = "from NtyMessage o where o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 0 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver)";
+		String hql = "from NtyMessage o where o.isSenderDeleted = 0 and exists (select u.id from NtyReceiver u where u.isRead = 0 and u.isReceiverDeleted = 0 and u.messageid = o.id and u.receiver = :receiver) order by id desc";
 		return getTotalRows(hql, "receiver", uid);
 	}
 }

@@ -36,12 +36,14 @@ public class UsrUser implements java.io.Serializable {
 	}
 
 	//简单用户对象，用于存放登录用户在session中
-	public UsrUser(Integer id, Short type,String username, String realname,Short gender,Short status,Short activetype, Short auditstatus,Integer userTypeGroup,String avatar,Integer viptype) {
+	public UsrUser(Integer id, Short type,String username, String realname, String email, String mobile,Short gender,Short status,Short activetype, Short auditstatus,Integer userTypeGroup,String avatar,Integer viptype) {
 		super();
 		this.id = id;
 		this.type = type;
 		this.username = username;
 		this.realname = realname;
+		this.email = email;
+		this.mobile = mobile;
 		this.gender = gender;
 		this.status = status;
 		this.activetype = activetype;

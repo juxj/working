@@ -56,13 +56,13 @@
 				      <span>税务登记证号码：${ordCompany.faxcode }</span>
 				      <span>开户许可证号码：${ordCompany.bankpermitcode }</span>
 				      <span>贷款卡号：${ordCompany.loancard }</span>
-				      <span>注册地址：${ordCompany.regaddress }</span>
+				      <span>注册地址：${profileMap['address'] } ${ordCompany.regaddress }</span>
 				      <span>邮编：${ordCompany.regpostcode }</span>
 				      <span>所属园区：无</span>
 				      <span>企业类型：<common:print valueId="ordCompany.enterprisetypeid" /></span>
 				      <span>员工人数：<common:print valueId="ordCompany.employeesid" /></span>
 				      <span>经营范围：${ordCompany.bizscope }</span>
-				      <span>企业经营地址：${ordCompany.bizaddress }</span>
+				      <span>企业经营地址：${profileMap['address'] } ${ordCompany.bizaddress }</span>
 				      <span>邮编：${ordCompany.bizpostcode }</span>			      
 				    </div>					
 				</div>
@@ -76,7 +76,7 @@
 				      <span>身份证号码：${ordCompany.lpcid }</span>
 				      <span>手机：${ordCompany.lpmobile}</span>
 				      <span>家庭电话：${ordCompany.lphometel }</span>
-				      <span>常住地址：${ordCompany.lpliveaddress }</span>
+				      <span>常住地址：${profileMap['address'] } ${ordCompany.lpliveaddress }</span>
 				      <span>邮编：${ordCompany.lplivepostcode }</span>
 				      <span>户籍所在地：${profileMap['address'] }</span>
 				      <span>邮编：${ordCompany.lplivepostcode }</span>

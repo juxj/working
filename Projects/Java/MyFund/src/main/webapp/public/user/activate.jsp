@@ -26,10 +26,16 @@ function check_email() {
 	var email_error = $("#email_error");
 	if(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($("#email").val())){
 		email_error.html("");
+	}else if(!$("#email").val()){
+		email_error.addClass("txt-err");
+		email_error.html("请输入邮箱。");
+		checkFormResult=1;
+		return false;
 	}else{
 		email_error.addClass("txt-err");
-		email_error.html("邮箱用于激活用户、找回密码等。");
-		checkformresult=1;
+		email_error.html("邮箱格式错误。");
+		checkFormResult=1;
+		return false;
 	}
 }
 function check_remail() {
@@ -39,7 +45,8 @@ function check_remail() {
 	}else{
 		remail_error.addClass("txt-err");
 		remail_error.html("输入的邮箱地址不一致");
-		checkformresult=1;
+		checkFormResult=1;
+		return false;
 	}
 }
 //文本框触发焦点效果
@@ -49,9 +56,9 @@ $(function() {
     }).blur(function() {
         $(this).removeClass("input-focus");
     });
-    $("#email").focus(function() {
+    //$("#email").focus(function() {
         $(this).attr("value","");
-    });
+    //});
       
 });
 function vershow(){
@@ -69,34 +76,25 @@ function verCode(){
 	}
 }
 function recoveryInfo(){
-	var checkformresult=0;
+	checkFormResult=0;
 	if($("#verifycode").val()==""){
 		$('#message').html("请填写验证码");
-		checkformresult=1;
-		return false;
 	}
 	if($('#email').val()!="" && $("#verifycode").val()!=""){
 		check_email();check_remail();
-		if(checkformresult==0){
+		if(checkFormResult==0){
 			$.post("/Account!reSendActiveCode.act",{email:$("#email").val(),verifycode:$("#verifycode").val()},function(a){
 				if(a=='success'){
 					$("#pop_email").dialog('close');
-					$("#accMsg").html("激活邮件已重新发送，请注意查收。");
+					alert("激活邮件已重新发送，请注意查收。");
+					window.location.href="user/UserAction.act";
 				}else{
 					$('#message').html(a);
 				}
 			});
 		}
 		check_email();check_remail();
-	}//else{
-	//	$.post("/Account!reSendActiveCode.act",function(a){
-	//		if(a=='success'){
-	//			$("#accMsg").html("激活码已重新发送，请注意查收。");
-	//		}else{
-	//			$('#message').html(a);
-	//		}
-	//	});
-	//}
+	}
 }
 var settime=60;
   var i;
@@ -136,26 +134,25 @@ function sendMobileMsg(){
   <div class="box_948" style="height:auto; overflow:hidden;"> <span class="yourposition">激活帐户</span>
     <div class="hr_20"> &nbsp; </div>
     <h6 class="red margin_lr_40">尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生</s:if><s:else>女士</s:else>，感谢您注册中国资金网，请完成帐户激活！</h6>
-    <h6 class="margin_lr_40"> &nbsp;&nbsp; <span id="accMsg" style="color: red"><s:if test="msg!=null">${msg}</s:if></span></h6>
-    <div class="hr_10"> &nbsp; </div>
-    <div class="fl" style="padding-top:10px; padding-left:40px;padding-right:20px;padding-bottom:60px;"><img src="/images/activate_ico.jpg"/></div>
+    <hr style="width:92%" />
+    <div class="fl" style="margin:10px 20px 0px 40px; "><img src="/images/activate_ico.png"/></div>
     <div class="margin_lr_40">
-			<h6>中国资金网已向您的注册邮箱<a href="#" id="mail" target="_blank">${email}</a>发送了一封验证激活邮件，为了您的帐号安全，请对帐户进行激活验证！</h6>
+			<h6>中国资金网已向您的注册邮箱<a href="#" id="mail" target="_blank" class="red">${email}</a>发送了一封验证激活邮件，为了您的帐号安全，请对帐户进行激活验证！</h6>
 			<h6>您可以通过以下两种方式完成激活验证：</h6>			
 			<h6>1：直接点击邮件中的链接，完成帐号激活。</h6>
 			<h6>2：在下方输入邮件中的验证码，完成帐号激活。</h6>			
 			<br/>
 		    <form id="actForm" action="/Account!activate.act" method="post" class="box_form01">
 			<h6 style="width:800px;">输入激活码：<input id="Verification_code" name="activeCode" value="" class="input-text"/>
-		     <input type="button" onfocus="this.blur()" onclick="verCode();" class="btnsub bred" style="width:98px; margin-left:20px" value="确认提交" />&nbsp;&nbsp;&nbsp;<a class="btn blue1" href="javascript:vershow();">
- 更改邮箱</a>&nbsp;&nbsp;<a id="sendEmail" class="btn blue1" href="javascript:sendMobileMsg();">重新发送验证码</a>&nbsp; &nbsp;<font id="nullmsg"  style="display: none;" class="red">请输入验证码</font>
+		     <input type="button" onfocus="this.blur()" onclick="verCode();" class="btnsub bred" style="width:98px; margin-left:20px" value="确认提交" /><br/><br/><a class="btn blue1" href="javascript:vershow();">
+ 更改邮箱</a>&nbsp;&nbsp;<a id="sendEmail" class="btn blue1" href="javascript:sendMobileMsg();">重新发送激活码</a>&nbsp; &nbsp;<font id="nullmsg"  style="display: none;" class="red">请输入验证码</font>
 		    </h6>
 		    </form>
 	</div>
 	<div class="hr_20"> &nbsp; </div>
 	<div class="hr_10"> &nbsp; </div>
 	<div class="box_5 margin_lr_40" style="background:#f9f9f7; height:140px; margin-bottom:25px;">
-		<p class="notice" style="font-size:14px;"><strong>收不到邮件？</strong><br />
+		<p class="notice" ><strong>收不到邮件？</strong><br />
 			    可能您的激活邮件还在发送过程中，如果您在5分钟后还没有收到邮件，您可以通过以下几步来重新获取激活邮件：<br />
 			1. 检查邮箱的垃圾邮件目录，并将中国资金网 noreply@zj198.com 加入白名单。<br />
 			2. 点击 <!-- <a class="red"; href="javascript:recoveryInfo();"><strong>重新发送 </strong></a>激活邮件 您也可以点此 --> <a class="red" href="javascript:vershow();"><strong>更改邮箱 </strong></a>，中国资金网将会将激活邮件发送到该邮箱中。<br />

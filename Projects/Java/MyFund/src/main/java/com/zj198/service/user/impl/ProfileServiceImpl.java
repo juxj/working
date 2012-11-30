@@ -12,7 +12,6 @@ import com.zj198.dao.UsrBankDAO;
 import com.zj198.dao.UsrCompanyDAO;
 import com.zj198.dao.UsrFinanceorgDAO;
 import com.zj198.dao.UsrLoginhistoryDAO;
-import com.zj198.dao.UsrMenuDAO;
 import com.zj198.dao.UsrOrgAttachDAO;
 import com.zj198.dao.UsrPersonDAO;
 import com.zj198.dao.UsrServiceorgDAO;
@@ -23,14 +22,12 @@ import com.zj198.model.UsrBank;
 import com.zj198.model.UsrCompany;
 import com.zj198.model.UsrFinanceorg;
 import com.zj198.model.UsrLoginhistory;
-import com.zj198.model.UsrMenu;
 import com.zj198.model.UsrOrgAttach;
 import com.zj198.model.UsrPerson;
 import com.zj198.model.UsrServiceorg;
 import com.zj198.model.UsrUser;
 import com.zj198.service.user.ProfileService;
 import com.zj198.util.Constants;
-import com.zj198.util.NumberUtil;
 
 public class ProfileServiceImpl implements ProfileService {
 	
@@ -76,13 +73,14 @@ public class ProfileServiceImpl implements ProfileService {
 		this.usrOrgAttachDAO = usrOrgAttachDAO;
 	}
 	@Override
-	public void saveorupdate(Object profile) {
-		ActionContext context = ActionContext.getContext();
-		UsrUser user = (UsrUser)context.getSession().get("_user");
+	public void saveorupdate(Object profile,Integer userId) {
+		
+		UsrUser user = usrUserDAO.get(userId);
 		DicUsertype ut = dicUsertypeDAO.get(user.getType()+0);
 		if(ut==null){
 			return;
 		}
+		
 //		if(user.getAuditstatus()==Constants.USER_AUDITSTATUS_DONE){//如果是已审核，则状态修改为未审核
 //			user.setAuditstatus(Constants.USER_AUDITSTATUS_WAIT);
 //			//更新session
@@ -94,19 +92,19 @@ public class ProfileServiceImpl implements ProfileService {
 //		}
 		switch (ut.getGroup()){
 			case Constants.USERTYPE_GROUP_COMPANY:
-				saveOrUpdateCompanyProfile((UsrCompany)profile,user.getId());
+				saveOrUpdateCompanyProfile((UsrCompany)profile,userId);
 				break;
 			case Constants.USERTYPE_GROUP_BANK:
-				saveOrUpdateBankProfile((UsrBank)profile,user.getId());
+				saveOrUpdateBankProfile((UsrBank)profile,userId);
 				break;
 			case Constants.USERTYPE_GROUP_FINANCEORG:
-				saveOrUpdateFinanceorgProfile((UsrFinanceorg)profile,user.getId());
+				saveOrUpdateFinanceorgProfile((UsrFinanceorg)profile,userId);
 				break;
 			case Constants.USERTYPE_GROUP_SERVICEORG:
-				saveOrUpdateServiceorgProfile((UsrServiceorg)profile,user.getId());
+				saveOrUpdateServiceorgProfile((UsrServiceorg)profile,userId);
 				break;
 			case Constants.USERTYPE_GROUP_PERSONAL:
-				saveOrUpdatePersonProfile((UsrPerson)profile,user.getId());
+				saveOrUpdatePersonProfile((UsrPerson)profile,userId);
 				break;
 		}
 	}

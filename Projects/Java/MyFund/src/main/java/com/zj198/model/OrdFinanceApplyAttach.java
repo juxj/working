@@ -27,6 +27,9 @@ public class OrdFinanceApplyAttach implements java.io.Serializable {
 	private String supplyWay;
 	private Integer isdeleted;
 	private Date supplyCreatedt;
+	private String postid;
+	private String attachMemo;
+	private Integer uploadWay;
 
 	/** default constructor */
 	public OrdFinanceApplyAttach() {
@@ -177,6 +180,30 @@ public class OrdFinanceApplyAttach implements java.io.Serializable {
 
 	public void setSupplyWay(String supplyWay) {
 		this.supplyWay = supplyWay;
+	}
+
+	public String getPostid() {
+		return postid;
+	}
+
+	public void setPostid(String postid) {
+		this.postid = postid;
+	}
+
+	public String getAttachMemo() {
+		return attachMemo;
+	}
+
+	public void setAttachMemo(String attachMemo) {
+		this.attachMemo = attachMemo;
+	}
+
+	public Integer getUploadWay() {
+		return uploadWay;
+	}
+
+	public void setUploadWay(Integer uploadWay) {
+		this.uploadWay = uploadWay;
 	}
 
 }

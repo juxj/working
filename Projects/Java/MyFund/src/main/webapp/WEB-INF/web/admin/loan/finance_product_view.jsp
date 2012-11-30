@@ -84,11 +84,11 @@ function updatestatus(value){
 						<tr><td>贷款利率</td><td><common:print valueId="product.interestType" /></td></tr>
 						<s:if test="product.interests.size > 0">
 						<tr><td></td><td>
-							<table width="300">
+							<table width="400">
 							<tr>
 								<th align='left'>贷款期限</th>
 								<th align='left'>基准利率</th>
-								<th align='left'>利率上浮</th>
+								<th align='left'>利率范围</th>
 							</tr>
 							<s:iterator value="product.interests" id="item">
 							<tr>
@@ -99,7 +99,7 @@ function updatestatus(value){
 									<common:print valueId="#item.financeEnddt" type="rate"/>%
 								</td>
 								<td>
-									+${item.rateUp }%
+									${rateDown } - ${rateUp }%
 								</td>
 							</tr>
 							</s:iterator>
@@ -139,13 +139,13 @@ function updatestatus(value){
                 		</td></tr></s:if>
 						<tr><td>资料递交方式</td><td><common:print valueId="product.uploadWay" /></td></tr>
 						<tr class="even" style="color:#97181d;font-weight: bold;"><td colspan="2">申请条件</td></tr>
-						<tr><td>申请企业所属行业</td><td><s:if test="productIndustryList.size()==0">不限</s:if><s:else><s:iterator value="productIndustryList" id="item">${item.name }&nbsp;</s:iterator></s:else></td></tr>
-						<tr><td>企业的总资产</td><td>${product.companyAllAsset}&nbsp;万元</td></tr>
-						<tr><td>企业的年营业收入</td><td><common:print valueId="product.operatIncome" valueSetMap="ZJ104"/></td></tr>
-						<tr><td>企业成立年数</td><td><common:print valueId="product.settingYear" valueSetMap="ZJ105"/></td></tr>
-						<tr><td>保证金</td><td><common:print valueId="product.needEnsure" valueSetMap="ZJ101"/></td></tr>
-						<tr><td>申请人行业经验</td><td><common:print valueId="product.experience" valueSetMap="ZJ106"/></td></tr>
-						<tr><td>经营场所</td><td><common:print valueId="product.runningArea" valueSetMap="ZJ103"/></td></tr>
+						<tr><td>所属行业</td><td><s:if test="productIndustryList.size()==0">不限</s:if><s:else><s:iterator value="productIndustryList" id="item">${item.name }&nbsp;</s:iterator></s:else></td></tr>
+						<tr class="finance_type_151"><td>企业的总资产</td><td>${product.companyAllAsset}&nbsp;万元</td></tr>
+						<tr><td>年营业收入</td><td><common:print valueId="product.operatIncome" valueSetMap="ZJ104"/></td></tr>
+						<tr class="finance_type_151"><td>企业成立年数</td><td><common:print valueId="product.settingYear" valueSetMap="ZJ105"/></td></tr>
+						<tr class="finance_type_152"><td>保证金</td><td><common:print valueId="product.needEnsure" valueSetMap="ZJ101"/></td></tr>
+						<tr class="finance_type_152"><td>申请人行业经验</td><td><common:print valueId="product.experience" valueSetMap="ZJ106"/></td></tr>
+						<tr class="finance_type_152"><td>经营场所</td><td><common:print valueId="product.runningArea" valueSetMap="ZJ103"/></td></tr>
               			<tr class="finance_type_153 finance_type_154" style="display:none;"><td>申请人月工资收入</td><td><common:print valueId="product.salaryIncome" valueSetMap="ZJ107"/></td></tr>
               			<tr class="finance_type_153 finance_type_154" style="display:none;"><td>工资发放形式</td><td><common:print valueId="product.salaryPutWay" valueSetMap="ZJ108"/></td><td></td></tr>
 						<tr class="finance_type_153 finance_type_154" style="display:none;"><td>现单位工作时长</td><td><common:print valueId="product.workTime" valueSetMap="ZJ109"/></td></tr>

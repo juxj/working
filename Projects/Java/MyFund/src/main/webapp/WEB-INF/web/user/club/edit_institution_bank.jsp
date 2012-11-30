@@ -64,19 +64,19 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				<tr>
-					<td width="18%" class="form_table field_name">标题</td>
+					<td width="18%" class="form_table field_name">标题：</td>
 					<td><s:textfield id="clbSupplyInfo.title" name="clbSupplyInfo.title" cssClass="required"  maxlength="32"/></td>
 				</tr>
 				<jsp:include page="_work_area.jsp" />
 				<tr>
-					<td class="form_table field_name">银行类型</td>
+					<td class="form_table field_name">银行类型：</td>
 					<td>
 						<s:radio list="#{'中资银行':'中资银行','外资银行':'外资银行','股份制银行':'股份制银行'}" cssClass="required"  name="clbSupplyInfo.companytype"></s:radio>
 					</td>
 				</tr>
 				
 				<tr>
-					<td class="form_table field_name">理财服务</td>
+					<td class="form_table field_name">理财服务：</td>
 					<td>
 						<s:set name="list1" value="#{'自主产品':'自主产品','代销产品':'代销产品' }" />
 						<s:iterator id="item" value="list1" status="st">
@@ -95,7 +95,7 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				<tr>
-					<td class="form_table field_name">贷款服务</td>
+					<td class="form_table field_name">贷款服务：</td>
 					<td>
 						<s:set name="list2" value="#{'个人贷款':'个人贷款','企业贷款':'企业贷款' }" />
 						<s:iterator id="item" value="list2" status="st">
@@ -115,11 +115,11 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				<tr>
-					<td class="form_table field_name">信息时效</td>
+					<td class="form_table field_name">信息时效：</td>
 					<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 				</tr>
 				<tr>
-					<td class="form_table field_name">资金描述</td>
+					<td class="form_table field_name">资金描述：</td>
 					<td>
 						<s:textarea rows="8" cols="80" id="clbSupplyInfo.remark" name="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 					</td>

@@ -65,32 +65,32 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td width="18%" class="form_table field_name">标题</td>
+				<td width="18%" class="form_table field_name">标题：</td>
 				<td>
 					<s:textfield name="clbSupplyInfo.title"  id="clbSupplyInfo.title" cssClass="required"/>
 				</td>
 			</tr>
 			<jsp:include page="_work_area.jsp" />
 			<tr>
-				<td class="form_table field_name">所属行业</td>
+				<td class="form_table field_name">所属行业：</td>
 				<td>
 					<jsp:include page="_supply_info_industry.jsp" />
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">投资额度</td>
+				<td class="form_table field_name">投资额度：</td>
 				<td>
 					<s:radio list="amountRangeList.{?#this.code<10000}" listKey="name" listValue="name"  cssClass="required" name="clbSupplyInfo.workTranche"></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">信息时效</td>
+				<td class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" 
 					cssClass="required" listValue="name" 
 					name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">资金描述</td>
+				<td class="form_table field_name">资金描述：</td>
 				<td>
 					<textarea rows="8" cols="80" name="clbSupplyInfo.remark" id="clbSupplyInfo.remark" class="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"></textarea>
 				</td>

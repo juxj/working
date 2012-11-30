@@ -27,13 +27,11 @@
   <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
-        <table border="0" cellspacing="0" cellpadding="0"  width="100%"  class="box_5">
+        <table border="0" cellspacing="0" cellpadding="0"  width="100%"  class="Search_table">
           <tr>
-            <td><span class="Search_t_title red fl">中融-中天城投基础设施1号财产权投资集合资金信托计划</span>
-            <span class="Search_t_title fr"><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></span></td>
+            <td colspan="4" class="Search_t_title"><div class="red fl">中融-中天城投基础设施1号财产权投资集合资金信托计划</div>
+            <div class="fr"><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></div></td>
           </tr>
-        </table>
-        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
             <td class="Search_t_connect">产品名称</td>
             <td colspan="3" style="padding-left:10px;">中融-中天城投基础设施1号财产权投资集合资金信托计划</td>

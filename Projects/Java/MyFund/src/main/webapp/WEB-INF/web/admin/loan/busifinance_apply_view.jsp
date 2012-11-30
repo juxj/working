@@ -20,7 +20,14 @@
 <script language="javascript">
 $(function(){
 	$('#checkForm').validate();
-})
+	$('#checkForm2').validate();
+	$('#checkForm3').validate();
+	$('#checkForm4').validate();
+	$('#checkForm5').validate();
+	$('#checkForm6').validate();
+	$('#checkForm7').validate();
+	$('#checkForm8').validate();
+});
 function updatestatus(value){
 	if (window.confirm('确定提交吗！')) {
 		$('#apply_status').val(value);
@@ -30,7 +37,6 @@ function updatestatus(value){
 			$("#checkForm").submit();
 		}
 	}
-
 }
 function inputCheckView(cview){
 	$('#check_view').val(cview);
@@ -40,9 +46,32 @@ function agreeNumInput(an){
 	$('#apply_agreeNum').val(an);
 	$("#checkForm").submit();
 }
-
+function allPass(){
+	var arrChk=$("input[name='ckbox']:checked");
+	if(arrChk.length > 0){
+		if(confirm("确定所选资料审核通过吗？")){
+			$("#loanForm").attr("action","/admin/loan/financeAttach!allMaterialsPass.act");
+			$("#loanForm").submit();
+		}
+	}else{
+		alert("请您选择至少一条资料操作！");
+		return false;
+	}
+}
+function allUnPass(){
+	var arrChk=$("input[name='ckbox']:checked");
+	if(arrChk.length > 0){
+		if(confirm("确定所选资料审核不通过吗？")){
+			$("#loanForm").attr("action","/admin/loan/financeAttach!allMaterialsUnPass.act");
+			$("#loanForm").submit();
+		}
+	}else{
+		alert("请您选择至少一条资料操作！");
+		return false;
+	}
+}
 function applyCancel(){
-	//$("#loanForm").("action","/user/loan/financeAttach!selectCancel.act");
+	//$("#loanForm").("action","/admin/loan/financeAttach!selectCancel.act");
 	var arrChk=$("input[name='ckbox']:checked");
 	if(arrChk.length > 0){
 		$("#loanForm").submit();
@@ -52,19 +81,20 @@ function applyCancel(){
 	}
 }
 function exportPdf(){
-	window.location.href = '/user/loan/downloadAttach!downPdf.act'
+	window.location.href = "/admin/loan/downloadAttach!downPdf.act?apply.id=${apply.id}";
 }
 $(function() {
-	$("#selectall").toggle(function() {
-		$("#selectall").each(function() {
-			$("input[name='ckbox']").attr('checked', true);
-		});
-		$(this).attr("value","取消全选");
-	}, function() {
-		$("#selectall").each(function() {
-			$("input[name='ckbox']").attr('checked', false);
-		});
-		$(this).attr("value","全部选中");
+	$("#selectall").bind("click",function() {
+		if($(this).attr("checked")){
+			$("input[name='ckbox']").each(function() {
+				$(this).attr('checked', true);
+			});
+		}else{
+			$("input[name='ckbox']").each(function() {
+				$(this).attr('checked', false);
+			});
+		}
+		
 	});
 })
 $(function() {
@@ -73,21 +103,21 @@ $(function() {
 	$('.year').html(y);
 	var jm = j.getFullYear() + "年" + j.getMonth() + "月";
 	$('.yearmoth').html(jm);
-})
+});
 function all() {
 		$.post('/admin/loan/financeApply!applyCheckList.act', {
 			applyId : $('#applyid').val()
 		}, function(data) {
 			$("#all_log").html(data);
-		})
+		});
 		$("#all_log").dialog({
-			width : 400,
+			width : 500,
 			height : 300,
 			modal : true
 		});
 	}
 function print(appId){
-	window.open('/user/loan/userApplyManag!print.act?print=1&apply.id='+appId)
+	window.open('/admin/loan/userApplyManag!print.act?print=1&apply.id='+appId);
 }
 function chushen1(){
 	$("#chushen1").dialog({
@@ -105,9 +135,13 @@ function chushen2(){
 }
 function chuShenRes(a,b){
 	$('#check_view1').val($('#area1').val());
-	$('#check_view2').val($('#area2').val());
 	$('#checkForm').attr('action','/admin/loan/financeApply!chuShen.act?left='+a+'&right='+b);
 	$('#checkForm').submit();
+}
+function chuShenRes2(a,b){
+	$('#check_view2').val($('#area2').val());
+	$('#checkForm2').attr('action','/admin/loan/financeApply!chuShen.act?left='+a+'&right='+b);
+	$('#checkForm2').submit();
 }
 function fushen1(){
 	$("#fushen1").dialog({
@@ -128,7 +162,72 @@ function fushen3(){
 		width : 600,
 		height : 200,
 		modal : true
+	});web
+}
+function fushen4(){
+	var res = true;
+	var cont = "";
+	$(".upstatus").each(function(){
+		var j = $(this).val();
+		//所有的材料都审核过
+		if(j=='213'||j=='216'||j=='218'){
+			cont = "请确认已审核完所有资料后再执行此操作！";
+			res = false;
+			return false;
+		}else{
+			//所有的材料都通过
+			if(j=='215'){
+				cont = "已有资料退回，无法执行此操作！";
+				res = false;
+				return false;
+			}
+		}
 	});
+	if(res){
+		$("#fushen4").dialog({
+			width : 600,
+			height : 250,
+			modal : true
+		});
+	}else{
+		alert(cont);
+	}
+}
+function fushen5(){
+	$("#fushen5").dialog({
+		width : 600,
+		height : 300,
+		modal : true
+	});
+}
+function fushen6(){
+	var res = true;
+	var cont = "";
+	$(".upstatus").each(function(){
+		var j = $(this).val();
+		//所有的材料都审核过
+		if(j=='213'||j=='216'||j=='218'){
+			cont = "请确认已审核完所有资料后再执行此操作！";
+			res = false;
+			return false;
+		}else{
+			//所有的材料都通过
+			if(j=='215'){
+				cont = "已有资料退回，无法执行此操作！";
+				res = false;
+				return false;
+			}
+		}
+	});
+	if(res){
+		$("#fushen6").dialog({
+			width : 600,
+			height : 250,
+			modal : true
+		});
+	}else{
+		alert(cont);
+	}
 }
 function fuShenRes1(){
 	$('#check_view3').val($('#area3').val());
@@ -143,17 +242,75 @@ function fuShenRes2(){
 	var v2=$("input[name='rit']:checked");
 	if(v1.length>0){
 		$('#left_hidden').val(2);
+	}else{
+		$('#left_hidden').val(1);
 	}
 	if(v2.length>0){
 		$('#right_hidden').val(2);
+	}else{
+		$('#right_hidden').val(1);
 	}
-	$('#check_view5').val($('#area5').val());
-	$('#checkForm5').submit();
+	if(v1.length==0 && v2.length==0){
+		alert("请选择要退回的信息");
+	}else{
+		$('#check_view5').val($('#area5').val());
+		$('#checkForm5').submit();
+	}
 }
+function fuShenRes4(){
+	$('#check_view6').val($('#area6').val());
+	$('#checkForm6').submit();
+}
+function fuShenRes5(){
+	$('#check_view7').val($('#area7').val());
+	$('#checkForm7').submit();
+}
+function fuShenRes6(){
+	$('#check_view8').val($('#area8').val());
+	$('#checkForm8').submit();
+}
+function downloadAttach(attachid){
+	var url = "financeAttach!viewAttach.act";
+	var param = {'attachId':attachid};
+	$.post(url,param, function(data){
+		var da = $('#downloadform');
+		if(da.length == 0){
+			da = $("<div id='downloadform'></div>");
+		}else{
+			da.remove();
+			da = $("<div id='downloadform'></div>");
+		}
+		da.append(data);
+		$('#download_attach').append(da);
+		$('#download_attach').dialog({width:400,modal:true});
+	}, 'html');
+}
+$(function(){
+	$('.hid tr').each(function () {
+		if($(this).attr("class")=="top_color01"){
+			$(this).hide();
+		}
+	})
+	$("#myhide").toggle(function(){
+		$('.hid tr').show();
+	},function(){
+		$('.hid tr').each(function () {
+			if($(this).attr("class")=="top_color01"){
+				$(this).hide();
+			}
+		})
+	})
+})
+function viewAgreeAttach(){
+    	$('#agreeAttach').dialog({width : 500,modal : true});
+    }
 </script>
+<style>
+.ico_name{margin-right:20px; display:block;}
+</style>
   </head>
   
-  <body> 
+  <body> <input type="hidden" id="applyid" name="applyId" value="${apply.id }">
 <div id="hld">
 	<div class="wrapper">
 		<s:include value="/WEB-INF/web/admin/head.jsp"></s:include>
@@ -166,20 +323,54 @@ function fuShenRes2(){
 	<div class="line" style="background:#f9f9f7;">
 		<div class="f_text01">
 			<span>申请单号：${apply.applyNum}</span>
-			<span>协议编号：<font color="d5652c"> ${apply.agreeNum}</font></span>
+			<span>协议编号：<font color="d5652c"><s:if test="apply.agreeNum =='' || apply.agreeNum ==null">暂无</s:if><s:else>${apply.agreeNum}</s:else> </font></span>
 			<span>申请状态：<font color="d5652c"><common:print valueId="apply.applyStatus" /></font></span>
-			<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" onclick="print(${apply.id})" type="button" value="打印"></span>
-			<span style="padding-right:0px; float:right; margin-left: 15px;"><input class="btnsub blue1" type="button" onclick="exportPdf()" value="导出申请单"></input></span>
+	<!--	<span style="padding-right:0px; float:right; margin-left: 15px; margin-right: 20px;"><input class="btnsub blue1" onclick="print(${apply.id})" type="button" value="打印"/></span>-->
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 20px;"><input class="btnsub blue1" type="button" onclick="exportPdf()" value="导出申请单"></input></span>
 		</div>
 		<div class="hr_20"> &nbsp; </div>
 		<div class="center">
 			<div class="left_gray">&nbsp;</div>
-			<div class="m_gray1">企业信息</div>
-			<div class="m_gray1">填写申请信息</div>
-			<div class="m_red">预审中</div>
-			<div class="m_gray">提交材料</div>
-			<div class="m_gray">资金网审核</div>
-			<div class="m_gray">金融机构审核</div>
+			<s:if test="apply.applyStatus ==301 || apply.applyStatus ==303">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_red">预审中</div>
+				<div class="m_gray">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:if>
+			<s:elseif test="apply.applyStatus ==302 || apply.applyStatus ==308">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_red">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus >303 && apply.applyStatus <=305">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_gray1">提交资料</div>
+				<div class="m_red">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus>305 && apply.applyStatus<310 && apply.applyStatus!=308">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_gray1">提交资料</div>
+				<div class="m_gray1">资金网审核</div>
+				<div class="m_red">金融机构审核</div>
+			</s:elseif>
+			<s:else>
+				<div class="m_gray">企业信息</div>
+				<div class="m_gray">填写申请信息</div>
+				<div class="m_gray">预审中</div>
+				<div class="m_gray">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:else>
 			<div class="right_gray">&nbsp;</div>	
 		</div>
 		<div class="clear">&nbsp;</div>
@@ -218,16 +409,22 @@ function fuShenRes2(){
 				<span class="y_title_02">期限：<font color="d5652c">${apply.loanMonth}个月</font></span>
 				<span>是否有抵押物：<font color="d5652c"><common:print valueId="apply.haveMortgage" valueSetMap="ZJ102" /></font></span>
 			</div>
+			<div class="hr_10"> &nbsp;</div>
+			<div class="y_connect">
+				<span class="y_title_02">申请产品：<font color="d5652c">${product.financeName }</font></span>
+				<span class="y_title_02" style="width:710px;">发行机构：<font color="d5652c">${loanOrgName }</font></span>
+			</div>
+			<div class="clear">&nbsp;</div>			
 			<div class="hr_20"> &nbsp;</div>
       	</div>
       	<div class="f_sqxx">
       		<span class="f_gz" style="margin-top:15px;">联系人信息</span>
 			<div class="y_connect">
-				<span class="y_title_02">联系人姓名：${ordCompany.linkname}</span>
-				<span class="y_title_02">邮箱：${ordCompany.linkemail }</span>
-				<span class="y_title_02">电话：${ordCompany.linktelephone }</span>
-				<span class="y_title_02">所属部门：${ordCompany.department }</span>
-				<span>职务：${ordCompany.position }</span>
+				<span class="y_title_02">联系人姓名：${usrCompany.linkname}</span>
+				<span class="y_title_02">邮箱：${usrCompany.linkemail }</span>
+				<span class="y_title_02">电话：${usrCompany.linktelephone }</span>
+				<span class="y_title_02">所属部门：${usrCompany.department }</span>
+				<span>职务：${usrCompany.position }</span>
 			</div>
 			<div class="hr_20"> &nbsp;</div>
       	</div> 
@@ -237,57 +434,56 @@ function fuShenRes2(){
 				<div class="fl f_qyxx">
 				    <div class="menu_out">
 				      <div class="menu_nobg">企业信息</div>
-				      <span>企业名称：${ordCompany.companyname }</span>
-				      <span>营业执照号码：${ordCompany.licensecode }</span>
-				      <span>组织机构代码证号码：${ordCompany.organizationcode }</span>
-				      <span>税务登记证号码：${ordCompany.faxcode }</span>
-				      <span>开户许可证号码：${ordCompany.bankpermitcode }</span>
-				      <span>贷款卡号：${ordCompany.loancard }</span>
-				      <span>注册地址：${ordCompany.regaddress }</span>
-				      <span>邮编：${ordCompany.regpostcode }</span>
-				      <span>所属园区：无</span>
-				      <span>企业类型：<common:print valueId="ordCompany.enterprisetypeid" /></span>
-				      <span>员工人数：<common:print valueId="ordCompany.employeesid" /></span>
-				      <span>经营范围：${ordCompany.bizscope }</span>
-				      <span>企业经营地址：${ordCompany.bizaddress }</span>
-				      <span>邮编：${ordCompany.bizpostcode }</span>			      
-				    </div>					
+				      <span>企业名称：${usrCompany.companyname }</span>
+				      <span>营业执照号码：${usrCompany.licensecode }</span>
+				      <span>组织机构代码证号码：${usrCompany.organizationcode }</span>
+				      <span>税务登记证号码：${usrCompany.faxcode }</span>
+				      <span>开户许可证号码：${usrCompany.bankpermitcode }</span>
+				      <span>贷款卡号：${usrCompany.loancard }</span>
+				      <span>注册地址：${profileMap['regaddress'] } ${usrCompany.regaddress }</span>
+				      <span>邮编：${usrCompany.regpostcode }</span>
+				      <span>企业类型：<common:print valueId="usrCompany.enterprisetypeid" /></span>
+				      <span>员工人数：<common:print valueId="usrCompany.employeesid" /></span>
+				      <span>经营范围：${usrCompany.bizscope }</span>
+				      <span>企业经营地址：${profileMap['bizaddress'] } ${usrCompany.bizaddress }</span>
+				      <span>邮编：${usrCompany.bizpostcode }</span>				      
+				    </div>				
 				</div>
 				<div class="fr f_qyxx">
 				    <div class="menu_out">
 				      <div class="menu_nobg">法人信息</div>
-				      <span>法定代表人：${ordCompany.legalperson }</span>
-				      <span>学历：<common:print valueId="ordCompany.lpeducation" /></span>
-				      <span>婚姻状况：<common:print valueId="ordCompany.lpmarry" /></span>
-				      <span>从事所属行业年限：<common:print valueId="ordCompany.lpindustryyears" /></span>
-				      <span>身份证号码：${ordCompany.lpcid }</span>
-				      <span>手机：${ordCompany.lpmobile}</span>
-				      <span>家庭电话：${ordCompany.lphometel }</span>
-				      <span>常住地址：${ordCompany.lpliveaddress }</span>
-				      <span>邮编：${ordCompany.lplivepostcode }</span>
-				      <span>户籍所在地：${profileMap['address'] }</span>
-				      <span>邮编：${ordCompany.lplivepostcode }</span>
+				      <span>法定代表人：${usrCompany.legalperson }</span>
+				      <span>学历：<common:print valueId="usrCompany.lpeducation" /></span>
+				      <span>婚姻状况：<common:print valueId="usrCompany.lpmarry" /></span>
+				      <span>从事所属行业年限：<common:print valueId="usrCompany.lpindustryyears" /></span>
+				      <span>身份证号码：${usrCompany.lpcid }</span>
+				      <span>手机：${usrCompany.lpmobile}</span>
+				      <span>家庭电话：${usrCompany.lphometel }</span>
+				      <span>常住地址：${profileMap['lpliveaddress'] } ${usrCompany.lpliveaddress }</span>
+				      <span>邮编：${usrCompany.lplivepostcode }</span>
+				      <span>户籍所在地：${profileMap['lphkaddress'] } ${usrCompany.lphkaddress }</span>
+				      <span>邮编：${usrCompany.lphkpostcode }</span>
 				    </div>
 				</div>				
 			</div>
 			<div class="clear">&nbsp;</div>
       	</div>
-		<div class="fl m_20">
-		    <div class="menu_out">
-		      <span class="f_gz">企业经营信息</span>
-		      <span>企业<font class="year"></font>年销售额约为：<font><s:number name="apply.lastyearSaleVolume" />&nbsp;&nbsp;万元</font></span>
-		      <span>企业<font class="year"></font>年经营成本约为：<font><s:number name="apply.lastyearCost" />&nbsp;&nbsp;万元</font></span>
-		      <span>企业<font class="year"></font>年净利润率约为：<font>${apply.lastyearProfit }&nbsp;&nbsp;%</font></span>
-		      <span>截止到<font class="yearmoth"></font>，企业应收账款约为：<font><s:number name="apply.receivable" />&nbsp;&nbsp;万元</font></span>
-		      <span>截止到<font class="yearmoth"></font>，企业总库存约为：<font><s:number name="apply.stockSum" />&nbsp;&nbsp;万元</font></span>
-		      <span>截止到<font class="yearmoth"></font>，企业总资产约为：<font><s:number name="apply.assetSum" />&nbsp;&nbsp;万元</font></span>
-		      <span>截止到<font class="yearmoth"></font>，企业总负债约为：<font><s:number name="apply.debtSum" />&nbsp;&nbsp;万元</font></span>			      
-		    </div>	
+		<div class="f_sqxx">
+			     <div class="y_connect">
+			      <span class="f_gz" style="margin-top:15px;">企业经营信息</span>
+		      <span>企业<font class="year"></font>年销售额约为：<font><s:number name="apply.lastyearSaleVolume" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>企业<font class="year"></font>年经营成本约为：<font><s:number name="apply.lastyearCost" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>企业<font class="year"></font>年净利润率约为：<font>${apply.lastyearProfit }&nbsp;&nbsp;%</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业应收账款约为：<font><s:number name="apply.receivable" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总库存约为：<font><s:number name="apply.stockSum" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总资产约为：<font><s:number name="apply.assetSum" />&nbsp;&nbsp;万元</font></span><br/>
+		      <span>截止到<font class="yearmoth"></font>，企业总负债约为：<font><s:number name="apply.debtSum" />&nbsp;&nbsp;万元</font></span><br/>		      
+		    </div>		
 		    <br/>
-		    <div class="menu_out">
-		      <span class="f_gz">其它信息</span>
+		   <div class="f_sqxx">
+		      <span class="f_gz" style="margin-top:15px;">其它信息</span>
 		      <s:iterator value="extendsValueList">
-		      <span>${fieldName }<font>&nbsp;&nbsp;${entityValue }</font></span>
+		      <span>${fieldName }：<font>&nbsp;&nbsp;${entityValue }</font></span><br/>
 		      </s:iterator>
 		    </div>						
 		</div>
@@ -298,10 +494,10 @@ function fuShenRes2(){
 				  <tr>
 				    <td colspan="8">
 				    	<s:if test="logo == null">
-							<img src="/images/banklogo/b/zj198.jpg" class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+							<img src="/images/banklogo/b/zj198.jpg" class="js_bank"/><font class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;${loanOrgName }</font>
 						</s:if> 
 						<s:else>
-							<img src="/images/banklogo/b/${product.logo }"  class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+							<img src="/images/banklogo/b/${product.logo }"  class="js_bank"/><font class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;${loanOrgName }</font>
 						</s:else>
 					</td>
 				  </tr>
@@ -343,59 +539,75 @@ function fuShenRes2(){
       </div>
     </div>  
 <!-- end -->
+<s:if test="apply.applyStatus>303">
 <div class="hr_10"> &nbsp;</div>
-<div class="container_950 center box_6">
-		<form action="/user/loan/financeAttach!selectCancel.act" id="loanForm" class="box_form" style="margin:0px;" method="post">
+<div  class="container_950 center box_6 hid">
+		<form action="/admin/loan/financeAttach!selectCancel.act" id="loanForm" class="box_form" style="margin:0px;" method="post">
         <input type="hidden" id="applyid" name="applyId" value="${apply.id }">
+        <input type="hidden" name="apply.id" value="${apply.id }">
         <table width="100%" border="0" cellspacing="0">
         <tr class="menu_blue white">
-        <td colspan="5"><h6>申贷资料</h6></td>
+	        <td colspan="3"><h6>申贷资料</h6></td>
+			<td align="right"><a href="javascript:void(0)" id="myhide" class="ico_name"><img src="/images/down_ico.png"/></a></td> 
         </tr>
      	<tr class="top_color">
-     		<td width="30%" style="padding-left:25px;">资料名称</td>
-            <td width="5%">说明</td>
-            <td width="10%">递交方式</td>
-            <td >状态</td>
-            <td width="15%" align="center">操作</td>
+     		<td width="32%" style="padding-left:25px;"><input type="checkbox" name="ckboxs" class="ckbox" id="selectall"/>全选&nbsp;资料名称</td>
+            <td >递交方式</td>
+            <td width="10%">状态</td>
+            <td width="30%" align="center">操作</td>
         </tr>
         
         <tr class="top_color01">
-          <td style="padding-left:25px;">中国资金网融资咨询服务协议加盖公章</td>
-          <td></td>
-          <td></td>
+          <td style="padding-left:42px;">&nbsp;0.&nbsp;中国资金网融资咨询服务协议加盖公章</td>
+          <td>网上提交,线下邮寄</td>
           <td>
-			<s:if test="apply.agreeFileUpload == null || apply.agreeFileUpload == ''">
-           			未递交
-           		</s:if>
-           		<s:else>
-           			已上传
-           		</s:else>
+			<s:if test="apply.agreeStatus == 213 || apply.agreeStatus == 216 || apply.agreeStatus == 218">
+				<font color="red"><common:print valueId="apply.agreeStatus"/></font>
+			</s:if>
+			<s:else><common:print valueId="apply.agreeStatus"/></s:else>
 		 </td>
-          <td align="right" class="view_detail01" style="padding-right:20px;"><a href="/user/loan/downloadAttach!downAgreeTemplate.act" target="_blank" >模板下载</a></td>          
+          <td align="right" class="view_detail01" style="padding-right:20px;">
+          	<a href="javascript:viewAgreeAttach();" >查看</a>
+          	<s:if test="apply.agreeStatus==213 || apply.agreeStatus==218">
+          		<a href="javascript:void(0);" onclick="if(confirm('确定所选资料审核通过吗？')){window.location.href='/admin/loan/financeAttach!agreeCheck.act?apply.id=${apply.id}&status=217'}">通过</a>
+		    	<a href="javascript:void(0);" onclick="if(confirm('确定所选资料审核不通过吗？')){window.location.href='/admin/loan/financeAttach!agreeCheck.act?apply.id=${apply.id}&status=215'}">退回</a>
+		    </s:if>
+          </td>          
         </tr>
-        
+        <%int num = 1; %>
         <s:iterator id ="item" value="attachList">
         <tr class="top_color01">
-          <td style="padding-left:25px;"><input type="checkbox" name="ckbox" class="ckbox" value="${item.id }"/>&nbsp;${item.dataName }
-						${item.supplyName }</td>
-          <td></td>
-          <td>${item.dataSupply } ${item.supplyMemo }</td>
-          <td><common:print valueId="#item.supplyWay"/><common:print valueId="#item.uploadStatus"/></td>
-          <td align="right" class="view_detail01" style="padding-right:20px;"><a>查看 </a>&nbsp;<a>下载</a></td>          
+          <td style="padding-left:25px;"><s:if test="#item.uploadStatus!=212 && #item.uploadStatus!=215"><input type="checkbox" name="ckbox" class="ckbox" value="${item.id }"/></s:if>&nbsp;<%=num++ %>.&nbsp;${item.dataName }
+						${item.supplyName }<input type="hidden" value="${item.uploadStatus }" class="upstatus"/></td>
+          <td><common:print valueId="#item.supplyWay"/></td>
+          <td><s:if test="#item.uploadStatus == 213 || #item.uploadStatus == 216 || #item.uploadStatus == 218"><font color="red"> <common:print valueId="#item.uploadStatus"/></font></s:if><s:else> <common:print valueId="#item.uploadStatus"/></s:else></td>
+          <td align="right" class="view_detail01" style="padding-right:20px;">
+          <s:if test="#item.uploadStatus != 212">
+		          <a href="javascript:void(0);" onclick="downloadAttach('${item.id}');">查看 </a>&nbsp;
+		          
+		  	<s:if test="#item.uploadStatus != 214 && #item.uploadStatus != 215 ">    	
+		          <a href="javascript:void(0);" onclick="if(confirm('确定所选资料审核通过吗？')){window.location.href='/admin/loan/financeAttach!eachMaterialsPass.act?apply.id=${apply.id}&ckbox=${item.id }'}">通过</a>
+		          <a href="javascript:void(0);" onclick="if(confirm('确定所选资料审核不通过吗？')){window.location.href='/admin/loan/financeAttach!eachMaterialsUnPass.act?apply.id=${apply.id}&ckbox=${item.id }'}">退回</a>
+		    </s:if>
+	      </s:if>
+          </td>          
         </tr>
         </s:iterator>
-        
+        <s:if test="apply.applyStatus==303||apply.applyStatus==304">
         <tr class="top_color01">
-          <td colspan="5" class="view_detail01" style="padding-left:25px;"><input type="button" class="but_gray" id="selectall" value="全部选中"/>&nbsp;<input type="button" class="but_gray" value="撤销" onclick="applyCancel()"/></td>     
-        </tr>                         
+          <td colspan="4" class="view_detail01" style="padding-left:25px;">
+          	<input type="button" class="but_gray" value="通过" onclick="allPass()"/>
+          	<input type="button" class="but_gray" value="退回" onclick="allUnPass()"/></td>      
+        </tr></s:if>
 		</table>
 		</form>
 </div>
+</s:if>
 
 <!-- button -->
 	<div class="hr_10"> &nbsp;</div>
 	<div align="center">
-	<s:if test="apply.baseCheckStatus.contains(\"0\")">
+	<s:if test="apply.baseCheckStatus == null || apply.baseCheckStatus.contains(\"0\")">
 		<s:if test="left==0">
 			<input class="btnsub blue1" type="button" value="填写客户信息审核意见" onclick="chushen1();"/>&nbsp;&nbsp;&nbsp;
 		</s:if>
@@ -410,17 +622,19 @@ function fuShenRes2(){
 			<input class="btnsub blue1" type="button" value="驳回申请" onclick="fushen3();"/>&nbsp;&nbsp;&nbsp;
 		</s:if>
 	</s:else>
-	<s:if test="apply.applyStatus==302">
-			<input class="btnsub blue1" type="button" value="资金网审核通过" onclick="javascript:window.location.href = '/admin/loan/financeApply!finalCheck.act?apply.id=${apply.id}&apply.applyStatus=305'"/>&nbsp;&nbsp;&nbsp;
+	<s:if test="apply.applyStatus==304">
+			<input class="btnsub blue1" type="button" value="资金网审核通过" onclick="fushen4()"/>
+			<input class="btnsub blue1" type="button" value="资料未审核通过退回修改" onclick="fushen6()"/>
 	</s:if>
 	<s:if test="apply.applyStatus==305">
-			<input class="btnsub blue1" type="button" value="提交给资金方" onclick="javascript:window.location.href = '/admin/loan/financeApply!finalCheck.act?apply.id=${apply.id}&apply.applyStatus=306'"/>&nbsp;&nbsp;&nbsp;
+			<input class="btnsub blue1" type="button" value="提交给资金方" onclick="fushen5()"/>
 	</s:if>
 	</div>
 <!-- button -->	
 <!-- 2012-10-22 End -->
 
-
+<div id="img_app" style="display:none;" title="图片预览">
+	</div>  
 	
 	
 	
@@ -459,8 +673,8 @@ function fuShenRes2(){
 				</tr>
 				<tr>
 					<td colspan="2" class="r_td" style="vertical-align: top;" align="right">
-						<input type="button" value="初审通过" class="but_gray" onclick="chuShenRes(1,'${right}');"></input>
-						<input type="button" value="初审未通过" class="but_gray" onclick="chuShenRes(2,'${right}');"></input>
+						<input type="button" value="客户信息审核通过" class="but_gray" onclick="chuShenRes(1,'${right}');"></input>
+						<input type="button" value="客户信息审核未通过" class="but_gray" onclick="chuShenRes(2,'${right}');"></input>
 					</td>
 				</tr>
 			 </table>
@@ -483,8 +697,8 @@ function fuShenRes2(){
 				</tr>
 				<tr>
 					<td colspan="2" class="r_td" style="vertical-align: top;" align="right">
-						<input type="button" value="初审通过" class="but_gray" onclick="chuShenRes('${left }',1);"></input>
-						<input type="button" value="初审未通过" class="but_gray" onclick="chuShenRes(${left },2);"></input>
+						<input type="button" value="申请信息审核通过" class="but_gray" onclick="chuShenRes2('${left }',1);"></input>
+						<input type="button" value="申请信息审核未通过" class="but_gray" onclick="chuShenRes2(${left },2);"></input>
 					</td>
 				</tr>
 			 </table>
@@ -493,9 +707,8 @@ function fuShenRes2(){
 	 
 	 <!--弹出框复审通过页面-->
 	<div id="fushen1" title="填写复审通过意见：" style="display: none;">
-		<form action="/admin/loan/financeApply!fuShen.act" id="checkForm3" class="box_form" style="margin:0px;" method="post">
+		<form action="/admin/loan/financeApply!fuShenSucc.act" id="checkForm3" class="box_form" style="margin:0px;" method="post">
 			<s:hidden name="apply.id"></s:hidden>
-			<input type="hidden" name="apply.applyStatus" value="302"/>
 			<s:hidden name="appCheck.checkView" id="check_view3"></s:hidden>
 			<s:hidden name="apply.agreeNum" id="apply_agreeNum"></s:hidden>
 			<s:hidden name="userType" value="0"></s:hidden>
@@ -516,9 +729,8 @@ function fuShenRes2(){
 	 </div>
 	<!--弹出框复审驳回页面-->
 	<div id="fushen3" title="填写复审驳回意见：" style="display: none;">
-		<form action="/admin/loan/financeApply!fuShen.act" id="checkForm4" class="box_form" style="margin:0px;" method="post">
+		<form action="/admin/loan/financeApply!fuShenBohui.act" id="checkForm4" class="box_form" style="margin:0px;" method="post">
 			<s:hidden name="apply.id"></s:hidden>
-			<input type="hidden" name="apply.applyStatus" value="311"/>
 			<s:hidden name="appCheck.checkView" id="check_view4"></s:hidden>
 			<s:hidden name="apply.agreeNum" id="apply_agreeNum"></s:hidden>
 			<s:hidden name="userType" value="0"></s:hidden>
@@ -570,5 +782,103 @@ function fuShenRes2(){
 			 </table>
 		</form>
 	 </div>
+	 
+	  <!--弹出框资金网审核通过页面-->
+	<div id="fushen4" title="填写审核通过意见：" style="display: none;">
+		<form action="/admin/loan/financeApply!CheckSucc.act" id="checkForm6" class="box_form" style="margin:0px;" method="post">
+			<s:hidden name="apply.id"></s:hidden>
+			<s:hidden name="appCheck.checkView" id="check_view6"></s:hidden>
+			<div class="hr_10"> &nbsp;</div>
+			<table>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">通过意见：</td>
+					<td class="p_td"><textarea rows="5" cols="60" class="required" name="checkViewInput" id="area6">祝贺您！您的融资申请已通过资金网预审，我们将立即提交给资金方，请随时关注进展情况，谢谢！
+					</textarea><br />
+					</td>
+				</tr>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">协议编号:</td>
+					<td class="p_td"><input type="text" class="required" name="apply.agreeNum" id="agreeNumInput"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="r_td" style="vertical-align: top;" align="right">
+						<input type="button" value="确认通过" class="but_gray" onclick="fuShenRes4();"></input>
+					</td>
+				</tr>
+			 </table>
+		</form>
+	 </div>
+	 
+	  <!--弹出框提交给资金方页面-->
+	<div id="fushen5" title="填写提交给资金方意见：" style="display: none;">
+		<form action="/admin/loan/financeApply!submitZjf.act" id="checkForm7" class="box_form" style="margin:0px;" method="post">
+			<s:hidden name="apply.id"></s:hidden>
+			<s:hidden name="appCheck.checkView" id="check_view7"></s:hidden>
+			<div class="hr_10"> &nbsp;</div>
+			<table>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">资金方名称：</td>
+					<td class="p_td">${loanOrgName }</td>
+				</tr>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">资金方帐号：</td>
+					<td class="p_td">${loanUsr.username }</td>
+				</tr>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">资金方联系人：</td>
+					<td class="p_td">${loanUsr.realname }</td>
+				</tr>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">提交给资金方意见：</td>
+					<td class="p_td"><textarea rows="5" cols="60" class="required" name="checkViewInput" id="area7">您的融资申请已提交给资金方，请等待资金方审核，谢谢！
+					</textarea><br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="r_td" style="vertical-align: top;" align="right">
+						<input type="button" value="确认提交给资金方" class="but_gray" onclick="fuShenRes5();"></input>
+					</td>
+				</tr>
+			 </table>
+		</form>
+	 </div>
+	 
+	 <!--弹出框申贷材料未审核通过页面-->
+	<div id="fushen6" title="填写申贷材料未审核通过意见：" style="display: none;">
+		<form action="/admin/loan/financeApply!backMertail.act" id="checkForm8" class="box_form" style="margin:0px;" method="post">
+			<s:hidden name="apply.id"></s:hidden>
+			<s:hidden name="appCheck.checkView" id="check_view8"></s:hidden>
+			<div class="hr_10"> &nbsp;</div>
+			<table>
+				<tr>
+					<td class="r_td" style="vertical-align: top;">材料未通过意见：</td>
+					<td class="p_td"><textarea rows="5" cols="60" class="required" name="checkViewInput" id="area8">抱歉，您的申贷资料不符合要求，请修改后再重新提交，谢谢！
+					</textarea><br />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="r_td" style="vertical-align: top;" align="right">
+						<input type="button" value="确认申贷材料未审核通过" class="but_gray" onclick="fuShenRes6();"/>
+					</td>
+				</tr>
+			 </table>
+		</form>
+	 </div>
+	 
+<!-- 查看资料 --> 
+	<div id="download_attach" style="display:none;" title="文件查看"></div>
+
+<div id="agreeAttach" title="中国资金网融资咨询服务协议" style="display: none;">
+<s:if test="(apply.agreeUploadWay == null || apply.agreeUploadWay == 0) && apply.agreeFileUpload != null">
+	<li>
+		中国资金网融资咨询服务协议(<s:date name="apply.agreeUploadTime" format="yyyy-MM-dd HH:mm"/>) &nbsp;&nbsp;<a href="/user/loan/downloadAttach!downAgree.act?applyId=${applyId}">下载</a>
+		<s:if test="apply.agreeFileUpload != null && (apply.agreeFileUpload.indexOf('.png')>=0||apply.agreeFileUpload.indexOf('.jpg')>=0||apply.agreeFileUpload.indexOf('.jpeg')>=0||apply.agreeFileUpload.indexOf('.bmp')>=0)">| <a href="javascript:void(0);" onclick="agreeWatchIt('${applyId}')">预览</a></s:if>
+	</li>
+</s:if>
+<s:else>
+	<li>资料提交使用的快递公司名称：${apply.agreeMemo }</li>
+	<li>快递单号：${apply.agreeFileUpload }</li>
+</s:else>
+</div>
   </body>
 </html>

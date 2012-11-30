@@ -65,19 +65,19 @@
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name" width="18%">标题</td>
+				<td class="form_table field_name" width="18%">标题：</td>
 				<td><s:textfield name="clbSupplyInfo.title"  id="clbSupplyInfo.title" cssClass="required"/>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">额度范围</td>
+				<td class="form_table field_name">额度范围：</td>
 				<td>
 					<s:radio list="amountRangeList.{?#this.code<10000}" listKey="name" listValue="name" 
 						cssClass="required"  name="clbSupplyInfo.workTranche"></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">请选择典当范围</td>
+				<td class="form_table field_name">请选择典当范围：</td>
 				<td>
 				</td>
 			</tr>
@@ -105,23 +105,23 @@
 				</s:if>
 			</s:iterator>
 			<tr>
-				<td class="form_table field_name">典当期限</td>
+				<td class="form_table field_name">典当期限：</td>
 				<td>
 					<s:select list="timeIntervalList" listKey="code" listValue="name" cssClass="required" name="clbSupplyInfo.productCycle"></s:select>
 				</td>
 			</tr>	
 			<tr>
-				<td class="form_table field_name">受理周期</td>
+				<td class="form_table field_name">受理周期：</td>
 				<td>
 					<s:select list="#{'当天':'当天','三天':'三天','一周':'一周','一周以上':'一周以上'}" name="clbSupplyInfo.workCycle" cssClass="required"></s:select>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">信息时效</td>
+				<td class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">资金描述</td>
+				<td class="form_table field_name">资金描述：</td>
 				<td>
 					<s:textarea rows="8" cols="80" id="clbSupplyInfo.remark" name="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 				</td>

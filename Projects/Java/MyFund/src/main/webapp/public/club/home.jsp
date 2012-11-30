@@ -112,12 +112,11 @@
 		    </div>
 		</div>
 	    <div class="hr_10"> &nbsp; </div>
-		<div>
-			<div class="b_div"><a href="/loan/financeProduct!cusViewFinance.act?product.id=23" class="b_img"><img src="/images/b_img01.jpg" /></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=31"><img src="/images/b_img02.jpg" /></a></div>
-			<div class="b_div"><a href="/loan/financeProduct!cusViewFinance.act?product.id=33" class="b_img"><img src="/images/b_img03.jpg" /></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=40"><img src="/images/b_img04.jpg" /></a></div>
-		</div>
-	</div> 
+	    	<div style="width:150px; height:155px; float:left; margin-right:10px;margin-bottom: 10px;"><a href="/loan/financeProduct!cusViewFinance.act?product.id=77" ><img src="/images/ad_b2_2.jpg" /></a></div>
+	    	<div style="width:150px; height:73px; float:left; "><a href="/loan/financeProduct!cusViewFinance.act?product.id=14" ><img src="/images/ad_b2_2_1.jpg" class="b_div"/></a><a href="/loan/financeProduct!cusViewFinance.act?product.id=80" ><img src="/images/ad_b2_2_2.jpg" class="b_div"/></a></div>
+	</div>
 	<div class="clear"> &nbsp; </div>
+	<div class="hr_10"> &nbsp; </div> 
 	<div class="zjfl_box">
 		<div class="zjfl"><a href="/club/clubAction!getSupplyInfoByAllType.act">资金分类</a></div>
 		<div class="zjfl_connect">

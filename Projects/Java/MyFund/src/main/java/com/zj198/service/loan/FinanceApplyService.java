@@ -3,16 +3,20 @@ package com.zj198.service.loan;
 import java.io.File;
 import java.util.List;
 
+import com.itextpdf.text.Document;
 import com.zj198.action.fund.model.FundIntention;
 import com.zj198.action.loan.model.FinanceApplySpModel;
+import com.zj198.model.OrdApplyUsrCompany;
 import com.zj198.model.OrdCheckLog;
 import com.zj198.model.OrdFaAttachList;
 import com.zj198.model.OrdFinanceApply;
 import com.zj198.model.OrdFinanceApplyAttach;
 import com.zj198.model.PrdExtendsValue;
+import com.zj198.model.PrdFinance;
 import com.zj198.model.UsrUser;
 import com.zj198.model.vo.FinanceApplyAttachModel;
 import com.zj198.service.loan.model.FindFinanceApplySpModel;
+import com.zj198.service.loan.model.SaveAttachListSpModel;
 import com.zj198.util.Pager;
 
 /**
@@ -67,7 +71,7 @@ public interface FinanceApplyService {
 	 * @param apply
 	 * @param check
 	 */
-	public void updateFuShen(OrdFinanceApply apply, OrdCheckLog check, String realName);
+	public void updateOrdStatus(OrdFinanceApply apply, OrdCheckLog check, String realName, Integer status);
 	
 	/**
 	 * 退回申请，客户信息和申请信息需要修改
@@ -79,7 +83,7 @@ public interface FinanceApplyService {
 	 * @param right
 	 * @param realName
 	 */
-	public void updateTuiHui(OrdFinanceApply apply, OrdCheckLog check, String left, String right, String realName) ;
+	public void updateTuiHui(OrdFinanceApply apply, OrdCheckLog check, String left, String right, String realName, Integer status) ;
 	
 	/**
 	 * 提交修改，客户修改资料重新提交审核
@@ -89,7 +93,7 @@ public interface FinanceApplyService {
 	 * @param left
 	 * @param right
 	 */
-	public void updateAppInfo(OrdFinanceApply apply, String left, String right);
+	public void updateAppInfo(OrdFinanceApply apply, OrdCheckLog log, String left, String right, String realname);
 	
 	/**
 	 * 资金网审核通过以及提交给资金方
@@ -99,5 +103,102 @@ public interface FinanceApplyService {
 	 * @param log
 	 * @param realName
 	 */
-	public void updateFinalCheck(OrdFinanceApply apply, OrdCheckLog log, String realName);
+	public void updateFinalCheck(OrdFinanceApply apply, OrdCheckLog log, String realName, Integer status);
+	
+	
+	/**
+	 * 资金方审核通过或者不通过
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-29|下午2:00:05
+	 * @param apply
+	 * @param log
+	 * @param status
+	 */
+	public void updateCheckStatus(OrdFinanceApply apply, OrdCheckLog log, String realname, Integer status);
+	
+	/**
+	 * 批量更改申贷材料状态
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-10-31|下午1:39:50
+	 * @param ids
+	 * @param postid
+	 * @param status
+	 */
+	public void updateMaterialStatus(Integer[] ids,String postid, Integer status);
+	
+	/**
+	 * 删除已上传的资料
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-1|上午11:20:53
+	 * @param id
+	 */
+	public void deleteAttachListById(Integer id);
+	
+	/**
+	 * 生成企业pdf
+	 * @author zeroleavebaoyang@gmail.com
+	 * @param apply
+	 * @param product
+	 * @param loanOrgName
+	 * @return
+	 */
+	public String generatePdf(OrdFinanceApply apply, PrdFinance product, OrdApplyUsrCompany ordCompany, String loanOrgName, String addressForward);
+	
+	/**
+	 * 生成个人pdf
+	 * @author zeroleavebaoyang@gmail.com
+	 * @param apply
+	 * @param product
+	 * @param loanOrgName
+	 * @return
+	 */
+	public String generatePersonPdf(OrdFinanceApply apply, PrdFinance product, String loanOrgName);
+	
+	/**
+	 * 企业或者个人查看全部日志记录(checkLogType='01' or checkLogType='11')
+	 * 
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-13|上午11:36:34
+	 * @param applyId
+	 * @return
+	 */
+	public List<OrdCheckLog> findAllLogByComOrPle(Integer applyId);
+	
+	/**
+	 * 企业或者个人显示前三条日志记录(checkLogType='01' or checkLogType='11')
+	 * 
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-13|上午11:36:34
+	 * @param applyId
+	 * @return
+	 */
+	public List<OrdCheckLog> findTopLogByComOrPle(Integer applyId, Integer num);
+	
+	/**
+	 * 金融机构查看全部日志记录(checkLogType='10' or checkLogType='11')
+	 * 
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-13|上午11:36:34
+	 * @param applyId
+	 * @return
+	 */
+	public List<OrdCheckLog> findAllLogByLoan(Integer applyId);
+	
+	/**
+	 * 金融机构显示前三条日志记录(checkLogType='10' or checkLogType='11')
+	 * 
+	 * @author zeroleavebaoyang@gmail.com
+	 * @since 2012-11-13|上午11:36:34
+	 * @param applyId
+	 * @return
+	 */
+	public List<OrdCheckLog> findTopLogByLoan(Integer applyId, Integer num);
+	
+	public void updateFinanceApply(OrdFinanceApply apply, UsrUser user, FinanceApplySpModel spModel) ;
+	
+	public void saveAttachList(SaveAttachListSpModel spModel);
+	public OrdFinanceApplyAttach updateOfflineAttach(OrdFinanceApplyAttach attach, Integer status);
+	public OrdFinanceApply updateOffLineAgree(OrdFinanceApplyAttach attach,OrdFinanceApply apply, Integer status);
+	public OrdFinanceApply updateOffLineAgreeCheck(OrdFinanceApply apply, Integer status);
+
 }

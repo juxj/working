@@ -26,8 +26,7 @@
 	});
 
 	function toPage(pageNum, pageSize) {
-		var url = "/user/message!viewMsg.act?pager.currentPage=" + pageNum
-				+ "&pager.pageCount=" + pageSize;
+		var url = "/user/message!viewMsg.act?pager.currentPage=" + pageNum + "&pager.pageCount=" + pageSize;
 		$('#comForm').attr('action', url);
 		$('#comForm').submit();
 	}
@@ -128,11 +127,12 @@
 	  <div class="menu_red n_title">
 	  	<h6 style="font-weight:bolder;">收到的消息</h6>
 	  </div>
-	  <form id="comForm" action="" name="">
+	  <form id="comForm" action="" name="" method="post">
 		<table class="n_table">
 		  <tr>
 		    <td colspan="6" class="b_td"><a href="/user/message!viewMsg.act"  <s:if test="css==-1">class="a_active"</s:if> >所有消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/message!unRead.act" <s:if test="css==0">class="a_active"</s:if>>未读消息</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/user/message!read.act" <s:if test="css==1">class="a_active"</s:if> >已读消息</a></td>
 		  </tr>
+		  <s:if test="pager.data.size>0">
 		  <s:iterator value="pager.data" var="j">
 		  <tr>
 		  <!-- 
@@ -147,6 +147,10 @@
 		    </td>
 		  </tr>
 		  </s:iterator>
+		  </s:if>
+		 <s:else>
+		 <tr><td colspan="6">暂无</td></tr>
+		 </s:else>
 		  <!-- 
 		  <tr>
 		    <td colspan="6" class="view_detail" style="padding-top:10px;">

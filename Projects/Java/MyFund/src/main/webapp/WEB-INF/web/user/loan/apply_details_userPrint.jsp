@@ -42,7 +42,7 @@
 				      <span>教育程度：${profileMap['eduAtion'] }</span>
 				      <span>身份证号码：${usrPerson.cid}</span>
 				      <span>所在地：${profileMap['address'] }</span>
-				      <span>详细地址：${usrPerson.address }</span>
+				      <span>详细地址：${profileMap['address'] } ${usrPerson.address }</span>
 				      <span>邮政编码：${usrPerson.postcode }</span>
 				      <span>职业： ${profileMap['psersoncareer'] }</span>
 				      <span>固定电话：${usrPerson.telephone }</span>

@@ -16,11 +16,13 @@ $(function(){
 	$(".date_picker").datepicker();
 });
 function toPage(pageNum, pageSize){
-	var url = '/admin/loan/financePro!financeAdmin.act?pager.currentPage=' + pageNum + "&pager.pageCount=" + pageSize;
-	$('#financeadmin').attr('action',url);
+	//var url = '/admin/loan/financePro!financeAdmin.act?pager.currentPage=' + pageNum + "&pager.pageCount=" + pageSize;
+	$('#current_page').val(pageNum);
+	$('#page_count').val(pageSize);
+	//$('#financeadmin').attr('action',url);
 	$('#financeadmin').submit();
 }
-function recommend(pid,rstatus,rname,rno){
+function recommendOld(pid,rstatus,rname,rno){
 	if(rstatus.length == 0){
 		rstatus = 1;
 	}
@@ -29,6 +31,17 @@ function recommend(pid,rstatus,rname,rno){
 	$('#product_rno').val(rno);
 	$("input[@name=product.recommendStatus][value=" + rstatus +"]").attr("checked",true);
 	$('#recommend_set').dialog({width:700,modal: true});
+}
+function recommendPrd(pid){
+	var url = "/admin/loan/recommendprd!getRecommend.act";
+   	var param = {'prdRecommendation.prodId':pid};
+   	$.post(url,param, function(data){
+   		var da = $('#recommend_set');
+   		da.html(data);
+   		$('#recommend_set').dialog({width:700,modal:true,close: function(event, ui) { 
+				$('#financeadmin').submit();
+    		}});
+   	}, 'html');
 }
 </script>
 </head>
@@ -39,6 +52,8 @@ function recommend(pid,rstatus,rname,rno){
 		<s:include value="/WEB-INF/web/admin/head.jsp"></s:include>
 	 	<div class="block">
 			<form action="/admin/loan/financePro!financeAdmin.act" method="post" id="financeadmin">
+			<input type="hidden" name="pager.currentPage" id="current_page"/>
+			<input type="hidden" name="pager.pageCount" id="page_count"/>
 				<div class="block_head">
 					<div class="bheadl"></div>
 					<div class="bheadr"></div>
@@ -103,13 +118,15 @@ function recommend(pid,rstatus,rname,rno){
 					   			<td><s:number name="financeLittleamount" />-<s:number name="financeBigamount" />万元</td>
 					   			<td>${item.financeLittledt}-${item.financeMostdt}月</td>
 					   			<td><common:print valueId="#item.proStatus"/></td>
-					   			<td><s:if test="recommendStatus == 1">是</s:if></td>
-					   			<td><s:if test="recommendStatus == 1">${recommendNo }</s:if></td>
+					   			<td><s:if test="recommendStatus == 1">是</s:if>
+					   			<s:else>否</s:else>
+					   			</td>
+					   			<td><s:if test="recommendStatus == 1">${recommendNo }</s:if>&nbsp;</td>
 					   			<td class="view_detail">
 					   			<a href="/admin/loan/financePro!viewFinance.act?productId=${item.id }">查看</a>
 					   			<a href="/admin/loan/financePro!updateFinancePage.act?product.id=${item.id }">修改</a>
 					   			<s:if test="proStatus == 198">
-						   			<a href="javascript:recommend('${id }','${recommendStatus }','${recommendName }','${recommendNo }');">推荐</a>
+						   			<a href="javascript:recommendPrd('${id }');">推荐</a>
 					   			</s:if>
 					   			</td>
 							</tr>
@@ -130,24 +147,7 @@ function recommend(pid,rstatus,rname,rno){
    	</div>
  </div>
 
-<div id="recommend_set" style="display:none;" title="推荐设置">
-<div class="block block_content">
-	<form action="/admin/loan/financePro!recommend.act" method="post">
-	<s:hidden name="product.id" id="product_id"></s:hidden>
-		<p>
-			<label>是否推荐:</label><br /><common:radio name="product.recommendStatus" valueSetMap="ZJ102" cssClass="checkbox"></common:radio>
-		</p>
-		<p>
-			<label>推荐标题:</label><br/><s:textfield name="product.recommendName" cssClass="text medium" id="product_rname"></s:textfield>
-		</p>
-		<p>
-			<label>序号:</label><br/><s:textfield name="product.recommendNo" cssClass="text small" id="product_rno"></s:textfield>
-		</p>
-		<p>
-			<s:submit value="确定"></s:submit>
-		</p>
-	</form>
-</div>
+<div id="recommend_set" style="display:none;" title="融资产品推荐">
 </div>
 
 </body>

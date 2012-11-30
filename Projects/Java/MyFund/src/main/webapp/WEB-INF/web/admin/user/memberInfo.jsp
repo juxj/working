@@ -71,32 +71,32 @@ function adminLoginUser(id,type,au){
 			</div>
 			<!-- .block_head ends -->
 			<div class="block_content">
-				<form id="searchform" action="" method="post">
+				<form id="searchform" action="/admin/payment/member.act" method="post">
 				<input type="hidden" id="pageNo" name="pageNo"/>
 				<table cellpadding="0" cellspacing="0" width="100%">
 						<tr>
 							<td>
-								<label>会员名称&nbsp;&nbsp;&nbsp;</label><input value="${username }" type="text" name="username" class="text" style="width: 100px;"/>
+								<label>会员名称&nbsp;&nbsp;&nbsp;</label><input value="${ordName }" type="text" name="ordName" class="text" style="width: 100px;"/>
 							</td>
 							<td>
-								<label>会员类型</label><s:select name="userType" list="#{'-1':'--用户类型--','1':'个人','6':'银行','2-5':'企业','7-12':'金融机构','13-18':'服务机构'}" listKey="key" listValue="value"/>
+								<label>会员类型</label><s:select name="ordType" list="#{'-1':'--会员类型--','1':'资信通认证会员','2':'资信通vip会员'}" listKey="key" listValue="value"/>
 							</td>
 							<td>
-								<label>开始时间</label><input id="cd1" name="createdt" class="text date_picker" value="<s:date name="createdt[0]"/>"/> 
-								<label>~</label><input id="cd2" name="createdt" class="text date_picker" value="<s:date name="createdt[1]"/>"/> 
+								<label>开始时间</label><input id="cd1" name="startdt" class="text date_picker" value="<s:date name="startdt[0]"/>"/> 
+								<label>~</label><input id="cd2" name="startdt" class="text date_picker" value="<s:date name="startdt[1]"/>"/> 
 							</td>
 							<td></td>
 						</tr>
 						<tr>
 							<td>
-								<label>付费订单号</label><input value="${realname }" type="text" name="realname" class="text" style="width: 100px;"/>
+								<label>付费订单号</label><input value="${ordId }" type="text" name="ordId" class="text" style="width: 100px;"/>
 							</td>
 							<td>
-								<label>会员状态</label><s:select name="auditStatus" list="#{-1:'--审核状态--',0:'未审核',1:'待审核',2:'已审核'}" listKey="key" listValue="value"/>
+								<label>会员状态</label><s:select name="ordStatus" list="#{'-1':'--会员状态--',0:'未使用',1:'使用中',2:'已过时'}" listKey="key" listValue="value"/>
 							</td>
 							<td>
-								<label>结束时间</label><input id="lg1" name="logindt" class="text date_picker" value="<s:date name="logindt[0]"/>"/>
-								<label>~</label><input id="lg2" name="logindt" class="text date_picker" value="<s:date name="logindt[1]"/>"/>
+								<label>创建时间</label><input id="lg1" name="createdt" class="text date_picker" value="<s:date name="createdt[0]"/>"/>
+								<label>~</label><input id="lg2" name="createdt" class="text date_picker" value="<s:date name="createdt[1]"/>"/>
 							</td>
 							<td>
 								<input type="submit" value="查 询"/>
@@ -113,27 +113,29 @@ function adminLoginUser(id,type,au){
 							<th class="header" style="cursor: pointer; ">开始时间</th>
 							<th class="header" style="cursor: pointer; ">结束时间</th>
 							<th class="header" style="cursor: pointer; ">剩余天数</th>
+							<th class="header" style="cursor: pointer; ">创建时间</th>
 							<th class="header" style="cursor: pointer; ">付费订单号</th>
 							<th class="header" style="cursor: pointer; ">状态</th>
 							<th class="header" style="cursor: pointer; ">操作</th>
-							<th width="180px;">&nbsp;</th>
+							<th width="80px;">&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
 						<s:iterator value="pager.data" var="u" status="i">
 						<tr <s:if test="#i.even">class="even"</s:if><s:else>class="odd"</s:else>>
 							<td>${u.username}&nbsp;</td>
-							<td>${u.memberType}&nbsp;</td>
+							<td><s:if test="#u.memberType == 1">资信通认证会员</s:if><s:elseif test="#u.memberType == 2">资信通vip会员</s:elseif><s:else>未选择</s:else>&nbsp;</td>
 							<td><s:date name="#u.memberStart"/>&nbsp;</td>
 							<td><s:date name="#u.memberEnd"/>&nbsp;</td>
 							<td>${u.days }&nbsp;</td>
+							<td><s:date name="#u.createTime"/>&nbsp;</td>
 							<td>${u.orderId}&nbsp;</td>
 							<td>
 							<s:if test="#u.status==0">未开始</s:if>
 							<s:elseif test="#u.status==1">使用中</s:elseif><s:elseif test="#u.status==1">未选择</s:elseif><s:else>没有状态</s:else>
 							</td>
 							<td colspan="2">
-								<input type="button" value="详细"/> 
+								未定
 							</td>
 						</tr>
 						</s:iterator>

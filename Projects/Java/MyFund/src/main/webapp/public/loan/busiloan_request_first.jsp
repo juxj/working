@@ -47,19 +47,19 @@ $(function(){
 	<div class="C_form">
             <dl>
               <dd>
-                <h6>用途：</h6>
+                <h6><span class="txt-impt">*</span>用途：</h6>
                 <s:select name="loan.loanPurpose" list="dataMap['loanpurpose']" listKey="id" listValue="name" cssClass="S_width" style="width:200px;"></s:select>
-                <h6>金额：</h6>
+                <h6><span class="txt-impt">*</span>金额：</h6>
                 <s:textfield name="loan.loanAmount" cssClass="input-text required digits"  id="loan.loanAmount" maxlength="6"></s:textfield>&nbsp;&nbsp;万元
                 <label for="loan.loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
-                <h6>期限：</h6>
+                <h6><span class="txt-impt">*</span>期限：</h6>
                 <s:textfield name="loan.loanMonth" cssClass="input-text required digits"  id="loan.loanMonth" maxlength="2"></s:textfield>&nbsp;&nbsp;个月
                 <label for="loan.loanMonth" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-                <h6>是否有抵押物：</h6>
+                <h6><span class="txt-impt">*</span>是否有抵押物：</h6>
 				  <input id="radio1" type="radio" name="loan.haveMortgage" value="1" class="required" checked/><label for="radio1">能提供</label>
 				  <input id="radio2" type="radio" name="loan.haveMortgage" value="0" /><label for="radio2">无法提供</label>
 				</dd>
@@ -71,26 +71,26 @@ $(function(){
 	<div class="C_form">
 		<dl>
 			<dd>
-				<h6>企业经营类型：</h6>
+				<h6><span class="txt-impt">*</span>企业经营类型：</h6>
 				<s:select name="loan.busiRunningType" value="#session._user.type" list="userTypeList" listKey="id" listValue="name" cssClass="S_width" style="width:200px;"></s:select>
 			</dd>
 			<dd>
-				<h6>上年度销售额：</h6>
+				<h6><span class="txt-impt">*</span>上年度销售额：</h6>
 				<s:textfield name="loan.lastyearVolume" cssClass="input-text required number"  id="loan.lastyearVolume" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="loan.lastyearVolume" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>上年度资产负债率：</h6>
+				<h6><span class="txt-impt">*</span>上年度资产负债率：</h6>
 				<s:textfield name="loan.lastyearDebt" cssClass="input-text required number"  id="loan.lastyearDebt" maxlength="10"></s:textfield>&nbsp;&nbsp;%
 				<label for="loan.lastyearDebt" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>上年度销售成本：</h6>
+				<h6><span class="txt-impt">*</span>上年度销售成本：</h6>
 				<s:textfield name="loan.lastyearCost" cssClass="input-text required number"  id="loan.lastyearCost" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="loan.lastyearCost" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>上年度净利润：</h6>
+				<h6><span class="txt-impt">*</span>上年度净利润：</h6>
 				<s:textfield name="loan.lastyearProfit" cssClass="input-text required number"  id="loan.lastyearProfit" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 				<label for="loan.lastyearProfit" class="error" generated="true" style="display:none;"></label>
 			</dd>

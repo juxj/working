@@ -34,7 +34,7 @@ public class AdminInterceptor extends AbstractInterceptor{
 //			}
 			return invocation.invoke();
 		}else{
-			return "login";
+			return "adminLogin";
 		}
 		
 		

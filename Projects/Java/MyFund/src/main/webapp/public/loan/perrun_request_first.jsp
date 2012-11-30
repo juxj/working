@@ -125,22 +125,23 @@ $(function(){
 	<div class="apply_form_title">第一步&nbsp;&nbsp;填写申请信息</div>
 	<div class="C_title">贷款需求信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span>
 	</div>
+	<div class="hr_20"> &nbsp; </div>
 	<div class="C_form">
             <dl>
               <dd style="width:850px;">
-                <h6>贷款用途：</h6>
+                <h6><span class="txt-impt">*</span>贷款用途：</h6>
                 <s:select name="loan.loanPurpose" list="dataMap['loanpurpose']" listKey="id" listValue="name" cssClass="S_width" style="width:200px;"></s:select>
-                <h6>贷款金额：</h6>
+                <h6><span class="txt-impt">*</span>贷款金额：</h6>
                 <s:textfield name="loan.loanAmount" cssClass="input-text required digits" id="loan_loanAmount" size="10" maxlength="6"></s:textfield>&nbsp;&nbsp;万元
                 <label for="loan_loanAmount" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
-                <h6>贷款期限：</h6>
+                <h6><span class="txt-impt">*</span>贷款期限：</h6>
                 <s:textfield name="loan.loanMonth" cssClass="input-text required digits" id="loan_loanMonth" size="10" maxlength="2"></s:textfield>&nbsp;个月
                 <label for="loan_loanMonth" class="error" generated="true" style="display:none;"></label>
               </dd>
               <dd>
-                <h6>是否有抵押物：</h6>
+                <h6><span class="txt-impt">*</span>是否有抵押物：</h6>
                 <s:radio value="1" name="loan.haveMortgage" list="%{#{1:'能提供',0:'无法提供'}}" cssClass="required"></s:radio>
 				  <label for="loan.haveMortgage" class="error" generated="true" style="display:none;"></label>
 				</dd>
@@ -148,11 +149,12 @@ $(function(){
 	</div>
 	<div class="clear"></div>
 	<div class="C_title">个人及经营信息</div>
+	<div class="hr_20"> &nbsp; </div>
 	<div class="C_form">
 		<dl>
 			
 			<dd>
-				<h6>行业：</h6>
+				<h6><span class="txt-impt">*</span>行业：</h6>
 				<s:select id="industryParent" name="loan.runningTrade" list="industryList" listKey="id" listValue="name" headerKey="" headerValue="--请选择--"  onchange="changeindustry('industryParent','industry');" cssClass="required"></s:select>
                 <select id="industry" name="loan.runningTradeChild">
          	      <option value="0">--请选择--</option>
@@ -160,34 +162,35 @@ $(function(){
 			        <option value="${id}">${name}</option>
 		          </s:iterator>
                </select>
+               <label for="industryParent" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>行业经验：</h6> 
+				<h6><span class="txt-impt">*</span>行业经验：</h6> 
 				<s:textfield name="loan.experience" cssClass="input-text required"  maxlength="3" id="loan.experience"></s:textfield>&nbsp;&nbsp;年
 				<label for="loan.experience" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>年营业额：</h6>
+				<h6><span class="txt-impt">*</span>年营业额：</h6>
 				<s:select name="loan.allyearVolume" list="dataMap['allyearsales']" listKey="id" listValue="name" cssClass="S_width"></s:select>
 				<label for="loan.allyearVolume" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>经营场所：</h6>
+				<h6><span class="txt-impt">*</span>经营场所：</h6>
 				<s:radio value="1" name="loan.runningArea" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 				<label for="loan.runningArea" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>银行借款经历：</h6>
+				<h6><span class="txt-impt">*</span>银行借款经历：</h6>
 				<s:radio value="1" name="loan.hostoryLoan" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 				<label for="loan.hostoryLoan" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>使用信用卡经历：</h6>
+				<h6><span class="txt-impt">*</span>使用信用卡经历：</h6>
 				<s:radio value="1" name="loan.userCreditCard" list="%{#{1:'有',0:'无'}}" cssClass="required"></s:radio>
 				<label for="loan.userCreditCard" class="error" generated="true" style="display:none;"></label>
 			</dd>
 			<dd>
-				<h6>银行流水：</h6>
+				<h6><span class="txt-impt">*</span>银行流水：</h6>
 				<s:radio value="1" name="loan.bankSalaryList" list="%{#{1:'能提供',0:'无法提供'}}" cssClass="required"></s:radio>
 				<label for="loan.bankSalaryList" class="error" generated="true" style="display:none;"></label>
 			</dd>

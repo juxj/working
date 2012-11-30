@@ -340,10 +340,7 @@ public class UserFinanceProductAction extends BaseAction {
 		dataMap.put("mortgageType", mortgageTypeList);
 		dataMap.put("repaymentType", repaymentTypeList);
 	}
-	public String findRecom(){
-		recommendProducts = financeProductService.findFinanceImportent(5);
-		return "recommendProduct";
-	}
+
 	//setter and getter
 
 	public List<PrdFinance> getProductList() {

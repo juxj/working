@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="news" namespace="/news" extends="base">
+		<action name="InfoCenter" class="com.zj198.action.news.InfoCenterAction">
+    	   <result name="center">/public/information_centre.jsp</result>
+    	</action>
+    	<action name="Info" class="com.zj198.action.news.InfoAction">
+    		<result name="success">/public/news/knwTitleHome.jsp</result>
+    		 <result name="detail">/public/news/knwTitleDetail.jsp</result>
+    		 <result name="common">/public/news/knwTitleCommon.jsp</result>
+    		 <result name="knowledge">/public/news/knwTitleKnowledge.jsp</result>
+    	</action>
+    	<action name="Gonggao" class="com.zj198.action.news.InfoAction" method="gonggao">
+    		 <result name="gonggao">/public/news/_gonggao.jsp</result>
+    	</action>
+        <action name="yellowPage" class="com.zj198.action.news.YellowPageAction">
+            <result name="yellopage">/public/news/yelloPage.jsp</result>
+            <result name="appendAllList">/public/news/yelloPageDetails.jsp</result>
+        </action>
+
+	</package>
+</struts>

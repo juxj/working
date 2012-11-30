@@ -83,8 +83,7 @@ $(document).ready(function(){
 	</div>
 	<div class="S_table_connect">
 		<s:if test="applyNum==null or applyNum==''">
-			<span class="Prompt_01">
-			
+			<span class="Prompt_01">			
 				<s:if test="msg == 1">
 					对不起！您尚未登录，请登录后再提交申请。
 				</s:if>
@@ -123,26 +122,26 @@ $(document).ready(function(){
 			         </tr>
 				     </s:if>
 			         <tr>
-			           <td class="a_right">姓名</td>
-			           <td colspan="3">${session._user.realname}</td>
+			           <td class="a_right">姓名：</td>
+			           <td colspan="3" class="v-align">${session._user.realname}</td>
 			         </tr>
 			         <tr>
-			           <td class="a_right">出生年月</td>
-			           <td colspan="3"><input id="birthday" type="text" value="<s:date name="usrPerson.birthday" />" class="input-text dateISO userbirthday" name="usrPerson.birthday"/><span class="ask_text"></span></td>
+			           <td class="a_right">出生年月：</td>
+			           <td colspan="3" class="v-align"><input id="birthday" type="text" value="<s:date name="usrPerson.birthday" />" class="input-text dateISO userbirthday" name="usrPerson.birthday"/><span class="ask_text"></span></td>
 			         </tr>
 			         <tr>
-			           <td class="a_right" style="vertical-align:top;">教育程度</td>
-			           <td colspan="3">
+			           <td class="a_right" style="vertical-align:top;">教育程度：</td>
+			           <td colspan="3" class="v-align">
 			           	<s:select name="usrPerson.education" list="dataMap['eduAtion']" value="usrPerson.education" cssClass="tb_sele" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select>                    
 			           </td>
 			         </tr>
 			         <tr>
-			           <td class="a_right" style="vertical-align:top;">身份证号码</td>
-			           <td colspan="3"><input type=text value="${usrPerson.cid}" class="input-text idcardno" name="usrPerson.cid"/></td>
+			           <td class="a_right" style="vertical-align:top;">身份证号码：</td>
+			           <td colspan="3" class="v-align"><input type=text value="${usrPerson.cid}" class="input-text idcardno" name="usrPerson.cid"/></td>
 			         </tr>
 			         <tr>
-			           <td class="a_right">所在地</td>
-			           <td colspan="3" style="vertical-align: middle;">
+			           <td class="a_right">所在地：</td>
+			           <td colspan="3" class="v-align">
 			            <s:select id="province" name="usrPerson.provinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('province','city','district');"/><span style="float:left;">省/直辖市&nbsp;</span>
 			            <select id="city" name="usrPerson.cityid" onchange="changeCity('city','district');" class="tb_sele">
 			          	 <option value="0">--请选择--</option>
@@ -159,26 +158,26 @@ $(document).ready(function(){
 			           </td>
 			         </tr>
 			         <tr>
-			           <td class="a_right">详细地址</td>
-			           <td colspan="3"><input type=text value="${usrPerson.address }" class="input-text {validate:{maxlength:32}} chne" style="width:534px;" name="usrPerson.address" /><span class="ask_text"></span></td>
+			           <td class="a_right">详细地址：</td>
+			           <td colspan="3" class="v-align"><input type=text value="${usrPerson.address }" class="input-text {validate:{maxlength:32}} chne" style="width:534px;" name="usrPerson.address" /><span class="ask_text"></span></td>
 			         </tr>              
 			         <tr>
-			           <td class="a_right" style="vertical-align:top;">邮政编码</td>
-			           <td colspan="3"><input type="text" value="${usrPerson.postcode }" name="usrPerson.postcode" id="textfield" class="input-text zipCode"/><span class="ask_text"></span></td>
+			           <td class="a_right" style="vertical-align:top;">邮政编码：</td>
+			           <td colspan="3" class="v-align"><input type="text" value="${usrPerson.postcode }" name="usrPerson.postcode" id="textfield" class="input-text zipCode"/><span class="ask_text"></span></td>
 			         </tr>            
 			         <tr>
-			           <td class="a_right" style="vertical-align:top;">职业</td>
-			           <td colspan="3">
+			           <td class="a_right" style="vertical-align:top;">职业：</td>
+			           <td colspan="3" class="v-align">
 			            <s:select name="usrPerson.careerid" list="dataMap['psersoncareer']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--" cssClass="tb_sele"/>               	
 			           </td>
 			         </tr>
 			         <tr>
-			           <td class="a_right">固定电话</td>
-			           <td colspan="3"><input type="text" value="${usrPerson.telephone }" class="input-text phone" name="usrPerson.telephone"/><span class="ask_text"></span></td>
+			           <td class="a_right">固定电话：</td>
+			           <td colspan="3" class="v-align"><input type="text" value="${usrPerson.telephone }" class="input-text phone" name="usrPerson.telephone"/><span class="ask_text"></span></td>
 			         </tr>
 			         <tr>
-			           <td class="a_right">联系方式</td>
-			           <td colspan="3"><s:select name="usrPerson.im1type" list="dataMap['mtool']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--" cssClass="tb_sele"/>
+			           <td class="a_right">联系方式：</td>
+			           <td colspan="3" class="v-align"><s:select name="usrPerson.im1type" list="dataMap['mtool']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--" cssClass="tb_sele"/>
 			          <input type=text value="${usrPerson.im1 }" class="input-text {validate:{maxlength:32}} chne" name="usrPerson.im1"/><span class="ask_text"></span></td>
 			         </tr>
 			         <tr>
@@ -188,7 +187,7 @@ $(document).ready(function(){
 			         </tr>
 			         <tr>
 			           <td class="a_right">&nbsp;</td>
-			           <td colspan="3"><s:select name="usrPerson.im3type" list="dataMap['mtool']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--" cssClass="tb_sele"/>
+			           <td colspan="3" class="v-align"><s:select name="usrPerson.im3type" list="dataMap['mtool']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--" cssClass="tb_sele"/>
 			          <input type=text value="${usrPerson.im3 }" class="input-text {validate:{maxlength:32}} chne" name="usrPerson.im3"/><span class="ask_text"></span></td>
 			         </tr>
 			         <tr>
@@ -216,19 +215,19 @@ $(document).ready(function(){
 					         </tr>
 						     </s:if>
 				           <tr>
-				             <td class="a_right">企业名称</td>
-				             <td colspan="3"><input type="hidden" name="companyMark" value="1"/><input id="companyname" type="text" value="${usrCompany.companyname }" class="input-text chne {validate:{maxlength:15}}"  name="usrCompany.companyname"/>
+				             <td class="a_right">企业名称：</td>
+				             <td colspan="3" class="v-align"><input type="hidden" name="companyMark" value="1"/><input id="companyname" type="text" value="${usrCompany.companyname }" class="input-text chne {validate:{maxlength:15}}"  name="usrCompany.companyname"/>
 				       	    </td>
 				           </tr>
 				           <tr>
-				             <td class="a_right">营业执照号码</td>
-				             <td colspan="3">
+				             <td class="a_right">营业执照号码：</td>
+				             <td colspan="3" class="v-align">
 				             <input type="text" value="${usrCompany.licensecode }" class="input-text alnum {validate:{maxlength:15}}" name="usrCompany.licensecode"/>
 				             </td>
 				           </tr>
 				           <tr>
-				             <td class="a_right">所属行业</td>
-				             <td colspan="3">
+				             <td class="a_right">所属行业：</td>
+				             <td colspan="3" class="v-align">
 				             	<s:select id="industryParent" name="usrCompany.industryparentid" list="industryList" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"  onchange="changeindustry('industryParent','industry');"></s:select>
 				                <select id="industry" name="usrCompany.industryid">
 				         	      <option value="0">--请选择--</option>
@@ -239,12 +238,12 @@ $(document).ready(function(){
 				             </td>
 				          </tr>
 				          <tr>
-				            <td class="a_right">组织机构代码证号码</td>
-				            <td colspan="3"><input id="organizationcode" type="text" value="${usrCompany.organizationcode }" class="input-text Organization {validate:{maxlength:10}}" name="usrCompany.organizationcode" /></td>
+				            <td class="a_right">组织机构代码证号码：</td>
+				            <td colspan="3" class="v-align"><input id="organizationcode" type="text" value="${usrCompany.organizationcode }" class="input-text Organization {validate:{maxlength:10}}" name="usrCompany.organizationcode" /></td>
 				          </tr>
 				          <tr>
-				             <td class="a_right">企业经营地址</td>
-				             <td colspan="3" style="vertical-align: middle;">
+				             <td class="a_right">企业经营地址：</td>
+				             <td colspan="3" class="v-align">
 				              <s:select id="bizProvince" name="usrCompany.bizprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
 				              <select id="bizCity" name="usrCompany.bizcityid" onchange="changeCity('bizCity','bizDistrict');">
 				                <option value="0">--请选择--</option>
@@ -261,27 +260,27 @@ $(document).ready(function(){
 				           </td>
 				        </tr>
 				        <tr>
-				           <td class="a_right">详细地址</td>
-				           <td colspan="3"><input type="text" value="${usrCompany.bizaddress }" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrCompany.bizaddress"/></td>
+				           <td class="a_right">详细地址：</td>
+				           <td colspan="3" class="v-align"><input type="text" value="${usrCompany.bizaddress }" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrCompany.bizaddress"/></td>
 				       </tr>              
 				       <tr>
-				          <td class="a_right" style="vertical-align:top;">邮证编码</td>
-				          <td colspan="3"><input type="text" value="${usrCompany.bizpostcode }" class="input-text zipCode" name="usrCompany.bizpostcode"/></td>
+				          <td class="a_right" style="vertical-align:top;">邮政编码：</td>
+				          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.bizpostcode }" class="input-text zipCode" name="usrCompany.bizpostcode"/></td>
 				       </tr>            
 				       <tr>
-				         <td class="a_right">联系人姓名</td>
-				         <td colspan="3">
+				         <td class="a_right">联系人姓名：</td>
+				         <td colspan="3" class="v-align">
 				           <input type=text value="${usrCompany.linkname }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrCompany.linkname"/>
 				   			&nbsp;&nbsp;<s:radio id="linkgender" name="usrCompany.linkgender" list="#{1:'先生',0:'女士'}"  value="usrCompany.linkgender"/>                	
 				         </td>
 				       </tr>
 				       <tr>
-				         <td class="a_right">联系人邮箱</td>
-				       	 <td style="vertical-align: middle;">
+				         <td class="a_right">联系人邮箱：</td>
+				       	 <td class="v-align">
 				          <input id="linkemail" type=text value="${usrCompany.linkemail }" class="input-text iemail {validate:{maxlength:30}}" name="usrCompany.linkemail"/>
 				         </td>
-				         <td class="a_right">联系人电话</td>
-				         <td>
+				         <td class="a_right" style="width:100px;">联系人电话：</td>
+				         <td class="v-align">
 				         	<input type=text value="${usrCompany.linktelephone }" class="input-text mobile {validate:{maxlength:20}}" name="usrCompany.linktelephone"/>
 				         </td>                
 				      </tr>

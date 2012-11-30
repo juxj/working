@@ -31,7 +31,7 @@
      <th>资金数额</th>
      <th>投资方式</th>
      <th>状态</th>
-     <th>操作</th>
+     <th style="text-align:right; padding-right:60px;">操作</th>
   </tr>
   </s:else>
   <s:iterator value="supplyInfoList" id="item">
@@ -81,7 +81,7 @@
 				已阻止
 			</s:if>
 		</td>
-   		<td class="view_detail">
+   		<td class="view_detail" style="text-align:right; padding-right:20px;">
    		<a href="/service/supplyInfoAction!detail.act?clbSupplyInfoId=${item.id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>

@@ -52,6 +52,7 @@ public class FinanceProductSpModel {
 	private Integer[] extendsType;
 	private String[] extendsValue;
 	
+	private Integer[] rateDown;
 	
 	public Integer[] getRateUp() {
 		return rateUp;
@@ -257,5 +258,11 @@ public class FinanceProductSpModel {
 	}
 	public void setExtendsPropertyList(List<PrdExtendsProperty> extendsPropertyList) {
 		this.extendsPropertyList = extendsPropertyList;
+	}
+	public Integer[] getRateDown() {
+		return rateDown;
+	}
+	public void setRateDown(Integer[] rateDown) {
+		this.rateDown = rateDown;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.zj198.model.DicBank;
+import com.zj198.model.DicBaseRate;
 import com.zj198.model.DicCity;
 import com.zj198.model.DicCommon;
 import com.zj198.model.DicDistrict;
@@ -139,4 +140,5 @@ public interface DictoryDataService {
 	public String getIndustryNameById(Integer id);
 	/*** 根据传入的 province  city district ID 获取全名* @param Id*/
 	public String getPCDNameByIds(Integer pId,Integer cId,Integer dId);
+	public List<DicBaseRate> findBaseRate();
 }

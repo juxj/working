@@ -11,6 +11,7 @@ import com.zj198.action.loan.model.FinanceProductExtendModel;
 import com.zj198.action.loan.model.FindFinanceAdminSpModel;
 import com.zj198.action.loan.model.PreviewFinanceProSrModel;
 import com.zj198.dao.DicBankDAO;
+import com.zj198.dao.DicBaseRateDAO;
 import com.zj198.dao.DicCityDAO;
 import com.zj198.dao.DicIndustryDAO;
 import com.zj198.dao.DicProvinceDAO;
@@ -25,6 +26,7 @@ import com.zj198.dao.PrdPropertyDicDAO;
 import com.zj198.dao.UsrBankDAO;
 import com.zj198.dao.UsrUserDAO;
 import com.zj198.model.DicBank;
+import com.zj198.model.DicBaseRate;
 import com.zj198.model.PrdDatafileList;
 import com.zj198.model.PrdExtendsProperty;
 import com.zj198.model.PrdFinanceArea;
@@ -63,6 +65,7 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 	private UsrUserDAO usrUserDAO;
 	private PrdExtendsPropertyDAO prdExtendsPropertyDAO;
 	private PrdPropertyDicDAO prdPropertyDicDAO;
+	private DicBaseRateDAO dicBaseRateDAO;
 	
 	public void setPrdFinanceDAO(PrdFinanceDAO prdFinanceDAO) {
 		this.prdFinanceDAO = prdFinanceDAO;
@@ -294,6 +297,7 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 			product.setRunningArea(pe.getRunningArea());
 			product.setCreditAcount(pe.getCreditAcount());
 			product.setBankSalaryList(pe.getBankSalaryList());
+			product.setOperatIncome(pe.getOperatIncome());
 		}else if(financeType.intValue() == 153){
 			product.setRepaymentType(StringUtil.getStrByArray(spModel.getRepaymentType()));
 			product.setMortgageType(StringUtil.getStrByArray(spModel.getMortgage()));
@@ -331,8 +335,8 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 //		product.setProStatus(new Integer(196));//草稿状态
 		
 		Set<PrdFinanceInterest> intset = new LinkedHashSet<PrdFinanceInterest>();
-		
-		Double[] rate = {5.85,6.31,6.4,6.65,6.8};
+		List<DicBaseRate> bs = dicBaseRateDAO.findBaseRate();
+		Double[] rate = {bs.get(0).getRate(),bs.get(1).getRate(),bs.get(2).getRate(),bs.get(3).getRate(),bs.get(4).getRate()};
 		String[] rateStr = {"六月以内（含六月)","六个月至一年（含一年）","一至三年（含三年）","三至五年（含五年）","五年以上"};
 		Integer[][] ratedt = {{0,6},{6,12},{12,36},{36,60},{60,1000}};
 		if(product.getInterests() != null && product.getInterests().size() > 0 ){
@@ -353,8 +357,9 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 					interest.setFinanceStartdt(ratedt[s-1][0]);
 					interest.setFinanceEnddt(ratedt[s-1][1]);
 					interest.setInterestMemo(rateStr[s-1]);
+					interest.setRateDown(spModel.getRateDown()[i]);
 					interest.setRateUp(spModel.getRateUp()[i]);
-					interest.setInterestBig(rateup);
+//					interest.setInterestBig(rateup);
 					prdFinanceInterestDAO.save(interest);
 					intset.add(interest);
 				}
@@ -666,6 +671,7 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 			product.setRunningArea(pe.getRunningArea());
 			product.setCreditAcount(pe.getCreditAcount());
 			product.setBankSalaryList(pe.getBankSalaryList());
+			product.setOperatIncome(pe.getOperatIncome());
 		}else if(financeType.intValue() == 153){
 			product.setRepaymentType(StringUtil.getStrByArray(spModel.getRepaymentType()));
 			product.setMortgageType(StringUtil.getStrByArray(spModel.getMortgage()));
@@ -706,7 +712,8 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 		
 		product.setFinanceNum(OrderNOCreator.rapidFinanceProductOrderNO(product.getId()));
 		
-		Double[] rate = {5.85,6.31,6.4,6.65,6.8};
+		List<DicBaseRate> bs = dicBaseRateDAO.findBaseRate();
+		Double[] rate = {bs.get(0).getRate(),bs.get(1).getRate(),bs.get(2).getRate(),bs.get(3).getRate(),bs.get(4).getRate()};
 		String[] rateStr = {"六月以内（含六月)","六个月至一年（含一年）","一至三年（含三年）","三至五年（含五年）","五年以上"};
 		Integer[][] ratedt = {{0,6},{6,12},{12,36},{36,60},{60,1000}};
 		if(product.getInterestType() != null && product.getInterestType().intValue() == 155){
@@ -719,9 +726,10 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 				interest.setFinanceStartdt(ratedt[s-1][0]);
 				interest.setFinanceEnddt(ratedt[s-1][1]);
 				interest.setInterestMemo(rateStr[s-1]);
+				interest.setRateDown(spModel.getRateDown()[i]);
 				interest.setRateUp(spModel.getRateUp()[i]);
 				Double rateup = Double.valueOf(Math.round(rate[s-1] * (100 + spModel.getRateUp()[i])))/100;
-				interest.setInterestBig(rateup);
+//				interest.setInterestBig(rateup);
 				prdFinanceInterestDAO.save(interest);
 				intset.add(interest);
 				if(i == 0){
@@ -951,6 +959,7 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 			product.setRunningArea(pe.getRunningArea());
 			product.setCreditAcount(pe.getCreditAcount());
 			product.setBankSalaryList(pe.getBankSalaryList());
+			product.setOperatIncome(pe.getOperatIncome());
 		}else if(financeType.intValue() == 153){
 			product.setRepaymentType(StringUtil.getStrByArray(spModel.getRepaymentType()));
 			product.setMortgageType(StringUtil.getStrByArray(spModel.getMortgage()));
@@ -982,7 +991,8 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 		}
 		
 		if(product.getInterestType() != null && product.getInterestType().intValue() == 155){
-			Double[] rate = {5.85,6.31,6.4,6.65,6.8};
+			List<DicBaseRate> bs = dicBaseRateDAO.findBaseRate();
+			Double[] rate = {bs.get(0).getRate(),bs.get(1).getRate(),bs.get(2).getRate(),bs.get(3).getRate(),bs.get(4).getRate()};
 			String[] rateStr = {"六月以内（含六月)","六个月至一年（含一年）","一至三年（含三年）","三至五年（含五年）","五年以上"};
 			Integer[][] ratedt = {{0,6},{6,12},{12,36},{36,60},{60,1000}};
 			Set<PrdFinanceInterest> intset = new LinkedHashSet<PrdFinanceInterest>();
@@ -994,6 +1004,7 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 				interest.setFinanceStartdt(ratedt[s-1][0]);
 				interest.setFinanceEnddt(ratedt[s-1][1]);
 				interest.setInterestMemo(rateStr[s-1]);
+				interest.setRateDown(spModel.getRateDown()[i]);
 				interest.setRateUp(spModel.getRateUp()[i]);
 				Double rateup = Double.valueOf(Math.round(rate[s-1] * (100 + spModel.getRateUp()[i])))/100;
 				interest.setInterestBig(rateup);
@@ -1231,6 +1242,14 @@ public class FinanceProductServiceImpl implements FinanceProductService {
 
 	public void setPrdPropertyDicDAO(PrdPropertyDicDAO prdPropertyDicDAO) {
 		this.prdPropertyDicDAO = prdPropertyDicDAO;
+	}
+
+	public DicBaseRateDAO getDicBaseRateDAO() {
+		return dicBaseRateDAO;
+	}
+
+	public void setDicBaseRateDAO(DicBaseRateDAO dicBaseRateDAO) {
+		this.dicBaseRateDAO = dicBaseRateDAO;
 	}
 
 

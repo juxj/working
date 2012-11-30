@@ -26,6 +26,9 @@ public class FinanceApplyAttachModel {
 	private String otherMemo;
 	private Integer needNum;
 	private Integer haveMemo;
+	private String postid;
+	private String attachMemo;
+	private Integer attachCount;
 	public FinanceApplyAttachModel(){
 		
 	}
@@ -44,7 +47,9 @@ public class FinanceApplyAttachModel {
 			Integer attachType,
 			String supplyName,
 			String supplyMemo,
-			String supplyWay){
+			String supplyWay,
+			String postid,
+			String attachMemo){
 		this.id = id;
 		this.dataName = dataName;
 		this.dataSupply=	dataSupply;
@@ -57,6 +62,8 @@ public class FinanceApplyAttachModel {
 		this.supplyMemo=	supplyMemo;
 		this.supplyWay=	supplyWay;
 		this.haveMemo = haveMemo;
+		this.postid = postid;
+		this.attachMemo = attachMemo;
 	}
 	
 	public FinanceApplyAttachModel(Integer id, 
@@ -77,7 +84,9 @@ public class FinanceApplyAttachModel {
 					Integer attachType,
 					String supplyName,
 					String supplyMemo,
-					String supplyWay){
+					String supplyWay,
+					String postid,
+					String attachMemo){
 		this.id = id;
 		this.dataName = dataName;
 		this.dataSupply=	dataSupply;
@@ -97,6 +106,8 @@ public class FinanceApplyAttachModel {
 		this.supplyMemo=	supplyMemo;
 		this.supplyWay=	supplyWay;
 		this.haveMemo = haveMemo;
+		this.postid = postid;
+		this.attachMemo = attachMemo;
 	}
 	
 	public FinanceApplyAttachModel(Integer id, 
@@ -112,7 +123,9 @@ public class FinanceApplyAttachModel {
 			Integer attachType,
 			String supplyName,
 			String supplyMemo,
-			String supplyWay){
+			String supplyWay,
+			String postid,
+			String attachMemo){
 		this.id = id;
 		this.applyId=	applyId;
 		this.datalistId=	datalistId;
@@ -127,6 +140,8 @@ public class FinanceApplyAttachModel {
 		this.supplyName=	supplyName;
 		this.supplyMemo=	supplyMemo;
 		this.supplyWay=	supplyWay;
+		this.postid = postid;
+		this.attachMemo = attachMemo;
 	}
 	public Integer getId() {
 		return id;
@@ -267,5 +282,23 @@ public class FinanceApplyAttachModel {
 	}
 	public void setSupplyWay(String supplyWay) {
 		this.supplyWay = supplyWay;
+	}
+	public String getPostid() {
+		return postid;
+	}
+	public void setPostid(String postid) {
+		this.postid = postid;
+	}
+	public String getAttachMemo() {
+		return attachMemo;
+	}
+	public void setAttachMemo(String attachMemo) {
+		this.attachMemo = attachMemo;
+	}
+	public Integer getAttachCount() {
+		return attachCount;
+	}
+	public void setAttachCount(Integer attachCount) {
+		this.attachCount = attachCount;
 	}
 }

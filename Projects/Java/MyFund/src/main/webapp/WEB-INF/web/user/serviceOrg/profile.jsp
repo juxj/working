@@ -11,6 +11,11 @@
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/profile.js" > </script>
 <script type="text/javascript">
+$(document).ready(function(){
+	if('${session._user.auditstatus}' != '2'){
+		$("#status").show();
+	}
+});
 </script>
 </head>
 <body>
@@ -27,11 +32,18 @@
 <div class="container_950 box_4">
 	<div class="P_title">详细信息</div>
 	<div class="line">
-
-		<img src="/images/icon01.jpg" alt="" class="P_connect_img"/>当前账户状态:
+		<h6><img src="/images/icon01.jpg" alt="" class="P_connect_img"/>当前账户状态:
 		<s:if test="#session._user.auditstatus==0"><span class="no_ok">未审核</span></s:if>
 		<s:elseif test="#session._user.auditstatus==1"><span class="no_ok">待审核</span></s:elseif>
 		<s:elseif test="#session._user.auditstatus==2"><span class="no_ok">已审核</span></s:elseif>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		您的账户类型：<s:if test="#session._user.type==13">会计师事务所</s:if><s:elseif test="#session._user.type==14">评估公司</s:elseif><s:elseif test="#session._user.type==15">第三方监管公司</s:elseif><s:elseif test="#session._user.type==16">律师事务所</s:elseif><s:elseif test="#session._user.type==17">投资咨询公司</s:elseif><s:elseif test="#session._user.type==18">经济园区</s:elseif>
+		</h6>
+	</div>
+	<div id="status" class="P_connect" style="display: none;padding-left:64px;">
+		<span>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br />
+		</span><span style="margin-right:15px;" class="view_detail">
+		<a href="/user/UserAction!next.act" style="float:none;">以后再说</a></span>
 	</div>
 </div>
 <div class="hr_10"> &nbsp; </div>

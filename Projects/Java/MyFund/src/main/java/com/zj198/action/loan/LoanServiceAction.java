@@ -9,10 +9,11 @@ import com.zj198.model.DicIndustry;
 import com.zj198.model.DicInvestRange;
 import com.zj198.model.DicProvince;
 import com.zj198.model.KnwTitle;
-import com.zj198.model.PrdFinance;
+import com.zj198.model.PrdRecommendation;
 import com.zj198.model.PrdServiceItem;
 import com.zj198.service.club.SupplyRequestService;
 import com.zj198.service.common.DictoryDataService;
+import com.zj198.service.finservice.FinanceProdService;
 import com.zj198.service.loan.FinanceProductService;
 import com.zj198.service.news.NewsService;
 import com.zj198.service.sin.ServiceInfoService;
@@ -22,6 +23,7 @@ public class LoanServiceAction extends BaseAction {
 	
 	private ServiceInfoService serviceInfoService;
 	private FinanceProductService financeProductService;
+	private FinanceProdService financeProdService;
 	private DictoryDataService dictoryDataService;
 	private SupplyRequestService supplyRequestService;
 	private NewsService newsService;
@@ -30,7 +32,7 @@ public class LoanServiceAction extends BaseAction {
 	private List<KnwTitle> financingGuideList;
 	private List<ClbRequestInfo> requestInfoList;
 	private List<ClbSupplyInfo> supplyInfoList;
-	private List<PrdFinance> prdFinanceList;
+	private List<PrdRecommendation> prdFinanceList;
 	private List<DicIndustry> industryList;// 行业
 	private List<PrdServiceItem> serviceItemList;
 	
@@ -45,7 +47,7 @@ public class LoanServiceAction extends BaseAction {
 		this.finacialNewsList =  this.newsService.findLastestByType(Constants.FINANCING_NEWS, 5);
 		industryList = dictoryDataService.findIndustryByParentid(0);
 		this.serviceItemList = this.serviceInfoService.findPrdServiceItemByRecentN(5);
-		prdFinanceList = financeProductService.findFinanceImportent(new Integer(5));
+		prdFinanceList = financeProdService.findRecommendationByTopNumber(Constants.PRD_RECOMMEND_TYPE_LOAN, 5);
 		
 		requestInfoList = supplyRequestService.findLastRequestInfo(10);
 		supplyInfoList = supplyRequestService.findLastSupplyInfo(10);
@@ -93,11 +95,11 @@ public class LoanServiceAction extends BaseAction {
 		this.supplyInfoList = supplyInfoList;
 	}
 
-	public List<PrdFinance> getPrdFinanceList() {
+	public List<PrdRecommendation> getPrdFinanceList() {
 		return prdFinanceList;
 	}
 
-	public void setPrdFinanceList(List<PrdFinance> prdFinanceList) {
+	public void setPrdFinanceList(List<PrdRecommendation> prdFinanceList) {
 		this.prdFinanceList = prdFinanceList;
 	}
 
@@ -156,5 +158,9 @@ public class LoanServiceAction extends BaseAction {
 
 	public List<DicInvestRange> getFinancingTypeList() {
 		return financingTypeList;
+	}
+
+	public void setFinanceProdService(FinanceProdService financeProdService) {
+		this.financeProdService = financeProdService;
 	}
 }

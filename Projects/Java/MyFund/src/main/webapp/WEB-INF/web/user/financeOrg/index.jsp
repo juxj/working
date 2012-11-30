@@ -56,7 +56,9 @@ function showApply(){
       <h6>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else></h6>
       <p class="notice">您上次登录的时间为 <font color="#CC0000"><s:date name="usrLoginhistory.logindt" format="yyyy-MM-dd HH:mm:ss" /></font>，如有疑问请及时修改密码并联系客服。</p>
       <span class="msg">您有（<a class="red" href="/user/message!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
-      <p>查看您的<a href="/user/Profile.act"><font style="color: red;">详细信息</font></a>。</p>
+      <p>查看您的<a href="/user/Profile.act"><font style="color: red;">详细信息</font></a>。
+      	<br/><a href="/user/details.act" class="btn_s bred">成为通资信通会员</a>
+      </p>
     </div>
     <div class="clear"> &nbsp; </div>
   </div>
@@ -83,54 +85,30 @@ function showApply(){
      -->
   </div>
   <div class="grid_230">
-    <div class="menu_blue white"><span class="fr white"><a href="/loan/LoanService.act">更多»</a></span>
-      <h6>推荐融资产品</h6>
+    <div class="menu_blue white"><span class="fr white"><a href="/service/requestInfoAction!home.act?pageNo=1">更多»</a></span>
+      <h6>最新项目信息</h6>
     </div>
     <div class="box_3">
-      <div class="qyrz-top">
-           <s:action name="financeProduct!findRecom" namespace="/loan" executeResult="true"></s:action>
-       </div>
+    <s:if test="newRequestInfo.size>0">
+        <ul class="new_li">
+		<s:iterator id="item" value="newRequestInfo" status="st">
+			<li title="${item.title}">
+			<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id }">
+				<s:if test="#item.title != null && #item.title.length()>15">
+					<s:property value="#item.title.substring(0,15)"></s:property>...
+				</s:if><s:else>
+					${item.title}
+				</s:else>
+			</a></li>
+		</s:iterator>
+	</ul>				  
+	</s:if>				
+	<s:else>
+		<li>暂无</li>
+	</s:else>
+      
     </div>
     <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white"><span class="fr white"><a href="/finance/bankProduct!search.act">更多»</a></span>
-      <h6>推荐理财产品</h6>
-    </div>
-    <div class="box_3">
-	        	<div class="qyrz-top" style="width : 230px;">
-				    <table class="qyrz-top_table">
-					  <s:iterator value="bankFinanceRecommendationList" id="item" >
-					   <tr>
-					     <td style="vertical-align: middle;">
-							<s:if test="logo == null">
-						        <img src="/images/banklogo/zj198.jpg" class="td_img" style="white-space: nowrap;"/>
-					        </s:if>
-					        <s:else>
-					        	<img src="/images/banklogo/${item.logo}" class="td_img" style="white-space: nowrap;"/>
-					        </s:else>
-					     </td>
-					     <td class="hot_connect">
-					     	<a href="/finance/bankProduct!showDetails.act?id=${item.prodId}">
-					     		<s:if test="#item.title != null && #item.title.length()>15">
-									<s:property value="#item.title.substring(0,15)"></s:property>...
-								</s:if><s:else>
-									${item.title}
-								</s:else>
-					     	</a>
-					     </td>
-					   </tr>
-					  </s:iterator>
-					</table>
-			    </div>
-	        </div>
-    <div class="hr_10"> &nbsp; </div>
-    <div class="menu_blue white">
-      <h6>实用工具</h6>
-    </div>
-    <div class="box_3">
-      <ul class="new_li">
-        <jsp:include page="/public/finance/_financing_tools.jsp" />
-      </ul>
-    </div>
   </div>
 </div>
 <div class="hr_10"> &nbsp; </div>

@@ -61,6 +61,7 @@ function audit(id,audit,type){
 						</s:else>
 					</td></tr>
 				<s:if test="usrBank!=null">
+					<tr style="color:#97181d;font-weight: bold;"><td>用户类型 ：银行</td><td>&nbsp;</td></tr>
 					<tr><td>银行名称</td><td><s:if test="audit == 0">${profileMap['bankName'] } ${usrBank.detailname }</s:if><s:elseif test="audit == 1 || audit == 2">${usrBank.detailname }</s:elseif>&nbsp;</td></tr>
 					<tr><td>联系人姓名</td><td>&nbsp;<s:if test="usrBank.linkgenderr==1">${usrBank.linkname} 先生</s:if><s:elseif test="usrBank.linkgenderr==0">${usrBank.linkname} 女士</s:elseif></td></tr>
 					<tr><td>联系人地址 </td><td>${profileMap['address'] }&nbsp;</td></tr>

@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
+import com.zj198.model.ClbRequestInfo;
 import com.zj198.model.DicCommon;
 import com.zj198.model.DicInvestRange;
 import com.zj198.model.DicUsertype;
@@ -53,6 +54,7 @@ public class UserAction extends BaseAction {
     private List<DicCommon> serviceLevelList;
     private List<Object> supplyInfoList;
     private List<Object> requestInfoList;
+    private List<ClbRequestInfo> newRequestInfo;
     private List<DicInvestRange> investStyleList;
 	private List<DicInvestRange> amountRangeList;
 	private List<DicInvestRange> projectTypeList;
@@ -204,6 +206,7 @@ public class UserAction extends BaseAction {
 		 this.supplyInfoList = this.supplyRequestService.findClbSupplyInfoListByUser(userId, 1, 3).getData();
 		 this.amountRangeList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_AMOUNT_RANGE);
 		 this.investStyleList = this.supplyRequestService.findDicInvestRangeList(Constants.CLUB_INVEST_STYLE);
+		 newRequestInfo = supplyRequestService.findLastRequestInfo(10);
 	}
 	
 	
@@ -318,6 +321,14 @@ public class UserAction extends BaseAction {
 
 	public List<DicInvestRange> getProjectTypeList() {
 		return projectTypeList;
+	}
+
+	public List<ClbRequestInfo> getNewRequestInfo() {
+		return newRequestInfo;
+	}
+
+	public void setNewRequestInfo(List<ClbRequestInfo> newRequestInfo) {
+		this.newRequestInfo = newRequestInfo;
 	}
 	
 	

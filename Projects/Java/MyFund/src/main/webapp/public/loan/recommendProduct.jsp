@@ -4,7 +4,7 @@
   <s:iterator value="recommendProducts">
    <tr>
      <td style="vertical-align: middle;">
-      <s:if test="logo == null">
+      <s:if test="logo == null || logo == ''">
 		 <img src="/images/banklogo/zj198.jpg"  class="td_img" style="white-space: nowrap;"/>
 		</s:if>
 		<s:else>
@@ -12,11 +12,11 @@
 		</s:else>
      </td>
      <td class="hot_connect">
-     	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}">
-     		<s:if test="recommendName != null && recommendName.length()>15">
-				<s:property value="recommendName.substring(0,15)"></s:property>...
+     	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${prodId}">
+     		<s:if test="title != null && title.length()>15">
+				<s:property value="title.substring(0,15)"></s:property>...
 			</s:if><s:else>
-				${recommendName}
+				${title}
 			</s:else>
      	</a>
      </td>

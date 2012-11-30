@@ -27,12 +27,10 @@
   <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
-        <table border="0" cellspacing="0" cellpadding="0"  width="100%"  class="box_5" >
+        <table border="0" cellspacing="0" cellpadding="0"  width="100%"  class="Search_table">
           <tr>
-            <td ><span class="Search_t_title red fl">圣迈鑫源投资基金低风险高收益计划</span><span class="Search_t_title fr"><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></span></td>
+            <td colspan="4" class="Search_t_title"><span class="red fl">圣迈鑫源投资基金低风险高收益计划</span><span class="fr"><input type="button" class="btnsub bred " value="在线预约" onclick="window.location='/finance/fund!inputIntention.act';"/></span></td>
         </tr>
-        </table>
-        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
             <td class="Search_t_connect">产品名称</td>
             <td colspan="3" style="padding:5px 10px 5px 10px;">圣迈鑫源股权投资基金</td>

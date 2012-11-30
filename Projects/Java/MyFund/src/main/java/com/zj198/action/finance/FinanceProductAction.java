@@ -10,8 +10,10 @@ import com.zj198.model.PrdBankfinance;
 import com.zj198.model.PrdRecommendation;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.service.finservice.FinanceProdService;
+import com.zj198.service.fund.FundService;
 import com.zj198.service.news.NewsService;
 import com.zj198.util.Constants;
+import com.zj198.util.Pager;
 
 public class FinanceProductAction extends BaseAction{
 
@@ -42,12 +44,14 @@ public class FinanceProductAction extends BaseAction{
 	private String[] query;
 
 	private Integer pageNo;
+	private Pager fundPager;
 //	private Pagination pagination;
 	
 	private PrdBankfinance prdBankfinance;
 	private List<PrdBankfinance> bankProductList;
 	private FinanceProdService financeProdService;
 	private NewsService newsService;
+	private FundService fundService;
 	
 	private List<PrdRecommendation> bankFinanceRecommendationList;
 	
@@ -59,6 +63,7 @@ public class FinanceProductAction extends BaseAction{
 		@SuppressWarnings("rawtypes")
 		List list = this.financeProdService.findAll(pageSize, pageNo).getData();
 		this.bankProductList = list;
+		fundList();
 		return SUCCESS;
 	}
 	/**融资餐饮基金页*/
@@ -91,7 +96,11 @@ public class FinanceProductAction extends BaseAction{
 		emptyBank.setName("不限");
 		bankList.add(0, emptyBank);
 	}
-	
+	//---------------start
+	private void fundList(){
+		fundPager=fundService.findFundAll(null, null, null, null, null, pageSize, pageNo);
+	}
+	//-------------------end
 	
 	public List<DicCommon> getProductStatus() {
 		return productStatus;
@@ -239,6 +248,12 @@ public class FinanceProductAction extends BaseAction{
 //	}
 	public List<PrdRecommendation> getBankFinanceRecommendationList() {
 		return bankFinanceRecommendationList;
+	}
+	public void setFundService(FundService fundService) {
+		this.fundService = fundService;
+	}
+	public Pager getFundPager() {
+		return fundPager;
 	}
 
 

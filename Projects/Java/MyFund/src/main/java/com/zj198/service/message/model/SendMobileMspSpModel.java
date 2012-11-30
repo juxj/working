@@ -11,6 +11,28 @@ public class SendMobileMspSpModel {
 	private String content;
 	private String mobile;
 	private Integer sendUserId;
+	private String title;
+	
+	//new
+	public SendMobileMspSpModel() {
+	}
+
+	public SendMobileMspSpModel(String title, String content, String mobile) {
+		this.title = title;
+		this.content = content;
+		this.mobile = mobile;
+	}
+	
+	 
+	//getter and setter
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 
 	public Integer getSendType() {
 		return sendType;

@@ -28,40 +28,17 @@ function payCost(id){
 		$("#umsg").html("请选择用户。").show();
 	}
 }
-function edit(id){
-	document.location.href="/admin/Admin!editAdmUser.act?adminUid="+id;
-}
-function profile(id,type,au){
-	document.location.href="/admin/user/Profile.act?userId="+id+"&"+"type="+type+"&"+"audit="+au;
-}
-function search(){
-	if($("#uname").val()=="用户名..."){
-		$("#uname").val("");
-	}
-	if($("#rname").val()=="姓名..."){
-		$("#rname").val("");
-	}
-	$("#searchform").submit();
-}
 function toPage(pageNo,pageSize){
 	$("#pageNo").val(pageNo);
 	search();
 }
 function details(id){
 	if(id!=null && id!=0){
-		$.post("/admin/user/User!details.act",{uid:id},function(a){
-			$("#pop_info").html(a).dialog({width:500,modal: true});
+		$.post("/admin/payment/manage!showOrd.act",{ordId:id},function(a){
+			$("#ord_info").html(a).dialog({width:500,modal: true});
 			$(":button").button();
 			$(".tablesorter").tablesorter();
 		});
-	}else{
-		$("#umsg").html("请选择用户。").show();
-	}
-}
-function adminLoginUser(id,type,au){
-	if(id !=null && id != 0){
-		window.open("/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1);
-		//document.location.href="/admin/user/aLoginU.act?userId="+id+"&"+"type="+type+"&"+"audit="+au+"&"+"alu="+1;
 	}else{
 		$("#umsg").html("请选择订单。").show();
 	}
@@ -86,19 +63,38 @@ function adminLoginUser(id,type,au){
 			<div class="block_content">
 				<form id="searchform" action="" method="post">
 				<input type="hidden" id="pageNo" name="pageNo"/>
+				<!-- 
 				<table cellpadding="0" cellspacing="0" width="100%">
 						<tr>
 							<td>
-								<label>付款订单编号</label><input value="${id }" type="text" name="id" class="text" style="width: 100px;"/>
+								<label>会员名称&nbsp;&nbsp;&nbsp;</label><input value="${ordName }" type="text" name="ordName" class="text" style="width: 100px;"/>
 							</td>
 							<td>
-								<label>用户名</label><input value="${userid }" type="text" name="userid" class="text" style="width: 100px;"/>
+								<label>会员类型</label><s:select name="ordType" list="#{'-1':'--会员类型--','1':'资信通认证会员','2':'资信通vip会员'}" listKey="key" listValue="value"/>
 							</td>
 							<td>
-								<input type="button" value="查 询"/>
+								<label>开始时间</label><input id="cd1" name="startdt" class="text date_picker" value="<s:date name="startdt[0]"/>"/> 
+								<label>~</label><input id="cd2" name="startdt" class="text date_picker" value="<s:date name="startdt[1]"/>"/> 
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>
+								<label>付费订单号</label><input value="${ordId }" type="text" name="ordId" class="text" style="width: 100px;"/>
+							</td>
+							<td>
+								<label>会员状态</label><s:select name="ordStatus" list="#{'-1':'--会员状态--',0:'未使用',1:'使用中',2:'已过时'}" listKey="key" listValue="value"/>
+							</td>
+							<td>
+								<label>创建时间</label><input id="lg1" name="createdt" class="text date_picker" value="<s:date name="createdt[0]"/>"/>
+								<label>~</label><input id="lg2" name="createdt" class="text date_picker" value="<s:date name="createdt[1]"/>"/>
+							</td>
+							<td>
+								<input type="submit" value="查 询"/>
 							</td>
 						</tr>
 					</table>
+					 -->
 					</form>
 			<div class="block_content">
 				<table cellpadding="0" cellspacing="0" width="100%" class="tablesorter">
@@ -133,7 +129,7 @@ function adminLoginUser(id,type,au){
 							<td><s:if test="#u.payWay==2">网银付款</s:if>
 							<s:elseif test="#u.payWay==1">银行汇款</s:elseif>&nbsp;</td>
 							<td colspan="2">
-								<input type="button" value="详细"/> 
+								<input type="button" onclick="details(${u.id});" value="详细"/> 
 								<s:if test="#u.payStatus==0"><input type="button" onclick="payCost(${u.id});" value="已付款"/> </s:if>
 							</td>
 						</tr>
@@ -151,7 +147,7 @@ function adminLoginUser(id,type,au){
 		<!-- .block ends -->
 	</div>
 	</div>
-	<div id="pop_info" style="display:none;" title="用户注册信息"></div>
+	<div id="ord_info" style="display:none;" title="付费单"></div>
 </div>
 </body>
 </html>

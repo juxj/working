@@ -18,4 +18,5 @@ public interface PrdRecommendationDAO extends
 	public int replaceSequence(int typeId, int original, int target) ;
 	
 	public List<PrdRecommendation> findByTopNumber(int typeId, int number);
+	public void updatePrdRecommendSeq(Integer typeId, Integer seq);
 }

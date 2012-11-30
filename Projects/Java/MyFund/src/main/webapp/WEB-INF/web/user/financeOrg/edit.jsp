@@ -113,10 +113,12 @@ function uploadImg(){
 		<s:if test="#session._user.auditstatus==0"><span class="no_ok">未审核</span></s:if>
 		<s:elseif test="#session._user.auditstatus==1"><span class="no_ok">待审核</span></s:elseif>
 		<s:elseif test="#session._user.auditstatus==2"><span class="no_ok">已审核</span></s:elseif>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		您的账户类型：<s:if test="#session._user.type==7">保险公司</s:if><s:elseif test="#session._user.type==8">小额贷款公司</s:elseif><s:elseif test="#session._user.type==9">典当公司</s:elseif><s:elseif test="#session._user.type==10">担保公司</s:elseif><s:elseif test="#session._user.type==11">融资租赁公司</s:elseif><s:elseif test="#session._user.type==12">民间机构</s:elseif>
 	</div>
 	<div id="status" class="P_connect" style="display: none;">
 		&nbsp;&nbsp;&nbsp;&nbsp;尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br />
-		&nbsp;&nbsp;&nbsp;&nbsp;您也可以暂时跳过稍后在进行信息完善。<span style="margin-right:15px;" class="view_detail">
+		&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-right:15px;" class="view_detail">
 		<a href="/user/UserAction!next.act" style="float:none;">以后再说</a></span>
 		<br />
 		&nbsp;
@@ -151,13 +153,13 @@ function uploadImg(){
 	    </s:if>
         <tr>
           <td class="a_right">机构名称：</td>
-          <td colspan="3">
+          <td colspan="3" class="v-align">
           	<input type=text value="${usrFinanceorg.orgname }" class="input-text {validate:{stringMaxLength:30}} chne" name="usrFinanceorg.orgname"/>
           </td>
         </tr>
         <tr>
           <td class="a_right">营业执照号码：</td>
-          <td>
+          <td class="v-align">
           	<input type=text value="${usrFinanceorg.licensecode }" class="input-text alnum {validate:{maxlength:15}}" name="usrFinanceorg.licensecode"/>
           </td>
           <td><label id="licensecodeMsg"><s:if test="profileMap['business'] != ''">${profileMap['business']}</s:if>&nbsp;</label></td>
@@ -165,7 +167,7 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">组织机构代码证号码：</td>
-          <td>
+          <td class="v-align">
           	<input type=text value="${usrFinanceorg.organizationcode }" class="input-text Organization {validate:{maxlength:10}}" name="usrFinanceorg.organizationcode"/>
           </td>
           <td><label id="organizationMsg"><s:if test="profileMap['orgAnization'] != ''">${profileMap['orgAnization'] }</s:if>&nbsp;</label></td>
@@ -173,7 +175,7 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">税务登记证号码：</td>
-          <td>
+          <td class="v-align">
           	<input type=text value="${usrFinanceorg.faxcode }" class="input-text alnum {validate:{maxlength:15}}" name="usrFinanceorg.faxcode"/>
           </td>
           <td><label id="faxcodeMsg"><s:if test="profileMap['taxregistration'] != ''">${profileMap['taxregistration']}</s:if>&nbsp;</label></td>
@@ -181,11 +183,11 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">法定代表人：</td>
-          <td colspan="3"><input type=text value="${usrFinanceorg.legalperson }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrFinanceorg.legalperson"/></td>
+          <td colspan="3" class="v-align"><input type=text value="${usrFinanceorg.legalperson }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrFinanceorg.legalperson"/></td>
         </tr>
         <tr>
           <td class="a_right">注册地址：</td>
-          <td colspan="3">
+          <td colspan="3" class="v-align">
           <s:select id="regProvince" name="usrFinanceorg.regprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');"/>
           <select id="regCity" name="usrFinanceorg.regcityid" onchange="changeCity('regCity','regDistrict');" class="tb_sele">
  	 		 <option value="0">--请选择--</option>
@@ -203,32 +205,32 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">详细地址：</td>
-          <td colspan="3">
+          <td colspan="3" class="v-align">
           	<input type=text value="${usrFinanceorg.regaddress }" class="input-text {validate:{maxlength:32}} chne" style="width:534px;" name="usrFinanceorg.regaddress"/>
           </td>
         </tr>
         <tr>
           <td class="a_right">邮编：</td>
-          <td colspan="3">
+          <td colspan="3" class="v-align">
           	<input type=text value="${usrFinanceorg.regpostcode }" class="input-text zipCode" name="usrFinanceorg.regpostcode"/>
           </td>
         </tr>
         <tr>
           <td class="a_right">注册日期：</td>
-          <td>
+          <td class="v-align">
           	<input id="regDate" type=text value="<s:date name="usrFinanceorg.registerdate" />" class="input-text dateISO" name="usrFinanceorg.registerdate"/>
           </td>
           <td class="a_right">注册资本：</td>
-          <td><input type=text value="<s:if test="usrFinanceorg.registeredcapital!=null"><s:text name="format.float"><s:param value="usrFinanceorg.registeredcapital"></s:param></s:text></s:if>" class="input-text digits {validate:{maxlength:12}}" name="usrFinanceorg.registeredcapital"/>
+          <td class="v-align"><input type=text value="<s:if test="usrFinanceorg.registeredcapital!=null"><s:text name="format.float"><s:param value="usrFinanceorg.registeredcapital"></s:param></s:text></s:if>" class="input-text digits {validate:{maxlength:12}}" name="usrFinanceorg.registeredcapital"/>
           &nbsp;万元</td>
         </tr>
         <tr>
           <td class="a_right">机构类型：</td>
-          <td colspan="3"><s:select name="usrFinanceorg.orgtypeid" list="dataMap['companyType']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"/></td>
+          <td colspan="3" class="v-align"><s:select name="usrFinanceorg.orgtypeid" list="dataMap['companyType']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"/></td>
         </tr>
         <tr>
           <td class="a_right">机构联系地址：</td>
-          <td colspan="3"><s:select id="bizProvince" name="usrFinanceorg.bizprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
+          <td colspan="3" class="v-align"><s:select id="bizProvince" name="usrFinanceorg.bizprovinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('bizProvince','bizCity','bizDistrict');"/>
           <select id="bizCity" name="usrFinanceorg.bizcityid" onchange="changeCity('bizCity','bizDistrict');" class="tb_sele">
           	<option value="0">--请选择--</option>
           	<s:iterator value="cityMap['bizCity']">
@@ -244,11 +246,11 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">详细地址：</td>
-          <td colspan="3"><input type=text value="${usrFinanceorg.bizaddress }" class="input-text {validate:{maxlength:32}} chne" style="width:534px;" name="usrFinanceorg.bizaddress"/></td>
+          <td colspan="3" class="v-align"><input type=text value="${usrFinanceorg.bizaddress }" class="input-text {validate:{maxlength:32}} chne" style="width:534px;" name="usrFinanceorg.bizaddress"/></td>
         </tr>
         <tr>
           <td class="a_right">邮编：</td>
-          <td colspan="3"><input type=text value="${usrFinanceorg.bizpostcode }" class="input-text zipCode" name="usrFinanceorg.bizpostcode"/></td>
+          <td colspan="3" class="v-align"><input type=text value="${usrFinanceorg.bizpostcode }" class="input-text zipCode" name="usrFinanceorg.bizpostcode"/></td>
         </tr>
         <tr>
           <td class="a_right">经营范围：</td>
@@ -256,11 +258,11 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">联系人姓名：</td>
-          <td colspan="3"><input type=text value="${usrFinanceorg.linkname }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrFinanceorg.linkname"/></td>
+          <td colspan="3" class="v-align"><input type=text value="${usrFinanceorg.linkname }" class="input-text {validate:{maxlength:6}} chcharacter" name="usrFinanceorg.linkname"/></td>
         </tr>
         <tr>
           <td class="a_right">联系人性别：</td>
-          <td colspan="3">&nbsp;
+          <td colspan="3" class="v-align">&nbsp;
           <s:if test="usrFinanceorg == null || usrFinanceorg.linkgender == null">
           <s:radio id="gender1" name="usrFinanceorg.linkgender" list="#{1:'先生',0:'女士'}" value="1" listKey="key" listValue="value"/>
           </s:if><s:else>
@@ -270,17 +272,17 @@ function uploadImg(){
         </tr>
         <tr>
           <td class="a_right">联系人邮箱：</td>
-          <td><input id="linkemail" type=text value="${usrFinanceorg.linkemail }" class="input-text {validate:{maxlength:30}} iemail" name="usrFinanceorg.linkemail"/>
+          <td class="v-align"><input id="linkemail" type=text value="${usrFinanceorg.linkemail }" class="input-text {validate:{maxlength:30}} iemail" name="usrFinanceorg.linkemail"/>
           <label for="linkemail" class="error" generated="true"></label></td>
           <td class="a_right">联系人电话：</td>
-          <td><input type=text value="${usrFinanceorg.linktelephone }" class="input-text {validate:{maxlength:20}} mobile" name="usrFinanceorg.linktelephone"/></td>
+          <td class="v-align"><input type=text value="${usrFinanceorg.linktelephone }" class="input-text {validate:{maxlength:20}} mobile" name="usrFinanceorg.linktelephone"/></td>
         </tr>
         <tr>
           <td class="a_right">所属部门：</td>
-          <td><input id="department" type=text value="${usrFinanceorg.department }" class="input-text {validate:{maxlength:8}} chne" name="usrFinanceorg.department"/>
+          <td class="v-align"><input id="department" type=text value="${usrFinanceorg.department }" class="input-text {validate:{maxlength:8}} chne" name="usrFinanceorg.department"/>
           <label for="department" class="error" generated="true"></label></td>
           <td class="a_right">职位：</td>
-          <td><input type=text value="${usrFinanceorg.position }" class="input-text {validate:{maxlength:8}} chne" name="usrFinanceorg.position"/></td>
+          <td class="v-align"><input type=text value="${usrFinanceorg.position }" class="input-text {validate:{maxlength:8}} chne" name="usrFinanceorg.position"/></td>
         </tr>
         <tr>
           <td class="a_right">产品介绍：</td>

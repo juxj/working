@@ -87,35 +87,35 @@ function LookRecPro(id){
 			<div class="f_sqxx">
 	      		<span class="f_gz">需求信息</span>
 				<div>
-					<table style="width:660px; font-size:14px;line-height: 28px;">
+					<table class="special_psfs_tb">
 						<tr>
-							<td width="25%" align="right">需求编号：</td>
-							<td width="25%" ><s:property value="loan.applyNum"/> </td>
-							<td width="25%" align="right">融资产品类型：</td>
-							<td width="25%" ><common:print valueId="loan.applyType" /> </td>
+							<td class="a_right">需求编号：</td>
+							<td width="20%" ><s:property value="loan.applyNum"/> </td>
+							<td class="a_right">融资产品类型：</td>
+							<td ><common:print valueId="loan.applyType" /> </td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">需求金额：</td>
-							<td width="25%" ><s:number name="loan.loanAmount" />万元</td>
-							<td width="25%" align="right">期限：</td>
-							<td width="25%" ><s:property value="loan.loanMonth" />个月 </td>
+							<td class="a_right">需求金额：</td>
+							<td ><s:number name="loan.loanAmount" />万元</td>
+							<td class="a_right">期限：</td>
+							<td ><s:property value="loan.loanMonth" />个月 </td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">用途：</td>
-							<td width="25%" ><common:print valueId="loan.loanPurpose"/> </td>
-							<td width="25%" align="right">是否有抵押物：</td>
-							<td width="25%" >
+							<td class="a_right">用途：</td>
+							<td ><common:print valueId="loan.loanPurpose"/> </td>
+							<td class="a_right">是否有抵押物：</td>
+							<td w>
 								<common:print valueId="loan.haveMortgage" valueSetMap="ZJ102" /> </td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">接受金融机构：</td>
-							<td width="25%" ><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
-							<td width="25%" align="right">接受利率：</td>
-							<td width="25%" ><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
+							<td class="a_right">接受金融机构：</td>
+							<td w><common:print valueId="loan.loanOrganization" valueSetMap="ZJ110"/> </td>
+							<td class="a_right">接受利率：</td>
+							<td ><s:property value="loan.rateLowerLimit" />~<s:property value="loan.rateUpperLimit" />% </td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">发布时间：</td>
-							<td colspan="3" width="25%" ><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
+							<td class="a_right">发布时间：</td>
+							<td colspan="3" ><s:date name="loan.createdt" format="yyyy-MM-dd"/> </td>
 						</tr>
 					</table>
 				</div>
@@ -125,22 +125,22 @@ function LookRecPro(id){
 			<div>
 	      		<span class="f_gz">需求方信息</span>
 				<div >
-					<table style="width:660px; font-size:14px;line-height: 28px;">
+					<table class="special_psfs_tb">
 						<tr>
-							<td width="25%" align="right">企业经营类型：</td>
-							<td width="25%" ><common:print valueId="loan.busiRunningType" valueSetMap="ZJ111"/></td>
-							<td width="25%" align="right">上年度销售额：</td>
-							<td width="25%" >${loan.lastyearVolume}万元</td>
+							<td class="a_right">企业经营类型：</td>
+							<td width="20%" ><common:print valueId="loan.busiRunningType" valueSetMap="ZJ111"/></td>
+							<td class="a_right">上年度销售额：</td>
+							<td >${loan.lastyearVolume}万元</td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">上年度资产负债率：</td>
-							<td width="25%" >${loan.lastyearDebt} %</td>
-							<td width="25%" align="right">上年度销售成本：</td>
-							<td width="25%" >${loan.lastyearCost}万元</td>
+							<td class="a_right">上年度资产负债率：</td>
+							<td >${loan.lastyearDebt} %</td>
+							<td class="a_right">上年度销售成本：</td>
+							<td >${loan.lastyearCost}万元</td>
 						</tr>
 						<tr>
-							<td width="25%" align="right">上年度净利润：</td>
-							<td width="25%" colspan="3">${loan.lastyearProfit }万元</td>
+							<td class="a_right">上年度净利润：</td>
+							<td colspan="3">${loan.lastyearProfit }万元</td>
 						</tr>
 					</table>
 				</div>      		

@@ -10,6 +10,13 @@
 <link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/profile.js" > </script>
+<script language="javascript">
+$(document).ready(function(){
+	if('${session._user.auditstatus}' != '2'){
+		$("#status").show();
+	}
+});
+</script>
 </head>
 <body>
 <!--头部-->
@@ -31,6 +38,15 @@
 		<s:if test="#session._user.auditstatus==0"><span class="no_ok">未审核</span></s:if>
 		<s:elseif test="#session._user.auditstatus==1"><span class="no_ok">待审核</span></s:elseif>
 		<s:elseif test="#session._user.auditstatus==2"><span class="no_ok">已审核</span></s:elseif>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		您的账户类型：<s:if test="#session._user.type==7">保险公司</s:if><s:elseif test="#session._user.type==8">小额贷款公司</s:elseif><s:elseif test="#session._user.type==9">典当公司</s:elseif><s:elseif test="#session._user.type==10">担保公司</s:elseif><s:elseif test="#session._user.type==11">融资租赁公司</s:elseif><s:elseif test="#session._user.type==12">民间机构</s:elseif>
+	</div>
+	<div id="status" class="P_connect" style="display: none;">
+		&nbsp;&nbsp;&nbsp;&nbsp;尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-right:15px;" class="view_detail">
+		<a href="/user/UserAction!next.act" style="float:none;">以后再说</a></span>
+		<br />
+		&nbsp;
 	</div>
 </div>
 <div class="hr_10"> &nbsp; </div>
@@ -51,7 +67,7 @@
         </dl>
       </div>
     <form class="box_form">
-      <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
+      <table border="0" cellpadding="0" cellspacing="0" class="special_psfs_tb">
       <s:if test="msg!=null">
 	    <tr>
            <td colspan="4"><div class="notification success png_bg"><div>${msg }</div></div></td>

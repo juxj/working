@@ -18,6 +18,7 @@ public class OrdFaAttachList implements java.io.Serializable {
 	private Date updatedt;
 	private Integer createUserId;
 	private String ext;
+	private Integer isDeleted;
 
 	public String getExt() {
 		return ext;
@@ -95,6 +96,14 @@ public class OrdFaAttachList implements java.io.Serializable {
 
 	public void setUpdatedt(Date updatedt) {
 		this.updatedt = updatedt;
+	}
+
+	public Integer getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(Integer isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 }

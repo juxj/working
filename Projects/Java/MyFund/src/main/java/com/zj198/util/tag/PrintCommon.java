@@ -11,6 +11,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.util.ValueStack;
+import com.zj198.model.DicBaseRate;
 import com.zj198.model.DicCommon;
 import com.zj198.service.common.DictoryDataService;
 import com.zj198.util.Constants;
@@ -82,11 +83,13 @@ public class PrintCommon extends Component{
 						valueIdStr =v.get(valueId);
 					}
 				}else if(type != null && type.equals("rate")){
-					InterestBean[] inter = Constants.getInterestArr();
+					ApplicationContext ac = (ApplicationContext) (new ActionContext(this.stack.getContext())).getApplication().get(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
+					DictoryDataService dictoryDataService = (DictoryDataService) ac.getBean("dictoryDataService");
+					List<DicBaseRate> brList = dictoryDataService.findBaseRate();
 					Integer dt = Integer.valueOf(valueId);
-					for(InterestBean i : inter){
-						if(dt >i.getStdt() && dt <= i.getEnddt()){
-							valueIdStr = i.getRate().toString();
+					for(DicBaseRate b : brList){
+						if(dt >b.getStartdt() && dt <= b.getEnddt()){
+							valueIdStr = b.getRate().toString();
 							break;
 						}
 					}

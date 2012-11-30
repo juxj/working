@@ -18,8 +18,8 @@ $(function() {
         $(this).addClass("input-focus");
     }).blur(function() {
         $(this).removeClass("input-focus");
-    })
-})
+    });
+});
 
 $(function(){
 	$("#loanForm").validate();
@@ -30,9 +30,9 @@ $(function(){
 	document.getElementsByName('loan.bankSalaryList')[0].checked=true;
 });
 </script>
-  </head>
+</head>
   
-  <body>
+<body>
 <!--头部2-->
 <div class="header index_header">
 <jsp:include page="/public/head1.jsp"/>
@@ -125,12 +125,12 @@ $(function(){
 		<div class="hr_10"> &nbsp; </div>
 		<div class="hr_10"> &nbsp; </div>
 </form>
-	</div>
 </div>
+
 <!--主体部分结束-->
 <div class="hr_10"> &nbsp; </div>
 <div class="hr_10"> &nbsp; </div>
 <!--尾部-->
 <jsp:include page="/public/bottom.jsp" />
-  </body>
+</body>
 </html>

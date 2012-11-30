@@ -8,6 +8,7 @@
 <title>企业经营贷款快速申请</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-validate.css" type="text/css" media="screen, projection" />
 	<script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 	<script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
@@ -63,22 +64,13 @@ function updatestatus(value){
   </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
-<div class="apply_title" style="height:60px;">
-	<p>产品查看</p>
-</div>
-
-	<div class="hr_10"> &nbsp; </div>
-<div class="apply_form">
-		<div class="apply_form_title">状态详情</div>
-		<div class="C_form" style="margin-top:10px;">
-			<table style="width:800px; font-size:13px;">
-				<tr>
-					<td width="20%" align="right">状态：</td>
-					<td style="padding:15px;"><common:print valueId="product.proStatus" /> </td>
-				</tr>
-				<tr>
-					<td width="20%" align="right">操作：</td>
-					<td style="padding:15px; " class="view_detail01" >
+<div class="container_950 box_4">
+		<div class="P_title">产品查看</div>
+		<div class="line" style="background:#f9f9f7; height:25px;" >
+			<div class="f_text01 fl">
+				<span>状态：<font color="d5652c"><common:print valueId="product.proStatus" /></font></span>
+			</div>
+			<div class="view_detail fr" style="margin-right: 20px;">
 	   					<s:if test="product.proStatus == 196">
 				   			<a href="/user/loan/financeProduct!updateFinancePage.act?product.id=${product.id }" >修改</a>&nbsp;&nbsp;
 				   			<a href="javascript:updatestatus(197);" >提交审核</a>&nbsp;&nbsp;
@@ -93,68 +85,67 @@ function updatestatus(value){
 		   				<s:elseif test="product.proStatus == 199">
 		   					<a href="/user/loan/financeProduct!updateFinancePage.act?repeatStatus=1&product.id=${product.id }" >重新发布</a>
 		   				</s:elseif>
-					</td>
-				</tr>
-			</table>
-		</div>
+			</div>
+		</div>	
 </div>
-
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
 <form action="/user/loan/financeProduct!updateStatus.act" id="loanForm"  class="box_form" style="margin:0px;" method="post">
 <s:hidden name="product.id"></s:hidden>
 <s:hidden name="product.proStatus" id="product_prostatus"></s:hidden>
-	<div class="C_title">产品参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span></div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">产品参数</span><font style="color:red;">${msg }</font></div>
+	</div>
 	<div class="C_form">
             <dl>
               <dd>
-                <h6>贷款产品名称：</h6>
+                <h1>贷款产品名称：</h1>
                 ${product.financeName}
               </dd>
               <dd>
-                <h6>贷款类型：</h6>
+                <h1>贷款类型：</h1>
                 <common:print valueId="product.financeType" />
               </dd>
               <dd>
-                <h6>贷款期限：</h6>
+                <h1>贷款期限：</h1>
                 ${product.financeLittledt } ~ ${product.financeMostdt }
 				</dd>
 				<dd>
-                <h6>贷款金额：</h6>
+                <h1>贷款金额：</h1>
                 <s:number name="product.financeLittleamount" /> ~ <s:number name="product.financeBigamount" />&nbsp;&nbsp;万
 				</dd>
 			  <dd class="finance_type_154" style="display:none;" >
-                <h6>房屋性质：</h6>
+                <h1>房屋性质：</h1>
                 <common:print valueId="product.houseProperty" />
               </dd>
               <dd class="finance_type_154" style="display:none;" >
-                <h6>房屋使用年限：</h6>
+                <h1>房屋使用年限：</h1>
                 ${product.useTime}
               </dd>
 				<dd>
-                	<h6>贷款利率：</h6>
+                	<h1>贷款利率：</h1>
 				  	<common:print valueId="product.interestType" />
 				</dd>
 				<s:if test="product.interests.size > 0">
 				<dd>
-					<h6>&nbsp;</h6>
+					<h1>&nbsp;</h1>
 					<div>
-						<table width="300">
+						<table width="400">
 							<tr>
 								<th align='left'>贷款期限</th>
 								<th align='left'>基准利率</th>
-								<th align='left'>浮动范围</th>
+								<th align='left'>浮动范围(上浮)</th>
 							</tr>
 							<s:iterator value="product.interests" id="item">
 							<tr>
 								<td>
-									${item.interestMemo }
+									${interestMemo }
 								</td>
 								<td>
-									<common:print valueId="#item.financeEnddt" type="rate"/>%
+									<common:print valueId="financeEnddt" type="rate"/>%
 								</td>
 								<td>
-									+${item.rateUp }%
+									${rateDown } - ${rateUp }%
 								</td>
 							</tr>
 							</s:iterator>
@@ -164,34 +155,34 @@ function updatestatus(value){
 				</s:if>
 				<s:if test="product.serviceCost != null && product.serviceCost > 0">
 				  <dd>
-	                <h6>服务费：</h6>
+	                <h1>服务费：</h1>
 	                ${product.serviceCost }%
 	              </dd>
 				</s:if>
 				<dd class="finance_type_151 finance_type_152 finance_type_153">
-                <h6>支持还款方式：</h6>
+                <h1>支持还款方式：</h1>
 				  <common:print valueId="product.repaymentType" />
 				</dd>
 				<dd class="finance_type_151 finance_type_152 finance_type_153">
-                <h6>抵押类型：</h6>
+                <h1>抵押类型：</h1>
 				  <common:print valueId="product.mortgageType" />
 				</dd>
 				<dd>
-                <h6>支持用途：</h6>
+                <h1>支持用途：</h1>
 				  <common:print valueId="product.purposeType" />
 				</dd>
 				
 				<dd class="finance_type_154" style="display:none;" >
-                <h6>支持公积金：</h6>
+                <h1>支持公积金：</h1>
                 <common:print valueId="product.surplus" valueSetMap="ZJ102"/>
               </dd>
               
 				<dd>
-                <h6>审批时间：</h6>
+                <h1>审批时间：</h1>
                 ${product.checkTime }个工作日
               </dd>
               <dd>
-                <h6>面向区域：</h6>
+                <h1>面向区域：</h1>
                 <div style="width:200px">
                 	<s:if test="productAreaList.size()==0">
                 	全国
@@ -206,28 +197,32 @@ function updatestatus(value){
 			 </dl>
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">产品介绍</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">产品介绍</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
            <dd>
-             	<h6>贷款产品特色：</h6>
+             	<h1>贷款产品特色：</h1>
 			  <common:print valueId="product.proSpecial" />
 		   </dd>
 			<dd>
-                <h6>贷款产品介绍：</h6>
+                <h1>贷款产品介绍：</h1>
                 <div style="padding-left:140px;">${product.proIntroduce }</div>
               </dd>
 		</dl>
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">申贷资料</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">申贷资料</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
 			<dd>
-                <h6>申贷需要资料清单</h6>
+                <h1>申贷需要资料清单</h1>
               </dd>
               <dd>
-              	<h6>&nbsp;</h6>
+              	<h1>&nbsp;</h1>
               	<s:if test="product.dataFiles != null && product.dataFiles.size() > 0">
                 	<table width="400">
 						<tr>
@@ -259,17 +254,19 @@ function updatestatus(value){
                 </s:if>
               </dd>
               <dd>
-              	<h6>资料递交方式：</h6>
+              	<h1>资料递交方式：</h1>
 				  <common:print valueId="product.uploadWay" />
 			  </dd>
 		</dl>
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">申请条件</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">申请条件</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
 			  <dd class="finance_type_151 finance_type_152">
-                <h6>申请企业所属行业：</h6>
+                <h1>所属行业：</h1>
                 	<s:if test="productIndustryList.size()==0">
                 		不限
                 	</s:if>
@@ -279,66 +276,68 @@ function updatestatus(value){
 	                		</s:iterator>
                 	</s:else>
               </dd>
-              <dd class="finance_type_151 finance_type_152">
-                <h6>企业的总资产：</h6>
+              <dd class="finance_type_151">
+                <h1>企业的总资产：</h1>
                  <common:print valueId="product.companyAllAsset" valueSetMap="ZJ112"/>
               </dd>
-              <dd class="finance_type_151">
-                <h6>企业的年营业收入：</h6>
+              <dd class="finance_type_151 finance_type_152">
+                <h1>年营业收入：</h1>
                 <common:print valueId="product.operatIncome" valueSetMap="ZJ104"/>
               </dd>
               <dd class="finance_type_151">
-                <h6>企业成立年数：</h6>
+                <h1>企业成立年数：</h1>
                 <common:print valueId="product.settingYear" valueSetMap="ZJ105"/>
               </dd>
               <dd class="finance_type_152" style="display:none;" >
-                <h6>保证金：</h6>
+                <h1>保证金：</h1>
                 <common:print valueId="product.needEnsure" valueSetMap="ZJ101"/>
               </dd>
               <dd class="finance_type_152" style="display:none;" >
-                <h6>申请人行业经验：</h6>
+                <h1>申请人行业经验：</h1>
                 <common:print valueId="product.experience" valueSetMap="ZJ106"/>
               </dd>
               <dd class="finance_type_152" style="display:none;" >
-                <h6>经营场所：</h6>
+                <h1>经营场所：</h1>
                 <common:print valueId="product.runningArea" valueSetMap="ZJ103"/>
               </dd>
               
               <dd class="finance_type_153 finance_type_154" style="display:none;" >
-                <h6>申请人月工资收入：</h6>
+                <h1>申请人月工资收入：</h1>
                 <common:print valueId="product.salaryIncome" valueSetMap="ZJ107"/>
               </dd>
               <dd class="finance_type_153 finance_type_154" style="display:none;" >
-                <h6>工资发放形式：</h6>
+                <h1>工资发放形式：</h1>
                 <common:print valueId="product.salaryPutWay" valueSetMap="ZJ108"/>
               </dd>
               <dd class="finance_type_153 finance_type_154" style="display:none;" >
-                <h6>现单位工作时长：</h6>
+                <h1>现单位工作时长：</h1>
                 <common:print valueId="product.workTime" valueSetMap="ZJ109"/>
               </dd>
               <dd class="finance_type_153 finance_type_154" style="display:none;" >
-                <h6>所在地自有房产：</h6>
+                <h1>所在地自有房产：</h1>
                 <common:print valueId="product.house" valueSetMap="ZJ103"/>
               </dd>
               <dd class="finance_type_152 finance_type_153 finance_type_154" style="display:none;" >
-                <h6>信用记录：</h6>
+                <h1>信用记录：</h1>
                 <common:print valueId="product.creditAcount" valueSetMap="ZJ103"/>
               </dd>
               <dd class="finance_type_152 finance_type_153 finance_type_154" style="display:none;" >
-                <h6>银行流水：</h6>
+                <h1>银行流水：</h1>
                 <common:print valueId="product.bankSalaryList" valueSetMap="ZJ103"/>
               </dd>
               
               <dd>
-                <h6>其他申请条件：</h6>
+                <h1>其他申请条件：</h1>
                 <div style="padding-left:140px;">${product.otherRequire }</div>
               </dd>
 		</dl>
 	</div>
-		<div class="clear"></div>
-	<div class="C_title">自定义申请单</div>
+	<div class="clear"></div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">自定义申请单</span></div>
+	</div>
 	<div class="C_form">
-		<table class="container_950 center box_4 ctl" style="width:800px">
+		<table class="container_950 center box_4 ctl" style="width:890px">
 		<%int m = 1; %>
 			<tr class="top_color">
 				<td style="padding-left:25px;">项目名</td>

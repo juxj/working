@@ -57,7 +57,7 @@ function showApply(){
       <p class="notice">您上次登录的时间为 <font color="#CC0000"><s:date name="usrLoginhistory.logindt" format="yyyy-MM-dd HH:mm:ss" /></font>，如有疑问请及时修改密码并联系客服。</p>
       <span class="msg">您有（<a class="red" href="/user/message!viewMsg.act"><s:if test="msgNo==null">0</s:if><s:else>${msgNo }</s:else></a>）条新消息</span>
       <s:if test="#session._user.activetype==0 || #session._user.activetype==1"><p class="mobile">您的手机尚未通过验证，为了您更方便开展业务，<a href="/user/regInfo.act"><font style="color: red;">请验证</font></a>您的手机。</p></s:if>
-      <p><a href="/user/details.act" class="btn_s bred">成为通资信通会员 </a></p>
+      <p><s:if test="#session._user.viptype == 1"><a href="/user/payment.act" class="btn_s bred">成为通资信通vip会员</a>&nbsp;&nbsp;&nbsp;<a href="/user/payment.act">了解详情...</a></s:if><s:elseif test="#session._user.viptype == 0"><a href="/user/payment.act" class="btn_s bred">成为通资信通会员</a>&nbsp;&nbsp;&nbsp;<a href="/user/payment.act" class="btn_s bred">成为通资信通vip会员</a></s:elseif></p>
     </div>
     <div class="clear"> &nbsp; </div>
   </div>
@@ -81,7 +81,7 @@ function showApply(){
     <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
       <caption>
       <span class="fr view_all"><a href="/service/serviceOrder!showSinOrdersByApplicant.act">查看全部»</a></span>
-      <h6>我的服务申请</h6>
+      <h6>服务申请</h6>
       <span class="leftdetail"><a href="/service/serviceItem!showHome.act" target="_blank">立即申请</a></span>
       </caption>
       <s:if test="sinOrderList.data.size()>0">
@@ -91,7 +91,7 @@ function showApply(){
 	        <th width="12%">服务类型</th>
 	        <th>申请日期</th>
 	        <th>状态</th>
-	        <th>操作</th>
+	        <th style="text-align:right; padding-right:60px;">操作</th>
 	      </tr>
 	      <s:iterator value="sinOrderList.data" id="item">
 	       <tr>
@@ -105,7 +105,7 @@ function showApply(){
 	          <td>${item.vendorName }</td>
 	          <td>${item.itemTypeName }</td>
 	          <td><s:date name="#item.applyDate"></s:date> </td>
-	          <td>&nbsp;
+	          <td>
 	          	<s:if test="#item.status==0">
 	          		待确认
 	          	</s:if>

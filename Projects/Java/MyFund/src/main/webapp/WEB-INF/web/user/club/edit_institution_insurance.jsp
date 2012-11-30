@@ -63,19 +63,19 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td width="18%" class="form_table field_name">标题</td>
+				<td width="18%" class="form_table field_name">标题：</td>
 				<td><s:textfield id="clbSupplyInfo.title" name="clbSupplyInfo.title" cssClass="required"/>
 				</td>
 			</tr>
 			<jsp:include page="_work_area.jsp" />
 			<tr>
-				<td class="form_table field_name">所属行业</td>
+				<td class="form_table field_name">所属行业：</td>
 				<td>
 					<jsp:include page="_supply_info_industry.jsp" />
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">借款保险</td>
+				<td class="form_table field_name">借款保险：</td>
 				<td>
 					<s:set name="list1" value="#{'保单贷款':'保单贷款','融资配套保险':'融资配套保险' }" />
 					<s:iterator id="item" value="list1" status="st">
@@ -94,7 +94,7 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">保险直投</td>
+				<td class="form_table field_name">保险直投：</td>
 				<td>
 					<s:set name="list2" value="#{'大额储蓄':'大额储蓄','股权':'股权','基金':'基金','信托':'信托','其他':'其他' }" />
 						<s:iterator id="item" value="list2" status="st">
@@ -113,11 +113,11 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">信息时效</td>
+				<td class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">资金描述</td>
+				<td class="form_table field_name">资金描述：</td>
 				<td>
 					<s:textarea rows="8" cols="80" id="clbSupplyInfo.remark" name="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 				</td>

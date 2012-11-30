@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('.yearmoth').html(jm);
 	})
 	function all() {
-		$.post('/user/loan/userApplyManag!applyCheckList.act', {
+		$.post('/user/loan/userApplyManag!applyCheckListByCmy.act', {
 			applyId : $('#applyid').val()
 		}, function(data) {
 			$("#all_log").html(data);
@@ -46,8 +46,8 @@ $(document).ready(function() {
 			modal : true
 		});
 	}
-	function print(appId){
-		window.open('/user/loan/userApplyManag!print.act?print=1&apply.id='+appId)
+	function exportPdf(){
+	window.location.href = "/user/loan/downloadAttach!downPdf.act?apply.id=${apply.id}";
 	}
 </script>
 </head>
@@ -78,30 +78,67 @@ $(document).ready(function() {
 			<input type="hidden"  name="left" value="${left }">
 			<input type="hidden"  name="right" value="${right }">
 			<span>申请单号：${apply.applyNum}</span>
-			<span>协议编号：<font color="d5652c"> ${apply.agreeNum}</font></span>
+			<span>协议编号：<font color="d5652c"><s:if test="apply.agreeNum =='' || apply.agreeNum ==null">暂无</s:if><s:else>${apply.agreeNum}</s:else> </font></span>
 			<span>申请状态：<font color="d5652c"><common:print valueId="apply.applyStatus" /></font></span>
-			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 20px;"><input class="btn_s blue2" onclick="javascript:" type="button" onclick="print(${apply.id})"  value="打印"></span>
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 20px;"><input class="btnsub blue1" type="button" onclick="exportPdf()" value="导出申请单"></input></span>
+			<s:if test="apply.applyStatus == 302 || apply.applyStatus == 308">
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:window.location='/user/loan/financeAttach!attachMana.act?viewAttachType=1&applyId=${apply.id }';" type="button" value="提交资料"></span>
+			</s:if>
+			
 			<s:if test="apply.applyStatus==303">
-			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:$('#upstatus').submit();" type="button" value="提交修改"></span>
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:$('#upstatus').submit();" type="button" value="修改完成提交审核"></span>
 				<s:if test="left==2">
-			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:window.open('/user/loan/userApplyManag!editOrdCom.act?applyId=${apply.id}')" type="button" value="更改企业信息" /></span>
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:window.location='/user/loan/userApplyManag!editOrdCom.act?applyId=${apply.id}'" type="button" value="修改企业信息" /></span>
 				</s:if>
 				<s:if test="right==2">
-			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:window.open('/user/loan/userApplyManag!editOrdCom.act?applyId=${apply.id}')" type="button" value="更改申请信息" /></span>
+			<span style="padding-right:0px; float:right; margin-left: 5px; margin-right: 10px;"><input class="btn_s blue2" onclick="javascript:window.location='/user/loan/userApplyManag!getApplyDetail.act?apply.id=${apply.id}'" type="button" value="修改申请信息" /></span>
 				</s:if>
 			</s:if>
 			</form>
-		</div><!-- 
-		<div>尊敬的用户：您的融资申请已通过资金网预审，我们将会尽快将您的融资申请递交给资金方。</div> -->
+		</div>
 		<div class="hr_20"> &nbsp; </div>
 		<div class="center">
 			<div class="left_gray">&nbsp;</div>
-			<div class="m_gray1">企业信息</div>
-			<div class="m_gray1">填写申请信息</div>
-			<div class="m_red">预审中</div>
-			<div class="m_gray">提交材料</div>
-			<div class="m_gray">资金网审核</div>
-			<div class="m_gray">金融机构审核</div>
+			<s:if test="apply.applyStatus ==301 || apply.applyStatus ==303">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_red">预审中</div>
+				<div class="m_gray">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:if>
+			<s:elseif test="apply.applyStatus ==302 || apply.applyStatus ==308">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_red">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus >303 && apply.applyStatus <=305">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_gray1">提交资料</div>
+				<div class="m_red">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:elseif>
+			<s:elseif test="apply.applyStatus>305 && apply.applyStatus<310 && apply.applyStatus!=308">
+				<div class="m_gray1">企业信息</div>
+				<div class="m_gray1">填写申请信息</div>
+				<div class="m_gray1">预审中</div>
+				<div class="m_gray1">提交资料</div>
+				<div class="m_gray1">资金网审核</div>
+				<div class="m_red">金融机构审核</div>
+			</s:elseif>
+			<s:else>
+				<div class="m_gray">企业信息</div>
+				<div class="m_gray">填写申请信息</div>
+				<div class="m_gray">预审中</div>
+				<div class="m_gray">提交资料</div>
+				<div class="m_gray">资金网审核</div>
+				<div class="m_gray">金融机构审核</div>
+			</s:else>
 			<div class="right_gray">&nbsp;</div>	
 		</div>
 		<div class="clear">&nbsp;</div>
@@ -110,7 +147,7 @@ $(document).ready(function() {
 			<div class="f_gz" style="margin-bottom:5px;"><span class="fl">申请单跟踪</span><a href="javascript:all();" style="float:right; margin-right: 40px; color: red;">更多..</a></div>
 			<div class="hr_10"></div>
 			<div class="clear">&nbsp;</div>
-			<div class="y_title">
+			<!--<div class="y_title">
 				<span class="y_title_01">操作时间</span>
 				<span class="y_title_01">操作人</span>
 				<span class="y_title_01">处理信息</span>
@@ -121,7 +158,21 @@ $(document).ready(function() {
 				<span class="y_title_01">${createUserName } &nbsp;</span>
 				<span class="y_title_01">${checkView }</span>
 			</div>
-			</s:iterator>
+			</s:iterator>-->
+			<table border="0" cellspacing="0" cellpadding="0" class="y_table">
+			  <tr>
+			    <td class="y_table_title01" style="background:#ebe6b9;">操作时间</td>
+			    <td class="y_table_title02" style="background:#ebe6b9;">处理信息</td>			    
+			    <td class="y_table_title03" style="background:#ebe6b9;">操作人</td>
+			  </tr>
+			  <s:iterator value="applyCheckList">
+			  <tr>
+			    <td class="y_table_title01"><s:date name="createdt" format="yyyy-MM-dd hh:mm:ss"/></td>
+			    <td class="y_table_title02">${checkView }</td>			    
+			    <td class="y_table_title03">${createUserName } &nbsp;</td>
+			  </tr>
+			  </s:iterator>
+			</table>			
 			<div class="hr_10"> &nbsp; </div>									
 		</div>		
 	</div>
@@ -140,16 +191,22 @@ $(document).ready(function() {
 				<span class="y_title_02">期限：<font color="d5652c">${apply.loanMonth}个月</font></span>
 				<span>是否有抵押物：<font color="d5652c"><common:print valueId="apply.haveMortgage" valueSetMap="ZJ102" /></font></span>
 			</div>
+			<div class="hr_10"> &nbsp;</div>
+			<div class="y_connect">
+				<span class="y_title_02">申请产品：<font color="d5652c">${product.financeName }</font></span>
+				<span class="y_title_02" style="width:710px;">发行机构：<font color="d5652c">${loanOrgName }</font></span>
+			</div>
+			<div class="clear">&nbsp;</div>			
 			<div class="hr_20"> &nbsp;</div>
       	</div>
       	<div class="f_sqxx">
       		<span class="f_gz" style="margin-top:15px;">联系人信息</span>
 			<div class="y_connect">
-				<span class="y_title_02">联系人姓名：${ordCompany.linkname}</span>
-				<span class="y_title_02">邮箱：${ordCompany.linkemail }</span>
-				<span class="y_title_02">电话：${ordCompany.linktelephone }</span>
-				<span class="y_title_02">所属部门：${ordCompany.department }</span>
-				<span>职务：${ordCompany.position }</span>
+				<span class="y_title_02">联系人姓名：${usrCompany.linkname}</span>
+				<span class="y_title_02">邮箱：${usrCompany.linkemail }</span>
+				<span class="y_title_02">电话：${usrCompany.linktelephone }</span>
+				<span class="y_title_02">所属部门：${usrCompany.department }</span>
+				<span>职务：${usrCompany.position }</span>
 			</div>
 			<div class="hr_20"> &nbsp;</div>
       	</div> 
@@ -158,36 +215,35 @@ $(document).ready(function() {
 				<div class="fl f_qyxx">
 				    <div class="menu_out">
 				      <div class="menu_nobg">企业信息</div>
-				      <span>企业名称：${ordCompany.companyname }</span>
-				      <span>营业执照号码：${ordCompany.licensecode }</span>
-				      <span>组织机构代码证号码：${ordCompany.organizationcode }</span>
-				      <span>税务登记证号码：${ordCompany.faxcode }</span>
-				      <span>开户许可证号码：${ordCompany.bankpermitcode }</span>
-				      <span>贷款卡号：${ordCompany.loancard }</span>
-				      <span>注册地址：${ordCompany.regaddress }</span>
-				      <span>邮编：${ordCompany.regpostcode }</span>
-				      <span>所属园区：无</span>
-				      <span>企业类型：<common:print valueId="ordCompany.enterprisetypeid" /></span>
-				      <span>员工人数：<common:print valueId="ordCompany.employeesid" /></span>
-				      <span>经营范围：${ordCompany.bizscope }</span>
-				      <span>企业经营地址：${ordCompany.bizaddress }</span>
-				      <span>邮编：${ordCompany.bizpostcode }</span>			      
+				      <span>企业名称：${usrCompany.companyname }</span>
+				      <span>营业执照号码：${usrCompany.licensecode }</span>
+				      <span>组织机构代码证号码：${usrCompany.organizationcode }</span>
+				      <span>税务登记证号码：${usrCompany.faxcode }</span>
+				      <span>开户许可证号码：${usrCompany.bankpermitcode }</span>
+				      <span>贷款卡号：${usrCompany.loancard }</span>
+				      <span>注册地址：${profileMap['regaddress'] } ${usrCompany.regaddress }</span>
+				      <span>邮编：${usrCompany.regpostcode }</span>
+				      <span>企业类型：<common:print valueId="usrCompany.enterprisetypeid" /></span>
+				      <span>员工人数：<common:print valueId="usrCompany.employeesid" /></span>
+				      <span>经营范围：${usrCompany.bizscope }</span>
+				      <span>企业经营地址：${profileMap['bizaddress'] } ${usrCompany.bizaddress }</span>
+				      <span>邮编：${usrCompany.bizpostcode }</span>				      
 				    </div>					
 				</div>
 				<div class="fr f_qyxx">
 				    <div class="menu_out">
 				      <div class="menu_nobg">法人信息</div>
-				      <span>法定代表人：${ordCompany.legalperson }</span>
-				      <span>学历：<common:print valueId="ordCompany.lpeducation" /></span>
-				      <span>婚姻状况：<common:print valueId="ordCompany.lpmarry" /></span>
-				      <span>从事所属行业年限：<common:print valueId="ordCompany.lpindustryyears" /></span>
-				      <span>身份证号码：${ordCompany.lpcid }</span>
-				      <span>手机：${ordCompany.lpmobile}</span>
-				      <span>家庭电话：${ordCompany.lphometel }</span>
-				      <span>常住地址：${ordCompany.lpliveaddress }</span>
-				      <span>邮编：${ordCompany.lplivepostcode }</span>
-				      <span>户籍所在地：${profileMap['address'] }</span>
-				      <span>邮编：${ordCompany.lplivepostcode }</span>
+				      <span>法定代表人：${usrCompany.legalperson }</span>
+				      <span>学历：<common:print valueId="usrCompany.lpeducation" /></span>
+				      <span>婚姻状况：<common:print valueId="usrCompany.lpmarry" /></span>
+				      <span>从事所属行业年限：<common:print valueId="usrCompany.lpindustryyears" /></span>
+				      <span>身份证号码：${usrCompany.lpcid }</span>
+				      <span>手机：${usrCompany.lpmobile}</span>
+				      <span>家庭电话：${usrCompany.lphometel }</span>
+				      <span>常住地址：${profileMap['lpliveaddress'] } ${usrCompany.lpliveaddress }</span>
+				      <span>邮编：${usrCompany.lplivepostcode }</span>
+				      <span>户籍所在地：${profileMap['lphkaddress'] } ${usrCompany.lphkaddress }</span>
+				      <span>邮编：${usrCompany.lphkpostcode }</span>
 				    </div>
 				</div>
 				<div class="clear">&nbsp;</div>
@@ -210,7 +266,7 @@ $(document).ready(function() {
 		 <div class="f_sqxx">
 		      <span class="f_gz" style="margin-top:15px;">其它信息</span>
 		      <s:iterator value="extendsValueList">
-		      <span>${fieldName }<font>&nbsp;&nbsp;${entityValue }</font></span>
+		      <span>${fieldName }：<font>&nbsp;&nbsp;${entityValue }</font></span><br/>
 		      </s:iterator>	
 		      <div class="hr_20"> &nbsp;</div>				
 		</div>
@@ -220,10 +276,10 @@ $(document).ready(function() {
 				  <tr>
 				    <td colspan="8">
 				    	<s:if test="logo == null">
-							<img src="/images/banklogo/b/zj198.jpg" class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+							<img src="/images/banklogo/b/zj198.jpg" class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;${loanOrgName }</font>
 						</s:if> 
 						<s:else>
-							<img src="/images/banklogo/b/${product.logo }"  class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;速贷通</font>
+							<img src="/images/banklogo/b/${product.logo }"  class="js_bank"/><font href="" class="sudait" >&nbsp;&nbsp;&nbsp;&nbsp;${loanOrgName }</font>
 						</s:else>
 					</td>
 				  </tr>
@@ -264,8 +320,6 @@ $(document).ready(function() {
       </div>
      </div>
 <!-- end -->
-<div class="hr_20"> &nbsp;</div>
-<!--尾部-->
 <div class="hr_20"> &nbsp;</div>
 <!--尾部-->
 	<jsp:include page="/public/bottom.jsp" />

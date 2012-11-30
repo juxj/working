@@ -26,19 +26,19 @@
      <th>融资额度</th>
      <th>期限</th>
      <th>状态</th>
-     <th>操作</th>
+     <th style="text-align:right; padding-right:60px;">操作</th>
   </tr>
   </s:else>
   <s:iterator value="applyList" id="item">
 	  <tr>
 	    <td>${applyNum}</td>
 		<td><s:date name="createdt" format="yyyy-MM-dd"/></td>
-		<td style="width:200px;" align="center">
+		<td >
 		<common:print valueId="productUserId" type="user"/><br/>${productName }</td>
 		<td><s:number name="loanAmount" />万元</td>
 		<td>${loanMonth}月</td>
    		<td><common:print valueId="applyStatus"/></td>
-   		<td class="view_detail">
+   		<td class="view_detail" style="text-align:right; padding-right:20px;">
    		<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>

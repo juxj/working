@@ -13,7 +13,7 @@ public interface ProfileService {
 	 * 保存用户的profile, 自动根据当前登录的用户的类型保存到不同表
 	 * @param profile
 	 */
-	public void saveorupdate(Object profile);
+	public void saveorupdate(Object profile, Integer userId);
 	
 	/**
 	 * 获取用户的profile

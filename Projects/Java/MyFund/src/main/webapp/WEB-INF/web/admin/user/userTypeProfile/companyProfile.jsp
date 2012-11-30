@@ -62,6 +62,7 @@ function audit(id,audit){
 						</s:else>
 					</td></tr>
 				<s:if test="usrCompany!=null">
+					<tr style="color:#97181d;font-weight: bold;"><td>用户类型 ：<s:if test="type==2">生产型企业</s:if><s:elseif test="type==3">贸易型企业</s:elseif><s:elseif test="type==4">工贸一体型企业</s:elseif><s:elseif test="type==5">服务型企业</s:elseif></td><td>&nbsp;</td></tr>
 					<tr><td>企业名称  ${usrCompany.companyname }&nbsp;</td><td>营业执照号码  ${usrCompany.licensecode }&nbsp;</td></tr>
 					<tr><td>组织机构代码证号码 </td><td> ${usrCompany.organizationcode }&nbsp;</td></tr>
 					<tr><td>所属行业 </td><td> ${profileMap['industry'] }&nbsp;</td></tr>

@@ -140,8 +140,8 @@ function adminLoginUser(id,type,au){
 							<td>${u.mobile}<s:if test="#u.activetype==2 || #u.activetype==3"> <font color="red">√</font></s:if>&nbsp;</td>
 							<td id="status${u.id}"><s:if test="#u.status==0">正常</s:if><s:if test="#u.status==1"><font color="red">阻止</font></s:if></td>
 							<td><s:if test="#u.auditstatus==0">未审核</s:if><s:elseif test="#u.auditstatus==1">待审核</s:elseif><s:elseif test="#u.auditstatus==2">已审核</s:elseif></td>
-							<td><input type="button" value="详细" onclick="details(${u.id});"/> 
-							<input type="button" value="Profile" onclick="profile(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/> 
+							<td><input type="button" value="注册信息" onclick="details(${u.id});"/> 
+							<input type="button" value="详细信息" onclick="profile(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/> 
 							<input type="button" value="模拟用户登录" onclick="adminLoginUser(${u.id},${u.type },${u.auditstatus });" <s:if test="#u.type==0">disabled="disabled"</s:if>/></td>
 						</tr>
 						</s:iterator>

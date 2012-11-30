@@ -1,31 +1,22 @@
 package com.zj198.action.loan;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
-import com.zj198.action.loan.model.PreviewFinanceProSrModel;
 import com.zj198.model.DicCommon;
 import com.zj198.model.DicIndustry;
 import com.zj198.model.DicUsertype;
 import com.zj198.model.PrdDatafileList;
-import com.zj198.model.PrdExtendsProperty;
 import com.zj198.model.PrdFinance;
 import com.zj198.model.PrdFinanceDatafile;
-import com.zj198.model.PrdPropertyDic;
-import com.zj198.model.UsrUser;
+import com.zj198.model.PrdRecommendation;
 import com.zj198.model.vo.FinanceAreaModel;
 import com.zj198.model.vo.FinanceIndustryModel;
 import com.zj198.service.common.DictoryDataService;
+import com.zj198.service.finservice.FinanceProdService;
 import com.zj198.service.loan.FinanceProductService;
-import com.zj198.service.loan.OrdLrRecommendService;
-import com.zj198.service.loan.model.FinanceProductSpModel;
-import com.zj198.service.loan.model.FinanceProductSrModel;
 import com.zj198.util.Constants;
 
 /**
@@ -36,6 +27,7 @@ import com.zj198.util.Constants;
 public class FinanceProductAction extends BaseAction {
 	private FinanceProductService financeProductService;
 	private DictoryDataService dictoryDataService;
+	private FinanceProdService financeProdService;
 	private PrdFinance product;
 	private List<PrdDatafileList> dataFileList;
 	private Map<String, List<?>> dataMap;
@@ -79,7 +71,7 @@ public class FinanceProductAction extends BaseAction {
 	private String creditAcount;
 	private String bankSalaryList;
 	// 产品推荐列表
-	private List<PrdFinance> recommendProducts;
+	private List<PrdRecommendation> recommendProducts;
 
 	public String execute() {
 		getMapSource();
@@ -116,7 +108,7 @@ public class FinanceProductAction extends BaseAction {
 				}
 			}
 		}
-		recommendProducts = this.financeProductService.findFinanceImportent(5);
+		recommendProducts = financeProdService.findRecommendationByTopNumber(Constants.PRD_RECOMMEND_TYPE_LOAN, 5);
 		return "custom_view_finance";
 	}
 	
@@ -186,7 +178,7 @@ public class FinanceProductAction extends BaseAction {
 		dataMap.put("repaymentType", repaymentTypeList);
 	}
 	public String findRecom(){
-		recommendProducts = financeProductService.findFinanceImportent(5);
+		recommendProducts = financeProdService.findRecommendationByTopNumber(Constants.PRD_RECOMMEND_TYPE_LOAN, 5);
 		return "recommendProduct";
 	}
 	//setter and getter
@@ -424,11 +416,11 @@ public class FinanceProductAction extends BaseAction {
 		this.bankSalaryList = bankSalaryList;
 	}
 
-	public List<PrdFinance> getRecommendProducts() {
+	public List<PrdRecommendation> getRecommendProducts() {
 		return recommendProducts;
 	}
 
-	public void setRecommendProducts(List<PrdFinance> recommendProducts) {
+	public void setRecommendProducts(List<PrdRecommendation> recommendProducts) {
 		this.recommendProducts = recommendProducts;
 	}
 
@@ -474,6 +466,10 @@ public class FinanceProductAction extends BaseAction {
 
 	public void setSelectArea3(Integer selectArea3) {
 		this.selectArea3 = selectArea3;
+	}
+
+	public void setFinanceProdService(FinanceProdService financeProdService) {
+		this.financeProdService = financeProdService;
 	}
 	
 

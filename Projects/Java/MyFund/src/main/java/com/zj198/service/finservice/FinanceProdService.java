@@ -117,4 +117,6 @@ public interface FinanceProdService {
 	
 	public Pager findByRecommedation(String name, String bank, Date startDate,  Date endDate,  int status, int pageSize, int pageNo);
 	
+	public void saveOrUpdateLoanRecommend(PrdRecommendation recommend);
+	
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 import com.zj198.dao.DicBankDAO;
+import com.zj198.dao.DicBaseRateDAO;
 import com.zj198.dao.DicCityDAO;
 import com.zj198.dao.DicCommonDAO;
 import com.zj198.dao.DicDistrictDAO;
@@ -20,6 +21,7 @@ import com.zj198.dao.UsrCompanyDAO;
 import com.zj198.dao.UsrFinanceorgDAO;
 import com.zj198.dao.UsrUserDAO;
 import com.zj198.model.DicBank;
+import com.zj198.model.DicBaseRate;
 import com.zj198.model.DicCity;
 import com.zj198.model.DicCommon;
 import com.zj198.model.DicDistrict;
@@ -48,6 +50,7 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 	private UsrFinanceorgDAO usrFinanceorgDAO;
 	private UsrUserDAO usrUserDAO;
 	private UsrCompanyDAO usrCompanyDAO;
+	private DicBaseRateDAO dicBaseRateDAO;
 	
 	public List<DicIndustry> findDicIndustryList() {
 		return dicIndustryDAO.findAll();
@@ -230,6 +233,11 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 		return this.dicBankDAO.findAll();
 	}
 	
+	public List<DicBaseRate> findBaseRate(){
+		return this.dicBaseRateDAO.findBaseRate();
+	}
+	
+	//setter and getter
 	public DicBankDAO getDicBankDAO() {
 		return dicBankDAO;
 	}
@@ -296,6 +304,10 @@ public class DictoryDataServiceImpl implements DictoryDataService {
 	@Override
 	public String getIndustryNameById(Integer id) {
 		return dicIndustryDAO.get(id).getName();
+	}
+
+	public void setDicBaseRateDAO(DicBaseRateDAO dicBaseRateDAO) {
+		this.dicBaseRateDAO = dicBaseRateDAO;
 	}
 
 }

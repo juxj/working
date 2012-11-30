@@ -124,7 +124,7 @@ public class RegisterAction extends BaseAction{
 		}else if(uid==-2){
 			msg = "注册失败：该手机号已被注册并验证。";
 		}else if(uid==-3){
-			msg = "注册失败：该Email已被注册并验证。";
+			msg = "注册失败：该邮箱已被注册并验证。";
 		}
 		return failStr;
 	}

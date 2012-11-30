@@ -222,27 +222,26 @@
   </div>
   <div class="hr_10"> &nbsp; </div>
   <div class="container_950" >
-	<div class="box_4" style="height:90px;">	
+	<div class="box_4">	
 		<s:if test="groupType==5">
-			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=138'"/></div>
+			<div class="P_title" >融资意向单管理</div>
+			<div class="line" style="height:30px;"><input name="" type="button" value="融资意向申请"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=138'"/></div>
 		</s:if>
 		<s:elseif test="groupType==1">
-			<div class="P_title">融资意向管理</div>
-			<div class="line"><input name="" type="button" value="发布意向"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=136'"/></div>
+			<div class="P_title">融资意向单管理</div>
+			<div class="line" style="height:30px;"><input name="" type="button" value="融资意向申请"  class="but_gray" style="float: right; margin-right:20px;" onclick="javascript:window.location.href='/loan/LoanRequest.act?loan.applyType=136'"/></div>
 		</s:elseif>
 		<s:else>
 		<div class="container_950">
-			<div class="P_title" style="border-bottom:5px solid #003961;">融资意向管理</div>
+			<div class="P_title" style="border-bottom:5px solid #003961;">融资意向单管理</div>
 		</div>
-	 		</s:else>
-		
+	 		</s:else>		
 	</div>
   <form id="frmLoanManage" action="/user/loan/LoanRequest!loanManage.act" method="post">
   <input type="hidden" value="<s:property value="requestSearch.loanPurpose"/>" id="sel"/>
   <s:if test="groupType==2 || groupType==3">
-  <div class="M_menu" style="margin-top: 10px; height: 220px;">
-	<table style="margin-top: 20px; margin-left:0px; margin-left:25px;!important display:inline; ">
+  <div class="box_3" >
+	<table style="margin:20px;!important display:inline; ">
 		<tr>
 			<td  align="right">意向编号:</td>
 			<td style="padding:5px;"><s:textfield name="requestSearch.applyNum"/></td>
@@ -285,7 +284,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" align="center"><input type="button" onclick="onSubmit();"  class="but_gray"  style="width:100px;" value="查询" /> </td>			
+			<td colspan="4" ><input type="button" onclick="onSubmit();"  class="but_gray"  style="width:100px;" value="查询" /> </td>			
 		</tr>
 	</table>
   </div>

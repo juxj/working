@@ -356,7 +356,7 @@
 					<td colspan="3"> ${ordCompany.bizaddress }</td>
 				</tr>
 				<tr>
-					<td class="r_td" style="vertical-align:top;">邮证编码:</td>
+					<td class="r_td" style="vertical-align:top;">邮政编码:</td>
 					<td class="p_td">${ordCompany.bizpostcode }</td>
 					<td class="r_td">联系人姓名:</td>
 					<td class="p_td">${ordCompany.linkname}</td>

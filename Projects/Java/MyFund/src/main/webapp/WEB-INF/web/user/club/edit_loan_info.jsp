@@ -68,18 +68,18 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td width="18%"  class="form_table field_name">标题</td>
+				<td width="18%"  class="form_table field_name">标题：</td>
 				<td><s:textfield name="clbSupplyInfo.title"  id="clbSupplyInfo.title" cssClass="required"/></td>
 			</tr>
 			<jsp:include page="_work_area.jsp" />
 			<tr>
-				<td   class="form_table field_name">借贷性质</td>
+				<td   class="form_table field_name">借贷性质：</td>
 				<td>
 					<s:radio list="#{'个人':'个人','企业':'企业','小额贷款公司':'小额贷款公司' }" name="clbSupplyInfo.companytype" cssClass="required"></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td  class="form_table field_name">借贷范围</td>
+				<td  class="form_table field_name">借贷范围：</td>
 				<td>
 				</td>
 			</tr>
@@ -107,17 +107,17 @@ $(function(){
 				</s:if>
 			</s:iterator>
 			<tr>
-				<td  class="form_table field_name">额度范围</td>
+				<td  class="form_table field_name">额度范围：</td>
 				<td>
 					<s:radio list="amountRangeList.{?#this.code<10000}" listKey="name" cssClass="required" listValue="name"  name="clbSupplyInfo.workTranche"></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td  class="form_table field_name">信息时效</td>
+				<td  class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td  class="form_table field_name">资金描述</td>
+				<td  class="form_table field_name">资金描述：</td>
 				<td>
 					<s:textarea rows="8" cols="80" name="clbSupplyInfo.remark" id="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 				</td>

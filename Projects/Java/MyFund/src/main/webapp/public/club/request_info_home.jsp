@@ -57,7 +57,7 @@
 <!--头部结束-->
 <!--资金信息列表页-->
 <div class="M_menu">
-	<div style="float:left;"><a href="/club/clubAction.act">融资俱乐部rr</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;找项目 </div>
+	<div style="float:left;"><a href="/club/clubAction.act">融资俱乐部</a>&nbsp;&nbsp;<b>&gt;</b>&nbsp;&nbsp;找项目 </div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <!--main1-->
@@ -67,7 +67,7 @@
 		<div class="fl">
 			<span>行业：&nbsp;&nbsp;</span>
 			<span style="padding-right:20px;">
-			    <select id="mainIndustry" name="query"  style="width:155px;">
+			    <select id="mainIndustry" name="query"  style="width:100px;">
 		    	<option value="">不限</option>
 		    	<s:iterator id="item" value="industryList">
 					<s:if test="#item.parentid==0">
@@ -80,10 +80,10 @@
 			</span>
 			<span>投资方式：&nbsp;&nbsp;</span>
 			<span style="padding-right:20px;">
-				<s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:155px;"></s:select>
+				<s:select headerKey="" headerValue="不限" list="financingTypeList" listKey="name" listValue="name" name="query" style="width:100px;"></s:select>
 			</span>
-			<span>地区：&nbsp;&nbsp;</span>
-			<span style="padding-right:20px;"><s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name" style="width:155px;"></s:select></span>
+			<span >地区：&nbsp;&nbsp;</span>
+			<span style="padding-right:20px;"><s:select headerKey="" headerValue="不限" list="provinceList" name="query" listKey="name" listValue="name" style="width:100px;"></s:select></span>
 			<span>关键字：&nbsp;&nbsp;</span>
 			<span class="input-text" style="padding-right:20px;"><input type="text" class="input-text"  style="width:100px;" name="query" value="${query[3]}" />&nbsp;&nbsp;&nbsp;&nbsp;</span>
 		</div>
@@ -95,28 +95,29 @@
 <!--main1-->
 <div class="hr_10"> &nbsp; </div>
 <!-- gaidong -->
-<table class="container_950 center">
-	<tr class="top_color box_4">
+<table class="container_950 center box_4">
+	<tr class="top_color">
 		<td style="padding-left:20px; border-bottom:3px solid #003961;">项目主题</td>
 		<td style="border-bottom:3px solid #003961;">所属行业</td>
-		<td style="border-bottom:3px solid #003961;">融资金额</td>
-		<td style="border-bottom:3px solid #003961;">所属地域</td>
+		<td style="border-bottom:3px solid #003961;">融资金额(万元)</td>
+		<td style="border-bottom:3px solid #003961;">所属地区</td>
 		<td style="border-bottom:3px solid #003961;">融资方式</td>
 		<td style="border-bottom:3px solid #003961;">发布时间</td>
 		<td style="border-bottom:3px solid #003961;width:90px"></td>
 	</tr>	
-	<s:set name="style" value="'border:1px solid #f0f0f0; background:#f9f9f7;'"></s:set>
+	<s:set name="style" value="'background:#f9f9f7;'"></s:set>
 	<s:if test="pager.data.size()>0">
 				<s:iterator id="item" value="pager.data" status="st">		
 	<tr <s:if test="#st.even"> style="${style}" </s:if>>
 		<td style="padding-top:15px;padding-bottom:15px;padding-left:20px;">
 					<a href="/service/requestInfoAction!detail.act?clbRequestInfoId=${item.id}" target="_blank" style="font-size: 14px; color:#003961; ">
 					${item.title }</a><br/>${userInfoList[st.index][1]}</td>
-		<td><div title="${item.industry }" class="ellipsis_text_60">${item.industry }</div></td>
-		<td><s:text name="format.float"><s:param value="#item.totalMoney"></s:param></s:text>（万元）</td>
+		<td><div title="${item.industry }" class="ellipsis_text_100">${item.industry }</div></td>
+		<td class="red" style="text-align:center;">
+			<s:text name="format.float"><s:param value="#item.totalMoney"></s:param></s:text></td>
 		<td>${item.area }</td>
 		<td>
-			<div title="${item.financeType }" class="ellipsis_text_60">${item.financeType }</div>
+			<div title="${item.financeType }" class="ellipsis_text_80">${item.financeType }</div>
         	<s:if test="#item.financeType==null or #item.financeType==''">
 	    		不限
 	    	</s:if>

@@ -4,9 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!--[if IE]><script type="text/javascript" src="/script/admin/excanvas.js"></script><![endif]-->
 <link href="/css/admin/style.css" rel="stylesheet" type="text/css" />
-<!--[if lt IE 8]><style type="text/css" media="all">@import url("/css/admin/ie.css");</style><![endif]-->
 </head>
 <body>
 <!--头部开始-->

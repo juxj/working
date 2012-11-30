@@ -28,7 +28,7 @@ $(function() {
         $(this).removeClass("input-focus");
     });
     $('textarea').xheditor({tools:'simple',skin:'nostyle'});
-    $("#regDate").datepicker();
+    $("#regDate").datepicker({changeMonth: true,changeYear: true});
     $("#regCity").val('${usrCompany.regcityid}');
 	$("#regDistrict").val('${usrCompany.regdistrictid}');
 	
@@ -80,7 +80,7 @@ function servicedetail(){
 			      <tr>
 			        <td colspan="2" style="padding:20px 0 0 30px;">
 			        <div class="fl">	
-			        	<s:if test="product.logo == null">
+			        	<s:if test="product.logo == null || product.logo == ''">
 					        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
 				        </s:if>
 				        <s:else>
@@ -104,7 +104,8 @@ function servicedetail(){
 	<s:hidden name="product.id"></s:hidden>
 				<div class="hr_10"> &nbsp; </div>
 				<div class="C_title">基本信息</div>
-				<table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
+				<div class="hr_20">&nbsp;</div>
+				<table border="0" cellpadding="0" cellspacing="0" class="special_psfs_tb">
 					<tr>
 		             <td class="a_right">企业名称:</td>
 		             <td width="300px">${usrCompany.companyname }</td>
@@ -124,7 +125,7 @@ function servicedetail(){
 		             <td >${usrCompany.bizaddress }</td>
 		           </tr>              
 		           <tr>
-		             <td class="a_right" style="vertical-align:top;">邮证编码:</td>
+		             <td class="a_right" style="vertical-align:top;">邮政编码:</td>
 		             <td >${usrCompany.bizpostcode }</td>
 		             <td class="a_right">联系人姓名:</td>
 		             <td >${usrCompany.linkname} 
@@ -138,7 +139,7 @@ function servicedetail(){
 		          </tr>
 				</table>
 				<div class="C_title">详细信息:</div>
-				<div class="hr_10"> &nbsp; </div>
+				<div class="hr_20"> &nbsp; </div>
 				<table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
 	         <s:if test="msg!=null">
 	          <tr>
@@ -147,23 +148,23 @@ function servicedetail(){
 		     </s:if>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>税务登记证号码：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.faxcode }" class="input-text required alnum {maxlength:15}" name="usrCompany.faxcode"/>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.faxcode }" class="input-text required alnum {maxlength:15}" name="usrCompany.faxcode"/>
 	          </td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>开户许可证号码：</td>
-	          <td width="300px"><input id="bankpermitcode" type="text" value="${usrCompany.bankpermitcode }" class="input-text required alnum {maxlength:30}" name="usrCompany.bankpermitcode"/></td>
+	          <td width="300px" class="v-align"><input id="bankpermitcode" type="text" value="${usrCompany.bankpermitcode }" class="input-text required alnum {maxlength:30}" name="usrCompany.bankpermitcode"/></td>
 	          <td class="a_right"><span class="txt-impt">*</span>贷款卡号：</td>
-	          <td width="300px"><input type="text" value="${usrCompany.loancard }" class="input-text required alnum {maxlength:30}" name="usrCompany.loancard"/></td>
+	          <td width="300px" class="v-align"><input type="text" value="${usrCompany.loancard }" class="input-text required alnum {maxlength:30}" name="usrCompany.loancard"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>法定代表人：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.legalperson }" class="input-text required chcharacter {maxlength:8}" name="usrCompany.legalperson"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.legalperson }" class="input-text required chcharacter {maxlength:8}" name="usrCompany.legalperson"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>注册地址：</td>
-	          <td colspan="3">
-		          <s:select id="regProvince" name="usrCompany.regprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');"/>
+	          <td colspan="3" class="v-align">
+		          <s:select id="regProvince" name="usrCompany.regprovinceid" list="listProvince" headerKey="" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('regProvince','regCity','regDistrict');" cssClass="required"/>
 		          <select id="regCity" name="usrCompany.regcityid" onchange="changeCity('regCity','regDistrict');">
 		          	<option value="0">--请选择--</option>
 		          	 <s:iterator value="cityMap['regCity']">
@@ -176,29 +177,30 @@ function servicedetail(){
 						<option value="${id}">${name}</option>
 					</s:iterator>
 		          </select>
+		          <label for="regProvince" class="error" generated="true" style="display:none;"></label>
 	         </td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">详细地址：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.regaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.regaddress"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.regaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.regaddress"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">邮编：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.regpostcode }" class="input-text zipCode" name="usrCompany.regpostcode"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.regpostcode }" class="input-text zipCode" name="usrCompany.regpostcode"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>注册日期：</td>
-	          <td><input id="regDate" type="text" value="<s:date name="usrCompany.registerdate" />" class="input-text required dateISO" name="usrCompany.registerdate" /></td>
+	          <td class="v-align"><input id="regDate" type="text" value="<s:date name="usrCompany.registerdate" />" class="input-text required dateISO" name="usrCompany.registerdate" /></td>
 	          <td class="a_right"><span class="txt-impt">*</span>注册资本：</td>
-	          <td><input type="text" value="<s:if test="usrCompany.registeredcapital!=null"><s:text name="format.float"><s:param value="usrCompany.registeredcapital"></s:param></s:text></s:if>" class="input-text required number {maxlength:12}" name="usrCompany.registeredcapital" id="registeredcapital"/>
+	          <td class="v-align"><input type="text" value="<s:if test="usrCompany.registeredcapital!=null"><s:text name="format.float"><s:param value="usrCompany.registeredcapital"></s:param></s:text></s:if>" class="input-text required number {maxlength:12}" name="usrCompany.registeredcapital" id="registeredcapital"/>
 	          &nbsp;万元 <label for="registeredcapital" class="error" generated="true" style="display:none;"></label>
 	          </td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">企业类型：</td>
-	          <td><s:select name="usrCompany.enterprisetypeid" list="dataMap['companyType']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select></td>
+	          <td class="v-align"><s:select name="usrCompany.enterprisetypeid" list="dataMap['companyType']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select></td>
 	          <td class="a_right">员工人数：</td>
-	          <td><s:select name="usrCompany.employeesid" list="dataMap['companyTmployee']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select></td>
+	          <td class="v-align"><s:select name="usrCompany.employeesid" list="dataMap['companyTmployee']" listKey="id" listValue="name" headerKey="0" headerValue="--请选择--"></s:select></td>
 	        </tr>
 	        <tr style="height:160px;line-height:160px;">
 	          <td class="a_right">经营范围：</td>
@@ -206,38 +208,38 @@ function servicedetail(){
 	        </tr>
 	        <tr>
 	          <td class="a_right">所属部门：</td>
-	          <td><input id="department" type=text value="${usrCompany.department }" class="input-text chne {maxlength:8}" name="usrCompany.department"/></td>
+	          <td class="v-align"><input id="department" type=text value="${usrCompany.department }" class="input-text chne {maxlength:8}" name="usrCompany.department"/></td>
 	          <td class="a_right">职位：</td>
-	          <td><input type=text value="${usrCompany.position }" class="input-text chne {maxlength:8}" name="usrCompany.position"/></td>
+	          <td class="v-align"><input type=text value="${usrCompany.position }" class="input-text chne {maxlength:8}" name="usrCompany.position"/></td>
 	        </tr>
 	        </table>
 	        <div class="hr_10"> &nbsp; </div>
 	        <div class="C_title">法定代表人信息:</div>
-				<div class="hr_10"> &nbsp; </div>
+				<div class="hr_20"> &nbsp; </div>
 	        <table border="0" cellpadding="0" cellspacing="0" class="psfs_tb">
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>学历：</td>
-	          <td colspan="3"><s:select headerKey="" headerValue="--请选择--" class="required" name="usrCompany.lpeducation" list="dataMap['eduAtion']" value="usrCompany.lpeducation" listKey="id" listValue="name" ></s:select></td>
+	          <td colspan="3" class="v-align"><s:select headerKey="" headerValue="--请选择--" cssClass="required" name="usrCompany.lpeducation" list="dataMap['eduAtion']" value="usrCompany.lpeducation" listKey="id" listValue="name" ></s:select></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>婚姻状况：</td>
-	          <td width="300px"><s:select name="usrCompany.lpmarry" list="dataMap['marry']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" class="required"></s:select></td>
+	          <td width="300px" class="v-align"><s:select name="usrCompany.lpmarry" list="dataMap['marry']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" cssClass="required"></s:select></td>
 	          <td class="a_right"><span class="txt-impt">*</span>从事所属行业年限：</td>
-	          <td width="300px"><s:select name="usrCompany.lpindustryyears" list="dataMap['workYears']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" class="required"></s:select></td>
+	          <td width="300px" class="v-align"><s:select name="usrCompany.lpindustryyears" list="dataMap['workYears']" listKey="id" listValue="name" headerKey="" headerValue="--请选择--" cssClass="required"></s:select></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>身份证号码：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.lpcid }" class="input-text required idcardno {maxlength:19}" name="usrCompany.lpcid"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.lpcid }" class="input-text required idcardno {maxlength:19}" name="usrCompany.lpcid"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>手机：</td>
-	          <td><input id="lpmobile" type="text" value="${usrCompany.lpmobile}" class="input-text required mobile {maxlength:13}" name="usrCompany.lpmobile"/></td>
+	          <td class="v-align"><input id="lpmobile" type="text" value="${usrCompany.lpmobile}" class="input-text required mobile {maxlength:13}" name="usrCompany.lpmobile"/></td>
 	          <td class="a_right">家庭电话：</td>
-	          <td><input type="text" value="${usrCompany.lphometel }" class="input-text phone {maxlength:20}" name="usrCompany.lphometel"/></td>
+	          <td class="v-align"><input type="text" value="${usrCompany.lphometel }" class="input-text phone {maxlength:20}" name="usrCompany.lphometel"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right"><span class="txt-impt">*</span>常住地址：</td>
-	          <td colspan="3"><s:select id="lpliveProvince" name="usrCompany.lpliveprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('lpliveProvince','lpliveCity','lpliveDistrict');"/>
+	          <td colspan="3" class="v-align"><s:select id="lpliveProvince" name="usrCompany.lpliveprovinceid" list="listProvince" headerKey="" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('lpliveProvince','lpliveCity','lpliveDistrict');" cssClass="required"/>
 	          <select id="lpliveCity" name="usrCompany.lplivecityid" onchange="changeCity('lpliveCity','lpliveDistrict');">
 	          	<option value="0">--请选择--</option>
 	          	<s:iterator value="cityMap['lpliveCity']">
@@ -249,19 +251,21 @@ function servicedetail(){
 	          	<s:iterator value="districtMap['lpliveDistrict']">
 					<option value="${id}">${name}</option>
 				</s:iterator>
-			  </select></td>
+			  </select>
+			  <label for="lpliveProvince" class="error" generated="true" style="display:none;"></label>
+			  </td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">详细地址：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.lpliveaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.lpliveaddress"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.lpliveaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.lpliveaddress"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">邮编：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.lplivepostcode }" class="input-text zipCode" name="usrCompany.lplivepostcode"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.lplivepostcode }" class="input-text zipCode" name="usrCompany.lplivepostcode"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">户籍所在地：</td>
-	          <td colspan="3"><s:select id="lphkProvince" name="usrCompany.lphkprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('lphkProvince','lphkCity','lphkDistrict');"/>
+	          <td colspan="3" class="v-align"><s:select id="lphkProvince" name="usrCompany.lphkprovinceid" list="listProvince" headerKey="0" headerValue="--请选择--"  listKey="id" listValue="name" onchange="changeProvince('lphkProvince','lphkCity','lphkDistrict');"/>
 	          <select id="lphkCity" name="usrCompany.lphkcityid" onchange="changeCity('lphkCity','lphkDistrict');">
 	          	<option value="0">--请选择--</option>
 	          	<s:iterator value="cityMap['lphkCity']">
@@ -277,11 +281,11 @@ function servicedetail(){
 	        </tr>
 	        <tr>
 	          <td class="a_right">详细地址：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.lphkaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.lphkaddress"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.lphkaddress }" class="input-text chne {maxlength:32}" style="width:534px;" name="usrCompany.lphkaddress"/></td>
 	        </tr>
 	        <tr>
 	          <td class="a_right">邮编：</td>
-	          <td colspan="3"><input type="text" value="${usrCompany.lphkpostcode }" class="input-text zipCode" name="usrCompany.lphkpostcode"/></td>
+	          <td colspan="3" class="v-align"><input type="text" value="${usrCompany.lphkpostcode }" class="input-text zipCode" name="usrCompany.lphkpostcode"/></td>
 	        </tr>
 	        <tr>
 	           <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">

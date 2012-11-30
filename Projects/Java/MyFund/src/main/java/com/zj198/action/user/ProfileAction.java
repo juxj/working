@@ -105,6 +105,7 @@ public class ProfileAction extends BaseAction  {
 				profileMap.put("industry", industry);
 				profileMap.put("bizaddress",dictoryDataService.getPCDNameByIds(usrCompany.getBizprovinceid(), usrCompany.getBizcityid(), usrCompany.getBizdistrictid()));
 				if(companyMark == null){
+					return "auditCompanyProfile";
 				}else if(companyMark == 1){
 					return "auditCompanyProfile";
 				}
@@ -330,6 +331,12 @@ public class ProfileAction extends BaseAction  {
 		UsrUser user = (UsrUser)ctx.getSession().get("_user");
 		UsrUser usrUser =accountService.getUserById(user.getId());
 		int groupid = profileService.getGroupidByUserType(user.getType());
+		if(groupid !=Constants.USERTYPE_GROUP_COMPANY && groupid != Constants.USERTYPE_GROUP_PERSONAL){
+			if(usrUser.getAuditstatus() == Constants.USER_AUDITSTATUS_DONE){
+				msg="管理员已审核不可修改，如需修改请联系管理员。";
+				return execute();
+			}
+		}
 		switch (groupid){
 			case Constants.USERTYPE_GROUP_BANK:
 				if(usrUser.getAuditstatus()==Constants.USER_AUDITSTATUS_NONE){//判断user auditstatus - Patrick
@@ -351,7 +358,7 @@ public class ProfileAction extends BaseAction  {
 				if(usrUser.getAuditstatus() != Constants.USER_AUDITSTATUS_NONE){
 					UsrBank old_UsrBank = (UsrBank)profileService.getProfiles(usrUser.getId());
 					old_UsrBank.setAuditFields(usrBank);
-					profileService.saveorupdate(old_UsrBank);
+					profileService.saveorupdate(old_UsrBank, user.getId());
 				}else{
 					if(usrBank.getBankid()!=null && usrBank.getBankid()!=0){
 						bankList=dictoryDataService.findDicBankList();
@@ -363,7 +370,7 @@ public class ProfileAction extends BaseAction  {
 							}
 						}
 					}
-					profileService.saveorupdate(usrBank);
+					profileService.saveorupdate(usrBank, user.getId());
 				}
 				break;
 			case Constants.USERTYPE_GROUP_COMPANY:
@@ -418,7 +425,7 @@ public class ProfileAction extends BaseAction  {
 					}else{
 						companyMark=2;
 					}
-					profileService.saveorupdate(old_UsrCompany);
+					profileService.saveorupdate(old_UsrCompany, user.getId());
 				}else{
 					message=usrCompany.validAuditFields(usrCompany);
 					if(message.startsWith("1#")){
@@ -460,7 +467,7 @@ public class ProfileAction extends BaseAction  {
 						dataMap.put("workYears", dictoryDataService.findCommonDataByGroupId(Constants.BASEDATA_GROUP_WORKYEARS));
 						return "editCompanyProfile";
 					}
-					profileService.saveorupdate(usrCompany);
+					profileService.saveorupdate(usrCompany, user.getId());
 				}
 				break;
 			case Constants.USERTYPE_GROUP_FINANCEORG:
@@ -497,7 +504,7 @@ public class ProfileAction extends BaseAction  {
 				}
 //				UsrFinanceorg old_UsrFinanceorg = (UsrFinanceorg)profileService.getProfiles(usrUser.getId());
 				if(usrUser.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE){
-					profileService.saveorupdate(usrFinanceorg);
+					profileService.saveorupdate(usrFinanceorg, user.getId());
 				}
 				break;
 			case Constants.USERTYPE_GROUP_PERSONAL:
@@ -523,7 +530,7 @@ public class ProfileAction extends BaseAction  {
 //					old_UsrPerson.setOthersFields(usrPerson);
 //					profileService.saveorupdate(old_UsrPerson);
 //				}else{
-					profileService.saveorupdate(usrPerson);
+					profileService.saveorupdate(usrPerson, user.getId());
 //				}
 				break;
 			case Constants.USERTYPE_GROUP_SERVICEORG:
@@ -562,7 +569,7 @@ public class ProfileAction extends BaseAction  {
 				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
 //				UsrServiceorg old_UsrServiceorg = (UsrServiceorg)profileService.getProfiles(usrUser.getId());
 				if(usrUser.getAuditstatus() != Constants.USER_AUDITSTATUS_DONE){
-					profileService.saveorupdate(usrServiceorg);
+					profileService.saveorupdate(usrServiceorg, user.getId());
 				}
 				break;
 			default:

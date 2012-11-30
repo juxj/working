@@ -92,7 +92,7 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 			      <tr>
 			        <td colspan="2" style="padding:20px 0 0 30px;">
 			        <div class="fl">	
-			        	<s:if test="product.logo == null">
+			        	<s:if test="product.logo == null || product.logo == ''">
 					        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
 				        </s:if>
 				        <s:else>
@@ -119,22 +119,22 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 		<div class="C_form">
 	            <dl>
 	              <dd>
-	                <h6>融资用途：</h6>
+	                <h6 style="width:280px"><span class="txt-impt">*</span>融资用途：</h6>
 	                <common:select id="other" name="apply.loanPurpose" valueSetId="14" cssClass="S_width" style="width:160px;" onchange="otherPurpose()"></common:select>
 	              	<div id="otherPurpose"></div>
 	              </dd>
 	              <dd> 
-	                <h6>融资金额：</h6>
+	                <h6 style="width:280px"><span class="txt-impt">*</span>融资金额：</h6>
 	                <input type="text" name="apply.loanAmount" class="input-text required digits {loanAmount:[${product.financeLittleamount },${product.financeBigamount }]}"  id="apply_loanAmount" maxlength="6"/>&nbsp;&nbsp;万元
 	                <label for="apply_loanAmount" class="error" generated="true" style="display:none;"></label>
 	              </dd>
 	              <dd>
-	                <h6>融资期限：</h6>
+	                <h6 style="width:280px"><span class="txt-impt">*</span>融资期限：</h6>
 	                <input type="text" name="apply.loanMonth" class="input-text required digits {loanAmount:[${product.financeLittledt },${product.financeMostdt }]}"  id="apply.loanMonth" maxlength="2"/>&nbsp;&nbsp;个月
 	                <label for="apply.loanMonth" class="error" generated="true" style="display:none;"></label>
 					</dd>
 					<dd>
-	                <h6>是否有抵押物：</h6>
+	                <h6 style="width:280px"><span class="txt-impt">*</span>是否有抵押物：</h6>
 					  <input id="radio1" type="radio" name="apply.haveMortgage" value="1" class="required" checked/><label for="radio1">能提供</label>
 					  <input id="radio2" type="radio" name="apply.haveMortgage" value="0" /><label for="radio2">无法提供</label>
 					</dd>
@@ -145,38 +145,38 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 		<div class="C_form">
 			<dl>
 				<dd>
-					<h6 style="width:260px">企业<span class="year"></span>年销售额约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>企业<span class="year"></span>年销售额约为：</h6>
 					<s:textfield name="apply.lastyearSaleVolume" cssClass="input-text required number"  id="apply.lastyearSaleVolume" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 					<label for="apply.lastyearSaleVolume" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">企业<span class="year"></span>年经营成本约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>企业<span class="year"></span>年经营成本约为：</h6>
 					<s:textfield name="apply.lastyearCost" cssClass="input-text required number"  id="apply.lastyearCost" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 					<label for="apply.lastyearCost" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">企业<span class="year"></span>年净利润率约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>企业<span class="year"></span>年净利润率约为：</h6>
 					<input type="text" name="apply.lastyearProfit" class="input-text required number {loanAmount:[-100,500]}"  id="apply.lastyearProfit" maxlength="10"/>&nbsp;&nbsp;%
 					<label for="apply.lastyearProfit" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业应收账款约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>截止到<span class="yearmoth"></span>，企业应收账款约为：</h6>
 					<s:textfield name="apply.receivable" cssClass="input-text required number"  id="apply.receivable" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 					<label for="apply.receivable" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总库存约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>截止到<span class="yearmoth"></span>，企业总库存约为：</h6>
 					<s:textfield name="apply.stockSum" cssClass="input-text required number"  id="apply.stockSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 					<label for="apply.stockSum" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总资产约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>截止到<span class="yearmoth"></span>，企业总资产约为：</h6>
 					<input type="text" name="apply.assetSum" class="input-text required number"  id="apply.assetSum" maxlength="10"/>&nbsp;&nbsp;万元
 					<!--  {assetSumcls:['apply_debtSum','apply_loanAmount']} -->
 					<label for="apply.assetSum" class="error" generated="true" style="display:none;"></label>
 				</dd>
 				<dd>
-					<h6 style="width:260px">截止到<span class="yearmoth"></span>，企业总负债约为：</h6>
+					<h6 style="width:280px"><span class="txt-impt">*</span>截止到<span class="yearmoth"></span>，企业总负债约为：</h6>
 					<s:textfield name="apply.debtSum" cssClass="input-text required number"  id="apply_debtSum" maxlength="10"></s:textfield>&nbsp;&nbsp;万元
 					<label for="apply_debtSum" class="error" generated="true" style="display:none;"></label>
 				</dd>
@@ -210,7 +210,7 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 			<dl>
 				<s:iterator value="extendsPropertyList" id="epid">
 					<dd>
-						<h6 style="width:235px">${fieldName }：</h6>
+						<h6 style="width:235px"><span class="txt-impt">*</span>${fieldName }：</h6>
 						<s:if test="fieldType == 1">
 							<input type="text" name="epValue${id }" class="input-text required"/>
 						</s:if>
@@ -235,7 +235,7 @@ return this.optional(element) || (value - s1 >= 0 && value - s2 >= 0);
 			</dl>
 		
 			<div class="hr_10"> &nbsp; </div>
-			<div class="center" style="width:260px;">
+			<div class="center" style="width:300px;">
 				<input type="checkbox" name="zjservice" id="zjservice" style="margin-bottom:8px;" onclick="servicedetail()"/>
 				<label for="zjservice">我已阅读并同意</label>
 				<a href="/news/Info.act?id=197" class="T_Service" target="_blank">中国资金网融资服务条款</a>

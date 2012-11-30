@@ -22,6 +22,7 @@
 <script type="text/javascript" src="/script/admin/jquery.tablesorter.min.js"></script>
 <script type="text/javascript" src="/script/admin/jquery-ui-1.8.21.custom.min.js"></script>
 <script type="text/javascript" src="/script/jquery.form.js" > </script>
+<script type="text/javascript" src="/script/base-rate.js" > </script>
 <script language="javascript">
 //文本框触发焦点效果s
 $(function() {
@@ -215,33 +216,38 @@ function interest(){
 			interTrObj.remove();
 		}
 	}
-	var inteArr = new Array(5.85,6.31,6.4,6.65,6.8);
-	var inteTextArr = new Array('六月以内（含六月)','六个月至一年（含一年）','一至三年（含三年）','三至五年（含五年）','五年以上');
+	//var baserate_inteArr = new Array(5.6,6.0,6.15,6.4,6.55);
+	//var baserate_inteTextArr = new Array('六月以内（含六月)','六个月至一年（含一年）','一至三年（含三年）','三至五年（含五年）','五年以上');
 	for(var i = limist; i<=limien;i++){
 		var interTrObj = $('#interTr' + i);
 		if(interTrObj.length <=0){
-			var intetr = "<tr id='interTr" + i + "'><td>" + inteTextArr[i-1] + "</td><td>" + inteArr[i-1] + "%</td><td> + <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='7'/>%</td>";
+			var intetr = "<tr id='interTr" + i + "'><td>" + baserate_inteTextArr[i-1] + "</td><td>" + baserate_inteArr[i-1] + "%</td>";
+			intetr = intetr + "<td><input type='text' name='financeProductSpModel.rateDown' class='digits' id='rateDown" + i + "' size='2'/>";
+			intetr = intetr + " - <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='2'/>%</td>";
 			intetr = intetr + "<td width='200px'><div id='slider-range" + i + "'></div></td></tr>";
 			$('#interest_table').append($(intetr));
-			sliderAdd(('slider-range' + i),('rateUp' + i),0);
+			sliderAdd(('slider-range' + i),('rateDown' + i),('rateUp' + i),0,500);
 		}
 	}
 }
-function sliderAdd(sliderId, rateId,sliValue){
-sliderId = "#" + sliderId;
-rateId = "#" + rateId;
-$(sliderId).slider({
-			range: "min",
-			value: sliValue,
-			min: 0,
-			max: 500,
-			slide: function( event, ui ) {
-				$( rateId ).val(ui.value );
-			}
-		});
+function sliderAdd(sliderId,rateDownId, rateId,sliStartValue, sliEndValue){
+	sliderId = "#" + sliderId;
+	rateId = "#" + rateId;
+	rateDownId = "#" + rateDownId;
 
-
-		$( rateId ).val( $( sliderId ).slider( "value" ) );
+	$(sliderId).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ sliStartValue, sliEndValue ],
+            slide: function( event, ui ) {
+            	$( rateDownId ).val(ui.values[ 0 ]);
+            	$( rateId ).val(ui.values[ 1 ]);
+            	
+            }
+        });
+        $( rateDownId ).val($(sliderId).slider( "values", 0 ));
+        $( rateId ).val($(sliderId).slider( "values", 1 ));
 }
 
 function updateSetStatus(noid,boxName){
@@ -373,7 +379,7 @@ function previewExtends(){
     <tr id="finance_interest_type">
 		<td>&nbsp;</td>
 		<td>
-			<table width="600" id="interest_table">
+			<table width="700" id="interest_table">
 							<tr>
 								<th align='left'>贷款期限</th>
 								<th align='left'>基准利率</th>
@@ -406,11 +412,12 @@ function previewExtends(){
 											<common:print valueId="#item.financeEnddt" type="rate"/>%
 										</td>
 										<td>
-											+<input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp<%=i %>' size='7' value="${item.rateUp }"/>%
+											<input type='text' name='financeProductSpModel.rateDown' class='digits' id='rateDown<%=i %>' size='2' value="${rateDown }"/>-
+											<input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp<%=i %>' size='2' value="${rateUp }"/>%
 										</td>
 										<td width='200px'>
 											<div id='slider-range<%=i %>'></div>
-											<script>sliderAdd(('slider-range<%=i%>'),('rateUp<%=i%>'),$('#rateUp<%=i%>').val());</script>
+											<script>sliderAdd(('slider-range<%=i%>'),('rateDown<%=i%>'),('rateUp<%=i%>'),$('#rateDown<%=i%>').val(),$('#rateUp<%=i%>').val());</script>
 										</td>
 									</tr>
 								</s:iterator>
@@ -564,7 +571,7 @@ function previewExtends(){
         </tr>
     <tr class="even" style="color:#97181d;font-weight: bold;"><td colspan="2">申请条件</td></tr>
 			  <tr class="finance_type_151 finance_type_152">
-                <td>申请企业所属行业</td>
+                <td>所属行业</td>
                 <td><input type="radio" name="financeProductSpModel.industryStatus" id="industryAll" value="0" <s:if test="financeProductSpModel.industryStatus == 0">checked</s:if>/><label for="industryAll">不限</label>
                 <input type="radio" name="financeProductSpModel.industryStatus" id="industsel" value="1" <s:if test="financeProductSpModel.industryStatus == 1">checked</s:if>/><label for="industsel">选择行业</label>
                 <s:hidden id='indust_resvals' name="financeProductSpModel.industrySel"></s:hidden></td>
@@ -574,12 +581,12 @@ function previewExtends(){
                 <td><textarea rows="5" cols="60" id="indust_restxts" disabled="true">${financeProductSpModel.industrySelName }</textarea></td>
 			  
 			  </tr>
-              <tr class="finance_type_151 finance_type_152">
+              <tr class="finance_type_151">
                 <td>企业的总资产：</td>
                 <td><common:select name="financeProductSpModel.financeExtend.companyAllAsset" valueSetMap="ZJ112"></common:select></td>
               </tr>
-              <tr class="finance_type_151">
-                <td>企业的年营业收入：</td>
+              <tr class="finance_type_151 finance_type_152">
+                <td>年营业收入：</td>
                 <td><common:select name="financeProductSpModel.financeExtend.operatIncome" valueSetMap="ZJ104"></common:select></td>
               </tr>
               <tr class="finance_type_151">
@@ -651,7 +658,7 @@ function previewExtends(){
 									<option value="3" <s:if test="fieldType == 3">selected</s:if>>下拉选择框</option>
 									<option value="4" <s:if test="fieldType == 4">selected</s:if>>多选框</option>
 								</select>
-								<s:if test="fieldValue.length() > 0">						
+								<s:if test="fieldValue != null && fieldValue != ''">						
 								   <div id="content<%=m%>">选项（以#号分隔）：<input type="text" name="financeProductSpModel.extendsValue" value="${fieldValue }"/></div>
 								</s:if>
 							</td>

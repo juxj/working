@@ -214,7 +214,6 @@ $(document).ready(function(){
         <tr>
            <td colspan="4" style="text-align:center; padding-top:10px; padding-bottom:10px;">
            <input type="submit" class="but_gray" style="width:200px;" value="保存" />&nbsp;&nbsp;
-           <input type="button" class="but_gray" onclick="javascript:window.location.href='/user/Profile.act'" style="width:200px;" value="取消" />
            </td>
          </tr>
          </table>

@@ -9,7 +9,7 @@ jQuery.validator.addMethod("idcardno", function(value, element) {
 }, "身份证号码错误");
 //汉字和字母
 jQuery.validator.addMethod("chne", function(value, element) {
-var tel =/^[\u4e00-\u9fa5\w\s\(\)]+$/;
+var tel =/^[\u4e00-\u9fa5\w\W\s\(\)]+$/;
 return this.optional(element) || (tel.test(value));
 }, "不允许特殊字符.");
 //组织机构代码验证
@@ -18,8 +18,8 @@ return this.optional(element) || /^([0-9A-Z]){8}-[0-9|X]$/.test(value);
 }, "格式错误");
 //字母数字
 jQuery.validator.addMethod("alnum", function(value, element) {
-return this.optional(element) || /^[a-zA-Z0-9]+$/.test(value);
-}, "只能包括英文字母和数字");
+return this.optional(element) || /^[a-zA-Z0-9\-]+$/.test(value);
+}, "格式错误");
 // 汉字
 jQuery.validator.addMethod("chcharacter", function(value, element) {
 var tel = /^[\u4e00-\u9fa5]+$/;
@@ -54,12 +54,12 @@ return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);
 
 // 手机号码验证
 jQuery.validator.addMethod("mobile", function(value, element) {
-var tel = /^((13[0-9])|(15[0-9])|(18[0-9]))\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}$|^[0]{1}[0-9]{2,3}[0-9]{7,8}$/;
+var tel = /^((13[0-9])|(15[0-9])|(18[0-9]))\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}[0-9\-]{0,}|[0]{1}[0-9]{2,3}[0-9]{7,8}[0-9\-]{0,}$/;
 return this.optional(element) || (tel.test(value));
 }, "联系电话格式错误.");
 // 电话号码验证
 jQuery.validator.addMethod("phone", function(value, element) {
-var tel = /^[0]{1}[0-9]{2,3}-[0-9]{7,8}|[0]{1}[0-9]{2,3}[0-9]{7,8}$/;
+var tel = /^[0]{1}[0-9]{2,3}-[0-9]{7,8}[0-9\-]{0,}|[0]{1}[0-9]{2,3}[0-9]{7,8}[0-9\-]{0,}$/;
 return this.optional(element) || (tel.test(value));
 }, "电话号码格式错误.");
 //电子邮箱

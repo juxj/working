@@ -11,11 +11,8 @@ $(function() {
 });
 
 function loadmenu(num){
-//alert(11);
-	//clsObj.show().siblings().hide();
 	$('.tab_menu ul li').eq(num).addClass('hover').siblings().removeClass();
 	$('.xxkboxmenu').eq(num).show().siblings().hide();
-	//alert($('.xxkbox').eq(num).html());
 }
 </script>
 <%
@@ -38,5 +35,5 @@ if(mid != null && !mid.trim().equals("")){
 </div>
 <s:set name="t2" value="0"/><s:set name="t3" value="0"/><s:set name="t4" value="0"/><s:set name="t5" value="0"/>
 <div class="container_960">
-	<s:action name="menu" namespace="/user" executeResult="true"/>
+	<s:action name="menu" namespace="/user" executeResult="true" ignoreContextParams="true"/>
 </div>

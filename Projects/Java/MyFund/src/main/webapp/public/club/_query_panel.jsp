@@ -62,7 +62,7 @@ $(function() {
           <div>
           	<div class="xxkbox2 first2">
           	<!-- 表单开始 -->
-	            <form class="box_form" action="/service/supplyInfoAction!home.act" method="post" id="frmQuerySupplyInfo">
+	            <form class="out_box_form" action="/service/supplyInfoAction!home.act" method="post" id="frmQuerySupplyInfo">
 				<table border="0" cellspacing="0" cellpadding="0" class="find_table">
 				  <tr>
 				    <td class="find_table_r">地区：</td>
@@ -132,7 +132,7 @@ $(function() {
             </div> 
             <div class="xxkbox2">
             <!-- 表单开始 -->
-	          <form class="box_form" action="/service/requestInfoAction!home.act" method="post" id="frmQueryRequestInfo">
+	          <form class="out_box_form" action="/service/requestInfoAction!home.act" method="post" id="frmQueryRequestInfo">
 				<table border="0" cellspacing="0" cellpadding="0" class="find_table">
 				  <tr>
 				    <td class="find_table_r">地区：</td>

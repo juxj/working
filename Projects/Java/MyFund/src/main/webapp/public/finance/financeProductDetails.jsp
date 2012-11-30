@@ -30,9 +30,9 @@
   <div class="M_out">
   	<div class="M_out_L">
         <!--表格部分开始-->
-        <table border="0" cellspacing="0" cellpadding="0" class="Search_table">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="Search_table">
           <tr>
-            <td colspan="4" class="Search_t_title red">${prdBankfinance.name}</td>
+            <td colspan="4" class="Search_t_title red" style="width:708px;">${prdBankfinance.name}</td>
           </tr>        
           <tr>
             <td class="Search_t_connect">产品名称</td>

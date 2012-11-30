@@ -12,6 +12,14 @@ public class SendWebMsgSpModel {
 	private String title;
 	private String content;
 	private Integer sendUserId;
+	
+
+	public SendWebMsgSpModel(Integer userId, Integer sendUserId, String title, String content) {
+		this.userId = userId;
+		this.title = title;
+		this.content = content;
+		this.sendUserId = sendUserId;
+	}
 
 	public String getMessageType() {
 		return messageType;

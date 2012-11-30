@@ -82,6 +82,7 @@ function recoveryReg(){
 		$("#regmsg").html("请正确填写注册信息。");
 		checkformresult=0;
 	}else{
+		$("#regmsg").html("");
 		var gendervalue = $("input[name='gender']:checked").val();
 		var param = {
 			email:$('#email').val(),
@@ -200,12 +201,8 @@ function uploadImg(){
 </div>
 <div class="hr_10"> &nbsp; </div> 
 <!--改动的部分-->
-	<div class="container_950">
-		<div class="P_title  box_4">注册信息</div>
-		<div class="line">&nbsp;</div>
-		<div class="P_connect">
-		    <span id="ps" class="no_ok" ><s:if test="msg!=null">${msg }</s:if></span>
-		</div>
+	<div class="container_950 box_4">
+		<div class="P_title" style="border-bottom:5px solid #003961;">注册信息</div>
 	</div>
 	<div class="hr_10"> &nbsp; </div>
     <div class="box_4 center container_950">

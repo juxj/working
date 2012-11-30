@@ -45,14 +45,16 @@ $(document).ready(function(){
 <div class="container_950 box_4">
 	<div class="P_title">详细信息</div>
 	<div class="line">
-		<img src="/images/icon01.jpg" alt="" class="P_connect_img"/>当前账户状态:
+		<h6><img src="/images/icon01.jpg" alt="" class="P_connect_img"/>当前账户状态:
 		<s:if test="#session._user.auditstatus==0"><span class="no_ok">未审核</span></s:if>
 		<s:elseif test="#session._user.auditstatus==1"><span class="no_ok">待审核</span></s:elseif>
 		<s:elseif test="#session._user.auditstatus==2"><span class="no_ok">已审核</span></s:elseif>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		您的账户类型：银行</h6>
 	</div>
-	<div id="status" class="P_connect" style="display: none;">
-		&nbsp;&nbsp;&nbsp;&nbsp;尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br />
-		&nbsp;&nbsp;&nbsp;&nbsp;您也可以暂时跳过稍后在进行信息完善。<span style="margin-right:15px;" class="view_detail">
+	<div id="status" class="P_connect" style="display: none;padding-left:64px;">
+		<span>尊敬的 ${session._user.realname} <s:if test="#session._user.gender==1">先生：</s:if><s:else>女士：</s:else>&nbsp;感谢您注册中国资金网，您需要完善详细信息后才能使用中国资金网用户中心的各项功能。<br /></span>
+		<span style="margin-right:15px;" class="view_detail">
 		<a href="/user/UserAction!next.act" style="float:none;">以后再说</a></span>
 		<br />
 		&nbsp;
@@ -97,7 +99,7 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right">联系人姓名：</td>
-          <td colspan="3"><input type=text value="${usrBank.linkname }" class="{validate:{maxlength:6}} chcharacter input-text" name="usrBank.linkname"/>
+          <td colspan="3" class="v-align"><input type=text value="${usrBank.linkname }" class="{validate:{maxlength:6}} chcharacter input-text" name="usrBank.linkname"/>
           </td>
         </tr>
         <tr>
@@ -112,7 +114,7 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right">联系地址：</td>
-          <td colspan="3"><s:select id="Province" name="usrBank.provinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('Province','City','District');"/>
+          <td colspan="3" class="v-align"><s:select id="Province" name="usrBank.provinceid" cssClass="tb_sele" list="listProvince" headerKey="0" headerValue="--请选择--" listKey="id" listValue="name" onchange="changeProvince('Province','City','District');"/>
 	          <select id="City" name="usrBank.cityid" onchange="changeCity('City','District');" class="tb_sele">
 	          	<option value="0">--请选择--</option>
 	          	 <s:iterator value="cityMap['City']">
@@ -128,26 +130,26 @@ $(document).ready(function(){
         </tr>
         <tr>
           <td class="a_right">详细地址：</td>
-          <td colspan="3"><input type="text" value="${usrBank.address }" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrBank.address"/></td>
+          <td colspan="3" class="v-align"><input type="text" value="${usrBank.address }" class="input-text chne {validate:{maxlength:32}}" style="width:534px;" name="usrBank.address"/></td>
         </tr>
         <tr>
           <td class="a_right">邮政编码：</td>
-          <td colspan="3"><input type="text" value="${usrBank.postcode }" class="input-text zipCode" name="usrBank.postcode"/></td>
+          <td colspan="3" class="v-align"><input type="text" value="${usrBank.postcode }" class="input-text zipCode" name="usrBank.postcode"/></td>
         </tr>
         <tr>
           <td class="a_right">联系人邮箱：</td>
-          <td><input id="usrBankEmail" type=text value="${usrBank.linkemail }" class="iemail {validate:{maxlength:30}} input-text" name="usrBank.linkemail" style="float:left;" />
+          <td class="v-align"><input id="usrBankEmail" type=text value="${usrBank.linkemail }" class="iemail {validate:{maxlength:30}} input-text" name="usrBank.linkemail" style="float:left;" />
           </td>
           <td class="a_right">联系人电话：</td>
-          <td>
+          <td class="v-align">
           <input type=text value="${usrBank.linktelephone }" class="mobile {validate:{maxlength:20}} input-text" name="usrBank.linktelephone"/>
           </td>
         </tr>
         <tr>
           <td class="a_right">所属部门：</td>
-          <td><input id="department" type="text" value="${usrBank.department }" class="{validate:{maxlength:12}} input-text chne" name="usrBank.department" /></td>
+          <td class="v-align"><input id="department" type="text" value="${usrBank.department }" class="{validate:{maxlength:12}} input-text chne" name="usrBank.department" /></td>
           <td class="a_right">职位：</td>
-          <td><input type=text value="${usrBank.position }" class="{validate:{maxlength:8}} input-text chne" name="usrBank.position"/></td>
+          <td class="v-align"><input type=text value="${usrBank.position }" class="{validate:{maxlength:8}} input-text chne" name="usrBank.position"/></td>
         </tr>
         <tr>
           <td class="a_right">服务介绍：</td>

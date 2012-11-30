@@ -8,12 +8,7 @@ import java.util.Date;
 
 public class OrdMembership implements java.io.Serializable {
 
-	// Fields
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -4362297307255446974L;
 	private Integer id;
 	private Integer userId;
 	private Double payAmount;
@@ -63,7 +58,6 @@ public class OrdMembership implements java.io.Serializable {
 	}
 
 	// Property accessors
-
 	public Integer getId() {
 		return this.id;
 	}

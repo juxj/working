@@ -65,29 +65,29 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td width="18%" class="form_table field_name">标题</td>
+				<td width="18%" class="form_table field_name">标题：</td>
 				<td><s:textfield name="clbSupplyInfo.title"  id="clbSupplyInfo.title" cssClass="required "/>
 				</td>
 			</tr>
 			<jsp:include page="_work_area.jsp" />
 			<tr>
-				<td class="form_table field_name">业务范围</td>
+				<td class="form_table field_name">业务范围：</td>
 				<td>
 					<s:radio list="#{'直接租赁':'直接租赁','售后回租':'售后回租','转租赁':'转租赁','杠杆租赁':'杠杆租赁'}" cssClass="required"  name="clbSupplyInfo.workRange" ></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">投资额度</td>
+				<td class="form_table field_name">投资额度：</td>
 				<td>
 					<s:radio list="amountRangeList.{?#this.code<10000}" cssClass="required" listKey="name" listValue="name"  name="clbSupplyInfo.workTranche"></s:radio>
 				</td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">信息时效</td>
+				<td class="form_table field_name">信息时效：</td>
 				<td><s:select list="timeIntervalList" listKey="code" cssClass="required" listValue="name" name="lastDisplayDate" ></s:select></td>
 			</tr>
 			<tr>
-				<td class="form_table field_name">资金描述</td>
+				<td class="form_table field_name">资金描述：</td>
 				<td>
 					<s:textarea rows="8" cols="80" name="clbSupplyInfo.remark" id="clbSupplyInfo.remark" cssClass="required xheditor {tools:'Bold',skin:'nostyle',forcePtag:false}"/>
 					<label for="clbSupplyInfo.remark" class="error" generated="true" style="display:none;"></label>

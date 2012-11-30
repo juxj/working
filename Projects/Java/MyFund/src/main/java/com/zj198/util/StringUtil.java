@@ -1,8 +1,11 @@
 package com.zj198.util;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,6 +13,43 @@ import org.apache.commons.lang3.StringUtils;
 
 public class StringUtil {
 
+	public static Map<String, Double> getSortedMapByKey(Map<String, Double> map, final Integer direction) {
+		Map<String,Double> newMap = new TreeMap<String,Double>(new Comparator<String>(){
+		   public int compare(String obj1,String obj2){
+		    
+			   if (direction == null || direction.intValue()==0) {
+				   return obj2.compareTo(obj1);
+			   } else {
+				   return obj1.compareTo(obj2);
+			   }
+		   }
+		  }); 
+		
+		newMap.putAll(map);
+		return newMap;
+	}
+	
+	public static Integer getMinValue(String[] values){
+		Integer result = null;
+		
+		int m = 0;
+		for(String value : values){
+			
+			int v = Integer.valueOf(value);
+			if (m==0){
+				result = v;
+			} else {
+				if (v<result){
+					result = v;
+				}
+			}
+			
+			m++;
+		}
+		
+		return result;
+	}
+	
 	public static List<String> getStringList(String str){
 		if(str==null)return null;
 		
@@ -44,6 +84,26 @@ public class StringUtil {
 			}
 		}
 		return result.toString();
+	}
+	public static String getStrByArray(String[] arr){
+		StringBuffer result = new StringBuffer();
+		if(arr != null && arr.length > 0){
+			for(String str:arr){
+				result.append(str).append(",");
+			}
+		}
+		return result.substring(0, result.length()-1);
+	}
+	public static String getStrByList(List<String> arr){
+		StringBuffer result = new StringBuffer();
+		if(arr != null && arr.size() > 0){
+			//result.append(",");
+			for(String str:arr){
+				result.append(str).append(",");
+			}
+		}
+		String res=result.toString();
+		return res.substring(0, result.length()-1);
 	}
 	public static Integer[] getArrayByStr(String str){
 		Integer[] arr = null;
@@ -102,7 +162,7 @@ public class StringUtil {
 	/**验证手机号码 和固定电话*/
 	public static boolean validMobile(String mobile){
 		if(StringUtils.isBlank(mobile)) return true;
-		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}|[0]{1}[0-9]{2,3}[0-9]{7,8}$");     
+		Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$|^[0]{1}[0-9]{2,3}-[0-9]{7,8}[0-9\\-]{0,}|[0]{1}[0-9]{2,3}[0-9]{7,8}[0-9\\-]{0,}$");     
         Matcher m = p.matcher(mobile);
 //        System.out.println(mobile);
 //        System.out.println(m.matches());
@@ -118,7 +178,7 @@ public class StringUtil {
 	/**验证固定电话号码*/
 	public static boolean validPhone(String phone){
 		if(StringUtils.isBlank(phone)) return true;
-		Pattern p = Pattern.compile("^[0]{1}[0-9]{2,3}-[0-9]{7,8}|[0]{1}[0-9]{2,3}[0-9]{7,8}$");     
+		Pattern p = Pattern.compile("^[0]{1}[0-9]{2,3}-[0-9]{7,8}[0-9\\-]{0,}|[0]{1}[0-9]{2,3}[0-9]{7,8}[0-9\\-]{0,}$");     
         Matcher m = p.matcher(phone);
         return m.matches();  
 	}
@@ -162,7 +222,7 @@ public class StringUtil {
 	/**验证地址 中文 英文  [\u4E00-\u9FA5\\(\\)A-Za-z0-9_]*?*/
 	public static boolean validAddress(String name){
 		if(StringUtils.isBlank(name)) return true;
-		Pattern p=Pattern.compile("^[\u4e00-\u9fa5\\w\\s\\(\\)]*$");
+		Pattern p=Pattern.compile("^[\u4e00-\u9fa5\\w\\W\\s\\(\\)]*$");
 		Matcher m =p.matcher(name);
 //		System.out.println(name);
 //		System.out.println(m.matches());
@@ -195,7 +255,7 @@ public class StringUtil {
 	/**验证机构代码*/
 	public static boolean validLicCode(String value){
 		if(StringUtils.isBlank(value)) return true;
-		Pattern p=Pattern.compile("^[\\w]*$");
+		Pattern p=Pattern.compile("^[\\w\\-]*$");
 		Matcher m =p.matcher(value);
 		return m.matches();
 		

@@ -193,25 +193,100 @@ public class Constants{
 
 	public static final String LOAN_BCC = "shenyd@zj198.com";// 暂时硬编码
 	
+	/**
+	 * 融资类型
+	 */
+	public static final Integer ORD_TYPE_COMPANY = 151;//企业经营贷款
+	public static final Integer ORD_TYPE_USER = 152;//个人经营性贷款
+	
 	/**审核日志类型*/
-	public static final Integer ORD_CHECK_TYPE_REQUEST = 323;
-	public static final Integer ORD_CHECK_TYPE_APPLY = 324;
+	public static final Integer ORD_CHECK_TYPE_REQUEST = 323;//快速申请
+	public static final Integer ORD_CHECK_TYPE_APPLY = 324;//正式申请
 	
 	/**
 	 * 融资申请单状态
 	 */
-	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECKING = 301;
-	public static final Integer ORD_FINANCE_STATUS_ZJW_WAIT_UPLOAD = 302;
-	public static final Integer ORD_FINANCE_STATUS_ZJW_WAIT_UPDATE = 303;
-	public static final Integer ORD_FINANCE_STATUS_ZJW_UPLOAD_CHECK = 304;
-	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECKPASS = 305;
-	public static final Integer ORD_FINANCE_STATUS_ZJW_CHECK_FAILURE = 311;
-	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_CHECK = 306;
-	public static final Integer ORD_FINANCE_STATUS_ORG_CHECKING = 307;
-	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_UPLOAD = 308;
-	public static final Integer ORD_FINANCE_STATUS_ORG_WAIT_MONEY = 309;
-	public static final Integer ORD_FINANCE_STATUS_ORG_PUT_MONEY = 310;
-	public static final Integer ORD_FINANCE_STATUS_ORG_CHECK_FAILURE = 312;
+	public static final int ORD_ZJW_CHECKING = 301;
+	public static final int ORD_ZJW_WAIT_UPLOAD = 302;
+	public static final int ORD_ZJW_WAIT_UPDATE = 303;
+	public static final int ORD_ZJW_UPLOAD_CHECK = 304;
+	public static final int ORD_ZJW_CHECKPASS = 305;
+	public static final int ORD_ZJW_CHECK_FAILURE = 311;
+	public static final int ORD_ORG_WAIT_CHECK = 306;
+	public static final int ORD_ORG_CHECKING = 307;
+	public static final int ORD_ORG_WAIT_UPLOAD = 308;
+	public static final int ORD_ORG_WAIT_MONEY = 309;
+	public static final int ORD_ORG_PUT_MONEY = 310;
+	public static final int ORD_ORG_CHECK_FAILURE = 312;
+	
+	/**
+	 * 申请资料审核状态(45)
+	 */
+	public static final int ORD_ATTACH_NO_ACCEPT = 211;		//未收到
+	public static final int ORD_ATTACH_NO_UPLOAD = 212;		//未上传
+	public static final int ORD_ATTACH_UPLOADED = 213;		//已上传
+	public static final int ORD_ATTACH_ZJW_CHECK = 214;		//资金网已审核
+	public static final int ORD_ATTACH_CHECK_FAILURE = 215;	//已退回
+	public static final int ORD_ATTACH_WAIT_SUB = 216;		//修改待确认
+	public static final int ORD_ATTACH_ORG_CHECK = 217;		//资金方已审核
+	public static final int ORD_ATTACH_POST_SUB = 218;		//线下提交
+	public static final int ORD_ATTACH_ACCEPT = 219;		//已收到
+	
+	/**
+	 * 推荐产品类型
+	 */
+	public static final int PRD_RECOMMEND_TYPE_BANKPRD = 1;
+	public static final int PRD_RECOMMEND_TYPE_LOAN = 2;
+	/**
+	 * 企业与银行是否可看日志
+	 */
+	public static final String ORD_CHECK_LOG_USER="10";
+	public static final String ORD_CHECK_LOG_ORG="01";
+	public static final String ORD_CHECK_LOG_USERANDORG="11";
+	public static final String ORD_CHECK_LOG_ZJW="00";
+	
+	/**
+	 * 申请单资料类型
+	 */
+	public static final Integer ORD_ATTACH_TYPE_ORIGINAL = 0;//原始资料
+	public static final Integer ORD_ATTACH_TYPE_ADDED = 1;//补充资料
+	
+	/**
+	 * 审核提醒文字-config.properties标签
+	 */
+	public static final String ORD_REMIND_ZJ_CUSTOMER = "apply.msg.check.customer";
+	public static final String ORD_REMIND_ZJ_BASEOK = "apply.msg.check.zj198.baseok";
+	public static final String ORD_REMIND_ZJ_NEEDUPDATE = "apply.msg.check.zj198.needupdate";
+	public static final String ORD_REMIND_ZJ_FAILURE = "apply.msg.check.zj198.failure";
+	public static final String ORD_REMIND_ZJ_UPDATE = "apply.msg.check.zj198.update.submit";
+	public static final String ORD_REMIND_ZJ_UPLOADCHECK = "apply.msg.check.zj198.uploadchecking";
+	public static final String ORD_REMIND_ZJ_OK = "apply.msg.check.zj198.ok";
+	public static final String ORD_REMIND_ZJ_BACKUPLOAD = "apply.msg.check.zj198.back.upload";
+	public static final String ORD_REMIND_ORG_WAIT = "apply.msg.check.org.wait";
+	public static final String ORD_REMIND_ORG_CHECKING = "apply.msg.check.org.checking";
+	public static final String ORD_REMIND_ORG_WAITUPLOAD = "apply.msg.check.org.waitupload";
+	public static final String ORD_REMIND_ORG_UPLOADFILE = "apply.msg.check.org.upload.file";
+	public static final String ORD_REMIND_ORG_UPDATE = "apply.msg.check.org.update";
+	public static final String ORD_REMIND_ORG_OK = "apply.msg.check.org.ok";
+	public static final String ORD_REMIND_ORG_FAILURE = "apply.msg.check.org.failure";
+	public static final String ORD_REMIND_ORG_PUTMONEY = "apply.msg.check.org.putmoney";
+	
+	public static final String ORD_INSIDE_NEWAPPLY = "apply.msg.zj.newapply";
+	public static final String ORD_INSIDE_FIRSTCHECK = "apply.msg.zj.firstcheckend";
+	public static final String ORD_INSIDE_UPDATE = "apply.msg.zj.update";
+	public static final String ORD_INSIDE_FILEUPLOAD = "apply.msg.zj.fileupload";
+	public static final String ORD_INSIDE_SENDORG = "apply.msg.zj.sendorg";
+	
+	//订单内外部邮件模板名称
+	public static final String TEMPLATE_ZJ198 = "financeApplyRemind.htm";
+	public static final String TEMPLATE_CUSTOMER = "financeApplyCheck.htm";
+	
+	//客服email
+	public static final String EMAIL_ZJ198 = "loan.servicer.shixl";
+	
+	//资金网审核，日志操作人显示名称为：“中国资金网”
+	public static final String ZJW = "中国资金网";
+
 	
 //	//---begin 改用memecached缓存，以下变量将废弃--Patrick
 	//用户中心菜单,非final，第一次调用填充，同种用户共用,需要调整至DAO--patrick
@@ -247,6 +322,7 @@ public class Constants{
 		//#{0:'不限', 10:'10万元以上', 20:'20万元以上', 30:'30万元以上'}
 		LinkedHashMap<String, String> v4 = new LinkedHashMap<String, String> ();
 		v4.put("0", "不限");
+		v4.put("100", "100万元以上");
 		v4.put("300", "300万元以上");
 		v4.put("500", "500万元以上");
 		v4.put("1000", "1000万元以上");
@@ -346,17 +422,23 @@ public class Constants{
 		v15.put("199", "已撤销");
 		m.put("ZJ115", v15);
 		
+		LinkedHashMap<String, String> v16 = new LinkedHashMap<String, String> ();
+		v16.put("0", "不限");
+		v16.put("100", "100万元以上");
+		v16.put("500", "500万元以上");
+		v16.put("1000", "1000万元以上");
+		m.put("ZJ116", v16);
 		return m;
 	}
-	
-	public static InterestBean[] getInterestArr(){
-		InterestBean[] i = new InterestBean[5];
-		i[0] = new InterestBean(new Integer(0),new Integer(6), new Double(5.85));
-		i[1] = new InterestBean(new Integer(6),new Integer(12), new Double(6.31));
-		i[2] = new InterestBean(new Integer(12),new Integer(36), new Double(6.4));
-		i[3] = new InterestBean(new Integer(36),new Integer(60), new Double(6.65));
-		i[4] = new InterestBean(new Integer(60),new Integer(1000), new Double(6.8));
-		return i;
-	}
+
+//	public static InterestBean[] getInterestArr(){
+//		InterestBean[] i = new InterestBean[5];
+//		i[0] = new InterestBean(0,6, new Double(5.6));
+//		i[1] = new InterestBean(6,12, new Double(6));
+//		i[2] = new InterestBean(12,36, new Double(6.15));
+//		i[3] = new InterestBean(36,60, new Double(6.4));
+//		i[4] = new InterestBean(60,1000, new Double(6.55));
+//		return i;
+//	}
 
 }

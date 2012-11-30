@@ -79,7 +79,7 @@ return this.optional(element) || (value >= s1 && value >= s2);
 				      <tr>
 				        <td colspan="2" style="padding:20px 0 0 30px;">
 			        	<div class="fl">	
-				        	<s:if test="product.logo == null">
+				        	<s:if test="product.logo == null || product.logo == ''">
 						        <img src="/images/banklogo/b/zj198.jpg" style="white-space: nowrap;"/>
 					        </s:if>
 					        <s:else>

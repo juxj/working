@@ -26,7 +26,7 @@
      <th>用途</th>
      <th>期限</th>
      <th>状态</th>
-     <th>操作</th>
+     <th style="text-align:right; padding-right:60px;">操作</th>
   </tr>
   </s:else>
   <s:iterator value="topThree" id="item">
@@ -37,7 +37,7 @@
 		<td><common:print valueId="loanPurpose"/> </td>
 		<td>${loanMonth}月</td>
    		<td><common:print valueId="applyStatus"/></td>
-   		<td class="view_detail">
+   		<td class="view_detail" style="text-align:right; padding-right:20px;">
    		<a target="_blank" href="/user/loan/LoanRequest!loanManageDetail.act?industryId=${id }" style="width:30px;">查看</a>
    		</td>
 	  </tr>

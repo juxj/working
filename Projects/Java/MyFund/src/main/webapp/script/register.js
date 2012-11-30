@@ -14,9 +14,13 @@ function check_email() {
 	var email_error = $("#email_error");
 	if(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test($("#email").val())){
 		email_error.html("");
+	}else if(!$("#email").val()){
+		email_error.addClass("txt-err");
+		email_error.html("请输入邮箱。");
+		checkformresult=1;
 	}else{
 		email_error.addClass("txt-err");
-		email_error.html("邮箱用于激活用户、找回密码等。");
+		email_error.html("邮箱格式错误。");
 		checkformresult=1;
 	}
 }
@@ -42,21 +46,29 @@ function check_rpass() {
 }
 function check_mobile() {
 	var mobile_error = $("#mobile_error");
-	if(/^((13[0-9])|(15[^4,\D])|(18[0,5-9]))\d{8}$/.test($("#mobile").val())){
+	if(/^1\d{10}$/.test($("#mobile").val())){
 		mobile_error.html("");
+	}else if(!$("#mobile").val()){
+		mobile_error.addClass("txt-err");
+		mobile_error.html("请输入手机号码。");
+		checkformresult=1;
 	}else{
 		mobile_error.addClass("txt-err");
-		mobile_error.html("常用的手机号码，用于接受通知和验证等。");
+		mobile_error.html("手机号码格式错误。");
 		checkformresult=1;
 	}
 }
 function check_fullname() {
 	var fullname_error = $("#fullname_error");
-	if(/^[\u4e00-\u9fa5]{2,4}$/.test($("#fullname").val())){
+	if(/^[\u4e00-\u9fa5]{1,6}$/.test($("#fullname").val())){
 		fullname_error.html("");
-	}else{
+	}else if(!$("#fullname").val()){
 		fullname_error.addClass("txt-err");
 		fullname_error.html("请输入真实姓名。");
+		checkformresult=1;
+	}else{
+		fullname_error.addClass("txt-err");
+		fullname_error.html("姓名必须为1到6个汉字。");
 		checkformresult=1;
 	}
 }

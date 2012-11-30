@@ -19,7 +19,7 @@
 	}
 </script>
 <tr>
-	<td width="18%" class="form_table field_name">所属区域</td>
+	<td width="18%" class="form_table field_name">所属区域：</td>
 	<td>
 		<s:if test="clbSupplyInfo.workArea=='全国'">
 			<input id="ckOverall" type="checkbox" name="clbSupplyInfo.workArea" 

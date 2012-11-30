@@ -8,6 +8,7 @@
 <title>融资产品发布</title>
 <link rel="stylesheet" href="/css/public.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/module.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="/css/member1.css" type="text/css" media="screen, projection" />
 <link rel="stylesheet" href="/css/jquery-ui.css" type="text/css" media="screen, projection" />	
 <script type="text/javascript" src="/script/jquery-1.7.2.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.validate.min.js" > </script>
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="/script/jquery.ui.slider.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.ui.dialog.min.js" > </script>
 <script type="text/javascript" src="/script/jquery.form.js" > </script>
+<script type="text/javascript" src="/script/base-rate.js" > </script>
 <script language="javascript">
 //文本框触发焦点效果s
 $(function() {
@@ -218,18 +220,40 @@ function interest(){
 			interTrObj.remove();
 		}
 	}
-	var inteArr = new Array(5.85,6.31,6.4,6.65,6.8);
-	var inteTextArr = new Array('六月以内（含六月)','六个月至一年（含一年）','一至三年（含三年）','三至五年（含五年）','五年以上');
+	//var baserate_inteArr = new Array(5.6,6.0,6.15,6.4,6.55);
+	//var baserate_inteTextArr = new Array('六月以内（含六月)','六个月至一年（含一年）','一至三年（含三年）','三至五年（含五年）','五年以上');
 	for(var i = limist; i<=limien;i++){
 		var interTrObj = $('#interTr' + i);
 		if(interTrObj.length <=0){
-			var intetr = "<tr id='interTr" + i + "'><td>" + inteTextArr[i-1] + "</td><td>" + inteArr[i-1] + "%</td><td> + <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='7'/>%</td>";
+			var intetr = "<tr id='interTr" + i + "'><td>" + baserate_inteTextArr[i-1] + "</td><td>" + baserate_inteArr[i-1] + "%</td>";
+			intetr = intetr + "<td><input type='text' name='financeProductSpModel.rateDown' class='digits' id='rateDown" + i + "' size='2'/>";
+			intetr = intetr + " - <input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp" + i + "' size='2'/>%</td>";
 			intetr = intetr + "<td width='200px'><div id='slider-range" + i + "'></div></td></tr>";
 			$('#interest_table').append($(intetr));
-			sliderAdd(('slider-range' + i),('rateUp' + i),0);
+			sliderAdd(('slider-range' + i),('rateDown' + i),('rateUp' + i),0,500);
 		}
 	}
 }
+function sliderAdd(sliderId,rateDownId, rateId,sliStartValue, sliEndValue){
+	sliderId = "#" + sliderId;
+	rateId = "#" + rateId;
+	rateDownId = "#" + rateDownId;
+
+	$(sliderId).slider({
+            range: true,
+            min: 0,
+            max: 500,
+            values: [ sliStartValue, sliEndValue ],
+            slide: function( event, ui ) {
+            	$( rateDownId ).val(ui.values[ 0 ]);
+            	$( rateId ).val(ui.values[ 1 ]);
+            	
+            }
+        });
+        $( rateDownId ).val($(sliderId).slider( "values", 0 ));
+        $( rateId ).val($(sliderId).slider( "values", 1 ));
+}
+/*
 function sliderAdd(sliderId, rateId,sliValue){
 sliderId = "#" + sliderId;
 rateId = "#" + rateId;
@@ -245,7 +269,7 @@ $(sliderId).slider({
 
 
 		$( rateId ).val( $( sliderId ).slider( "value" ) );
-}
+}*/
 function validate_maxlength(field,maxlength,errorClass){
 	if(field.value.length>maxlength){
 		$('.' + errorClass).show();
@@ -347,8 +371,8 @@ function previewExtends(){
   </div>
 <div class="hr_10"> &nbsp; </div>
 <!--主体部分开始-->
-<div class="apply_title" style="height:60px;">
-	<p>发布贷款产品</p>
+<div class="container_950 box_4">
+	<div class="P_title" style="border-bottom:5px solid #003961;">发布贷款产品</div>
 </div>
 <div class="hr_10"> &nbsp; </div>
 <div class="apply_form">
@@ -357,7 +381,9 @@ function previewExtends(){
 <s:hidden name="financeProductSpModel.rateEnId" id="rateEnId"></s:hidden>
 <s:hidden name="product.id"></s:hidden>
 <s:hidden name="repeatStatus"></s:hidden>
-	<div class="C_title">产品参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red;">${msg }</span></div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">产品参数</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="color:red;">${msg }</font></div>
+	</div>
 	<div class="C_form">
             <dl>
               <dd>
@@ -405,34 +431,35 @@ function previewExtends(){
 							<s:if test="product.interestType == 155">
 							<% int i = 1;%>
 								<s:iterator value="product.interests" id="item">
-									<s:if test="#item.financeEnddt == 6">
+									<s:if test="financeEnddt == 6">
 										<% i = 1; %>
 									</s:if>
-									<s:elseif test="#item.financeEnddt == 12">
+									<s:elseif test="financeEnddt == 12">
 										<% i = 2; %>
 									</s:elseif>
-									<s:elseif test="#item.financeEnddt == 36">
+									<s:elseif test="financeEnddt == 36">
 										<% i = 3; %>
 									</s:elseif>
-									<s:elseif test="#item.financeEnddt == 60">
+									<s:elseif test="financeEnddt == 60">
 										<% i = 4; %>
 									</s:elseif>
-									<s:elseif test="#item.financeEnddt >60">
+									<s:elseif test="financeEnddt >60">
 										<% i = 5; %>
 									</s:elseif>
 									<tr id="interTr<%=i%>">
 										<td>
-											${item.interestMemo }
+											${interestMemo }
 										</td>
 										<td>
-											<common:print valueId="#item.financeEnddt" type="rate"/>%
+											<common:print valueId="financeEnddt" type="rate"/>%
 										</td>
 										<td>
-											+<input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp<%=i %>' size='7' value="${item.rateUp }"/>%
+											<input type='text' name='financeProductSpModel.rateDown' class='digits' id='rateDown<%=i %>' size='2' value="${rateDown }"/>-
+											<input type='text' name='financeProductSpModel.rateUp' class='digits' id='rateUp<%=i %>' size='2' value="${rateUp }"/>%
 										</td>
 										<td width='200px'>
 											<div id='slider-range<%=i %>'></div>
-											<script>sliderAdd(('slider-range<%=i%>'),('rateUp<%=i%>'),$('#rateUp<%=i%>').val());</script>
+											<script>sliderAdd(('slider-range<%=i%>'),('rateDown<%=i%>'),('rateUp<%=i%>'),$('#rateDown<%=i%>').val(),$('#rateUp<%=i%>').val());</script>
 										</td>
 									</tr>
 								</s:iterator>
@@ -508,7 +535,9 @@ function previewExtends(){
 			 
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">产品介绍</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">产品介绍</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
            <dd>
@@ -523,11 +552,13 @@ function previewExtends(){
 		</dl>
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">申贷资料</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">申贷资料</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
 			<dd>
-                <h6>申贷需要资料清单</h6>
+                <h6>申贷需要资料清单：</h6>
                 <input type="button" value="资料维护" id="dataUpdate" class="but_gray"/>
                 <s:hidden name="financeProductSpModel.datalistStr" id="datalist_str"></s:hidden>
               </dd>
@@ -535,13 +566,14 @@ function previewExtends(){
               	<h6>&nbsp;</h6>
                 <div id="datalistview" style="width:600px;padding-left:140px;">
                 	<s:iterator value="product.dataFiles">
-                		<li id="datali${datafileId }" >${dataName }</li>
+                		<li style="list-style-type: none;" id="datali${datafileId }" >${dataName }</li>
                 	</s:iterator>
                 </div>
               </dd>
               <dd>
               	<h6>资料递交方式：</h6>
-				  <common:checkbox name="financeProductSpModel.uploadWay"  valueSetId="37"/>
+				  <common:checkbox name="financeProductSpModel.uploadWay"  valueSetId="37" cssClass="required"/>
+				  <label for="financeProductSpModel.uploadWay" class="error" generated="true" style="display:none;"></label>
 			  </dd>
 		</dl>
 	</div>
@@ -591,11 +623,13 @@ function previewExtends(){
 		</table>
 	</div>
 	<div class="clear"></div>
-	<div class="C_title">申请条件</div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">申请条件</span></div>
+	</div>
 	<div class="C_form">
 		<dl>
 			  <dd class="finance_type_151 finance_type_152">
-                <h6>申请企业所属行业</h6>
+                <h6>所属行业：</h6>
                 <input type="radio" name="financeProductSpModel.industryStatus" id="industryAll" value="0" <s:if test="financeProductSpModel.industryStatus == 0">checked</s:if>/><label for="industryAll">不限</label>
                 <input type="radio" name="financeProductSpModel.industryStatus" id="industsel" value="1" <s:if test="financeProductSpModel.industryStatus == 1">checked</s:if>/><label for="industsel">选择行业</label>
                 <s:hidden id='indust_resvals' name="financeProductSpModel.industrySel"></s:hidden>
@@ -605,12 +639,12 @@ function previewExtends(){
                 <textarea rows="5" cols="60" id="indust_restxts" disabled="true">${financeProductSpModel.industrySelName }</textarea>
 			  
 			  </dd>
-              <dd class="finance_type_151 finance_type_152">
+              <dd class="finance_type_151">
                 <h6>企业的总资产：</h6>
                 <common:select name="financeProductSpModel.financeExtend.companyAllAsset" valueSetMap="ZJ112"></common:select>
               </dd>
-              <dd class="finance_type_151">
-                <h6>企业的年营业收入：</h6>
+              <dd class="finance_type_151 finance_type_152">
+                <h6>年营业收入：</h6>
                 <common:select name="financeProductSpModel.financeExtend.operatIncome" valueSetMap="ZJ104"></common:select>
               </dd>
               <dd class="finance_type_151">
@@ -662,12 +696,14 @@ function previewExtends(){
               </dd>
 		</dl>
 		</div>	
-		<div class="clear"></div>
-	<div class="C_title">自定义申请单（可选）</div>
+	<div class="clear"></div>
+	<div class="f_box">
+		<div class="f_sqxx"><span class="f_gz">自定义申请单（可选）</span></div>
+	</div>
 	<div class="C_form">
-		<div>
+		<div style="font-size:12px;">
 			如您需要申请方在提交申请时填写特殊信息，请在此定义您所需要的自定义项目的项目名称以及类型及具体选项内容等信息,你可以点击预览表单来预览实际效果<br/>
-			（如：项目1：营业面积    项目类型：输入框 ）<input type="button" value="添加" id="addDefineBut" class="but_gray"/><input type="button" value="表单预览" onclick="previewExtends();" class="but_gray"/><br/>
+			（如：项目1：营业面积    项目类型：输入框 ）<input type="button" value="添加自定义项" id="addDefineBut" class="but_gray"/><input type="button" value="自定义项预览" onclick="previewExtends();" class="but_gray"/><br/>
 			<label id="extendsError" class="error">项目名与选项都是必填项！</label>
 		</div>
 		<div class="hr_10"> &nbsp; </div>
@@ -677,14 +713,14 @@ function previewExtends(){
 			<s:iterator value="financeProductSpModel.extendsPropertyList">
 				<tr id="<%=m%>">
 					<td>
-						项目<%=m %>：<input type="text" name="financeProductSpModel.extendsName" value="${fieldName }" class='middle_input_text'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						项目名：<input type="text" name="financeProductSpModel.extendsName" value="${fieldName }" class='middle_input_text'/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						项目类型：<select name="financeProductSpModel.extendsType" id="extendsType<%=m %>" onchange="updateSelType('extendsType<%=m %>');" >
 							<option value="1" <s:if test="fieldType == 1">selected</s:if>>单行文本框</option>
 							<option value="2" <s:if test="fieldType == 2">selected</s:if>>多行文本框</option>
 							<option value="3" <s:if test="fieldType == 3">selected</s:if>>下拉选择框</option>
 							<option value="4" <s:if test="fieldType == 4">selected</s:if>>多选框</option>
 						</select>
-						<s:if test="fieldValue.length > 0">						
+						<s:if test="fieldValue != null && fieldValue != ''">						
 						   <div id="content<%=m%>">选项（以#号分隔）：<input type="text" name="financeProductSpModel.extendsValue" value="${fieldValue }"/></div>
 						</s:if>
 					</td>

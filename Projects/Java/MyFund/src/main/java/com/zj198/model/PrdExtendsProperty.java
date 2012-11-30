@@ -25,7 +25,7 @@ public class PrdExtendsProperty implements java.io.Serializable {
 	private Integer createUserId;
 	private Integer status;
 	private Set<PrdPropertyDic> propertyDicSet;
-
+	private String entityValue;
 	// Constructors
 
 	/** default constructor */
@@ -164,6 +164,14 @@ public class PrdExtendsProperty implements java.io.Serializable {
 
 	public void setPropertyDicSet(Set<PrdPropertyDic> propertyDicSet) {
 		this.propertyDicSet = propertyDicSet;
+	}
+
+	public String getEntityValue() {
+		return entityValue;
+	}
+
+	public void setEntityValue(String entityValue) {
+		this.entityValue = entityValue;
 	}
 
 }

@@ -72,13 +72,13 @@
 		<!--银行理财列表开始-->
 		<table width="100%" border="0" cellspacing="0" cellpadding="0"> 
 		      <tr class="top_color">
-		        <td class="capital_table_0">产品名称</td>
-		        <td class="capital_table_0">发行银行</td>
-		        <td class="capital_table_0">起销日期</td>
-		        <td class="capital_table_1">投资期限</td>
-		        <td class="capital_table_0">起点金额</td>
-		        <td class="capital_table_4">预期年化收益率</td>
-		        <td width="100px;"></td>
+		        <td style="padding-left:15px;">产品名称</td>
+		        <td >发行银行</td>
+		        <td >起销日期</td>
+		        <td >投资期限</td>
+		        <td >起点金额</td>
+		        <td >预期年化收益率</td>
+		        <td ></td>
 		      </tr>
 				<s:if test="pager.data.size()<0">
 				  <tr class="capital_table" >
@@ -86,14 +86,14 @@
 			      </tr>
 				</s:if>	
 				<s:iterator id="item" value="pager.data">		      
-		      <tr class="capital_table" >
-		        <td class="capital_table_0"><a href="/finance/bankProduct!showDetails.act?id=${item.id}"> ${item.name} </a></td>
-		        <td class="capital_table_0">${item.bank}</td>
-		        <td class="capital_table_0"><s:date name="#item.sellstart" format="yyyy-MM-dd"/></td>
-		        <td class="capital_table_1">${item.manageperiod}</td>
-		        <td class="capital_table_0">${item.minamount}</td>
-		        <td class="capital_table_4">${item.benefitrate}</td>
-		        <td class="view_detail capital_table_z2"  style="padding-right:20px;"><a href="/finance/bankProduct!showDetails.act?id=${item.id}">查看</a></td>
+		      <tr class="top_color01" >
+		        <td style="padding-left:15px;"><a href="/finance/bankProduct!showDetails.act?id=${item.id}"> ${item.name} </a></td>
+		        <td >${item.bank}</td>
+		        <td ><s:date name="#item.sellstart" format="yyyy-MM-dd"/></td>
+		        <td >${item.manageperiod}</td>
+		        <td >${item.minamount}</td>
+		        <td class="red"><h6>${item.benefitrate}</h6></td>
+		        <td class="view_detail" style="padding-right:10px;"><a href="/finance/bankProduct!showDetails.act?id=${item.id}" >查看</a></td>
 		      </tr>
 		      </s:iterator>
 		      <tr class="top_color">

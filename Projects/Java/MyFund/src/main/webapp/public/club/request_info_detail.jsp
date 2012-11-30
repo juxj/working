@@ -47,14 +47,20 @@
             		</s:if>
             	</s:iterator>
             </td>
-            <td class="Search_t_connect">项目投资总额</td>
-            <td class="Search_t_connect01">${clbRequestInfo.totalMoney }</td>
+            <td class="Search_t_connect">项目投资总额(万元)</td>
+            <td class="Search_t_connect01">
+            	<s:text name="format.float"><s:param value="clbRequestInfo.totalMoney"></s:param></s:text>
+            </td>
           </tr>
           <tr>
-            <td class="Search_t_connect">尚缺资金</td>
-            <td class="Search_t_connect01">${clbRequestInfo.lackMoney }</td>
-            <td class="Search_t_connect">所需资金</td>
-            <td class="Search_t_connect01">${clbRequestInfo.needMoney }</td>
+            <td class="Search_t_connect">尚缺资金(万元)</td>
+            <td class="Search_t_connect01">
+            	<s:text name="format.float"><s:param value="clbRequestInfo.lackMoney"></s:param></s:text>
+            </td>
+            <td class="Search_t_connect">所需资金(万元)</td>
+            <td class="Search_t_connect01">
+            	<s:text name="format.float"><s:param value="clbRequestInfo.needMoney"></s:param></s:text>
+            </td>
           </tr>
           <tr>
             <td class="Search_t_connect">融资方式</td>

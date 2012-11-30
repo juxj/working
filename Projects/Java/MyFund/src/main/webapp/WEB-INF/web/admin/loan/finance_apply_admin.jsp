@@ -71,7 +71,7 @@
 								<td style="padding:5px;"><s:textfield name="spModel.startMonth"/>~<s:textfield name="spModel.endMonth"/></td>
 								<td  align="right">状态:</td>
 								<td  style="padding:5px;">
-									<common:select name="spModel.applyStatus" headerKey="" headerValue="--请选择类型--" valueSetId="38"></common:select>
+									<common:select name="spModel.applyStatus" headerKey="" headerValue="--请选择类型--" valueSetId="80"></common:select>
 								</td>
 							</tr>
 							<tr>
@@ -93,7 +93,6 @@
 				            <th>期限</th>
 				            <th>协议编号</th>
 				            <th>状态</th>
-				            <th>申贷资料详情</th>
 				            <th>操作</th>
 				          </tr>
 				          </thead>
@@ -115,27 +114,8 @@
 					   			<td>${item.loanMonth}月</td>
 					   			<td>${agreeNum }</td>
 					   			<td><common:print valueId="applyStatus"/></td>
-					   			<td><a href="/admin/loan/financeAttach!attachAdminManag.act?applyId=${item.id }" target="_blank">资料查看</a></td>
 					   			<td class="view_detail">
 					   			<a href="/admin/loan/financeApply!adminViewApply.act?apply.id=${item.id }">查看</a>
-					   			
-					   			<s:if test="apply.applyStatus == 177"><!-- 待审核 -->
-					   				<a href="/admin/loan/financeApply!checkApply.act?apply.id=${item.id }&apply.applyStatus=178">申请确认</a>
-					   				<a href="/admin/loan/financeApply!checkApply.act?apply.id=${item.id }&apply.applyStatus=178">驳回</a>
-									<input type="button" value="申请确认"  class="but_gray" onclick="updatestatus(178);" ></input>
-									<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-								</s:if>
-								<s:elseif test="apply.applyStatus == 178">
-									<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
-									<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-								</s:elseif>
-								<s:elseif test="apply.applyStatus == 179">
-									<input type="button" value="审核通过"  class="but_gray" onclick="updatestatus(180);" ></input>
-									<input type="button" value="驳回"  class="but_gray" onclick="updatestatus(188);" ></input>
-								</s:elseif>
-								<s:elseif test="apply.applyStatus == 180">
-									<input type="button" value="提交给银行"  class="but_gray" onclick="updatestatus(181);" ></input>
-								</s:elseif>
 					   			</td>
 							</tr>
 							</s:iterator>

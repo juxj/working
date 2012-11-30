@@ -3,6 +3,7 @@ package com.zj198.dao.hibernate;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 
 import com.zj198.dao.PrdRecommendationDAO;
 import com.zj198.model.PrdRecommendation;
@@ -64,7 +65,7 @@ public class PrdRecommendationDAOImpl extends HibernateDAO<PrdRecommendation, In
 	
 	public PrdRecommendation getPrdRecommendationBySequence(int typeId, int sequence) {
 		PrdRecommendation result = null;
-		String hql = "from PrdRecommendation where typeId = :typeId and sequence = :sequence";
+		String hql = "from PrdRecommendation where status != 0 and typeId = :typeId and sequence = :sequence";
 		List<PrdRecommendation> list = this.list(hql, "typeId", typeId, "sequence", sequence);
 		if (list.size()>0) {
 			result = list.get(0);
@@ -75,8 +76,13 @@ public class PrdRecommendationDAOImpl extends HibernateDAO<PrdRecommendation, In
 
 	@Override
 	public List<PrdRecommendation> findByTopNumber(int typeId, int number) {
-		String hql = "from PrdRecommendation where typeId = :typeId and status=1";
+		String hql = "from PrdRecommendation where typeId = :typeId and status=1 order by sequence";
 		return this.findTopRows(hql, number, "typeId", typeId);
 	}
-
+	
+	public void updatePrdRecommendSeq(Integer typeId, Integer seq){
+		String sql = "update PRD_RECOMMENDATION t set t.sequence = t.sequence +1 where t.status != 0 and t.type_id=" + typeId + " and t.sequence >= " + seq;
+		SQLQuery query = this.getSession().createSQLQuery(sql);
+		query.executeUpdate();
+	}
 }

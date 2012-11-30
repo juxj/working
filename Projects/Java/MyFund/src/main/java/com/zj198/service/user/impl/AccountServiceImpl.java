@@ -96,7 +96,7 @@ public class AccountServiceImpl implements AccountService {
 			if(user.getType()!=Constants.USER_TYPE_NULL){
 				userTypeGroup = dicUsertypeDAO.get(user.getType().intValue()).getGroup();
 			}
-			UsrUser suser = new UsrUser(user.getId(),user.getType(),user.getUsername(),user.getRealname(),user.getGender(),user.getStatus(),user.getActivetype(),user.getAuditstatus(),userTypeGroup,user.getAvatar(),user.getViptype());
+			UsrUser suser = new UsrUser(user.getId(),user.getType(),user.getUsername(),user.getRealname(),user.getEmail(),user.getMobile(),user.getGender(),user.getStatus(),user.getActivetype(),user.getAuditstatus(),userTypeGroup,user.getAvatar(),user.getViptype());
 			return suser;
 		}
 		return null;

@@ -7,12 +7,17 @@ import java.util.Map;
 import com.zj198.dao.FudBaseDAO;
 import com.zj198.dao.FudHisvalueDAO;
 import com.zj198.dao.PrdBankfinanceDAO;
+import com.zj198.dao.PrdFinanceDAO;
 import com.zj198.dao.PrdRecommendationDAO;
+import com.zj198.dao.UsrUserDAO;
 import com.zj198.model.FudBase;
 import com.zj198.model.FudHisvalue;
 import com.zj198.model.PrdBankfinance;
+import com.zj198.model.PrdFinance;
 import com.zj198.model.PrdRecommendation;
+import com.zj198.model.UsrUser;
 import com.zj198.service.finservice.FinanceProdService;
+import com.zj198.util.Constants;
 import com.zj198.util.Pager;
 
 public class FinanceProdServiceImpl implements FinanceProdService {
@@ -22,6 +27,8 @@ public class FinanceProdServiceImpl implements FinanceProdService {
 	private PrdBankfinanceDAO prdBankfinanceDAO;
 	
 	private PrdRecommendationDAO prdRecommendationDAO;
+	private PrdFinanceDAO prdFinanceDAO;
+	private UsrUserDAO usrUserDAO;
 	
 
 	/**
@@ -171,6 +178,40 @@ public class FinanceProdServiceImpl implements FinanceProdService {
 		instance.setStatus(0);
 		this.prdRecommendationDAO.update(instance);
 	}
+	
+	public void saveOrUpdateLoanRecommend(PrdRecommendation recommend){
+		
+		if(recommend.getId() != null){
+			PrdRecommendation rec = prdRecommendationDAO.get(recommend.getId());
+			if(rec.getSequence().intValue() != recommend.getSequence().intValue() && recommend.getStatus().intValue() == 1){
+				if(prdRecommendationDAO.getPrdRecommendationBySequence(recommend.getTypeId(), recommend.getSequence()) != null){
+					prdRecommendationDAO.updatePrdRecommendSeq(recommend.getTypeId(), recommend.getSequence());
+				}
+			}
+			rec.setLastUpdatedDate(new Date());
+			rec.setTitle(recommend.getTitle());
+			rec.setSequence(recommend.getSequence());
+			rec.setStatus(recommend.getStatus());
+			prdRecommendationDAO.update(rec);
+		}else{
+			if(prdRecommendationDAO.getPrdRecommendationBySequence(recommend.getTypeId(), recommend.getSequence()) != null){
+				prdRecommendationDAO.updatePrdRecommendSeq(recommend.getTypeId(), recommend.getSequence());
+			}
+			recommend.setCreatedDate(new Date());
+			recommend.setLastUpdatedDate(new Date());
+			PrdFinance finance = prdFinanceDAO.get(recommend.getProdId());
+			recommend.setOriginalName(finance.getFinanceName());
+			if(recommend.getTitle() == null || recommend.getTitle().equals("")){
+				recommend.setTitle(finance.getFinanceName());
+			}
+			UsrUser user = usrUserDAO.get(finance.getUserId());
+			recommend.setLogo(user.getLogo());
+			prdRecommendationDAO.save(recommend);
+		}
+
+	}
+	
+	
 
 	public PrdRecommendationDAO getPrdRecommendationDAO() {
 		return prdRecommendationDAO;
@@ -189,6 +230,14 @@ public class FinanceProdServiceImpl implements FinanceProdService {
 	@Override
 	public List<PrdRecommendation> findRecommendationByTopNumber(int typeId, int number) {
 		return this.prdRecommendationDAO.findByTopNumber(typeId, number);
+	}
+
+	public void setPrdFinanceDAO(PrdFinanceDAO prdFinanceDAO) {
+		this.prdFinanceDAO = prdFinanceDAO;
+	}
+
+	public void setUsrUserDAO(UsrUserDAO usrUserDAO) {
+		this.usrUserDAO = usrUserDAO;
 	}
 
 

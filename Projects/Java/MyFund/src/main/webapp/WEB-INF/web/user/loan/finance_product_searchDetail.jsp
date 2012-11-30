@@ -94,7 +94,9 @@
 
 .qy_jians{width:810px; height:104px;}
 .qy_left{width:105px; height:84px; float:left; background:#97181d; font-size:30px; color:#fff; line-height:30px; text-align:center; padding-top:20px;}
-.more_input{border:1px solid #ccc; width:48px; height:25px; line-height:25px; text-align:center; background:url('/images/up_jiant.jpg') 3px 10px no-repeat; padding-left:13px;}
+.more_input{text-decoration: none;cursor:pointer;border:1px solid #ebebeb; width:50px; height:22px; line-height:22px; background:url('/images/up_jiant.gif') 3px 8px no-repeat #ebebeb; padding-left:13px;font: 12px "微软雅黑", "宋体", Helvetica Neue, Helvetica, Arial, sans-serif;}
+.more_input:hover{text-decoration: none;border:1px solid #E6E9F8;background:url('/images/up_jiant.gif') 3px 8px no-repeat #EDF0FF;}
+
 </style>
 </head>
 
@@ -368,7 +370,7 @@
             <dd><div><a name="selectArea"  id="17">湖北</a></div></dd>
             <dd><div><a name="selectArea"  id="16">河南</a></div></dd>
             <dd><div><a name="selectArea"  id="3">河北</a></div></dd>
-            <dd style="float:right; margin-right:38px;"><div><input type="button" value="" id="moreOrLess" class="more_input"/></div></dd>
+            <dd style="float:right; margin-right:90px;"><div><input type="button" value="" id="moreOrLess" class="more_input"/></div></dd>
         </dl>
         <dl style="display: none;" class="m">
 			<dt id="selectArea"><input name="selectArea2" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>        
@@ -483,7 +485,7 @@
             <dd><div><a name="selectArea"  id="17">湖北</a></div></dd>
             <dd><div><a name="selectArea"  id="16">河南</a></div></dd>
             <dd><div><a name="selectArea"  id="3">河北</a></div></dd>
-            <dd style="float:right; margin-right:38px;"><div><input type="button" value="更多" id="moreOrLess" class="more_input"/> </dd>
+            <dd style="float:right; margin-right:90px;"><div><input type="button" value="更多" id="moreOrLess" class="more_input"/></div></dd>
         </dl>
         <dl style="display: none;"  class="m">
         	<dt id="selectArea"><input name="selectArea2" type="hidden" value="<s:if test="selectArea==null">-1</s:if><s:else><s:property value="selectArea"/></s:else>"/></dt>        
@@ -633,7 +635,7 @@
         	<s:if test="interestType == 155">
         		<s:iterator value="interests">
         			<s:if test="financeDate > financeStartdt && financeDate <= financeEnddt">
-        				+${rateUp }%
+        				<img src="/images/ico_upward.png"  class="td_img" style="padding-top:5px;"/>${rateDown }%-${rateUp }%
         			</s:if>
         		</s:iterator>
         	</s:if>
@@ -642,7 +644,7 @@
         	</s:else>
         </td>
         <td class="capital_table_a3" title='<common:print valueId="repaymentType"/>' style="border:0px;"><common:print valueId="repaymentType" divide="br"/></td>
-       	<td class="capital_table_a3" title='<common:print valueId="proSpecial" />' style="border:0px;"><common:print valueId="proSpecial" divide="br"/></td>
+       	<td class="capital_table_a3 red" title='<common:print valueId="proSpecial" />' style="border:0px;"><common:print valueId="proSpecial" divide="br"/></td>
         <td class="capital_table_a3" style="border:0px;">${checkTime}个工作日</td>
         <td class="capital_table_a3 " style="border:0px;">
         	<a href="/loan/financeProduct!cusViewFinance.act?product.id=${id}" class="btn_s blue2" target="_blank">查看</a>

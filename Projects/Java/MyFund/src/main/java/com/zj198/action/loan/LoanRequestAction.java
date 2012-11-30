@@ -281,9 +281,9 @@ public class LoanRequestAction extends BaseAction {
 				UsrCompany old_UsrCompany = (UsrCompany)profileService.getProfiles(usrUser.getId());
 				if(old_UsrCompany!=null){
 					old_UsrCompany.setAuditFields(usrCompany);
-					profileService.saveorupdate(old_UsrCompany);
+					profileService.saveorupdate(old_UsrCompany,user.getId());
 				}else{
-					profileService.saveorupdate(usrCompany);
+					profileService.saveorupdate(usrCompany,user.getId());
 				}
 				break;
 			case Constants.USERTYPE_GROUP_PERSONAL:
@@ -308,7 +308,7 @@ public class LoanRequestAction extends BaseAction {
 				}
 				//判断user auditstatus 如果为1  或者2 需对不可修改字段进行保护    《管理员审核时 对不可修改字段必须填写才可通过》
 				
-				profileService.saveorupdate(usrPerson);
+				profileService.saveorupdate(usrPerson,user.getId());
 				break;
 		}
 		msg="保存成功。";

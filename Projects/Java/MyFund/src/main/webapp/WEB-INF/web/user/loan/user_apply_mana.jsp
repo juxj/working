@@ -44,7 +44,6 @@
             <td>期限</td>
             <td>协议编号</td>
             <td>状态</td>
-            <td>申贷资料详情</td>
             <td>操作</td>
 
           </tr>
@@ -60,11 +59,6 @@
 	   			<td>${item.loanMonth}个月</td>
 	   			<td>${agreeNum }</td>
 	   			<td><common:print valueId="#item.applyStatus"/></td>
-	   			<td class="option_href">
-	   				<s:if test="applyStatus >= 178 && applyStatus<=186">
-	   					<a href="/user/loan/financeAttach!attachMana.act?viewAttachType=1&applyId=${item.id }">上传资料</a>
-					</s:if>
-	   			</td>
 	   			<td class="view_detail01">
 	   				<a href="/user/loan/userApplyManag!viewFinanceApply.act?apply.id=${item.id }">查看</a>
 	   			</td>

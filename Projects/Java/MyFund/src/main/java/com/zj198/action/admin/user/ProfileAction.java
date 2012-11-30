@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.PropertyConfigurator;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.zj198.action.BaseAction;
 import com.zj198.model.UsrBank;
@@ -175,17 +173,17 @@ public class ProfileAction extends BaseAction{
 				usrBank = (UsrBank)profileService.getProfiles(userId);
 				if(usrBank!=null){
 					if(usrBank.getBankid()!=null && usrBank.getBankid()!=0){
-						usrBank.setDetailname(dictoryDataService.findDicBankList().get(usrBank.getBankid()-1).getName()+" "+usrBank.getDetailname());
-						UsrUser _user = accountService.getUserById(userId);
-						ActionContext context = ActionContext.getContext();
-						int userTypeGroup = 0;
-						if(_user.getType()!=Constants.USER_TYPE_NULL){
-							userTypeGroup =groupid;
-						}
-						_user.setUserTypeGroup(userTypeGroup);
-						context.getSession().put("_user", _user);
-						profileService.saveorupdate(usrBank);
-						context.getSession().remove("_user");
+						usrBank.setDetailname(dictoryDataService.getDicBankById(usrBank.getBankid()).getName()+" "+usrBank.getDetailname());
+//						UsrUser _user = accountService.getUserById(userId);
+//						ActionContext context = ActionContext.getContext();
+//						int userTypeGroup = 0;
+//						if(_user.getType()!=Constants.USER_TYPE_NULL){
+//							userTypeGroup =groupid;
+//						}
+//						_user.setUserTypeGroup(userTypeGroup);
+//						context.getSession().put("_user", _user);
+						profileService.saveorupdate(usrBank,userId);
+//						context.getSession().remove("_user");
 					}else{
 						msg="未选择银行名称";
 						return "ajax";

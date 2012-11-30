@@ -127,7 +127,8 @@ function userLogin(type){
 <jsp:include page="/public/head1.jsp"/>
   <div class="clear"> &nbsp; </div>
 </div>
-<form action="/loan/LoanRequest!loanThird.act" id="loanForm" class="box_form" method="post">
+<div class="hr_10"> &nbsp; </div>
+<form action="/loan/LoanRequest!loanThird.act" id="loanForm" class="" method="post">
 <s:hidden name="loan.loanPurpose"></s:hidden>
 <s:hidden name="loan.loanAmount"></s:hidden>
 <s:hidden name="loan.loanMonth"></s:hidden>
@@ -157,7 +158,6 @@ function userLogin(type){
 <s:hidden name="loan.runningArea"></s:hidden>
 <s:hidden name="loan.rateLowerLimit" id="rateLowerLimit"></s:hidden>
 <s:hidden name="loan.rateUpperLimit" id="rateUpperLimit"></s:hidden>
-
 <s:hidden name="minBound" id="minBound" ></s:hidden>
 <s:hidden name="maxBound" id="maxBound" ></s:hidden>
 
@@ -206,42 +206,42 @@ function userLogin(type){
             <td>&nbsp;</td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="8" id="loanObjects8"></s:checkbox><label for="loanObjects8">小额贷款公司</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="8" id="loanObjects8"></s:checkbox><label for="loanObjects8">小额贷款公司</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.littleLoan" /></td>
             <td>&nbsp;</td>
             <td style="padding-left:75px;"><img src="/images/right_icon.png"/></td>
             <td>&nbsp;</td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="9" id="loanObjects9"></s:checkbox><label for="loanObjects9">典当公司</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="9" id="loanObjects9"></s:checkbox><label for="loanObjects9">典当公司</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.pawnOrg" /></td>
             <td>&nbsp;</td>
             <td style="padding-left:75px;"><img src="/images/right_icon.png"/></td>
             <td>&nbsp;</td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="10" id="loanObjects10"></s:checkbox><label for="loanObjects10">担保公司</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="10" id="loanObjects10"></s:checkbox><label for="loanObjects10">担保公司</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.warrantOrg" /></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="11" id="loanObjects11"></s:checkbox><label for="loanObjects11">融资租赁公司</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="11" id="loanObjects11"></s:checkbox><label for="loanObjects11">融资租赁公司</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.financeOrg" /></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="7" id="loanObjects7"></s:checkbox><label for="loanObjects7">信托公司</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="7" id="loanObjects7"></s:checkbox><label for="loanObjects7">信托公司</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.insuranceOrg" /></td>
             <td style="padding-left:75px;"><img src="/images/right_icon.png"/></td>
             <td>&nbsp;</td>
             <td style="padding-left:75px;"><img src="/images/right_icon.png"/></td>
           </tr>
           <tr>
-			<td style="padding-left:30px;"><s:checkbox name="loanObjects" value="false" fieldValue="12" id="loanObjects12"></s:checkbox><label for="loanObjects12">民间机构</label></td>
+			<td style="padding-left:30px;padding-top:10px;"><s:checkbox name="loanObjects" value="false" fieldValue="12" id="loanObjects12"></s:checkbox><label for="loanObjects12">民间机构</label></td>
             <td style="padding-left:80px;"><s:property value="loanOrgCountModel.popularOrg" /></td>
             <td>&nbsp;</td>
             <td style="padding-left:75px;"><img src="/images/right_icon.png"/></td>
@@ -349,6 +349,7 @@ function userLogin(type){
 
 
 <!--尾部-->
+<div class="hr_20"> &nbsp; </div>
 <div class="clear"> &nbsp; </div>
 </form>
 <jsp:include page="/public/bottom.jsp" />

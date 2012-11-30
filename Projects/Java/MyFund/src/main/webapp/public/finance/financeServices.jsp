@@ -40,7 +40,72 @@ function showNewsHome(typeId){
 function showBankProductHome() {
 	$("#frmSearchBankProduct").submit();
 }
+function showFundHome() {
+	url = "/finance/fund!fundHome.act";
+	window.location.href = url;
+}
+function selectTag(showContent,selfObj){
+	// 切换标签
+	var tag = document.getElementById("tags").getElementsByTagName("li");
+	var taglength = tag.length;
+	for(i=0; i<taglength; i++){
+		tag[i].className = "";
+	}
+	selfObj.parentNode.className = "selectTag";
+	// 切换内容
+	for(i=0; j=document.getElementById("tagContent"+i); i++){
+		j.style.display = "none";
+	}
+	document.getElementById(showContent).style.display = "block";
+	
+	
+}
 </script>
+
+<style type=text/css>
+ol li {
+	MARGIN: 8px
+}
+#con {
+	FONT-SIZE: 12px; MARGIN: 0px auto; WIDTH: 600px
+}
+#tags {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; WIDTH: 400px; PADDING-TOP: 0px; HEIGHT: 30px; font-size: 14px;
+}
+#tags li {
+	BACKGROUND: url(images/tagleft.gif) no-repeat left bottom; FLOAT: left; MARGIN-RIGHT: 1px; LIST-STYLE-TYPE: none; HEIGHT: 30px;
+}
+#tags li a {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; BACKGROUND: url(images/tagright.gif) no-repeat right bottom; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #fff; LINE-HEIGHT: 30px; PADDING-TOP: 0px; HEIGHT: 30px; TEXT-DECORATION: none
+}
+#tags li.emptyTag {
+	BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 4px
+}
+#tags li.selectTag {
+	BACKGROUND-POSITION: left top; MARGIN-BOTTOM: -2px; POSITION: relative; HEIGHT: 25px
+}
+#tags li.selectTag a {
+	BACKGROUND-POSITION: right top; COLOR: #000; LINE-HEIGHT: 30px; HEIGHT: 30px; background:#fff; 
+}
+.tagContent {
+	DISPLAY: none; BACKGROUND: url(images/bg.gif) repeat-x; WIDTH: auto; COLOR: #474747; HEIGHT: 250px
+}
+#tagContent div.selectTag {
+	DISPLAY: block
+}
+
+/* css截取字符 */
+.ctl {
+	table-layout: fixed;
+}
+
+.ctl td {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 2px;
+}
+</style>
 </head>
 <body>
 <!--头部-->
@@ -108,11 +173,80 @@ function showBankProductHome() {
         </div>
         <div class="hr_10"> &nbsp; </div>
            <!--中间部分开始-->
-           <div>
-                <div class="menu_red white"><span class="fr white"><a href="javascript:showBankProductHome()">更多»</a></span>
-                  <h6 class="white_dot">银行理财</h6>
-                </div>
-                <div class = "box_3" >
+           <div class="box_4" style="height:250px;"> 
+                <div class="menu_red white"><span class="fr white"></span>
+					<ul id=tags>
+					  <li class=selectTag><a onClick="selectTag('tagContent0',this)" href="javascript:void(0)">银行理财</a></li>
+					  <li><a onClick="selectTag('tagContent1',this)" href="javascript:void(0)">基金理财</a></li>
+					</ul>
+					<!-- tab切换 -->
+					<div id=tagContent>
+						<div class="tagContent selectTag" id=tagContent0 style="width:708px;">
+			                <table class="gold-table" style="border-top:0px; background:none;">
+			                      <tr>
+			                        <th style="background:none;">产品名称</th>
+			                        <th style="background:none;">发行银行</th>
+			                        <th style="background:none;">起销日期</th>
+			                        <th style="background:none;">投资期限</th>
+			                        <th style="background:none;">起购金额</th>
+			                        <th style="padding-right: 10px; background:none;">预期年化收益率</th>
+			                      </tr>          
+			                      <s:iterator id ="item" value="bankProductList">  
+								  <tr class="txt_content">
+									  	<td style="padding-left: 20px;" title="${item.name}"><a href="/finance/bankProduct!showDetails.act?id=${item.id}"  style="color: #424240;">
+									  		<s:if test="%{null!=#item.name&&#item.name.length()>20}"><s:property value="%{#item.name.substring(0, 20)}" />..</s:if>
+									  			<s:else>${item.name}</s:else>
+									  		</a>
+									  	</td>
+				   						<td style="padding-left: 20px;">${item.bank}</td>
+				   						<td style="padding-left: 20px;"><s:date name="#item.sellstart" format="yyyy-MM-dd"/></td>
+				   						<td style="padding-left: 20px;">${item.manageperiod}</td>
+				   						<td style="padding-left: 20px;">${item.minamount}</td>
+				   						<td style="padding-left: 50px;">${item.benefitrate}%</td>
+								</tr> 
+								</s:iterator>
+			        
+			                </table>
+			                <div><a href="javascript:showBankProductHome()" style="color:#424240; margin-right: 15px; margin-top:5px;" class="fr">更多»</a></div>    
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="tagContent" id=tagContent1>
+			                <table class="gold-table ctl" style="border-top:0px; background:none;">
+			                      <tr>
+			                        <th style="background:none; width:50px;">基金代码</th>
+			                        <th style="background:none;">基金全称</th>
+			                        <th style="background:none;">基金公司</th>
+			                        <th style="background:none;">基金类型</th>
+			                        <th style="background:none; width:80px;">基金经理</th>
+			                        <th style="padding-right: 10px; background:none; width:80px;">成立日期</th>
+			                      </tr>
+		                      <s:if test="fundPager.data.size()<=0">
+								  <tr class="txt_content" >
+							        <td colspan="6">抱歉！未查询到相符的结果</td>
+							      </tr>
+							</s:if><s:else>
+			                      <s:iterator id="item" value="fundPager.data">
+								  <tr class="txt_content">
+									  	<td style="padding-left: 20px;" title="${item.code}" >
+										  	<div class="ellipsis_text_70"><a href="/finance/fund!fundDetails.act?fundId=${item.id}&companyId=${item.fundCompanyId}" style="color: #424240;">
+										  	${item.code}</a></div></td>
+				   						<td style="padding-left: 20px;"><div class="ellipsis_text_120">${item.fullName}</div></td>
+				   						<td style="padding-left: 20px;"><div class="ellipsis_text_60">${item.fundCompanyName }</div></td>
+				   						<td style="padding-left: 20px;"><div class="ellipsis_text_70">${item.catelogName}</div></td>
+				   						<td style="padding-left: 20px;" title="${item.manager}">
+						   						<div class="ellipsis_text_70">${item.manager}</div>
+										</td>
+				   						<td><div class="ellipsis_text_100">${item.issuedDate}</div></td>
+								</tr> 
+								</s:iterator>
+		        		</s:else>
+			                </table>
+							<div><a href="javascript:showFundHome()" style="color:#424240; margin-right: 15px; margin-top: 5px;" class="fr">更多»</a></div> 			                 						
+						</div>
+					</div>
+					<!-- tab切换 -->
+				</div>                  
+                <!--
                 <table class="gold-table" style="margin-bottom: 15px;">
                       <tr >
                         <th>产品名称</th>
@@ -138,6 +272,7 @@ function showBankProductHome() {
         
                 </table>    
                 </div>
+                -->
                 <div class="contantfirst">
                 <table class="gold-table" border="0" cellspacing="0" cellpadding="0">
                       <tr>
